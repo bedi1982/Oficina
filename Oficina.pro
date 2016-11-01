@@ -15,7 +15,6 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    pessoa.cpp \
     database.cpp \
     addpart.cpp \
     addservice.cpp \
@@ -26,7 +25,6 @@ SOURCES += main.cpp\
     clientinfo.cpp
 
 HEADERS  += mainwindow.h \
-    pessoa.h \
     database.h \
     addpart.h \
     addservice.h \
