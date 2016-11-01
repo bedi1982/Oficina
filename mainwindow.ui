@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1200</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1200</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Oficina 0.1</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTableView" name="tbl_historicoServicos">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>1181</width>
+      <height>511</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_novoServico">
+    <property name="geometry">
+     <rect>
+      <x>1090</x>
+      <y>610</y>
+      <width>101</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Novo Serviço</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_bancodeDados">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>610</y>
+      <width>151</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Banco de Dados =&gt; </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_emoticonStatusConexao">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>590</y>
+      <width>91</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_DEVLOG">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>610</y>
+      <width>59</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>DEV LOG</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>551</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="lbl_procurar">
+       <property name="text">
+        <string>Procurar Cliente</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="line_RGouCPFouNome">
+       <property name="placeholderText">
+        <string>Insira aqui parte do RG, CPF ou nome do cliente</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QPushButton" name="btn_procurarClientes">
+       <property name="text">
+        <string>Iniciar Busca</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" colspan="2">
+      <widget class="QLabel" name="lbl_historico">
+       <property name="text">
+        <string>Histórico de serviços prestados:</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>50</y>
+      <width>59</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_Feedback">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>20</y>
+      <width>59</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuOficina">
+    <property name="title">
+     <string>Oficina</string>
+    </property>
+    <addaction name="actionAddServico"/>
+    <addaction name="actionSair"/>
+   </widget>
+   <widget class="QMenu" name="menuCadastrois">
+    <property name="title">
+     <string>Esto&amp;que</string>
+    </property>
+    <addaction name="actionAddPeca"/>
+    <addaction name="actionEstoque"/>
+    <addaction name="actionAdicionar_Estoque_a_pe_a_existente"/>
+   </widget>
+   <widget class="QMenu" name="menuListar">
+    <property name="title">
+     <string>&amp;Listar</string>
+    </property>
+    <addaction name="actionListarServicos_em_aberto"/>
+   </widget>
+   <widget class="QMenu" name="menuContas">
+    <property name="title">
+     <string>Contas</string>
+    </property>
+    <addaction name="actionContas_A_pagar"/>
+    <addaction name="actionContas_A_Receber"/>
+   </widget>
+   <widget class="QMenu" name="menuSobre">
+    <property name="title">
+     <string>Sob&amp;re</string>
+    </property>
+    <addaction name="actionSobreOficina"/>
+   </widget>
+   <widget class="QMenu" name="menuCliente">
+    <property name="title">
+     <string>&amp;Cliente</string>
+    </property>
+    <addaction name="actionListClientes"/>
+    <addaction name="actionAddCliente"/>
+    <addaction name="actionAdicionar_Carro_a_Cliente"/>
+    <addaction name="actionInforma_es_sobre_Cliente"/>
+   </widget>
+   <addaction name="menuOficina"/>
+   <addaction name="menuCadastrois"/>
+   <addaction name="menuListar"/>
+   <addaction name="menuCliente"/>
+   <addaction name="menuContas"/>
+   <addaction name="menuSobre"/>
+  </widget>
+  <action name="actionAddServico">
+   <property name="text">
+    <string>&amp;Novo serviço</string>
+   </property>
+  </action>
+  <action name="actionAddCliente">
+   <property name="text">
+    <string>Cadastrar &amp;Cliente</string>
+   </property>
+  </action>
+  <action name="actionAddPeca">
+   <property name="text">
+    <string>Cadastrar Nova &amp;Peça</string>
+   </property>
+  </action>
+  <action name="actionListClientes">
+   <property name="text">
+    <string>Listar Todos os &amp;Clientes</string>
+   </property>
+  </action>
+  <action name="actionEstoque">
+   <property name="text">
+    <string>Listar peças em Estoque</string>
+   </property>
+  </action>
+  <action name="actionListarServicos_em_Aberto">
+   <property name="text">
+    <string>Serviços em Aberto</string>
+   </property>
+  </action>
+  <action name="actionContas_A_pagar">
+   <property name="text">
+    <string>&amp;A pagar</string>
+   </property>
+  </action>
+  <action name="actionContas_A_Receber">
+   <property name="text">
+    <string>A &amp;Receber</string>
+   </property>
+  </action>
+  <action name="actionListarServicos_em_aberto">
+   <property name="text">
+    <string>&amp;Serviços em aberto</string>
+   </property>
+  </action>
+  <action name="actionSair">
+   <property name="text">
+    <string>Sa&amp;ir</string>
+   </property>
+  </action>
+  <action name="actionSobreOficina">
+   <property name="text">
+    <string>Oficina</string>
+   </property>
+  </action>
+  <action name="actionAdicionar_Carro_a_Cliente">
+   <property name="text">
+    <string>Adicionar Carro a Cliente</string>
+   </property>
+  </action>
+  <action name="actionInforma_es_sobre_Cliente">
+   <property name="text">
+    <string>Informações sobre Cliente</string>
+   </property>
+  </action>
+  <action name="actionAdicionar_Estoque_a_pe_a_existente">
+   <property name="text">
+    <string>Entrada de Peças</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

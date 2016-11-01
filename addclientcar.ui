@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>addclientcar</class>
+ <widget class="QDialog" name="addclientcar">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>503</width>
+    <height>419</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="lbl_Modelo">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>130</y>
+     <width>59</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Modelo</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="txt_AnoCarro">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>270</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_Cor">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>320</y>
+     <width>59</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cor</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_AnoCarro">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>270</y>
+     <width>59</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Ano</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_PlacaCarro">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>280</y>
+     <width>59</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Placa</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="txt_PlacaCarro_">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>270</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_Carro">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>200</y>
+     <width>59</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Descrição</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="txt_CordoCarro">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>310</y>
+     <width>391</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="txt_carDescription">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>190</y>
+     <width>391</width>
+     <height>61</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="txt_ModeloCarro">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>120</y>
+     <width>391</width>
+     <height>61</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="txt_NomeCliente">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>30</y>
+     <width>461</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_Cliente">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>10</y>
+     <width>161</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Adicionando Carro para:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_dadoscarroNovo">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>80</y>
+     <width>161</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Dados do novo Carro:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_Feedback">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>360</y>
+     <width>261</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_Emoticon">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>350</y>
+     <width>91</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_Adcionar">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>360</y>
+     <width>88</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Adicionar</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
