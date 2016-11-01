@@ -20,9 +20,14 @@ public:
     void addCar(QString);
     bool verificaCamposEmBrancoNoForm();
     void limpaForm();
+    void checkCarDescriptionSize();
 
 private slots:
-    void on_btn_Adcionar_clicked();
+
+    void on_btn_Add_clicked();
+
+    void on_txtPlain_Description_textChanged();
+
 
 private:
     Ui::addclientcar *ui;

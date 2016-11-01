@@ -24,7 +24,6 @@ private slots:
 
     void on_btn_addService_clicked();
 
-    void on_btn_Atualizar_clicked();
 
 private:
     Ui::clientinfo *ui;

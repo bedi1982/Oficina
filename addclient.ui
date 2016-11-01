@@ -6,95 +6,35 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>486</width>
-    <height>320</height>
+    <width>448</width>
+    <height>319</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>448</width>
+    <height>319</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>448</width>
+    <height>319</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Cadastro de Cliente</string>
   </property>
-  <widget class="QLabel" name="lbl_RG">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>160</y>
-     <width>61</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>RG</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_Cidade">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>120</y>
-     <width>41</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Cidade</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_CPF">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>200</y>
-     <width>61</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>CPF</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_Endereco">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>80</y>
-     <width>71</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Endereco</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_Nome">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>40</y>
-     <width>41</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Nome</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_feedback">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>230</y>
-     <width>371</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Insira os dados do cliente e clique em Cadastrar.</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="btn_cadastrar">
    <property name="geometry">
     <rect>
-     <x>270</x>
+     <x>240</x>
      <y>270</y>
      <width>88</width>
      <height>34</height>
@@ -104,60 +44,10 @@
     <string>Cadastrar!</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="line_Nome">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>30</y>
-     <width>371</width>
-     <height>32</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_Endereco">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>70</y>
-     <width>371</width>
-     <height>32</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_Cidade">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>110</y>
-     <width>251</width>
-     <height>32</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_RG">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>150</y>
-     <width>251</width>
-     <height>32</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_CPF">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>190</y>
-     <width>251</width>
-     <height>32</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="btn_Sair">
    <property name="geometry">
     <rect>
-     <x>370</x>
+     <x>340</x>
      <y>270</y>
      <width>88</width>
      <height>34</height>
@@ -170,16 +60,204 @@
   <widget class="QLabel" name="lbl_Emoticon">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>120</y>
-     <width>71</width>
-     <height>101</height>
+     <x>110</x>
+     <y>250</y>
+     <width>91</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="lbl_feedback">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>240</y>
+     <width>311</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>31</y>
+     <width>421</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="lbl_Nome">
+      <property name="text">
+       <string>Nome      </string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="line_Nome">
+      <property name="maxLength">
+       <number>40</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>69</y>
+     <width>421</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QLabel" name="lbl_Endereco">
+      <property name="text">
+       <string>Endereco</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="line_Endereco">
+      <property name="maxLength">
+       <number>50</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>108</y>
+     <width>311</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <widget class="QLabel" name="lbl_Cidade">
+      <property name="text">
+       <string>Cidade     </string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="line_Cidade">
+      <property name="maxLength">
+       <number>30</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>150</y>
+     <width>196</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_4">
+    <item>
+     <widget class="QLabel" name="lbl_RG_2">
+      <property name="text">
+       <string>Telefone  </string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="line_RG_2">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="maxLength">
+       <number>15</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>190</y>
+     <width>241</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_6">
+    <item>
+     <widget class="QLabel" name="lbl_CPF">
+      <property name="text">
+       <string>CPF          </string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="line_CPF">
+      <property name="maxLength">
+       <number>20</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>150</y>
+     <width>171</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_5">
+    <item>
+     <widget class="QLabel" name="lbl_RG">
+      <property name="text">
+       <string>RG  </string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="line_RG">
+      <property name="maxLength">
+       <number>15</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <zorder>lbl_RG</zorder>
+  <zorder>lbl_Cidade</zorder>
+  <zorder>lbl_Endereco</zorder>
+  <zorder>lbl_Nome</zorder>
+  <zorder>btn_cadastrar</zorder>
+  <zorder>line_Nome</zorder>
+  <zorder>line_Endereco</zorder>
+  <zorder>line_Cidade</zorder>
+  <zorder>line_RG</zorder>
+  <zorder>line_CPF</zorder>
+  <zorder>btn_Sair</zorder>
+  <zorder>lbl_Emoticon</zorder>
+  <zorder>line_RG_2</zorder>
+  <zorder>lbl_RG_2</zorder>
+  <zorder>lbl_feedback</zorder>
+  <zorder>line_CPF</zorder>
  </widget>
  <tabstops>
   <tabstop>line_Nome</tabstop>

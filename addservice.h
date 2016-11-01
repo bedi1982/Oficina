@@ -18,11 +18,9 @@ public:
 
 private slots:
     void on_btn_Cadastrar_clicked();
-
     void on_btn_Sair_clicked();
-
     void limpaForm();
-
+    void checkCarDescriptionSize();
     bool verificaCamposEmBrancoNoForm();
 
 private:

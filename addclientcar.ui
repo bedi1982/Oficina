@@ -6,148 +6,30 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>503</width>
-    <height>419</height>
+    <width>533</width>
+    <height>460</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLabel" name="lbl_Modelo">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>130</y>
-     <width>59</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Modelo</string>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="txt_AnoCarro">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>270</y>
-     <width>131</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_Cor">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>320</y>
-     <width>59</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Cor</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_AnoCarro">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>270</y>
-     <width>59</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Ano</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_PlacaCarro">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>280</y>
-     <width>59</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Placa</string>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="txt_PlacaCarro_">
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>270</y>
-     <width>121</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_Carro">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>200</y>
-     <width>59</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Descrição</string>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="txt_CordoCarro">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>310</y>
-     <width>391</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="txt_carDescription">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>190</y>
-     <width>391</width>
-     <height>61</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="txt_ModeloCarro">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>120</y>
-     <width>391</width>
-     <height>61</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="txt_NomeCliente">
+  <widget class="QTextEdit" name="txt_ClientName">
    <property name="enabled">
     <bool>false</bool>
    </property>
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>30</x>
      <y>30</y>
      <width>461</width>
      <height>31</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_Cliente">
+  <widget class="QLabel" name="lbl_CarOwner">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>170</x>
      <y>10</y>
      <width>161</width>
      <height>18</height>
@@ -157,10 +39,10 @@
     <string>Adicionando Carro para:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_dadoscarroNovo">
+  <widget class="QLabel" name="lbl_CarData">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>30</x>
      <y>80</y>
      <width>161</width>
      <height>18</height>
@@ -170,24 +52,11 @@
     <string>Dados do novo Carro:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_Feedback">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>360</y>
-     <width>261</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QLabel" name="lbl_Emoticon">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>350</y>
+     <x>310</x>
+     <y>320</y>
      <width>91</width>
      <height>51</height>
     </rect>
@@ -196,11 +65,11 @@
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_Adcionar">
+  <widget class="QPushButton" name="btn_Add">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>360</y>
+     <x>400</x>
+     <y>350</y>
      <width>88</width>
      <height>34</height>
     </rect>
@@ -208,6 +77,179 @@
    <property name="text">
     <string>Adicionar</string>
    </property>
+  </widget>
+  <widget class="QLabel" name="lbl_Feedback">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>390</y>
+     <width>461</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>110</y>
+     <width>461</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="lbl_Model">
+      <property name="text">
+       <string>Modelo    </string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="txt_Model">
+      <property name="inputMethodHints">
+       <set>Qt::ImhNone</set>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="maxLength">
+       <number>50</number>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+      </property>
+      <property name="placeholderText">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>150</y>
+     <width>461</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QLabel" name="lbl_Description">
+      <property name="text">
+       <string>Descrição</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPlainTextEdit" name="txtPlain_Description">
+      <property name="plainText">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Máximo 300 letras.</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>300</y>
+     <width>111</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <widget class="QLabel" name="lbl_CarYear">
+      <property name="text">
+       <string>Ano</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="txt_Year">
+      <property name="inputMethodHints">
+       <set>Qt::ImhNone</set>
+      </property>
+      <property name="inputMask">
+       <string>9999</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="maxLength">
+       <number>4</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>300</y>
+     <width>131</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_4">
+    <item>
+     <widget class="QLabel" name="lbl_PlacaCarro">
+      <property name="text">
+       <string>Placa</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="txt_Placa">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="maxLength">
+       <number>10</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>340</y>
+     <width>251</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_5">
+    <item>
+     <widget class="QLabel" name="lbl_CarColor">
+      <property name="text">
+       <string>Cor</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="txt_Color">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="maxLength">
+       <number>26</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

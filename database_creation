@@ -2,19 +2,19 @@
 V2:
 CREATE TABLE Client (
         Client_id bigint PRIMARY KEY AUTO_INCREMENT,
-        Client_Name varchar(100),
-        Client_Address varchar(150),
-        Client_City varchar(100),
+        Client_Name varchar(40),
+        Client_Address varchar(50),
+        Client_City varchar(30),
         Client_CPF varchar(20),
-        Client_RG varchar(20),
-        Client_Phone varchar(20),
+        Client_RG varchar(15),
+        Client_Phone varchar(15),
         Client_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         Client_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE Part (
         Part_id bigint PRIMARY KEY AUTO_INCREMENT,
-        Part_Client_Name varchar(100),
+        Part_Name varchar(100),
         Part_Description varchar(300),
         Part_Cost Double(19,2),
         Part_Quantity int,
@@ -27,10 +27,12 @@ CREATE TABLE Part (
 CREATE TABLE Service(
         Service_id bigint PRIMARY KEY AUTO_INCREMENT,
         Service_Client_id bigint,
-        Service_Short_Description varchar(300),
+        Service_PartsUsed_id bigint,
+        Service_Short_Description varchar(70),
         Service_Description varchar(1000),
-        Service_Cost Double(19,2),
-        Service_Paid boolean not null default 0,
+        Service_Total_Cost Double(19,2),
+        Service_Parts_Cost Double(19,2),
+        Service_WorkCost Double(19,2),        Service_Paid boolean not null default 0,
         Service_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         Service_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -38,11 +40,11 @@ CREATE TABLE Service(
 CREATE TABLE ClientCar(
         ClientCar_id bigint PRIMARY KEY AUTO_INCREMENT,
         ClientCar_Client_id bigint,
-        ClientCar_Model varchar(300),
-        ClientCar_Description varchar(1000),
+        ClientCar_Model varchar(50),
+        ClientCar_Description varchar(300),
         ClientCar_BuiltYear int,
-        ClientCar_Placa varchar(15),
-        ClientCar_Color varchar(50),
+        ClientCar_Placa varchar(10),
+        ClientCar_Color varchar(26),
         Service_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         Service_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

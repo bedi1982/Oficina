@@ -19,6 +19,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QPixmap glasses(":/emoticons/face-glasses.png");
+    ui->lbl_Emoticon->setPixmap(glasses);
     ui->line_RGouCPFouNome->setFocus();
 
     Database db;
@@ -52,16 +54,17 @@ void MainWindow::on_actionAddPeca_triggered()
     addpart.exec();
 }
 
+/*
 void MainWindow::on_btn_procurarClientes_clicked()
 {
     QSqlTableModel* model = new QSqlTableModel;
     model->setTable("Client");
-    model->setFilter(" Client_CPF like '%" + ui->line_RGouCPFouNome->text() + "%' OR Client_Name like '%" + ui->line_RGouCPFouNome->text() + "%' OR Client_CPF like '%" + ui->line_RGouCPFouNome->text() + "%'");
+    model->setFilter(" Client_CPF like '%" + ui->line_RGouCPFouNome->text() + "%' OR Client_Name like '%" + ui->line_RGouCPFouNome->text() + "%' OR Client_RG like '%" + ui->line_RGouCPFouNome->text() + "%'");
     model->select();
     model->setEditStrategy(QSqlTableModel::OnFieldChange);
     ui->tbl_historicoServicos->setModel(model);
 }
-
+*/
 
 void MainWindow::on_tbl_historicoServicos_doubleClicked(const QModelIndex &index)
 {
@@ -86,4 +89,14 @@ void MainWindow::on_actionSobreOficina_triggered()
     about about;
     about.setModal(true);
     about.exec();
+}
+
+void MainWindow::on_line_RGouCPFouNome_textChanged(const QString &userSearchFfilter)
+{
+    QSqlTableModel* model = new QSqlTableModel;
+    model->setTable("Client");
+    model->setFilter(" Client_CPF like '%" + userSearchFfilter + "%' OR Client_Name like '%" + userSearchFfilter + "%' OR Client_RG like '%" + userSearchFfilter + "%'");
+    model->select();
+    model->setEditStrategy(QSqlTableModel::OnFieldChange);
+    ui->tbl_historicoServicos->setModel(model);
 }

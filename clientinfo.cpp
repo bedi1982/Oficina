@@ -85,6 +85,7 @@ void clientinfo::on_btn_addClientCarro_clicked()
     addclientcar.addClientInfoToForm(client_id);
     addclientcar.setModal(true);
     addclientcar.exec();
+    loadCarsGrid();
 }
 
 void clientinfo::on_btn_addService_clicked()
@@ -92,9 +93,6 @@ void clientinfo::on_btn_addService_clicked()
     addservice addservice;
     addservice.setModal(true);
     addservice.exec();
-}
-
-void clientinfo::on_btn_Atualizar_clicked()
-{
     loadCarsGrid();
+
 }

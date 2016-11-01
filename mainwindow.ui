@@ -45,56 +45,30 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="btn_novoServico">
-    <property name="geometry">
-     <rect>
-      <x>1090</x>
-      <y>610</y>
-      <width>101</width>
-      <height>34</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Novo Serviço</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="lbl_bancodeDados">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>610</y>
-      <width>151</width>
+      <x>950</x>
+      <y>620</y>
+      <width>171</width>
       <height>18</height>
      </rect>
     </property>
     <property name="text">
-     <string>Banco de Dados =&gt; </string>
+     <string>Status do banco de Dados =&gt; </string>
     </property>
    </widget>
    <widget class="QLabel" name="lbl_emoticonStatusConexao">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>1100</x>
       <y>590</y>
-      <width>91</width>
-      <height>71</height>
+      <width>61</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="text">
      <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lbl_DEVLOG">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>610</y>
-      <width>59</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>DEV LOG</string>
     </property>
    </widget>
    <widget class="QWidget" name="layoutWidget">
@@ -117,32 +91,31 @@
      <item row="0" column="1">
       <widget class="QLineEdit" name="line_RGouCPFouNome">
        <property name="placeholderText">
-        <string>Insira aqui parte do RG, CPF ou nome do cliente</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="2">
-      <widget class="QPushButton" name="btn_procurarClientes">
-       <property name="text">
-        <string>Iniciar Busca</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0" colspan="2">
-      <widget class="QLabel" name="lbl_historico">
-       <property name="text">
-        <string>Histórico de serviços prestados:</string>
+        <string>Inicie a procuta insirindo aqui parte do RG, CPF ou nome do cliente</string>
        </property>
       </widget>
      </item>
     </layout>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="lbl_Emoticon">
     <property name="geometry">
      <rect>
-      <x>690</x>
-      <y>50</y>
-      <width>59</width>
+      <x>1090</x>
+      <y>10</y>
+      <width>91</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_FilterText">
+    <property name="geometry">
+     <rect>
+      <x>830</x>
+      <y>40</y>
+      <width>351</width>
       <height>18</height>
      </rect>
     </property>
@@ -150,17 +123,17 @@
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="lbl_Feedback">
+   <widget class="QLabel" name="lbl_FiltrandoPor">
     <property name="geometry">
      <rect>
-      <x>610</x>
-      <y>20</y>
-      <width>59</width>
+      <x>830</x>
+      <y>10</y>
+      <width>101</width>
       <height>18</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string/>
     </property>
    </widget>
   </widget>
@@ -212,8 +185,8 @@
     <property name="title">
      <string>&amp;Cliente</string>
     </property>
-    <addaction name="actionListClientes"/>
     <addaction name="actionAddCliente"/>
+    <addaction name="actionListClientes"/>
     <addaction name="actionAdicionar_Carro_a_Cliente"/>
     <addaction name="actionInforma_es_sobre_Cliente"/>
    </widget>
@@ -241,12 +214,12 @@
   </action>
   <action name="actionListClientes">
    <property name="text">
-    <string>Listar Todos os &amp;Clientes</string>
+    <string>&amp;Listar Todos os Clientes</string>
    </property>
   </action>
   <action name="actionEstoque">
    <property name="text">
-    <string>Listar peças em Estoque</string>
+    <string>&amp;Listar peças em Estoque</string>
    </property>
   </action>
   <action name="actionListarServicos_em_Aberto">
@@ -276,22 +249,22 @@
   </action>
   <action name="actionSobreOficina">
    <property name="text">
-    <string>Oficina</string>
+    <string>&amp;Oficina</string>
    </property>
   </action>
   <action name="actionAdicionar_Carro_a_Cliente">
    <property name="text">
-    <string>Adicionar Carro a Cliente</string>
+    <string>&amp;Adicionar Carro a Cliente</string>
    </property>
   </action>
   <action name="actionInforma_es_sobre_Cliente">
    <property name="text">
-    <string>Informações sobre Cliente</string>
+    <string>&amp;Informações sobre Cliente</string>
    </property>
   </action>
   <action name="actionAdicionar_Estoque_a_pe_a_existente">
    <property name="text">
-    <string>Entrada de Peças</string>
+    <string>&amp;Entrada de Peças</string>
    </property>
   </action>
  </widget>

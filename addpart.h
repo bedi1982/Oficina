@@ -24,6 +24,10 @@ private slots:
 
     void limpaForm();
 
+    void on_txt_PartDescription_textChanged();
+
+    void checkCarDescriptionSize();
+
 private:
     Ui::addpart *ui;
 };
