@@ -31,9 +31,7 @@ void realizedServiceInfo::on_btn_Add_PartsUsedInTheService_clicked()
 }
 
 void realizedServiceInfo::setServiceID(QString service_id){
-                qDebug() << service_id + "peqeuno";
     ServiceID = service_id;
-                qDebug() << ServiceID + "grande";
 }
 
 void realizedServiceInfo::loadAll(){
