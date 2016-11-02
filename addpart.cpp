@@ -20,14 +20,6 @@ addpart::~addpart()
     delete ui;
 }
 
-void addpart::limpaForm()
-{
-    ui->line_Nome->setText("");
-    ui->txt_PartDescription->toPlainText() = "";
-    ui->doubleSpinCusto->clear();
-    ui->spin_Quantidade->clear();
-}
-
 bool addpart::verificaCamposEmBrancoNoForm()
 {
     if (   ui->line_Nome->text() == ""
@@ -39,7 +31,6 @@ bool addpart::verificaCamposEmBrancoNoForm()
         ui->lbl_Feedback->setText("Erro: Todos os campos devem estar preenchidos!");
         QPixmap crying(":/emoticons/face-crying.png");
         ui->lbl_Emoticon->setPixmap(crying);
-        limpaForm();
         ui->line_Nome->setFocus();
         return false;
     }
@@ -66,21 +57,22 @@ void addpart::on_btn_Cadastrar_clicked()
 
         if (query.exec() == false){
             qDebug() << query.lastError();
-        }
+            QMessageBox::critical(this, "Erro!", "Esta peça não foi adicionado!!(class addpart.cpp).");
+        }else{
         ui->lbl_Feedback->setText(ui->line_Nome->text() + " adicionado ao estoque!");
         QPixmap cool(":/emoticons/face-cool.png");
         ui->lbl_Emoticon->setPixmap(cool);
-        ui->line_Nome->setFocus();
-        limpaForm();
+        QMessageBox::information(this, "Sucesso!", "Carro adicionado ao registro do Cliente.");
+        }
     }
 }
 
 //Check car description Filed size(This function only limits entered text to 100)//
 void addpart::checkCarDescriptionSize(){
-    if (ui->txt_PartDescription->toPlainText().length() > 100)
+    if (ui->txt_PartDescription->toPlainText().length() > 250)
     {
         QString partDescription = ui->txt_PartDescription->toPlainText();
-        partDescription.chop(partDescription.length() - 100); // Cut off at 100 characters
+        partDescription.chop(partDescription.length() - 250); // Cut off at 100 characters
         ui->txt_PartDescription->setPlainText(partDescription); // Reset text
 
         // This code just resets the cursor back to the end position

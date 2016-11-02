@@ -60,15 +60,6 @@ void addclientcar::addClientInfoToForm(QString client_id){
 
 }
 
-void addclientcar::limpaForm()
-{
-    ui->txt_Model->clear();
-    ui->txt_Year->clear();
-    ui->txtPlain_Description->clear();
-    ui->txt_Placa->clear();
-    ui->txt_Color->clear();
-}
-
 void addclientcar::addCar(QString client_id){
     if(verificaCamposEmBrancoNoForm()){
         QSqlQuery query;
@@ -85,17 +76,16 @@ void addclientcar::addCar(QString client_id){
         if (query.exec() == false){
             qDebug() << query.lastError();
             ui->lbl_Feedback->setText("Erro Grave. Fale com o desenvolvedor.");
+            QMessageBox::critical(this, "Erro!", "Este carro não foi adicionado!(class addclientcar.cpp)!.");
         }else{
             ui->lbl_Feedback->setText("Carro adicionado ao Cliente!");
             QPixmap cool(":/emoticons/face-cool.png");
             ui->lbl_Emoticon->setPixmap(cool);
-            QMessageBox::information(this,
-                                     "Sucesso!",
-                                     "Carro adicionado ao registro do Cliente.");
+            QMessageBox::information(this, "Sucesso!", "Carro adicionado ao registro do Cliente.");
+             close();
         }
     }
     //Car added, so we close this window//
-    close();
 }
 
 //Check car description size//

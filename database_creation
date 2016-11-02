@@ -14,8 +14,8 @@ CREATE TABLE Client (
 
 CREATE TABLE Part (
         Part_id bigint PRIMARY KEY AUTO_INCREMENT,
-        Part_Name varchar(100),
-        Part_Description varchar(300),
+        Part_Name varchar(50),
+        Part_Description varchar(250),
         Part_Cost Double(19,2),
         Part_Quantity int,
         Part_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -27,6 +27,7 @@ CREATE TABLE Part (
 CREATE TABLE Service(
         Service_id bigint PRIMARY KEY AUTO_INCREMENT,
         Service_Client_id bigint,
+        Service_Client_Carid bigint,
         Service_PartsUsed_id bigint,
         Service_Short_Description varchar(70),
         Service_Description varchar(1000),

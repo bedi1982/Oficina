@@ -16,9 +16,7 @@ public:
     ~addclient();
 
 private slots:
-    void limpaForm();
     bool verificaCamposEmBrancoNoForm();
-
     void on_btn_Sair_clicked();
     void on_btn_cadastrar_clicked();
 

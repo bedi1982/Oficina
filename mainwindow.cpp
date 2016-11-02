@@ -4,6 +4,7 @@
 #include "addclient.h"
 #include "addpart.h"
 #include "addservice.h"
+
 #include "about.h"
 #include <QSqlTableModel>
 #include "QDebug"
@@ -11,6 +12,7 @@
 #include "QSqlQueryModel"
 #include "QSqlQuery"
 #include "clientinfo.h"
+#include "QMessageBox"
 
 using namespace std;
 
@@ -19,19 +21,21 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QPixmap glasses(":/emoticons/face-glasses.png");
-    ui->lbl_Emoticon->setPixmap(glasses);
+
+    QPixmap tux(":/emoticons/tux.png");
+    ui->lbl_AppIcon->setPixmap(tux);
     ui->line_RGouCPFouNome->setFocus();
 
     Database db;
     if(db.conectar()){
-        QPixmap wink(":/emoticons/face-wink.png");
-        ui->lbl_emoticonStatusConexao->setPixmap(wink);
+        QPixmap green(":/emoticons/emblem-default.png");
+        ui->lbl_emoticonStatusConexao->setPixmap(green);
         ui->lbl_bancodeDados->setText("Banco de dados: UP");
     }else{
-        QPixmap sick(":/emoticons/face-sick.png");
-        ui->lbl_emoticonStatusConexao->setPixmap(sick);
+        QPixmap red(":/emoticons/emblem-important.png");
+        ui->lbl_emoticonStatusConexao->setPixmap(red);
         ui->lbl_bancodeDados->setText("Banco de dados: DOWN");
+        QMessageBox::critical(this, "Erro!", "O banco de dados está desconectado(class mainwindow.cpp).");
     }
 }
 
@@ -66,6 +70,7 @@ void MainWindow::on_btn_procurarClientes_clicked()
 }
 */
 
+
 void MainWindow::on_tbl_historicoServicos_doubleClicked(const QModelIndex &index)
 {
     //Bellow 2 list will retrieve the column 0 value, which is the clientid//
@@ -94,9 +99,19 @@ void MainWindow::on_actionSobreOficina_triggered()
 void MainWindow::on_line_RGouCPFouNome_textChanged(const QString &userSearchFfilter)
 {
     QSqlTableModel* model = new QSqlTableModel;
-    model->setTable("Client");
-    model->setFilter(" Client_CPF like '%" + userSearchFfilter + "%' OR Client_Name like '%" + userSearchFfilter + "%' OR Client_RG like '%" + userSearchFfilter + "%'");
-    model->select();
-    model->setEditStrategy(QSqlTableModel::OnFieldChange);
-    ui->tbl_historicoServicos->setModel(model);
+
+    if(!(userSearchFfilter.isEmpty()))
+    {
+        model->setTable("Client");
+        if(!(userSearchFfilter == "*"))
+        {
+            model->setFilter(" Client_CPF like '%" + userSearchFfilter + "%' OR Client_Name like '%" + userSearchFfilter + "%' OR Client_RG like '%" + userSearchFfilter + "%'");
+        }
+        model->select();
+        model->setEditStrategy(QSqlTableModel::OnFieldChange);
+        ui->tbl_historicoServicos->setModel(model);
+    }else{
+        model->clear();
+        ui->tbl_historicoServicos->setModel(model);
+    }
 }

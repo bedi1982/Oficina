@@ -25,7 +25,6 @@ SOURCES += main.cpp\
     clientinfo.cpp
 
 HEADERS  += mainwindow.h \
-    database.h \
     addpart.h \
     addservice.h \
     addclient.h \

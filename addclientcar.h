@@ -14,20 +14,15 @@ class addclientcar : public QDialog
 public:
     explicit addclientcar(QWidget *parent = 0);
     ~addclientcar();
-
     void addClientInfoToForm(QString);
     void Setclient(QString);
     void addCar(QString);
     bool verificaCamposEmBrancoNoForm();
-    void limpaForm();
     void checkCarDescriptionSize();
 
 private slots:
-
     void on_btn_Add_clicked();
-
     void on_txtPlain_Description_textChanged();
-
 
 private:
     Ui::addclientcar *ui;

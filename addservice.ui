@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Adicionando serviço no Carro!</string>
   </property>
   <widget class="QPushButton" name="btn_Sair">
    <property name="geometry">
@@ -64,8 +64,8 @@
   <widget class="QLabel" name="lbl_Emoticon">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>390</y>
+     <x>40</x>
+     <y>410</y>
      <width>71</width>
      <height>51</height>
     </rect>
@@ -77,9 +77,9 @@
   <widget class="QLabel" name="lbl_Feedback">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>340</y>
-     <width>261</width>
+     <x>20</x>
+     <y>480</y>
+     <width>331</width>
      <height>20</height>
     </rect>
    </property>
@@ -99,6 +99,9 @@
    <property name="autoFormatting">
     <set>QTextEdit::AutoNone</set>
    </property>
+   <property name="tabChangesFocus">
+    <bool>true</bool>
+   </property>
    <property name="html">
     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -113,21 +116,21 @@ p, li { white-space: pre-wrap; }
   <widget class="QLabel" name="lbl_InsertWorkCost">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>400</y>
+     <x>230</x>
+     <y>350</y>
      <width>191</width>
      <height>18</height>
     </rect>
    </property>
    <property name="text">
-    <string>Insira o custo da mão de Obra</string>
+    <string>Insira as Horas Trabalhadas</string>
    </property>
   </widget>
   <widget class="QDoubleSpinBox" name="SpinHandWorkCost">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>390</y>
+     <x>420</x>
+     <y>340</y>
      <width>121</width>
      <height>32</height>
     </rect>
@@ -141,19 +144,19 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>10</x>
      <y>340</y>
-     <width>241</width>
+     <width>181</width>
      <height>34</height>
     </rect>
    </property>
    <property name="text">
-    <string>Adicionar Peças usadas nesse serviço</string>
+    <string>Peças usadas nesse serviço</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_PartsCost">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>440</y>
+     <x>310</x>
+     <y>390</y>
      <width>121</width>
      <height>18</height>
     </rect>
@@ -168,8 +171,8 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>430</y>
+     <x>420</x>
+     <y>380</y>
      <width>121</width>
      <height>32</height>
     </rect>
@@ -184,8 +187,8 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>470</y>
+     <x>420</x>
+     <y>420</y>
      <width>121</width>
      <height>32</height>
     </rect>
@@ -197,8 +200,8 @@ p, li { white-space: pre-wrap; }
   <widget class="QLabel" name="lbl_totlaServiceCost">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>480</y>
+     <x>340</x>
+     <y>430</y>
      <width>121</width>
      <height>18</height>
     </rect>
@@ -208,6 +211,16 @@ p, li { white-space: pre-wrap; }
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>line_ShortDescription</tabstop>
+  <tabstop>txt_FullDescription</tabstop>
+  <tabstop>btn_Add_PartsUsedInTheService</tabstop>
+  <tabstop>SpinHandWorkCost</tabstop>
+  <tabstop>Spin_PartsCost</tabstop>
+  <tabstop>Spin_TotalserviceCost</tabstop>
+  <tabstop>btn_Cadastrar</tabstop>
+  <tabstop>btn_Sair</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

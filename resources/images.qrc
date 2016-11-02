@@ -1,29 +1,19 @@
 <RCC>
     <qresource prefix="/emoticons">
-        <file>emote-love.png</file>
-        <file>face-angel.png</file>
-        <file>face-angry.png</file>
         <file>face-cool.png</file>
         <file>face-crying.png</file>
-        <file>face-devilish.png</file>
-        <file>face-embarrassed.png</file>
         <file>face-glasses.png</file>
-        <file>face-kiss.png</file>
         <file>face-laugh.png</file>
-        <file>face-monkey.png</file>
-        <file>face-plain.png</file>
-        <file>face-raspberry.png</file>
-        <file>face-sad.png</file>
         <file>face-sick.png</file>
-        <file>face-smile-big.png</file>
-        <file>face-smile.png</file>
         <file>face-smirk.png</file>
-        <file>face-surprise.png</file>
         <file>face-tired.png</file>
         <file>face-uncertain.png</file>
-        <file>face-wink.png</file>
-        <file>face-worried.png</file>
         <file>images.qrc</file>
+        <file>emblem-important.png</file>
+        <file>emblem-default.png</file>
+        <file>tux.png</file>
+        <file>service.png</file>
+        <file>carkey.png</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>

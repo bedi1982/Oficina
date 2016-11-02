@@ -4,7 +4,6 @@
 #include "QtDebug"
 #include "QMessageBox"
 #include "database.h"
-#include "pessoa.h"
 
 int main(int argc, char *argv[])
 {

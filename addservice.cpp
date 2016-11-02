@@ -5,9 +5,10 @@
 #include "QSqlError"
 #include "mainwindow.h"
 #include "QMessageBox"
+#include <QSqlTableModel>
 
-int clientid;
-QString clientname;
+QString clientid;
+QString CarID;
 
 addservice::addservice(QWidget *parent) :
     QDialog(parent),
@@ -23,11 +24,23 @@ addservice::~addservice()
     delete ui;
 }
 
-void addservice::limpaForm()
-{
-    ui->line_ShortDescription->setText("");
-    ui->txt_FullDescription->setText("");
-}
+/*
+void addservice::retrieveServiceAndPopulateGrid(){
+    QSqlQuery query;
+    query.prepare("SELECT * from Service where Service_id = 7");// + ServiceID.toInt());
+
+    if (query.exec() == false){
+        qDebug() << ServiceID;
+        qDebug() << query.lastError();
+        QMessageBox::critical(this, "Erro!", "Problema ao carregar este serviço.");
+    }
+    while(query.next())
+    {
+        ui->line_ShortDescription->setText(query.value(4).toString());
+        ui->txt_FullDescription->setText(query.value(5).toString());
+    }
+
+}*/
 
 bool addservice::verificaCamposEmBrancoNoForm()
 {
@@ -38,7 +51,6 @@ bool addservice::verificaCamposEmBrancoNoForm()
         ui->lbl_Feedback->setText("Erro: Todos os campos devem estar preenchidos!");
         QPixmap crying(":/emoticons/face-crying.png");
         ui->lbl_Emoticon->setPixmap(crying);
-        limpaForm();
         ui->line_ShortDescription->setFocus();
         return false;
     }
@@ -46,14 +58,20 @@ bool addservice::verificaCamposEmBrancoNoForm()
     return true;
 }
 
+void addservice::setClientIdandCar(QString ClientId, QString ClientCarId)
+{
+    clientid = ClientId;
+    CarID = ClientCarId;
+}
+
 void addservice::on_btn_Cadastrar_clicked()
 {
     if(verificaCamposEmBrancoNoForm()){
         QSqlQuery query;
-        query.prepare("insert into Service (Service_Client_id, Service_Short_Description, Service_Description, Service_Total_Cost, Service_Parts_Cost, Service_WorkCost)"
-                      "values (:Service_Client_id, :Service_Short_Description, :Service_Description, :Service_Total_Cost, :Service_Parts_Cost, :Service_WorkCost )");
-        clientid = 5    ;
+        query.prepare("insert into Service (Service_Client_id, Service_Client_Carid, Service_Short_Description, Service_Description, Service_Total_Cost, Service_Parts_Cost, Service_WorkCost)"
+                      "values (:Service_Client_id, :Service_Client_Carid, :Service_Short_Description, :Service_Description, :Service_Total_Cost, :Service_Parts_Cost, :Service_WorkCost )");
         query.bindValue(":Service_Client_id", clientid);
+        query.bindValue(":Service_Client_Carid", CarID);
         query.bindValue(":Service_Short_Description", ui->line_ShortDescription->text());
         query.bindValue(":Service_Description", ui->txt_FullDescription->toPlainText());
         query.bindValue(":Service_Total_Cost", ui->Spin_TotalserviceCost->text().toDouble());
@@ -62,30 +80,30 @@ void addservice::on_btn_Cadastrar_clicked()
 
         if (query.exec() == false){
             qDebug() << query.lastError();
-        }
+            QMessageBox::critical(this, "Erro!", "Este serviço não foi adicionado!!(class addservice.cpp).");
+        }else{
         ui->lbl_Feedback->setText("Serviço adicionado!");
         QPixmap cool(":/emoticons/face-cool.png");
         ui->lbl_Emoticon->setPixmap(cool);
         ui->line_ShortDescription->setFocus();
-        limpaForm();
+        QMessageBox::information(this, "Sucesso!", "Serviço registrado para este carro.");
+ close();
+        }
     }
 }
 
-void addservice::setClientIdandName(int id, QString name)
+void addservice::on_btn_Sair_clicked()
 {
-    clientid = id;
-    clientname = name;
-    QString clientId = QString::number(id);
-    qDebug() << clientId;
-    ui->lbl_Feedback->setText("Adicionando serviço para " + clientname + ". Cadastro N: " + clientId);
+    close();
 }
 
-//Check car description Filed size(This function only limits entered text to 00)//
-void addservice::checkCarDescriptionSize(){
-    if (ui->txt_FullDescription->toPlainText().length() > 500)
+//Check car description filed size(This function only limits entered text to 1000 chars)//
+void addservice::on_txt_FullDescription_textChanged()
+{
+    if (ui->txt_FullDescription->toPlainText().length() > 1000)
     {
         QString fullserviceDescription = ui->txt_FullDescription->toPlainText();
-        fullserviceDescription.chop(fullserviceDescription.length() - 500); // Cut off at 500 characters
+        fullserviceDescription.chop(fullserviceDescription.length() - 1000); // Cut off at 500 characters
         ui->txt_FullDescription->setPlainText(fullserviceDescription); // Reset text
 
         // This code just resets the cursor back to the end position
@@ -102,9 +120,4 @@ void addservice::checkCarDescriptionSize(){
                               "Erro!",
                               "Mantenha a descrição do serviço menor do que 500 letras.");
     }
-}
-
-void addservice::on_btn_Sair_clicked()
-{
-    close();
 }

@@ -60,9 +60,9 @@
   <widget class="QLabel" name="lbl_Emoticon">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>250</y>
-     <width>91</width>
+     <x>360</x>
+     <y>200</y>
+     <width>51</width>
      <height>51</height>
     </rect>
    </property>
@@ -73,17 +73,17 @@
   <widget class="QLabel" name="lbl_feedback">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>20</x>
      <y>240</y>
-     <width>311</width>
-     <height>18</height>
+     <width>301</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -109,7 +109,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -135,7 +135,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -161,7 +161,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -179,7 +179,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="line_RG_2">
+     <widget class="QLineEdit" name="line_Phone">
       <property name="text">
        <string/>
       </property>
@@ -190,7 +190,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -216,7 +216,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>230</x>
@@ -242,27 +242,22 @@
     </item>
    </layout>
   </widget>
-  <zorder>lbl_RG</zorder>
-  <zorder>lbl_Cidade</zorder>
-  <zorder>lbl_Endereco</zorder>
-  <zorder>lbl_Nome</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
   <zorder>btn_cadastrar</zorder>
-  <zorder>line_Nome</zorder>
-  <zorder>line_Endereco</zorder>
-  <zorder>line_Cidade</zorder>
-  <zorder>line_RG</zorder>
-  <zorder>line_CPF</zorder>
   <zorder>btn_Sair</zorder>
   <zorder>lbl_Emoticon</zorder>
-  <zorder>line_RG_2</zorder>
-  <zorder>lbl_RG_2</zorder>
   <zorder>lbl_feedback</zorder>
-  <zorder>line_CPF</zorder>
  </widget>
  <tabstops>
   <tabstop>line_Nome</tabstop>
   <tabstop>line_Endereco</tabstop>
   <tabstop>line_Cidade</tabstop>
+  <tabstop>line_Phone</tabstop>
   <tabstop>line_RG</tabstop>
   <tabstop>line_CPF</tabstop>
   <tabstop>btn_cadastrar</tabstop>

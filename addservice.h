@@ -14,14 +14,15 @@ class addservice : public QDialog
 public:
     explicit addservice(QWidget *parent = 0);
     ~addservice();
-    void setClientIdandName(int, QString);
+    void setClientIdandCar(QString client, QString car);
+    void setServiceID(QString, bool);
 
 private slots:
-    void on_btn_Cadastrar_clicked();
+    //void on_btn_Cadastrar_clicked();
     void on_btn_Sair_clicked();
-    void limpaForm();
-    void checkCarDescriptionSize();
     bool verificaCamposEmBrancoNoForm();
+    void on_txt_FullDescription_textChanged();
+    void on_btn_Cadastrar_clicked();
 
 private:
     Ui::addservice *ui;

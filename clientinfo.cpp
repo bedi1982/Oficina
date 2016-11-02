@@ -20,6 +20,12 @@ clientinfo::clientinfo(QWidget *parent) :
     ui(new Ui::clientinfo)
 {
     ui->setupUi(this);
+
+    QPixmap service(":/emoticons/service.png");
+    ui->lbl_ServiceIcon->setPixmap(service);
+
+    QPixmap carKey(":/emoticons/carkey.png");
+    ui->lbl_NewCarIcon->setPixmap(carKey);
 }
 
 clientinfo::~clientinfo()
@@ -45,9 +51,8 @@ void clientinfo::loadClientInfo_to_TextBoxes()
 
     if (query.exec() == false){
         qDebug() << query.lastError();
-    }
-
-    qDebug() << query.size();
+        QMessageBox::critical(this, "Erro!", "Este carro não foi adicionado!!(class clientinfo.cpp).");
+    }else{
 
     while(query.next())
     {
@@ -55,6 +60,7 @@ void clientinfo::loadClientInfo_to_TextBoxes()
         ui->txt_clientPhone->setText(query.value(6).toString());
         ui->txt_clientAddress->setText(query.value(2).toString());
         ui->txt_clientSince->setText(query.value(8).toString());
+    }
     }
 }
 
@@ -88,11 +94,15 @@ void clientinfo::on_btn_addClientCarro_clicked()
     loadCarsGrid();
 }
 
-void clientinfo::on_btn_addService_clicked()
+//Adding Service to this client and this car//
+void clientinfo::on_tbl_clientCars_doubleClicked(const QModelIndex &index)
 {
+    //Bellow 2 list will retrieve the column 0 value, which is the clientid//
+    const QAbstractItemModel * model = index.model();
+    QVariant carID = model->data(model->index(index.row(), 0, index.parent()), Qt::DisplayRole);
     addservice addservice;
+    addservice.setClientIdandCar(client_id, carID.toString());
     addservice.setModal(true);
     addservice.exec();
-    loadCarsGrid();
-
+    loadServicesGrid();
 }
