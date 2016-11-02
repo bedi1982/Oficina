@@ -35,7 +35,6 @@ MainWindow::MainWindow(QWidget *parent) :
         QPixmap red(":/emoticons/emblem-important.png");
         ui->lbl_emoticonStatusConexao->setPixmap(red);
         ui->lbl_bancodeDados->setText("Banco de dados: DOWN");
-        QMessageBox::critical(this, "Erro!", "O banco de dados está desconectado(class mainwindow.cpp).");
     }
 }
 

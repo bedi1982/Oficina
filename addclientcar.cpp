@@ -16,6 +16,7 @@ addclientcar::addclientcar(QWidget *parent) :
     ui->setupUi(this);
     QPixmap glasses(":/emoticons/face-glasses.png");
     ui->lbl_Emoticon->setPixmap(glasses);
+    ui->lbl_Feedback->setText("Todos os campos devem estar preenchidos.");
 }
 
 addclientcar::~addclientcar()
@@ -36,7 +37,7 @@ bool addclientcar::verificaCamposEmBrancoNoForm()
            ||ui->txt_Color->text()== ""
            )
     {
-        ui->lbl_Feedback->setText("Erro: Todos os campos devem estar preenchidos! Carro NÃO adicionado");
+        ui->lbl_Feedback->setText("Erro: Todos os campos devem estar preenchidos!");
         QPixmap crying(":/emoticons/face-crying.png");
         ui->lbl_Emoticon->setPixmap(crying);
         ui->txt_Model->setFocus();
@@ -48,14 +49,15 @@ bool addclientcar::verificaCamposEmBrancoNoForm()
 
 void addclientcar::addClientInfoToForm(QString client_id){
     QSqlQuery query;
-    query.prepare("SELECT * FROM Client WHERE Client_id = " + client_id);
+    query.prepare("SELECT Client_Name FROM Client WHERE Client_id = " + client_id);
 
     if (query.exec() == false){
         qDebug() << query.lastError();
+        QMessageBox::critical(this, "Erro!", "Cliente não encontrado.");
     }
     while(query.next())
     {
-        ui->txt_ClientName->setText(query.value(1).toString());
+        ui->line_NomeCliente->setText(query.value(0).toString());
     }
 
 }
@@ -76,7 +78,7 @@ void addclientcar::addCar(QString client_id){
         if (query.exec() == false){
             qDebug() << query.lastError();
             ui->lbl_Feedback->setText("Erro Grave. Fale com o desenvolvedor.");
-            QMessageBox::critical(this, "Erro!", "Este carro não foi adicionado!(class addclientcar.cpp)!.");
+            QMessageBox::critical(this, "Erro!", query.lastError().text()) + ". Class: addclieentcar.cpp";
         }else{
             ui->lbl_Feedback->setText("Carro adicionado ao Cliente!");
             QPixmap cool(":/emoticons/face-cool.png");

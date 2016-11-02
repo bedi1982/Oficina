@@ -22,6 +22,8 @@ private slots:
     void on_btn_addClientCarro_clicked();
     void on_tbl_clientCars_doubleClicked(const QModelIndex &index);
 
+    void on_tbl_ClientServices_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::clientinfo *ui;
     void loadServicesGrid();

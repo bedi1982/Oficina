@@ -10,9 +10,9 @@ addpart::addpart(QWidget *parent) :
     ui(new Ui::addpart)
 {
     ui->setupUi(this);
+    ui->doubleSpinCusto->setMaximum(9999);
     QPixmap glasses(":/emoticons/face-glasses.png");
     ui->lbl_Emoticon->setPixmap(glasses);
-    ui->doubleSpinCusto->setMaximum(9999);
 }
 
 addpart::~addpart()
@@ -29,9 +29,9 @@ bool addpart::verificaCamposEmBrancoNoForm()
        )
     {
         ui->lbl_Feedback->setText("Erro: Todos os campos devem estar preenchidos!");
+        ui->line_Nome->setFocus();
         QPixmap crying(":/emoticons/face-crying.png");
         ui->lbl_Emoticon->setPixmap(crying);
-        ui->line_Nome->setFocus();
         return false;
     }
     //Only returns true when all the fields are filled.
@@ -60,8 +60,6 @@ void addpart::on_btn_Cadastrar_clicked()
             QMessageBox::critical(this, "Erro!", "Esta peça não foi adicionado!!(class addpart.cpp).");
         }else{
         ui->lbl_Feedback->setText(ui->line_Nome->text() + " adicionado ao estoque!");
-        QPixmap cool(":/emoticons/face-cool.png");
-        ui->lbl_Emoticon->setPixmap(cool);
         QMessageBox::information(this, "Sucesso!", "Carro adicionado ao registro do Cliente.");
         }
     }

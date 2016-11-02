@@ -24,6 +24,8 @@ private slots:
     void on_btn_Add_clicked();
     void on_txtPlain_Description_textChanged();
 
+
+
 private:
     Ui::addclientcar *ui;
 };

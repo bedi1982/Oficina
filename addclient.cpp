@@ -13,6 +13,7 @@ addclient::addclient(QWidget *parent) :
     ui->setupUi(this);
     QPixmap glasses(":/emoticons/face-glasses.png");
     ui->lbl_Emoticon->setPixmap(glasses);
+    ui->lbl_feedback->setText("Todos os campos devem estar preenchidos.");
 }
 
 addclient::~addclient()
@@ -22,9 +23,9 @@ addclient::~addclient()
 
 bool addclient::verificaCamposEmBrancoNoForm()
 {
-    if (   ui->line_Nome->text() == ""
-           ||ui->line_Endereco->text() == ""
-           ||ui->line_Cidade->text() == ""
+    if (   ui->line_Name->text() == ""
+           ||ui->line_Address->text() == ""
+           ||ui->line_City->text() == ""
            ||ui->line_RG->text() == ""
            ||ui->line_CPF->text() == ""
            ||ui->line_Phone->text() == ""
@@ -33,7 +34,7 @@ bool addclient::verificaCamposEmBrancoNoForm()
         ui->lbl_feedback->setText("Erro: Todos os campos devem estar preenchidos!");
         QPixmap crying(":/emoticons/face-crying.png");
         ui->lbl_Emoticon->setPixmap(crying);
-        ui->line_Nome->setFocus();
+        ui->line_Name->setFocus();
         return false;
     }
     //Only returns true when all the fields are filled.
@@ -48,19 +49,19 @@ void addclient::on_btn_cadastrar_clicked()
         query.prepare("insert into Client (Client_Name, Client_Address, Client_City, Client_CPF, Client_RG, Client_Phone)"
                       "values (:Name, :Address, :City, :CPF, :RG, :Phone)");
 
-        query.bindValue(":Name", ui->line_Nome->text());
-        query.bindValue(":Address", ui->line_Endereco->text());
-        query.bindValue(":City", ui->line_Cidade->text());
+        query.bindValue(":Name", ui->line_Name->text());
+        query.bindValue(":Address", ui->line_Address->text());
+        query.bindValue(":City", ui->line_City->text());
         query.bindValue(":CPF", ui->line_CPF->text());
         query.bindValue(":RG", ui->line_RG->text());
         query.bindValue(":Phone", ui->line_Phone->text());
 
         if (query.exec() == false){
             qDebug() << query.lastError();
-            QMessageBox::critical(this, "Erro!", "Este cliente não foi adicionado!!(clas addclient.cpp).");
+            QMessageBox::critical(this, "Erro!", query.lastError().text() + ". Class: addclient.cpp line 58");
         }else{
 
-        ui->lbl_feedback->setText(ui->line_Nome->text() + " cadastrado!");
+        ui->lbl_feedback->setText(ui->line_Name->text() + " cadastrado!");
         QPixmap cool(":/emoticons/face-cool.png");
         ui->lbl_Emoticon->setPixmap(cool);
         QMessageBox::information(this, "Sucesso!", "Cliente adicionado.");

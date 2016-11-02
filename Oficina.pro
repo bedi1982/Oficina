@@ -20,27 +20,33 @@ SOURCES += main.cpp\
     addservice.cpp \
     addclient.cpp \
     addclientcar.cpp \
-    showservice.cpp \
     about.cpp \
-    clientinfo.cpp
+    clientinfo.cpp \
+    clientbundle.cpp \
+    realizedserviceinfo.cpp \
+    partsusedonservice.cpp
 
 HEADERS  += mainwindow.h \
     addpart.h \
     addservice.h \
     addclient.h \
     addclientcar.h \
-    showservice.h \
     about.h \
-    clientinfo.h
+    clientinfo.h \
+    clientbundle.h \
+    database.h \
+    realizedserviceinfo.h \
+    partsusedonservice.h
 
 FORMS    += mainwindow.ui \
     addpart.ui \
     addservice.ui \
     addclient.ui \
     addclientcar.ui \
-    showservice.ui \
     about.ui \
-    clientinfo.ui
+    clientinfo.ui \
+    realizedserviceinfo.ui \
+    partsusedonservice.ui
 
 DISTFILES += \
     database_creation \

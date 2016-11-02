@@ -18,12 +18,10 @@ bool Database::conectar(){
     db.setDatabaseName("Oficina");
     db.setUserName("root");
     //db.setPassword("xxxxxxx");
-    //abrindo conexao
     if(db.open()){
-        //QMessageBox::warning(0, "Conexao", "Conexão Estabelecida");
         return true;
     }else{
-        QMessageBox::critical(0,"Database Error(class: database.cpp)", db.lastError().text());
+        QMessageBox::critical(0,"O banco de dados não está ativo!(classe: database.cpp)", db.lastError().text());
         return false;
     }
 }

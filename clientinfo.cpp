@@ -1,10 +1,9 @@
 #include "clientinfo.h"
 #include "ui_clientinfo.h"
-#include "QSqlQuery"
 #include "QDebug"
-#include "QSqlError"
 #include "addclientcar.h"
 #include "addservice.h"
+#include "realizedserviceinfo.h"
 
 #include <QSqlTableModel>
 #include "QDebug"
@@ -12,6 +11,8 @@
 #include "QSqlQueryModel"
 #include "QSqlQuery"
 #include "QMessageBox"
+#include "QSqlError"
+
 
 QString client_id;
 
@@ -47,20 +48,20 @@ void clientinfo::loadAll(){
 void clientinfo::loadClientInfo_to_TextBoxes()
 {
     QSqlQuery query;
-    query.prepare("SELECT * FROM Client WHERE Client_id = " + client_id);
+    query.prepare("SELECT Client_Name, Client_Address, Client_Phone, Client_City FROM Client WHERE Client_id = " + client_id);
 
     if (query.exec() == false){
         qDebug() << query.lastError();
         QMessageBox::critical(this, "Erro!", "Este carro não foi adicionado!!(class clientinfo.cpp).");
     }else{
 
-    while(query.next())
-    {
-        ui->txt_clientName->setText(query.value(1).toString());
-        ui->txt_clientPhone->setText(query.value(6).toString());
-        ui->txt_clientAddress->setText(query.value(2).toString());
-        ui->txt_clientSince->setText(query.value(8).toString());
-    }
+        while(query.next())
+        {
+            ui->line_Name->setText(query.value(0).toString());
+            ui->line_Address->setText(query.value(1).toString());
+            ui->line_Phone->setText(query.value(2).toString());
+            ui->line_ClientCity->setText(query.value(3).toString());
+        }
     }
 }
 
@@ -105,4 +106,21 @@ void clientinfo::on_tbl_clientCars_doubleClicked(const QModelIndex &index)
     addservice.setModal(true);
     addservice.exec();
     loadServicesGrid();
+}
+
+void clientinfo::on_tbl_ClientServices_doubleClicked(const QModelIndex &index)
+{   //You come to this function from double clicking Services on the clientinfo Grid//
+    //Bellow 2 lines will retrieve the column 0 (ServiceID)value from the Grid//
+    const QAbstractItemModel * model = index.model();
+    QVariant ServiceID = model->data(model->index(index.row(), 0, index.parent()), Qt::DisplayRole);
+
+    qDebug() << ServiceID.toString() + "PENIS!";
+
+    realizedServiceInfo realizedServiceInfo;
+    realizedServiceInfo.setServiceID(ServiceID.toString());
+
+    //atention here, we are loading the object grid even before showing it  //
+    realizedServiceInfo.loadAll();
+    realizedServiceInfo.setModal(true);
+    realizedServiceInfo.exec();
 }
