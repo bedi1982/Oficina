@@ -43,7 +43,7 @@ void realizedServiceInfo::loadAll(){
 
         if (query.exec() == false){
             qDebug() << query.lastError();
-            QMessageBox::critical(this, "Erro!", query.lastError().text() + ". Class: realizedserviceinfo.cpp line 40");
+            QMessageBox::critical(this, "Erro!", query.lastError().text() + ". Class: realizedserviceinfo.cpp line 42");
         }else{
             while(query.next())
             {
