@@ -58,7 +58,7 @@ void addclient::on_btn_cadastrar_clicked()
 
         if (query.exec() == false){
             qDebug() << query.lastError();
-            QMessageBox::critical(this, "Erro!", query.lastError().text() + ". Class: addclient.cpp line 58");
+            QMessageBox::critical(this, "Erro!", query.lastError().text() + ". Class: addclient.cpp51");
         }else{
 
         ui->lbl_feedback->setText(ui->line_Name->text() + " cadastrado!");

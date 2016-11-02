@@ -24,24 +24,6 @@ addservice::~addservice()
     delete ui;
 }
 
-/*
-void addservice::retrieveServiceAndPopulateGrid(){
-    QSqlQuery query;
-    query.prepare("SELECT * from Service where Service_id = 7");// + ServiceID.toInt());
-
-    if (query.exec() == false){
-        qDebug() << ServiceID;
-        qDebug() << query.lastError();
-        QMessageBox::critical(this, "Erro!", "Problema ao carregar este serviço.");
-    }
-    while(query.next())
-    {
-        ui->line_ShortDescription->setText(query.value(4).toString());
-        ui->txt_FullDescription->setText(query.value(5).toString());
-    }
-
-}*/
-
 bool addservice::verificaCamposEmBrancoNoForm()
 {
     if (ui->txt_FullDescription->toPlainText() == ""
@@ -80,7 +62,7 @@ void addservice::on_btn_Cadastrar_clicked()
 
         if (query.exec() == false){
             qDebug() << query.lastError();
-            QMessageBox::critical(this, "Erro!", "Este serviço não foi adicionado!!(class addservice.cpp).");
+            QMessageBox::critical(this, "Erro!", "Este serviço não foi adicionado!! class addservice.cpp65");
         }else{
         ui->lbl_Feedback->setText("Serviço adicionado!");
         QPixmap cool(":/emoticons/face-cool.png");

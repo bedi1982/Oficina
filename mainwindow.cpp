@@ -4,15 +4,16 @@
 #include "addclient.h"
 #include "addpart.h"
 #include "addservice.h"
-
+#include "clientinfo.h"
 #include "about.h"
+
 #include <QSqlTableModel>
-#include "QDebug"
 #include "QSqlRelationalTableModel"
 #include "QSqlQueryModel"
 #include "QSqlQuery"
-#include "clientinfo.h"
 #include "QMessageBox"
+
+#include "QDebug"
 
 using namespace std;
 
@@ -56,19 +57,6 @@ void MainWindow::on_actionAddPeca_triggered()
     addpart.setModal(true);
     addpart.exec();
 }
-
-/*
-void MainWindow::on_btn_procurarClientes_clicked()
-{
-    QSqlTableModel* model = new QSqlTableModel;
-    model->setTable("Client");
-    model->setFilter(" Client_CPF like '%" + ui->line_RGouCPFouNome->text() + "%' OR Client_Name like '%" + ui->line_RGouCPFouNome->text() + "%' OR Client_RG like '%" + ui->line_RGouCPFouNome->text() + "%'");
-    model->select();
-    model->setEditStrategy(QSqlTableModel::OnFieldChange);
-    ui->tbl_historicoServicos->setModel(model);
-}
-*/
-
 
 void MainWindow::on_tbl_historicoServicos_doubleClicked(const QModelIndex &index)
 {

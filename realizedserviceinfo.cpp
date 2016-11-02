@@ -39,11 +39,11 @@ void realizedServiceInfo::loadAll(){
     {
         QSqlQuery query;
 
-        query.prepare("SELECT * from Service where Service_id =" + ServiceID);
+        query.prepare("SELECT * from Service where Service_id = " + ServiceID);
 
         if (query.exec() == false){
             qDebug() << query.lastError();
-            QMessageBox::critical(this, "Erro!", query.lastError().text() + ". Class: realizedserviceinfo.cpp line 42");
+            QMessageBox::critical(this, "Erro!", query.lastError().text() + ". Class: realizedserviceinfo.cpp46");
         }else{
             while(query.next())
             {

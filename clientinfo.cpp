@@ -52,7 +52,7 @@ void clientinfo::loadClientInfo_to_TextBoxes()
 
     if (query.exec() == false){
         qDebug() << query.lastError();
-        QMessageBox::critical(this, "Erro!", "Este carro não foi adicionado!!(class clientinfo.cpp).");
+        QMessageBox::critical(this, "Erro!", query.lastError().text() + "class clientinfo.cpp55");
     }else{
 
         while(query.next())
@@ -101,6 +101,7 @@ void clientinfo::on_tbl_clientCars_doubleClicked(const QModelIndex &index)
     //Bellow 2 list will retrieve the column 0 value, which is the clientid//
     const QAbstractItemModel * model = index.model();
     QVariant carID = model->data(model->index(index.row(), 0, index.parent()), Qt::DisplayRole);
+
     addservice addservice;
     addservice.setClientIdandCar(client_id, carID.toString());
     addservice.setModal(true);
@@ -114,13 +115,13 @@ void clientinfo::on_tbl_ClientServices_doubleClicked(const QModelIndex &index)
     const QAbstractItemModel * model = index.model();
     QVariant ServiceID = model->data(model->index(index.row(), 0, index.parent()), Qt::DisplayRole);
 
-    qDebug() << ServiceID.toString() + "PENIS!";
-
     realizedServiceInfo realizedServiceInfo;
     realizedServiceInfo.setServiceID(ServiceID.toString());
 
-    //atention here, we are loading the object grid even before showing it  //
+    //Attention here, we are loading the object grid even before showing the form//
     realizedServiceInfo.loadAll();
+    //Grid Populated//
+
     realizedServiceInfo.setModal(true);
     realizedServiceInfo.exec();
 }

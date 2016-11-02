@@ -53,7 +53,7 @@ void addclientcar::addClientInfoToForm(QString client_id){
 
     if (query.exec() == false){
         qDebug() << query.lastError();
-        QMessageBox::critical(this, "Erro!", "Cliente não encontrado.");
+        QMessageBox::critical(this, "Erro!", query.lastError().text() + ". Class: addclient.cpp56");
     }
     while(query.next())
     {
@@ -78,7 +78,7 @@ void addclientcar::addCar(QString client_id){
         if (query.exec() == false){
             qDebug() << query.lastError();
             ui->lbl_Feedback->setText("Erro Grave. Fale com o desenvolvedor.");
-            QMessageBox::critical(this, "Erro!", query.lastError().text()) + ". Class: addclieentcar.cpp";
+            QMessageBox::critical(this, "Erro!", query.lastError().text()) + ". Class: addclieentcar.cpp81";
         }else{
             ui->lbl_Feedback->setText("Carro adicionado ao Cliente!");
             QPixmap cool(":/emoticons/face-cool.png");
