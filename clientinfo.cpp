@@ -27,6 +27,9 @@ clientinfo::clientinfo(QWidget *parent) :
 
     QPixmap carKey(":/emoticons/carkey.png");
     ui->lbl_NewCarIcon->setPixmap(carKey);
+
+    QPixmap clienticon(":/emoticons/client_info.png");
+    ui->lbl_ClientInfo->setPixmap(clienticon);
 }
 
 clientinfo::~clientinfo()

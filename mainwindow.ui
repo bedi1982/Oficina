@@ -91,7 +91,7 @@
      <item row="0" column="1">
       <widget class="QLineEdit" name="line_RGouCPFouNome">
        <property name="text">
-        <string> </string>
+        <string/>
        </property>
        <property name="placeholderText">
         <string>Inicie a procuta insirindo aqui parte do RG, CPF ou nome do cliente</string>
@@ -158,7 +158,6 @@
     <property name="title">
      <string>Oficina</string>
     </property>
-    <addaction name="actionAddServico"/>
     <addaction name="actionSair"/>
    </widget>
    <widget class="QMenu" name="menuCadastrois">
@@ -167,20 +166,6 @@
     </property>
     <addaction name="actionAddPeca"/>
     <addaction name="actionEstoque"/>
-    <addaction name="actionAdicionar_Estoque_a_pe_a_existente"/>
-   </widget>
-   <widget class="QMenu" name="menuListar">
-    <property name="title">
-     <string>&amp;Listar</string>
-    </property>
-    <addaction name="actionListarServicos_em_aberto"/>
-   </widget>
-   <widget class="QMenu" name="menuContas">
-    <property name="title">
-     <string>Contas</string>
-    </property>
-    <addaction name="actionContas_A_pagar"/>
-    <addaction name="actionContas_A_Receber"/>
    </widget>
    <widget class="QMenu" name="menuSobre">
     <property name="title">
@@ -193,15 +178,10 @@
      <string>&amp;Cliente</string>
     </property>
     <addaction name="actionAddCliente"/>
-    <addaction name="actionListClientes"/>
-    <addaction name="actionAdicionar_Carro_a_Cliente"/>
-    <addaction name="actionInforma_es_sobre_Cliente"/>
    </widget>
    <addaction name="menuOficina"/>
    <addaction name="menuCadastrois"/>
-   <addaction name="menuListar"/>
    <addaction name="menuCliente"/>
-   <addaction name="menuContas"/>
    <addaction name="menuSobre"/>
   </widget>
   <action name="actionAddServico">
@@ -226,7 +206,7 @@
   </action>
   <action name="actionEstoque">
    <property name="text">
-    <string>&amp;Listar peças em Estoque</string>
+    <string>Controle do Estoque</string>
    </property>
   </action>
   <action name="actionListarServicos_em_Aberto">

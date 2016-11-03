@@ -293,6 +293,31 @@
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="lbl_Emoticon_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>48</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <zorder>btn_cadastrar</zorder>
   <zorder>btn_Sair</zorder>
   <zorder>lbl_Emoticon</zorder>
@@ -309,6 +334,7 @@
   <zorder>line_CPF</zorder>
   <zorder>line_RG</zorder>
   <zorder>line_Phone</zorder>
+  <zorder>lbl_Emoticon_2</zorder>
  </widget>
  <tabstops>
   <tabstop>line_Name</tabstop>

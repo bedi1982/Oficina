@@ -58,7 +58,7 @@ void addservice::on_btn_Cadastrar_clicked()
         query.bindValue(":Service_Description", ui->txt_FullDescription->toPlainText());
         query.bindValue(":Service_Total_Cost", ui->Spin_TotalserviceCost->text().toDouble());
         query.bindValue(":Service_Parts_Cost", ui->Spin_PartsCost->text().toDouble());
-        query.bindValue(":Service_WorkCost", ui->SpinHandWorkCost->text().toDouble());
+        query.bindValue(":Service_WorkCost", ui->Spin_HandWorkCost->text().toDouble());
 
         if (query.exec() == false){
             qDebug() << query.lastError();

@@ -65,7 +65,7 @@ void addpart::on_btn_Cadastrar_clicked()
     }
 }
 
-//Check car description Filed size(This function only limits entered text to 100)//
+//Check car description Filed size(This function only limits entered text to 250)//
 void addpart::checkCarDescriptionSize(){
     if (ui->txt_PartDescription->toPlainText().length() > 250)
     {
@@ -83,9 +83,7 @@ void addpart::checkCarDescriptionSize(){
 
         // This is your "action" to alert the user. I'd suggest something more
         // subtle though, or just not doing anything at all.
-        QMessageBox::critical(this,
-                              "Erro!",
-                              "Mantenha a descrição da peça menor do que 100 letras.");
+        QMessageBox::critical(this, "Erro!", "Mantenha a descrição da peça menor do que 250 letras.");
     }
 }
 

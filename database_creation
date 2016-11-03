@@ -14,10 +14,12 @@ CREATE TABLE Client (
 
 CREATE TABLE Part (
         Part_id bigint PRIMARY KEY AUTO_INCREMENT,
+        Part_Used_In_ServiceID int,
         Part_Name varchar(50),
         Part_Description varchar(250),
         Part_Cost Double(19,2),
         Part_Quantity int,
+        Part_Used boolean not null default 0,
         Part_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         Part_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -28,12 +30,12 @@ CREATE TABLE Service(
         Service_id bigint PRIMARY KEY AUTO_INCREMENT,
         Service_Client_id bigint,
         Service_Client_Carid bigint,
-        Service_PartsUsed_id bigint,
         Service_Short_Description varchar(70),
         Service_Description varchar(1000),
         Service_Total_Cost Double(19,2),
         Service_Parts_Cost Double(19,2),
-        Service_WorkCost Double(19,2),        Service_Paid boolean not null default 0,
+        Service_WorkCost Double(19,2),
+        Service_Paid boolean not null default 0,
         Service_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         Service_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
