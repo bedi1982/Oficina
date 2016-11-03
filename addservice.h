@@ -15,7 +15,8 @@ public:
     explicit addservice(QWidget *parent = 0);
     ~addservice();
     void setClientIdandCar(QString client, QString car);
-    void setServiceID(QString, bool);
+    void setServiceID(QString serviceid);
+    void toggleFieldsToUpdateMode();
 
 private slots:
     //void on_btn_Cadastrar_clicked();

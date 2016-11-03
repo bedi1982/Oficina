@@ -3,7 +3,6 @@
 #include "QDebug"
 #include "addclientcar.h"
 #include "addservice.h"
-#include "realizedserviceinfo.h"
 
 #include <QSqlTableModel>
 #include "QDebug"
@@ -101,7 +100,7 @@ void clientinfo::on_btn_addClientCarro_clicked()
 //Adding Service to this client and this car//
 void clientinfo::on_tbl_clientCars_doubleClicked(const QModelIndex &index)
 {
-    //Bellow 2 list will retrieve the column 0 value, which is the clientid//
+    //Bellow 2 list will retrieve the column 0 value, which is the ServiceID//
     const QAbstractItemModel * model = index.model();
     QVariant carID = model->data(model->index(index.row(), 0, index.parent()), Qt::DisplayRole);
 
@@ -117,14 +116,26 @@ void clientinfo::on_tbl_ClientServices_doubleClicked(const QModelIndex &index)
     //Bellow 2 lines will retrieve the column 0 (ServiceID)value from the Grid//
     const QAbstractItemModel * model = index.model();
     QVariant ServiceID = model->data(model->index(index.row(), 0, index.parent()), Qt::DisplayRole);
+    QVariant ClientID = model->data(model->index(index.row(), 1, index.parent()), Qt::DisplayRole);
+    QVariant CarID = model->data(model->index(index.row(), 2, index.parent()), Qt::DisplayRole);
 
-    realizedServiceInfo realizedServiceInfo;
-    realizedServiceInfo.setServiceID(ServiceID.toString());
+    qDebug() << "Service ID: " + ServiceID.toString();
+    qDebug() << "ClienteID" + ClientID.toString();
+    qDebug() << "CarID" + CarID.toString();
+
+    addservice addservice;
+
+    addservice.setServiceID(ServiceID.toString());
+    addservice.setClientIdandCar(ClientID.toString(), CarID.toString());
+
+    addservice.toggleFieldsToUpdateMode();
+    addservice.exec();
+    loadServicesGrid();
 
     //Attention here, we are loading the object grid even before showing the form//
-    realizedServiceInfo.loadAll();
+    //realizedServiceInfo.loadAll();
     //Grid Populated//
 
-    realizedServiceInfo.setModal(true);
-    realizedServiceInfo.exec();
+    //realizedServiceInfo.setModal(true);
+    //realizedServiceInfo.exec();
 }

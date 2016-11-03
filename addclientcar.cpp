@@ -84,7 +84,7 @@ void addclientcar::addCar(QString client_id){
             QPixmap cool(":/emoticons/face-cool.png");
             ui->lbl_Emoticon->setPixmap(cool);
             QMessageBox::information(this, "Sucesso!", "Carro adicionado ao registro do Cliente.");
-             close();
+            close();
         }
     }
     //Car added, so we close this window//

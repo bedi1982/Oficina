@@ -71,35 +71,6 @@
      <string/>
     </property>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>551</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <widget class="QLabel" name="lbl_procurar">
-       <property name="text">
-        <string>Procurar Cliente</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="line_RGouCPFouNome">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="placeholderText">
-        <string>Inicie a procuta insirindo aqui parte do RG, CPF ou nome do cliente</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
    <widget class="QLabel" name="lbl_AppIcon">
     <property name="geometry">
      <rect>
@@ -135,6 +106,35 @@
     </property>
     <property name="textFormat">
      <enum>Qt::PlainText</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_procurar">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>99</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Procurar Cliente</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="line_RGouCPFouNome">
+    <property name="geometry">
+     <rect>
+      <x>116</x>
+      <y>14</y>
+      <width>601</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>Inicie a procuta insirindo aqui parte do RG, CPF ou nome do cliente</string>
     </property>
    </widget>
    <zorder>tbl_historicoServicos</zorder>
@@ -206,7 +206,7 @@
   </action>
   <action name="actionEstoque">
    <property name="text">
-    <string>Controle do Estoque</string>
+    <string>&amp;Controle do Estoque</string>
    </property>
   </action>
   <action name="actionListarServicos_em_Aberto">

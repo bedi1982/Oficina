@@ -1,14 +1,17 @@
 #include "addservice.h"
 #include "ui_addservice.h"
+#include "partsselectionfromlist.h"
+#include "mainwindow.h"
+#include "QMessageBox"
+
+#include <QSqlTableModel>
 #include "QSqlQuery"
 #include "QDebug"
 #include "QSqlError"
-#include "mainwindow.h"
-#include "QMessageBox"
-#include <QSqlTableModel>
 
 QString clientid;
 QString CarID;
+QString ServiceID;
 
 addservice::addservice(QWidget *parent) :
     QDialog(parent),
@@ -27,8 +30,8 @@ addservice::~addservice()
 bool addservice::verificaCamposEmBrancoNoForm()
 {
     if (ui->txt_FullDescription->toPlainText() == ""
-      ||ui->line_ShortDescription->text() == ""
-           )
+            ||ui->line_ShortDescription->text() == ""
+            )
     {
         ui->lbl_Feedback->setText("Erro: Todos os campos devem estar preenchidos!");
         QPixmap crying(":/emoticons/face-crying.png");
@@ -46,11 +49,27 @@ void addservice::setClientIdandCar(QString ClientId, QString ClientCarId)
     CarID = ClientCarId;
 }
 
+void addservice::toggleFieldsToUpdateMode()
+{
+    ui->line_ShortDescription->setEnabled(false);
+    ui->txt_FullDescription->setEnabled(false);
+    ui->btn_Salvar->setEnabled(false);
+
+    ui->tbl_PartsUsedInService->setEnabled(true);
+    ui->btn_Add_PartsUsedInTheService->setEnabled(true);
+    ui->Spin_HandWorkCost->setEnabled(true);
+}
+
+void addservice::setServiceID(QString serviceid)
+{
+    ServiceID = serviceid;
+}
+
 void addservice::on_btn_Cadastrar_clicked()
 {
     if(verificaCamposEmBrancoNoForm()){
         QSqlQuery query;
-        query.prepare("insert into Service (Service_Client_id, Service_Client_Carid, Service_Short_Description, Service_Description, Service_Total_Cost, Service_Parts_Cost, Service_WorkCost)"
+        query.prepare("insert into Service (Service_Client_id, Service_Client_Carid, Service_Short_Description, Service_Description, Service_Total_Cost, Service_Parts_Cost, Service_HandWorkCost)"
                       "values (:Service_Client_id, :Service_Client_Carid, :Service_Short_Description, :Service_Description, :Service_Total_Cost, :Service_Parts_Cost, :Service_WorkCost )");
         query.bindValue(":Service_Client_id", clientid);
         query.bindValue(":Service_Client_Carid", CarID);
@@ -61,15 +80,15 @@ void addservice::on_btn_Cadastrar_clicked()
         query.bindValue(":Service_WorkCost", ui->Spin_HandWorkCost->text().toDouble());
 
         if (query.exec() == false){
-            qDebug() << query.lastError();
-            QMessageBox::critical(this, "Erro!", "Este serviço não foi adicionado!! class addservice.cpp65");
+            QMessageBox::critical(this, "Erro!", query.lastError().text() + " class addservice.cpp65");
         }else{
-        ui->lbl_Feedback->setText("Serviço adicionado!");
-        QPixmap cool(":/emoticons/face-cool.png");
-        ui->lbl_Emoticon->setPixmap(cool);
-        ui->line_ShortDescription->setFocus();
-        QMessageBox::information(this, "Sucesso!", "Serviço registrado para este carro.");
- close();
+            ui->lbl_Feedback->setText("Serviço adicionado!");
+            QPixmap cool(":/emoticons/face-cool.png");
+            ui->lbl_Emoticon->setPixmap(cool);
+            ui->line_ShortDescription->setFocus();
+            QMessageBox::information(this, "Sucesso!", "Serviço registrado para este carro Agora você pode adicionar as peças que usou neste serviço.");
+            ui->btn_Add_PartsUsedInTheService->setEnabled(true);
+            close();
         }
     }
 }
@@ -98,8 +117,6 @@ void addservice::on_txt_FullDescription_textChanged()
 
         // This is your "action" to alert the user. I'd suggest something more
         // subtle though, or just not doing anything at all.
-        QMessageBox::critical(this,
-                              "Erro!",
-                              "Mantenha a descrição do serviço menor do que 500 letras.");
+        QMessageBox::critical(this, "Erro!", "Mantenha a descrição do serviço menor do que 500 letras.");
     }
 }

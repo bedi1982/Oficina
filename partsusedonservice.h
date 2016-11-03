@@ -15,6 +15,7 @@ public:
     explicit partsUsedOnService(QWidget *parent = 0);
     ~partsUsedOnService();
 
+
 private:
     Ui::partsUsedOnService *ui;
 };

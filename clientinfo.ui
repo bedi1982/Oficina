@@ -48,7 +48,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>210</y>
+     <y>180</y>
      <width>1001</width>
      <height>200</height>
     </rect>
@@ -70,7 +70,7 @@
    <property name="geometry">
     <rect>
      <x>890</x>
-     <y>170</y>
+     <y>140</y>
      <width>112</width>
      <height>34</height>
     </rect>
@@ -88,8 +88,8 @@
   <widget class="QLabel" name="lbl_NewCarIcon">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>140</y>
+     <x>10</x>
+     <y>130</y>
      <width>48</width>
      <height>48</height>
     </rect>
@@ -113,14 +113,14 @@
   <widget class="QLabel" name="lbl_ClientCars">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>180</y>
-     <width>551</width>
+     <x>50</x>
+     <y>160</y>
+     <width>691</width>
      <height>18</height>
     </rect>
    </property>
    <property name="text">
-    <string>          Lista de carros do cliente. Duplo clique no carro para registrar um serviço no Carro.</string>
+    <string>          Lista de carros do cliente. Duplo clique num carro abaixo para fazer um novo serviço no Carro selecionado.</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -323,9 +323,9 @@
   <widget class="QLabel" name="lbl_ClientServicesHistoric">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>450</y>
-     <width>641</width>
+     <x>50</x>
+     <y>420</y>
+     <width>671</width>
      <height>18</height>
     </rect>
    </property>
@@ -336,7 +336,7 @@
     </size>
    </property>
    <property name="text">
-    <string>          Resumo de serviços prestados para este cliente.  Duplo clique abre detalhes do serviço prestao.</string>
+    <string>          Resumo de serviços prestados para este cliente.  Duplo clique abaixo abre detalhes do serviço prestado.</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -346,7 +346,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>480</y>
+     <y>440</y>
      <width>1001</width>
      <height>200</height>
     </rect>
@@ -367,8 +367,8 @@
   <widget class="QLabel" name="lbl_ServiceIcon">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>430</y>
+     <x>20</x>
+     <y>390</y>
      <width>48</width>
      <height>48</height>
     </rect>

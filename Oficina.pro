@@ -23,8 +23,8 @@ SOURCES += main.cpp\
     about.cpp \
     clientinfo.cpp \
     clientbundle.cpp \
-    realizedserviceinfo.cpp \
-    partsusedonservice.cpp
+    partsusedonservice.cpp \
+    partsselectionfromlist.cpp
 
 HEADERS  += mainwindow.h \
     addpart.h \
@@ -35,8 +35,8 @@ HEADERS  += mainwindow.h \
     clientinfo.h \
     clientbundle.h \
     database.h \
-    realizedserviceinfo.h \
-    partsusedonservice.h
+    partsusedonservice.h \
+    partsselectionfromlist.h
 
 FORMS    += mainwindow.ui \
     addpart.ui \
@@ -45,8 +45,8 @@ FORMS    += mainwindow.ui \
     addclientcar.ui \
     about.ui \
     clientinfo.ui \
-    realizedserviceinfo.ui \
-    partsusedonservice.ui
+    partsusedonservice.ui \
+    partsselectionfromlist.ui
 
 DISTFILES += \
     database_creation \
