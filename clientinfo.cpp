@@ -53,7 +53,7 @@ void clientinfo::loadClientInfo_to_TextBoxes()
 
     if (query.exec() == false){
         qDebug() << query.lastError();
-        QMessageBox::critical(this, "Erro!", query.lastError().text() + "class clientinfo.cpp55");
+        QMessageBox::critical(this, "Erro!", query.lastError().text() + "class clientinfo.cpp loadClientInfo_to_TextBoxes() ");
     }else{
         while(query.next())
         {
@@ -70,47 +70,47 @@ void clientinfo::loadServicesGrid()
 {    
     QSqlQueryModel* model = new QSqlQueryModel;
     model->setQuery("SELECT "
-                    "Service_Client_id AS 'Service Client ID', "
-                    "Service_Client_Carid AS ServiceCarroID, "
-                    "Service_Short_Description AS Descrição, "
-                    "Service_Total_Cost AS 'Custo Total', "
+                    "Service_id AS ID,"
+                    "ClientCar_Model AS Carro, "
+                    "ClientCar_Placa AS Placa, "
+                    "Service_Short_Description AS Serviço, "
                     "Service_Parts_Cost AS 'Custo das Peças', "
                     "Service_HandWorkCost AS 'Custo Mão de Obra', "
+                    "Service_Total_Cost AS 'Custo Total', "
                     "Service_Paid AS Pago, "
-                    "Service_created_at AS 'Criado em' "
+                    "Service_created_at AS 'Executado em' "
                     "FROM Service s JOIN ClientCar cc "
                     "ON s.Service_Client_Carid = cc.ClientCar_id AND Service_Client_id = " + client_id);
 
-    ui->tbl_ClientServices->setModel(model);
-    ui->tbl_ClientServices->resizeColumnsToContents();
+    if(model->query().isSelect()){
+        ui->tbl_ClientServices->setModel(model);
+        ui->tbl_ClientServices->resizeColumnsToContents();
+        //ui->tbl_ClientServices->hideColumn(0);
+
+    }else{
+        QMessageBox::critical(this, "Erro!", model->query().lastError().text() + "class clientinfo.cpp loadServicesGrid() ");
+    }
 }
 
 void clientinfo::loadCarsGrid()
 {
-    QSqlTableModel* model = new QSqlTableModel;
-    model->setTable("ClientCar");
-    model->setFilter("ClientCar_Client_id = " + client_id);
-    model->select();
-    model->setEditStrategy(QSqlTableModel::OnFieldChange);
+    QSqlQueryModel* model = new QSqlQueryModel;
+    model->setQuery("SELECT "
+                    "ClientCar_id as 'ID',"
+                    "ClientCar_Model as Carro,"
+                    "ClientCar_Placa as Placa,"
+                    "ClientCar_BuiltYear as 'Ano de Fabricação',"
+                    "ClientCar_Color as Cor,"
+                    "ClientCar_created_at as 'Adicionado em'"
+                    "FROM ClientCar where ClientCar_Client_id = " + client_id);
 
-    model->setHeaderData(0, Qt::Horizontal, tr("Car ID"));              //ClientCar_id
-    model->setHeaderData(1, Qt::Horizontal, tr("Client ID"));           //ClientCar_Client_id
-    model->setHeaderData(2, Qt::Horizontal, tr("Modelo"));              //ClientCar_Model
-    model->setHeaderData(3, Qt::Horizontal, tr("Descrição"));           //ClientCar_Description
-    model->setHeaderData(4, Qt::Horizontal, tr("Ano de fabricação"));   //ClientCar_BuiltYear
-    model->setHeaderData(5, Qt::Horizontal, tr("Placa"));               //ClientCar_Placa
-    model->setHeaderData(6, Qt::Horizontal, tr("Cor"));                 //ClientCar_Color
-    model->setHeaderData(7, Qt::Horizontal, tr("Atualizado em"));       //Car_updated_at
-    model->setHeaderData(8, Qt::Horizontal, tr("Acionado em"));         //Car_created_at
-
-    ui->tbl_clientCars->setModel(model);
-
-    ui->tbl_clientCars->setColumnHidden(1, true);
-    ui->tbl_clientCars->setColumnHidden(3, true);
-    ui->tbl_clientCars->setColumnHidden(7, true);
-
-    ui->tbl_clientCars->resizeColumnsToContents();
-
+    if(model->query().isSelect()){
+        ui->tbl_clientCars->setModel(model);
+        ui->tbl_clientCars->resizeColumnsToContents();
+       // ui->tbl_clientCars->hideColumn(0);
+    }else{
+        QMessageBox::critical(this, "Erro!", model->query().lastError().text() + "class clientinfo.cpp loadCarsGrid() ");
+    }
 }
 
 void clientinfo::on_btn_addClientCarro_clicked()
@@ -141,16 +141,12 @@ void clientinfo::on_tbl_ClientServices_doubleClicked(const QModelIndex &index)
 {   //You come to this function from double clicking Services on the clientinfo Grid//
     //Bellow 2 lines will retrieve the column 0 (ServiceID)value from the Grid//
     const QAbstractItemModel * model = index.model();
+
     QVariant ServiceID = model->data(model->index(index.row(), 0, index.parent()), Qt::DisplayRole);
     QVariant ClientID = model->data(model->index(index.row(), 1, index.parent()), Qt::DisplayRole);
     QVariant CarID = model->data(model->index(index.row(), 2, index.parent()), Qt::DisplayRole);
 
-    qDebug() << "Service ID: " + ServiceID.toString();
-    qDebug() << "ClienteID" + ClientID.toString();
-    qDebug() << "CarID" + CarID.toString();
-
     addservice addservice;
-
     addservice.setServiceID(ServiceID.toString());
     addservice.setClientIdandCar(ClientID.toString(), CarID.toString());
 

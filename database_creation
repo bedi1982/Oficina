@@ -48,7 +48,8 @@ FOREIGN KEY(item_id) REFERENCES item(id) ON DELETE CASCADE ON UPDATE CASCADE
 CREATE TABLE ServicePartsUsed(
         ServicePartsUsed_id bigint PRIMARY KEY AUTO_INCREMENT,
         Used_On_Service_id bigint,
-        Part_id bigint
+        Part_id bigint,
+        Quantity int
 );
 
 CREATE TABLE ClientCar(

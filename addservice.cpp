@@ -5,6 +5,7 @@
 #include "QMessageBox"
 
 #include <QSqlTableModel>
+#include <QSqlQueryModel>
 #include "QSqlQuery"
 #include "QDebug"
 #include "QSqlError"
@@ -29,9 +30,7 @@ addservice::~addservice()
 
 bool addservice::verificaCamposEmBrancoNoForm()
 {
-    if (ui->txt_FullDescription->toPlainText() == ""
-            ||ui->line_ShortDescription->text() == ""
-            )
+    if (ui->txt_FullDescription->toPlainText() == "" || ui->line_ShortDescription->text() == "" )
     {
         ui->lbl_Feedback->setText("Erro: Todos os campos devem estar preenchidos!");
         QPixmap crying(":/emoticons/face-crying.png");
@@ -58,6 +57,7 @@ void addservice::toggleFieldsToUpdateMode()
 
     ui->tbl_PartsUsedInService->setEnabled(true);
     ui->btn_Add_PartsUsedInTheService->setEnabled(true);
+    ui->check_Pago->setEnabled(true);
 }
 
 void addservice::setServiceID(QString serviceid)
@@ -97,18 +97,16 @@ void addservice::on_btn_Salvar_clicked()
 {
     if(verificaCamposEmBrancoNoForm()){
         QSqlQuery query;
-        query.prepare("insert into Service (Service_Client_id, Service_Client_Carid, Service_Short_Description, Service_Description, Service_HandWorkCost)"
-                      "values (:Service_Client_id, :Service_Client_Carid, :Service_Short_Description, :Service_Description, :Service_WorkCost )");
+        query.prepare("insert into Service (Service_Client_id, Service_Client_Carid, Service_Short_Description, Service_Description)"
+                                   "values (:Service_Client_id, :Service_Client_Carid, :Service_Short_Description, :Service_Description )");
+
         query.bindValue(":Service_Client_id", clientid);
         query.bindValue(":Service_Client_Carid", CarID);
         query.bindValue(":Service_Short_Description", ui->line_ShortDescription->text());
         query.bindValue(":Service_Description", ui->txt_FullDescription->toPlainText());
-        query.bindValue(":Service_Total_Cost", ui->Spin_TotalserviceCost->text().toDouble());
-        query.bindValue(":Service_Parts_Cost", ui->Spin_PartsCost->text().toDouble());
-        query.bindValue(":Service_WorkCost", ui->Spin_HandWorkCost->text().toDouble());
 
         if (query.exec() == false){
-            QMessageBox::critical(this, "Erro!", query.lastError().text() + " class addservice.cpp65");
+            QMessageBox::critical(this, "Erro!", query.lastError().text() + " class addservice.cpp on_btn_Salvar_clicked() ");
         }else{
             ui->lbl_Feedback->setText("Serviço adicionado!");
             QPixmap cool(":/emoticons/face-cool.png");
@@ -122,20 +120,28 @@ void addservice::on_btn_Salvar_clicked()
 }
 
 void addservice::LoadPartsGrid(){
-        QSqlQueryModel *model;
-        model = new QSqlTableModel();
-        QString x = "select * from ServicePartsUsed spu join Service s where s.Service_id = spu.Used_On_Service_id and s.Service_Client_id = ";
-        x.append(clientid);
-        x.append(" and Service_Client_Carid = ");
-        x.append(CarID);
-        QMessageBox::information(this, "Sucesso!", x);
-        model->setQuery(x);
-}
+
+    QSqlQueryModel* model = new QSqlQueryModel;
+        model->setQuery("SELECT Part_Name AS Nome, "
+                        "Part_Description AS Descriçao , "
+                        "Part_Cost AS Custo, "
+                        "pu.Quantity AS Quantidade "
+                        "FROM Part p JOIN ServicePartsUsed pu "
+                        "ON pu.Part_id = p.Part_id "
+                        "AND pu.Used_On_Service_id =" + ServiceID);
+
+        if(model->query().isSelect()){
+            ui->tbl_PartsUsedInService->setModel(model);
+            ui->tbl_PartsUsedInService->resizeColumnsToContents();
+}}
 
 void addservice::on_btn_Add_PartsUsedInTheService_clicked()
 {
     partsSelectionFromList partsSelectionFromList;
     partsSelectionFromList.setServiceID(ServiceID);
+
+    QMessageBox::information(this, "peça adicionanda!", ServiceID);
+
     partsSelectionFromList.setModal(true);
     partsSelectionFromList.exec();
     LoadPartsGrid();

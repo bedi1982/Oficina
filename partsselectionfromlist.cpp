@@ -46,7 +46,6 @@ void partsSelectionFromList::on_line_NomeDaPeca_textChanged(const QString &userS
     }
 }
 
-
 void partsSelectionFromList::on_tbl_PartsList_doubleClicked(const QModelIndex &DoubleClickedCellValue)
 {
     //This extracts the first column value, which is the ServiceID//
@@ -54,12 +53,15 @@ void partsSelectionFromList::on_tbl_PartsList_doubleClicked(const QModelIndex &D
     QVariant partId = model->data(model->index(DoubleClickedCellValue.row(), 0, DoubleClickedCellValue.parent()), Qt::DisplayRole);
 
     QSqlQuery query;
-    query.prepare("insert into ServicePartsUsed (Used_On_Service_id, Part_id) values (:Used_On_Service_id, :Part_id)");
+    query.prepare("INSERT INTO ServicePartsUsed (Used_On_Service_id, Part_id) VALUES (:Used_On_Service_id, :Part_id)");
     query.bindValue(":Used_On_Service_id", serviceID);
     query.bindValue(":Part_id", partId.toString());
 
+    QMessageBox::information(this, "Servico!", serviceID);
+    QMessageBox::information(this, "Peca!", partId.toString());
+
     if (query.exec() == false){
-        QMessageBox::critical(this, "Erro!", query.lastError().text() + " class partsSelectionFromList.cpp49");
+        QMessageBox::critical(this, "Erro!", query.lastError().text() + " class partsSelectionFromList.cpp on_tbl_PartsList_doubleClicked()");
 }else{
         QMessageBox::information(this, "Sucesso!", "Peça adicionada ao serviço");
         close();
