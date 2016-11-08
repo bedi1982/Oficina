@@ -80,26 +80,7 @@ void clientinfo::loadServicesGrid()
                     "Service_created_at AS 'Criado em' "
                     "FROM Service s JOIN ClientCar cc "
                     "ON s.Service_Client_Carid = cc.ClientCar_id AND Service_Client_id = " + client_id);
-    /*
 
-
-    //model->setTable("Service");
-    //model->setFilter("Service_Client_id = " + client_id);
-    //model->select();
-    //model->setEditStrategy(QSqlTableModel::OnFieldChange);
-
-    model->setHeaderData(0, Qt::Horizontal, tr("Service ID")); //
-    model->setHeaderData(1, Qt::Horizontal, tr("Service Client ID"));
-    model->setHeaderData(2, Qt::Horizontal, tr("Service_Client_Carid")); //
-    model->setHeaderData(3, Qt::Horizontal, tr("Descrição"));
-    model->setHeaderData(4, Qt::Horizontal, tr("Descrição Completa")); //
-    model->setHeaderData(5, Qt::Horizontal, tr("Custo total do Serviço"));
-    model->setHeaderData(6, Qt::Horizontal, tr("Custo das peças usadas"));
-    model->setHeaderData(7, Qt::Horizontal, tr("Custo da Mão de Obra"));
-    model->setHeaderData(8, Qt::Horizontal, tr("Pago (Yes/No)"));
-    model->setHeaderData(9, Qt::Horizontal, tr("Atualizado em")); //
-    model->setHeaderData(10, Qt::Horizontal, tr("Feito em"));
-*/
     ui->tbl_ClientServices->setModel(model);
     ui->tbl_ClientServices->resizeColumnsToContents();
 }
