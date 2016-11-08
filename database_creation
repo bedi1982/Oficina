@@ -47,9 +47,8 @@ FOREIGN KEY(item_id) REFERENCES item(id) ON DELETE CASCADE ON UPDATE CASCADE
 
 CREATE TABLE ServicePartsUsed(
         ServicePartsUsed_id bigint PRIMARY KEY AUTO_INCREMENT,
-        Part_id bigint,
-        Parent_Service_id bigint,
-        FOREIGN KEY(Parent_Service_id) REFERENCES Service(Service_id) ON DELETE CASCADE ON UPDATE CASCADE
+        Used_On_Service_id bigint,
+        Part_id bigint
 );
 
 CREATE TABLE ClientCar(
@@ -60,26 +59,23 @@ CREATE TABLE ClientCar(
         ClientCar_BuiltYear int,
         ClientCar_Placa varchar(10),
         ClientCar_Color varchar(26),
-        Service_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-        Service_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        ClientCar_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+        ClientCar_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-insert into ClientCar (ClientCar_Client_id, ClientCar_Model, ClientCar_Description, ClientCar_BuiltYear, ClientCar_Placa, ClientCar_Color)
-values ( 5, "ClientCar_Model1", "ClientCar_Description", 1998, "ClientCar_Placa", "ClientCar_Cor1");
 
-insert into Orders (OwnerPerson, ProductList) values (5, "Pinga");
-select * from Service s join Clients c on s.id_Client = c.id_Client;
-*/
 
-----population-----
-Client:
-insert into Client (Client_Name, Client_Address, Client_City, Client_CPF, Client_RG) values ("Client_Name1", "Client_Address1", "Client_City1", "Client_CPF1", "Client_RG1");
-insert into Client (Client_Name, Client_Address, Client_City, Client_CPF, Client_RG) values ("Client_Name2", "Client_Address2", "Client_City2", "Client_CPF1", "Client_RG2");
-insert into Client (Client_Name, Client_Address, Client_City, Client_CPF, Client_RG) values ("Client_Name3", "Client_Address3", "Client_City3", "Client_CPF1", "Client_RG3");
-insert into Client (Client_Name, Client_Address, Client_City, Client_CPF, Client_RG) values ("Client_Name4", "Client_Address4", "Client_City4", "Client_CPF1", "Client_RG4");
-insert into Client (Client_Name, Client_Address, Client_City, Client_CPF, Client_RG) values ("Client_Name5", "Client_Address5", "Client_City5", "Client_CPF1", "Client_RG5");
-insert into Client (Client_Name, Client_Address, Client_City, Client_CPF, Client_RG) values ("Client_Name6", "Client_Address6", "Client_City6", "Client_CPF1", "Client_RG6");
-insert into Client (Client_Name, Client_Address, Client_City, Client_CPF, Client_RG) values ("Client_Name7", "Client_Address7", "Client_City7", "Client_CPF1", "Client_RG7");
-insert into Client (Client_Name, Client_Address, Client_City, Client_CPF, Client_RG) values ("Client_Name8", "Client_Address8", "Client_City8", "Client_CPF1", "Client_RG8");
-insert into Client (Client_Name, Client_Address, Client_City, Client_CPF, Client_RG) values ("Client_Name9", "Client_Address9", "Client_City9", "Client_CPF1", "Client_RG9");
-insert into Client (Client_Name, Client_Address, Client_City, Client_CPF, Client_RG) values ("Client_Name10", "Client_Address10", "Client_City10", "Client_CPF1", "Client_RG10");
+
+
+
+SELECT
+Service_Client_id AS 'Service Client ID',
+Service_Client_Carid AS ServiceCarroID,
+Service_Short_Description AS Descrição,
+Service_Total_Cost AS 'Custo Total',
+Service_Parts_Cost AS 'Custo das Peças',
+Service_HandWorkCost AS 'Custo Mão de Obra',
+Service_Paid AS Pago,
+Service_created_at AS 'Criado em',
+FROM Service s JOIN ClientCar cc
+ON s.Service_Client_Carid = cc.ClientCar_id AND Service_Client_id = 15;

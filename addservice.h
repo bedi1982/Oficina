@@ -17,13 +17,17 @@ public:
     void setClientIdandCar(QString client, QString car);
     void setServiceID(QString serviceid);
     void toggleFieldsToUpdateMode();
+    void LoadPartsGrid();
 
 private slots:
     //void on_btn_Cadastrar_clicked();
     void on_btn_Sair_clicked();
     bool verificaCamposEmBrancoNoForm();
     void on_txt_FullDescription_textChanged();
-    void on_btn_Cadastrar_clicked();
+
+    void on_btn_Salvar_clicked();
+
+    void on_btn_Add_PartsUsedInTheService_clicked();
 
 private:
     Ui::addservice *ui;

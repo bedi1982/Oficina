@@ -22,6 +22,9 @@
      <height>351</height>
     </rect>
    </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOn</enum>
+   </property>
   </widget>
   <widget class="QLineEdit" name="line_NomeDaPeca">
    <property name="geometry">

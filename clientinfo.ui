@@ -34,10 +34,10 @@
   <widget class="QLabel" name="lbl_ClientInfo">
    <property name="geometry">
     <rect>
-     <x>850</x>
-     <y>10</y>
+     <x>860</x>
+     <y>0</y>
      <width>151</width>
-     <height>161</height>
+     <height>131</height>
     </rect>
    </property>
    <property name="text">
@@ -88,7 +88,7 @@
   <widget class="QLabel" name="lbl_NewCarIcon">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>20</x>
      <y>130</y>
      <width>48</width>
      <height>48</height>
@@ -113,14 +113,19 @@
   <widget class="QLabel" name="lbl_ClientCars">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>90</x>
      <y>160</y>
-     <width>691</width>
-     <height>18</height>
+     <width>491</width>
+     <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="text">
-    <string>          Lista de carros do cliente. Duplo clique num carro abaixo para fazer um novo serviço no Carro selecionado.</string>
+    <string>Lista de carros do cliente. Duplo clique no Carro para prestar um novo serviço:</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -132,8 +137,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>115</x>
-     <y>84</y>
+     <x>110</x>
+     <y>88</y>
      <width>211</width>
      <height>32</height>
     </rect>
@@ -154,8 +159,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>521</x>
-     <y>46</y>
+     <x>520</x>
+     <y>50</y>
      <width>240</width>
      <height>32</height>
     </rect>
@@ -173,8 +178,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>115</x>
-     <y>46</y>
+     <x>110</x>
+     <y>50</y>
      <width>400</width>
      <height>32</height>
     </rect>
@@ -195,8 +200,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>115</x>
-     <y>8</y>
+     <x>110</x>
+     <y>12</y>
      <width>400</width>
      <height>32</height>
     </rect>
@@ -245,87 +250,12 @@
     <string>Editar Cliente</string>
    </property>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>46</x>
-     <y>7</y>
-     <width>62</width>
-     <height>111</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QLabel" name="lbl_clientName">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>32</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>60</width>
-        <height>48</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Nome</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="lbl_clientAddress">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>60</width>
-        <height>48</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Endereço   </string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="lbl_clientPhone">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>60</width>
-        <height>48</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Telefone</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QLabel" name="lbl_ClientServicesHistoric">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>80</x>
      <y>420</y>
-     <width>671</width>
+     <width>581</width>
      <height>18</height>
     </rect>
    </property>
@@ -335,8 +265,13 @@
      <height>0</height>
     </size>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="text">
-    <string>          Resumo de serviços prestados para este cliente.  Duplo clique abaixo abre detalhes do serviço prestado.</string>
+    <string>Resumo de serviços prestados para este cliente. Duplo clique para ver os detalhes do serviço:</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -360,7 +295,7 @@
    <property name="minimumSize">
     <size>
      <width>0</width>
-     <height>0</height>
+     <height>200</height>
     </size>
    </property>
   </widget>
@@ -389,6 +324,122 @@
     <string/>
    </property>
   </widget>
+  <widget class="QLineEdit" name="line_ClientID">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>90</y>
+     <width>91</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>340</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="maxLength">
+    <number>34</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_clientAddress_2">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>80</y>
+     <width>60</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>60</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Telefone</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>100</y>
+     <width>81</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>ID do Cliente</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_clientAddress">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>40</y>
+     <width>60</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>60</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Endereço   </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_clientName">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>20</y>
+     <width>60</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>32</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>60</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>Nome</string>
+   </property>
+  </widget>
   <zorder>btn_addClientCarro</zorder>
   <zorder>lbl_NewCarIcon</zorder>
   <zorder>lbl_ClientCars</zorder>
@@ -403,6 +454,9 @@
   <zorder>lbl_ClientServicesHistoric</zorder>
   <zorder>tbl_ClientServices</zorder>
   <zorder>lbl_ServiceIcon</zorder>
+  <zorder>line_ClientID</zorder>
+  <zorder>lbl_clientAddress_2</zorder>
+  <zorder>label</zorder>
  </widget>
  <tabstops>
   <tabstop>btn_addClientCarro</tabstop>

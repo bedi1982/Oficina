@@ -20,6 +20,8 @@ public:
 private slots:
     void on_line_NomeDaPeca_textChanged(const QString &arg1);
 
+    void on_tbl_PartsList_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::partsSelectionFromList *ui;
 };

@@ -9,7 +9,6 @@
 
 #include <QSqlTableModel>
 #include "QSqlRelationalTableModel"
-#include "QSqlQueryModel"
 #include "QSqlQuery"
 #include "QMessageBox"
 
@@ -35,7 +34,9 @@ MainWindow::MainWindow(QWidget *parent) :
     }else{
         QPixmap red(":/emoticons/emblem-important.png");
         ui->lbl_emoticonStatusConexao->setPixmap(red);
-        ui->lbl_bancodeDados->setText("Banco de dados: DOWN");
+        ui->lbl_bancodeDados->setText("Banco de dados: OFF ");
+        ui->line_RGouCPFouNome->setEnabled(false);
+        ui->menuBar->hide();
     }
 }
 
@@ -58,11 +59,11 @@ void MainWindow::on_actionAddPeca_triggered()
     addpart.exec();
 }
 
-void MainWindow::on_tbl_historicoServicos_doubleClicked(const QModelIndex &index)
+void MainWindow::on_tbl_historicoServicos_doubleClicked(const QModelIndex &selectedClientinTheGrid)
 {
     //Bellow 2 list will retrieve the column 0 value, which is the clientid//
-    const QAbstractItemModel * model = index.model();
-    QVariant clientID = model->data(model->index(index.row(), 0, index.parent()), Qt::DisplayRole);
+    const QAbstractItemModel * model = selectedClientinTheGrid.model();
+    QVariant clientID = model->data(model->index(selectedClientinTheGrid.row(), 0, selectedClientinTheGrid.parent()), Qt::DisplayRole);
 
     clientinfo clientinfo;
     clientinfo.setClient_Id(clientID.toString());
@@ -95,10 +96,31 @@ void MainWindow::on_line_RGouCPFouNome_textChanged(const QString &userSearchFfil
             model->setFilter(" Client_CPF like '%" + userSearchFfilter + "%' OR Client_Name like '%" + userSearchFfilter + "%' OR Client_RG like '%" + userSearchFfilter + "%'");
         }
         model->select();
-        model->setEditStrategy(QSqlTableModel::OnFieldChange);
+        model->setEditStrategy(QSqlTableModel::OnManualSubmit);
+        //model->removeColumn(0); //ID
+        model->removeColumn(6); //ID
+        //model->removeColumn(9); //ID
+        //model->setHeaderData(0, Qt::Horizontal, tr("Id"));
+        model->setHeaderData(0, Qt::Horizontal, tr("ID"));
+        model->setHeaderData(1, Qt::Horizontal, tr("Nome"));
+        model->setHeaderData(2, Qt::Horizontal, tr("Endereço"));
+        model->setHeaderData(3, Qt::Horizontal, tr("Cidade"));
+        model->setHeaderData(4, Qt::Horizontal, tr("CPF"));
+        model->setHeaderData(5, Qt::Horizontal, tr("RG"));
+        model->setHeaderData(6, Qt::Horizontal, tr("Telefone"));
+        model->setHeaderData(7, Qt::Horizontal, tr("Cliente desde"));
+
+        //xnx to make columns ajust to cell content//
+        //tip from here: http://stackoverflow.com/questions/3433664/how-to-make-sure-columns-in-qtableview-are-resized-to-the-maximum//
+        ui->tbl_historicoServicos->setVisible(false);
+        ui->tbl_historicoServicos->resizeColumnsToContents();
+        ui->tbl_historicoServicos->setVisible(true);
+
+        //ui->tbl_historicoServicos->resizeRowsToContents();
         ui->tbl_historicoServicos->setModel(model);
     }else{
         model->clear();
+
         ui->tbl_historicoServicos->setModel(model);
     }
 }

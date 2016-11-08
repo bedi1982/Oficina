@@ -60,7 +60,7 @@ void addpart::on_btn_Cadastrar_clicked()
             QMessageBox::critical(this, "Erro!", "Esta peça não foi adicionado!!(class addpart.cpp60.");
         }else{
         ui->lbl_Feedback->setText(ui->line_Nome->text() + " adicionado ao estoque!");
-        QMessageBox::information(this, "Sucesso!", "Carro adicionado ao registro do Cliente.");
+        QMessageBox::information(this, "Sucesso!", "Peça adicionada no estoque.");
         }
     }
 }
