@@ -57,9 +57,6 @@ void partsSelectionFromList::on_tbl_PartsList_doubleClicked(const QModelIndex &D
     query.bindValue(":Used_On_Service_id", serviceID);
     query.bindValue(":Part_id", partId.toString());
 
-    QMessageBox::information(this, "Servico!", serviceID);
-    QMessageBox::information(this, "Peca!", partId.toString());
-
     if (query.exec() == false){
         QMessageBox::critical(this, "Erro!", query.lastError().text() + " class partsSelectionFromList.cpp on_tbl_PartsList_doubleClicked()");
 }else{
@@ -67,4 +64,3 @@ void partsSelectionFromList::on_tbl_PartsList_doubleClicked(const QModelIndex &D
         close();
     }
 }
-

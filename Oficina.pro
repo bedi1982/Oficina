@@ -22,9 +22,10 @@ SOURCES += main.cpp\
     addclientcar.cpp \
     about.cpp \
     clientinfo.cpp \
-    clientbundle.cpp \
-    partsusedonservice.cpp \
-    partsselectionfromlist.cpp
+    partsselectionfromlist.cpp \
+    editclient.cpp \
+    stockcontrol.cpp \
+    setworkhourcost.cpp
 
 HEADERS  += mainwindow.h \
     addpart.h \
@@ -33,10 +34,11 @@ HEADERS  += mainwindow.h \
     addclientcar.h \
     about.h \
     clientinfo.h \
-    clientbundle.h \
     database.h \
-    partsusedonservice.h \
-    partsselectionfromlist.h
+    partsselectionfromlist.h \
+    editclient.h \
+    stockcontrol.h \
+    setworkhourcost.h
 
 FORMS    += mainwindow.ui \
     addpart.ui \
@@ -45,8 +47,10 @@ FORMS    += mainwindow.ui \
     addclientcar.ui \
     about.ui \
     clientinfo.ui \
-    partsusedonservice.ui \
-    partsselectionfromlist.ui
+    partsselectionfromlist.ui \
+    editclient.ui \
+    stockcontrol.ui \
+    setworkhourcost.ui
 
 DISTFILES += \
     database_creation \
@@ -72,7 +76,8 @@ DISTFILES += \
     resources/face-tired.png \
     resources/face-uncertain.png \
     resources/face-wink.png \
-    resources/face-worried.png
+    resources/face-worried.png \
+    resources/DB11-model2.png
 
 RESOURCES += \
     resources/images.qrc

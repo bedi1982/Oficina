@@ -65,6 +65,12 @@
      <height>45345</height>
     </size>
    </property>
+   <property name="toolTip">
+    <string>Duplo clique aqui para criar uma ordem de serviço nesse carro.</string>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
   </widget>
   <widget class="QPushButton" name="btn_addClientCarro">
    <property name="geometry">
@@ -298,6 +304,12 @@
      <height>200</height>
     </size>
    </property>
+   <property name="toolTip">
+    <string>Duplo clique para adicionar detalhes no serviço, por exemplo as peças que foram usadas.</string>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
   </widget>
   <widget class="QLabel" name="lbl_ServiceIcon">
    <property name="geometry">
@@ -440,6 +452,8 @@
     <string>Nome</string>
    </property>
   </widget>
+  <zorder>lbl_clientAddress</zorder>
+  <zorder>lbl_clientName</zorder>
   <zorder>btn_addClientCarro</zorder>
   <zorder>lbl_NewCarIcon</zorder>
   <zorder>lbl_ClientCars</zorder>
@@ -448,7 +462,6 @@
   <zorder>line_Address</zorder>
   <zorder>line_Name</zorder>
   <zorder>btn_atualizarCliente</zorder>
-  <zorder>layoutWidget</zorder>
   <zorder>tbl_clientCars</zorder>
   <zorder>lbl_ClientInfo</zorder>
   <zorder>lbl_ClientServicesHistoric</zorder>
@@ -459,8 +472,15 @@
   <zorder>label</zorder>
  </widget>
  <tabstops>
+  <tabstop>btn_atualizarCliente</tabstop>
   <tabstop>btn_addClientCarro</tabstop>
   <tabstop>tbl_clientCars</tabstop>
+  <tabstop>tbl_ClientServices</tabstop>
+  <tabstop>line_Name</tabstop>
+  <tabstop>line_ClientCity</tabstop>
+  <tabstop>line_ClientID</tabstop>
+  <tabstop>line_Phone</tabstop>
+  <tabstop>line_Address</tabstop>
  </tabstops>
  <resources/>
  <connections/>

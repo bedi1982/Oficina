@@ -24,6 +24,8 @@ private slots:
 
     void on_tbl_ClientServices_doubleClicked(const QModelIndex &index);
 
+    void on_btn_atualizarCliente_clicked();
+
 private:
     Ui::clientinfo *ui;
     void loadServicesGrid();

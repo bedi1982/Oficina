@@ -61,6 +61,7 @@ void addpart::on_btn_Cadastrar_clicked()
         }else{
         ui->lbl_Feedback->setText(ui->line_Nome->text() + " adicionado ao estoque!");
         QMessageBox::information(this, "Sucesso!", "Peça adicionada no estoque.");
+        close();
         }
     }
 }

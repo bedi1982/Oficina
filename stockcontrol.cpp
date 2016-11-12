@@ -1,0 +1,116 @@
+#include "stockcontrol.h"
+#include "ui_stockcontrol.h"
+#include "QSqlTableModel"
+#include "QAbstractItemModel"
+#include "QMessageBox"
+#include "QSqlQuery"
+#include "QSqlError"
+#include "QDebug"
+
+QString partID;
+
+StockControl::StockControl(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::StockControl)
+{
+    ui->setupUi(this);
+    QPixmap cool(":/emoticons/face-cool.png");
+    ui->lbl_Emoticon->setPixmap(cool);
+    ui->line_NomeDaPeca->setFocus();
+}
+
+StockControl::~StockControl()
+{
+    delete ui;
+}
+
+void StockControl::on_line_NomeDaPeca_textChanged(const QString &arg1)
+{
+    QSqlTableModel* model = new QSqlTableModel;
+
+    ui->btn_save->setEnabled(true);
+    ui->txt_description->setEnabled(true);
+
+    if(!(arg1.isEmpty()))
+    {
+        model->setTable("Part");
+
+        if(!(arg1 == "*")){
+            model->setFilter("Part_Name like '%" + arg1 + "%'");
+        }
+
+        model->select();
+        model->setEditStrategy(QSqlTableModel::OnFieldChange);
+
+        model->setHeaderData(0, Qt::Horizontal, tr("ID"));
+        model->setHeaderData(1, Qt::Horizontal, tr("Nome"));
+        model->setHeaderData(2, Qt::Horizontal, tr("Descrição"));
+        model->setHeaderData(3, Qt::Horizontal, tr("Custo"));
+        model->setHeaderData(4, Qt::Horizontal, tr("Em Estoque"));
+        model->setHeaderData(5, Qt::Horizontal, tr("Última Atualização"));
+        model->setHeaderData(6, Qt::Horizontal, tr("Adicionada em"));
+
+        ui->tbl_parts->setModel(model);
+        ui->tbl_parts->resizeColumnsToContents();
+        ui->tbl_parts->hideColumn(2);
+    }else{
+        model->clear();
+        ui->tbl_parts->setModel(model);
+        ui->tbl_parts->resizeColumnsToContents();
+        ui->tbl_parts->hideColumn(2);
+    }
+}
+
+void StockControl::on_tbl_parts_clicked(const QModelIndex &selectedClientinTheGrid)
+{
+    const QAbstractItemModel * model = selectedClientinTheGrid.model();
+    QVariant part_index = model->data(model->index(selectedClientinTheGrid.row(), 0, selectedClientinTheGrid.parent()), Qt::DisplayRole);
+    partID = part_index.toString();
+
+    QVariant partdescription = model->data(model->index(selectedClientinTheGrid.row(), 2, selectedClientinTheGrid.parent()), Qt::DisplayRole);
+
+    ui->txt_description->setText(partdescription.toString());
+}
+
+void StockControl::on_btn_save_clicked()
+{
+    QSqlQuery UpdatePartDescription;
+    UpdatePartDescription.prepare("Update Part set Part_Description = :Part_Description where Part_id = :partID");
+
+    UpdatePartDescription.bindValue(":Part_Description", ui->txt_description->toPlainText());
+    UpdatePartDescription.bindValue(":partID", partID);
+
+    if (!(UpdatePartDescription.exec())){
+        QMessageBox::critical(this, "Erro!", UpdatePartDescription.lastError().text() + "class StockControl.cpp  on_tbl_parts_clicked()");
+    }else{
+        QMessageBox::critical(this, "Sucesso!", "Descrição da peça atualizada.");
+        on_line_NomeDaPeca_textChanged(ui->line_NomeDaPeca->text());
+    }
+}
+
+void StockControl::on_btn_exit_clicked()
+{
+    close();
+}
+
+void StockControl::on_txt_description_textChanged()
+{
+    if (ui->txt_description->toPlainText().length() > 250)
+    {
+        QString txt_description = ui->txt_description->toPlainText();
+        txt_description.chop(txt_description.length() - 250); // Cut off at 100 characters
+        ui->txt_description->setPlainText(txt_description); // Reset text
+
+        // This code just resets the cursor back to the end position
+        // If you don't use this, it moves back to the beginning.
+        // This is helpful for really long text edits where you might
+        // lose your place.
+        QTextCursor cursor = ui->txt_description->textCursor();
+        cursor.setPosition(ui->txt_description->document()->characterCount() - 1);
+        ui->txt_description->setTextCursor(cursor);
+
+        // This is your "action" to alert the user. I'd suggest something more
+        // subtle though, or just not doing anything at all.
+        QMessageBox::critical(this, "Erro!", "Mantenha a descrição da peça menor do que 250 letras.");
+    }
+}

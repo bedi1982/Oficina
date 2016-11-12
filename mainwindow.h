@@ -23,6 +23,10 @@ private slots:
     void on_actionSobreOficina_triggered();
     void on_line_RGouCPFouNome_textChanged(const QString &arg1);
 
+    void on_actionEstoque_triggered();
+
+    void on_actionAlterar_Custo_da_Hora_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

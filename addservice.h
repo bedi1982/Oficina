@@ -17,7 +17,10 @@ public:
     void setClientIdandCar(QString client, QString car);
     void setServiceID(QString serviceid);
     void toggleFieldsToUpdateMode();
-    void LoadPartsGrid();
+    void LoadPartsAndServiceCostsGrid();
+    void SumCosts();
+    void LoadServiceTitleandDetails();
+    void EnableDescriptionUpdate();
 
 private slots:
     //void on_btn_Cadastrar_clicked();
@@ -28,6 +31,10 @@ private slots:
     void on_btn_Salvar_clicked();
 
     void on_btn_Add_PartsUsedInTheService_clicked();
+
+    void on_btn_save_hoursWorked_clicked();
+
+    void on_btn_atualizarDescricaoServico_clicked();
 
 private:
     Ui::addservice *ui;

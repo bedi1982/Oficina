@@ -10,6 +10,7 @@
 #include "QSqlQuery"
 #include "QMessageBox"
 #include "QSqlError"
+#include "editclient.h"
 
 
 QString client_id;
@@ -75,8 +76,8 @@ void clientinfo::loadServicesGrid()
                     "ClientCar_Placa AS Placa, "
                     "Service_Short_Description AS Serviço, "
                     "Service_Parts_Cost AS 'Custo das Peças', "
-                    "Service_HandWorkCost AS 'Custo Mão de Obra', "
-                    "Service_Total_Cost AS 'Custo Total', "
+                    "Service_Hours_Duration AS 'Horas Trabalhadas', "
+                    "Service_Hour_Cost AS 'Custo p/ Hora', "
                     "Service_Paid AS Pago, "
                     "Service_created_at AS 'Executado em' "
                     "FROM Service s JOIN ClientCar cc "
@@ -149,15 +150,20 @@ void clientinfo::on_tbl_ClientServices_doubleClicked(const QModelIndex &index)
     addservice addservice;
     addservice.setServiceID(ServiceID.toString());
     addservice.setClientIdandCar(ClientID.toString(), CarID.toString());
-
     addservice.toggleFieldsToUpdateMode();
+    addservice.LoadPartsAndServiceCostsGrid();
+    addservice.LoadServiceTitleandDetails();
+
+    addservice.setModal(true);
     addservice.exec();
     loadServicesGrid();
+}
 
-    //Attention here, we are loading the object grid even before showing the form//
-    //realizedServiceInfo.loadAll();
-    //Grid Populated//
-
-    //realizedServiceInfo.setModal(true);
-    //realizedServiceInfo.exec();
+void clientinfo::on_btn_atualizarCliente_clicked()
+{
+    EditClient EditClient;
+    EditClient.LoadEditableGrid(client_id);
+    EditClient.setModal(true);
+    EditClient.exec();
+    loadClientInfo_to_TextBoxes();
 }

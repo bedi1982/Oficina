@@ -6,6 +6,8 @@
 #include "addservice.h"
 #include "clientinfo.h"
 #include "about.h"
+#include "stockcontrol.h"
+#include "setworkhourcost.h"
 
 #include <QSqlTableModel>
 #include "QSqlRelationalTableModel"
@@ -21,10 +23,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    QPixmap tux(":/emoticons/tux.png");
-    ui->lbl_AppIcon->setPixmap(tux);
     ui->line_RGouCPFouNome->setFocus();
+
+    QPixmap sportCar(":/emoticons/sport-car.png");
+    ui->lbl_BigCarIcon->setPixmap(sportCar);
+
 
     Database db;
     if(db.conectar()){
@@ -97,10 +100,6 @@ void MainWindow::on_line_RGouCPFouNome_textChanged(const QString &userSearchFfil
         }
         model->select();
         model->setEditStrategy(QSqlTableModel::OnManualSubmit);
-        //model->removeColumn(0); //ID
-        model->removeColumn(6); //ID
-        //model->removeColumn(9); //ID
-        //model->setHeaderData(0, Qt::Horizontal, tr("Id"));
         model->setHeaderData(0, Qt::Horizontal, tr("ID"));
         model->setHeaderData(1, Qt::Horizontal, tr("Nome"));
         model->setHeaderData(2, Qt::Horizontal, tr("Endereço"));
@@ -108,19 +107,36 @@ void MainWindow::on_line_RGouCPFouNome_textChanged(const QString &userSearchFfil
         model->setHeaderData(4, Qt::Horizontal, tr("CPF"));
         model->setHeaderData(5, Qt::Horizontal, tr("RG"));
         model->setHeaderData(6, Qt::Horizontal, tr("Telefone"));
-        model->setHeaderData(7, Qt::Horizontal, tr("Cliente desde"));
+        model->setHeaderData(7, Qt::Horizontal, tr("Atualizado em"));
+        model->setHeaderData(8, Qt::Horizontal, tr("Criado em"));
 
         //xnx to make columns ajust to cell content//
         //tip from here: http://stackoverflow.com/questions/3433664/how-to-make-sure-columns-in-qtableview-are-resized-to-the-maximum//
-        ui->tbl_historicoServicos->setVisible(false);
-        ui->tbl_historicoServicos->resizeColumnsToContents();
-        ui->tbl_historicoServicos->setVisible(true);
-
+        //ui->tbl_historicoServicos->setVisible(false);
+        //ui->tbl_historicoServicos->setVisible(true);
         //ui->tbl_historicoServicos->resizeRowsToContents();
         ui->tbl_historicoServicos->setModel(model);
+        ui->tbl_historicoServicos->hideColumn(2);
+        ui->tbl_historicoServicos->resizeColumnsToContents();
     }else{
         model->clear();
 
         ui->tbl_historicoServicos->setModel(model);
+        ui->tbl_historicoServicos->resizeColumnsToContents();
     }
+}
+
+void MainWindow::on_actionEstoque_triggered()
+{
+    StockControl StockControl;
+    StockControl.setModal(true);
+    StockControl.exec();
+}
+
+void MainWindow::on_actionAlterar_Custo_da_Hora_triggered()
+{
+    SetWorkHourCost SetWorkHourCost;
+    SetWorkHourCost.setModal(true);
+    SetWorkHourCost.SetNewCost();
+    SetWorkHourCost.exec();
 }

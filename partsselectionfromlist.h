@@ -15,6 +15,7 @@ public:
     explicit partsSelectionFromList(QWidget *parent = 0);
     ~partsSelectionFromList();
 
+
     void setServiceID(QString serviceid);
 
 private slots:

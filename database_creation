@@ -29,21 +29,18 @@ CREATE TABLE Part (
 CREATE TABLE Service(
         Service_id bigint PRIMARY KEY AUTO_INCREMENT,
         Service_Client_id bigint,
-        Service_Client_Carid bi gint,
+        Service_Client_Carid bigint,
         Service_Short_Description varchar(70),
         Service_Description varchar(1000),
-        Service_Total_Cost Double(19,2),
         Service_Parts_Cost Double(19,2),
-        Service_HandWorkCost Double(19,2),
+        Service_Hours_Duration Double(19,2),
+        Service_Hour_Cost Double(19,2),
         Service_Paid boolean not null default 0,
         Service_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         Service_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE sale
-(
-sale_id INT(2) NOT NULL AUTO_INCREMENT,
-FOREIGN KEY(item_id) REFERENCES item(id) ON DELETE CASCADE ON UPDATE CASCADE
+
 
 CREATE TABLE ServicePartsUsed(
         ServicePartsUsed_id bigint PRIMARY KEY AUTO_INCREMENT,
@@ -64,10 +61,11 @@ CREATE TABLE ClientCar(
         ClientCar_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-
-
-
-
+CREATE TABLE HourCost(
+        HourCost_id bigint PRIMARY KEY AUTO_INCREMENT,
+        HourCost Double,
+        HourCost_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
 
 SELECT
 Service_Client_id AS 'Service Client ID',
