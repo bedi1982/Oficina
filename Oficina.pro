@@ -25,7 +25,9 @@ SOURCES += main.cpp\
     partsselectionfromlist.cpp \
     editclient.cpp \
     stockcontrol.cpp \
-    setworkhourcost.cpp
+    setworkhourcost.cpp \
+    createservicedescription.cpp \
+    updatedservicedescription.cpp
 
 HEADERS  += mainwindow.h \
     addpart.h \
@@ -38,7 +40,9 @@ HEADERS  += mainwindow.h \
     partsselectionfromlist.h \
     editclient.h \
     stockcontrol.h \
-    setworkhourcost.h
+    setworkhourcost.h \
+    createservicedescription.h \
+    updatedservicedescription.h
 
 FORMS    += mainwindow.ui \
     addpart.ui \
@@ -50,7 +54,9 @@ FORMS    += mainwindow.ui \
     partsselectionfromlist.ui \
     editclient.ui \
     stockcontrol.ui \
-    setworkhourcost.ui
+    setworkhourcost.ui \
+    createservicedescription.ui \
+    updatedservicedescription.ui
 
 DISTFILES += \
     database_creation \

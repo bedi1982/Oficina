@@ -15,10 +15,15 @@ public:
     explicit addclientcar(QWidget *parent = 0);
     ~addclientcar();
     void addClientInfoToForm(QString);
-    void Setclient(QString);
+    //void Setclient(QString);
     void addCar(QString);
     bool verificaCamposEmBrancoNoForm();
     void checkCarDescriptionSize();
+
+    QString client;
+
+    QString getClient() const;
+    void setClient(const QString &value);
 
 private slots:
     void on_btn_Add_clicked();

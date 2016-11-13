@@ -7,7 +7,6 @@
 #include "QDebug"
 #include "QSqlError"
 
-QString serviceID;
 
 partsSelectionFromList::partsSelectionFromList(QWidget *parent) :
     QDialog(parent),
@@ -19,6 +18,11 @@ partsSelectionFromList::partsSelectionFromList(QWidget *parent) :
 partsSelectionFromList::~partsSelectionFromList()
 {
     delete ui;
+}
+
+QString partsSelectionFromList::getServiceID() const
+{
+    return serviceID;
 }
 
 void partsSelectionFromList::setServiceID(QString serviceid)

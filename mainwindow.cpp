@@ -69,7 +69,7 @@ void MainWindow::on_tbl_historicoServicos_doubleClicked(const QModelIndex &selec
     QVariant clientID = model->data(model->index(selectedClientinTheGrid.row(), 0, selectedClientinTheGrid.parent()), Qt::DisplayRole);
 
     clientinfo clientinfo;
-    clientinfo.setClient_Id(clientID.toString());
+    clientinfo.setClient_id(clientID.toString());
     clientinfo.loadAll();
     clientinfo.setModal(true);
     clientinfo.exec();
@@ -110,17 +110,11 @@ void MainWindow::on_line_RGouCPFouNome_textChanged(const QString &userSearchFfil
         model->setHeaderData(7, Qt::Horizontal, tr("Atualizado em"));
         model->setHeaderData(8, Qt::Horizontal, tr("Criado em"));
 
-        //xnx to make columns ajust to cell content//
-        //tip from here: http://stackoverflow.com/questions/3433664/how-to-make-sure-columns-in-qtableview-are-resized-to-the-maximum//
-        //ui->tbl_historicoServicos->setVisible(false);
-        //ui->tbl_historicoServicos->setVisible(true);
-        //ui->tbl_historicoServicos->resizeRowsToContents();
         ui->tbl_historicoServicos->setModel(model);
         ui->tbl_historicoServicos->hideColumn(2);
         ui->tbl_historicoServicos->resizeColumnsToContents();
     }else{
         model->clear();
-
         ui->tbl_historicoServicos->setModel(model);
         ui->tbl_historicoServicos->resizeColumnsToContents();
     }

@@ -15,8 +15,11 @@ public:
     explicit partsSelectionFromList(QWidget *parent = 0);
     ~partsSelectionFromList();
 
+    QString serviceID;
 
     void setServiceID(QString serviceid);
+
+    QString getServiceID() const;
 
 private slots:
     void on_line_NomeDaPeca_textChanged(const QString &arg1);

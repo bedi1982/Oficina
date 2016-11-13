@@ -14,24 +14,28 @@ class addservice : public QDialog
 public:
     explicit addservice(QWidget *parent = 0);
     ~addservice();
-    void setClientIdandCar(QString client, QString car);
-    void setServiceID(QString serviceid);
-    void toggleFieldsToUpdateMode();
+
     void LoadPartsAndServiceCostsGrid();
     void SumCosts();
-    void LoadServiceTitleandDetails();
     void EnableDescriptionUpdate();
 
+    QString clientid;
+    QString CarID;
+    QString ServiceID;
+
+
+    QString getClientid() const;
+    void setClientid(const QString &value);
+
+    QString getCarID() const;
+    void setCarID(const QString &value);
+
+    QString getServiceID() const;
+    void setServiceID(const QString &value);
+
 private slots:
-    //void on_btn_Cadastrar_clicked();
     void on_btn_Sair_clicked();
-    bool verificaCamposEmBrancoNoForm();
-    void on_txt_FullDescription_textChanged();
-
-    void on_btn_Salvar_clicked();
-
     void on_btn_Add_PartsUsedInTheService_clicked();
-
     void on_btn_save_hoursWorked_clicked();
 
     void on_btn_atualizarDescricaoServico_clicked();

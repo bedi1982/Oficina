@@ -7,8 +7,6 @@
 #include "QSqlError"
 #include "QDebug"
 
-QString partID;
-
 StockControl::StockControl(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::StockControl)
@@ -22,6 +20,16 @@ StockControl::StockControl(QWidget *parent) :
 StockControl::~StockControl()
 {
     delete ui;
+}
+
+QString StockControl::getPartID() const
+{
+    return partID;
+}
+
+void StockControl::setPartID(const QString &value)
+{
+    partID = value;
 }
 
 void StockControl::on_line_NomeDaPeca_textChanged(const QString &arg1)

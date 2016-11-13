@@ -6,9 +6,6 @@
 #include "clientinfo.h"
 #include "QMessageBox"
 
-
-QString client;
-
 addclientcar::addclientcar(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::addclientcar)
@@ -22,10 +19,6 @@ addclientcar::addclientcar(QWidget *parent) :
 addclientcar::~addclientcar()
 {
     delete ui;
-}
-
-void addclientcar::Setclient(QString client_id){
-    client = client_id;
 }
 
 bool addclientcar::verificaCamposEmBrancoNoForm()
@@ -112,6 +105,16 @@ void addclientcar::checkCarDescriptionSize(){
                               "Erro!",
                               "Mantenha a descrição menor do que 300 letras.");
     }
+}
+
+QString addclientcar::getClient() const
+{
+    return client;
+}
+
+void addclientcar::setClient(const QString &value)
+{
+    client = value;
 }
 //Check car description size//
 

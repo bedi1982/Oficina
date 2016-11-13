@@ -14,9 +14,13 @@ class clientinfo : public QDialog
 public:
     explicit clientinfo(QWidget *parent = 0);
     ~clientinfo();
-    void setClient_Id(QString);
     void loadAll();
     void loadCarsGrid();
+
+    QString client_id;
+
+    QString getClient_id() const;
+    void setClient_id(const QString &value);
 
 private slots:
     void on_btn_addClientCarro_clicked();

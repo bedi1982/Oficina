@@ -14,6 +14,11 @@ class StockControl : public QDialog
 public:
     explicit StockControl(QWidget *parent = 0);
     ~StockControl();
+    QString partID;
+
+
+    QString getPartID() const;
+    void setPartID(const QString &value);
 
 private slots:
     void on_line_NomeDaPeca_textChanged(const QString &arg1);

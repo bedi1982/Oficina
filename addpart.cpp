@@ -26,7 +26,7 @@ bool addpart::verificaCamposEmBrancoNoForm()
            ||ui->txt_PartDescription->toPlainText() == ""
            ||ui->doubleSpinCusto->text() == ""
            ||ui->spin_Quantidade->text() == ""
-       )
+           )
     {
         ui->lbl_Feedback->setText("Erro: Todos os campos devem estar preenchidos!");
         ui->line_Nome->setFocus();
@@ -57,11 +57,11 @@ void addpart::on_btn_Cadastrar_clicked()
 
         if (query.exec() == false){
             qDebug() << query.lastError();
-            QMessageBox::critical(this, "Erro!", "Esta peça não foi adicionado!!(class addpart.cpp60.");
+            QMessageBox::critical(this, "Erro!", "Esta peça não foi adicionado!!(addpart::on_btn_Cadastrar_clicked()");
         }else{
-        ui->lbl_Feedback->setText(ui->line_Nome->text() + " adicionado ao estoque!");
-        QMessageBox::information(this, "Sucesso!", "Peça adicionada no estoque.");
-        close();
+            ui->lbl_Feedback->setText(ui->line_Nome->text() + " adicionado ao estoque!");
+            QMessageBox::information(this, "Sucesso!", "Peça adicionada no estoque.");
+            close();
         }
     }
 }
