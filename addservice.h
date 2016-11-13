@@ -40,6 +40,8 @@ private slots:
 
     void on_btn_atualizarDescricaoServico_clicked();
 
+    void on_tbl_PartsUsedInService_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::addservice *ui;
 };

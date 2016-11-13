@@ -13,6 +13,8 @@ partsSelectionFromList::partsSelectionFromList(QWidget *parent) :
     ui(new Ui::partsSelectionFromList)
 {
     ui->setupUi(this);
+    ui->line_NomeDaPeca->setFocus();
+    ui->line_NomeDaPeca->setText("*"); //Just so all parts are showed by default//
 }
 
 partsSelectionFromList::~partsSelectionFromList()
@@ -37,6 +39,7 @@ void partsSelectionFromList::on_line_NomeDaPeca_textChanged(const QString &userS
     if(!(userSearchFfilter.isEmpty()))
     {
         model->setTable("Part");
+        model->setFilter("Part_Quantity > '0' ");
         if(!(userSearchFfilter == "*"))
         {
             model->setFilter(" Part_Name like '%" + userSearchFfilter + "%'");
@@ -52,19 +55,27 @@ void partsSelectionFromList::on_line_NomeDaPeca_textChanged(const QString &userS
 
 void partsSelectionFromList::on_tbl_PartsList_doubleClicked(const QModelIndex &DoubleClickedCellValue)
 {
-    //This extracts the first column value, which is the ServiceID//
-    const QAbstractItemModel * model = DoubleClickedCellValue.model();
-    QVariant partId = model->data(model->index(DoubleClickedCellValue.row(), 0, DoubleClickedCellValue.parent()), Qt::DisplayRole);
+    //YES NO DIALOG//
+    if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Confirmação", "Adicionar a peça ao serviço?", QMessageBox::Yes|QMessageBox::No).exec())
+    {
+        //This extracts the first column value, which is the ServiceID//
+        const QAbstractItemModel * model = DoubleClickedCellValue.model();
+        QVariant partId = model->data(model->index(DoubleClickedCellValue.row(), 0, DoubleClickedCellValue.parent()), Qt::DisplayRole);
 
-    QSqlQuery query;
-    query.prepare("INSERT INTO ServicePartsUsed (Used_On_Service_id, Part_id) VALUES (:Used_On_Service_id, :Part_id)");
-    query.bindValue(":Used_On_Service_id", serviceID);
-    query.bindValue(":Part_id", partId.toString());
+        QSqlQuery query;
+        query.prepare("INSERT INTO ServicePartsUsed (Used_On_Service_id, On_Service_Part_id) VALUES (:Used_On_Service_id, :On_Service_Part_id)");
+        query.bindValue(":Used_On_Service_id", serviceID);
+        query.bindValue(":On_Service_Part_id", partId.toString());
 
-    if (query.exec() == false){
-        QMessageBox::critical(this, "Erro!", query.lastError().text() + " class partsSelectionFromList.cpp on_tbl_PartsList_doubleClicked()");
-}else{
-        QMessageBox::information(this, "Sucesso!", "Peça adicionada ao serviço");
-        close();
+        QSqlQuery removeOnefromStock;
+        removeOnefromStock.prepare("UPDATE Part SET Part_Quantity = Part_Quantity - 1 WHERE Part_id = :partId");
+        removeOnefromStock.bindValue(":partId", partId.toString());
+
+        if ((query.exec() == false) || (removeOnefromStock.exec() == false)){
+            QMessageBox::critical(this, "Erro!", query.lastError().text() + " class partsSelectionFromList.cpp on_tbl_PartsList_doubleClicked()");
+        }else{
+            QMessageBox::information(this, "Sucesso!", "Peça adicionada ao serviço e estoque atualizado.");
+            close();
+        }
     }
 }

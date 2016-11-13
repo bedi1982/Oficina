@@ -164,14 +164,19 @@ void addservice::on_btn_Sair_clicked()
 void addservice::LoadPartsAndServiceCostsGrid(){
 
     QSqlQueryModel* model = new QSqlQueryModel;
-    model->setQuery("SELECT Part_Name AS 'Nome da Peça', "
-                    "Part_Cost AS 'Custo da Peça'"
+    model->setQuery("SELECT ServicePartsUsed_id AS Serviço, "
+                    "Part_id as 'PeçaID', "
+                    "Part_Name AS 'Nome', "
+                    "Part_Quantity AS 'Estoque', "
+                    "Part_Cost AS 'Custo' "
                     "FROM Part p JOIN ServicePartsUsed pu "
-                    "ON pu.Part_id = p.Part_id "
+                    "ON pu.On_Service_Part_id = p.Part_id "
                     "AND pu.Used_On_Service_id = " + ServiceID);
 
     if(model->query().isSelect()){
         ui->tbl_PartsUsedInService->setModel(model);
+        ui->tbl_PartsUsedInService->hideColumn(0);
+        ui->tbl_PartsUsedInService->hideColumn(1);
         ui->tbl_PartsUsedInService->resizeColumnsToContents();
 
         //Sum the Parts Used Value and add to doublespin//
@@ -184,7 +189,7 @@ void addservice::LoadPartsAndServiceCostsGrid(){
         QSqlQuery SetServicePartsCost;
         SetServicePartsCost.prepare("update Service set Service_Parts_Cost = :PartsCost where Service_id = :ServiceID");
         SetServicePartsCost.bindValue(":PartsCost", PartsCost);
-        SetServicePartsCost.bindValue(":ServiceID", ServiceID);
+        SetServicePartsCost.bindValue(":ServiceID", ServiceID.toDouble());
 
         if (SetServicePartsCost.exec() == false){
             QMessageBox::critical(this, "Erro!", SetServicePartsCost.lastError().text() + " class addservice.cpp LoadPartsAndServiceCostsGrid() ");
@@ -211,9 +216,9 @@ void addservice::on_btn_Add_PartsUsedInTheService_clicked()
 {
     partsSelectionFromList partsSelectionFromList;
     partsSelectionFromList.setServiceID(ServiceID);
-
     partsSelectionFromList.setModal(true);
     partsSelectionFromList.exec();
+
     LoadPartsAndServiceCostsGrid();
 }
 
@@ -250,4 +255,35 @@ void addservice::on_btn_atualizarDescricaoServico_clicked()
     Updatedservicedescription.SetDescription();
     Updatedservicedescription.setModal(true);
     Updatedservicedescription.exec();
+}
+
+void addservice::on_tbl_PartsUsedInService_doubleClicked(const QModelIndex &index)
+{
+    if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Confirmação!", "Você deseja realmente remover essa peça desse serviço?", QMessageBox::Yes|QMessageBox::No).exec())
+    {
+        //Bellow 2 list will retrieve the column 0 value, which is the ServicePartsUsed_id //
+        const QAbstractItemModel * model = index.model();
+        QVariant ServicePart_ID = model->data(model->index(index.row(), 0, index.parent()), Qt::DisplayRole);
+
+        qDebug() << "ServicePartsUsed_id" << ServicePart_ID;
+        QSqlQuery removePartsFromService;
+        removePartsFromService.prepare("DELETE FROM ServicePartsUsed WHERE ServicePartsUsed_id = :ServicePartsUsed_id");
+        removePartsFromService.bindValue(":ServicePartsUsed_id", ServicePart_ID.toString());
+        removePartsFromService.exec();
+
+        //RETURN PART TO STOCK//
+        //Bellow 2 list will retrieve the column 0 value, which is the ServicePartsUsed_id //
+        const QAbstractItemModel * model2 = index.model();
+        QVariant partID = model2->data(model2->index(index.row(), 1, index.parent()), Qt::DisplayRole);
+        qDebug() << "PartID" << partID;
+
+        QSqlQuery returnPartToStock;
+        returnPartToStock.prepare("UPDATE Part SET Part_Quantity = (Part_Quantity + 1) WHERE Part_id = :partID");
+        returnPartToStock.bindValue(":partID", partID.toString());
+
+        if(returnPartToStock.exec() == false){
+            QMessageBox::critical(this, "Erro!", returnPartToStock.lastError().text() + "class addservice.cpp  on_btn_save_hoursWorked_clicked()");
+        }
+        LoadPartsAndServiceCostsGrid();
+    }
 }

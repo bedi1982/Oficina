@@ -83,7 +83,8 @@ DISTFILES += \
     resources/face-uncertain.png \
     resources/face-wink.png \
     resources/face-worried.png \
-    resources/DB11-model2.png
+    resources/DB11-model2.png \
+    TODO
 
 RESOURCES += \
     resources/images.qrc

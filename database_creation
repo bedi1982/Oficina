@@ -45,8 +45,7 @@ CREATE TABLE Service(
 CREATE TABLE ServicePartsUsed(
         ServicePartsUsed_id bigint PRIMARY KEY AUTO_INCREMENT,
         Used_On_Service_id bigint,
-        Part_id bigint,
-        Quantity int
+        On_Service_Part_id bigint
 );
 
 CREATE TABLE ClientCar(

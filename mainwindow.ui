@@ -160,7 +160,7 @@
      <string/>
     </property>
     <property name="placeholderText">
-     <string>Inicie a procuta inserindo aqui parte do RG, CPF ou nome do cliente</string>
+     <string>Inicie a procuta inserindo aqui parte do RG, ID ou nome do cliente...</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">

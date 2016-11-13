@@ -59,13 +59,15 @@ void StockControl::on_line_NomeDaPeca_textChanged(const QString &arg1)
         model->setHeaderData(6, Qt::Horizontal, tr("Adicionada em"));
 
         ui->tbl_parts->setModel(model);
-        ui->tbl_parts->resizeColumnsToContents();
+        ui->tbl_parts->hideColumn(0);
         ui->tbl_parts->hideColumn(2);
+        ui->tbl_parts->resizeColumnsToContents();
     }else{
         model->clear();
         ui->tbl_parts->setModel(model);
-        ui->tbl_parts->resizeColumnsToContents();
+        ui->tbl_parts->hideColumn(0);
         ui->tbl_parts->hideColumn(2);
+        ui->tbl_parts->resizeColumnsToContents();
     }
 }
 

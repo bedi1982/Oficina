@@ -73,6 +73,7 @@ void MainWindow::on_tbl_historicoServicos_doubleClicked(const QModelIndex &selec
     clientinfo.loadAll();
     clientinfo.setModal(true);
     clientinfo.exec();
+    ui->line_RGouCPFouNome->setText(clientID.toString());
 }
 
 void MainWindow::on_actionSair_triggered()
@@ -87,16 +88,19 @@ void MainWindow::on_actionSobreOficina_triggered()
     about.exec();
 }
 
-void MainWindow::on_line_RGouCPFouNome_textChanged(const QString &userSearchFfilter)
+void MainWindow::on_line_RGouCPFouNome_textChanged(const QString &userSearchFilter)
 {
     QSqlTableModel* model = new QSqlTableModel;
 
-    if(!(userSearchFfilter.isEmpty()))
+    if(!(userSearchFilter.isEmpty()))
     {
         model->setTable("Client");
-        if(!(userSearchFfilter == "*"))
+        if(!(userSearchFilter == "*"))
         {
-            model->setFilter(" Client_CPF like '%" + userSearchFfilter + "%' OR Client_Name like '%" + userSearchFfilter + "%' OR Client_RG like '%" + userSearchFfilter + "%'");
+            model->setFilter(" Client_RG like '%" + userSearchFilter + "%' "
+                             "OR Client_Name like '%" + userSearchFilter + "%' "
+                             "OR Client_CPF like '%" + userSearchFilter + "%' "
+                             "OR Client_id like '%" + userSearchFilter + "%' ");
         }
         model->select();
         model->setEditStrategy(QSqlTableModel::OnManualSubmit);
