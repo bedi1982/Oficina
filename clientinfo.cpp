@@ -84,10 +84,12 @@ void clientinfo::loadServicesGrid()
                     "Service_Paid AS Pago, "
                     "Service_created_at AS 'Executado em' "
                     "FROM Service s JOIN ClientCar cc "
-                    "ON s.Service_Client_Carid = cc.ClientCar_id AND Service_Client_id = " + client_id);
+                    "ON s.Service_Client_Carid = cc.ClientCar_id AND Service_Client_id = " + client_id +
+                    " order by 9 desc");
 
     if(model->query().isSelect()){
         ui->tbl_ClientServices->setModel(model);
+        ui->tbl_ClientServices->sortByColumn(0, Qt::DescendingOrder);
         ui->tbl_ClientServices->resizeColumnsToContents();
     }else{
         QMessageBox::critical(this, "Erro!", model->query().lastError().text() + "class clientinfo.cpp loadServicesGrid() ");
@@ -104,11 +106,13 @@ void clientinfo::loadCarsGrid()
                     "ClientCar_BuiltYear as 'Ano de Fabricação',"
                     "ClientCar_Color as Cor,"
                     "ClientCar_created_at as 'Adicionado em'"
-                    "FROM ClientCar where ClientCar_Client_id = " + client_id);
+                    "FROM ClientCar where ClientCar_Client_id = " + client_id +
+                    " order by 6 desc");
 
     if(model->query().isSelect()){
         ui->tbl_clientCars->setModel(model);
         ui->tbl_clientCars->resizeColumnsToContents();
+        ui->tbl_clientCars->sortByColumn(0, Qt::DescendingOrder);
         // ui->tbl_clientCars->hideColumn(0);
     }else{
         QMessageBox::critical(this, "Erro!", model->query().lastError().text() + "class clientinfo.cpp loadCarsGrid() ");

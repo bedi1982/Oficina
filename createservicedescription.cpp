@@ -22,9 +22,10 @@ bool CreateServiceDescription::verificaCamposEmBrancoNoForm()
     if (ui->txt_FullDescription->toPlainText() == "" || ui->line_ShortDescription->text() == "" )
     {
        // ui->lbl_Feedback->setText("Erro: Todos os campos devem estar preenchidos!");
-        QPixmap crying(":/emoticons/face-crying.png");
+        //QPixmap crying(":/emoticons/face-crying.png");
         //ui->lbl_Emoticon->setPixmap(crying);
-        ui->line_ShortDescription->setFocus();
+        QMessageBox::critical(this, "Erro!", "Todos os campos devem estar preenchidos!");
+        ui->line_ShortDescription->setFocus();    
         return false;
     }
     //Only returns true when all the fields are filled.

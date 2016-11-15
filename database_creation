@@ -14,12 +14,10 @@ CREATE TABLE Client (
 
 CREATE TABLE Part (
         Part_id bigint PRIMARY KEY AUTO_INCREMENT,
-        Part_Used_In_ServiceID bigint,
         Part_Name varchar(50),
         Part_Description varchar(250),
         Part_Cost Double(19,2),
         Part_Quantity int,
-        Part_Used boolean not null default 0,
         Part_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         Part_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -44,8 +42,8 @@ CREATE TABLE Service(
 
 CREATE TABLE ServicePartsUsed(
         ServicePartsUsed_id bigint PRIMARY KEY AUTO_INCREMENT,
-        Used_On_Service_id bigint,
-        On_Service_Part_id bigint
+        Used_On_What_Service_id bigint,
+        Used_Part_ID bigint
 );
 
 CREATE TABLE ClientCar(
@@ -66,14 +64,5 @@ CREATE TABLE HourCost(
         HourCost_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-SELECT
-Service_Client_id AS 'Service Client ID',
-Service_Client_Carid AS ServiceCarroID,
-Service_Short_Description AS Descrição,
-Service_Total_Cost AS 'Custo Total',
-Service_Parts_Cost AS 'Custo das Peças',
-Service_HandWorkCost AS 'Custo Mão de Obra',
-Service_Paid AS Pago,
-Service_created_at AS 'Criado em',
-FROM Service s JOIN ClientCar cc
-ON s.Service_Client_Carid = cc.ClientCar_id AND Service_Client_id = 15;
+--some inserts to initialize.
+insert into HourCost (HourCost) values (0);

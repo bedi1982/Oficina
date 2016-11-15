@@ -50,23 +50,22 @@ void StockControl::on_line_NomeDaPeca_textChanged(const QString &arg1)
         model->select();
         model->setEditStrategy(QSqlTableModel::OnFieldChange);
 
+        //ui->tbl_parts->hideColumn(0);
+        //ui->tbl_parts->hideColumn(2);
         model->setHeaderData(0, Qt::Horizontal, tr("ID"));
         model->setHeaderData(1, Qt::Horizontal, tr("Nome"));
         model->setHeaderData(2, Qt::Horizontal, tr("Descrição"));
         model->setHeaderData(3, Qt::Horizontal, tr("Custo"));
         model->setHeaderData(4, Qt::Horizontal, tr("Em Estoque"));
+        //model->setHeaderData(4, Qt::Horizontal, tr("Usada"));
         model->setHeaderData(5, Qt::Horizontal, tr("Última Atualização"));
         model->setHeaderData(6, Qt::Horizontal, tr("Adicionada em"));
 
         ui->tbl_parts->setModel(model);
-        ui->tbl_parts->hideColumn(0);
-        ui->tbl_parts->hideColumn(2);
         ui->tbl_parts->resizeColumnsToContents();
     }else{
         model->clear();
         ui->tbl_parts->setModel(model);
-        ui->tbl_parts->hideColumn(0);
-        ui->tbl_parts->hideColumn(2);
         ui->tbl_parts->resizeColumnsToContents();
     }
 }
