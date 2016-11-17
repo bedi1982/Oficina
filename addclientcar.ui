@@ -227,6 +227,9 @@
      <height>32</height>
     </rect>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::TabFocus</enum>
+   </property>
    <property name="inputMethodHints">
     <set>Qt::ImhNone</set>
    </property>

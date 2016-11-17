@@ -18,6 +18,7 @@ public:
     void LoadPartsAndServiceCostsGrid();
     void SumCosts();
     void EnableDescriptionUpdate();
+    void addserviceDescriptionText();
 
     QString clientid;
     QString CarID;

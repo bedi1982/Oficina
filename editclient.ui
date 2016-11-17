@@ -37,6 +37,9 @@
    <property name="toolTip">
     <string>Duplo clique aqui para alterar as informações do cliente.</string>
    </property>
+   <attribute name="horizontalHeaderCascadingSectionResizes">
+    <bool>true</bool>
+   </attribute>
   </widget>
   <widget class="QPushButton" name="btn_sair">
    <property name="geometry">

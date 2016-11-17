@@ -53,6 +53,9 @@
    <property name="text">
     <string/>
    </property>
+   <property name="maxLength">
+    <number>30</number>
+   </property>
    <property name="placeholderText">
     <string>Inicie a procura inserindo aqui parte do nome da Peça...</string>
    </property>

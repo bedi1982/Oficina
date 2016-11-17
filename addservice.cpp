@@ -61,13 +61,21 @@ void addservice::on_btn_Sair_clicked()
     close();
 }
 
+void addservice::addserviceDescriptionText(){
+    QSqlQueryModel* model = new QSqlQueryModel;
+    model->setQuery("select Service_Description, Service_Short_Description from Service where Service_id = " + ServiceID);
+
+    ui->line_ServiceShortDescription->setText(model->data(model->index(0, 0)).toString());
+    ui->txt_Servicedescription->setText(model->data(model->index(0, 1)).toString());
+}
+
 void addservice::LoadPartsAndServiceCostsGrid(){
 
     QSqlQueryModel* model = new QSqlQueryModel;
-    model->setQuery("SELECT ServicePartsUsed_id AS Serviço, "
+    model->setQuery("SELECT ServicePartsUsed_id AS ServiçoUsedID, "
                     "Part_id as 'PeçaID', "
-                    "Part_Name AS 'Nome', "
                     "Part_Quantity AS 'Estoque', "
+                    "Part_Name AS 'Nome', "
                     "Part_Cost AS 'Custo' "
                     "FROM Part p JOIN ServicePartsUsed pu "
                     "ON pu.Used_Part_ID = p.Part_id "
@@ -96,6 +104,7 @@ void addservice::LoadPartsAndServiceCostsGrid(){
             QMessageBox::critical(this, "Erro!", SetServicePartsCost.lastError().text() + " class addservice.cpp LoadPartsAndServiceCostsGrid() ");
         }
     }
+    addserviceDescriptionText();
     SumCosts();
 }
 
@@ -148,6 +157,7 @@ void addservice::on_btn_atualizarDescricaoServico_clicked()
     Updatedservicedescription.SetDescription();
     Updatedservicedescription.setModal(true);
     Updatedservicedescription.exec();
+    addserviceDescriptionText();
 }
 
 void addservice::on_tbl_PartsUsedInService_doubleClicked(const QModelIndex &index)
