@@ -17,6 +17,7 @@ bool Database::conectar(){
     db.setHostName("localhost");
     db.setDatabaseName("Oficina");
     db.setUserName("root");
+    //BEWARE CHANGING THIS CLASS NEEDS THE CLIENT TO FIX THE PASSWORD//
     //db.setPassword("xxxxxxx");
     if(db.open()){
         return true;

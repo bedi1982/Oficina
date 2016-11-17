@@ -1,5 +1,10 @@
 /*Create the database manually:
 V2:
+
+
+create Database Oficina;
+use Oficina;
+
 CREATE TABLE Client (
         Client_id bigint PRIMARY KEY AUTO_INCREMENT,
         Client_Name varchar(40),
@@ -21,8 +26,6 @@ CREATE TABLE Part (
         Part_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         Part_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
-----Joins Example:----
 
 CREATE TABLE Service(
         Service_id bigint PRIMARY KEY AUTO_INCREMENT,
@@ -64,5 +67,4 @@ CREATE TABLE HourCost(
         HourCost_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
---some inserts to initialize.
 insert into HourCost (HourCost) values (0);
