@@ -34,13 +34,6 @@ void EditClient::LoadEditableGrid(QString ClientID)
         model->setHeaderData(7, Qt::Horizontal, tr("Atualizado em"));
         model->setHeaderData(8, Qt::Horizontal, tr("Cliente desde"));
 
-        ui->tbl_EditClient->setColumnWidth(1, 40);
-        ui->tbl_EditClient->setColumnWidth(2, 50);
-        ui->tbl_EditClient->setColumnWidth(3, 30);
-        ui->tbl_EditClient->setColumnWidth(4, 20);
-        ui->tbl_EditClient->setColumnWidth(5, 15);
-        ui->tbl_EditClient->setColumnWidth(6, 40);
-
         ui->tbl_EditClient->setModel(model);
         ui->tbl_EditClient->hideColumn(0);
         ui->tbl_EditClient->hideColumn(7);

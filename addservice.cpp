@@ -190,3 +190,23 @@ void addservice::on_tbl_PartsUsedInService_doubleClicked(const QModelIndex &inde
         LoadPartsAndServiceCostsGrid();
     }
 }
+
+void addservice::on_check_Pago_clicked()
+{
+    if(ui->check_Pago->isChecked()){
+        QSqlQuery query;
+        query.prepare("UPDATE Service set Service_Paid = 1 where Service_id = " + ServiceID);
+        QMessageBox::critical(this, "Erro!", "Pago");
+
+        if (query.exec() == false){
+            qDebug() << query.lastError();
+            QMessageBox::critical(this, "Erro!", query.lastError().text() + "class addservice.cpp  on_check_Pago_clicked ");
+    }else{
+            query.prepare("UPDATE Service set Service_Paid = 0 where Service_id = " + ServiceID);
+            if (query.exec() == false){
+                qDebug() << query.lastError();
+                QMessageBox::critical(this, "Erro!", query.lastError().text() + "class addservice.cpp  on_check_Pago_clicked ");
+        QMessageBox::critical(this, "Erro!", "Não Pago");
+    }
+}
+}}

@@ -43,6 +43,8 @@ private slots:
 
     void on_tbl_PartsUsedInService_doubleClicked(const QModelIndex &index);
 
+    void on_check_Pago_clicked();
+
 private:
     Ui::addservice *ui;
 };
