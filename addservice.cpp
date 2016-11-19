@@ -111,7 +111,7 @@ void addservice::LoadPartsAndServiceCostsGrid(){
 void addservice::SumCosts()
 {
     QSqlQueryModel* model = new QSqlQueryModel;
-    model->setQuery("select Service_Hours_Duration, Service_Parts_Cost, Service_Hour_Cost from Service where Service_id = " + ServiceID);
+    model->setQuery("select Service_Hours_Duration, Service_Parts_Cost, Service_Hour_Cost, Service_Paid from Service where Service_id = " + ServiceID);
 
     double Service_Hours_Duration = model->data(model->index(0, 0)).toDouble(); //query result line 0 column 0
     double Service_Parts_Cost = model->data(model->index(0, 1)).toDouble(); //query result line 0 column 1
@@ -121,6 +121,16 @@ void addservice::SumCosts()
     ui->Spin_PartsCost->setValue(Service_Parts_Cost);
     ui->Spin_TotalserviceCost->setValue((Service_Hours_Duration * Service_Hour_Cost) + Service_Parts_Cost);
     ui->Spin_ServiceRegistereHandWorkHours->setValue(Service_Hour_Cost);
+
+    //Service Paid CheckMark 0 for not Paid 1 for Paid
+    bool ServicePaid = model->data(model->index(0, 3)).toBool(); //query result line 0 column 3
+
+    if(ServicePaid){
+        ui->check_Pago->setChecked(true);
+    }else{
+        ui->check_Pago->setChecked(false);
+    }
+
 }
 
 void addservice::on_btn_Add_PartsUsedInTheService_clicked()
@@ -195,18 +205,21 @@ void addservice::on_check_Pago_clicked()
 {
     if(ui->check_Pago->isChecked()){
         QSqlQuery query;
-        query.prepare("UPDATE Service set Service_Paid = 1 where Service_id = " + ServiceID);
-        QMessageBox::critical(this, "Erro!", "Pago");
-
+        query.prepare("UPDATE Service set Service_Paid = 1 where Service_Id = " + ServiceID);
         if (query.exec() == false){
             qDebug() << query.lastError();
             QMessageBox::critical(this, "Erro!", query.lastError().text() + "class addservice.cpp  on_check_Pago_clicked ");
+        }else{
+            QMessageBox::critical(this, "Ok!", "Serviço alterado para: Pago");
+        }
     }else{
-            query.prepare("UPDATE Service set Service_Paid = 0 where Service_id = " + ServiceID);
-            if (query.exec() == false){
-                qDebug() << query.lastError();
-                QMessageBox::critical(this, "Erro!", query.lastError().text() + "class addservice.cpp  on_check_Pago_clicked ");
-        QMessageBox::critical(this, "Erro!", "Não Pago");
+        QSqlQuery query;
+        query.prepare("UPDATE Service set Service_Paid = 0 where Service_Id = " + ServiceID);
+        if (query.exec() == false){
+            qDebug() << query.lastError();
+            QMessageBox::critical(this, "Erro!", query.lastError().text() + "class addservice.cpp  on_check_Pago_clicked ");
+        }else{
+            QMessageBox::critical(this, "Ok!", "Serviço alterado para: Não Pago");
+        }
     }
 }
-}}

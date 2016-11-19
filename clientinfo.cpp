@@ -81,7 +81,7 @@ void clientinfo::loadServicesGrid()
                     "Service_Parts_Cost AS 'Custo das Peças', "
                     "Service_Hours_Duration AS 'Horas Trabalhadas', "
                     "Service_Hour_Cost AS 'Custo p/ Hora', "
-                    "Service_Paid AS Pago, "
+                    "Service_Paid AS '1 = Pago', "
                     "Service_created_at AS 'Executado em' "
                     "FROM Service s JOIN ClientCar cc "
                     "ON s.Service_Client_Carid = cc.ClientCar_id AND Service_Client_id = " + client_id +
