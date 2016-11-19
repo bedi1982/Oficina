@@ -217,7 +217,7 @@ void addservice::on_check_Pago_clicked()
         query.prepare("UPDATE Service set Service_Paid = 0 where Service_Id = " + ServiceID);
         if (query.exec() == false){
             qDebug() << query.lastError();
-            QMessageBox::critical(this, "Erro!", query.lastError().text() + "class addservice.cpp  on_check_Pago_clicked ");
+            QMessageBox::critical(this, "Erro!", query.lastError().text() + "class addservice.cpp on_check_Pago_clicked(not checked) ");
         }else{
             QMessageBox::critical(this, "Ok!", "Serviço alterado para: Não Pago");
         }

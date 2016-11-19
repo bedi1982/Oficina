@@ -48,11 +48,10 @@ void addclientcar::addClientInfoToForm(QString client_id){
         qDebug() << query.lastError();
         QMessageBox::critical(this, "Erro!", query.lastError().text() + ". Class: addclient.cpp56");
     }
-    while(query.next())
-    {
+
+    while(query.next()){
         ui->line_NomeCliente->setText(query.value(0).toString());
     }
-
 }
 
 void addclientcar::addCar(QString client_id){

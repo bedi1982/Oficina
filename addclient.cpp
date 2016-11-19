@@ -60,7 +60,6 @@ void addclient::on_btn_cadastrar_clicked()
             qDebug() << query.lastError();
             QMessageBox::critical(this, "Erro!", query.lastError().text() + ". Class: addclient.cpp51");
         }else{
-
             ui->lbl_feedback->setText(ui->line_Name->text() + " cadastrado!");
             QPixmap cool(":/emoticons/face-cool.png");
             ui->lbl_Emoticon->setPixmap(cool);

@@ -88,7 +88,6 @@ void addpart::checkCarDescriptionSize(){
     }
 }
 
-
 void addpart::on_txt_PartDescription_textChanged()
 {
     checkCarDescriptionSize();
