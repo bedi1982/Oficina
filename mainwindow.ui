@@ -113,7 +113,7 @@
    <widget class="QLabel" name="lbl_Oficina">
     <property name="geometry">
      <rect>
-      <x>930</x>
+      <x>910</x>
       <y>0</y>
       <width>121</width>
       <height>31</height>
@@ -128,7 +128,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Oficina v0.1</string>
+     <string>Oficina v0.1.1</string>
     </property>
     <property name="textFormat">
      <enum>Qt::PlainText</enum>
