@@ -27,6 +27,8 @@ private slots:
 
     void on_actionAlterar_Custo_da_Hora_triggered();
 
+    void on_actionManual_do_usu_rio_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

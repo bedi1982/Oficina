@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Manul</class>
+ <widget class="QDialog" name="Manul">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>730</width>
+    <height>447</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QPlainTextEdit" name="plainTextEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>711</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <property name="plainText">
+    <string>Manual de instruções Inicial. (em progresso).
+
+* Uma das primeiras configurações é ajustar o custo por hora no menu configurações. 
+O custo da hora fica atrelado ao serviço e não é possível alterar. Caso queira o serviço com custo de hora diferente terá que ajustar o custo por hora nas configurações e então recriar o serviço.
+
+* Deletar Cliente, Carro e Serviço: Não possível, solução é criar um Cliente, Carro e Serviço novo O velho fica.
+
+* Remover peças de um Serviço: Duplo clique na peça.</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

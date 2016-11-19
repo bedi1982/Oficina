@@ -8,6 +8,7 @@
 #include "about.h"
 #include "stockcontrol.h"
 #include "setworkhourcost.h"
+#include "manul.h"
 
 #include <QSqlTableModel>
 #include "QSqlRelationalTableModel"
@@ -137,4 +138,11 @@ void MainWindow::on_actionAlterar_Custo_da_Hora_triggered()
     SetWorkHourCost.setModal(true);
     SetWorkHourCost.SetNewCost();
     SetWorkHourCost.exec();
+}
+
+void MainWindow::on_actionManual_do_usu_rio_triggered()
+{
+    Manul Manul;
+    Manul.setModal(true);
+    Manul.exec();
 }

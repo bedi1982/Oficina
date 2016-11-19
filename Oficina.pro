@@ -27,7 +27,8 @@ SOURCES += main.cpp\
     stockcontrol.cpp \
     setworkhourcost.cpp \
     createservicedescription.cpp \
-    updatedservicedescription.cpp
+    updatedservicedescription.cpp \
+    manul.cpp
 
 HEADERS  += mainwindow.h \
     addpart.h \
@@ -42,7 +43,8 @@ HEADERS  += mainwindow.h \
     stockcontrol.h \
     setworkhourcost.h \
     createservicedescription.h \
-    updatedservicedescription.h
+    updatedservicedescription.h \
+    manul.h
 
 FORMS    += mainwindow.ui \
     addpart.ui \
@@ -56,7 +58,8 @@ FORMS    += mainwindow.ui \
     stockcontrol.ui \
     setworkhourcost.ui \
     createservicedescription.ui \
-    updatedservicedescription.ui
+    updatedservicedescription.ui \
+    manul.ui
 
 DISTFILES += \
     database_creation \

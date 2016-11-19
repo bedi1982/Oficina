@@ -229,6 +229,7 @@
      <string>Sob&amp;re</string>
     </property>
     <addaction name="actionSobreOficina"/>
+    <addaction name="actionManual_do_usu_rio"/>
    </widget>
    <widget class="QMenu" name="menuCliente">
     <property name="title">
@@ -321,6 +322,11 @@
   <action name="actionAlterar_Custo_da_Hora">
    <property name="text">
     <string>&amp;Alterar Custo da Hora</string>
+   </property>
+  </action>
+  <action name="actionManual_do_usu_rio">
+   <property name="text">
+    <string>Manual do usuário</string>
    </property>
   </action>
  </widget>
