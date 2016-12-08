@@ -168,8 +168,9 @@ void clientinfo::on_tbl_ClientServices_doubleClicked(const QModelIndex &index)
 void clientinfo::on_btn_atualizarCliente_clicked()
 {
     EditClient EditClient;
-    EditClient.LoadEditableGrid(client_id);
     EditClient.setModal(true);
+    EditClient.setClient_id(client_id);
+    EditClient.loadClientInfo_to_TextBoxes();
     EditClient.exec();
     loadClientInfo_to_TextBoxes();
 }

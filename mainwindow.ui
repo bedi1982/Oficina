@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1024</width>
+    <width>1280</width>
     <height>768</height>
    </rect>
   </property>
@@ -21,20 +21,20 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>1024</width>
+    <width>1280</width>
     <height>768</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1024</width>
+    <width>1280</width>
     <height>768</height>
    </size>
   </property>
   <property name="sizeIncrement">
    <size>
     <width>1369</width>
-    <height>700</height>
+    <height>900</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -47,7 +47,7 @@
       <x>0</x>
       <y>70</y>
       <width>1271</width>
-      <height>551</height>
+      <height>601</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -88,7 +88,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>640</y>
+      <y>680</y>
       <width>171</width>
       <height>18</height>
      </rect>
@@ -101,7 +101,7 @@
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>620</y>
+      <y>660</y>
       <width>81</width>
       <height>51</height>
      </rect>
@@ -113,7 +113,7 @@
    <widget class="QLabel" name="lbl_Oficina">
     <property name="geometry">
      <rect>
-      <x>910</x>
+      <x>1130</x>
       <y>0</y>
       <width>121</width>
       <height>31</height>
@@ -169,7 +169,7 @@
    <widget class="QLabel" name="lbl_date">
     <property name="geometry">
      <rect>
-      <x>950</x>
+      <x>1170</x>
       <y>30</y>
       <width>71</width>
       <height>18</height>
@@ -182,10 +182,10 @@
    <widget class="QLabel" name="lbl_BigCarIcon">
     <property name="geometry">
      <rect>
-      <x>700</x>
-      <y>0</y>
-      <width>241</width>
-      <height>91</height>
+      <x>890</x>
+      <y>-10</y>
+      <width>261</width>
+      <height>121</height>
      </rect>
     </property>
     <property name="text">
@@ -207,7 +207,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1024</width>
+     <width>1280</width>
      <height>30</height>
     </rect>
    </property>
@@ -326,7 +326,7 @@
   </action>
   <action name="actionManual_do_usu_rio">
    <property name="text">
-    <string>Manual do usuário</string>
+    <string>&amp;Manual do usuário</string>
    </property>
   </action>
  </widget>

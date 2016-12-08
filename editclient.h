@@ -14,10 +14,16 @@ class EditClient : public QDialog
 public:
     explicit EditClient(QWidget *parent = 0);
     ~EditClient();
-    void LoadEditableGrid(QString ClientID);
+
+    QString client_id;
+    void loadClientInfo_to_TextBoxes();
+
+    QString getClient_id() const;
+    void setClient_id(const QString &value);
 
 private slots:
-    void on_btn_sair_clicked();
+
+    void on_btn_cadastrar_clicked();
 
 private:
     Ui::EditClient *ui;
