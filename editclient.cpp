@@ -54,7 +54,7 @@ void EditClient::loadClientInfo_to_TextBoxes()
     }
 }
 
-void EditClient::on_btn_cadastrar_clicked()
+void EditClient::on_btn_update_clicked()
 {
     QSqlQuery query;
     query.prepare(" UPDATE Client SET "

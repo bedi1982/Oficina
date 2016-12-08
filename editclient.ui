@@ -198,7 +198,7 @@
     <string>RG</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_cadastrar">
+  <widget class="QPushButton" name="btn_update">
    <property name="geometry">
     <rect>
      <x>470</x>
@@ -381,7 +381,7 @@
   <tabstop>line_RG</tabstop>
   <tabstop>line_CPF</tabstop>
   <tabstop>line_Phone</tabstop>
-  <tabstop>btn_cadastrar</tabstop>
+  <tabstop>btn_update</tabstop>
   <tabstop>line_ID</tabstop>
   <tabstop>line_CreatedAt</tabstop>
   <tabstop>line_UpdatedAt</tabstop>

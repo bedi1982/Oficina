@@ -23,7 +23,7 @@ public:
 
 private slots:
 
-    void on_btn_cadastrar_clicked();
+    void on_btn_update_clicked();
 
 private:
     Ui::EditClient *ui;
