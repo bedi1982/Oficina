@@ -1,14 +1,14 @@
-#include "addclientcar.h"
-#include "ui_addclientcar.h"
+#include "Client_Add_Car.h"
+#include "ui_Client_Add_Car.h"
 #include "QSqlQuery"
 #include "QDebug"
 #include "QSqlError"
-#include "clientinfo.h"
+#include "Client_Info.h"
 #include "QMessageBox"
 
-addclientcar::addclientcar(QWidget *parent) :
+Client_Add_Car::Client_Add_Car(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::addclientcar)
+    ui(new Ui::Client_Add_Car)
 {
     ui->setupUi(this);
     QPixmap glasses(":/emoticons/face-glasses.png");
@@ -16,12 +16,12 @@ addclientcar::addclientcar(QWidget *parent) :
     ui->lbl_Feedback->setText("Todos os campos devem estar preenchidos.");
 }
 
-addclientcar::~addclientcar()
+Client_Add_Car::~Client_Add_Car()
 {
     delete ui;
 }
 
-bool addclientcar::verificaCamposEmBrancoNoForm()
+bool Client_Add_Car::verificaCamposEmBrancoNoForm()
 {
     if (   ui->txt_Model->text() == ""
            ||ui->txt_Year->text() == ""
@@ -40,7 +40,7 @@ bool addclientcar::verificaCamposEmBrancoNoForm()
     return true;
 }
 
-void addclientcar::addClientInfoToForm(QString client_id){
+void Client_Add_Car::addClientInfoToForm(QString client_id){
     QSqlQuery query;
     query.prepare("SELECT Client_Name FROM Client WHERE Client_id = " + client_id);
 
@@ -54,7 +54,7 @@ void addclientcar::addClientInfoToForm(QString client_id){
     }
 }
 
-void addclientcar::addCar(QString client_id){
+void Client_Add_Car::addCar(QString client_id){
     if(verificaCamposEmBrancoNoForm()){
         QSqlQuery query;
         query.prepare("insert into ClientCar (ClientCar_Client_id, ClientCar_Model, ClientCar_Description, ClientCar_BuiltYear, ClientCar_Placa, ClientCar_Color)"
@@ -83,7 +83,7 @@ void addclientcar::addCar(QString client_id){
 }
 
 //Check car description size//
-void addclientcar::checkCarDescriptionSize(){
+void Client_Add_Car::checkCarDescriptionSize(){
     if (ui->txtPlain_Description->toPlainText().length() > 300)
     {
         QString carDescription = ui->txtPlain_Description->toPlainText();
@@ -106,23 +106,23 @@ void addclientcar::checkCarDescriptionSize(){
     }
 }
 
-QString addclientcar::getClient() const
+QString Client_Add_Car::getClient() const
 {
     return client;
 }
 
-void addclientcar::setClient(const QString &value)
+void Client_Add_Car::setClient(const QString &value)
 {
     client = value;
 }
 //Check car description size//
 
-void addclientcar::on_btn_Add_clicked()
+void Client_Add_Car::on_btn_Add_clicked()
 {
     addCar(client);
 }
 
-void addclientcar::on_txtPlain_Description_textChanged()
+void Client_Add_Car::on_txtPlain_Description_textChanged()
 {
     checkCarDescriptionSize();
 }

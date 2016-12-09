@@ -4,16 +4,16 @@
 #include <QDialog>
 
 namespace Ui {
-class addclient;
+class Client_Add;
 }
 
-class addclient : public QDialog
+class Client_Add : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit addclient(QWidget *parent = 0);
-    ~addclient();
+    explicit Client_Add(QWidget *parent = 0);
+    ~Client_Add();
 
 private slots:
     bool verificaCamposEmBrancoNoForm();
@@ -21,7 +21,7 @@ private slots:
     void on_btn_cadastrar_clicked();
 
 private:
-    Ui::addclient *ui;
+    Ui::Client_Add *ui;
 };
 
 #endif // ADDCLIENT_H

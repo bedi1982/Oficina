@@ -1,23 +1,23 @@
-#include "createservicedescription.h"
-#include "ui_createservicedescription.h"
+#include "Service_Create_Description.h"
+#include "ui_Service_Create_Description.h"
 #include "QMessageBox"
 #include "QSqlQueryModel"
 #include "QSqlQuery"
 #include "QSqlError"
 
-CreateServiceDescription::CreateServiceDescription(QWidget *parent) :
+Service_Create_Description::Service_Create_Description(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::CreateServiceDescription)
+    ui(new Ui::Service_Create_Description)
 {
     ui->setupUi(this);
 }
 
-CreateServiceDescription::~CreateServiceDescription()
+Service_Create_Description::~Service_Create_Description()
 {
     delete ui;
 }
 
-bool CreateServiceDescription::verificaCamposEmBrancoNoForm()
+bool Service_Create_Description::verificaCamposEmBrancoNoForm()
 {
     if (ui->txt_FullDescription->toPlainText() == "" || ui->line_ShortDescription->text() == "" )
     {
@@ -32,38 +32,38 @@ bool CreateServiceDescription::verificaCamposEmBrancoNoForm()
     return true;
 }
 
-QString CreateServiceDescription::getClientid() const
+QString Service_Create_Description::getClientid() const
 {
     return clientid;
 }
 
-void CreateServiceDescription::setClientid(const QString &value)
+void Service_Create_Description::setClientid(const QString &value)
 {
     clientid = value;
 }
 
-QString CreateServiceDescription::getCarID() const
+QString Service_Create_Description::getCarID() const
 {
     return CarID;
 }
 
-void CreateServiceDescription::setCarID(const QString &value)
+void Service_Create_Description::setCarID(const QString &value)
 {
     CarID = value;
 }
 
-QString CreateServiceDescription::getServiceID() const
+QString Service_Create_Description::getServiceID() const
 {
     return ServiceID;
 }
 
-void CreateServiceDescription::setServiceID(const QString &value)
+void Service_Create_Description::setServiceID(const QString &value)
 {
     ServiceID = value;
 }
 
 
-void CreateServiceDescription::on_btn_Salvar_clicked()
+void Service_Create_Description::on_btn_Salvar_clicked()
 {
     if(verificaCamposEmBrancoNoForm()){
         //We begin This block is to save current hour cost to this service//
@@ -100,7 +100,7 @@ void CreateServiceDescription::on_btn_Salvar_clicked()
     }
 }
 
-void CreateServiceDescription::on_txt_FullDescription_textChanged()
+void Service_Create_Description::on_txt_FullDescription_textChanged()
 {
     if (ui->txt_FullDescription->toPlainText().length() > 1000)
     {

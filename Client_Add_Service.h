@@ -1,19 +1,19 @@
-#ifndef ADDSERVICE_H
-#define ADDSERVICE_H
+#ifndef Client_Add_Service_H
+#define Client_Add_Service_H
 
 #include <QDialog>
 
 namespace Ui {
-class addservice;
+class Client_Add_Service;
 }
 
-class addservice : public QDialog
+class Client_Add_Service : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit addservice(QWidget *parent = 0);
-    ~addservice();
+    explicit Client_Add_Service(QWidget *parent = 0);
+    ~Client_Add_Service();
 
     void LoadPartsAndServiceCostsGrid();
     void SumCosts();
@@ -46,7 +46,7 @@ private slots:
     void on_check_Pago_clicked();
 
 private:
-    Ui::addservice *ui;
+    Ui::Client_Add_Service *ui;
 };
 
 #endif // ADDSERVICE_H

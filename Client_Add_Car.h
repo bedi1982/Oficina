@@ -4,16 +4,16 @@
 #include <QDialog>
 
 namespace Ui {
-class addclientcar;
+class Client_Add_Car;
 }
 
-class addclientcar : public QDialog
+class Client_Add_Car : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit addclientcar(QWidget *parent = 0);
-    ~addclientcar();
+    explicit Client_Add_Car(QWidget *parent = 0);
+    ~Client_Add_Car();
     void addClientInfoToForm(QString);
     //void Setclient(QString);
     void addCar(QString);
@@ -32,7 +32,7 @@ private slots:
 
 
 private:
-    Ui::addclientcar *ui;
+    Ui::Client_Add_Car *ui;
 };
 
 #endif // ADDCLIENTCAR_H

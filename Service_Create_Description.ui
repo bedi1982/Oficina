@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CreateServiceDescription</class>
- <widget class="QDialog" name="CreateServiceDescription">
+ <class>Service_Create_Description</class>
+ <widget class="QDialog" name="Service_Create_Description">
   <property name="geometry">
    <rect>
     <x>0</x>

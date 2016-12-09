@@ -1,14 +1,14 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "database.h"
-#include "addclient.h"
-#include "addpart.h"
-#include "addservice.h"
-#include "clientinfo.h"
-#include "about.h"
+#include "Client_Add.h"
+#include "Stock_Add_Part.h"
+#include "Client_Add_Service.h"
+#include "Client_Info.h"
+#include "About.h"
 #include "stockcontrol.h"
 #include "setworkhourcost.h"
-#include "manul.h"
+#include "Man_Page.h"
 
 #include <QSqlTableModel>
 #include "QSqlRelationalTableModel"
@@ -51,16 +51,16 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionAddCliente_triggered()
 {
-    addclient addclient;
-    addclient.setModal(true);
-    addclient.exec();
+    Client_Add Client_Add;
+    Client_Add.setModal(true);
+    Client_Add.exec();
 }
 
 void MainWindow::on_actionAddPeca_triggered()
 {
-    addpart addpart;
-    addpart.setModal(true);
-    addpart.exec();
+    Stock_Add_Part Stock_Add_Part;
+    Stock_Add_Part.setModal(true);
+    Stock_Add_Part.exec();
 }
 
 void MainWindow::on_tbl_historicoServicos_doubleClicked(const QModelIndex &selectedClientinTheGrid)
@@ -69,11 +69,11 @@ void MainWindow::on_tbl_historicoServicos_doubleClicked(const QModelIndex &selec
     const QAbstractItemModel * model = selectedClientinTheGrid.model();
     QVariant clientID = model->data(model->index(selectedClientinTheGrid.row(), 0, selectedClientinTheGrid.parent()), Qt::DisplayRole);
 
-    clientinfo clientinfo;
-    clientinfo.setClient_id(clientID.toString());
-    clientinfo.loadAll();
-    clientinfo.setModal(true);
-    clientinfo.exec();
+    Client_Info Client_Info;
+    Client_Info.setClient_id(clientID.toString());
+    Client_Info.loadAll();
+    Client_Info.setModal(true);
+    Client_Info.exec();
     ui->line_RGouCPFouNome->setText(clientID.toString());
 }
 
@@ -84,9 +84,9 @@ void MainWindow::on_actionSair_triggered()
 
 void MainWindow::on_actionSobreOficina_triggered()
 {
-    about about;
-    about.setModal(true);
-    about.exec();
+    About About;
+    About.setModal(true);
+    About.exec();
 }
 
 void MainWindow::on_line_RGouCPFouNome_textChanged(const QString &userSearchFilter)
@@ -142,7 +142,7 @@ void MainWindow::on_actionAlterar_Custo_da_Hora_triggered()
 
 void MainWindow::on_actionManual_do_usu_rio_triggered()
 {
-    Manul Manul;
-    Manul.setModal(true);
-    Manul.exec();
+    Man_Page man_page;
+    man_page.setModal(true);
+    man_page.exec();
 }

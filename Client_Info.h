@@ -4,16 +4,16 @@
 #include <QDialog>
 
 namespace Ui {
-class clientinfo;
+class Client_Info;
 }
 
-class clientinfo : public QDialog
+class Client_Info : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit clientinfo(QWidget *parent = 0);
-    ~clientinfo();
+    explicit Client_Info(QWidget *parent = 0);
+    ~Client_Info();
     void loadAll();
     void loadCarsGrid();
 
@@ -31,7 +31,7 @@ private slots:
     void on_btn_atualizarCliente_clicked();
 
 private:
-    Ui::clientinfo *ui;
+    Ui::Client_Info *ui;
     void loadServicesGrid();
     void loadClientInfo_to_TextBoxes();
 };

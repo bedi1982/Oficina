@@ -4,16 +4,16 @@
 #include <QDialog>
 
 namespace Ui {
-class CreateServiceDescription;
+class Service_Create_Description;
 }
 
-class CreateServiceDescription : public QDialog
+class Service_Create_Description : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit CreateServiceDescription(QWidget *parent = 0);
-    ~CreateServiceDescription();
+    explicit Service_Create_Description(QWidget *parent = 0);
+    ~Service_Create_Description();
     bool verificaCamposEmBrancoNoForm();
 
     QString clientid;
@@ -35,7 +35,7 @@ private slots:
     void on_txt_FullDescription_textChanged();
 
 private:
-    Ui::CreateServiceDescription *ui;
+    Ui::Service_Create_Description *ui;
 };
 
 #endif // CREATESERVICEDESCRIPTION_H

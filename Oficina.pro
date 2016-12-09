@@ -16,50 +16,50 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     database.cpp \
-    addpart.cpp \
-    addservice.cpp \
-    addclient.cpp \
-    addclientcar.cpp \
-    about.cpp \
-    clientinfo.cpp \
-    partsselectionfromlist.cpp \
-    editclient.cpp \
     stockcontrol.cpp \
     setworkhourcost.cpp \
-    createservicedescription.cpp \
     updatedservicedescription.cpp \
-    manul.cpp
+    About.cpp \
+    Client_Add.cpp \
+    Client_Add_Car.cpp \
+    Stock_Add_Part.cpp \
+    Client_Add_Service.cpp \
+    Client_Info.cpp \
+    Service_Create_Description.cpp \
+    Client_Edit.cpp \
+    Man_Page.cpp \
+    Stock_Parts_Selection.cpp
 
 HEADERS  += mainwindow.h \
-    addpart.h \
-    addservice.h \
-    addclient.h \
-    addclientcar.h \
-    about.h \
-    clientinfo.h \
     database.h \
-    partsselectionfromlist.h \
-    editclient.h \
     stockcontrol.h \
     setworkhourcost.h \
-    createservicedescription.h \
     updatedservicedescription.h \
-    manul.h
+    About.h \
+    Client_Add.h \
+    Client_Add_Car.h \
+    Stock_Add_Part.h \
+    Client_Add_Service.h \
+    Client_Info.h \
+    Service_Create_Description.h \
+    Client_Edit.h \
+    Man_Page.h \
+    Stock_Parts_Selection.h
 
 FORMS    += mainwindow.ui \
-    addpart.ui \
-    addservice.ui \
-    addclient.ui \
-    addclientcar.ui \
-    about.ui \
-    clientinfo.ui \
-    partsselectionfromlist.ui \
-    editclient.ui \
     stockcontrol.ui \
     setworkhourcost.ui \
-    createservicedescription.ui \
     updatedservicedescription.ui \
-    manul.ui
+    About.ui \
+    Client_Add.ui \
+    Client_Add_Car.ui \
+    Stock_Add_Part.ui \
+    Client_Add_service.ui \
+    Client_Info.ui \
+    Service_Create_Description.ui \
+    Client_Edit.ui \
+    Man_Page.ui \
+    Stock_Parts_Selection.ui
 
 DISTFILES += \
     database_creation \

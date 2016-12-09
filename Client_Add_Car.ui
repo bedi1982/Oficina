@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>addclientcar</class>
- <widget class="QDialog" name="addclientcar">
+ <class>Client_Add_Car</class>
+ <widget class="QDialog" name="Client_Add_Car">
   <property name="geometry">
    <rect>
     <x>0</x>

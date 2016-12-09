@@ -1,5 +1,5 @@
-#include "partsselectionfromlist.h"
-#include "ui_partsselectionfromlist.h"
+#include "Stock_Parts_Selection.h"
+#include "ui_Stock_Parts_Selection.h"
 
 #include "QMessageBox"
 #include <QSqlTableModel>
@@ -8,31 +8,31 @@
 #include "QSqlError"
 
 
-partsSelectionFromList::partsSelectionFromList(QWidget *parent) :
+Stock_Parts_Selection::Stock_Parts_Selection(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::partsSelectionFromList)
+    ui(new Ui::Stock_Parts_Selection)
 {
     ui->setupUi(this);
     ui->line_NomeDaPeca->setFocus();
     ui->line_NomeDaPeca->setText("*"); //Just so all parts are showed by default//
 }
 
-partsSelectionFromList::~partsSelectionFromList()
+Stock_Parts_Selection::~Stock_Parts_Selection()
 {
     delete ui;
 }
 
-QString partsSelectionFromList::getServiceID() const
+QString Stock_Parts_Selection::getServiceID() const
 {
     return serviceID;
 }
 
-void partsSelectionFromList::setServiceID(QString serviceid)
+void Stock_Parts_Selection::setServiceID(QString serviceid)
 {
     serviceID = serviceid;
 }
 
-void partsSelectionFromList::on_line_NomeDaPeca_textChanged(const QString &userSearchFfilter)
+void Stock_Parts_Selection::on_line_NomeDaPeca_textChanged(const QString &userSearchFfilter)
 {
     QSqlTableModel* model = new QSqlTableModel;
 
@@ -64,7 +64,7 @@ void partsSelectionFromList::on_line_NomeDaPeca_textChanged(const QString &userS
     }
 }
 
-void partsSelectionFromList::on_tbl_PartsList_doubleClicked(const QModelIndex &DoubleClickedCellValue)
+void Stock_Parts_Selection::on_tbl_PartsList_doubleClicked(const QModelIndex &DoubleClickedCellValue)
 {
     //YES NO DIALOG//
     if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Confirmação", "Adicionar a peça ao serviço?", QMessageBox::Yes|QMessageBox::No).exec())

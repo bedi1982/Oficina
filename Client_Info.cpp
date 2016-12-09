@@ -1,8 +1,11 @@
-#include "clientinfo.h"
-#include "ui_clientinfo.h"
-#include "QDebug"
-#include "addclientcar.h"
-#include "addservice.h"
+#include "Client_Info.h"
+#include "ui_Client_Info.h"
+
+#include "Client_Add_Car.h"
+#include "Client_Add_Service.h"
+
+#include "Client_Edit.h"
+#include "Service_Create_Description.h"
 
 #include <QSqlTableModel>
 #include "QDebug"
@@ -10,12 +13,11 @@
 #include "QSqlQuery"
 #include "QMessageBox"
 #include "QSqlError"
-#include "editclient.h"
-#include "createservicedescription.h"
 
-clientinfo::clientinfo(QWidget *parent) :
+
+Client_Info::Client_Info(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::clientinfo)
+    ui(new Ui::Client_Info)
 {
     ui->setupUi(this);
 
@@ -29,28 +31,28 @@ clientinfo::clientinfo(QWidget *parent) :
     ui->lbl_ClientInfo->setPixmap(clienticon);
 }
 
-clientinfo::~clientinfo()
+Client_Info::~Client_Info()
 {
     delete ui;
 }
 
-QString clientinfo::getClient_id() const
+QString Client_Info::getClient_id() const
 {
     return client_id;
 }
 
-void clientinfo::setClient_id(const QString &value)
+void Client_Info::setClient_id(const QString &value)
 {
     client_id = value;
 }
 
-void clientinfo::loadAll(){
+void Client_Info::loadAll(){
     loadCarsGrid();
     loadServicesGrid();
     loadClientInfo_to_TextBoxes();
 }
 
-void clientinfo::loadClientInfo_to_TextBoxes()
+void Client_Info::loadClientInfo_to_TextBoxes()
 {
     QSqlQuery query;
     query.prepare("SELECT Client_id, Client_Name, Client_Address, Client_Phone, Client_City FROM Client WHERE Client_id = " + client_id);
@@ -70,7 +72,7 @@ void clientinfo::loadClientInfo_to_TextBoxes()
     }
 }
 
-void clientinfo::loadServicesGrid()
+void Client_Info::loadServicesGrid()
 {    
     QSqlQueryModel* model = new QSqlQueryModel;
     model->setQuery("SELECT "
@@ -96,7 +98,7 @@ void clientinfo::loadServicesGrid()
     }
 }
 
-void clientinfo::loadCarsGrid()
+void Client_Info::loadCarsGrid()
 {
     QSqlQueryModel* model = new QSqlQueryModel;
     model->setQuery("SELECT "
@@ -119,33 +121,33 @@ void clientinfo::loadCarsGrid()
     }
 }
 
-void clientinfo::on_btn_addClientCarro_clicked()
+void Client_Info::on_btn_addClientCarro_clicked()
 {
-    addclientcar addclientcar;
-    addclientcar.setClient(client_id);
-    addclientcar.addClientInfoToForm(client_id);
-    addclientcar.setModal(true);
-    addclientcar.exec();
+    Client_Add_Car Client_Add_Car;
+    Client_Add_Car.setClient(client_id);
+    Client_Add_Car.addClientInfoToForm(client_id);
+    Client_Add_Car.setModal(true);
+    Client_Add_Car.exec();
     loadCarsGrid();
 }
 
 //Adding Service to this client and this car//
-void clientinfo::on_tbl_clientCars_doubleClicked(const QModelIndex &index)
+void Client_Info::on_tbl_clientCars_doubleClicked(const QModelIndex &index)
 {
     //Bellow 2 list will retrieve the column 0 value, which is the ServiceID//
     const QAbstractItemModel * model = index.model();
     QVariant carID = model->data(model->index(index.row(), 0, index.parent()), Qt::DisplayRole);
 
-    CreateServiceDescription CreateServiceDescription;
-    CreateServiceDescription.setCarID(carID.toString());
-    CreateServiceDescription.setClientid(client_id);
+    Service_Create_Description Service_Create_Description;
+    Service_Create_Description.setCarID(carID.toString());
+    Service_Create_Description.setClientid(client_id);
 
-    CreateServiceDescription.setModal(true);
-    CreateServiceDescription.exec();
+    Service_Create_Description.setModal(true);
+    Service_Create_Description.exec();
     loadServicesGrid();
 }
 
-void clientinfo::on_tbl_ClientServices_doubleClicked(const QModelIndex &index)
+void Client_Info::on_tbl_ClientServices_doubleClicked(const QModelIndex &index)
 {   //You come to this function from double clicking Services on the clientinfo Grid//
     //Bellow 2 lines will retrieve the column 0 (ServiceID)value from the Grid//
     const QAbstractItemModel * model = index.model();
@@ -154,23 +156,23 @@ void clientinfo::on_tbl_ClientServices_doubleClicked(const QModelIndex &index)
     //QVariant ClientID = model->data(model->index(index.row(), 1, index.parent()), Qt::DisplayRole);
     QVariant CarID = model->data(model->index(index.row(), 2, index.parent()), Qt::DisplayRole);
 
-    addservice addservice;
-    addservice.setCarID(CarID.toString());
-    addservice.setServiceID(ServiceID.toString());
-    addservice.setClientid(client_id);
-    addservice.LoadPartsAndServiceCostsGrid();
+    Client_Add_Service Client_Add_Service;
+    Client_Add_Service.setCarID(CarID.toString());
+    Client_Add_Service.setServiceID(ServiceID.toString());
+    Client_Add_Service.setClientid(client_id);
+    Client_Add_Service.LoadPartsAndServiceCostsGrid();
 
-    addservice.setModal(true);
-    addservice.exec();
+    Client_Add_Service.setModal(true);
+    Client_Add_Service.exec();
     loadServicesGrid();
 }
 
-void clientinfo::on_btn_atualizarCliente_clicked()
+void Client_Info::on_btn_atualizarCliente_clicked()
 {
-    EditClient EditClient;
-    EditClient.setModal(true);
-    EditClient.setClient_id(client_id);
-    EditClient.loadClientInfo_to_TextBoxes();
-    EditClient.exec();
+    Client_Edit Client_Edit;
+    Client_Edit.setModal(true);
+    Client_Edit.setClient_id(client_id);
+    Client_Edit.loadClientInfo_to_TextBoxes();
+    Client_Edit.exec();
     loadClientInfo_to_TextBoxes();
 }

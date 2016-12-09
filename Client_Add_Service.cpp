@@ -1,6 +1,6 @@
-#include "addservice.h"
-#include "ui_addservice.h"
-#include "partsselectionfromlist.h"
+#include "Client_Add_Service.h"
+#include "ui_Client_Add_service.h"
+#include "Stock_Parts_Selection.h"
 #include "updatedservicedescription.h"
 #include "mainwindow.h"
 #include "QMessageBox"
@@ -11,57 +11,57 @@
 #include "QDebug"
 #include "QSqlError"
 
-addservice::addservice(QWidget *parent) :
+Client_Add_Service::Client_Add_Service(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::addservice)
+    ui(new Ui::Client_Add_Service)
 {
     ui->setupUi(this);
     QPixmap glasses(":/emoticons/face-glasses.png");
     ui->lbl_Emoticon->setPixmap(glasses);
 }
 
-addservice::~addservice()
+Client_Add_Service::~Client_Add_Service()
 {
     delete ui;
 }
 
 
-QString addservice::getServiceID() const
+QString Client_Add_Service::getServiceID() const
 {
     return ServiceID;
 }
 
-void addservice::setServiceID(const QString &value)
+void Client_Add_Service::setServiceID(const QString &value)
 {
     ServiceID = value;
 }
 
-QString addservice::getCarID() const
+QString Client_Add_Service::getCarID() const
 {
     return CarID;
 }
 
-void addservice::setCarID(const QString &value)
+void Client_Add_Service::setCarID(const QString &value)
 {
     CarID = value;
 }
 
-QString addservice::getClientid() const
+QString Client_Add_Service::getClientid() const
 {
     return clientid;
 }
 
-void addservice::setClientid(const QString &value)
+void Client_Add_Service::setClientid(const QString &value)
 {
     clientid = value;
 }
 
-void addservice::on_btn_Sair_clicked()
+void Client_Add_Service::on_btn_Sair_clicked()
 {
     close();
 }
 
-void addservice::addserviceDescriptionText(){
+void Client_Add_Service::addserviceDescriptionText(){
     QSqlQueryModel* model = new QSqlQueryModel;
     model->setQuery("select Service_Description, Service_Short_Description from Service where Service_id = " + ServiceID);
 
@@ -69,7 +69,7 @@ void addservice::addserviceDescriptionText(){
     ui->txt_Servicedescription->setText(model->data(model->index(0, 1)).toString());
 }
 
-void addservice::LoadPartsAndServiceCostsGrid(){
+void Client_Add_Service::LoadPartsAndServiceCostsGrid(){
 
     QSqlQueryModel* model = new QSqlQueryModel;
     model->setQuery("SELECT ServicePartsUsed_id AS ServiçoUsedID, "
@@ -108,7 +108,7 @@ void addservice::LoadPartsAndServiceCostsGrid(){
     SumCosts();
 }
 
-void addservice::SumCosts()
+void Client_Add_Service::SumCosts()
 {
     QSqlQueryModel* model = new QSqlQueryModel;
     model->setQuery("select Service_Hours_Duration, Service_Parts_Cost, Service_Hour_Cost, Service_Paid from Service where Service_id = " + ServiceID);
@@ -133,17 +133,17 @@ void addservice::SumCosts()
 
 }
 
-void addservice::on_btn_Add_PartsUsedInTheService_clicked()
+void Client_Add_Service::on_btn_Add_PartsUsedInTheService_clicked()
 {
-    partsSelectionFromList partsSelectionFromList;
-    partsSelectionFromList.setServiceID(ServiceID);
-    partsSelectionFromList.setModal(true);
-    partsSelectionFromList.exec();
+    Stock_Parts_Selection stock_Parts_Selection;
+    stock_Parts_Selection.setServiceID(ServiceID);
+    stock_Parts_Selection.setModal(true);
+    stock_Parts_Selection.exec();
 
     LoadPartsAndServiceCostsGrid();
 }
 
-void addservice::on_btn_save_hoursWorked_clicked()
+void Client_Add_Service::on_btn_save_hoursWorked_clicked()
 {
     QSqlQuery UpdateHoursWorked;
     UpdateHoursWorked.prepare("update Service set Service_Hours_Duration = :Service_Hours_Duration where Service_id = :ServiceID");
@@ -160,7 +160,7 @@ void addservice::on_btn_save_hoursWorked_clicked()
     }
 }
 
-void addservice::on_btn_atualizarDescricaoServico_clicked()
+void Client_Add_Service::on_btn_atualizarDescricaoServico_clicked()
 {
     Updatedservicedescription Updatedservicedescription;
     Updatedservicedescription.setServiceID(ServiceID);
@@ -170,7 +170,7 @@ void addservice::on_btn_atualizarDescricaoServico_clicked()
     addserviceDescriptionText();
 }
 
-void addservice::on_tbl_PartsUsedInService_doubleClicked(const QModelIndex &index)
+void Client_Add_Service::on_tbl_PartsUsedInService_doubleClicked(const QModelIndex &index)
 {
     if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Confirmação!", "Você deseja realmente remover essa peça desse serviço?", QMessageBox::Yes|QMessageBox::No).exec())
     {
@@ -201,7 +201,7 @@ void addservice::on_tbl_PartsUsedInService_doubleClicked(const QModelIndex &inde
     }
 }
 
-void addservice::on_check_Pago_clicked()
+void Client_Add_Service::on_check_Pago_clicked()
 {
     if(ui->check_Pago->isChecked()){
         QSqlQuery query;

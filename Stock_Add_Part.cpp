@@ -1,13 +1,13 @@
-#include "addpart.h"
-#include "ui_addpart.h"
+#include "Stock_Add_Part.h"
+#include "ui_Stock_Add_Part.h"
 #include "QSqlQuery"
 #include "QDebug"
 #include "QSqlError"
 #include "QMessageBox"
 
-addpart::addpart(QWidget *parent) :
+Stock_Add_Part::Stock_Add_Part(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::addpart)
+    ui(new Ui::Stock_Add_Part)
 {
     ui->setupUi(this);
     ui->doubleSpinCusto->setMaximum(9999);
@@ -15,12 +15,12 @@ addpart::addpart(QWidget *parent) :
     ui->lbl_Emoticon->setPixmap(glasses);
 }
 
-addpart::~addpart()
+Stock_Add_Part::~Stock_Add_Part()
 {
     delete ui;
 }
 
-bool addpart::verificaCamposEmBrancoNoForm()
+bool Stock_Add_Part::verificaCamposEmBrancoNoForm()
 {
     if (   ui->line_Nome->text() == ""
            ||ui->txt_PartDescription->toPlainText() == ""
@@ -38,12 +38,12 @@ bool addpart::verificaCamposEmBrancoNoForm()
     return true;
 }
 
-void addpart::on_btn_Sair_clicked()
+void Stock_Add_Part::on_btn_Sair_clicked()
 {
     close();
 }
 
-void addpart::on_btn_Cadastrar_clicked()
+void Stock_Add_Part::on_btn_Cadastrar_clicked()
 {
     if(verificaCamposEmBrancoNoForm()){
         QSqlQuery query;
@@ -67,7 +67,7 @@ void addpart::on_btn_Cadastrar_clicked()
 }
 
 //Check car description Filed size(This function only limits entered text to 250)//
-void addpart::checkCarDescriptionSize(){
+void Stock_Add_Part::checkCarDescriptionSize(){
     if (ui->txt_PartDescription->toPlainText().length() > 250)
     {
         QString partDescription = ui->txt_PartDescription->toPlainText();
@@ -88,7 +88,7 @@ void addpart::checkCarDescriptionSize(){
     }
 }
 
-void addpart::on_txt_PartDescription_textChanged()
+void Stock_Add_Part::on_txt_PartDescription_textChanged()
 {
     checkCarDescriptionSize();
 }

@@ -1,14 +1,15 @@
-#include "addclient.h"
-#include "ui_addclient.h"
+#include "Client_Add.h"
+#include "ui_Client_Add.h"
 #include "mainwindow.h"
+
 #include "QString"
 #include "database.h"
 #include "QtSql"
 #include "QMessageBox"
 
-addclient::addclient(QWidget *parent) :
+Client_Add::Client_Add(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::addclient)
+    ui(new Ui::Client_Add)
 {
     ui->setupUi(this);
     QPixmap glasses(":/emoticons/face-glasses.png");
@@ -16,12 +17,12 @@ addclient::addclient(QWidget *parent) :
     ui->lbl_feedback->setText("Todos os campos devem estar preenchidos.");
 }
 
-addclient::~addclient()
+Client_Add::~Client_Add()
 {
     delete ui;
 }
 
-bool addclient::verificaCamposEmBrancoNoForm()
+bool Client_Add::verificaCamposEmBrancoNoForm()
 {
     if (   ui->line_Name->text() == ""
            ||ui->line_Address->text() == ""
@@ -41,7 +42,7 @@ bool addclient::verificaCamposEmBrancoNoForm()
     return true;
 }
 
-void addclient::on_btn_cadastrar_clicked()
+void Client_Add::on_btn_cadastrar_clicked()
 {
     if(verificaCamposEmBrancoNoForm()){
         //Start Database Operation//
@@ -68,7 +69,7 @@ void addclient::on_btn_cadastrar_clicked()
         }
     }
 }
-void addclient::on_btn_Sair_clicked()
+void Client_Add::on_btn_Sair_clicked()
 {
     close();
 }

@@ -4,16 +4,16 @@
 #include <QDialog>
 
 namespace Ui {
-class EditClient;
+class Client_Edit;
 }
 
-class EditClient : public QDialog
+class Client_Edit : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit EditClient(QWidget *parent = 0);
-    ~EditClient();
+    explicit Client_Edit(QWidget *parent = 0);
+    ~Client_Edit();
 
     QString client_id;
     void loadClientInfo_to_TextBoxes();
@@ -26,7 +26,7 @@ private slots:
     void on_btn_update_clicked();
 
 private:
-    Ui::EditClient *ui;
+    Ui::Client_Edit *ui;
 };
 
 #endif // EDITCLIENT_H

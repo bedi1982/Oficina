@@ -1,19 +1,19 @@
-#ifndef PARTSSELECTIONFROMLIST_H
-#define PARTSSELECTIONFROMLIST_H
+#ifndef Stock_Parts_Selection_H
+#define Stock_Parts_SelectioN_H
 
 #include <QDialog>
 
 namespace Ui {
-class partsSelectionFromList;
+class Stock_Parts_Selection;
 }
 
-class partsSelectionFromList : public QDialog
+class Stock_Parts_Selection : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit partsSelectionFromList(QWidget *parent = 0);
-    ~partsSelectionFromList();
+    explicit Stock_Parts_Selection(QWidget *parent = 0);
+    ~Stock_Parts_Selection();
 
     QString serviceID;
 
@@ -27,7 +27,7 @@ private slots:
     void on_tbl_PartsList_doubleClicked(const QModelIndex &index);
 
 private:
-    Ui::partsSelectionFromList *ui;
+    Ui::Stock_Parts_Selection *ui;
 };
 
 #endif // PARTSSELECTIONFROMLIST_H
