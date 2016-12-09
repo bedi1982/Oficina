@@ -1,5 +1,5 @@
-#ifndef MANUL_H
-#define MANUL_H
+#ifndef MAN_PAGE_H
+#define MAN_PAGE_H
 
 #include <QDialog>
 

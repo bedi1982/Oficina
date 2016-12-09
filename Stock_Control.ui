@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>StockControl</class>
- <widget class="QDialog" name="StockControl">
+ <class>Stock_Control</class>
+ <widget class="QDialog" name="Stock_Control">
   <property name="geometry">
    <rect>
     <x>0</x>

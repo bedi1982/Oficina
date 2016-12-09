@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>SetWorkHourCost</class>
- <widget class="QDialog" name="SetWorkHourCost">
+ <class>Config_Set_Hour_Cost</class>
+ <widget class="QDialog" name="Config_Set_Hour_Cost">
   <property name="geometry">
    <rect>
     <x>0</x>

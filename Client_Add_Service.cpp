@@ -1,8 +1,8 @@
 #include "Client_Add_Service.h"
 #include "ui_Client_Add_service.h"
 #include "Stock_Parts_Selection.h"
-#include "updatedservicedescription.h"
-#include "mainwindow.h"
+#include "Service_Update_Description.h"
+#include "Main_Window.h"
 #include "QMessageBox"
 
 #include <QSqlTableModel>
@@ -162,11 +162,11 @@ void Client_Add_Service::on_btn_save_hoursWorked_clicked()
 
 void Client_Add_Service::on_btn_atualizarDescricaoServico_clicked()
 {
-    Updatedservicedescription Updatedservicedescription;
-    Updatedservicedescription.setServiceID(ServiceID);
-    Updatedservicedescription.SetDescription();
-    Updatedservicedescription.setModal(true);
-    Updatedservicedescription.exec();
+    Service_Update_Description service_Update_Description;
+    service_Update_Description.setServiceID(ServiceID);
+    service_Update_Description.SetDescription();
+    service_Update_Description.setModal(true);
+    service_Update_Description.exec();
     addserviceDescriptionText();
 }
 

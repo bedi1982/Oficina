@@ -1,5 +1,5 @@
-#include "stockcontrol.h"
-#include "ui_stockcontrol.h"
+#include "Stock_Control.h"
+#include "ui_Stock_Control.h"
 #include "QSqlTableModel"
 #include "QAbstractItemModel"
 #include "QMessageBox"
@@ -7,9 +7,9 @@
 #include "QSqlError"
 #include "QDebug"
 
-StockControl::StockControl(QWidget *parent) :
+Stock_Control::Stock_Control(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::StockControl)
+    ui(new Ui::Stock_Control)
 {
     ui->setupUi(this);
     QPixmap cool(":/emoticons/face-cool.png");
@@ -17,22 +17,22 @@ StockControl::StockControl(QWidget *parent) :
     ui->line_NomeDaPeca->setFocus();
 }
 
-StockControl::~StockControl()
+Stock_Control::~Stock_Control()
 {
     delete ui;
 }
 
-QString StockControl::getPartID() const
+QString Stock_Control::getPartID() const
 {
     return partID;
 }
 
-void StockControl::setPartID(const QString &value)
+void Stock_Control::setPartID(const QString &value)
 {
     partID = value;
 }
 
-void StockControl::on_line_NomeDaPeca_textChanged(const QString &arg1)
+void Stock_Control::on_line_NomeDaPeca_textChanged(const QString &arg1)
 {
     QSqlTableModel* model = new QSqlTableModel;
 
@@ -71,7 +71,7 @@ void StockControl::on_line_NomeDaPeca_textChanged(const QString &arg1)
     }
 }
 
-void StockControl::on_tbl_parts_clicked(const QModelIndex &selectedClientinTheGrid)
+void Stock_Control::on_tbl_parts_clicked(const QModelIndex &selectedClientinTheGrid)
 {
     const QAbstractItemModel * model = selectedClientinTheGrid.model();
     QVariant part_index = model->data(model->index(selectedClientinTheGrid.row(), 0, selectedClientinTheGrid.parent()), Qt::DisplayRole);
@@ -82,7 +82,7 @@ void StockControl::on_tbl_parts_clicked(const QModelIndex &selectedClientinTheGr
     ui->txt_description->setText(partdescription.toString());
 }
 
-void StockControl::on_btn_save_clicked()
+void Stock_Control::on_btn_save_clicked()
 {
     QSqlQuery UpdatePartDescription;
     UpdatePartDescription.prepare("Update Part set Part_Description = :Part_Description where Part_id = :partID");
@@ -98,12 +98,12 @@ void StockControl::on_btn_save_clicked()
     }
 }
 
-void StockControl::on_btn_exit_clicked()
+void Stock_Control::on_btn_exit_clicked()
 {
     close();
 }
 
-void StockControl::on_txt_description_textChanged()
+void Stock_Control::on_txt_description_textChanged()
 {
     if (ui->txt_description->toPlainText().length() > 250)
     {

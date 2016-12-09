@@ -13,53 +13,56 @@ TARGET = Oficina
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp \
-    database.cpp \
-    stockcontrol.cpp \
-    setworkhourcost.cpp \
-    updatedservicedescription.cpp \
+SOURCES +=\
     About.cpp \
     Client_Add.cpp \
     Client_Add_Car.cpp \
     Stock_Add_Part.cpp \
     Client_Add_Service.cpp \
-    Client_Info.cpp \
     Service_Create_Description.cpp \
     Client_Edit.cpp \
     Man_Page.cpp \
-    Stock_Parts_Selection.cpp
+    Stock_Parts_Selection.cpp \
+    Service_Update_Description.cpp \
+    Config_Set_Hour_Cost.cpp \
+    Stock_Control.cpp \
+    Database.cpp \
+    Main.cpp \
+    Main_Window.cpp \
+    Client_Services_History.cpp
 
-HEADERS  += mainwindow.h \
-    database.h \
-    stockcontrol.h \
-    setworkhourcost.h \
-    updatedservicedescription.h \
+HEADERS  += \
     About.h \
     Client_Add.h \
     Client_Add_Car.h \
     Stock_Add_Part.h \
     Client_Add_Service.h \
-    Client_Info.h \
     Service_Create_Description.h \
     Client_Edit.h \
     Man_Page.h \
-    Stock_Parts_Selection.h
+    Stock_Parts_Selection.h \
+    Service_Update_Description.h \
+    Config_Set_Hour_Cost.h \
+    Stock_Control.h \
+    Database.h \
+    Main_Window.h \
+    Client_Services_History.h
 
-FORMS    += mainwindow.ui \
-    stockcontrol.ui \
-    setworkhourcost.ui \
-    updatedservicedescription.ui \
+FORMS    += \
     About.ui \
     Client_Add.ui \
     Client_Add_Car.ui \
     Stock_Add_Part.ui \
     Client_Add_service.ui \
-    Client_Info.ui \
     Service_Create_Description.ui \
     Client_Edit.ui \
     Man_Page.ui \
-    Stock_Parts_Selection.ui
+    Stock_Parts_Selection.ui \
+    Service_Update_Description.ui \
+    Config_Set_Hour_Cost.ui \
+    Stock_Control.ui \
+    Main_Window.ui \
+    Client_Services_History.ui
 
 DISTFILES += \
     database_creation \

@@ -1,5 +1,5 @@
-#ifndef ADDCLIENT_H
-#define ADDCLIENT_H
+#ifndef CLIENT_ADD_H
+#define CLIENT_ADD_H
 
 #include <QDialog>
 

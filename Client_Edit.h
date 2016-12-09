@@ -1,5 +1,5 @@
-#ifndef EDITCLIENT_H
-#define EDITCLIENT_H
+#ifndef CLIENT_EDIT_H
+#define CLIENT_EDIT_H
 
 #include <QDialog>
 

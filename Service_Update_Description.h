@@ -1,19 +1,19 @@
-#ifndef UPDATEDSERVICEDESCRIPTION_H
-#define UPDATEDSERVICEDESCRIPTION_H
+#ifndef SERVICE_UPDATE_DESCRIPTION_H
+#define SERVICE_UPDATE_DESCRIPTION_H
 
 #include <QDialog>
 
 namespace Ui {
-class Updatedservicedescription;
+class Service_Update_Description;
 }
 
-class Updatedservicedescription : public QDialog
+class Service_Update_Description : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Updatedservicedescription(QWidget *parent = 0);
-    ~Updatedservicedescription();
+    explicit Service_Update_Description(QWidget *parent = 0);
+    ~Service_Update_Description();
     void SetDescription();
     void EnableDescriptionUpdate();
     QString serviceID;
@@ -27,7 +27,7 @@ private slots:
     void on_txt_FullDescription_textChanged();
 
 private:
-    Ui::Updatedservicedescription *ui;
+    Ui::Service_Update_Description *ui;
 };
 
 #endif // UPDATEDSERVICEDESCRIPTION_H

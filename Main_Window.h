@@ -7,13 +7,13 @@ namespace Ui {
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow
+class Main_Window : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+    explicit Main_Window(QWidget *parent = 0);
+    ~Main_Window();
 
 private slots:
     void on_actionAddCliente_triggered();

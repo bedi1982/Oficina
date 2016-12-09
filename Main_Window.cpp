@@ -1,13 +1,13 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include "database.h"
+#include "Main_Window.h"
+#include "ui_Main_Window.h"
+#include "Database.h"
 #include "Client_Add.h"
 #include "Stock_Add_Part.h"
 #include "Client_Add_Service.h"
-#include "Client_Info.h"
+#include "Client_Services_History.h"
 #include "About.h"
-#include "stockcontrol.h"
-#include "setworkhourcost.h"
+#include "Stock_Control.h"
+#include "Config_Set_Hour_Cost.h"
 #include "Man_Page.h"
 
 #include <QSqlTableModel>
@@ -19,7 +19,7 @@
 
 using namespace std;
 
-MainWindow::MainWindow(QWidget *parent) :
+Main_Window::Main_Window(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
@@ -44,52 +44,52 @@ MainWindow::MainWindow(QWidget *parent) :
     }
 }
 
-MainWindow::~MainWindow()
+Main_Window::~Main_Window()
 {
     delete ui;
 }
 
-void MainWindow::on_actionAddCliente_triggered()
+void Main_Window::on_actionAddCliente_triggered()
 {
     Client_Add Client_Add;
     Client_Add.setModal(true);
     Client_Add.exec();
 }
 
-void MainWindow::on_actionAddPeca_triggered()
+void Main_Window::on_actionAddPeca_triggered()
 {
     Stock_Add_Part Stock_Add_Part;
     Stock_Add_Part.setModal(true);
     Stock_Add_Part.exec();
 }
 
-void MainWindow::on_tbl_historicoServicos_doubleClicked(const QModelIndex &selectedClientinTheGrid)
+void Main_Window::on_tbl_historicoServicos_doubleClicked(const QModelIndex &selectedClientinTheGrid)
 {
     //Bellow 2 list will retrieve the column 0 value, which is the clientid//
     const QAbstractItemModel * model = selectedClientinTheGrid.model();
     QVariant clientID = model->data(model->index(selectedClientinTheGrid.row(), 0, selectedClientinTheGrid.parent()), Qt::DisplayRole);
 
-    Client_Info Client_Info;
-    Client_Info.setClient_id(clientID.toString());
-    Client_Info.loadAll();
-    Client_Info.setModal(true);
-    Client_Info.exec();
+    Client_Services_History client_Services_History;
+    client_Services_History.setClient_id(clientID.toString());
+    client_Services_History.loadAll();
+    client_Services_History.setModal(true);
+    client_Services_History.exec();
     ui->line_RGouCPFouNome->setText(clientID.toString());
 }
 
-void MainWindow::on_actionSair_triggered()
+void Main_Window::on_actionSair_triggered()
 {
     close();
 }
 
-void MainWindow::on_actionSobreOficina_triggered()
+void Main_Window::on_actionSobreOficina_triggered()
 {
     About About;
     About.setModal(true);
     About.exec();
 }
 
-void MainWindow::on_line_RGouCPFouNome_textChanged(const QString &userSearchFilter)
+void Main_Window::on_line_RGouCPFouNome_textChanged(const QString &userSearchFilter)
 {
     QSqlTableModel* model = new QSqlTableModel;
 
@@ -125,22 +125,22 @@ void MainWindow::on_line_RGouCPFouNome_textChanged(const QString &userSearchFilt
     }
 }
 
-void MainWindow::on_actionEstoque_triggered()
+void Main_Window::on_actionEstoque_triggered()
 {
-    StockControl StockControl;
-    StockControl.setModal(true);
-    StockControl.exec();
+    Stock_Control stock_Control;
+    stock_Control.setModal(true);
+    stock_Control.exec();
 }
 
-void MainWindow::on_actionAlterar_Custo_da_Hora_triggered()
+void Main_Window::on_actionAlterar_Custo_da_Hora_triggered()
 {
-    SetWorkHourCost SetWorkHourCost;
-    SetWorkHourCost.setModal(true);
-    SetWorkHourCost.SetNewCost();
-    SetWorkHourCost.exec();
+    Config_Set_Hour_Cost set_Hour_Cost;
+    set_Hour_Cost.setModal(true);
+    set_Hour_Cost.SetNewCost();
+    set_Hour_Cost.exec();
 }
 
-void MainWindow::on_actionManual_do_usu_rio_triggered()
+void Main_Window::on_actionManual_do_usu_rio_triggered()
 {
     Man_Page man_page;
     man_page.setModal(true);

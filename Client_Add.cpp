@@ -1,9 +1,9 @@
 #include "Client_Add.h"
 #include "ui_Client_Add.h"
-#include "mainwindow.h"
+#include "Main_Window.h"
 
 #include "QString"
-#include "database.h"
+#include "Database.h"
 #include "QtSql"
 #include "QMessageBox"
 

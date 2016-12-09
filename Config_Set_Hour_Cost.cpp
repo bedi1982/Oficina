@@ -1,22 +1,22 @@
-#include "setworkhourcost.h"
-#include "ui_setworkhourcost.h"
+#include "Config_Set_Hour_Cost.h"
+#include "ui_Config_Set_Hour_Cost.h"
 #include "QSqlTableModel"
 
-SetWorkHourCost::SetWorkHourCost(QWidget *parent) :
+Config_Set_Hour_Cost::Config_Set_Hour_Cost(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::SetWorkHourCost)
+    ui(new Ui::Config_Set_Hour_Cost)
 {
     ui->setupUi(this);
     QPixmap cool(":/emoticons/face-cool.png");
     ui->lbl_Emoticon->setPixmap(cool);
 }
 
-SetWorkHourCost::~SetWorkHourCost()
+Config_Set_Hour_Cost::~Config_Set_Hour_Cost()
 {
     delete ui;
 }
 
-void SetWorkHourCost::SetNewCost(){
+void Config_Set_Hour_Cost::SetNewCost(){
 
     QSqlTableModel* model = new QSqlTableModel;
     model->setTable("HourCost");

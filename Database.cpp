@@ -1,5 +1,5 @@
 #include "QString"
-#include "database.h"
+#include "Database.h"
 #include "QtSql"
 #include "QList"
 #include "iostream"

@@ -1,5 +1,5 @@
-#ifndef Stock_Parts_Selection_H
-#define Stock_Parts_SelectioN_H
+#ifndef STOCK_PARTS_SELECTION_H
+#define STOCK_PARTS_SELECTION_H
 
 #include <QDialog>
 

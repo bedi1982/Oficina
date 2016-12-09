@@ -1,5 +1,5 @@
-#include "Client_Info.h"
-#include "ui_Client_Info.h"
+#include "Client_Services_History.h"
+#include "ui_Client_Services_History.h"
 
 #include "Client_Add_Car.h"
 #include "Client_Add_Service.h"
@@ -15,9 +15,9 @@
 #include "QSqlError"
 
 
-Client_Info::Client_Info(QWidget *parent) :
+Client_Services_History::Client_Services_History(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::Client_Info)
+    ui(new Ui::Client_Services_History)
 {
     ui->setupUi(this);
 
@@ -31,28 +31,28 @@ Client_Info::Client_Info(QWidget *parent) :
     ui->lbl_ClientInfo->setPixmap(clienticon);
 }
 
-Client_Info::~Client_Info()
+Client_Services_History::~Client_Services_History()
 {
     delete ui;
 }
 
-QString Client_Info::getClient_id() const
+QString Client_Services_History::getClient_id() const
 {
     return client_id;
 }
 
-void Client_Info::setClient_id(const QString &value)
+void Client_Services_History::setClient_id(const QString &value)
 {
     client_id = value;
 }
 
-void Client_Info::loadAll(){
+void Client_Services_History::loadAll(){
     loadCarsGrid();
     loadServicesGrid();
     loadClientInfo_to_TextBoxes();
 }
 
-void Client_Info::loadClientInfo_to_TextBoxes()
+void Client_Services_History::loadClientInfo_to_TextBoxes()
 {
     QSqlQuery query;
     query.prepare("SELECT Client_id, Client_Name, Client_Address, Client_Phone, Client_City FROM Client WHERE Client_id = " + client_id);
@@ -72,7 +72,7 @@ void Client_Info::loadClientInfo_to_TextBoxes()
     }
 }
 
-void Client_Info::loadServicesGrid()
+void Client_Services_History::loadServicesGrid()
 {    
     QSqlQueryModel* model = new QSqlQueryModel;
     model->setQuery("SELECT "
@@ -98,7 +98,7 @@ void Client_Info::loadServicesGrid()
     }
 }
 
-void Client_Info::loadCarsGrid()
+void Client_Services_History::loadCarsGrid()
 {
     QSqlQueryModel* model = new QSqlQueryModel;
     model->setQuery("SELECT "
@@ -121,7 +121,7 @@ void Client_Info::loadCarsGrid()
     }
 }
 
-void Client_Info::on_btn_addClientCarro_clicked()
+void Client_Services_History::on_btn_addClientCarro_clicked()
 {
     Client_Add_Car Client_Add_Car;
     Client_Add_Car.setClient(client_id);
@@ -132,7 +132,7 @@ void Client_Info::on_btn_addClientCarro_clicked()
 }
 
 //Adding Service to this client and this car//
-void Client_Info::on_tbl_clientCars_doubleClicked(const QModelIndex &index)
+void Client_Services_History::on_tbl_clientCars_doubleClicked(const QModelIndex &index)
 {
     //Bellow 2 list will retrieve the column 0 value, which is the ServiceID//
     const QAbstractItemModel * model = index.model();
@@ -147,7 +147,7 @@ void Client_Info::on_tbl_clientCars_doubleClicked(const QModelIndex &index)
     loadServicesGrid();
 }
 
-void Client_Info::on_tbl_ClientServices_doubleClicked(const QModelIndex &index)
+void Client_Services_History::on_tbl_ClientServices_doubleClicked(const QModelIndex &index)
 {   //You come to this function from double clicking Services on the clientinfo Grid//
     //Bellow 2 lines will retrieve the column 0 (ServiceID)value from the Grid//
     const QAbstractItemModel * model = index.model();
@@ -167,7 +167,7 @@ void Client_Info::on_tbl_ClientServices_doubleClicked(const QModelIndex &index)
     loadServicesGrid();
 }
 
-void Client_Info::on_btn_atualizarCliente_clicked()
+void Client_Services_History::on_btn_atualizarCliente_clicked()
 {
     Client_Edit Client_Edit;
     Client_Edit.setModal(true);

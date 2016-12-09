@@ -1,23 +1,24 @@
-#include "updatedservicedescription.h"
-#include "ui_updatedservicedescription.h"
+#include "Service_Update_Description.h"
+#include "ui_Service_Update_Description.h"
+
 #include "QSqlQueryModel"
 #include "QMessageBox"
 #include "QSqlQuery"
 #include "QSqlError"
 
-Updatedservicedescription::Updatedservicedescription(QWidget *parent) :
+Service_Update_Description::Service_Update_Description(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::Updatedservicedescription)
+    ui(new Ui::Service_Update_Description)
 {
     ui->setupUi(this);
 }
 
-Updatedservicedescription::~Updatedservicedescription()
+Service_Update_Description::~Service_Update_Description()
 {
     delete ui;
 }
 
-void Updatedservicedescription::SetDescription(){
+void Service_Update_Description::SetDescription(){
     QSqlQueryModel* model = new QSqlQueryModel;
     model->setQuery("SELECT Service_Description, Service_Short_Description from Service where Service_id  = " + serviceID);
 
@@ -27,7 +28,7 @@ void Updatedservicedescription::SetDescription(){
         }
 }
 
-void Updatedservicedescription::EnableDescriptionUpdate(){
+void Service_Update_Description::EnableDescriptionUpdate(){
     QSqlQuery UpdateServiceDescription;
     UpdateServiceDescription.prepare("Update Service set Service_Description = :Service_Description, Service_Short_Description = :Service_Short_Description where Service_id =" + serviceID);
 
@@ -42,22 +43,22 @@ void Updatedservicedescription::EnableDescriptionUpdate(){
     }
 }
 
-QString Updatedservicedescription::getServiceID() const
+QString Service_Update_Description::getServiceID() const
 {
     return serviceID;
 }
 
-void Updatedservicedescription::setServiceID(const QString &value)
+void Service_Update_Description::setServiceID(const QString &value)
 {
     serviceID = value;
 }
 
-void Updatedservicedescription::on_btn_salvar_clicked()
+void Service_Update_Description::on_btn_salvar_clicked()
 {
  EnableDescriptionUpdate();
 }
 
-void Updatedservicedescription::on_txt_FullDescription_textChanged()
+void Service_Update_Description::on_txt_FullDescription_textChanged()
 {
     if (ui->txt_FullDescription->toPlainText().length() > 1000)
     {

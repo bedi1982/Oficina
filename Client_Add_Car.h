@@ -1,5 +1,5 @@
-#ifndef ADDCLIENTCAR_H
-#define ADDCLIENTCAR_H
+#ifndef CLIENTCAR_ADD_CAR_H
+#define CLIENTCAR_ADD_CAR_H
 
 #include <QDialog>
 

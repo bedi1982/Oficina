@@ -1,5 +1,5 @@
-#ifndef Client_Add_Service_H
-#define Client_Add_Service_H
+#ifndef CLIENT_ADD_SERVICE_H
+#define CLIENT_ADD_SERVICE_H
 
 #include <QDialog>
 

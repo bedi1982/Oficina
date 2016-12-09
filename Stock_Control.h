@@ -1,19 +1,19 @@
-#ifndef STOCKCONTROL_H
-#define STOCKCONTROL_H
+#ifndef STOCK_CONTROL_H
+#define STOCK_CONTROL_H
 
 #include <QDialog>
 
 namespace Ui {
-class StockControl;
+class Stock_Control;
 }
 
-class StockControl : public QDialog
+class Stock_Control : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit StockControl(QWidget *parent = 0);
-    ~StockControl();
+    explicit Stock_Control(QWidget *parent = 0);
+    ~Stock_Control();
     QString partID;
 
 
@@ -32,7 +32,7 @@ private slots:
     void on_txt_description_textChanged();
 
 private:
-    Ui::StockControl *ui;
+    Ui::Stock_Control *ui;
 };
 
 #endif // STOCKCONTROL_H

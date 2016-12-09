@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Updatedservicedescription</class>
- <widget class="QDialog" name="Updatedservicedescription">
+ <class>Service_Update_Description</class>
+ <widget class="QDialog" name="Service_Update_Description">
   <property name="geometry">
    <rect>
     <x>0</x>

@@ -1,5 +1,5 @@
-#ifndef ADDPART_H
-#define ADDPART_H
+#ifndef STOCK_ADD_PART_H
+#define STOCK_ADD_PART_H
 
 #include <QDialog>
 

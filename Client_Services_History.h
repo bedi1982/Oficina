@@ -1,19 +1,19 @@
-#ifndef CLIENTINFO_H
-#define CLIENTINFO_H
+#ifndef CLIENT_SERVICES_HISTORY_H
+#define CLIENT_SERVICES_HISTORY_H
 
 #include <QDialog>
 
 namespace Ui {
-class Client_Info;
+class Client_Services_History;
 }
 
-class Client_Info : public QDialog
+class Client_Services_History : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Client_Info(QWidget *parent = 0);
-    ~Client_Info();
+    explicit Client_Services_History(QWidget *parent = 0);
+    ~Client_Services_History();
     void loadAll();
     void loadCarsGrid();
 
@@ -31,7 +31,7 @@ private slots:
     void on_btn_atualizarCliente_clicked();
 
 private:
-    Ui::Client_Info *ui;
+    Ui::Client_Services_History *ui;
     void loadServicesGrid();
     void loadClientInfo_to_TextBoxes();
 };
