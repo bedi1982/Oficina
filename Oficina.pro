@@ -65,7 +65,6 @@ FORMS    += \
     Client_Services_History.ui
 
 DISTFILES += \
-    database_creation \
     resources/emote-love.png \
     resources/face-angel.png \
     resources/face-angry.png \
@@ -90,7 +89,8 @@ DISTFILES += \
     resources/face-wink.png \
     resources/face-worried.png \
     resources/DB11-model2.png \
-    TODO
+    TODO \
+    Create_Database.sql
 
 RESOURCES += \
     resources/images.qrc
