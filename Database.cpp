@@ -1,9 +1,5 @@
-#include "QString"
 #include "Database.h"
 #include "QtSql"
-#include "QList"
-#include "iostream"
-#include "QDebug"
 #include "QMessageBox"
 
 using namespace std;
