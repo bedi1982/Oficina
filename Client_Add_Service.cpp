@@ -65,8 +65,8 @@ void Client_Add_Service::addserviceDescriptionText(){
     QSqlQueryModel* model = new QSqlQueryModel;
     model->setQuery("select Service_Description, Service_Short_Description from Service where Service_id = " + ServiceID);
 
-    ui->line_ServiceShortDescription->setText(model->data(model->index(0, 0)).toString());
     ui->txt_Servicedescription->setText(model->data(model->index(0, 1)).toString());
+    ui->line_ServiceShortDescription->setText(model->data(model->index(0, 0)).toString());
 }
 
 void Client_Add_Service::LoadPartsAndServiceCostsGrid(){
@@ -90,15 +90,14 @@ void Client_Add_Service::LoadPartsAndServiceCostsGrid(){
 
         //Sum the Parts Used Value and add to doublespin//
         double PartsCost = 0;
-        const int column = 4; //"Part_Cost AS 'Custo' "
+        const int column = 4; //"Part_Cost column"//
         for (int row = 0; row < model->rowCount(); ++row) {
             PartsCost += model->data(model->index(row, column)).toDouble();
         }
 
         QSqlQuery SetServicePartsCost;
-        SetServicePartsCost.prepare("update Service set Service_Parts_Cost = :PartsCost where Service_id = :ServiceID");
+        SetServicePartsCost.prepare("update Service set Service_Parts_Cost = :PartsCost where Service_id = " + ServiceID);
         SetServicePartsCost.bindValue(":PartsCost", PartsCost);
-        SetServicePartsCost.bindValue(":ServiceID", ServiceID.toDouble());
 
         if (SetServicePartsCost.exec() == false){
             QMessageBox::critical(this, "Erro!", SetServicePartsCost.lastError().text() + " class addservice.cpp LoadPartsAndServiceCostsGrid() ");
@@ -146,10 +145,9 @@ void Client_Add_Service::on_btn_Add_PartsUsedInTheService_clicked()
 void Client_Add_Service::on_btn_save_hoursWorked_clicked()
 {
     QSqlQuery UpdateHoursWorked;
-    UpdateHoursWorked.prepare("update Service set Service_Hours_Duration = :Service_Hours_Duration where Service_id = :ServiceID");
+    UpdateHoursWorked.prepare("update Service set Service_Hours_Duration = :Service_Hours_Duration where Service_id = " + ServiceID);
 
     UpdateHoursWorked.bindValue(":Service_Hours_Duration", ui->Spin_HandWorkHours->text().toDouble());
-    UpdateHoursWorked.bindValue(":ServiceID", ServiceID);
 
     if (!(UpdateHoursWorked.exec())){
         QMessageBox::critical(this, "Erro!", UpdateHoursWorked.lastError().text() + "class addservice.cpp  on_btn_save_hoursWorked_clicked()");
@@ -178,17 +176,17 @@ void Client_Add_Service::on_tbl_PartsUsedInService_doubleClicked(const QModelInd
         const QAbstractItemModel * model = index.model();
         QVariant ServicePart_ID = model->data(model->index(index.row(), 0, index.parent()), Qt::DisplayRole);
 
-        qDebug() << "ServicePartsUsed_id" << ServicePart_ID;
+        //qDebug() << "ServicePartsUsed_id" << ServicePart_ID;
         QSqlQuery removePartsFromService;
-        removePartsFromService.prepare("DELETE FROM ServicePartsUsed WHERE ServicePartsUsed_id = :ServicePartsUsed_id");
-        removePartsFromService.bindValue(":ServicePartsUsed_id", ServicePart_ID.toString());
+        removePartsFromService.prepare("DELETE FROM ServicePartsUsed WHERE ServicePartsUsed_id = " + ServicePart_ID.toString());
+        //removePartsFromService.bindValue(":ServicePartsUsed_id", ServicePart_ID.toString());
         removePartsFromService.exec();
 
         //RETURN PART TO STOCK//
         //Bellow 2 list will retrieve the column 0 value, which is the ServicePartsUsed_id //
         const QAbstractItemModel * model2 = index.model();
         QVariant partID = model2->data(model2->index(index.row(), 1, index.parent()), Qt::DisplayRole);
-        qDebug() << "PartID" << partID;
+        //qDebug() << "PartID" << partID;
 
         QSqlQuery returnPartToStock;
         returnPartToStock.prepare("UPDATE Part SET Part_Quantity = (Part_Quantity + 1) WHERE Part_id = :partID");
