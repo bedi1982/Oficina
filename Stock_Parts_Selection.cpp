@@ -1,4 +1,5 @@
 #include "Stock_Parts_Selection.h"
+#include "Stock_Add_Part.h"
 #include "ui_Stock_Parts_Selection.h"
 
 #include "QMessageBox"
@@ -51,7 +52,7 @@ void Stock_Parts_Selection::on_line_NomeDaPeca_textChanged(const QString &userSe
         model->setHeaderData(1, Qt::Horizontal, tr("Nome"));
         model->setHeaderData(2, Qt::Horizontal, tr("Descrição"));
         model->setHeaderData(3, Qt::Horizontal, tr("Custo"));
-        model->setHeaderData(4, Qt::Horizontal, tr("Quantidade"));
+        model->setHeaderData(4, Qt::Horizontal, tr("Quantidade em Estoque"));
         model->setHeaderData(5, Qt::Horizontal, tr("Atualiada em"));
         model->setHeaderData(6, Qt::Horizontal, tr("Criada em"));
 
@@ -91,4 +92,15 @@ void Stock_Parts_Selection::on_tbl_PartsList_doubleClicked(const QModelIndex &Do
             close();
         }
     }
+}
+
+void Stock_Parts_Selection::on_btn_Add_Part_to_Stock_clicked()
+{
+    Stock_Add_Part Stock_Add_Part;
+    Stock_Add_Part.setModal(true);
+    Stock_Add_Part.exec();
+
+    //Bellow 2 just to 'retrigguer' the parts list grid after a new part is included//
+    ui->line_NomeDaPeca->setText(" ");
+    ui->line_NomeDaPeca->setText("*");
 }

@@ -18,6 +18,8 @@ Client_Add_Service::Client_Add_Service(QWidget *parent) :
     ui->setupUi(this);
     QPixmap glasses(":/emoticons/face-glasses.png");
     ui->lbl_Emoticon->setPixmap(glasses);
+    ui->txt_Servicedescription->setReadOnly(true);
+    ui->line_ServiceShortDescription->setReadOnly(true);
 }
 
 Client_Add_Service::~Client_Add_Service()
@@ -65,8 +67,8 @@ void Client_Add_Service::addserviceDescriptionText(){
     QSqlQueryModel* model = new QSqlQueryModel;
     model->setQuery("select Service_Description, Service_Short_Description from Service where Service_id = " + ServiceID);
 
-    ui->txt_Servicedescription->setText(model->data(model->index(0, 1)).toString());
-    ui->line_ServiceShortDescription->setText(model->data(model->index(0, 0)).toString());
+    ui->line_ServiceShortDescription->setText(model->data(model->index(0, 1)).toString());
+    ui->txt_Servicedescription->setText(model->data(model->index(0, 0)).toString());
 }
 
 void Client_Add_Service::LoadPartsAndServiceCostsGrid(){
@@ -158,16 +160,6 @@ void Client_Add_Service::on_btn_save_hoursWorked_clicked()
     }
 }
 
-void Client_Add_Service::on_btn_Atualizar_Descricao_Servico_clicked()
-{
-    Service_Update_Description service_Update_Description;
-    service_Update_Description.setServiceID(ServiceID);
-    service_Update_Description.SetDescription();
-    service_Update_Description.setModal(true);
-    service_Update_Description.exec();
-    addserviceDescriptionText();
-}
-
 void Client_Add_Service::on_tbl_Parts_Used_In_Service_Double_Clicked(const QModelIndex &index)
 {
     if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Confirmação!", "Você deseja realmente remover essa peça desse serviço?", QMessageBox::Yes|QMessageBox::No).exec())
@@ -220,4 +212,14 @@ void Client_Add_Service::on_check_Pago_clicked()
             QMessageBox::information(this, "Pago?", "Serviço alterado para:\n Não Pago");
         }
     }
+}
+
+void Client_Add_Service::on_btn_atualizarDescricaoServico_clicked()
+{
+    Service_Update_Description service_Update_Description;
+    service_Update_Description.setServiceID(ServiceID);
+    service_Update_Description.SetDescription();
+    service_Update_Description.setModal(true);
+    service_Update_Description.exec();
+    addserviceDescriptionText();
 }

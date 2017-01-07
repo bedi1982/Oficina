@@ -39,11 +39,11 @@ private slots:
     void on_btn_Add_PartsUsedInTheService_clicked();
     void on_btn_save_hoursWorked_clicked();
 
-    void on_btn_Atualizar_Descricao_Servico_clicked();
-
     void on_tbl_Parts_Used_In_Service_Double_Clicked(const QModelIndex &index);
 
     void on_check_Pago_clicked();
+
+    void on_btn_atualizarDescricaoServico_clicked();
 
 private:
     Ui::Client_Add_Service *ui;

@@ -205,14 +205,14 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>490</x>
+     <x>480</x>
      <y>270</y>
-     <width>141</width>
+     <width>151</width>
      <height>34</height>
     </rect>
    </property>
    <property name="text">
-    <string>Atualizar serviço</string>
+    <string>Atualizar esta Descrição</string>
    </property>
   </widget>
   <widget class="QTextEdit" name="txt_Servicedescription">
@@ -245,7 +245,7 @@ p, li { white-space: pre-wrap; }
     </rect>
    </property>
    <property name="text">
-    <string>Recalcular</string>
+    <string>Salvar</string>
    </property>
   </widget>
   <widget class="QDoubleSpinBox" name="Spin_HandWorkHours">

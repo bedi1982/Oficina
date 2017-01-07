@@ -26,6 +26,8 @@ private slots:
 
     void on_tbl_PartsList_doubleClicked(const QModelIndex &index);
 
+    void on_btn_Add_Part_to_Stock_clicked();
+
 private:
     Ui::Stock_Parts_Selection *ui;
 };

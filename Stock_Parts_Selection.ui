@@ -86,6 +86,19 @@
     <string>Duplo clique na peça para adiciona-lá ao serviço.</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="btn_Add_Part_to_Stock">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>10</y>
+     <width>121</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cadastrar Nova</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
