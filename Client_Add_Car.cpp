@@ -46,7 +46,7 @@ void Client_Add_Car::addClientInfoToForm(QString client_id){
 
     if (query.exec() == false){
         qDebug() << query.lastError();
-        QMessageBox::critical(this, "Erro!", query.lastError().text() + ". Class: addclient.cpp56");
+        QMessageBox::critical(this, "Erro!", query.lastError().text() + ". Class: Class: Client_Add_Car.addClientInfoToForm(QString client_id)");
     }
 
     while(query.next()){
@@ -70,7 +70,7 @@ void Client_Add_Car::addCar(QString client_id){
         if (query.exec() == false){
             qDebug() << query.lastError();
             ui->lbl_Feedback->setText("Erro Grave. Fale com o desenvolvedor.");
-            QMessageBox::critical(this, "Erro!", query.lastError().text() + ". Class: addclieentcar.cpp81");
+            QMessageBox::critical(this, "Erro!", query.lastError().text() + ". Class: Client_Add_Car.addCar(QString client_id)");
         }else{
             ui->lbl_Feedback->setText("Carro adicionado ao Cliente!");
             QPixmap cool(":/emoticons/face-cool.png");
@@ -100,7 +100,7 @@ void Client_Add_Car::checkCarDescriptionSize(){
 
         // This is your "action" to alert the user. I'd suggest something more
         // subtle though, or just not doing anything at all.
-        QMessageBox::critical(this,
+        QMessageBox::warning(this,
                               "Erro!",
                               "Mantenha a descrição menor do que 300 letras.");
     }

@@ -136,7 +136,6 @@ void Main_Window::on_actionAlterar_Custo_da_Hora_triggered()
 {
     Config_Set_Hour_Cost set_Hour_Cost;
     set_Hour_Cost.setModal(true);
-    set_Hour_Cost.SetNewCost();
     set_Hour_Cost.exec();
 }
 

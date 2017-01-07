@@ -1,6 +1,8 @@
 #include "Config_Set_Hour_Cost.h"
 #include "ui_Config_Set_Hour_Cost.h"
-#include "QSqlTableModel"
+#include "QSqlQuery"
+#include "QSqlError"
+#include "QMessageBox"
 
 Config_Set_Hour_Cost::Config_Set_Hour_Cost(QWidget *parent) :
     QDialog(parent),
@@ -9,6 +11,20 @@ Config_Set_Hour_Cost::Config_Set_Hour_Cost(QWidget *parent) :
     ui->setupUi(this);
     QPixmap cool(":/emoticons/face-cool.png");
     ui->lbl_Emoticon->setPixmap(cool);
+
+    //just set current value in the spinbox//
+    QSqlQuery Set_Current_Hour_Cost;
+    Set_Current_Hour_Cost.prepare("SELECT HourCost from HourCost WHERE HourCost_id = 1");
+
+    if (Set_Current_Hour_Cost.exec() == false){
+        QMessageBox::critical(this, "Erro!", Set_Current_Hour_Cost.lastError().text() + "class Config_Set_Hour_Cost::on_btn_Salvar_clicked() Set_Current_Hour_Cost.exec()");
+    }else{
+        while(Set_Current_Hour_Cost.next())
+        {
+            ui->spin_hour_Cost->setValue(Set_Current_Hour_Cost.value(0).toDouble());
+        }
+    }
+
 }
 
 Config_Set_Hour_Cost::~Config_Set_Hour_Cost()
@@ -16,18 +32,16 @@ Config_Set_Hour_Cost::~Config_Set_Hour_Cost()
     delete ui;
 }
 
-void Config_Set_Hour_Cost::SetNewCost(){
+void Config_Set_Hour_Cost::on_btn_Salvar_clicked()
+{
+    QSqlQuery Update_Hour_Cost;
+    Update_Hour_Cost.prepare("update HourCost set HourCost = :Hours_Cost where HourCost_id = 1");
+    Update_Hour_Cost.bindValue(":Hours_Cost", ui->spin_hour_Cost->text().toDouble());
 
-    QSqlTableModel* model = new QSqlTableModel;
-    model->setTable("HourCost");
-
-    model->select();
-    model->setEditStrategy(QSqlTableModel::OnFieldChange);
-
-    model->setHeaderData(1, Qt::Horizontal, tr("Insira o Custo por Hora"));
-    model->setHeaderData(2, Qt::Horizontal, tr("Ultima atualização"));
-
-    ui->tbl_SetHourCost->setModel(model);
-    ui->tbl_SetHourCost->resizeColumnsToContents();
-        ui->tbl_SetHourCost->hideColumn(0);
+    if (!(Update_Hour_Cost.exec())){
+        QMessageBox::critical(this, "Erro!", Update_Hour_Cost.lastError().text() + "Config_Set_Hour_Cost::on_pushButton_clicked()");
+    }else{
+        QMessageBox::information(this, "Sucesso!", "Custo por hora atualizado para: R$ " + ui->spin_hour_Cost->text() + "\nLembrando que este novo custo terá impacto apenas nos serviços prestados agora em diante.\n");
+    }
+    close();
 }

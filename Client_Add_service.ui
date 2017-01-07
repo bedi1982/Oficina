@@ -28,7 +28,7 @@
   <widget class="QPushButton" name="btn_Sair">
    <property name="geometry">
     <rect>
-     <x>550</x>
+     <x>540</x>
      <y>600</y>
      <width>91</width>
      <height>34</height>
@@ -41,7 +41,7 @@
   <widget class="QLabel" name="lbl_PartsCost">
    <property name="geometry">
     <rect>
-     <x>440</x>
+     <x>430</x>
      <y>520</y>
      <width>102</width>
      <height>18</height>
@@ -57,7 +57,7 @@
   <widget class="QLabel" name="lbl_totlaServiceCost">
    <property name="geometry">
     <rect>
-     <x>390</x>
+     <x>380</x>
      <y>560</y>
      <width>161</width>
      <height>20</height>
@@ -81,7 +81,7 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>490</x>
      <y>460</y>
      <width>141</width>
      <height>34</height>
@@ -100,7 +100,7 @@
   <widget class="QLabel" name="lbl_Emoticon">
    <property name="geometry">
     <rect>
-     <x>490</x>
+     <x>480</x>
      <y>590</y>
      <width>48</width>
      <height>48</height>
@@ -122,7 +122,7 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>550</x>
+     <x>540</x>
      <y>550</y>
      <width>91</width>
      <height>32</height>
@@ -141,7 +141,7 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>550</x>
+     <x>540</x>
      <y>510</y>
      <width>91</width>
      <height>32</height>
@@ -170,7 +170,7 @@
   <widget class="QLabel" name="lbl_PartsUsed">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>0</x>
      <y>310</y>
      <width>191</width>
      <height>18</height>
@@ -189,7 +189,7 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>330</x>
      <y>520</y>
      <width>61</width>
      <height>20</height>
@@ -205,7 +205,7 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>490</x>
      <y>270</y>
      <width>141</width>
      <height>34</height>
@@ -238,7 +238,7 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="geometry">
     <rect>
-     <x>220</x>
+     <x>230</x>
      <y>510</y>
      <width>88</width>
      <height>31</height>
@@ -254,7 +254,7 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>150</x>
      <y>510</y>
      <width>71</width>
      <height>32</height>
@@ -270,7 +270,7 @@ p, li { white-space: pre-wrap; }
   <widget class="QLabel" name="lbl_InsertWorkCost">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>20</x>
      <y>520</y>
      <width>121</width>
      <height>20</height>
@@ -312,7 +312,7 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="geometry">
     <rect>
-     <x>220</x>
+     <x>230</x>
      <y>550</y>
      <width>71</width>
      <height>32</height>

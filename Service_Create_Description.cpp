@@ -25,7 +25,7 @@ bool Service_Create_Description::verificaCamposEmBrancoNoForm()
        // ui->lbl_Feedback->setText("Erro: Todos os campos devem estar preenchidos!");
         //QPixmap crying(":/emoticons/face-crying.png");
         //ui->lbl_Emoticon->setPixmap(crying);
-        QMessageBox::critical(this, "Erro!", "Todos os campos devem estar preenchidos!");
+        QMessageBox::warning(this, "Erro!", "Todos os campos devem estar preenchidos!");
         ui->line_ShortDescription->setFocus();    
         return false;
     }
@@ -85,16 +85,17 @@ void Service_Create_Description::on_btn_Salvar_clicked()
         //query.bindValue(":Service_Hours_Duration", ui->Spin_HandWorkHours->text().toDouble());
 
         if (query.exec() == false){
-            QMessageBox::critical(this, "Erro!", query.lastError().text() + " class addservice.cpp on_btn_Salvar_clicked() ");
+            QMessageBox::critical(this, "Erro!", query.lastError().text() + " class Service_Create_Description::on_btn_Salvar_clicked() ");
         }else{
          //   ui->lbl_Feedback->setText("Serviço adicionado!");
          //  QPixmap cool(":/emoticons/face-cool.png");
          // ui->lbl_Emoticon->setPixmap(cool);
             ui->line_ShortDescription->setFocus();
-            QMessageBox::information(this, "Sucesso!", "Serviço registrado para este carro e cliente."
-                                                       "\nAgora voltaremos para a tela anterior onde e a nova ordem de serviço"
-                                                       "\n estará visível. Lá você pode adicionar as peças que for usando neste"
-                                                       " serviço. As peças também pode ser adicionadas depois.");
+            QMessageBox::information(this, "Sucesso!", "Serviço registrado para este Carro do cliente.\n\n"
+                                                       "Agora voltaremos para a tela anterior onde esta nova ordem de serviço "
+                                                       "estará editável. Lá você pode adicionar as peças conforme usa no serviço "
+                                                       "e alterar a descrição conforme o serviço progride e mais alterações se mostrarem "
+                                                       "necessárias.");
           //  ui->btn_Add_PartsUsedInTheService->setEnabled(true);
             close();
         }
@@ -119,6 +120,6 @@ void Service_Create_Description::on_txt_FullDescription_textChanged()
 
         // This is your "action" to alert the user. I'd suggest something more
         // subtle though, or just not doing anything at all.
-        QMessageBox::critical(this, "Erro!", "Mantenha a descrição do serviço menor do que 500 letras.");
+        QMessageBox::warning(this, "Erro!", "Mantenha a descrição do serviço menor do que 500 letras.");
     }
 }

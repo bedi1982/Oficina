@@ -58,8 +58,7 @@ void Client_Services_History::loadClientInfo_to_TextBoxes()
     query.prepare("SELECT Client_id, Client_Name, Client_Address, Client_Phone, Client_City FROM Client WHERE Client_id = " + client_id);
 
     if (query.exec() == false){
-        qDebug() << query.lastError();
-        QMessageBox::critical(this, "Erro!", query.lastError().text() + "class clientinfo.cpp loadClientInfo_to_TextBoxes() ");
+        QMessageBox::critical(this, "Erro!", query.lastError().text() + "class Client_Services_History::loadClientInfo_to_TextBoxes() ");
     }else{
         while(query.next())
         {
@@ -76,17 +75,17 @@ void Client_Services_History::loadServicesGrid()
 {    
     QSqlQueryModel* model = new QSqlQueryModel;
     model->setQuery("SELECT "
-                    "Service_id AS ID,"
-                    "ClientCar_Model AS Carro, "
-                    "ClientCar_Placa AS Placa, "
-                    "Service_Short_Description AS 'Título do Serviço', "
-                    "Service_Parts_Cost AS 'Custo das Peças', "
-                    "Service_Hours_Duration AS 'Horas Trabalhadas', "
-                    "Service_Hour_Cost AS 'Custo p/ Hora', "
-                    "Service_Paid AS '1 = Pago', "
-                    "Service_created_at AS 'Executado em' "
-                    "FROM Service s JOIN ClientCar cc "
-                    "ON s.Service_Client_Carid = cc.ClientCar_id AND Service_Client_id = " + client_id +
+                    " Service_id AS ID,"
+                    " ClientCar_Model AS Carro,"
+                    " ClientCar_Placa AS Placa,"
+                    " Service_Short_Description AS 'Título do Serviço',"
+                    " Service_Parts_Cost AS 'Custo das Peças',"
+                    " Service_Hours_Duration AS 'Horas Trabalhadas',"
+                    " Service_Hour_Cost AS 'Custo p/ Hora',"
+                    " Service_Paid AS '1 = Pago',"
+                    " Service_created_at AS 'Adicionado em'"
+                    " FROM Service s JOIN ClientCar cc"
+                    " ON s.Service_Client_Carid = cc.ClientCar_id AND Service_Client_id = " + client_id +
                     " order by 9 desc");
 
     if(model->query().isSelect()){
@@ -94,7 +93,7 @@ void Client_Services_History::loadServicesGrid()
         ui->tbl_ClientServices->sortByColumn(0, Qt::DescendingOrder);
         ui->tbl_ClientServices->resizeColumnsToContents();
     }else{
-        QMessageBox::critical(this, "Erro!", model->query().lastError().text() + "class clientinfo.cpp loadServicesGrid() ");
+        QMessageBox::critical(this, "Erro!", model->query().lastError().text() + "class Client_Services_History::loadServicesGrid()");
     }
 }
 
@@ -117,7 +116,7 @@ void Client_Services_History::loadCarsGrid()
         ui->tbl_clientCars->sortByColumn(0, Qt::DescendingOrder);
         // ui->tbl_clientCars->hideColumn(0);
     }else{
-        QMessageBox::critical(this, "Erro!", model->query().lastError().text() + "class clientinfo.cpp loadCarsGrid() ");
+        QMessageBox::critical(this, "Erro!", model->query().lastError().text() + "class Client_Services_History::loadCarsGrid() ");
     }
 }
 
@@ -149,11 +148,9 @@ void Client_Services_History::on_tbl_clientCars_doubleClicked(const QModelIndex 
 
 void Client_Services_History::on_tbl_ClientServices_doubleClicked(const QModelIndex &index)
 {   //You come to this function from double clicking Services on the clientinfo Grid//
-    //Bellow 2 lines will retrieve the column 0 (ServiceID)value from the Grid//
+    //Bellow 3 lines will retrieve the column 0 (ServiceID) and column2 (CarID) values from the Grid//
     const QAbstractItemModel * model = index.model();
-
     QVariant ServiceID = model->data(model->index(index.row(), 0, index.parent()), Qt::DisplayRole);
-    //QVariant ClientID = model->data(model->index(index.row(), 1, index.parent()), Qt::DisplayRole);
     QVariant CarID = model->data(model->index(index.row(), 2, index.parent()), Qt::DisplayRole);
 
     Client_Add_Service Client_Add_Service;

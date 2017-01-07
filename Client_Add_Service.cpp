@@ -100,7 +100,7 @@ void Client_Add_Service::LoadPartsAndServiceCostsGrid(){
         SetServicePartsCost.bindValue(":PartsCost", PartsCost);
 
         if (SetServicePartsCost.exec() == false){
-            QMessageBox::critical(this, "Erro!", SetServicePartsCost.lastError().text() + " class addservice.cpp LoadPartsAndServiceCostsGrid() ");
+            QMessageBox::critical(this, "Erro!", SetServicePartsCost.lastError().text() + " class Client_Add_Service::LoadPartsAndServiceCostsGrid() ");
         }
     }
     addserviceDescriptionText();
@@ -122,9 +122,9 @@ void Client_Add_Service::SumCosts()
     ui->Spin_ServiceRegistereHandWorkHours->setValue(Service_Hour_Cost);
 
     //Service Paid CheckMark 0 for not Paid 1 for Paid
-    bool ServicePaid = model->data(model->index(0, 3)).toBool(); //query result line 0 column 3
+    bool Service_Paid = model->data(model->index(0, 3)).toBool(); //query result line 0 column 3
 
-    if(ServicePaid){
+    if(Service_Paid){
         ui->check_Pago->setChecked(true);
     }else{
         ui->check_Pago->setChecked(false);
@@ -144,21 +144,21 @@ void Client_Add_Service::on_btn_Add_PartsUsedInTheService_clicked()
 
 void Client_Add_Service::on_btn_save_hoursWorked_clicked()
 {
-    QSqlQuery UpdateHoursWorked;
-    UpdateHoursWorked.prepare("update Service set Service_Hours_Duration = :Service_Hours_Duration where Service_id = " + ServiceID);
+    QSqlQuery Update_Hours_Worked;
+    Update_Hours_Worked.prepare("update Service set Service_Hours_Duration = :Service_Hours_Duration where Service_id = " + ServiceID);
 
-    UpdateHoursWorked.bindValue(":Service_Hours_Duration", ui->Spin_HandWorkHours->text().toDouble());
+    Update_Hours_Worked.bindValue(":Service_Hours_Duration", ui->Spin_HandWorkHours->text().toDouble());
 
-    if (!(UpdateHoursWorked.exec())){
-        QMessageBox::critical(this, "Erro!", UpdateHoursWorked.lastError().text() + "class addservice.cpp  on_btn_save_hoursWorked_clicked()");
+    if (!(Update_Hours_Worked.exec())){
+        QMessageBox::critical(this, "Erro!", Update_Hours_Worked.lastError().text() + "class Client_Add_Service::on_btn_save_hoursWorked_clicked()");
     }else{
-        QMessageBox::critical(this, "Sucesso!", "Horas trabalhadas atualizadas."
-                                                "\nCusto do Serviço recalculadas no sistema....");
+        QMessageBox::information(this, "Sucesso!", "Horas trabalhadas atualizadas.\n"
+                                                   "Custo do Serviço recalculadas no sistema....");
         SumCosts();
     }
 }
 
-void Client_Add_Service::on_btn_atualizarDescricaoServico_clicked()
+void Client_Add_Service::on_btn_Atualizar_Descricao_Servico_clicked()
 {
     Service_Update_Description service_Update_Description;
     service_Update_Description.setServiceID(ServiceID);
@@ -168,7 +168,7 @@ void Client_Add_Service::on_btn_atualizarDescricaoServico_clicked()
     addserviceDescriptionText();
 }
 
-void Client_Add_Service::on_tbl_PartsUsedInService_doubleClicked(const QModelIndex &index)
+void Client_Add_Service::on_tbl_Parts_Used_In_Service_Double_Clicked(const QModelIndex &index)
 {
     if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Confirmação!", "Você deseja realmente remover essa peça desse serviço?", QMessageBox::Yes|QMessageBox::No).exec())
     {
@@ -208,7 +208,7 @@ void Client_Add_Service::on_check_Pago_clicked()
             qDebug() << query.lastError();
             QMessageBox::critical(this, "Erro!", query.lastError().text() + "class addservice.cpp  on_check_Pago_clicked ");
         }else{
-            QMessageBox::critical(this, "Ok!", "Serviço alterado para: Pago");
+            QMessageBox::information(this, "Pago?!", "Serviço alterado para:\n Pago");
         }
     }else{
         QSqlQuery query;
@@ -217,7 +217,7 @@ void Client_Add_Service::on_check_Pago_clicked()
             qDebug() << query.lastError();
             QMessageBox::critical(this, "Erro!", query.lastError().text() + "class addservice.cpp on_check_Pago_clicked(not checked) ");
         }else{
-            QMessageBox::critical(this, "Ok!", "Serviço alterado para: Não Pago");
+            QMessageBox::information(this, "Pago?", "Serviço alterado para:\n Não Pago");
         }
     }
 }

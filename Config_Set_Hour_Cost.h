@@ -14,7 +14,9 @@ class Config_Set_Hour_Cost : public QDialog
 public:
     explicit Config_Set_Hour_Cost(QWidget *parent = 0);
     ~Config_Set_Hour_Cost();
-    void SetNewCost();
+
+private slots:
+    void on_btn_Salvar_clicked();
 
 private:
     Ui::Config_Set_Hour_Cost *ui;

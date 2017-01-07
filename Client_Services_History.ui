@@ -131,7 +131,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Lista de carros do cliente. Duplo clique no Carro para gerar uma ordem de serviço nova:</string>
+    <string>Abaixo a lista de carros do cliente. Duplo clique no Carro para gerar uma ordem de serviço:</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>

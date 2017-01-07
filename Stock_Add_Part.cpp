@@ -57,7 +57,7 @@ void Stock_Add_Part::on_btn_Cadastrar_clicked()
 
         if (query.exec() == false){
             qDebug() << query.lastError();
-            QMessageBox::critical(this, "Erro!", "Esta peça não foi adicionado!!(addpart::on_btn_Cadastrar_clicked()");
+            QMessageBox::critical(this, "Erro!", "Esta peça não foi adicionado!! Classe: Stock_Add_Part::on_btn_Cadastrar_clicked()");
         }else{
             ui->lbl_Feedback->setText(ui->line_Nome->text() + " adicionado ao estoque!");
             QMessageBox::information(this, "Sucesso!", "Peça adicionada no estoque.");
@@ -84,7 +84,7 @@ void Stock_Add_Part::checkCarDescriptionSize(){
 
         // This is your "action" to alert the user. I'd suggest something more
         // subtle though, or just not doing anything at all.
-        QMessageBox::critical(this, "Erro!", "Mantenha a descrição da peça menor do que 250 letras.");
+        QMessageBox::warning(this, "Erro!", "Mantenha a descrição da peça menor do que 250 letras.");
     }
 }
 

@@ -36,8 +36,8 @@ void Client_Edit::loadClientInfo_to_TextBoxes()
 
     if (query.exec() == false){
         qDebug() << query.lastError();
-        QMessageBox::critical(this, "Erro!", query.lastError().text() + "class Ediclient.cpp loadClientInfo_to_TextBoxes() ");
-        QMessageBox::critical(this, "Cliente Que veio!", client_id);
+        QMessageBox::critical(this, "Erro!", query.lastError().text() + "class Client_Edit::loadClientInfo_to_TextBoxes() ");
+        QMessageBox::critical(this, "Debug: Cliente Que veio!", client_id);
     }else{
         while(query.next())
         {
@@ -74,10 +74,10 @@ void Client_Edit::on_btn_update_clicked()
             query.bindValue(":Client_Phone", ui->line_Phone->text());
 
             if (query.exec()) {
-                QMessageBox::critical(this, "Sucesso", "Cliente Atualizado!");
+                QMessageBox::information(this, "Sucesso", "Cliente Atualizado!");
                 close();
             } else {
-                QMessageBox::critical(this, "Erro!", query.lastError().text() + "class Ediclient.cpp on_btn_cadastrar_clicked() ");
+                QMessageBox::critical(this, "Erro!", query.lastError().text() + "class Client_Edit::on_btn_update_clicked() ");
                 close();
             }
 }
