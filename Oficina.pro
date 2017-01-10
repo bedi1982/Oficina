@@ -90,7 +90,12 @@ DISTFILES += \
     resources/face-worried.png \
     resources/DB11-model2.png \
     TODO \
-    Create_Database.sql
+    Create_Database.sql \
+    resources/Oficina_en_US.qm \
+    resources/Oficina_en_US.ts
 
 RESOURCES += \
     resources/images.qrc
+
+TRANSLATIONS += \
+    resources/translations/Oficina_en_US.ts

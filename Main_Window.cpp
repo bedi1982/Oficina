@@ -17,6 +17,8 @@
 
 #include "QDebug"
 
+
+
 using namespace std;
 
 Main_Window::Main_Window(QWidget *parent) :
