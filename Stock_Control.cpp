@@ -91,9 +91,9 @@ void Stock_Control::on_btn_save_clicked()
     UpdatePartDescription.bindValue(":partID", partID);
 
     if (!(UpdatePartDescription.exec())){
-        QMessageBox::critical(this, "Erro!", UpdatePartDescription.lastError().text() + "class Stock_Control::on_btn_save_clicked()");
+        QMessageBox::critical(this, tr("Erro!"), UpdatePartDescription.lastError().text() + "class Stock_Control::on_btn_save_clicked()");
     }else{
-        QMessageBox::information(this, "Sucesso!", "Descrição da peça atualizada.");
+        QMessageBox::information(this, tr("Sucesso!"), tr("Descrição da peça atualizada."));
         on_line_NomeDaPeca_textChanged(ui->line_NomeDaPeca->text());
     }
 }
@@ -121,6 +121,6 @@ void Stock_Control::on_txt_description_textChanged()
 
         // This is your "action" to alert the user. I'd suggest something more
         // subtle though, or just not doing anything at all.
-        QMessageBox::warning(this, "Erro!", "Mantenha a descrição da peça menor do que 250 letras.");
+        QMessageBox::warning(this, tr("Erro!"), tr("Mantenha a descrição da peça menor do que 250 letras."));
     }
 }

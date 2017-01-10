@@ -68,31 +68,23 @@ DISTFILES += \
     resources/emote-love.png \
     resources/face-angel.png \
     resources/face-angry.png \
-    resources/face-cool.png \
-    resources/face-crying.png \
     resources/face-devilish.png \
     resources/face-embarrassed.png \
-    resources/face-glasses.png \
     resources/face-kiss.png \
-    resources/face-laugh.png \
     resources/face-monkey.png \
     resources/face-plain.png \
     resources/face-raspberry.png \
     resources/face-sad.png \
-    resources/face-sick.png \
     resources/face-smile-big.png \
     resources/face-smile.png \
-    resources/face-smirk.png \
     resources/face-surprise.png \
-    resources/face-tired.png \
-    resources/face-uncertain.png \
     resources/face-wink.png \
     resources/face-worried.png \
     resources/DB11-model2.png \
     TODO \
     Create_Database.sql \
-    resources/Oficina_en_US.qm \
-    resources/Oficina_en_US.ts
+    resources/Translations/Oficina_en_US.ts \
+    Oficina_en_US.qm
 
 RESOURCES += \
     resources/images.qrc

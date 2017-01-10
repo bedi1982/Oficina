@@ -11,16 +11,16 @@
 int main(int argc, char *argv[])
 {
     QApplication::setApplicationName("Oficina");
-    QApplication::setApplicationVersion("0.1");
+    QApplication::setApplicationVersion("0.1.1");
 
     QApplication a(argc, argv);
 
     QTranslator translation;
-    QFile file("Oficina_en_US.qm");
+    QFile file("/home/bedi/github/Oficina/resources/translations/Oficina_en_US.qm");
 
     if(file.exists()){
         qDebug() << "existe";
-        translation.load("Oficina_en_US.qm");
+        translation.load("/home/bedi/github/Oficina/resources/translations/Oficina_en_US.qm");
         a.installTranslator(&translation);
     }else{
         qDebug() << "no existe";

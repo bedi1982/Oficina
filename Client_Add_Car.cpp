@@ -13,7 +13,7 @@ Client_Add_Car::Client_Add_Car(QWidget *parent) :
     ui->setupUi(this);
     QPixmap glasses(":/emoticons/face-glasses.png");
     ui->lbl_Emoticon->setPixmap(glasses);
-    ui->lbl_Feedback->setText("Todos os campos devem estar preenchidos.");
+    ui->lbl_Feedback->setText(tr("Todos os campos devem estar preenchidos."));
 }
 
 Client_Add_Car::~Client_Add_Car()
@@ -30,7 +30,7 @@ bool Client_Add_Car::verificaCamposEmBrancoNoForm()
            ||ui->txt_Color->text()== ""
            )
     {
-        ui->lbl_Feedback->setText("Erro: Todos os campos devem estar preenchidos!");
+        ui->lbl_Feedback->setText(tr("Erro: Todos os campos devem estar preenchidos!"));
         QPixmap crying(":/emoticons/face-crying.png");
         ui->lbl_Emoticon->setPixmap(crying);
         ui->txt_Model->setFocus();
@@ -46,7 +46,7 @@ void Client_Add_Car::addClientInfoToForm(QString client_id){
 
     if (query.exec() == false){
         qDebug() << query.lastError();
-        QMessageBox::critical(this, "Erro!", query.lastError().text() + ". Class: Class: Client_Add_Car.addClientInfoToForm(QString client_id)");
+        QMessageBox::critical(this, tr("Erro!"), query.lastError().text() + ". Class: Class: Client_Add_Car.addClientInfoToForm(QString client_id)");
     }
 
     while(query.next()){
@@ -69,13 +69,13 @@ void Client_Add_Car::addCar(QString client_id){
 
         if (query.exec() == false){
             qDebug() << query.lastError();
-            ui->lbl_Feedback->setText("Erro Grave. Fale com o desenvolvedor.");
-            QMessageBox::critical(this, "Erro!", query.lastError().text() + ". Class: Client_Add_Car.addCar(QString client_id)");
+            ui->lbl_Feedback->setText(tr("Erro Grave. Fale com o desenvolvedor."));
+            QMessageBox::critical(this, tr("Erro!"), query.lastError().text() + ". Class: Client_Add_Car.addCar(QString client_id)");
         }else{
-            ui->lbl_Feedback->setText("Carro adicionado ao Cliente!");
+            ui->lbl_Feedback->setText(tr("Carro adicionado ao Cliente!"));
             QPixmap cool(":/emoticons/face-cool.png");
             ui->lbl_Emoticon->setPixmap(cool);
-            QMessageBox::information(this, "Sucesso!", "Carro adicionado ao registro do Cliente.");
+            QMessageBox::information(this, tr("Sucesso!"), tr("Carro adicionado ao registro do Cliente."));
             close();
         }
     }
@@ -101,8 +101,8 @@ void Client_Add_Car::checkCarDescriptionSize(){
         // This is your "action" to alert the user. I'd suggest something more
         // subtle though, or just not doing anything at all.
         QMessageBox::warning(this,
-                              "Erro!",
-                              "Mantenha a descrição menor do que 300 letras.");
+                              tr("Erro!"),
+                              tr("Mantenha a descrição menor do que 300 letras."));
     }
 }
 

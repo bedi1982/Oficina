@@ -28,7 +28,7 @@ bool Stock_Add_Part::verificaCamposEmBrancoNoForm()
            ||ui->spin_Quantidade->text() == ""
            )
     {
-        ui->lbl_Feedback->setText("Erro: Todos os campos devem estar preenchidos!");
+        ui->lbl_Feedback->setText(tr("Erro: Todos os campos devem estar preenchidos!"));
         ui->line_Nome->setFocus();
         QPixmap crying(":/emoticons/face-crying.png");
         ui->lbl_Emoticon->setPixmap(crying);
@@ -57,10 +57,10 @@ void Stock_Add_Part::on_btn_Cadastrar_clicked()
 
         if (query.exec() == false){
             qDebug() << query.lastError();
-            QMessageBox::critical(this, "Erro!", "Esta peça não foi adicionado!! Classe: Stock_Add_Part::on_btn_Cadastrar_clicked()");
+            QMessageBox::critical(this, tr("Erro!"), tr("Esta peça não foi adicionado!! Classe: Stock_Add_Part::on_btn_Cadastrar_clicked()"));
         }else{
-            ui->lbl_Feedback->setText(ui->line_Nome->text() + " adicionado ao estoque!");
-            QMessageBox::information(this, "Sucesso!", "Peça adicionada no estoque.");
+            ui->lbl_Feedback->setText(ui->line_Nome->text() + tr(" adicionado ao estoque!"));
+            QMessageBox::information(this, tr("Sucesso!"), tr("Peça adicionada no estoque."));
             close();
         }
     }
@@ -84,7 +84,7 @@ void Stock_Add_Part::checkCarDescriptionSize(){
 
         // This is your "action" to alert the user. I'd suggest something more
         // subtle though, or just not doing anything at all.
-        QMessageBox::warning(this, "Erro!", "Mantenha a descrição da peça menor do que 250 letras.");
+        QMessageBox::warning(this, tr("Erro!"), tr("Mantenha a descrição da peça menor do que 250 letras."));
     }
 }
 

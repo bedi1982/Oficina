@@ -86,9 +86,9 @@ void Stock_Parts_Selection::on_tbl_PartsList_doubleClicked(const QModelIndex &Do
         map_Part_to_usedBy_Service_ID.bindValue(":Used_Part_ID", partId.toString());
 
         if ((map_Part_to_usedBy_Service_ID.exec() == false) || (removeOnefromStock.exec() == false)){
-            QMessageBox::critical(this, "Error!", map_Part_to_usedBy_Service_ID.lastError().text() + " Stock_Parts_Selection::on_tbl_PartsList_doubleClicked(const QModelIndex &DoubleClickedCellValue)");
+            QMessageBox::critical(this, tr("Error!"), map_Part_to_usedBy_Service_ID.lastError().text() + " Stock_Parts_Selection::on_tbl_PartsList_doubleClicked(const QModelIndex &DoubleClickedCellValue)");
         }else{
-            QMessageBox::information(this, "Sucesso!", "Peça adicionada ao serviço e estoque atualizado.");
+            QMessageBox::information(this, tr("Sucesso!"), tr("Peça adicionada ao serviço e estoque atualizado."));
             close();
         }
     }

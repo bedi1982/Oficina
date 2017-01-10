@@ -102,7 +102,7 @@ void Client_Add_Service::LoadPartsAndServiceCostsGrid(){
         SetServicePartsCost.bindValue(":PartsCost", PartsCost);
 
         if (SetServicePartsCost.exec() == false){
-            QMessageBox::critical(this, "Erro!", SetServicePartsCost.lastError().text() + " class Client_Add_Service::LoadPartsAndServiceCostsGrid() ");
+            QMessageBox::critical(this, tr("Erro!"), SetServicePartsCost.lastError().text() + " class Client_Add_Service::LoadPartsAndServiceCostsGrid() ");
         }
     }
     addserviceDescriptionText();
@@ -152,17 +152,17 @@ void Client_Add_Service::on_btn_save_hoursWorked_clicked()
     Update_Hours_Worked.bindValue(":Service_Hours_Duration", ui->Spin_HandWorkHours->text().toDouble());
 
     if (!(Update_Hours_Worked.exec())){
-        QMessageBox::critical(this, "Erro!", Update_Hours_Worked.lastError().text() + "class Client_Add_Service::on_btn_save_hoursWorked_clicked()");
+        QMessageBox::critical(this, tr("Erro!"), Update_Hours_Worked.lastError().text() + "class Client_Add_Service::on_btn_save_hoursWorked_clicked()");
     }else{
-        QMessageBox::information(this, "Sucesso!", "Horas trabalhadas atualizadas.\n"
-                                                   "Custo do Serviço recalculadas no sistema....");
+        QMessageBox::information(this, tr("Sucesso!"), tr("Horas trabalhadas atualizadas.\n"
+                                                   "Custo do Serviço recalculadas no sistema...."));
         SumCosts();
     }
 }
 
 void Client_Add_Service::on_tbl_Parts_Used_In_Service_Double_Clicked(const QModelIndex &index)
 {
-    if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Confirmação!", "Você deseja realmente remover essa peça desse serviço?", QMessageBox::Yes|QMessageBox::No).exec())
+    if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, tr("Confirmação!"), tr("Você deseja realmente remover essa peça desse serviço?"), QMessageBox::Yes|QMessageBox::No).exec())
     {
         //Bellow 2 list will retrieve the column 0 value, which is the ServicePartsUsed_id //
         const QAbstractItemModel * model = index.model();
@@ -185,7 +185,7 @@ void Client_Add_Service::on_tbl_Parts_Used_In_Service_Double_Clicked(const QMode
         returnPartToStock.bindValue(":partID", partID.toString());
 
         if(returnPartToStock.exec() == false){
-            QMessageBox::critical(this, "Erro!", returnPartToStock.lastError().text() + "class addservice.cpp  on_btn_save_hoursWorked_clicked()");
+            QMessageBox::critical(this, tr("Erro!"), returnPartToStock.lastError().text() + "class addservice.cpp  on_btn_save_hoursWorked_clicked()");
         }
         LoadPartsAndServiceCostsGrid();
     }
@@ -198,18 +198,18 @@ void Client_Add_Service::on_check_Pago_clicked()
         query.prepare("UPDATE Service set Service_Paid = 1 where Service_Id = " + ServiceID);
         if (query.exec() == false){
             qDebug() << query.lastError();
-            QMessageBox::critical(this, "Erro!", query.lastError().text() + "class addservice.cpp  on_check_Pago_clicked ");
+            QMessageBox::critical(this, tr("Erro!"), query.lastError().text() + "class addservice.cpp  on_check_Pago_clicked ");
         }else{
-            QMessageBox::information(this, "Pago?!", "Serviço alterado para:\n Pago");
+            QMessageBox::information(this, tr("Pago?!"), tr("Serviço alterado para:\n Pago"));
         }
     }else{
         QSqlQuery query;
         query.prepare("UPDATE Service set Service_Paid = 0 where Service_Id = " + ServiceID);
         if (query.exec() == false){
             qDebug() << query.lastError();
-            QMessageBox::critical(this, "Erro!", query.lastError().text() + "class addservice.cpp on_check_Pago_clicked(not checked) ");
+            QMessageBox::critical(this, tr("Erro!"), query.lastError().text() + "class addservice.cpp on_check_Pago_clicked(not checked) ");
         }else{
-            QMessageBox::information(this, "Pago?", "Serviço alterado para:\n Não Pago");
+            QMessageBox::information(this, tr("Pago?"), tr("Serviço alterado para:\n Não Pago"));
         }
     }
 }

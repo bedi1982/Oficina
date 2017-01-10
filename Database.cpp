@@ -18,7 +18,7 @@ bool Database::conectar(){
     if(db.open()){
         return true;
     }else{
-        QMessageBox::critical(0,"O banco de dados não está ativo!(classe: database.cpp)", db.lastError().text());
+        QMessageBox::critical(0, "Database Down", db.lastError().text());
         return false;
     }
 }

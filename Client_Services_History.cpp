@@ -58,7 +58,7 @@ void Client_Services_History::loadClientInfo_to_TextBoxes()
     query.prepare("SELECT Client_id, Client_Name, Client_Address, Client_Phone, Client_City FROM Client WHERE Client_id = " + client_id);
 
     if (query.exec() == false){
-        QMessageBox::critical(this, "Erro!", query.lastError().text() + "class Client_Services_History::loadClientInfo_to_TextBoxes() ");
+        QMessageBox::critical(this, tr("Erro!"), query.lastError().text() + "class Client_Services_History::loadClientInfo_to_TextBoxes() ");
     }else{
         while(query.next())
         {
@@ -93,7 +93,7 @@ void Client_Services_History::loadServicesGrid()
         ui->tbl_ClientServices->sortByColumn(0, Qt::DescendingOrder);
         ui->tbl_ClientServices->resizeColumnsToContents();
     }else{
-        QMessageBox::critical(this, "Erro!", model->query().lastError().text() + "class Client_Services_History::loadServicesGrid()");
+        QMessageBox::critical(this, tr("Erro!"), model->query().lastError().text() + "class Client_Services_History::loadServicesGrid()");
     }
 }
 
@@ -116,7 +116,7 @@ void Client_Services_History::loadCarsGrid()
         ui->tbl_clientCars->sortByColumn(0, Qt::DescendingOrder);
         // ui->tbl_clientCars->hideColumn(0);
     }else{
-        QMessageBox::critical(this, "Erro!", model->query().lastError().text() + "class Client_Services_History::loadCarsGrid() ");
+        QMessageBox::critical(this, tr("Erro!"), model->query().lastError().text() + "class Client_Services_History::loadCarsGrid() ");
     }
 }
 

@@ -14,7 +14,7 @@ Client_Add::Client_Add(QWidget *parent) :
     ui->setupUi(this);
     QPixmap glasses(":/emoticons/face-glasses.png");
     ui->lbl_Emoticon->setPixmap(glasses);
-    ui->lbl_feedback->setText("Todos os campos devem estar preenchidos.");
+    ui->lbl_feedback->setText(tr("Todos os campos devem estar preenchidos."));
 }
 
 Client_Add::~Client_Add()
@@ -32,7 +32,7 @@ bool Client_Add::verificaCamposEmBrancoNoForm()
            ||ui->line_Phone->text() == ""
            )
     {
-        ui->lbl_feedback->setText("Erro: Todos os campos devem estar preenchidos!");
+        ui->lbl_feedback->setText(tr("Erro: Todos os campos devem estar preenchidos!"));
         QPixmap crying(":/emoticons/face-crying.png");
         ui->lbl_Emoticon->setPixmap(crying);
         ui->line_Name->setFocus();
@@ -59,12 +59,12 @@ void Client_Add::on_btn_cadastrar_clicked()
 
         if (query.exec() == false){
             qDebug() << query.lastError();
-            QMessageBox::critical(this, "Erro!", query.lastError().text() + ". Class: addclient.cpp51");
+            QMessageBox::critical(this, tr("Erro!"), query.lastError().text() + ". Class: addclient.cpp51");
         }else{
-            ui->lbl_feedback->setText(ui->line_Name->text() + " cadastrado!");
+            ui->lbl_feedback->setText(ui->line_Name->text() + tr(" cadastrado!"));
             QPixmap cool(":/emoticons/face-cool.png");
             ui->lbl_Emoticon->setPixmap(cool);
-            QMessageBox::information(this, "Sucesso!", "Cliente adicionado.");
+            QMessageBox::information(this, tr("Sucesso!"), tr("Cliente adicionado."));
             close();
         }
     }

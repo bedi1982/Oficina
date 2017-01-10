@@ -17,7 +17,7 @@ Config_Set_Hour_Cost::Config_Set_Hour_Cost(QWidget *parent) :
     Set_Current_Hour_Cost.prepare("SELECT HourCost from HourCost WHERE HourCost_id = 1");
 
     if (Set_Current_Hour_Cost.exec() == false){
-        QMessageBox::critical(this, "Erro!", Set_Current_Hour_Cost.lastError().text() + "class Config_Set_Hour_Cost::on_btn_Salvar_clicked() Set_Current_Hour_Cost.exec()");
+        QMessageBox::critical(this, tr("Erro!"), Set_Current_Hour_Cost.lastError().text() + "class Config_Set_Hour_Cost::on_btn_Salvar_clicked() Set_Current_Hour_Cost.exec()");
     }else{
         while(Set_Current_Hour_Cost.next())
         {
@@ -39,9 +39,9 @@ void Config_Set_Hour_Cost::on_btn_Salvar_clicked()
     Update_Hour_Cost.bindValue(":Hours_Cost", ui->spin_hour_Cost->text().toDouble());
 
     if (!(Update_Hour_Cost.exec())){
-        QMessageBox::critical(this, "Erro!", Update_Hour_Cost.lastError().text() + "Config_Set_Hour_Cost::on_pushButton_clicked()");
+        QMessageBox::critical(this, tr("Erro!"), Update_Hour_Cost.lastError().text() + "Config_Set_Hour_Cost::on_pushButton_clicked()");
     }else{
-        QMessageBox::information(this, "Sucesso!", "Custo por hora atualizado para: R$ " + ui->spin_hour_Cost->text() + "\nLembrando que este novo custo terá impacto apenas nos serviços prestados agora em diante.\n");
+        QMessageBox::information(this, tr("Sucesso!"), tr("Custo por hora atualizado para: R$ ") + ui->spin_hour_Cost->text() + tr("\nLembrando que este novo custo terá impacto apenas nos serviços prestados agora em diante.\n"));
     }
     close();
 }
