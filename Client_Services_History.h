@@ -15,7 +15,7 @@ public:
     explicit Client_Services_History(QWidget *parent = 0);
     ~Client_Services_History();
     void loadAll();
-    void loadCarsGrid();
+    void load_Cars_Grid();
 
     QString client_id;
 
@@ -23,12 +23,12 @@ public:
     void setClient_id(const QString &value);
 
 private slots:
-    void on_btn_addClientCarro_clicked();
-    void on_tbl_clientCars_doubleClicked(const QModelIndex &index);
+    void on_btn_Add_Client_Car_clicked();
+    void on_tbl_Client_Cars_doubleClicked(const QModelIndex &index);
 
-    void on_tbl_ClientServices_doubleClicked(const QModelIndex &index);
+    void on_tbl_Client_Services_doubleClicked(const QModelIndex &index);
 
-    void on_btn_atualizarCliente_clicked();
+    void on_btn_Update_Client_clicked();
 
 private:
     Ui::Client_Services_History *ui;

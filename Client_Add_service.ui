@@ -25,7 +25,7 @@
   <property name="windowTitle">
    <string>Adicionando serviço no Carro!</string>
   </property>
-  <widget class="QPushButton" name="btn_Sair">
+  <widget class="QPushButton" name="btn_Exit">
    <property name="geometry">
     <rect>
      <x>540</x>
@@ -75,7 +75,7 @@
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_Add_PartsUsedInTheService">
+  <widget class="QPushButton" name="btn_Add_Parts_Used_In_The_Service">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -154,7 +154,7 @@
     <double>5.000000000000000</double>
    </property>
   </widget>
-  <widget class="QTableView" name="tbl_PartsUsedInService">
+  <widget class="QTableView" name="tbl_Parts_Used_In_Service">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -183,7 +183,7 @@
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QCheckBox" name="check_Pago">
+  <widget class="QCheckBox" name="check_Paid">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -199,7 +199,7 @@
     <string>Pago</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_atualizarDescricaoServico">
+  <widget class="QPushButton" name="btn_Update_Service_Description">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -232,7 +232,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_save_hoursWorked">
+  <widget class="QPushButton" name="btn_Save_Hours_Worked">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -248,7 +248,7 @@ p, li { white-space: pre-wrap; }
     <string>Salvar</string>
    </property>
   </widget>
-  <widget class="QDoubleSpinBox" name="Spin_HandWorkHours">
+  <widget class="QDoubleSpinBox" name="Spin_Hand_Work_Hours">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -322,30 +322,30 @@ p, li { white-space: pre-wrap; }
     <double>1.000000000000000</double>
    </property>
   </widget>
-  <zorder>tbl_PartsUsedInService</zorder>
+  <zorder>tbl_Parts_Used_In_Service</zorder>
   <zorder>txt_Servicedescription</zorder>
-  <zorder>btn_Sair</zorder>
+  <zorder>btn_Exit</zorder>
   <zorder>lbl_PartsCost</zorder>
   <zorder>lbl_totlaServiceCost</zorder>
-  <zorder>btn_Add_PartsUsedInTheService</zorder>
+  <zorder>btn_Add_Parts_Used_In_The_Service</zorder>
   <zorder>lbl_Emoticon</zorder>
   <zorder>Spin_TotalserviceCost</zorder>
   <zorder>Spin_PartsCost</zorder>
   <zorder>lbl_PartsUsed</zorder>
-  <zorder>check_Pago</zorder>
-  <zorder>btn_atualizarDescricaoServico</zorder>
-  <zorder>btn_save_hoursWorked</zorder>
-  <zorder>Spin_HandWorkHours</zorder>
+  <zorder>check_Paid</zorder>
+  <zorder>btn_Update_Service_Description</zorder>
+  <zorder>btn_Save_Hours_Worked</zorder>
+  <zorder>Spin_Hand_Work_Hours</zorder>
   <zorder>lbl_InsertWorkCost</zorder>
   <zorder>line_ServiceShortDescription</zorder>
   <zorder>label</zorder>
   <zorder>Spin_ServiceRegistereHandWorkHours</zorder>
  </widget>
  <tabstops>
-  <tabstop>btn_Add_PartsUsedInTheService</tabstop>
+  <tabstop>btn_Add_Parts_Used_In_The_Service</tabstop>
   <tabstop>Spin_PartsCost</tabstop>
   <tabstop>Spin_TotalserviceCost</tabstop>
-  <tabstop>btn_Sair</tabstop>
+  <tabstop>btn_Exit</tabstop>
  </tabstops>
  <resources/>
  <connections/>

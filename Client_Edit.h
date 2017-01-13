@@ -16,14 +16,14 @@ public:
     ~Client_Edit();
 
     QString client_id;
-    void loadClientInfo_to_TextBoxes();
+    void load_Client_Info_to_TextBoxes();
 
     QString getClient_id() const;
     void setClient_id(const QString &value);
 
 private slots:
 
-    void on_btn_update_clicked();
+    void on_btn_Update_clicked();
 
 private:
     Ui::Client_Edit *ui;

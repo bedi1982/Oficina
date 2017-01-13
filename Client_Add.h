@@ -16,9 +16,9 @@ public:
     ~Client_Add();
 
 private slots:
-    bool verificaCamposEmBrancoNoForm();
-    void on_btn_Sair_clicked();
-    void on_btn_cadastrar_clicked();
+    bool Verify_Empty_Fields_on_Form();
+    void on_btn_Exit_clicked();
+    void on_btn_Add_clicked();
 
 private:
     Ui::Client_Add *ui;

@@ -34,7 +34,7 @@
   <property name="windowTitle">
    <string>Cadastro de Cliente</string>
   </property>
-  <widget class="QPushButton" name="btn_cadastrar">
+  <widget class="QPushButton" name="btn_Add">
    <property name="geometry">
     <rect>
      <x>380</x>
@@ -53,7 +53,7 @@
     <string>Cadastrar!</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_Sair">
+  <widget class="QPushButton" name="btn_Exit">
    <property name="geometry">
     <rect>
      <x>470</x>
@@ -318,8 +318,8 @@
     <string/>
    </property>
   </widget>
-  <zorder>btn_cadastrar</zorder>
-  <zorder>btn_Sair</zorder>
+  <zorder>btn_Add</zorder>
+  <zorder>btn_Exit</zorder>
   <zorder>lbl_Emoticon</zorder>
   <zorder>lbl_feedback</zorder>
   <zorder>label</zorder>
@@ -343,8 +343,8 @@
   <tabstop>line_RG</tabstop>
   <tabstop>line_CPF</tabstop>
   <tabstop>line_Phone</tabstop>
-  <tabstop>btn_cadastrar</tabstop>
-  <tabstop>btn_Sair</tabstop>
+  <tabstop>btn_Add</tabstop>
+  <tabstop>btn_Exit</tabstop>
  </tabstops>
  <resources/>
  <connections/>

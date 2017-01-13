@@ -44,7 +44,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QTableView" name="tbl_clientCars">
+  <widget class="QTableView" name="tbl_Client_Cars">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -72,7 +72,7 @@
     <set>QAbstractItemView::NoEditTriggers</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_addClientCarro">
+  <widget class="QPushButton" name="btn_Add_Car_to_Client">
    <property name="geometry">
     <rect>
      <x>1040</x>
@@ -228,7 +228,7 @@
     <number>40</number>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_atualizarCliente">
+  <widget class="QPushButton" name="btn_Update_Client">
    <property name="geometry">
     <rect>
      <x>520</x>
@@ -253,7 +253,7 @@
     <enum>Qt::LeftToRight</enum>
    </property>
    <property name="text">
-    <string>Editar Cliente</string>
+    <string>Update Client</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_ClientServicesHistoric">
@@ -283,7 +283,7 @@
     <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
    </property>
   </widget>
-  <widget class="QTableView" name="tbl_ClientServices">
+  <widget class="QTableView" name="tbl_Client_Services">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -454,28 +454,28 @@
   </widget>
   <zorder>lbl_clientAddress</zorder>
   <zorder>lbl_clientName</zorder>
-  <zorder>btn_addClientCarro</zorder>
+  <zorder>btn_Add_Car_to_Client</zorder>
   <zorder>lbl_NewCarIcon</zorder>
   <zorder>lbl_ClientCars</zorder>
   <zorder>line_Phone</zorder>
   <zorder>line_ClientCity</zorder>
   <zorder>line_Address</zorder>
   <zorder>line_Name</zorder>
-  <zorder>btn_atualizarCliente</zorder>
-  <zorder>tbl_clientCars</zorder>
+  <zorder>btn_Update_Client</zorder>
+  <zorder>tbl_Client_Cars</zorder>
   <zorder>lbl_ClientInfo</zorder>
   <zorder>lbl_ClientServicesHistoric</zorder>
-  <zorder>tbl_ClientServices</zorder>
+  <zorder>tbl_Client_Services</zorder>
   <zorder>lbl_ServiceIcon</zorder>
   <zorder>line_ClientID</zorder>
   <zorder>lbl_clientAddress_2</zorder>
   <zorder>label</zorder>
  </widget>
  <tabstops>
-  <tabstop>btn_atualizarCliente</tabstop>
-  <tabstop>btn_addClientCarro</tabstop>
-  <tabstop>tbl_clientCars</tabstop>
-  <tabstop>tbl_ClientServices</tabstop>
+  <tabstop>btn_Update_Client</tabstop>
+  <tabstop>btn_Add_Car_to_Client</tabstop>
+  <tabstop>tbl_Client_Cars</tabstop>
+  <tabstop>tbl_Client_Services</tabstop>
   <tabstop>line_Name</tabstop>
   <tabstop>line_ClientCity</tabstop>
   <tabstop>line_ClientID</tabstop>

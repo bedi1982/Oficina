@@ -33,7 +33,7 @@ Main_Window::Main_Window(QWidget *parent) :
 
 
     Database db;
-    if(db.conectar()){
+    if(db.Connect()){
         QPixmap green(":/emoticons/emblem-default.png");
         ui->lbl_emoticonStatusConexao->setPixmap(green);
         ui->lbl_bancodeDados->setText("Banco de dados: UP");

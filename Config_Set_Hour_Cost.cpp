@@ -32,7 +32,7 @@ Config_Set_Hour_Cost::~Config_Set_Hour_Cost()
     delete ui;
 }
 
-void Config_Set_Hour_Cost::on_btn_Salvar_clicked()
+void Config_Set_Hour_Cost::on_btn_Save_clicked()
 {
     QSqlQuery Update_Hour_Cost;
     Update_Hour_Cost.prepare("update HourCost set HourCost = :Hours_Cost where HourCost_id = 1");

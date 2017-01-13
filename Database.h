@@ -5,7 +5,7 @@ class Database
 {
 public:
     Database();
-    bool conectar();
+    bool Connect();
 };
 
 #endif // DATABASE_H

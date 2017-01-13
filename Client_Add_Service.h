@@ -15,10 +15,10 @@ public:
     explicit Client_Add_Service(QWidget *parent = 0);
     ~Client_Add_Service();
 
-    void LoadPartsAndServiceCostsGrid();
-    void SumCosts();
-    void EnableDescriptionUpdate();
-    void addserviceDescriptionText();
+    void Load_Parts_And_Service_Costs_Grid();
+    void Sum_Costs();
+    void Enable_Description_Update();
+    void Add_Service_Description_Text();
 
     QString clientid;
     QString CarID;
@@ -35,15 +35,12 @@ public:
     void setServiceID(const QString &value);
 
 private slots:
-    void on_btn_Sair_clicked();
-    void on_btn_Add_PartsUsedInTheService_clicked();
-    void on_btn_save_hoursWorked_clicked();
-
-    void on_tbl_Parts_Used_In_Service_Double_Clicked(const QModelIndex &index);
-
-    void on_check_Pago_clicked();
-
-    void on_btn_atualizarDescricaoServico_clicked();
+    void on_btn_Exit_clicked();
+    void on_btn_Add_Parts_Used_In_The_Service_clicked();
+    void on_btn_Save_Hours_Worked_clicked();
+    void on_check_Paid_clicked();
+    void on_btn_Update_Service_Description_clicked();
+    void on_tbl_Parts_Used_In_Service_doubleClicked(const QModelIndex &index);
 
 private:
     Ui::Client_Add_Service *ui;

@@ -8,7 +8,7 @@ Database::Database(){
     //objeto de database sendo criado
 }
 
-bool Database::conectar(){
+bool Database::Connect(){
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("localhost");
     db.setDatabaseName("Oficina");

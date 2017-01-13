@@ -54,7 +54,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Nome</string>
+    <string>Name</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_cpf">
@@ -80,7 +80,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Cidade</string>
+    <string>City</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_phone">
@@ -93,7 +93,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Telefone</string>
+    <string>Phone</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="line_RG">
@@ -182,10 +182,10 @@
     </rect>
    </property>
    <property name="text">
-    <string>RG</string>
+    <string>ID</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_update">
+  <widget class="QPushButton" name="btn_Update">
    <property name="geometry">
     <rect>
      <x>460</x>
@@ -201,7 +201,7 @@
     </sizepolicy>
    </property>
    <property name="text">
-    <string>Atualizar!</string>
+    <string>Update!</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="line_Name">
@@ -249,32 +249,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Endereço</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_name">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>48</width>
-     <height>48</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>48</width>
-     <height>48</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>48</width>
-     <height>48</height>
-    </size>
-   </property>
-   <property name="text">
-    <string/>
+    <string>Adress</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="line_ID">
@@ -344,7 +319,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Criado</string>
+    <string>Created</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_updated">
@@ -357,7 +332,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Atualizado</string>
+    <string>Updated</string>
    </property>
   </widget>
  </widget>
@@ -368,7 +343,7 @@
   <tabstop>line_RG</tabstop>
   <tabstop>line_CPF</tabstop>
   <tabstop>line_Phone</tabstop>
-  <tabstop>btn_update</tabstop>
+  <tabstop>btn_Update</tabstop>
   <tabstop>line_ID</tabstop>
   <tabstop>line_CreatedAt</tabstop>
   <tabstop>line_UpdatedAt</tabstop>

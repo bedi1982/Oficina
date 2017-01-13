@@ -21,7 +21,7 @@ Client_Add_Car::~Client_Add_Car()
     delete ui;
 }
 
-bool Client_Add_Car::verificaCamposEmBrancoNoForm()
+bool Client_Add_Car::Verify_Empty_Fields_On_Form()
 {
     if (   ui->txt_Model->text() == ""
            ||ui->txt_Year->text() == ""
@@ -40,7 +40,7 @@ bool Client_Add_Car::verificaCamposEmBrancoNoForm()
     return true;
 }
 
-void Client_Add_Car::addClientInfoToForm(QString client_id){
+void Client_Add_Car::Add_Client_Info_To_Form(QString client_id){
     QSqlQuery query;
     query.prepare("SELECT Client_Name FROM Client WHERE Client_id = " + client_id);
 
@@ -54,8 +54,8 @@ void Client_Add_Car::addClientInfoToForm(QString client_id){
     }
 }
 
-void Client_Add_Car::addCar(QString client_id){
-    if(verificaCamposEmBrancoNoForm()){
+void Client_Add_Car::Add_Car(QString client_id){
+    if(Verify_Empty_Fields_On_Form()){
         QSqlQuery query;
         query.prepare("insert into ClientCar (ClientCar_Client_id, ClientCar_Model, ClientCar_Description, ClientCar_BuiltYear, ClientCar_Placa, ClientCar_Color)"
                       "values (:ClientId, :Model, :Description, :BuiltYear, :Placa, :Color)");
@@ -83,7 +83,7 @@ void Client_Add_Car::addCar(QString client_id){
 }
 
 //Check car description size//
-void Client_Add_Car::checkCarDescriptionSize(){
+void Client_Add_Car::Check_Car_Description_Size(){
     if (ui->txtPlain_Description->toPlainText().length() > 300)
     {
         QString carDescription = ui->txtPlain_Description->toPlainText();
@@ -119,10 +119,10 @@ void Client_Add_Car::setClient(const QString &value)
 
 void Client_Add_Car::on_btn_Add_clicked()
 {
-    addCar(client);
+    Add_Car(client);
 }
 
 void Client_Add_Car::on_txtPlain_Description_textChanged()
 {
-    checkCarDescriptionSize();
+    Check_Car_Description_Size();
 }

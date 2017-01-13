@@ -58,12 +58,12 @@ void Client_Add_Service::setClientid(const QString &value)
     clientid = value;
 }
 
-void Client_Add_Service::on_btn_Sair_clicked()
+void Client_Add_Service::on_btn_Exit_clicked()
 {
     close();
 }
 
-void Client_Add_Service::addserviceDescriptionText(){
+void Client_Add_Service::Add_Service_Description_Text(){
     QSqlQueryModel* model = new QSqlQueryModel;
     model->setQuery("select Service_Description, Service_Short_Description from Service where Service_id = " + ServiceID);
 
@@ -71,7 +71,7 @@ void Client_Add_Service::addserviceDescriptionText(){
     ui->txt_Servicedescription->setText(model->data(model->index(0, 0)).toString());
 }
 
-void Client_Add_Service::LoadPartsAndServiceCostsGrid(){
+void Client_Add_Service::Load_Parts_And_Service_Costs_Grid(){
 
     QSqlQueryModel* model = new QSqlQueryModel;
     model->setQuery("SELECT ServicePartsUsed_id AS ServiçoUsedID, "
@@ -84,11 +84,11 @@ void Client_Add_Service::LoadPartsAndServiceCostsGrid(){
                     "AND pu.Used_On_What_Service_id = " + ServiceID);
 
     if(model->query().isSelect()){
-        ui->tbl_PartsUsedInService->setModel(model);
-        ui->tbl_PartsUsedInService->hideColumn(0);
-        ui->tbl_PartsUsedInService->hideColumn(1);
-        ui->tbl_PartsUsedInService->hideColumn(2);
-        ui->tbl_PartsUsedInService->resizeColumnsToContents();
+        ui->tbl_Parts_Used_In_Service->setModel(model);
+        ui->tbl_Parts_Used_In_Service->hideColumn(0);
+        ui->tbl_Parts_Used_In_Service->hideColumn(1);
+        ui->tbl_Parts_Used_In_Service->hideColumn(2);
+        ui->tbl_Parts_Used_In_Service->resizeColumnsToContents();
 
         //Sum the Parts Used Value and add to doublespin//
         double PartsCost = 0;
@@ -105,11 +105,11 @@ void Client_Add_Service::LoadPartsAndServiceCostsGrid(){
             QMessageBox::critical(this, tr("Erro!"), SetServicePartsCost.lastError().text() + " class Client_Add_Service::LoadPartsAndServiceCostsGrid() ");
         }
     }
-    addserviceDescriptionText();
-    SumCosts();
+    Add_Service_Description_Text();
+    Sum_Costs();
 }
 
-void Client_Add_Service::SumCosts()
+void Client_Add_Service::Sum_Costs()
 {
     QSqlQueryModel* model = new QSqlQueryModel;
     model->setQuery("select Service_Hours_Duration, Service_Parts_Cost, Service_Hour_Cost, Service_Paid from Service where Service_id = " + ServiceID);
@@ -118,7 +118,7 @@ void Client_Add_Service::SumCosts()
     double Service_Parts_Cost = model->data(model->index(0, 1)).toDouble(); //query result line 0 column 1
     double Service_Hour_Cost = model->data(model->index(0, 2)).toDouble(); //query result line 0 column 2
 
-    ui->Spin_HandWorkHours->setValue(Service_Hours_Duration);
+    ui->Spin_Hand_Work_Hours->setValue(Service_Hours_Duration);
     ui->Spin_PartsCost->setValue(Service_Parts_Cost);
     ui->Spin_TotalserviceCost->setValue((Service_Hours_Duration * Service_Hour_Cost) + Service_Parts_Cost);
     ui->Spin_ServiceRegistereHandWorkHours->setValue(Service_Hour_Cost);
@@ -127,40 +127,40 @@ void Client_Add_Service::SumCosts()
     bool Service_Paid = model->data(model->index(0, 3)).toBool(); //query result line 0 column 3
 
     if(Service_Paid){
-        ui->check_Pago->setChecked(true);
+        ui->check_Paid->setChecked(true);
     }else{
-        ui->check_Pago->setChecked(false);
+        ui->check_Paid->setChecked(false);
     }
 
 }
 
-void Client_Add_Service::on_btn_Add_PartsUsedInTheService_clicked()
+void Client_Add_Service::on_btn_Add_Parts_Used_In_The_Service_clicked()
 {
     Stock_Parts_Selection stock_Parts_Selection;
     stock_Parts_Selection.setServiceID(ServiceID);
     stock_Parts_Selection.setModal(true);
     stock_Parts_Selection.exec();
 
-    LoadPartsAndServiceCostsGrid();
+    Load_Parts_And_Service_Costs_Grid();
 }
 
-void Client_Add_Service::on_btn_save_hoursWorked_clicked()
+void Client_Add_Service::on_btn_Save_Hours_Worked_clicked()
 {
     QSqlQuery Update_Hours_Worked;
     Update_Hours_Worked.prepare("update Service set Service_Hours_Duration = :Service_Hours_Duration where Service_id = " + ServiceID);
 
-    Update_Hours_Worked.bindValue(":Service_Hours_Duration", ui->Spin_HandWorkHours->text().toDouble());
+    Update_Hours_Worked.bindValue(":Service_Hours_Duration", ui->Spin_Hand_Work_Hours->text().toDouble());
 
     if (!(Update_Hours_Worked.exec())){
         QMessageBox::critical(this, tr("Erro!"), Update_Hours_Worked.lastError().text() + "class Client_Add_Service::on_btn_save_hoursWorked_clicked()");
     }else{
         QMessageBox::information(this, tr("Sucesso!"), tr("Horas trabalhadas atualizadas.\n"
                                                    "Custo do Serviço recalculadas no sistema...."));
-        SumCosts();
+        Sum_Costs();
     }
 }
 
-void Client_Add_Service::on_tbl_Parts_Used_In_Service_Double_Clicked(const QModelIndex &index)
+void Client_Add_Service::on_tbl_Parts_Used_In_Service_doubleClicked(const QModelIndex &index)
 {
     if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, tr("Confirmação!"), tr("Você deseja realmente remover essa peça desse serviço?"), QMessageBox::Yes|QMessageBox::No).exec())
     {
@@ -187,13 +187,13 @@ void Client_Add_Service::on_tbl_Parts_Used_In_Service_Double_Clicked(const QMode
         if(returnPartToStock.exec() == false){
             QMessageBox::critical(this, tr("Erro!"), returnPartToStock.lastError().text() + "class addservice.cpp  on_btn_save_hoursWorked_clicked()");
         }
-        LoadPartsAndServiceCostsGrid();
+        Load_Parts_And_Service_Costs_Grid();
     }
 }
 
-void Client_Add_Service::on_check_Pago_clicked()
+void Client_Add_Service::on_check_Paid_clicked()
 {
-    if(ui->check_Pago->isChecked()){
+    if(ui->check_Paid->isChecked()){
         QSqlQuery query;
         query.prepare("UPDATE Service set Service_Paid = 1 where Service_Id = " + ServiceID);
         if (query.exec() == false){
@@ -214,12 +214,12 @@ void Client_Add_Service::on_check_Pago_clicked()
     }
 }
 
-void Client_Add_Service::on_btn_atualizarDescricaoServico_clicked()
+void Client_Add_Service::on_btn_Update_Service_Description_clicked()
 {
     Service_Update_Description service_Update_Description;
     service_Update_Description.setServiceID(ServiceID);
     service_Update_Description.SetDescription();
     service_Update_Description.setModal(true);
     service_Update_Description.exec();
-    addserviceDescriptionText();
+    Add_Service_Description_Text();
 }

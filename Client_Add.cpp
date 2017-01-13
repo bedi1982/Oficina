@@ -22,7 +22,7 @@ Client_Add::~Client_Add()
     delete ui;
 }
 
-bool Client_Add::verificaCamposEmBrancoNoForm()
+bool Client_Add::Verify_Empty_Fields_on_Form()
 {
     if (   ui->line_Name->text() == ""
            ||ui->line_Address->text() == ""
@@ -42,9 +42,9 @@ bool Client_Add::verificaCamposEmBrancoNoForm()
     return true;
 }
 
-void Client_Add::on_btn_cadastrar_clicked()
+void Client_Add::on_btn_Add_clicked()
 {
-    if(verificaCamposEmBrancoNoForm()){
+    if(Verify_Empty_Fields_on_Form()){
         //Start Database Operation//
         QSqlQuery query;
         query.prepare("insert into Client (Client_Name, Client_Address, Client_City, Client_CPF, Client_RG, Client_Phone)"
@@ -69,7 +69,7 @@ void Client_Add::on_btn_cadastrar_clicked()
         }
     }
 }
-void Client_Add::on_btn_Sair_clicked()
+void Client_Add::on_btn_Exit_clicked()
 {
     close();
 }

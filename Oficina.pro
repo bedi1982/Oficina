@@ -90,4 +90,5 @@ RESOURCES += \
     resources/images.qrc
 
 TRANSLATIONS += \
-    resources/translations/Oficina_en_US.ts
+    resources/translations/Oficina_en_US.ts \
+    resources/translations/Oficina_pt_BR.ts

@@ -16,7 +16,7 @@ public:
     ~Config_Set_Hour_Cost();
 
 private slots:
-    void on_btn_Salvar_clicked();
+    void on_btn_Save_clicked();
 
 private:
     Ui::Config_Set_Hour_Cost *ui;
