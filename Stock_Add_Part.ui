@@ -31,7 +31,7 @@
   <property name="windowTitle">
    <string>Cadastro de Peça</string>
   </property>
-  <widget class="QPushButton" name="btn_Cadastrar">
+  <widget class="QPushButton" name="btn_Add">
    <property name="geometry">
     <rect>
      <x>280</x>
@@ -122,7 +122,7 @@
     <string>Quantidade</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="line_Nome">
+  <widget class="QLineEdit" name="line_Name">
    <property name="geometry">
     <rect>
      <x>80</x>
@@ -141,7 +141,7 @@
     <string>Nome da Peça. Exemplo: Escape Corsa 98</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_Sair">
+  <widget class="QPushButton" name="btn_Exit">
    <property name="geometry">
     <rect>
      <x>380</x>
@@ -154,7 +154,7 @@
     <string>Sair</string>
    </property>
   </widget>
-  <widget class="QSpinBox" name="spin_Quantidade">
+  <widget class="QSpinBox" name="spin_Quantity">
    <property name="geometry">
     <rect>
      <x>380</x>
@@ -164,7 +164,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QDoubleSpinBox" name="doubleSpinCusto">
+  <widget class="QDoubleSpinBox" name="double_Spin_Cost">
    <property name="geometry">
     <rect>
      <x>110</x>
@@ -180,7 +180,7 @@
     <double>1.000000000000000</double>
    </property>
   </widget>
-  <widget class="QPlainTextEdit" name="txt_PartDescription">
+  <widget class="QPlainTextEdit" name="txt_Part_Description">
    <property name="geometry">
     <rect>
      <x>80</x>
@@ -201,12 +201,12 @@
   </widget>
  </widget>
  <tabstops>
-  <tabstop>line_Nome</tabstop>
-  <tabstop>txt_PartDescription</tabstop>
-  <tabstop>doubleSpinCusto</tabstop>
-  <tabstop>spin_Quantidade</tabstop>
-  <tabstop>btn_Cadastrar</tabstop>
-  <tabstop>btn_Sair</tabstop>
+  <tabstop>line_Name</tabstop>
+  <tabstop>txt_Part_Description</tabstop>
+  <tabstop>double_Spin_Cost</tabstop>
+  <tabstop>spin_Quantity</tabstop>
+  <tabstop>btn_Add</tabstop>
+  <tabstop>btn_Exit</tabstop>
  </tabstops>
  <resources/>
  <connections/>

@@ -218,7 +218,7 @@ void Client_Add_Service::on_btn_Update_Service_Description_clicked()
 {
     Service_Update_Description service_Update_Description;
     service_Update_Description.setServiceID(ServiceID);
-    service_Update_Description.SetDescription();
+    service_Update_Description.Set_Description();
     service_Update_Description.setModal(true);
     service_Update_Description.exec();
     Add_Service_Description_Text();

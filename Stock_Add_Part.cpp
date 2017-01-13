@@ -10,7 +10,7 @@ Stock_Add_Part::Stock_Add_Part(QWidget *parent) :
     ui(new Ui::Stock_Add_Part)
 {
     ui->setupUi(this);
-    ui->doubleSpinCusto->setMaximum(9999);
+    ui->double_Spin_Cost->setMaximum(9999);
     QPixmap glasses(":/emoticons/face-glasses.png");
     ui->lbl_Emoticon->setPixmap(glasses);
 }
@@ -20,16 +20,16 @@ Stock_Add_Part::~Stock_Add_Part()
     delete ui;
 }
 
-bool Stock_Add_Part::verificaCamposEmBrancoNoForm()
+bool Stock_Add_Part::Check_Empty_Fields_On_Form()
 {
-    if (   ui->line_Nome->text() == ""
-           ||ui->txt_PartDescription->toPlainText() == ""
-           ||ui->doubleSpinCusto->text() == ""
-           ||ui->spin_Quantidade->text() == ""
+    if (   ui->line_Name->text() == ""
+           ||ui->txt_Part_Description->toPlainText() == ""
+           ||ui->double_Spin_Cost->text() == ""
+           ||ui->spin_Quantity->text() == ""
            )
     {
         ui->lbl_Feedback->setText(tr("Erro: Todos os campos devem estar preenchidos!"));
-        ui->line_Nome->setFocus();
+        ui->line_Name->setFocus();
         QPixmap crying(":/emoticons/face-crying.png");
         ui->lbl_Emoticon->setPixmap(crying);
         return false;
@@ -38,28 +38,28 @@ bool Stock_Add_Part::verificaCamposEmBrancoNoForm()
     return true;
 }
 
-void Stock_Add_Part::on_btn_Sair_clicked()
+void Stock_Add_Part::on_btn_Exit_clicked()
 {
     close();
 }
 
-void Stock_Add_Part::on_btn_Cadastrar_clicked()
+void Stock_Add_Part::on_btn_Add_clicked()
 {
-    if(verificaCamposEmBrancoNoForm()){
+    if(Check_Empty_Fields_On_Form()){
         QSqlQuery query;
         query.prepare("insert into Part (Part_Name, Part_Description, Part_Cost, Part_Quantity)"
                       "values (:Name, :Description, :Cost, :Quantity)");
 
-        query.bindValue(":Name", ui->line_Nome->text());
-        query.bindValue(":Description", ui->txt_PartDescription->toPlainText());
-        query.bindValue(":Cost", ui->doubleSpinCusto->text().toDouble());
-        query.bindValue(":Quantity", ui->spin_Quantidade->text().toInt());
+        query.bindValue(":Name", ui->line_Name->text());
+        query.bindValue(":Description", ui->txt_Part_Description->toPlainText());
+        query.bindValue(":Cost", ui->double_Spin_Cost->text().toDouble());
+        query.bindValue(":Quantity", ui->spin_Quantity->text().toInt());
 
         if (query.exec() == false){
             qDebug() << query.lastError();
             QMessageBox::critical(this, tr("Erro!"), tr("Esta peça não foi adicionado!! Classe: Stock_Add_Part::on_btn_Cadastrar_clicked()"));
         }else{
-            ui->lbl_Feedback->setText(ui->line_Nome->text() + tr(" adicionado ao estoque!"));
+            ui->lbl_Feedback->setText(ui->line_Name->text() + tr(" adicionado ao estoque!"));
             QMessageBox::information(this, tr("Sucesso!"), tr("Peça adicionada no estoque."));
             close();
         }
@@ -67,20 +67,20 @@ void Stock_Add_Part::on_btn_Cadastrar_clicked()
 }
 
 //Check car description Filed size(This function only limits entered text to 250)//
-void Stock_Add_Part::checkCarDescriptionSize(){
-    if (ui->txt_PartDescription->toPlainText().length() > 250)
+void Stock_Add_Part::check_Car_Description_Size(){
+    if (ui->txt_Part_Description->toPlainText().length() > 250)
     {
-        QString partDescription = ui->txt_PartDescription->toPlainText();
+        QString partDescription = ui->txt_Part_Description->toPlainText();
         partDescription.chop(partDescription.length() - 250); // Cut off at 100 characters
-        ui->txt_PartDescription->setPlainText(partDescription); // Reset text
+        ui->txt_Part_Description->setPlainText(partDescription); // Reset text
 
         // This code just resets the cursor back to the end position
         // If you don't use this, it moves back to the beginning.
         // This is helpful for really long text edits where you might
         // lose your place.
-        QTextCursor cursor = ui->txt_PartDescription->textCursor();
-        cursor.setPosition(ui->txt_PartDescription->document()->characterCount() - 1);
-        ui->txt_PartDescription->setTextCursor(cursor);
+        QTextCursor cursor = ui->txt_Part_Description->textCursor();
+        cursor.setPosition(ui->txt_Part_Description->document()->characterCount() - 1);
+        ui->txt_Part_Description->setTextCursor(cursor);
 
         // This is your "action" to alert the user. I'd suggest something more
         // subtle though, or just not doing anything at all.
@@ -88,7 +88,7 @@ void Stock_Add_Part::checkCarDescriptionSize(){
     }
 }
 
-void Stock_Add_Part::on_txt_PartDescription_textChanged()
+void Stock_Add_Part::on_txt_Part_Description_textChanged()
 {
-    checkCarDescriptionSize();
+    check_Car_Description_Size();
 }

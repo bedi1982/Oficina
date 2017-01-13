@@ -25,7 +25,7 @@
   <property name="windowTitle">
    <string>Registrando ordem de serviço</string>
   </property>
-  <widget class="QLineEdit" name="line_ShortDescription">
+  <widget class="QLineEdit" name="line_Short_Description">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -47,7 +47,7 @@
     <string>Descrição curta do serviço</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="txt_FullDescription">
+  <widget class="QTextEdit" name="txt_Full_Description">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -73,7 +73,7 @@ p, li { white-space: pre-wrap; }
     <string>Descrição completa do serviço. Máximo 1000 letras.</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_Salvar">
+  <widget class="QPushButton" name="btn_Save">
    <property name="geometry">
     <rect>
      <x>550</x>
@@ -89,7 +89,7 @@ p, li { white-space: pre-wrap; }
     </sizepolicy>
    </property>
    <property name="text">
-    <string>Criar</string>
+    <string>Save</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_Emoticon">

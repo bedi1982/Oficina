@@ -41,7 +41,7 @@
    <string>Oficina 0.1</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTableView" name="tbl_historicoServicos">
+   <widget class="QTableView" name="tbl_Services_History">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -84,7 +84,7 @@
      <bool>true</bool>
     </attribute>
    </widget>
-   <widget class="QLabel" name="lbl_bancodeDados">
+   <widget class="QLabel" name="lbl_Database">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -134,7 +134,7 @@
      <enum>Qt::PlainText</enum>
     </property>
    </widget>
-   <widget class="QLabel" name="lbl_procurar">
+   <widget class="QLabel" name="lbl_Saerch">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -144,10 +144,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>Procurar Cliente</string>
+     <string>Search Client</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="line_RGouCPFouNome">
+   <widget class="QLineEdit" name="line_ID_or_CPF_or_Name">
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -166,7 +166,7 @@
      <string>Inicie a procuta inserindo aqui parte do RG, ID ou nome do cliente...</string>
     </property>
    </widget>
-   <widget class="QLabel" name="lbl_date">
+   <widget class="QLabel" name="lbl_Date">
     <property name="geometry">
      <rect>
       <x>1170</x>
@@ -192,14 +192,14 @@
      <string/>
     </property>
    </widget>
-   <zorder>lbl_procurar</zorder>
-   <zorder>line_RGouCPFouNome</zorder>
-   <zorder>tbl_historicoServicos</zorder>
-   <zorder>lbl_bancodeDados</zorder>
+   <zorder>lbl_Saerch</zorder>
+   <zorder>line_ID_or_CPF_or_Name</zorder>
+   <zorder>tbl_Services_History</zorder>
+   <zorder>lbl_Database</zorder>
    <zorder>lbl_emoticonStatusConexao</zorder>
    <zorder>lbl_BigCarIcon</zorder>
    <zorder>lbl_Oficina</zorder>
-   <zorder>lbl_date</zorder>
+   <zorder>lbl_Date</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QMenuBar" name="menuBar">
@@ -215,33 +215,33 @@
     <property name="title">
      <string>Oficina</string>
     </property>
-    <addaction name="actionSair"/>
+    <addaction name="action_Exit"/>
    </widget>
    <widget class="QMenu" name="menuCadastrois">
     <property name="title">
-     <string>Esto&amp;que</string>
+     <string>Stoc&amp;k</string>
     </property>
-    <addaction name="actionAddPeca"/>
-    <addaction name="actionEstoque"/>
+    <addaction name="action_Add_Part"/>
+    <addaction name="action_Stock"/>
    </widget>
    <widget class="QMenu" name="menuSobre">
     <property name="title">
-     <string>Sob&amp;re</string>
+     <string>Abo&amp;ut</string>
     </property>
-    <addaction name="actionSobreOficina"/>
-    <addaction name="actionManual_do_usu_rio"/>
+    <addaction name="action_About_Oficina"/>
+    <addaction name="action_Manpage"/>
    </widget>
    <widget class="QMenu" name="menuCliente">
     <property name="title">
-     <string>&amp;Cliente</string>
+     <string>&amp;Client</string>
     </property>
-    <addaction name="actionAddCliente"/>
+    <addaction name="action_Add_Client"/>
    </widget>
    <widget class="QMenu" name="menuRoot">
     <property name="title">
-     <string>Confi&amp;guraçoes</string>
+     <string>Settin&amp;gs</string>
     </property>
-    <addaction name="actionAlterar_Custo_da_Hora"/>
+    <addaction name="action_Change_Hour_Cost"/>
    </widget>
    <addaction name="menuOficina"/>
    <addaction name="menuCadastrois"/>
@@ -249,82 +249,37 @@
    <addaction name="menuRoot"/>
    <addaction name="menuSobre"/>
   </widget>
-  <action name="actionAddServico">
-   <property name="text">
-    <string>&amp;Novo serviço</string>
-   </property>
-  </action>
-  <action name="actionAddCliente">
+  <action name="action_Add_Client">
    <property name="text">
     <string>Cadastrar &amp;Cliente</string>
    </property>
   </action>
-  <action name="actionAddPeca">
+  <action name="action_Add_Part">
    <property name="text">
     <string>Cadastrar Nova &amp;Peça</string>
    </property>
   </action>
-  <action name="actionListClientes">
-   <property name="text">
-    <string>&amp;Listar Todos os Clientes</string>
-   </property>
-  </action>
-  <action name="actionEstoque">
+  <action name="action_Stock">
    <property name="text">
     <string>&amp;Controle do Estoque</string>
    </property>
   </action>
-  <action name="actionListarServicos_em_Aberto">
-   <property name="text">
-    <string>Serviços em Aberto</string>
-   </property>
-  </action>
-  <action name="actionContas_A_pagar">
-   <property name="text">
-    <string>&amp;A pagar</string>
-   </property>
-  </action>
-  <action name="actionContas_A_Receber">
-   <property name="text">
-    <string>A &amp;Receber</string>
-   </property>
-  </action>
-  <action name="actionListarServicos_em_aberto">
-   <property name="text">
-    <string>&amp;Serviços em aberto</string>
-   </property>
-  </action>
-  <action name="actionSair">
+  <action name="action_Exit">
    <property name="text">
     <string>Sa&amp;ir</string>
    </property>
   </action>
-  <action name="actionSobreOficina">
+  <action name="action_About_Oficina">
    <property name="text">
     <string>&amp;Oficina</string>
    </property>
   </action>
-  <action name="actionAdicionar_Carro_a_Cliente">
-   <property name="text">
-    <string>&amp;Adicionar Carro a Cliente</string>
-   </property>
-  </action>
-  <action name="actionInforma_es_sobre_Cliente">
-   <property name="text">
-    <string>&amp;Informações sobre Cliente</string>
-   </property>
-  </action>
-  <action name="actionAdicionar_Estoque_a_pe_a_existente">
-   <property name="text">
-    <string>&amp;Entrada de Peças</string>
-   </property>
-  </action>
-  <action name="actionAlterar_Custo_da_Hora">
+  <action name="action_Change_Hour_Cost">
    <property name="text">
     <string>&amp;Alterar Custo da Hora</string>
    </property>
   </action>
-  <action name="actionManual_do_usu_rio">
+  <action name="action_Manpage">
    <property name="text">
     <string>&amp;Manual do usuário</string>
    </property>

@@ -14,17 +14,17 @@ class Service_Update_Description : public QDialog
 public:
     explicit Service_Update_Description(QWidget *parent = 0);
     ~Service_Update_Description();
-    void SetDescription();
-    void EnableDescriptionUpdate();
+    void Set_Description();
+    void Enable_Description_Update();
     QString serviceID;
 
     QString getServiceID() const;
     void setServiceID(const QString &value);
 
 private slots:
-    void on_btn_salvar_clicked();
+    void on_btn_Save_clicked();
 
-    void on_txt_FullDescription_textChanged();
+    void on_txt_Full_Description_textChanged();
 
 private:
     Ui::Service_Update_Description *ui;

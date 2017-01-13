@@ -25,7 +25,7 @@
   <property name="windowTitle">
    <string>Controle do Estoque</string>
   </property>
-  <widget class="QLabel" name="lbl_procurar">
+  <widget class="QLabel" name="lbl_Search">
    <property name="geometry">
     <rect>
      <x>14</x>
@@ -38,7 +38,7 @@
     <string>Procurar Peça</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="line_NomeDaPeca">
+  <widget class="QLineEdit" name="line_Part_Name">
    <property name="geometry">
     <rect>
      <x>120</x>
@@ -57,7 +57,7 @@
     <string>Inicie a procura inserindo o nome da peça. * para listar todas.</string>
    </property>
   </widget>
-  <widget class="QTableView" name="tbl_parts">
+  <widget class="QTableView" name="tbl_Parts">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -70,7 +70,7 @@
     <string>Duplo clique aqui para alterar o valor.</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="txt_description">
+  <widget class="QTextEdit" name="txt_Part_Description">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -99,7 +99,7 @@
     <string>Descrição completa da Peça. Este campo também pode ser editado, máximo 250 letras.</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_save">
+  <widget class="QPushButton" name="btn_Save_Description">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -115,7 +115,7 @@
     <string>Salvar Descrição </string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_exit">
+  <widget class="QPushButton" name="btn_Exit">
    <property name="geometry">
     <rect>
      <x>730</x>
@@ -169,11 +169,11 @@
   </widget>
  </widget>
  <tabstops>
-  <tabstop>line_NomeDaPeca</tabstop>
-  <tabstop>tbl_parts</tabstop>
-  <tabstop>txt_description</tabstop>
-  <tabstop>btn_save</tabstop>
-  <tabstop>btn_exit</tabstop>
+  <tabstop>line_Part_Name</tabstop>
+  <tabstop>tbl_Parts</tabstop>
+  <tabstop>txt_Part_Description</tabstop>
+  <tabstop>btn_Save_Description</tabstop>
+  <tabstop>btn_Exit</tabstop>
  </tabstops>
  <resources/>
  <connections/>

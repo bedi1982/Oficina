@@ -26,7 +26,7 @@ Main_Window::Main_Window(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->line_RGouCPFouNome->setFocus();
+    ui->line_ID_or_CPF_or_Name->setFocus();
 
     QPixmap sportCar(":/emoticons/sport-car.png");
     ui->lbl_BigCarIcon->setPixmap(sportCar);
@@ -36,12 +36,12 @@ Main_Window::Main_Window(QWidget *parent) :
     if(db.Connect()){
         QPixmap green(":/emoticons/emblem-default.png");
         ui->lbl_emoticonStatusConexao->setPixmap(green);
-        ui->lbl_bancodeDados->setText("Banco de dados: UP");
+        ui->lbl_Database->setText("Banco de dados: UP");
     }else{
         QPixmap red(":/emoticons/emblem-important.png");
         ui->lbl_emoticonStatusConexao->setPixmap(red);
-        ui->lbl_bancodeDados->setText("Banco de dados: OFF ");
-        ui->line_RGouCPFouNome->setEnabled(false);
+        ui->lbl_Database->setText("Banco de dados: OFF ");
+        ui->line_ID_or_CPF_or_Name->setEnabled(false);
         ui->menuBar->hide();
     }
 }
@@ -51,21 +51,21 @@ Main_Window::~Main_Window()
     delete ui;
 }
 
-void Main_Window::on_actionAddCliente_triggered()
+void Main_Window::on_action_Add_Client_triggered()
 {
     Client_Add Client_Add;
     Client_Add.setModal(true);
     Client_Add.exec();
 }
 
-void Main_Window::on_actionAddPeca_triggered()
+void Main_Window::on_action_Add_Part_triggered()
 {
     Stock_Add_Part Stock_Add_Part;
     Stock_Add_Part.setModal(true);
     Stock_Add_Part.exec();
 }
 
-void Main_Window::on_tbl_historicoServicos_doubleClicked(const QModelIndex &selectedClientinTheGrid)
+void Main_Window::on_tbl_Services_History_doubleClicked(const QModelIndex &selectedClientinTheGrid)
 {
     //Bellow 2 list will retrieve the column 0 value, which is the clientid//
     const QAbstractItemModel * model = selectedClientinTheGrid.model();
@@ -76,22 +76,22 @@ void Main_Window::on_tbl_historicoServicos_doubleClicked(const QModelIndex &sele
     client_Services_History.loadAll();
     client_Services_History.setModal(true);
     client_Services_History.exec();
-    ui->line_RGouCPFouNome->setText(clientID.toString());
+    ui->line_ID_or_CPF_or_Name->setText(clientID.toString());
 }
 
-void Main_Window::on_actionSair_triggered()
+void Main_Window::on_action_Exit_triggered()
 {
     close();
 }
 
-void Main_Window::on_actionSobreOficina_triggered()
+void Main_Window::on_action_About_Oficina_triggered()
 {
     About About;
     About.setModal(true);
     About.exec();
 }
 
-void Main_Window::on_line_RGouCPFouNome_textChanged(const QString &userSearchFilter)
+void Main_Window::on_line_ID_or_CPF_or_Name_textChanged(const QString &userSearchFilter)
 {
     QSqlTableModel* model = new QSqlTableModel;
 
@@ -117,31 +117,31 @@ void Main_Window::on_line_RGouCPFouNome_textChanged(const QString &userSearchFil
         model->setHeaderData(7, Qt::Horizontal, tr("Atualizado em"));
         model->setHeaderData(8, Qt::Horizontal, tr("Criado em"));
 
-        ui->tbl_historicoServicos->setModel(model);
-        ui->tbl_historicoServicos->hideColumn(2);
-        ui->tbl_historicoServicos->resizeColumnsToContents();
+        ui->tbl_Services_History->setModel(model);
+        ui->tbl_Services_History->hideColumn(2);
+        ui->tbl_Services_History->resizeColumnsToContents();
     }else{
         model->clear();
-        ui->tbl_historicoServicos->setModel(model);
-        ui->tbl_historicoServicos->resizeColumnsToContents();
+        ui->tbl_Services_History->setModel(model);
+        ui->tbl_Services_History->resizeColumnsToContents();
     }
 }
 
-void Main_Window::on_actionEstoque_triggered()
+void Main_Window::on_action_Stock_triggered()
 {
     Stock_Control stock_Control;
     stock_Control.setModal(true);
     stock_Control.exec();
 }
 
-void Main_Window::on_actionAlterar_Custo_da_Hora_triggered()
+void Main_Window::on_action_Change_Hour_Cost_triggered()
 {
     Config_Set_Hour_Cost set_Hour_Cost;
     set_Hour_Cost.setModal(true);
     set_Hour_Cost.exec();
 }
 
-void Main_Window::on_actionManual_do_usu_rio_triggered()
+void Main_Window::on_action_Manpage_triggered()
 {
     Man_Page man_page;
     man_page.setModal(true);

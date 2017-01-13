@@ -25,7 +25,7 @@
   <property name="windowTitle">
    <string>Atualizando Descrição de Serviço</string>
   </property>
-  <widget class="QPushButton" name="btn_salvar">
+  <widget class="QPushButton" name="btn_Save">
    <property name="geometry">
     <rect>
      <x>550</x>
@@ -35,10 +35,10 @@
     </rect>
    </property>
    <property name="text">
-    <string>Salvar</string>
+    <string>Save</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="txt_FullDescription">
+  <widget class="QTextEdit" name="txt_Full_Description">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -67,7 +67,7 @@ p, li { white-space: pre-wrap; }
     <string>Descrição completa do serviço. Máximo 1000 letras.</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="line_ShortDescription">
+  <widget class="QLineEdit" name="line_Short_Description">
    <property name="enabled">
     <bool>true</bool>
    </property>

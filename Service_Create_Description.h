@@ -14,7 +14,7 @@ class Service_Create_Description : public QDialog
 public:
     explicit Service_Create_Description(QWidget *parent = 0);
     ~Service_Create_Description();
-    bool verificaCamposEmBrancoNoForm();
+    bool Verify_Empty_Fields_On_Form();
 
     QString clientid;
     QString CarID;
@@ -30,9 +30,9 @@ public:
     void setClientid(const QString &value);
 
 private slots:
-    void on_btn_Salvar_clicked();
+    void on_btn_Save_clicked();
 
-    void on_txt_FullDescription_textChanged();
+    void on_txt_Full_Description_textChanged();
 
 private:
     Ui::Service_Create_Description *ui;

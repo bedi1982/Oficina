@@ -23,17 +23,20 @@ public:
     void setClient_id(const QString &value);
 
 private slots:
-    void on_btn_Add_Client_Car_clicked();
     void on_tbl_Client_Cars_doubleClicked(const QModelIndex &index);
 
     void on_tbl_Client_Services_doubleClicked(const QModelIndex &index);
 
     void on_btn_Update_Client_clicked();
 
+    void on_btn_Add_Car_To_Client_clicked();
+
 private:
     Ui::Client_Services_History *ui;
-    void loadServicesGrid();
-    void loadClientInfo_to_TextBoxes();
+
+    void Load_Services_Grid();
+
+    void Load_Client_Info_To_Text_Boxes();
 };
 
 #endif // CLIENTINFO_H

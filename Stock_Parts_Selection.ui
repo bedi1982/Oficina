@@ -25,7 +25,7 @@
   <property name="windowTitle">
    <string/>
   </property>
-  <widget class="QTableView" name="tbl_PartsList">
+  <widget class="QTableView" name="tbl_Parts_List">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -41,7 +41,7 @@
     <enum>Qt::ScrollBarAsNeeded</enum>
    </property>
   </widget>
-  <widget class="QLineEdit" name="line_NomeDaPeca">
+  <widget class="QLineEdit" name="line_Part_Name">
    <property name="geometry">
     <rect>
      <x>126</x>

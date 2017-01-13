@@ -48,11 +48,11 @@ void Client_Services_History::setClient_id(const QString &value)
 
 void Client_Services_History::loadAll(){
     load_Cars_Grid();
-    loadServicesGrid();
-    loadClientInfo_to_TextBoxes();
+    Load_Services_Grid();
+    Load_Client_Info_To_Text_Boxes();
 }
 
-void Client_Services_History::loadClientInfo_to_TextBoxes()
+void Client_Services_History::Load_Client_Info_To_Text_Boxes()
 {
     QSqlQuery query;
     query.prepare("SELECT Client_id, Client_Name, Client_Address, Client_Phone, Client_City FROM Client WHERE Client_id = " + client_id);
@@ -71,7 +71,7 @@ void Client_Services_History::loadClientInfo_to_TextBoxes()
     }
 }
 
-void Client_Services_History::loadServicesGrid()
+void Client_Services_History::Load_Services_Grid()
 {    
     QSqlQueryModel* model = new QSqlQueryModel;
     model->setQuery("SELECT "
@@ -119,16 +119,6 @@ void Client_Services_History::load_Cars_Grid()
     }
 }
 
-void Client_Services_History::on_btn_Add_Client_Car_clicked()
-{
-    Client_Add_Car Client_Add_Car;
-    Client_Add_Car.setClient(client_id);
-    Client_Add_Car.Add_Client_Info_To_Form(client_id);
-    Client_Add_Car.setModal(true);
-    Client_Add_Car.exec();
-    load_Cars_Grid();
-}
-
 //Adding Service to this client and this car//
 void Client_Services_History::on_tbl_Client_Cars_doubleClicked(const QModelIndex &index)
 {
@@ -142,7 +132,7 @@ void Client_Services_History::on_tbl_Client_Cars_doubleClicked(const QModelIndex
 
     Service_Create_Description.setModal(true);
     Service_Create_Description.exec();
-    loadServicesGrid();
+    Load_Services_Grid();
 }
 
 void Client_Services_History::on_tbl_Client_Services_doubleClicked(const QModelIndex &index)
@@ -160,7 +150,7 @@ void Client_Services_History::on_tbl_Client_Services_doubleClicked(const QModelI
 
     Client_Add_Service.setModal(true);
     Client_Add_Service.exec();
-    loadServicesGrid();
+    Load_Services_Grid();
 }
 
 void Client_Services_History::on_btn_Update_Client_clicked()
@@ -168,7 +158,17 @@ void Client_Services_History::on_btn_Update_Client_clicked()
     Client_Edit Client_Edit;
     Client_Edit.setModal(true);
     Client_Edit.setClient_id(client_id);
-    Client_Edit.load_Client_Info_to_TextBoxes();
+    Client_Edit.load_Client_Info_To_TextBoxes();
     Client_Edit.exec();
-    loadClientInfo_to_TextBoxes();
+    Load_Client_Info_To_Text_Boxes();
+}
+
+void Client_Services_History::on_btn_Add_Car_To_Client_clicked()
+{
+    Client_Add_Car Client_Add_Car;
+    Client_Add_Car.setClient(client_id);
+    Client_Add_Car.Add_Client_Info_To_Form(client_id);
+    Client_Add_Car.setModal(true);
+    Client_Add_Car.exec();
+    load_Cars_Grid();
 }

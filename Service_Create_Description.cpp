@@ -18,15 +18,15 @@ Service_Create_Description::~Service_Create_Description()
     delete ui;
 }
 
-bool Service_Create_Description::verificaCamposEmBrancoNoForm()
+bool Service_Create_Description::Verify_Empty_Fields_On_Form()
 {
-    if (ui->txt_FullDescription->toPlainText() == "" || ui->line_ShortDescription->text() == "" )
+    if (ui->txt_Full_Description->toPlainText() == "" || ui->line_Short_Description->text() == "" )
     {
        // ui->lbl_Feedback->setText("Erro: Todos os campos devem estar preenchidos!");
         //QPixmap crying(":/emoticons/face-crying.png");
         //ui->lbl_Emoticon->setPixmap(crying);
         QMessageBox::warning(this, tr("Erro!"), tr("Todos os campos devem estar preenchidos!"));
-        ui->line_ShortDescription->setFocus();    
+        ui->line_Short_Description->setFocus();
         return false;
     }
     //Only returns true when all the fields are filled.
@@ -64,9 +64,9 @@ void Service_Create_Description::setServiceID(const QString &value)
 }
 
 
-void Service_Create_Description::on_btn_Salvar_clicked()
+void Service_Create_Description::on_btn_Save_clicked()
 {
-    if(verificaCamposEmBrancoNoForm()){
+    if(Verify_Empty_Fields_On_Form()){
         //We begin This block is to save current hour cost to this service//
         QSqlQueryModel* getHourCostFromDB = new QSqlQueryModel;
         getHourCostFromDB->setQuery("select HourCost from HourCost");
@@ -80,13 +80,13 @@ void Service_Create_Description::on_btn_Salvar_clicked()
         query.bindValue(":Service_Client_id", clientid);
         query.bindValue(":Service_Client_Carid", CarID);
         query.bindValue(":Service_Hour_Cost", CurrentHourCost);
-        query.bindValue(":Service_Short_Description", ui->line_ShortDescription->text());
-        query.bindValue(":Service_Description", ui->txt_FullDescription->toPlainText());
+        query.bindValue(":Service_Short_Description", ui->line_Short_Description->text());
+        query.bindValue(":Service_Description", ui->txt_Full_Description->toPlainText());
 
         if (query.exec() == false){
             QMessageBox::critical(this, tr("Erro!"), query.lastError().text() + " class Service_Create_Description::on_btn_Salvar_clicked() ");
         }else{
-            ui->line_ShortDescription->setFocus();
+            ui->line_Short_Description->setFocus();
             QMessageBox::information(this, tr("Sucesso!"), tr("Serviço registrado para este Carro do cliente.\n\n"
                                                        "Agora voltaremos para a tela anterior onde esta nova ordem de serviço "
                                                        "estará editável. Lá você pode adicionar as peças conforme usa no serviço "
@@ -97,21 +97,21 @@ void Service_Create_Description::on_btn_Salvar_clicked()
     }
 }
 
-void Service_Create_Description::on_txt_FullDescription_textChanged()
+void Service_Create_Description::on_txt_Full_Description_textChanged()
 {
-    if (ui->txt_FullDescription->toPlainText().length() > 1000)
+    if (ui->txt_Full_Description->toPlainText().length() > 1000)
     {
-        QString fullserviceDescription = ui->txt_FullDescription->toPlainText();
+        QString fullserviceDescription = ui->txt_Full_Description->toPlainText();
         fullserviceDescription.chop(fullserviceDescription.length() - 1000); // Cut off at 500 characters
-        ui->txt_FullDescription->setPlainText(fullserviceDescription); // Reset text
+        ui->txt_Full_Description->setPlainText(fullserviceDescription); // Reset text
 
         // This code just resets the cursor back to the end position
         // If you don't use this, it moves back to the beginning.
         // This is helpful for really long text edits where you might
         // lose your place.
-        QTextCursor cursor = ui->txt_FullDescription->textCursor();
-        cursor.setPosition(ui->txt_FullDescription->document()->characterCount() - 1);
-        ui->txt_FullDescription->setTextCursor(cursor);
+        QTextCursor cursor = ui->txt_Full_Description->textCursor();
+        cursor.setPosition(ui->txt_Full_Description->document()->characterCount() - 1);
+        ui->txt_Full_Description->setTextCursor(cursor);
 
         // This is your "action" to alert the user. I'd suggest something more
         // subtle though, or just not doing anything at all.

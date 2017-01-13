@@ -14,8 +14,8 @@ Stock_Parts_Selection::Stock_Parts_Selection(QWidget *parent) :
     ui(new Ui::Stock_Parts_Selection)
 {
     ui->setupUi(this);
-    ui->line_NomeDaPeca->setFocus();
-    ui->line_NomeDaPeca->setText("*"); //Just so all parts are showed by default//
+    ui->line_Part_Name->setFocus();
+    ui->line_Part_Name->setText("*"); //Just so all parts are showed by default//
 }
 
 Stock_Parts_Selection::~Stock_Parts_Selection()
@@ -33,7 +33,7 @@ void Stock_Parts_Selection::setServiceID(QString serviceid)
     serviceID = serviceid;
 }
 
-void Stock_Parts_Selection::on_line_NomeDaPeca_textChanged(const QString &userSearchFfilter)
+void Stock_Parts_Selection::on_line_Part_Name_textChanged(const QString &userSearchFfilter)
 {
     QSqlTableModel* model = new QSqlTableModel;
 
@@ -56,16 +56,16 @@ void Stock_Parts_Selection::on_line_NomeDaPeca_textChanged(const QString &userSe
         model->setHeaderData(5, Qt::Horizontal, tr("Atualiada em"));
         model->setHeaderData(6, Qt::Horizontal, tr("Criada em"));
 
-        ui->tbl_PartsList->hideColumn(2);
-        ui->tbl_PartsList->setModel(model);
-        ui->tbl_PartsList->resizeColumnsToContents();
+        ui->tbl_Parts_List->hideColumn(2);
+        ui->tbl_Parts_List->setModel(model);
+        ui->tbl_Parts_List->resizeColumnsToContents();
     }else{
         model->clear();
-        ui->tbl_PartsList->setModel(model);
+        ui->tbl_Parts_List->setModel(model);
     }
 }
 
-void Stock_Parts_Selection::on_tbl_PartsList_doubleClicked(const QModelIndex &DoubleClickedCellValue)
+void Stock_Parts_Selection::on_tbl_Parts_List_doubleClicked(const QModelIndex &DoubleClickedCellValue)
 {
     //YES NO DIALOG//
     if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Confirmação", "Adicionar a peça ao serviço?", QMessageBox::Yes|QMessageBox::No).exec())
@@ -101,6 +101,6 @@ void Stock_Parts_Selection::on_btn_Add_Part_to_Stock_clicked()
     Stock_Add_Part.exec();
 
     //Bellow 2 just to 'retrigguer' the parts list grid after a new part is included//
-    ui->line_NomeDaPeca->setText(" ");
-    ui->line_NomeDaPeca->setText("*");
+    ui->line_Part_Name->setText(" ");
+    ui->line_Part_Name->setText("*");
 }

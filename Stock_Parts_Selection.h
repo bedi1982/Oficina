@@ -22,9 +22,9 @@ public:
     QString getServiceID() const;
 
 private slots:
-    void on_line_NomeDaPeca_textChanged(const QString &arg1);
+    void on_line_Part_Name_textChanged(const QString &arg1);
 
-    void on_tbl_PartsList_doubleClicked(const QModelIndex &index);
+    void on_tbl_Parts_List_doubleClicked(const QModelIndex &index);
 
     void on_btn_Add_Part_to_Stock_clicked();
 

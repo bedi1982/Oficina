@@ -72,7 +72,7 @@
     <set>QAbstractItemView::NoEditTriggers</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_Add_Car_to_Client">
+  <widget class="QPushButton" name="btn_Add_Car_To_Client">
    <property name="geometry">
     <rect>
      <x>1040</x>
@@ -454,7 +454,7 @@
   </widget>
   <zorder>lbl_clientAddress</zorder>
   <zorder>lbl_clientName</zorder>
-  <zorder>btn_Add_Car_to_Client</zorder>
+  <zorder>btn_Add_Car_To_Client</zorder>
   <zorder>lbl_NewCarIcon</zorder>
   <zorder>lbl_ClientCars</zorder>
   <zorder>line_Phone</zorder>
@@ -473,7 +473,7 @@
  </widget>
  <tabstops>
   <tabstop>btn_Update_Client</tabstop>
-  <tabstop>btn_Add_Car_to_Client</tabstop>
+  <tabstop>btn_Add_Car_To_Client</tabstop>
   <tabstop>tbl_Client_Cars</tabstop>
   <tabstop>tbl_Client_Services</tabstop>
   <tabstop>line_Name</tabstop>

@@ -16,7 +16,7 @@ public:
     ~Client_Edit();
 
     QString client_id;
-    void load_Client_Info_to_TextBoxes();
+    void load_Client_Info_To_TextBoxes();
 
     QString getClient_id() const;
     void setClient_id(const QString &value);

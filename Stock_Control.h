@@ -21,15 +21,15 @@ public:
     void setPartID(const QString &value);
 
 private slots:
-    void on_line_NomeDaPeca_textChanged(const QString &arg1);
+    void on_line_Part_Name_textChanged(const QString &arg1);
 
-    void on_tbl_parts_clicked(const QModelIndex &index);
+    void on_tbl_Parts_clicked(const QModelIndex &index);
 
-    void on_btn_save_clicked();
+    void on_btn_Save_Description_clicked();
 
-    void on_btn_exit_clicked();
+    void on_btn_Exit_clicked();
 
-    void on_txt_description_textChanged();
+    void on_txt_Part_Description_textChanged();
 
 private:
     Ui::Stock_Control *ui;

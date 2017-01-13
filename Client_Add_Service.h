@@ -16,8 +16,11 @@ public:
     ~Client_Add_Service();
 
     void Load_Parts_And_Service_Costs_Grid();
+
     void Sum_Costs();
+
     void Enable_Description_Update();
+
     void Add_Service_Description_Text();
 
     QString clientid;
@@ -36,10 +39,15 @@ public:
 
 private slots:
     void on_btn_Exit_clicked();
+
     void on_btn_Add_Parts_Used_In_The_Service_clicked();
+
     void on_btn_Save_Hours_Worked_clicked();
+
     void on_check_Paid_clicked();
+
     void on_btn_Update_Service_Description_clicked();
+
     void on_tbl_Parts_Used_In_Service_doubleClicked(const QModelIndex &index);
 
 private:

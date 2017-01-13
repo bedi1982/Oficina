@@ -29,7 +29,7 @@ void Client_Edit::setClient_id(const QString &value)
     client_id = value;
 }
 
-void Client_Edit::load_Client_Info_to_TextBoxes()
+void Client_Edit::load_Client_Info_To_TextBoxes()
 {
     QSqlQuery query;
     query.prepare("SELECT * from Client WHERE Client_id = " + client_id);
