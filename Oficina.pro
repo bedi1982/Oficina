@@ -87,7 +87,8 @@ DISTFILES += \
     Oficina_en_US.qm
 
 RESOURCES += \
-    resources/images.qrc
+    resources/images.qrc \
+    resources/translations.qrc
 
 TRANSLATIONS += \
     resources/translations/Oficina_en_US.ts \

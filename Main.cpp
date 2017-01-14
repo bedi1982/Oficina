@@ -16,11 +16,11 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     QTranslator translation;
-    QFile file("/home/bedi/github/Oficina/resources/translations/Oficina_pt_BR.qm");
+    QFile file(":/translations/Oficina_pt_BR.qm");
 
     if(file.exists()){
         qDebug() << "existe";
-        translation.load("/home/bedi/github/Oficina/resources/translations/Oficina_pt_BR.qm");
+        translation.load(":/translations/Oficina_pt_BR.qm");
         a.installTranslator(&translation);
     }else{
         qDebug() << "no existe";
