@@ -176,7 +176,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Nov. 2016</string>
+     <string>Jan. 2016</string>
     </property>
    </widget>
    <widget class="QLabel" name="lbl_BigCarIcon">
