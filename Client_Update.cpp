@@ -1,5 +1,5 @@
 #include "Client_Update.h"
-#include "ui_Client_Edit.h"
+#include "ui_Client_Update.h"
 #include "QDebug"
 #include "QSqlQuery"
 #include "QMessageBox"
@@ -7,7 +7,7 @@
 
 Client_Update::Client_Update(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::Client_Edit)
+    ui(new Ui::Client_Update)
 {
     ui->setupUi(this);
     QPixmap cool(":/emoticons/face-cool.png");

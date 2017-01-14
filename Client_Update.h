@@ -1,10 +1,10 @@
-#ifndef CLIENT_EDIT_H
-#define CLIENT_EDIT_H
+#ifndef CLIENT_UPDATE_H
+#define CLIENT_UPDATE_H
 
 #include <QDialog>
 
 namespace Ui {
-class Client_Edit;
+class Client_Update;
 }
 
 class Client_Update : public QDialog
@@ -26,7 +26,7 @@ private slots:
     void on_btn_Update_clicked();
 
 private:
-    Ui::Client_Edit *ui;
+    Ui::Client_Update *ui;
 };
 
 #endif // EDITCLIENT_H
