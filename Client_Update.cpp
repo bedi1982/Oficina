@@ -1,11 +1,11 @@
-#include "Client_Edit.h"
+#include "Client_Update.h"
 #include "ui_Client_Edit.h"
 #include "QDebug"
 #include "QSqlQuery"
 #include "QMessageBox"
 #include "QSqlError"
 
-Client_Edit::Client_Edit(QWidget *parent) :
+Client_Update::Client_Update(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Client_Edit)
 {
@@ -14,22 +14,22 @@ Client_Edit::Client_Edit(QWidget *parent) :
     ui->lbl_Emoticon->setPixmap(cool);
 }
 
-Client_Edit::~Client_Edit()
+Client_Update::~Client_Update()
 {
     delete ui;
 }
 
-QString Client_Edit::getClient_id() const
+QString Client_Update::getClient_id() const
 {
     return client_id;
 }
 
-void Client_Edit::setClient_id(const QString &value)
+void Client_Update::setClient_id(const QString &value)
 {
     client_id = value;
 }
 
-void Client_Edit::load_Client_Info_To_TextBoxes()
+void Client_Update::load_Client_Info_To_TextBoxes()
 {
     QSqlQuery query;
     query.prepare("SELECT * from Client WHERE Client_id = " + client_id);
@@ -53,7 +53,7 @@ void Client_Edit::load_Client_Info_To_TextBoxes()
     }
 }
 
-void Client_Edit::on_btn_Update_clicked()
+void Client_Update::on_btn_Update_clicked()
 {
     QSqlQuery query;
     query.prepare(" UPDATE Client SET "

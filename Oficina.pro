@@ -20,7 +20,6 @@ SOURCES +=\
     Stock_Add_Part.cpp \
     Client_Add_Service.cpp \
     Service_Create_Description.cpp \
-    Client_Edit.cpp \
     Man_Page.cpp \
     Stock_Parts_Selection.cpp \
     Service_Update_Description.cpp \
@@ -29,7 +28,8 @@ SOURCES +=\
     Database.cpp \
     Main.cpp \
     Main_Window.cpp \
-    Client_Services_History.cpp
+    Client_Services_History.cpp \
+    Client_Update.cpp
 
 HEADERS  += \
     About.h \
@@ -38,7 +38,6 @@ HEADERS  += \
     Stock_Add_Part.h \
     Client_Add_Service.h \
     Service_Create_Description.h \
-    Client_Edit.h \
     Man_Page.h \
     Stock_Parts_Selection.h \
     Service_Update_Description.h \
@@ -46,7 +45,8 @@ HEADERS  += \
     Stock_Control.h \
     Database.h \
     Main_Window.h \
-    Client_Services_History.h
+    Client_Services_History.h \
+    Client_Update.h
 
 FORMS    += \
     About.ui \
@@ -55,14 +55,14 @@ FORMS    += \
     Stock_Add_Part.ui \
     Client_Add_service.ui \
     Service_Create_Description.ui \
-    Client_Edit.ui \
     Man_Page.ui \
     Stock_Parts_Selection.ui \
     Service_Update_Description.ui \
     Config_Set_Hour_Cost.ui \
     Stock_Control.ui \
     Main_Window.ui \
-    Client_Services_History.ui
+    Client_Services_History.ui \
+    Client_Update.ui
 
 DISTFILES += \
     resources/emote-love.png \

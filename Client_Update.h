@@ -7,13 +7,13 @@ namespace Ui {
 class Client_Edit;
 }
 
-class Client_Edit : public QDialog
+class Client_Update : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Client_Edit(QWidget *parent = 0);
-    ~Client_Edit();
+    explicit Client_Update(QWidget *parent = 0);
+    ~Client_Update();
 
     QString client_id;
     void load_Client_Info_To_TextBoxes();

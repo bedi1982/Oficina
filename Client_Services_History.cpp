@@ -4,7 +4,7 @@
 #include "Client_Add_Car.h"
 #include "Client_Add_Service.h"
 
-#include "Client_Edit.h"
+#include "Client_Update.h"
 #include "Service_Create_Description.h"
 
 #include <QSqlTableModel>
@@ -155,11 +155,11 @@ void Client_Services_History::on_tbl_Client_Services_doubleClicked(const QModelI
 
 void Client_Services_History::on_btn_Update_Client_clicked()
 {
-    Client_Edit Client_Edit;
-    Client_Edit.setModal(true);
-    Client_Edit.setClient_id(client_id);
-    Client_Edit.load_Client_Info_To_TextBoxes();
-    Client_Edit.exec();
+    Client_Update Client_Update;
+    Client_Update.setModal(true);
+    Client_Update.setClient_id(client_id);
+    Client_Update.load_Client_Info_To_TextBoxes();
+    Client_Update.exec();
     Load_Client_Info_To_Text_Boxes();
 }
 
