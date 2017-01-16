@@ -35,7 +35,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Procurar Peça</string>
+    <string>Search Part</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="line_Part_Name">
@@ -54,7 +54,7 @@
     <number>30</number>
    </property>
    <property name="placeholderText">
-    <string>Inicie a procura inserindo o nome da peça. * para listar todas.</string>
+    <string>Search entering the Part Name. You list all with: *</string>
    </property>
   </widget>
   <widget class="QTableView" name="tbl_Parts">
@@ -112,7 +112,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Salvar Descrição </string>
+    <string>Save Description</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_Exit">
@@ -125,7 +125,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Sair</string>
+    <string>Exit</string>
    </property>
   </widget>
   <widget class="QLabel" name="llb_info_2">

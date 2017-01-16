@@ -74,20 +74,29 @@ void Client_Add_Service::Add_Service_Description_Text(){
 void Client_Add_Service::Load_Parts_And_Service_Costs_Grid(){
 
     QSqlQueryModel* model = new QSqlQueryModel;
-    model->setQuery("SELECT ServicePartsUsed_id AS ServiçoUsedID, "
-                    "Part_id as 'PeçaID', "
-                    "Part_Quantity AS 'Estoque', "
-                    "Part_Name AS 'Nome', "
-                    "Part_Cost AS 'Custo' "
-                    "FROM Part p JOIN ServicePartsUsed pu "
-                    "ON pu.Used_Part_ID = p.Part_id "
-                    "AND pu.Used_On_What_Service_id = " + ServiceID);
+    model->setQuery("SELECT ServicePartsUsed_id,"
+                    " Part_id,"
+                    " Part_Quantity,"
+                    " Part_Name, "
+                    " Part_Cost"
+                    " FROM Part p JOIN ServicePartsUsed pu "
+                    " ON pu.Used_Part_ID = p.Part_id "
+                    " AND pu.Used_On_What_Service_id = " + ServiceID);
+
+    model->setHeaderData(0, Qt::Horizontal, tr("Used Service Part ID"));
+    model->setHeaderData(1, Qt::Horizontal, tr("Part ID"));
+    model->setHeaderData(2, Qt::Horizontal, tr("Part Quantity"));
+    model->setHeaderData(3, Qt::Horizontal, tr("Part Name"));
+    model->setHeaderData(4, Qt::Horizontal, tr("Part Cost"));
 
     if(model->query().isSelect()){
         ui->tbl_Parts_Used_In_Service->setModel(model);
+        //Next 3 lines: Usefull info, but noise for the user, so we hide//
+        //the model is also used bellow at: on_tbl_Parts_Used_In_Service_doubleClicked()//
         ui->tbl_Parts_Used_In_Service->hideColumn(0);
         ui->tbl_Parts_Used_In_Service->hideColumn(1);
         ui->tbl_Parts_Used_In_Service->hideColumn(2);
+
         ui->tbl_Parts_Used_In_Service->resizeColumnsToContents();
 
         //Sum the Parts Used Value and add to doublespin//
@@ -131,7 +140,6 @@ void Client_Add_Service::Sum_Costs()
     }else{
         ui->check_Paid->setChecked(false);
     }
-
 }
 
 void Client_Add_Service::on_btn_Add_Parts_Used_In_The_Service_clicked()
@@ -142,22 +150,6 @@ void Client_Add_Service::on_btn_Add_Parts_Used_In_The_Service_clicked()
     stock_Parts_Selection.exec();
 
     Load_Parts_And_Service_Costs_Grid();
-}
-
-void Client_Add_Service::on_btn_Save_Hours_Worked_clicked()
-{
-    QSqlQuery Update_Hours_Worked;
-    Update_Hours_Worked.prepare("update Service set Service_Hours_Duration = :Service_Hours_Duration where Service_id = " + ServiceID);
-
-    Update_Hours_Worked.bindValue(":Service_Hours_Duration", ui->Spin_Hand_Work_Hours->text().toDouble());
-
-    if (!(Update_Hours_Worked.exec())){
-        QMessageBox::critical(this, tr("Erro!"), Update_Hours_Worked.lastError().text() + "class Client_Add_Service::on_btn_save_hoursWorked_clicked()");
-    }else{
-        QMessageBox::information(this, tr("Sucesso!"), tr("Horas trabalhadas atualizadas.\n"
-                                                   "Custo do Serviço recalculadas no sistema...."));
-        Sum_Costs();
-    }
 }
 
 void Client_Add_Service::on_tbl_Parts_Used_In_Service_doubleClicked(const QModelIndex &index)
@@ -200,7 +192,7 @@ void Client_Add_Service::on_check_Paid_clicked()
             qDebug() << query.lastError();
             QMessageBox::critical(this, tr("Erro!"), query.lastError().text() + "class addservice.cpp  on_check_Pago_clicked ");
         }else{
-            QMessageBox::information(this, tr("Pago?!"), tr("Serviço alterado para:\n Pago"));
+            QMessageBox::information(this, tr("Paid?!"), tr("Serviçce switched to:\n Paid"));
         }
     }else{
         QSqlQuery query;
@@ -209,7 +201,7 @@ void Client_Add_Service::on_check_Paid_clicked()
             qDebug() << query.lastError();
             QMessageBox::critical(this, tr("Erro!"), query.lastError().text() + "class addservice.cpp on_check_Pago_clicked(not checked) ");
         }else{
-            QMessageBox::information(this, tr("Pago?"), tr("Serviço alterado para:\n Não Pago"));
+            QMessageBox::information(this, tr("Paid?"), tr("Service switched to:\n Not Paid"));
         }
     }
 }
@@ -222,4 +214,19 @@ void Client_Add_Service::on_btn_Update_Service_Description_clicked()
     service_Update_Description.setModal(true);
     service_Update_Description.exec();
     Add_Service_Description_Text();
+}
+
+void Client_Add_Service::on_btn_Save_Hours_Worked_clicked()
+{
+    QSqlQuery Update_Hours_Worked;
+    Update_Hours_Worked.prepare("update Service set Service_Hours_Duration = :Service_Hours_Duration where Service_id = " + ServiceID);
+
+    Update_Hours_Worked.bindValue(":Service_Hours_Duration", ui->Spin_Hand_Work_Hours->text().toDouble());
+
+    if (!(Update_Hours_Worked.exec())){
+        QMessageBox::critical(this, tr("Erro!"), Update_Hours_Worked.lastError().text() + "class Client_Add_Service::on_btn_save_hoursWorked_clicked()");
+    }else{
+        QMessageBox::information(this, tr("Success!"), tr("Worked Hours updated in the system..."));
+        Sum_Costs();
+    }
 }

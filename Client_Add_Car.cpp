@@ -13,7 +13,6 @@ Client_Add_Car::Client_Add_Car(QWidget *parent) :
     ui->setupUi(this);
     QPixmap glasses(":/emoticons/face-glasses.png");
     ui->lbl_Emoticon->setPixmap(glasses);
-    ui->lbl_Feedback->setText(tr("Todos os campos devem estar preenchidos."));
 }
 
 Client_Add_Car::~Client_Add_Car()
@@ -30,7 +29,7 @@ bool Client_Add_Car::Verify_Empty_Fields_On_Form()
            ||ui->txt_Color->text()== ""
            )
     {
-        ui->lbl_Feedback->setText(tr("Erro: Todos os campos devem estar preenchidos!"));
+        ui->lbl_Feedback->setText(tr("All fields need to be filled!"));
         QPixmap crying(":/emoticons/face-crying.png");
         ui->lbl_Emoticon->setPixmap(crying);
         ui->txt_Model->setFocus();
@@ -69,13 +68,13 @@ void Client_Add_Car::Add_Car(QString client_id){
 
         if (query.exec() == false){
             qDebug() << query.lastError();
-            ui->lbl_Feedback->setText(tr("Erro Grave. Fale com o desenvolvedor."));
+            ui->lbl_Feedback->setText(tr("Error. Client's Car added!"));
             QMessageBox::critical(this, tr("Erro!"), query.lastError().text() + ". Class: Client_Add_Car.addCar(QString client_id)");
         }else{
-            ui->lbl_Feedback->setText(tr("Carro adicionado ao Cliente!"));
+            ui->lbl_Feedback->setText(tr("Car added to the Client"));
             QPixmap cool(":/emoticons/face-cool.png");
             ui->lbl_Emoticon->setPixmap(cool);
-            QMessageBox::information(this, tr("Sucesso!"), tr("Carro adicionado ao registro do Cliente."));
+            QMessageBox::information(this, tr("Success!"), tr("Client's Car added."));
             close();
         }
     }
@@ -101,8 +100,8 @@ void Client_Add_Car::Check_Car_Description_Size(){
         // This is your "action" to alert the user. I'd suggest something more
         // subtle though, or just not doing anything at all.
         QMessageBox::warning(this,
-                              tr("Erro!"),
-                              tr("Mantenha a descrição menor do que 300 letras."));
+                              tr("Error!"),
+                              tr("Keep the text shortet then 300 chars."));
     }
 }
 

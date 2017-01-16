@@ -49,12 +49,12 @@ void Stock_Parts_Selection::on_line_Part_Name_textChanged(const QString &userSea
 
         model->setEditStrategy(QSqlTableModel::OnFieldChange);
         model->setHeaderData(0, Qt::Horizontal, tr("ID"));
-        model->setHeaderData(1, Qt::Horizontal, tr("Nome"));
-        model->setHeaderData(2, Qt::Horizontal, tr("Descrição"));
-        model->setHeaderData(3, Qt::Horizontal, tr("Custo"));
-        model->setHeaderData(4, Qt::Horizontal, tr("Quantidade em Estoque"));
-        model->setHeaderData(5, Qt::Horizontal, tr("Atualiada em"));
-        model->setHeaderData(6, Qt::Horizontal, tr("Criada em"));
+        model->setHeaderData(1, Qt::Horizontal, tr("Name"));
+        model->setHeaderData(2, Qt::Horizontal, tr("Description"));
+        model->setHeaderData(3, Qt::Horizontal, tr("Cost"));
+        model->setHeaderData(4, Qt::Horizontal, tr("Quantity in Stock"));
+        model->setHeaderData(5, Qt::Horizontal, tr("Updated At"));
+        model->setHeaderData(6, Qt::Horizontal, tr("Created at"));
 
         ui->tbl_Parts_List->hideColumn(2);
         ui->tbl_Parts_List->setModel(model);

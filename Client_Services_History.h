@@ -17,6 +17,8 @@ public:
     void loadAll();
     void load_Cars_Grid();
 
+    void Set_Current_Hour_Cost_Label();
+
     QString client_id;
 
     QString getClient_id() const;

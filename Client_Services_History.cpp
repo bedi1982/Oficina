@@ -29,6 +29,9 @@ Client_Services_History::Client_Services_History(QWidget *parent) :
 
     QPixmap clienticon(":/emoticons/client_info.png");
     ui->lbl_ClientInfo->setPixmap(clienticon);
+
+    //Add hour cost to label
+    Set_Current_Hour_Cost_Label();
 }
 
 Client_Services_History::~Client_Services_History()
@@ -55,10 +58,16 @@ void Client_Services_History::loadAll(){
 void Client_Services_History::Load_Client_Info_To_Text_Boxes()
 {
     QSqlQuery query;
-    query.prepare("SELECT Client_id, Client_Name, Client_Address, Client_Phone, Client_City FROM Client WHERE Client_id = " + client_id);
+    query.prepare("SELECT Client_id, "
+                  " Client_Name,"
+                  " Client_Address,"
+                  " Client_Phone,"
+                  " Client_City"
+                  " FROM Client WHERE Client_id = " + client_id);
 
     if (query.exec() == false){
-        QMessageBox::critical(this, tr("Erro!"), query.lastError().text() + "class Client_Services_History::loadClientInfo_to_TextBoxes() ");
+        QMessageBox::critical(this, tr("Erro!"), query.lastError().text() +
+                              "class Client_Services_History::loadClientInfo_to_TextBoxes() ");
     }else{
         while(query.next())
         {
@@ -74,48 +83,70 @@ void Client_Services_History::Load_Client_Info_To_Text_Boxes()
 void Client_Services_History::Load_Services_Grid()
 {    
     QSqlQueryModel* model = new QSqlQueryModel;
-    model->setQuery("SELECT "
-                    " Service_id AS ID,"
-                    " ClientCar_Model AS Carro,"
-                    " ClientCar_Placa AS Placa,"
-                    " Service_Short_Description AS 'Título do Serviço',"
-                    " Service_Parts_Cost AS 'Custo das Peças',"
-                    " Service_Hours_Duration AS 'Horas Trabalhadas',"
-                    " Service_Hour_Cost AS 'Custo p/ Hora',"
-                    " Service_Paid AS '1 = Pago',"
-                    " Service_created_at AS 'Adicionado em'"
+    model->setQuery("SELECT"
+                    " Service_id,"
+                    " ClientCar_Model,"
+                    " ClientCar_Placa,"
+                    " Service_Short_Description,"
+                    " Service_Parts_Cost,"
+                    " Service_Hours_Duration,"
+                    " Service_Hour_Cost,"
+                    " Service_Paid,"
+                    " Service_created_at,"
+                    " Service_updated_at"
                     " FROM Service s JOIN ClientCar cc"
                     " ON s.Service_Client_Carid = cc.ClientCar_id AND Service_Client_id = " + client_id +
                     " order by 9 desc");
+    model->setHeaderData(0, Qt::Horizontal, tr("Service ID"));
+    model->setHeaderData(1, Qt::Horizontal, tr("On Car"));
+    model->setHeaderData(2, Qt::Horizontal, tr("Car Plate"));
+    model->setHeaderData(3, Qt::Horizontal, tr("Short description"));
+    model->setHeaderData(4, Qt::Horizontal, tr("Parts Cost"));
+    model->setHeaderData(5, Qt::Horizontal, tr("Hours Worked"));
+    model->setHeaderData(6, Qt::Horizontal, tr("Hour Cost"));
+    model->setHeaderData(7, Qt::Horizontal, tr("Paid?"));
+    model->setHeaderData(8, Qt::Horizontal, tr("Created at"));
+    model->setHeaderData(9, Qt::Horizontal, tr("Updated at"));
 
     if(model->query().isSelect()){
         ui->tbl_Client_Services->setModel(model);
         ui->tbl_Client_Services->sortByColumn(0, Qt::DescendingOrder);
         ui->tbl_Client_Services->resizeColumnsToContents();
     }else{
-        QMessageBox::critical(this, tr("Erro!"), model->query().lastError().text() + "class Client_Services_History::loadServicesGrid()");
+        QMessageBox::critical(this, tr("Error!"), model->query().lastError().text() +
+                              "class Client_Services_History::loadServicesGrid()");
     }
 }
 
 void Client_Services_History::load_Cars_Grid()
 {
     QSqlQueryModel* model = new QSqlQueryModel;
-    model->setQuery("SELECT "
-                    "ClientCar_id as 'ID',"
-                    "ClientCar_Model as Carro,"
-                    "ClientCar_Placa as Placa,"
-                    "ClientCar_BuiltYear as 'Ano de Fabricação',"
-                    "ClientCar_Color as Cor,"
-                    "ClientCar_created_at as 'Adicionado em'"
-                    "FROM ClientCar where ClientCar_Client_id = " + client_id +
-                    " order by 6 desc");
+    model->setQuery("SELECT"
+                    " ClientCar_id,"
+                    " ClientCar_Model,"
+                    " ClientCar_Placa,"
+                    " ClientCar_BuiltYear,"
+                    " ClientCar_Color,"
+                    " ClientCar_created_at,"
+                    " ClientCar_updated_at"
+                    " FROM ClientCar where ClientCar_Client_id = " + client_id +
+                    " ORDER BY ClientCar_id desc");
+
+    model->setHeaderData(0, Qt::Horizontal, tr("Car ID"));
+    model->setHeaderData(1, Qt::Horizontal, tr("Car Model"));
+    model->setHeaderData(2, Qt::Horizontal, tr("Plate"));
+    model->setHeaderData(3, Qt::Horizontal, tr("Built Year"));
+    model->setHeaderData(4, Qt::Horizontal, tr("Color"));
+    model->setHeaderData(5, Qt::Horizontal, tr("Created At"));
+    model->setHeaderData(6, Qt::Horizontal, tr("Updated At"));
 
     if(model->query().isSelect()){
         ui->tbl_Client_Cars->setModel(model);
+        //ui->tbl_Client_Cars->sortByColumn(0, Qt::DescendingOrder);
         ui->tbl_Client_Cars->resizeColumnsToContents();
-        ui->tbl_Client_Cars->sortByColumn(0, Qt::DescendingOrder);
     }else{
-        QMessageBox::critical(this, tr("Erro!"), model->query().lastError().text() + "class Client_Services_History::loadCarsGrid() ");
+        QMessageBox::critical(this, tr("Error!"), model->query().lastError().text() +
+                              "class Client_Services_History::loadCarsGrid() ");
     }
 }
 
@@ -171,4 +202,19 @@ void Client_Services_History::on_btn_Add_Car_To_Client_clicked()
     Client_Add_Car.setModal(true);
     Client_Add_Car.exec();
     load_Cars_Grid();
+}
+
+void Client_Services_History::Set_Current_Hour_Cost_Label(){
+    //just set current value in the spinbox//
+    QSqlQuery Set_Current_Hour_Cost;
+    Set_Current_Hour_Cost.prepare("SELECT HourCost from HourCost WHERE HourCost_id = 1");
+
+    if (Set_Current_Hour_Cost.exec() == false){
+        QMessageBox::critical(this, tr("Error!"), Set_Current_Hour_Cost.lastError().text() + "class Config_Set_Hour_Cost::on_btn_Salvar_clicked() Set_Current_Hour_Cost.exec()");
+    }else{
+        while(Set_Current_Hour_Cost.next())
+        {
+            ui->lbl_Hour_Cost_Value->setText(Set_Current_Hour_Cost.value(0).toString());
+        }
+    }
 }

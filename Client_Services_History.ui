@@ -88,7 +88,7 @@
     </sizepolicy>
    </property>
    <property name="text">
-    <string>Adicionar Carro ao Cliente</string>
+    <string>Add Car to Client</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_NewCarIcon">
@@ -119,9 +119,9 @@
   <widget class="QLabel" name="lbl_ClientCars">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>160</y>
-     <width>581</width>
+     <x>120</x>
+     <y>150</y>
+     <width>621</width>
      <height>20</height>
     </rect>
    </property>
@@ -131,7 +131,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Abaixo a lista de carros do cliente. Duplo clique no Carro para gerar uma ordem de serviço:</string>
+    <string>Bellow are the Client's Cars. To start a new Service double click the desired Car. The cost per Hour will be:</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -277,7 +277,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Ordens de serviço para para este cliente. Duplo clique para gerenciar os dados do serviço. Peças usadas , custo, horas trabahadas...</string>
+    <string>Bellow are the Client's Services.  Double click a Service to manage it:</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -361,7 +361,7 @@
   <widget class="QLabel" name="lbl_clientAddress_2">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>60</x>
      <y>80</y>
      <width>60</width>
      <height>48</height>
@@ -380,7 +380,7 @@
     </size>
    </property>
    <property name="text">
-    <string>Telefone</string>
+    <string>Phone</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -393,13 +393,13 @@
     </rect>
    </property>
    <property name="text">
-    <string>ID do Cliente</string>
+    <string>Client's ID</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_clientAddress">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>60</x>
      <y>40</y>
      <width>60</width>
      <height>48</height>
@@ -418,7 +418,7 @@
     </size>
    </property>
    <property name="text">
-    <string>Endereço   </string>
+    <string>Adress</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_clientName">
@@ -449,7 +449,25 @@
     </size>
    </property>
    <property name="text">
-    <string>Nome</string>
+    <string>Name</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_Hour_Cost_Value">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>150</y>
+     <width>61</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
   <zorder>lbl_clientAddress</zorder>
@@ -470,6 +488,7 @@
   <zorder>line_ClientID</zorder>
   <zorder>lbl_clientAddress_2</zorder>
   <zorder>label</zorder>
+  <zorder>lbl_Hour_Cost_Value</zorder>
  </widget>
  <tabstops>
   <tabstop>btn_Update_Client</tabstop>

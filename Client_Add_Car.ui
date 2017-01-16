@@ -48,7 +48,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Adicionar</string>
+    <string>Add</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_Feedback">
@@ -80,7 +80,7 @@
     <string/>
    </property>
    <property name="placeholderText">
-    <string>Insira um descrição do Carro. Máximo 300 letras. </string>
+    <string>Insert the Car's description. Max 300 chars...</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="txt_Model">
@@ -105,7 +105,7 @@
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
    </property>
    <property name="placeholderText">
-    <string>Ex. Corsa 2001 Sedan</string>
+    <string>Eg. Chevette 1984</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_Model">
@@ -113,12 +113,12 @@
     <rect>
      <x>30</x>
      <y>70</y>
-     <width>60</width>
+     <width>91</width>
      <height>18</height>
     </rect>
    </property>
    <property name="text">
-    <string>Modelo    </string>
+    <string>Car Model</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_CarOwner">
@@ -126,12 +126,12 @@
     <rect>
      <x>30</x>
      <y>10</y>
-     <width>61</width>
+     <width>91</width>
      <height>18</height>
     </rect>
    </property>
    <property name="text">
-    <string>Cliente:</string>
+    <string>Owner Client</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="line_NomeCliente">
@@ -150,7 +150,7 @@
   <widget class="QLineEdit" name="txt_Color">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>60</x>
      <y>350</y>
      <width>281</width>
      <height>32</height>
@@ -168,18 +168,18 @@
     <rect>
      <x>20</x>
      <y>360</y>
-     <width>23</width>
+     <width>41</width>
      <height>18</height>
     </rect>
    </property>
    <property name="text">
-    <string>Cor</string>
+    <string>Color</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="txt_Placa">
    <property name="geometry">
     <rect>
-     <x>171</x>
+     <x>181</x>
      <y>310</y>
      <width>91</width>
      <height>32</height>
@@ -195,14 +195,14 @@
   <widget class="QLabel" name="lbl_PlacaCarro">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>140</x>
      <y>320</y>
      <width>32</width>
      <height>18</height>
     </rect>
    </property>
    <property name="text">
-    <string>Placa</string>
+    <string>Plate</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_CarYear">
@@ -215,13 +215,13 @@
     </rect>
    </property>
    <property name="text">
-    <string>Ano</string>
+    <string>Year</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="txt_Year">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>60</x>
      <y>310</y>
      <width>71</width>
      <height>32</height>

@@ -57,7 +57,7 @@
     <number>30</number>
    </property>
    <property name="placeholderText">
-    <string>Inicie a procura inserindo aqui parte do nome da Peça...</string>
+    <string>Search entering the Part Name. You list all with: *</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_procurar">
@@ -70,7 +70,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Procurar Peça</string>
+    <string>Search Part</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -83,7 +83,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Duplo clique na peça para adiciona-lá ao serviço.</string>
+    <string>Double click in the Part will add it to the Service:</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_Add_Part_to_Stock">
@@ -96,7 +96,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Cadastrar Nova</string>
+    <string>Add New</string>
    </property>
   </widget>
  </widget>

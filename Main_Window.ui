@@ -94,7 +94,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Status do banco de Dados =&gt; </string>
+     <string>Database =&gt; </string>
     </property>
    </widget>
    <widget class="QLabel" name="lbl_emoticonStatusConexao">
@@ -163,7 +163,7 @@
      <number>30</number>
     </property>
     <property name="placeholderText">
-     <string>Inicie a procuta inserindo aqui parte do RG, ID ou nome do cliente...</string>
+     <string>Search by name, ID, CPF. To show all clients enter: *</string>
     </property>
    </widget>
    <widget class="QLabel" name="lbl_Date">

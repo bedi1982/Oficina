@@ -41,7 +41,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Cadastrar!</string>
+    <string>Save</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_Emoticon">
@@ -67,7 +67,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Nome</string>
+    <string>Name</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_Feedback">
@@ -80,7 +80,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Insira os dados da peça e clique em Cadastrar.</string>
+    <string>Insert part data and click Save</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_Cidade">
@@ -93,7 +93,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Preço de Custo</string>
+    <string>Cost Price</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_Descricao">
@@ -106,7 +106,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Descrição</string>
+    <string>Description</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_Quantidade">
@@ -119,7 +119,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Quantidade</string>
+    <string>Quantity</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="line_Name">
@@ -138,7 +138,7 @@
     <number>50</number>
    </property>
    <property name="placeholderText">
-    <string>Nome da Peça. Exemplo: Escape Corsa 98</string>
+    <string>Part Name. Eg. Chevete right mirror</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_Exit">
@@ -151,7 +151,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Sair</string>
+    <string>Exit</string>
    </property>
   </widget>
   <widget class="QSpinBox" name="spin_Quantity">
@@ -196,7 +196,7 @@
     <string/>
    </property>
    <property name="placeholderText">
-    <string>Máximo de 250 letras.</string>
+    <string>Full Description. Max 250 chars</string>
    </property>
   </widget>
  </widget>

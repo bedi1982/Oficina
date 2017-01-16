@@ -10,14 +10,9 @@
 #include "Config_Set_Hour_Cost.h"
 #include "Man_Page.h"
 
-#include <QSqlTableModel>
 #include "QSqlRelationalTableModel"
 #include "QSqlQuery"
-#include "QMessageBox"
-
 #include "QDebug"
-
-
 
 using namespace std;
 
@@ -31,16 +26,16 @@ Main_Window::Main_Window(QWidget *parent) :
     QPixmap sportCar(":/emoticons/sport-car.png");
     ui->lbl_BigCarIcon->setPixmap(sportCar);
 
-
     Database db;
     if(db.Connect()){
         QPixmap green(":/emoticons/emblem-default.png");
         ui->lbl_emoticonStatusConexao->setPixmap(green);
-        ui->lbl_Database->setText("Banco de dados: UP");
+        ui->lbl_Database->setText(tr("Database: UP"));
     }else{
+        //If the database is not available we make it mostly useless//
         QPixmap red(":/emoticons/emblem-important.png");
         ui->lbl_emoticonStatusConexao->setPixmap(red);
-        ui->lbl_Database->setText("Banco de dados: OFF ");
+        ui->lbl_Database->setText("Database: OFF ");
         ui->line_ID_or_CPF_or_Name->setEnabled(false);
         ui->menuBar->hide();
     }
@@ -76,6 +71,10 @@ void Main_Window::on_tbl_Services_History_doubleClicked(const QModelIndex &selec
     client_Services_History.loadAll();
     client_Services_History.setModal(true);
     client_Services_History.exec();
+
+    //Going back to former form keepting current client 'searched' and updated
+    //The empty String is to reset the 'on_text_changed' function.
+    ui->line_ID_or_CPF_or_Name->setText("");
     ui->line_ID_or_CPF_or_Name->setText(clientID.toString());
 }
 
@@ -98,24 +97,23 @@ void Main_Window::on_line_ID_or_CPF_or_Name_textChanged(const QString &userSearc
     if(!(userSearchFilter.isEmpty()))
     {
         model->setTable("Client");
-        if(!(userSearchFilter == "*"))
-        {
-            model->setFilter(" Client_RG like '%" + userSearchFilter + "%' "
-                             "OR Client_Name like '%" + userSearchFilter + "%' "
-                             "OR Client_CPF like '%" + userSearchFilter + "%' "
-                             "OR Client_id like '%" + userSearchFilter + "%' ");
+        if(!(userSearchFilter == "*")){
+            model->setFilter("Client_RG like '%"          + userSearchFilter + "%'"
+                                " OR Client_Name like '%" + userSearchFilter + "%'"
+                                " OR Client_CPF like '%"  + userSearchFilter + "%'"
+                                " OR Client_id like '%"   + userSearchFilter + "%'");
         }
         model->select();
         model->setEditStrategy(QSqlTableModel::OnManualSubmit);
-        model->setHeaderData(0, Qt::Horizontal, tr("ID"));
-        model->setHeaderData(1, Qt::Horizontal, tr("Nome"));
-        model->setHeaderData(2, Qt::Horizontal, tr("Endereço"));
-        model->setHeaderData(3, Qt::Horizontal, tr("Cidade"));
+        model->setHeaderData(0, Qt::Horizontal, tr("System ID"));
+        model->setHeaderData(1, Qt::Horizontal, tr("Name"));
+        model->setHeaderData(2, Qt::Horizontal, tr("Adress"));
+        model->setHeaderData(3, Qt::Horizontal, tr("City"));
         model->setHeaderData(4, Qt::Horizontal, tr("CPF"));
-        model->setHeaderData(5, Qt::Horizontal, tr("RG"));
-        model->setHeaderData(6, Qt::Horizontal, tr("Telefone"));
-        model->setHeaderData(7, Qt::Horizontal, tr("Atualizado em"));
-        model->setHeaderData(8, Qt::Horizontal, tr("Criado em"));
+        model->setHeaderData(5, Qt::Horizontal, tr("ID"));
+        model->setHeaderData(6, Qt::Horizontal, tr("Phone"));
+        model->setHeaderData(7, Qt::Horizontal, tr("Updated at"));
+        model->setHeaderData(8, Qt::Horizontal, tr("Created at"));
 
         ui->tbl_Services_History->setModel(model);
         ui->tbl_Services_History->hideColumn(2);
