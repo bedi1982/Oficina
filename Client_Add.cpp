@@ -14,7 +14,6 @@ Client_Add::Client_Add(QWidget *parent) :
     ui->setupUi(this);
     QPixmap glasses(":/emoticons/face-glasses.png");
     ui->lbl_Emoticon->setPixmap(glasses);
-    ui->lbl_feedback->setText(tr("All fields need to be filled."));
 }
 
 Client_Add::~Client_Add()

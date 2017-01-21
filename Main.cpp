@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     QTranslator translation;
-    QFile file(":OFF/translations/Oficina_pt_BR.qm");
+    QFile file(":/translations/Oficina_pt_BR.qm");
 
     if(file.exists()){
         qDebug() << "existe";
