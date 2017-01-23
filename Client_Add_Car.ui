@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Adicionando Carro ao Cliente</string>
+   <string>Adding Car to Client</string>
   </property>
   <widget class="QLabel" name="lbl_Emoticon">
    <property name="geometry">
@@ -83,7 +83,7 @@
     <string>Insert the Car's description. Max 300 chars...</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="txt_Model">
+  <widget class="QLineEdit" name="txt_Car_Model">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -121,20 +121,20 @@
     <string>Car Model</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_CarOwner">
+  <widget class="QLabel" name="lbl_Car_Owner">
    <property name="geometry">
     <rect>
      <x>30</x>
      <y>10</y>
-     <width>91</width>
+     <width>121</width>
      <height>18</height>
     </rect>
    </property>
    <property name="text">
-    <string>Owner Client</string>
+    <string>Car Owner (Client)</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="line_NomeCliente">
+  <widget class="QLineEdit" name="line_Client_Name">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -147,7 +147,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="txt_Color">
+  <widget class="QLineEdit" name="txt_Car_Color">
    <property name="geometry">
     <rect>
      <x>60</x>
@@ -163,7 +163,7 @@
     <number>26</number>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_CarColor">
+  <widget class="QLabel" name="lbl_Car_Color">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -176,7 +176,7 @@
     <string>Color</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="txt_Placa">
+  <widget class="QLineEdit" name="txt_Car_Plate">
    <property name="geometry">
     <rect>
      <x>181</x>
@@ -192,7 +192,7 @@
     <number>10</number>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_PlacaCarro">
+  <widget class="QLabel" name="lbl_Car_Plate">
    <property name="geometry">
     <rect>
      <x>140</x>
@@ -205,7 +205,7 @@
     <string>Plate</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_CarYear">
+  <widget class="QLabel" name="lbl_Car_Year">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -218,7 +218,7 @@
     <string>Year</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="txt_Year">
+  <widget class="QLineEdit" name="txt_Car_Year">
    <property name="geometry">
     <rect>
      <x>60</x>
@@ -245,13 +245,13 @@
   </widget>
  </widget>
  <tabstops>
-  <tabstop>txt_Model</tabstop>
+  <tabstop>txt_Car_Model</tabstop>
   <tabstop>txtPlain_Description</tabstop>
-  <tabstop>txt_Year</tabstop>
-  <tabstop>txt_Placa</tabstop>
-  <tabstop>txt_Color</tabstop>
+  <tabstop>txt_Car_Year</tabstop>
+  <tabstop>txt_Car_Plate</tabstop>
+  <tabstop>txt_Car_Color</tabstop>
   <tabstop>btn_Add</tabstop>
-  <tabstop>line_NomeCliente</tabstop>
+  <tabstop>line_Client_Name</tabstop>
  </tabstops>
  <resources/>
  <connections/>

@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Editando dados do Cliente</string>
+   <string>Editing Client Info</string>
   </property>
   <widget class="QLineEdit" name="line_Phone">
    <property name="geometry">
@@ -44,7 +44,7 @@
     <string>+55 (47) 9999-9999, +55 (41) 9991-8799</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="lbl_Name">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -57,7 +57,7 @@
     <string>Name</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_cpf">
+  <widget class="QLabel" name="lbl_CPF">
    <property name="geometry">
     <rect>
      <x>240</x>
@@ -70,7 +70,7 @@
     <string>CPF</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_city">
+  <widget class="QLabel" name="lbl_City">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -83,7 +83,7 @@
     <string>City</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_phone">
+  <widget class="QLabel" name="lbl_Phone">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -239,7 +239,7 @@
     <number>30</number>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_adress">
+  <widget class="QLabel" name="lbl_Adress">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -265,7 +265,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="line_CreatedAt">
+  <widget class="QLineEdit" name="line_Created_At">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -287,7 +287,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLineEdit" name="line_UpdatedAt">
+  <widget class="QLineEdit" name="line_Updated_At">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -309,7 +309,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_created">
+  <widget class="QLabel" name="lbl_Created">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -322,7 +322,7 @@
     <string>Created</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_updated">
+  <widget class="QLabel" name="lbl_Updated_At">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -345,8 +345,8 @@
   <tabstop>line_Phone</tabstop>
   <tabstop>btn_Update</tabstop>
   <tabstop>line_ID</tabstop>
-  <tabstop>line_CreatedAt</tabstop>
-  <tabstop>line_UpdatedAt</tabstop>
+  <tabstop>line_Created_At</tabstop>
+  <tabstop>line_Updated_At</tabstop>
  </tabstops>
  <resources/>
  <connections/>

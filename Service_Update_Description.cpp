@@ -36,9 +36,9 @@ void Service_Update_Description::Enable_Description_Update(){
     UpdateServiceDescription.bindValue(":Service_Short_Description", ui->line_Short_Description->text());
 
     if (!(UpdateServiceDescription.exec())){
-        QMessageBox::critical(this, tr("Erro!"), UpdateServiceDescription.lastError().text() + "class Service_Update_Description::EnableDescriptionUpdate()");
+        QMessageBox::critical(this, tr("Error!"), UpdateServiceDescription.lastError().text() + "class Service_Update_Description::EnableDescriptionUpdate()");
     }else{
-        QMessageBox::information(this, tr("Sucesso!"), tr("Descrição do Serviço atualizada."));
+        QMessageBox::information(this, tr("Success!"), tr("Service Description Updated."));
         close();
     }
 }
@@ -76,6 +76,6 @@ void Service_Update_Description::on_txt_Full_Description_textChanged()
 
         // This is your "action" to alert the user. I'd suggest something more
         // subtle though, or just not doing anything at all.
-        QMessageBox::warning(this, tr("Erro!"), tr("Mantenha a descrição do serviço menor do que 500 letras."));
+        QMessageBox::warning(this, tr("Warning!"), tr("Keep the Part description smaller then 250 chars."));
     }
 }

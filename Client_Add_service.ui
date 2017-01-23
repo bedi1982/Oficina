@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Adicionando serviço no Carro!</string>
+   <string>Adding Service to Car!</string>
   </property>
   <widget class="QPushButton" name="btn_Exit">
    <property name="geometry">
@@ -41,14 +41,14 @@
   <widget class="QLabel" name="lbl_PartsCost">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>520</y>
+     <x>10</x>
+     <y>560</y>
      <width>102</width>
      <height>18</height>
     </rect>
    </property>
    <property name="text">
-    <string>Parts Cost:</string>
+    <string>Parts Cost</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -57,19 +57,19 @@
   <widget class="QLabel" name="lbl_totlaServiceCost">
    <property name="geometry">
     <rect>
-     <x>440</x>
-     <y>560</y>
-     <width>91</width>
+     <x>10</x>
+     <y>600</y>
+     <width>101</width>
      <height>20</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>12</pointsize>
+     <pointsize>10</pointsize>
     </font>
    </property>
    <property name="text">
-    <string>Service Sum:</string>
+    <string>Service Total</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -81,7 +81,7 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>490</x>
+     <x>450</x>
      <y>460</y>
      <width>141</width>
      <height>34</height>
@@ -116,44 +116,6 @@
     <string/>
    </property>
   </widget>
-  <widget class="QDoubleSpinBox" name="Spin_TotalserviceCost">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>540</x>
-     <y>550</y>
-     <width>91</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="maximum">
-    <double>9999.989999999999782</double>
-   </property>
-   <property name="singleStep">
-    <double>5.000000000000000</double>
-   </property>
-  </widget>
-  <widget class="QDoubleSpinBox" name="Spin_PartsCost">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>540</x>
-     <y>510</y>
-     <width>91</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="maximum">
-    <double>99999.990000000005239</double>
-   </property>
-   <property name="singleStep">
-    <double>5.000000000000000</double>
-   </property>
-  </widget>
   <widget class="QTableView" name="tbl_Parts_Used_In_Service">
    <property name="enabled">
     <bool>true</bool>
@@ -172,12 +134,12 @@
     <rect>
      <x>0</x>
      <y>310</y>
-     <width>351</width>
+     <width>361</width>
      <height>18</height>
     </rect>
    </property>
    <property name="text">
-    <string>Parts Used on this Service. Double lick to Remove a Part:</string>
+    <string>Parts Used on this Service. Double click to Remove a Part:</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -189,14 +151,14 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>520</y>
-     <width>61</width>
+     <x>410</x>
+     <y>560</y>
+     <width>111</width>
      <height>20</height>
     </rect>
    </property>
    <property name="text">
-    <string>Paid</string>
+    <string>Service Paid?</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_Update_Service_Description">
@@ -205,8 +167,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>270</y>
+     <x>450</x>
+     <y>260</y>
      <width>151</width>
      <height>34</height>
     </rect>
@@ -221,7 +183,7 @@
      <x>10</x>
      <y>50</y>
      <width>631</width>
-     <height>261</height>
+     <height>251</height>
     </rect>
    </property>
    <property name="html">
@@ -238,14 +200,14 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>500</x>
      <y>510</y>
      <width>88</width>
      <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>Salvar</string>
+    <string>Set</string>
    </property>
   </widget>
   <widget class="QDoubleSpinBox" name="Spin_Hand_Work_Hours">
@@ -254,10 +216,10 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>420</x>
      <y>510</y>
      <width>71</width>
-     <height>32</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="maximum">
@@ -270,9 +232,9 @@ p, li { white-space: pre-wrap; }
   <widget class="QLabel" name="lbl_InsertWorkCost">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>320</x>
      <y>520</y>
-     <width>121</width>
+     <width>91</width>
      <height>20</height>
     </rect>
    </property>
@@ -296,30 +258,44 @@ p, li { white-space: pre-wrap; }
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>560</y>
+     <x>10</x>
+     <y>520</y>
      <width>111</width>
      <height>18</height>
     </rect>
    </property>
    <property name="text">
-    <string>Service Hour Cost:</string>
+    <string>Service Hour Cost</string>
    </property>
   </widget>
-  <widget class="QDoubleSpinBox" name="Spin_ServiceRegistereHandWorkHours">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
+  <widget class="QLCDNumber" name="lcd_Hour_cost">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>550</y>
+     <x>130</x>
+     <y>510</y>
      <width>71</width>
-     <height>32</height>
+     <height>31</height>
     </rect>
    </property>
-   <property name="singleStep">
-    <double>1.000000000000000</double>
+  </widget>
+  <widget class="QLCDNumber" name="lcd_Parts_Cost">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>550</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="lcd_Service_Total">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>590</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
    </property>
   </widget>
   <zorder>tbl_Parts_Used_In_Service</zorder>
@@ -329,8 +305,6 @@ p, li { white-space: pre-wrap; }
   <zorder>lbl_totlaServiceCost</zorder>
   <zorder>btn_Add_Parts_Used_In_The_Service</zorder>
   <zorder>lbl_Emoticon</zorder>
-  <zorder>Spin_TotalserviceCost</zorder>
-  <zorder>Spin_PartsCost</zorder>
   <zorder>lbl_PartsUsed</zorder>
   <zorder>check_Paid</zorder>
   <zorder>btn_Update_Service_Description</zorder>
@@ -339,12 +313,12 @@ p, li { white-space: pre-wrap; }
   <zorder>lbl_InsertWorkCost</zorder>
   <zorder>line_ServiceShortDescription</zorder>
   <zorder>label</zorder>
-  <zorder>Spin_ServiceRegistereHandWorkHours</zorder>
+  <zorder>lcd_Hour_cost</zorder>
+  <zorder>lcd_Parts_Cost</zorder>
+  <zorder>lcd_Service_Total</zorder>
  </widget>
  <tabstops>
   <tabstop>btn_Add_Parts_Used_In_The_Service</tabstop>
-  <tabstop>Spin_PartsCost</tabstop>
-  <tabstop>Spin_TotalserviceCost</tabstop>
   <tabstop>btn_Exit</tabstop>
  </tabstops>
  <resources/>

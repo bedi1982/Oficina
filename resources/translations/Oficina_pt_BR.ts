@@ -9,7 +9,19 @@
         <translation>Sobre Oficina v0.1</translation>
     </message>
     <message>
-        <location filename="../../About.ui" line="38"/>
+        <location filename="../../About.ui" line="41"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Software to manage mechanical workshop services.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Author: Sergio Rafael Lemke &amp;lt;bedi.com@gmail.com&amp;gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Version: 0.1 - Alpha é pouco!&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -19,7 +31,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Autor: Sergio Rafael Lemke &amp;lt;bedi.com@gmail.com&amp;gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Versão: 0.1 - Alpha é pouco!&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Noto Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -33,132 +45,219 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Client_Add</name>
     <message>
-        <location filename="../../Client_Add.ui" line="35"/>
         <source>Cadastro de Cliente</source>
-        <translation>Cadastro de Cliente</translation>
+        <translation type="vanished">Cadastro de Cliente</translation>
     </message>
     <message>
-        <location filename="../../Client_Add.ui" line="53"/>
         <source>Cadastrar!</source>
-        <translation>Cadastrar!</translation>
+        <translation type="vanished">Cadastrar!</translation>
     </message>
     <message>
-        <location filename="../../Client_Add.ui" line="72"/>
         <source>Sair</source>
-        <translation>Sair</translation>
+        <translation type="vanished">Sair</translation>
     </message>
     <message>
-        <location filename="../../Client_Add.ui" line="110"/>
         <source>Nome</source>
-        <translation>Nome</translation>
+        <translation type="vanished">Nome</translation>
     </message>
     <message>
-        <location filename="../../Client_Add.ui" line="123"/>
         <source>Endereço</source>
-        <translation>Endereço</translation>
+        <translation type="vanished">Endereço</translation>
     </message>
     <message>
-        <location filename="../../Client_Add.ui" line="136"/>
         <source>Cidade</source>
-        <translation>Cidade</translation>
+        <translation type="vanished">Cidade</translation>
     </message>
     <message>
-        <location filename="../../Client_Add.ui" line="149"/>
         <source>Telefone</source>
-        <translation>Telefone</translation>
+        <translation type="vanished">Telefone</translation>
     </message>
     <message>
-        <location filename="../../Client_Add.ui" line="162"/>
+        <location filename="../../Client_Add.ui" line="35"/>
+        <source>Add Client</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add.ui" line="50"/>
+        <source>Name</source>
+        <translation type="unfinished">Nome</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add.ui" line="57"/>
         <source>CPF</source>
         <translation>CPF</translation>
     </message>
     <message>
-        <location filename="../../Client_Add.ui" line="175"/>
-        <source>RG</source>
-        <translation>RG</translation>
+        <location filename="../../Client_Add.ui" line="77"/>
+        <source>ID</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Client_Add.ui" line="280"/>
+        <location filename="../../Client_Add.ui" line="104"/>
+        <source>City</source>
+        <translation type="unfinished">Cidade</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add.ui" line="111"/>
+        <source>Adress</source>
+        <translation type="unfinished">Endereço</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add.ui" line="118"/>
+        <source>Phone</source>
+        <translation type="unfinished">Telefone</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add.ui" line="186"/>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add.ui" line="206"/>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>RG</source>
+        <translation type="vanished">RG</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add.ui" line="141"/>
         <source>+55 (47) 9999-9999, +55 (41) 9991-8799</source>
         <translation>+55 (47) 9999-9999, +55 (41) 9991-8799</translation>
     </message>
     <message>
-        <location filename="../../Client_Add.cpp" line="17"/>
         <source>Todos os campos devem estar preenchidos.</source>
-        <translation>Todos os campos devem estar preenchidos.</translation>
+        <translation type="vanished">Todos os campos devem estar preenchidos.</translation>
     </message>
     <message>
-        <location filename="../../Client_Add.cpp" line="35"/>
         <source>Erro: Todos os campos devem estar preenchidos!</source>
-        <translation>Erro: Todos os campos devem estar preenchidos!</translation>
+        <translation type="vanished">Erro: Todos os campos devem estar preenchidos!</translation>
+    </message>
+    <message>
+        <source>Erro!</source>
+        <translation type="vanished">Erro!</translation>
+    </message>
+    <message>
+        <source> cadastrado!</source>
+        <translation type="vanished"> cadastrado!</translation>
+    </message>
+    <message>
+        <source>Sucesso!</source>
+        <translation type="vanished">Sucesso!</translation>
+    </message>
+    <message>
+        <source>Cliente adicionado.</source>
+        <translation type="vanished">Cliente adicionado.</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add.cpp" line="34"/>
+        <source>All fields need to be filled!</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Add.cpp" line="62"/>
-        <source>Erro!</source>
-        <translation>Erro!</translation>
+        <source>Error!</source>
+        <translation type="unfinished">Error!</translation>
     </message>
     <message>
         <location filename="../../Client_Add.cpp" line="64"/>
-        <source> cadastrado!</source>
-        <translation> cadastrado!</translation>
+        <source> added!</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Add.cpp" line="67"/>
-        <source>Sucesso!</source>
-        <translation>Sucesso!</translation>
+        <source>Success!</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Add.cpp" line="67"/>
-        <source>Cliente adicionado.</source>
-        <translation>Cliente adicionado.</translation>
+        <source>Client added</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Client_Add_Car</name>
     <message>
-        <location filename="../../Client_Add_Car.ui" line="26"/>
         <source>Adicionando Carro ao Cliente</source>
-        <translation>Adicionando Carro ao Cliente</translation>
+        <translation type="vanished">Adicionando Carro ao Cliente</translation>
+    </message>
+    <message>
+        <source>Adicionar</source>
+        <translation type="vanished">Adicionar</translation>
+    </message>
+    <message>
+        <source>Insira um descrição do Carro. Máximo 300 letras. </source>
+        <translation type="vanished">Insira um descrição do Carro. Máximo 300 letras. </translation>
+    </message>
+    <message>
+        <source>Ex. Corsa 2001 Sedan</source>
+        <translation type="vanished">Ex. Corsa 2001 Sedan</translation>
+    </message>
+    <message>
+        <source>Modelo    </source>
+        <translation type="vanished">Modelo    </translation>
+    </message>
+    <message>
+        <source>Cliente:</source>
+        <translation type="vanished">Cliente:</translation>
+    </message>
+    <message>
+        <source>Cor</source>
+        <translation type="vanished">Cor</translation>
+    </message>
+    <message>
+        <source>Placa</source>
+        <translation type="vanished">Placa</translation>
+    </message>
+    <message>
+        <source>Ano</source>
+        <translation type="vanished">Ano</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add_Car.ui" line="26"/>
+        <source>Adding Car to Client</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Add_Car.ui" line="51"/>
-        <source>Adicionar</source>
-        <translation>Adicionar</translation>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Add_Car.ui" line="83"/>
-        <source>Insira um descrição do Carro. Máximo 300 letras. </source>
-        <translation>Insira um descrição do Carro. Máximo 300 letras. </translation>
+        <source>Insert the Car&apos;s description. Max 300 chars...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Add_Car.ui" line="108"/>
-        <source>Ex. Corsa 2001 Sedan</source>
-        <translation>Ex. Corsa 2001 Sedan</translation>
+        <source>Eg. Chevette 1984</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Add_Car.ui" line="121"/>
-        <source>Modelo    </source>
-        <translation>Modelo    </translation>
+        <source>Car Model</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Add_Car.ui" line="134"/>
-        <source>Cliente:</source>
-        <translation>Cliente:</translation>
+        <source>Car Owner (Client)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Add_Car.ui" line="176"/>
-        <source>Cor</source>
-        <translation>Cor</translation>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Add_Car.ui" line="205"/>
-        <source>Placa</source>
-        <translation>Placa</translation>
+        <source>Plate</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Add_Car.ui" line="218"/>
-        <source>Ano</source>
-        <translation>Ano</translation>
+        <source>Year</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Add_Car.ui" line="237"/>
@@ -166,89 +265,152 @@ p, li { white-space: pre-wrap; }
         <translation>9999</translation>
     </message>
     <message>
-        <location filename="../../Client_Add_Car.cpp" line="16"/>
         <source>Todos os campos devem estar preenchidos.</source>
-        <translation>Todos os campos devem estar preenchidos.</translation>
+        <translation type="vanished">Todos os campos devem estar preenchidos.</translation>
     </message>
     <message>
-        <location filename="../../Client_Add_Car.cpp" line="33"/>
         <source>Erro: Todos os campos devem estar preenchidos!</source>
-        <translation>Erro: Todos os campos devem estar preenchidos!</translation>
+        <translation type="vanished">Erro: Todos os campos devem estar preenchidos!</translation>
     </message>
     <message>
-        <location filename="../../Client_Add_Car.cpp" line="49"/>
-        <location filename="../../Client_Add_Car.cpp" line="73"/>
-        <location filename="../../Client_Add_Car.cpp" line="104"/>
+        <location filename="../../Client_Add_Car.cpp" line="32"/>
+        <source>All fields need to be filled!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Erro!</source>
-        <translation>Erro!</translation>
+        <translation type="vanished">Erro!</translation>
     </message>
     <message>
+        <location filename="../../Client_Add_Car.cpp" line="74"/>
+        <source>Car added to the Client</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add_Car.cpp" line="77"/>
+        <source>Success!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add_Car.cpp" line="77"/>
+        <source>Client&apos;s Car added.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add_Car.cpp" line="48"/>
         <location filename="../../Client_Add_Car.cpp" line="72"/>
+        <source>Error!</source>
+        <translation type="unfinished">Error!</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add_Car.cpp" line="71"/>
+        <source>Error. Client&apos;s Car not added!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add_Car.cpp" line="103"/>
+        <source>Warning!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add_Car.cpp" line="104"/>
+        <source>Keep the text shortet then 300 chars.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Erro Grave. Fale com o desenvolvedor.</source>
-        <translation>Erro Grave. Fale com o desenvolvedor.</translation>
+        <translation type="vanished">Erro Grave. Fale com o desenvolvedor.</translation>
     </message>
     <message>
-        <location filename="../../Client_Add_Car.cpp" line="75"/>
         <source>Carro adicionado ao Cliente!</source>
-        <translation>Carro adicionado ao Cliente!</translation>
+        <translation type="vanished">Carro adicionado ao Cliente!</translation>
     </message>
     <message>
-        <location filename="../../Client_Add_Car.cpp" line="78"/>
         <source>Sucesso!</source>
-        <translation>Sucesso!</translation>
+        <translation type="vanished">Sucesso!</translation>
     </message>
     <message>
-        <location filename="../../Client_Add_Car.cpp" line="78"/>
         <source>Carro adicionado ao registro do Cliente.</source>
-        <translation>Carro adicionado ao registro do Cliente.</translation>
+        <translation type="vanished">Carro adicionado ao registro do Cliente.</translation>
     </message>
     <message>
-        <location filename="../../Client_Add_Car.cpp" line="105"/>
         <source>Mantenha a descrição menor do que 300 letras.</source>
-        <translation>Mantenha a descrição menor do que 300 letras.</translation>
+        <translation type="vanished">Mantenha a descrição menor do que 300 letras.</translation>
     </message>
 </context>
 <context>
     <name>Client_Add_Service</name>
     <message>
-        <location filename="../../Client_Add_service.ui" line="26"/>
         <source>Adicionando serviço no Carro!</source>
-        <translation>Adicionando serviço no Carro!</translation>
+        <translation type="vanished">Adicionando serviço no Carro!</translation>
+    </message>
+    <message>
+        <source>Sair</source>
+        <translation type="vanished">Sair</translation>
+    </message>
+    <message>
+        <source>Custo das Peças </source>
+        <translation type="vanished">Custo das Peças </translation>
+    </message>
+    <message>
+        <source>Total deste Serviço  </source>
+        <translation type="vanished">Total deste Serviço  </translation>
+    </message>
+    <message>
+        <source>Adicionar peças</source>
+        <translation type="vanished">Adicionar peças</translation>
+    </message>
+    <message>
+        <source>Peças utilizadas nesse serviço:</source>
+        <translation type="vanished">Peças utilizadas nesse serviço:</translation>
+    </message>
+    <message>
+        <source>Pago</source>
+        <translation type="vanished">Pago</translation>
+    </message>
+    <message>
+        <source>Atualizar esta Descrição</source>
+        <translation type="vanished">Atualizar esta Descrição</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add_service.ui" line="26"/>
+        <source>Adding Service to Car!</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Add_service.ui" line="38"/>
-        <source>Sair</source>
-        <translation>Sair</translation>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Add_service.ui" line="51"/>
-        <source>Custo das Peças </source>
-        <translation>Custo das Peças </translation>
+        <source>Parts Cost:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Add_service.ui" line="72"/>
-        <source>Total deste Serviço  </source>
-        <translation>Total deste Serviço  </translation>
+        <source>Service Sum:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Add_service.ui" line="97"/>
-        <source>Adicionar peças</source>
-        <translation>Adicionar peças</translation>
+        <source>Add Parts</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Add_service.ui" line="180"/>
-        <source>Peças utilizadas nesse serviço:</source>
-        <translation>Peças utilizadas nesse serviço:</translation>
+        <source>Parts Used on this Service. Double lick to Remove a Part:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Add_service.ui" line="199"/>
-        <source>Pago</source>
-        <translation>Pago</translation>
+        <source>Paid</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Add_service.ui" line="215"/>
-        <source>Atualizar esta Descrição</source>
-        <translation>Atualizar esta Descrição</translation>
+        <source>Update Description</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Add_service.ui" line="228"/>
@@ -270,150 +432,202 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../../Client_Add_service.ui" line="280"/>
-        <source>Horas Trabalhadas:</source>
-        <translation>Horas Trabalhadas:</translation>
+        <source>Hours Worked:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Add_service.ui" line="306"/>
+        <source>Service Hour Cost:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horas Trabalhadas:</source>
+        <translation type="vanished">Horas Trabalhadas:</translation>
+    </message>
+    <message>
         <source>Custo por Hora desse serviço:</source>
-        <translation>Custo por Hora desse serviço:</translation>
+        <translation type="vanished">Custo por Hora desse serviço:</translation>
     </message>
     <message>
-        <location filename="../../Client_Add_Service.cpp" line="105"/>
-        <location filename="../../Client_Add_Service.cpp" line="155"/>
-        <location filename="../../Client_Add_Service.cpp" line="188"/>
-        <location filename="../../Client_Add_Service.cpp" line="201"/>
-        <location filename="../../Client_Add_Service.cpp" line="210"/>
         <source>Erro!</source>
-        <translation>Erro!</translation>
+        <translation type="vanished">Erro!</translation>
     </message>
     <message>
-        <location filename="../../Client_Add_Service.cpp" line="157"/>
         <source>Sucesso!</source>
-        <translation>Sucesso!</translation>
+        <translation type="vanished">Sucesso!</translation>
     </message>
     <message>
-        <location filename="../../Client_Add_Service.cpp" line="157"/>
         <source>Horas trabalhadas atualizadas.
 Custo do Serviço recalculadas no sistema....</source>
-        <translation>Horas trabalhadas atualizadas.
+        <translation type="vanished">Horas trabalhadas atualizadas.
 Custo do Serviço recalculadas no sistema....</translation>
     </message>
     <message>
-        <location filename="../../Client_Add_Service.cpp" line="165"/>
+        <location filename="../../Client_Add_Service.cpp" line="86"/>
+        <source>Used Service Part ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add_Service.cpp" line="87"/>
+        <source>Part ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add_Service.cpp" line="88"/>
+        <source>Part Quantity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add_Service.cpp" line="89"/>
+        <source>Part Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add_Service.cpp" line="90"/>
+        <source>Part Cost</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add_Service.cpp" line="114"/>
+        <location filename="../../Client_Add_Service.cpp" line="180"/>
+        <location filename="../../Client_Add_Service.cpp" line="193"/>
+        <location filename="../../Client_Add_Service.cpp" line="202"/>
+        <location filename="../../Client_Add_Service.cpp" line="227"/>
+        <source>Error!</source>
+        <translation type="unfinished">Error!</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add_Service.cpp" line="157"/>
         <source>Confirmação!</source>
         <translation>Confirmação!</translation>
     </message>
     <message>
-        <location filename="../../Client_Add_Service.cpp" line="165"/>
+        <location filename="../../Client_Add_Service.cpp" line="157"/>
         <source>Você deseja realmente remover essa peça desse serviço?</source>
         <translation>Você deseja realmente remover essa peça desse serviço?</translation>
     </message>
     <message>
-        <location filename="../../Client_Add_Service.cpp" line="203"/>
-        <source>Pago?!</source>
-        <translation>Pago?!</translation>
+        <location filename="../../Client_Add_Service.cpp" line="195"/>
+        <source>Paid?!</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Client_Add_Service.cpp" line="203"/>
+        <location filename="../../Client_Add_Service.cpp" line="195"/>
+        <source>Service switched to:
+ Paid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add_Service.cpp" line="204"/>
+        <source>Paid?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add_Service.cpp" line="204"/>
+        <source>Service switched to:
+ Not Paid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add_Service.cpp" line="229"/>
+        <source>Success!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Add_Service.cpp" line="229"/>
+        <source>Worked Hours updated in the system...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pago?!</source>
+        <translation type="vanished">Pago?!</translation>
+    </message>
+    <message>
         <source>Serviço alterado para:
  Pago</source>
-        <translation>Serviço alterado para:
+        <translation type="vanished">Serviço alterado para:
  Pago</translation>
     </message>
     <message>
-        <location filename="../../Client_Add_Service.cpp" line="212"/>
         <source>Pago?</source>
-        <translation>Pago?</translation>
+        <translation type="vanished">Pago?</translation>
     </message>
     <message>
-        <location filename="../../Client_Add_Service.cpp" line="212"/>
         <source>Serviço alterado para:
  Não Pago</source>
-        <translation>Serviço alterado para:
+        <translation type="vanished">Serviço alterado para:
  Não Pago</translation>
     </message>
 </context>
 <context>
     <name>Client_Edit</name>
     <message>
-        <location filename="../../Client_Edit.ui" line="26"/>
         <source>Editando dados do Cliente</source>
-        <translation>Editando dados do Cliente</translation>
+        <translation type="vanished">Editando dados do Cliente</translation>
     </message>
     <message>
-        <location filename="../../Client_Edit.ui" line="44"/>
         <source>+55 (47) 9999-9999, +55 (41) 9991-8799</source>
-        <translation>+55 (47) 9999-9999, +55 (41) 9991-8799</translation>
+        <translation type="vanished">+55 (47) 9999-9999, +55 (41) 9991-8799</translation>
     </message>
     <message>
-        <location filename="../../Client_Edit.ui" line="57"/>
         <source>Name</source>
-        <translation>Nome</translation>
+        <translation type="vanished">Nome</translation>
     </message>
     <message>
-        <location filename="../../Client_Edit.ui" line="70"/>
         <source>CPF</source>
-        <translation>CPF</translation>
+        <translation type="vanished">CPF</translation>
     </message>
     <message>
-        <location filename="../../Client_Edit.ui" line="83"/>
         <source>City</source>
-        <translation>Cidade</translation>
+        <translation type="vanished">Cidade</translation>
     </message>
     <message>
-        <location filename="../../Client_Edit.ui" line="96"/>
         <source>Phone</source>
-        <translation>Telefone</translation>
+        <translation type="vanished">Telefone</translation>
     </message>
     <message>
-        <location filename="../../Client_Edit.ui" line="185"/>
         <source>ID</source>
-        <translation>RG</translation>
+        <translation type="vanished">RG</translation>
     </message>
     <message>
-        <location filename="../../Client_Edit.ui" line="204"/>
         <source>Update!</source>
-        <translation>Atualizar!</translation>
+        <translation type="vanished">Atualizar!</translation>
     </message>
     <message>
-        <location filename="../../Client_Edit.ui" line="252"/>
         <source>Adress</source>
-        <translation>Endereço</translation>
+        <translation type="vanished">Endereço</translation>
     </message>
     <message>
-        <location filename="../../Client_Edit.ui" line="322"/>
         <source>Created</source>
-        <translation>Criado</translation>
+        <translation type="vanished">Criado</translation>
     </message>
     <message>
-        <location filename="../../Client_Edit.ui" line="335"/>
         <source>Updated</source>
-        <translation>Atualizado</translation>
+        <translation type="vanished">Atualizado</translation>
     </message>
     <message>
-        <location filename="../../Client_Edit.cpp" line="39"/>
-        <location filename="../../Client_Edit.cpp" line="79"/>
         <source>Erro!</source>
-        <translation>Erro!</translation>
+        <translation type="vanished">Erro!</translation>
     </message>
     <message>
-        <location filename="../../Client_Edit.cpp" line="76"/>
         <source>Sucesso</source>
-        <translation>Sucesso</translation>
+        <translation type="vanished">Sucesso</translation>
     </message>
     <message>
-        <location filename="../../Client_Edit.cpp" line="76"/>
         <source>Cliente Atualizado!</source>
-        <translation>Cliente Atualizado!</translation>
+        <translation type="vanished">Cliente Atualizado!</translation>
     </message>
 </context>
 <context>
     <name>Client_Services_History</name>
     <message>
-        <location filename="../../Client_Services_History.ui" line="32"/>
         <source>Resumo do cliente</source>
-        <translation>Resumo do cliente</translation>
+        <translation type="vanished">Resumo do cliente</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.ui" line="32"/>
+        <source>Client History</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Services_History.ui" line="69"/>
@@ -422,13 +636,46 @@ Custo do Serviço recalculadas no sistema....</translation>
     </message>
     <message>
         <location filename="../../Client_Services_History.ui" line="91"/>
-        <source>Adicionar Carro ao Cliente</source>
-        <translation>Adicionar Carro ao Cliente</translation>
+        <source>Add Car to Client</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Client_Services_History.ui" line="134"/>
+        <source>Bellow are the Client&apos;s Cars. To start a new Service double click the desired Car. The cost per Hour will be:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.ui" line="280"/>
+        <source>Bellow are the Client&apos;s Services.  Double click a Service to manage it:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.ui" line="383"/>
+        <source>Phone</source>
+        <translation type="unfinished">Telefone</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.ui" line="396"/>
+        <source>Client&apos;s ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.ui" line="421"/>
+        <source>Adress</source>
+        <translation type="unfinished">Endereço</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.ui" line="452"/>
+        <source>Name</source>
+        <translation type="unfinished">Nome</translation>
+    </message>
+    <message>
+        <source>Adicionar Carro ao Cliente</source>
+        <translation type="vanished">Adicionar Carro ao Cliente</translation>
+    </message>
+    <message>
         <source>Abaixo a lista de carros do cliente. Duplo clique no Carro para gerar uma ordem de serviço:</source>
-        <translation>Abaixo a lista de carros do cliente. Duplo clique no Carro para gerar uma ordem de serviço:</translation>
+        <translation type="vanished">Abaixo a lista de carros do cliente. Duplo clique no Carro para gerar uma ordem de serviço:</translation>
     </message>
     <message>
         <location filename="../../Client_Services_History.ui" line="256"/>
@@ -436,9 +683,8 @@ Custo do Serviço recalculadas no sistema....</translation>
         <translation>Atualizar Cliente</translation>
     </message>
     <message>
-        <location filename="../../Client_Services_History.ui" line="280"/>
         <source>Ordens de serviço para para este cliente. Duplo clique para gerenciar os dados do serviço. Peças usadas , custo, horas trabahadas...</source>
-        <translation>Ordens de serviço para para este cliente. Duplo clique para gerenciar os dados do serviço. Peças usadas , custo, horas trabahadas...</translation>
+        <translation type="vanished">Ordens de serviço para para este cliente. Duplo clique para gerenciar os dados do serviço. Peças usadas , custo, horas trabahadas...</translation>
     </message>
     <message>
         <location filename="../../Client_Services_History.ui" line="308"/>
@@ -446,77 +692,266 @@ Custo do Serviço recalculadas no sistema....</translation>
         <translation>Duplo clique para adicionar detalhes no serviço, por exemplo as peças que foram usadas.</translation>
     </message>
     <message>
-        <location filename="../../Client_Services_History.ui" line="383"/>
         <source>Telefone</source>
-        <translation>Telefone</translation>
+        <translation type="vanished">Telefone</translation>
     </message>
     <message>
-        <location filename="../../Client_Services_History.ui" line="396"/>
         <source>ID do Cliente</source>
-        <translation>ID do Cliente</translation>
+        <translation type="vanished">ID do Cliente</translation>
     </message>
     <message>
-        <location filename="../../Client_Services_History.ui" line="421"/>
         <source>Endereço   </source>
-        <translation>Endereço   </translation>
+        <translation type="vanished">Endereço   </translation>
     </message>
     <message>
-        <location filename="../../Client_Services_History.ui" line="452"/>
         <source>Nome</source>
-        <translation>Nome</translation>
+        <translation type="vanished">Nome</translation>
     </message>
     <message>
-        <location filename="../../Client_Services_History.cpp" line="61"/>
-        <location filename="../../Client_Services_History.cpp" line="96"/>
-        <location filename="../../Client_Services_History.cpp" line="118"/>
+        <location filename="../../Client_Services_History.cpp" line="69"/>
         <source>Erro!</source>
         <translation>Erro!</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.cpp" line="100"/>
+        <source>Service ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.cpp" line="101"/>
+        <source>On Car</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.cpp" line="102"/>
+        <source>Car Plate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.cpp" line="103"/>
+        <source>Short description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.cpp" line="104"/>
+        <source>Parts Cost</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.cpp" line="105"/>
+        <source>Hours Worked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.cpp" line="106"/>
+        <source>Hour Cost</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.cpp" line="107"/>
+        <source>Paid?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.cpp" line="108"/>
+        <source>Created at</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.cpp" line="109"/>
+        <source>Updated at</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.cpp" line="116"/>
+        <location filename="../../Client_Services_History.cpp" line="148"/>
+        <location filename="../../Client_Services_History.cpp" line="213"/>
+        <source>Error!</source>
+        <translation type="unfinished">Error!</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.cpp" line="135"/>
+        <source>Car ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.cpp" line="136"/>
+        <source>Car Model</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.cpp" line="137"/>
+        <source>Plate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.cpp" line="138"/>
+        <source>Built Year</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.cpp" line="139"/>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.cpp" line="140"/>
+        <source>Created At</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Services_History.cpp" line="141"/>
+        <source>Updated At</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Client_Update</name>
+    <message>
+        <location filename="../../Client_Update.ui" line="26"/>
+        <source>Editing Client Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Update.ui" line="44"/>
+        <source>+55 (47) 9999-9999, +55 (41) 9991-8799</source>
+        <translation type="unfinished">+55 (47) 9999-9999, +55 (41) 9991-8799</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Update.ui" line="57"/>
+        <source>Name</source>
+        <translation type="unfinished">Nome</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Update.ui" line="70"/>
+        <source>CPF</source>
+        <translation type="unfinished">CPF</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Update.ui" line="83"/>
+        <source>City</source>
+        <translation type="unfinished">Cidade</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Update.ui" line="96"/>
+        <source>Phone</source>
+        <translation type="unfinished">Telefone</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Update.ui" line="185"/>
+        <source>ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Update.ui" line="204"/>
+        <source>Update!</source>
+        <translation type="unfinished">Atualizar!</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Update.ui" line="252"/>
+        <source>Adress</source>
+        <translation type="unfinished">Endereço</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Update.ui" line="322"/>
+        <source>Created</source>
+        <translation type="unfinished">Criado</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Update.ui" line="335"/>
+        <source>Updated</source>
+        <translation type="unfinished">Atualizado</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Update.cpp" line="39"/>
+        <source>Erro!</source>
+        <translation type="unfinished">Erro!</translation>
+    </message>
+    <message>
+        <source>Sucesso</source>
+        <translation type="obsolete">Sucesso</translation>
+    </message>
+    <message>
+        <location filename="../../Client_Update.cpp" line="76"/>
+        <source>Client Updated!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Update.cpp" line="76"/>
+        <source>Success</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Client_Update.cpp" line="79"/>
+        <source>Error!</source>
+        <translation type="unfinished">Error!</translation>
     </message>
 </context>
 <context>
     <name>Config_Set_Hour_Cost</name>
     <message>
-        <location filename="../../Config_Set_Hour_Cost.ui" line="26"/>
         <source>Ajustar custo por hora trabalhada</source>
-        <translation>Ajustar custo por hora trabalhada</translation>
+        <translation type="vanished">Ajustar custo por hora trabalhada</translation>
     </message>
     <message>
-        <location filename="../../Config_Set_Hour_Cost.ui" line="61"/>
         <source>Salvar</source>
-        <translation>Salvar</translation>
+        <translation type="vanished">Salvar</translation>
     </message>
     <message>
         <location filename="../../Config_Set_Hour_Cost.cpp" line="20"/>
-        <location filename="../../Config_Set_Hour_Cost.cpp" line="42"/>
+        <location filename="../../Config_Set_Hour_Cost.cpp" line="41"/>
         <source>Erro!</source>
         <translation>Erro!</translation>
     </message>
     <message>
-        <location filename="../../Config_Set_Hour_Cost.cpp" line="44"/>
+        <location filename="../../Config_Set_Hour_Cost.cpp" line="43"/>
+        <source>Success!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Config_Set_Hour_Cost.cpp" line="43"/>
+        <source>Hour Cost changed to: $ </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Config_Set_Hour_Cost.cpp" line="43"/>
+        <source>
+As as reminder, this new hour cost will be used only on new Services.Old Services will keep the original set Hour cost
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Sucesso!</source>
-        <translation>Sucesso!</translation>
+        <translation type="vanished">Sucesso!</translation>
     </message>
     <message>
-        <location filename="../../Config_Set_Hour_Cost.cpp" line="44"/>
         <source>Custo por hora atualizado para: R$ </source>
-        <translation>Custo por hora atualizado para: R$ </translation>
+        <translation type="vanished">Custo por hora atualizado para: R$ </translation>
     </message>
     <message>
-        <location filename="../../Config_Set_Hour_Cost.cpp" line="44"/>
         <source>
 Lembrando que este novo custo terá impacto apenas nos serviços prestados agora em diante.
 </source>
-        <translation>
+        <translation type="vanished">
 Lembrando que este novo custo terá impacto apenas nos serviços prestados agora em diante.
 </translation>
+    </message>
+    <message>
+        <location filename="../../Config_Set_Hour_Cost.ui" line="26"/>
+        <source>Set Work Hour Cost</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Config_Set_Hour_Cost.ui" line="41"/>
+        <source>Save</source>
+        <translation type="unfinished">Salvar</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../Main_Window.ui" line="41"/>
         <source>Oficina 0.1</source>
-        <translation>Oficina 0.1</translation>
+        <translation type="vanished">Oficina 0.1</translation>
     </message>
     <message>
         <location filename="../../Main_Window.ui" line="60"/>
@@ -524,9 +959,8 @@ Lembrando que este novo custo terá impacto apenas nos serviços prestados agora
         <translation>Duplo clique no Cliente para ver todo o seu histórico de serviços.</translation>
     </message>
     <message>
-        <location filename="../../Main_Window.ui" line="97"/>
         <source>Status do banco de Dados =&gt; </source>
-        <translation>Status do banco de Dados =&gt; </translation>
+        <translation type="vanished">Status do banco de Dados =&gt; </translation>
     </message>
     <message>
         <location filename="../../Main_Window.ui" line="131"/>
@@ -538,14 +972,12 @@ Lembrando que este novo custo terá impacto apenas nos serviços prestados agora
         <translation type="vanished">Procurar Cliente</translation>
     </message>
     <message>
-        <location filename="../../Main_Window.ui" line="166"/>
         <source>Inicie a procuta inserindo aqui parte do RG, ID ou nome do cliente...</source>
-        <translation>Inicie a procuta inserindo aqui parte do RG, ID ou nome do cliente...</translation>
+        <translation type="vanished">Inicie a procuta inserindo aqui parte do RG, ID ou nome do cliente...</translation>
     </message>
     <message>
-        <location filename="../../Main_Window.ui" line="179"/>
         <source>Nov. 2016</source>
-        <translation>Nov. 2016</translation>
+        <translation type="vanished">Nov. 2016</translation>
     </message>
     <message>
         <location filename="../../Main_Window.ui" line="216"/>
@@ -569,9 +1001,29 @@ Lembrando que este novo custo terá impacto apenas nos serviços prestados agora
         <translation type="vanished">Confi&amp;guraçoes</translation>
     </message>
     <message>
+        <location filename="../../Main_Window.ui" line="41"/>
+        <source>Oficina 0.1.1</source>
+        <translation type="unfinished">Oficina 0.1.1</translation>
+    </message>
+    <message>
+        <location filename="../../Main_Window.ui" line="97"/>
+        <source>Database =&gt; </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../Main_Window.ui" line="147"/>
         <source>Search Client</source>
         <translation>Procurar Cliente</translation>
+    </message>
+    <message>
+        <location filename="../../Main_Window.ui" line="166"/>
+        <source>Search by name, ID, CPF. To show all clients enter: *</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Main_Window.ui" line="179"/>
+        <source>Jan. 2016</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Main_Window.ui" line="222"/>
@@ -632,60 +1084,91 @@ Lembrando que este novo custo terá impacto apenas nos serviços prestados agora
 <context>
     <name>Main_Window</name>
     <message>
+        <location filename="../../Main_Window.cpp" line="33"/>
+        <source>Database: UP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Main_Window.cpp" line="108"/>
+        <source>System ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Main_Window.cpp" line="109"/>
+        <source>Name</source>
+        <translation type="unfinished">Nome</translation>
+    </message>
+    <message>
         <location filename="../../Main_Window.cpp" line="110"/>
+        <source>Adress</source>
+        <translation type="unfinished">Endereço</translation>
+    </message>
+    <message>
+        <location filename="../../Main_Window.cpp" line="111"/>
+        <source>City</source>
+        <translation type="unfinished">Cidade</translation>
+    </message>
+    <message>
+        <location filename="../../Main_Window.cpp" line="113"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="../../Main_Window.cpp" line="111"/>
+        <location filename="../../Main_Window.cpp" line="114"/>
+        <source>Phone</source>
+        <translation type="unfinished">Telefone</translation>
+    </message>
+    <message>
+        <location filename="../../Main_Window.cpp" line="115"/>
+        <source>Updated at</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Main_Window.cpp" line="116"/>
+        <source>Created at</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Nome</source>
-        <translation>Nome</translation>
+        <translation type="vanished">Nome</translation>
+    </message>
+    <message>
+        <source>Endereço</source>
+        <translation type="vanished">Endereço</translation>
+    </message>
+    <message>
+        <source>Cidade</source>
+        <translation type="vanished">Cidade</translation>
     </message>
     <message>
         <location filename="../../Main_Window.cpp" line="112"/>
-        <source>Endereço</source>
-        <translation>Endereço</translation>
-    </message>
-    <message>
-        <location filename="../../Main_Window.cpp" line="113"/>
-        <source>Cidade</source>
-        <translation>Cidade</translation>
-    </message>
-    <message>
-        <location filename="../../Main_Window.cpp" line="114"/>
         <source>CPF</source>
         <translation>CPF</translation>
     </message>
     <message>
-        <location filename="../../Main_Window.cpp" line="115"/>
         <source>RG</source>
-        <translation>RG</translation>
+        <translation type="vanished">RG</translation>
     </message>
     <message>
-        <location filename="../../Main_Window.cpp" line="116"/>
         <source>Telefone</source>
-        <translation>Telefone</translation>
+        <translation type="vanished">Telefone</translation>
     </message>
     <message>
-        <location filename="../../Main_Window.cpp" line="117"/>
         <source>Atualizado em</source>
-        <translation>Atualizado em</translation>
+        <translation type="vanished">Atualizado em</translation>
     </message>
     <message>
-        <location filename="../../Main_Window.cpp" line="118"/>
         <source>Criado em</source>
-        <translation>Criado em</translation>
+        <translation type="vanished">Criado em</translation>
     </message>
 </context>
 <context>
     <name>Man_Page</name>
     <message>
-        <location filename="../../Man_Page.ui" line="14"/>
         <source>Manual do Usuário</source>
-        <translation>Manual do Usuário</translation>
+        <translation type="vanished">Manual do Usuário</translation>
     </message>
     <message>
-        <location filename="../../Man_Page.ui" line="26"/>
         <source>Manual de instruções Inicial. (em progresso).
 
 * Uma das primeiras configurações é ajustar o custo por hora no menu configurações. 
@@ -694,7 +1177,7 @@ O custo da hora fica atrelado ao serviço e não é possível alterar. Caso quei
 * Deletar Cliente, Carro e Serviço: Não possível, solução é criar um Cliente, Carro e Serviço novo O velho fica.
 
 * Remover peças de um Serviço: Duplo clique na peça.</source>
-        <translation>Manual de instruções Inicial. (em progresso).
+        <translation type="vanished">Manual de instruções Inicial. (em progresso).
 
 * Uma das primeiras configurações é ajustar o custo por hora no menu configurações. 
 O custo da hora fica atrelado ao serviço e não é possível alterar. Caso queira o serviço com custo de hora diferente terá que ajustar o custo por hora nas configurações e então recriar o serviço.
@@ -703,18 +1186,40 @@ O custo da hora fica atrelado ao serviço e não é possível alterar. Caso quei
 
 * Remover peças de um Serviço: Duplo clique na peça.</translation>
     </message>
+    <message>
+        <location filename="../../Man_Page.ui" line="14"/>
+        <source>User Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Man_Page.ui" line="26"/>
+        <source>* One of the first steps is to set your hour cost, in the settings menu. The hour cost will be binded to all new services that you do after changing the cost. Services that you provided before changing the hour cost will use the former hour cost, it will not change anything from the past, only new services. In case you have a wrong set hour cost and what to fix this you may recreate the entire service.
+
+* Remove Client, Car and Service: Not possible. Solution is to recreate, the old one will always stay, as one of the main goals of this application is to keep as much as possible from services history.
+
+* Remove a part from a service? Double click the part.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Service_Create_Description</name>
     <message>
-        <location filename="../../Service_Create_Description.ui" line="26"/>
         <source>Registrando ordem de serviço</source>
-        <translation>Registrando ordem de serviço</translation>
+        <translation type="vanished">Registrando ordem de serviço</translation>
+    </message>
+    <message>
+        <source>Descrição curta do serviço</source>
+        <translation type="vanished">Descrição curta do serviço</translation>
+    </message>
+    <message>
+        <location filename="../../Service_Create_Description.ui" line="26"/>
+        <source>Registering a Service Order</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Service_Create_Description.ui" line="47"/>
-        <source>Descrição curta do serviço</source>
-        <translation>Descrição curta do serviço</translation>
+        <source>Short Service Description...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Service_Create_Description.ui" line="66"/>
@@ -731,8 +1236,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../../Service_Create_Description.ui" line="73"/>
+        <source>Full service description. Max. 1000 chars.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Descrição completa do serviço. Máximo 1000 letras.</source>
-        <translation>Descrição completa do serviço. Máximo 1000 letras.</translation>
+        <translation type="vanished">Descrição completa do serviço. Máximo 1000 letras.</translation>
     </message>
     <message>
         <location filename="../../Service_Create_Description.ui" line="92"/>
@@ -740,35 +1249,57 @@ p, li { white-space: pre-wrap; }
         <translation>Salvar</translation>
     </message>
     <message>
-        <location filename="../../Service_Create_Description.cpp" line="28"/>
-        <location filename="../../Service_Create_Description.cpp" line="87"/>
-        <location filename="../../Service_Create_Description.cpp" line="118"/>
         <source>Erro!</source>
-        <translation>Erro!</translation>
+        <translation type="vanished">Erro!</translation>
     </message>
     <message>
-        <location filename="../../Service_Create_Description.cpp" line="28"/>
         <source>Todos os campos devem estar preenchidos!</source>
-        <translation>Todos os campos devem estar preenchidos!</translation>
+        <translation type="vanished">Todos os campos devem estar preenchidos!</translation>
     </message>
     <message>
-        <location filename="../../Service_Create_Description.cpp" line="90"/>
         <source>Sucesso!</source>
-        <translation>Sucesso!</translation>
+        <translation type="vanished">Sucesso!</translation>
     </message>
     <message>
-        <location filename="../../Service_Create_Description.cpp" line="90"/>
         <source>Serviço registrado para este Carro do cliente.
 
 Agora voltaremos para a tela anterior onde esta nova ordem de serviço estará editável. Lá você pode adicionar as peças conforme usa no serviço e alterar a descrição conforme o serviço progride e mais alterações se mostrarem necessárias.</source>
-        <translation>Serviço registrado para este Carro do cliente.
+        <translation type="vanished">Serviço registrado para este Carro do cliente.
 
 Agora voltaremos para a tela anterior onde esta nova ordem de serviço estará editável. Lá você pode adicionar as peças conforme usa no serviço e alterar a descrição conforme o serviço progride e mais alterações se mostrarem necessárias.</translation>
     </message>
     <message>
-        <location filename="../../Service_Create_Description.cpp" line="118"/>
+        <location filename="../../Service_Create_Description.cpp" line="27"/>
+        <location filename="../../Service_Create_Description.cpp" line="86"/>
+        <location filename="../../Service_Create_Description.cpp" line="116"/>
+        <source>Error!</source>
+        <translation type="unfinished">Error!</translation>
+    </message>
+    <message>
+        <location filename="../../Service_Create_Description.cpp" line="27"/>
+        <source>All fields need to be filled!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Service_Create_Description.cpp" line="89"/>
+        <source>Success!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Service_Create_Description.cpp" line="89"/>
+        <source>Service registered on this Client&apos;s Car.
+
+Now we will return to the previous screen on which this new Service is available for use, there you can add used Parts, update it and doall changes that you need while doing the &apos;Hard Work&apos; </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Service_Create_Description.cpp" line="116"/>
+        <source>Keep the Part description smaller then 500 chars..</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Mantenha a descrição do serviço menor do que 500 letras.</source>
-        <translation>Mantenha a descrição do serviço menor do que 500 letras.</translation>
+        <translation type="vanished">Mantenha a descrição do serviço menor do que 500 letras.</translation>
     </message>
 </context>
 <context>
@@ -803,136 +1334,240 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../../Service_Update_Description.ui" line="92"/>
+        <source>Short Service Description...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Descrição curta do serviço</source>
-        <translation>Descrição curta do serviço</translation>
+        <translation type="vanished">Descrição curta do serviço</translation>
+    </message>
+    <message>
+        <source>Erro!</source>
+        <translation type="vanished">Erro!</translation>
+    </message>
+    <message>
+        <source>Sucesso!</source>
+        <translation type="vanished">Sucesso!</translation>
+    </message>
+    <message>
+        <source>Descrição do Serviço atualizada.</source>
+        <translation type="vanished">Descrição do Serviço atualizada.</translation>
     </message>
     <message>
         <location filename="../../Service_Update_Description.cpp" line="39"/>
-        <location filename="../../Service_Update_Description.cpp" line="79"/>
-        <source>Erro!</source>
-        <translation>Erro!</translation>
+        <source>Error!</source>
+        <translation type="unfinished">Error!</translation>
     </message>
     <message>
         <location filename="../../Service_Update_Description.cpp" line="41"/>
-        <source>Sucesso!</source>
-        <translation>Sucesso!</translation>
+        <source>Success!</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Service_Update_Description.cpp" line="41"/>
-        <source>Descrição do Serviço atualizada.</source>
-        <translation>Descrição do Serviço atualizada.</translation>
+        <source>Service Description Updated.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Service_Update_Description.cpp" line="79"/>
+        <source>Keep the Part description smaller then 250 chars.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Service_Update_Description.cpp" line="79"/>
+        <source>Warning!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Mantenha a descrição do serviço menor do que 500 letras.</source>
-        <translation>Mantenha a descrição do serviço menor do que 500 letras.</translation>
+        <translation type="vanished">Mantenha a descrição do serviço menor do que 500 letras.</translation>
     </message>
 </context>
 <context>
     <name>Stock_Add_Part</name>
     <message>
-        <location filename="../../Stock_Add_Part.ui" line="32"/>
         <source>Cadastro de Peça</source>
-        <translation>Cadastro de Peça</translation>
+        <translation type="vanished">Cadastro de Peça</translation>
+    </message>
+    <message>
+        <source>Cadastrar!</source>
+        <translation type="vanished">Cadastrar!</translation>
+    </message>
+    <message>
+        <source>Nome</source>
+        <translation type="vanished">Nome</translation>
+    </message>
+    <message>
+        <source>Insira os dados da peça e clique em Cadastrar.</source>
+        <translation type="vanished">Insira os dados da peça e clique em Cadastrar.</translation>
+    </message>
+    <message>
+        <source>Preço de Custo</source>
+        <translation type="vanished">Preço de Custo</translation>
+    </message>
+    <message>
+        <source>Descrição</source>
+        <translation type="vanished">Descrição</translation>
+    </message>
+    <message>
+        <source>Nome da Peça. Exemplo: Escape Corsa 98</source>
+        <translation type="vanished">Nome da Peça. Exemplo: Escape Corsa 98</translation>
+    </message>
+    <message>
+        <source>Sair</source>
+        <translation type="vanished">Sair</translation>
+    </message>
+    <message>
+        <source>Máximo de 250 letras.</source>
+        <translation type="vanished">Máximo de 250 letras.</translation>
+    </message>
+    <message>
+        <source>Erro: Todos os campos devem estar preenchidos!</source>
+        <translation type="vanished">Erro: Todos os campos devem estar preenchidos!</translation>
+    </message>
+    <message>
+        <source>Erro!</source>
+        <translation type="vanished">Erro!</translation>
+    </message>
+    <message>
+        <source>Esta peça não foi adicionado!! Classe: Stock_Add_Part::on_btn_Cadastrar_clicked()</source>
+        <translation type="vanished">Esta peça não foi adicionado!! Classe: Stock_Add_Part::on_btn_Cadastrar_clicked()</translation>
+    </message>
+    <message>
+        <source> adicionado ao estoque!</source>
+        <translation type="vanished"> adicionado ao estoque!</translation>
+    </message>
+    <message>
+        <source>Sucesso!</source>
+        <translation type="vanished">Sucesso!</translation>
+    </message>
+    <message>
+        <source>Peça adicionada no estoque.</source>
+        <translation type="vanished">Peça adicionada no estoque.</translation>
+    </message>
+    <message>
+        <source>Mantenha a descrição da peça menor do que 250 letras.</source>
+        <translation type="vanished">Mantenha a descrição da peça menor do que 250 letras.</translation>
+    </message>
+    <message>
+        <location filename="../../Stock_Add_Part.ui" line="32"/>
+        <source>Registering Part</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Add_Part.ui" line="44"/>
-        <source>Cadastrar!</source>
-        <translation>Cadastrar!</translation>
+        <source>Save</source>
+        <translation type="unfinished">Salvar</translation>
     </message>
     <message>
         <location filename="../../Stock_Add_Part.ui" line="70"/>
-        <source>Nome</source>
-        <translation>Nome</translation>
+        <source>Name</source>
+        <translation type="unfinished">Nome</translation>
     </message>
     <message>
         <location filename="../../Stock_Add_Part.ui" line="83"/>
-        <source>Insira os dados da peça e clique em Cadastrar.</source>
-        <translation>Insira os dados da peça e clique em Cadastrar.</translation>
+        <source>Insert part data and click Save</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Add_Part.ui" line="96"/>
-        <source>Preço de Custo</source>
-        <translation>Preço de Custo</translation>
+        <source>Cost Price</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Add_Part.ui" line="109"/>
-        <source>Descrição</source>
-        <translation>Descrição</translation>
+        <source>Description</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Add_Part.ui" line="122"/>
-        <source>Quantidade</source>
-        <translation></translation>
+        <source>Quantity</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Add_Part.ui" line="141"/>
-        <source>Nome da Peça. Exemplo: Escape Corsa 98</source>
-        <translation>Nome da Peça. Exemplo: Escape Corsa 98</translation>
+        <source>Part Name. Eg. Chevete right mirror</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Add_Part.ui" line="154"/>
-        <source>Sair</source>
-        <translation>Sair</translation>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Add_Part.ui" line="199"/>
-        <source>Máximo de 250 letras.</source>
-        <translation>Máximo de 250 letras.</translation>
+        <source>Full Description. Max 250 chars</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Add_Part.cpp" line="31"/>
-        <source>Erro: Todos os campos devem estar preenchidos!</source>
-        <translation>Erro: Todos os campos devem estar preenchidos!</translation>
+        <source>Error: All fields need to be filled!</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Add_Part.cpp" line="60"/>
-        <location filename="../../Stock_Add_Part.cpp" line="87"/>
-        <source>Erro!</source>
-        <translation>Erro!</translation>
+        <source>Error!</source>
+        <translation type="unfinished">Error!</translation>
     </message>
     <message>
         <location filename="../../Stock_Add_Part.cpp" line="60"/>
-        <source>Esta peça não foi adicionado!! Classe: Stock_Add_Part::on_btn_Cadastrar_clicked()</source>
-        <translation>Esta peça não foi adicionado!! Classe: Stock_Add_Part::on_btn_Cadastrar_clicked()</translation>
+        <source>This Part was not added!! Classe: Stock_Add_Part::on_btn_Cadastrar_clicked()</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Add_Part.cpp" line="62"/>
-        <source> adicionado ao estoque!</source>
-        <translation> adicionado ao estoque!</translation>
+        <source> added to Stock!</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Add_Part.cpp" line="63"/>
-        <source>Sucesso!</source>
-        <translation>Sucesso!</translation>
+        <source>Success!</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Add_Part.cpp" line="63"/>
-        <source>Peça adicionada no estoque.</source>
-        <translation>Peça adicionada no estoque.</translation>
+        <source>Part added to Stock.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Add_Part.cpp" line="87"/>
-        <source>Mantenha a descrição da peça menor do que 250 letras.</source>
-        <translation>Mantenha a descrição da peça menor do que 250 letras.</translation>
+        <source>Keep the Part description smaller then 250 chars.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Stock_Add_Part.cpp" line="87"/>
+        <source>Warning!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Stock_Control</name>
     <message>
-        <location filename="../../Stock_Control.ui" line="26"/>
         <source>Controle do Estoque</source>
-        <translation>Controle do Estoque</translation>
+        <translation type="vanished">Controle do Estoque</translation>
+    </message>
+    <message>
+        <source>Procurar Peça</source>
+        <translation type="vanished">Procurar Peça</translation>
+    </message>
+    <message>
+        <source>Inicie a procura inserindo o nome da peça. * para listar todas.</source>
+        <translation type="vanished">Inicie a procura inserindo o nome da peça. * para listar todas.</translation>
+    </message>
+    <message>
+        <location filename="../../Stock_Control.ui" line="26"/>
+        <source>Stock Control</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Control.ui" line="38"/>
-        <source>Procurar Peça</source>
-        <translation>Procurar Peça</translation>
+        <source>Search Part</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Control.ui" line="57"/>
-        <source>Inicie a procura inserindo o nome da peça. * para listar todas.</source>
-        <translation>Inicie a procura inserindo o nome da peça. * para listar todas.</translation>
+        <source>Search entering the Part Name. You list all with: *</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Control.ui" line="70"/>
@@ -941,28 +1576,43 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../../Stock_Control.ui" line="99"/>
-        <source>Descrição completa da Peça. Este campo também pode ser editado, máximo 250 letras.</source>
-        <translation>Descrição completa da Peça. Este campo também pode ser editado, máximo 250 letras.</translation>
+        <source>Full Part description. You can also change this field(max 250 chars).</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Control.ui" line="115"/>
-        <source>Salvar Descrição </source>
-        <translation>Salvar Descrição </translation>
+        <source>Save Description</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Control.ui" line="128"/>
-        <source>Sair</source>
-        <translation>Sair</translation>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Control.ui" line="141"/>
-        <source>ESC para cancelar.</source>
-        <translation>ESC para cancelar.</translation>
+        <source>Double click the part you wanto to change. ESC to cancel.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../Stock_Control.ui" line="154"/>
+        <source>Descrição completa da Peça. Este campo também pode ser editado, máximo 250 letras.</source>
+        <translation type="vanished">Descrição completa da Peça. Este campo também pode ser editado, máximo 250 letras.</translation>
+    </message>
+    <message>
+        <source>Salvar Descrição </source>
+        <translation type="vanished">Salvar Descrição </translation>
+    </message>
+    <message>
+        <source>Sair</source>
+        <translation type="vanished">Sair</translation>
+    </message>
+    <message>
+        <source>ESC para cancelar.</source>
+        <translation type="vanished">ESC para cancelar.</translation>
+    </message>
+    <message>
         <source>Basta dar duplo clique(ou apertar F2) na informação que deseja alterar e apertar Enter para Salvar.</source>
-        <translation>Basta dar duplo clique(ou apertar F2) na informação que deseja alterar e apertar Enter para Salvar.</translation>
+        <translation type="vanished">Basta dar duplo clique(ou apertar F2) na informação que deseja alterar e apertar Enter para Salvar.</translation>
     </message>
     <message>
         <location filename="../../Stock_Control.cpp" line="55"/>
@@ -971,58 +1621,107 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../../Stock_Control.cpp" line="56"/>
-        <source>Nome</source>
-        <translation>Nome</translation>
+        <source>Name</source>
+        <translation type="unfinished">Nome</translation>
     </message>
     <message>
         <location filename="../../Stock_Control.cpp" line="57"/>
-        <source>Descrição</source>
-        <translation>Descrição</translation>
+        <source>Description</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Control.cpp" line="58"/>
-        <source>Custo</source>
-        <translation>Custo</translation>
+        <source>Cost</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Control.cpp" line="59"/>
-        <source>Em Estoque</source>
-        <translation>Em Estoque</translation>
+        <source>In Stock</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Control.cpp" line="61"/>
-        <source>Última Atualização</source>
-        <translation>Última Atualização</translation>
+        <source>Last Updated</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Control.cpp" line="62"/>
-        <source>Adicionada em</source>
-        <translation>Adicionada em</translation>
+        <source>Added At</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Control.cpp" line="94"/>
+        <source>Error!</source>
+        <translation type="unfinished">Error!</translation>
+    </message>
+    <message>
+        <location filename="../../Stock_Control.cpp" line="96"/>
+        <source>Success!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Stock_Control.cpp" line="96"/>
+        <source>Part Description Updated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../Stock_Control.cpp" line="124"/>
+        <source>Keep the Part description smaller then 250 chars.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Stock_Control.cpp" line="124"/>
+        <source>Warning!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nome</source>
+        <translation type="vanished">Nome</translation>
+    </message>
+    <message>
+        <source>Descrição</source>
+        <translation type="vanished">Descrição</translation>
+    </message>
+    <message>
+        <source>Custo</source>
+        <translation type="vanished">Custo</translation>
+    </message>
+    <message>
+        <source>Em Estoque</source>
+        <translation type="vanished">Em Estoque</translation>
+    </message>
+    <message>
+        <source>Última Atualização</source>
+        <translation type="vanished">Última Atualização</translation>
+    </message>
+    <message>
+        <source>Adicionada em</source>
+        <translation type="vanished">Adicionada em</translation>
+    </message>
+    <message>
         <source>Erro!</source>
-        <translation>Erro!</translation>
+        <translation type="vanished">Erro!</translation>
     </message>
     <message>
-        <location filename="../../Stock_Control.cpp" line="96"/>
         <source>Sucesso!</source>
-        <translation>Sucesso!</translation>
+        <translation type="vanished">Sucesso!</translation>
     </message>
     <message>
-        <location filename="../../Stock_Control.cpp" line="96"/>
         <source>Descrição da peça atualizada.</source>
-        <translation>Descrição da peça atualizada.</translation>
+        <translation type="vanished">Descrição da peça atualizada.</translation>
     </message>
     <message>
-        <location filename="../../Stock_Control.cpp" line="124"/>
         <source>Mantenha a descrição da peça menor do que 250 letras.</source>
-        <translation>Mantenha a descrição da peça menor do que 250 letras.</translation>
+        <translation type="vanished">Mantenha a descrição da peça menor do que 250 letras.</translation>
     </message>
 </context>
 <context>
     <name>Stock_Parts_Selection</name>
+    <message>
+        <location filename="../../Stock_Parts_Selection.ui" line="26"/>
+        <source>Adding Parts to Service</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <location filename="../../Stock_Parts_Selection.ui" line="38"/>
         <source>Duplo clique aqui para adicionar a peça.</source>
@@ -1030,23 +1729,39 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../../Stock_Parts_Selection.ui" line="60"/>
-        <source>Inicie a procura inserindo aqui parte do nome da Peça...</source>
-        <translation>Inicie a procura inserindo aqui parte do nome da Peça...</translation>
+        <source>Search entering the Part Name. You list all with: *</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Parts_Selection.ui" line="73"/>
-        <source>Procurar Peça</source>
-        <translation>Procurar Peça</translation>
+        <source>Search Part</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Parts_Selection.ui" line="86"/>
-        <source>Duplo clique na peça para adiciona-lá ao serviço.</source>
-        <translation>Duplo clique na peça para adiciona-lá ao serviço.</translation>
+        <source>Double click in the Part will add it to the Service:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Parts_Selection.ui" line="99"/>
+        <source>Add New</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Inicie a procura inserindo aqui parte do nome da Peça...</source>
+        <translation type="vanished">Inicie a procura inserindo aqui parte do nome da Peça...</translation>
+    </message>
+    <message>
+        <source>Procurar Peça</source>
+        <translation type="vanished">Procurar Peça</translation>
+    </message>
+    <message>
+        <source>Duplo clique na peça para adiciona-lá ao serviço.</source>
+        <translation type="vanished">Duplo clique na peça para adiciona-lá ao serviço.</translation>
+    </message>
+    <message>
         <source>Cadastrar Nova</source>
-        <translation>Cadastrar Nova</translation>
+        <translation type="vanished">Cadastrar Nova</translation>
     </message>
     <message>
         <location filename="../../Stock_Parts_Selection.cpp" line="51"/>
@@ -1055,33 +1770,67 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../../Stock_Parts_Selection.cpp" line="52"/>
-        <source>Nome</source>
-        <translation>Nome</translation>
+        <source>Name</source>
+        <translation type="unfinished">Nome</translation>
     </message>
     <message>
         <location filename="../../Stock_Parts_Selection.cpp" line="53"/>
-        <source>Descrição</source>
-        <translation>Descrição</translation>
+        <source>Description</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Parts_Selection.cpp" line="54"/>
-        <source>Custo</source>
-        <translation>Custo</translation>
+        <source>Cost</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Parts_Selection.cpp" line="55"/>
-        <source>Quantidade em Estoque</source>
-        <translation>Quantidade em Estoque</translation>
+        <source>Quantity in Stock</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Parts_Selection.cpp" line="56"/>
-        <source>Atualiada em</source>
-        <translation>Atualiada em</translation>
+        <source>Updated At</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../Stock_Parts_Selection.cpp" line="57"/>
+        <source>Created at</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Stock_Parts_Selection.cpp" line="91"/>
+        <source>Success!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../Stock_Parts_Selection.cpp" line="91"/>
+        <source>Part Added to the Service and Stock updated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nome</source>
+        <translation type="vanished">Nome</translation>
+    </message>
+    <message>
+        <source>Descrição</source>
+        <translation type="vanished">Descrição</translation>
+    </message>
+    <message>
+        <source>Custo</source>
+        <translation type="vanished">Custo</translation>
+    </message>
+    <message>
+        <source>Quantidade em Estoque</source>
+        <translation type="vanished">Quantidade em Estoque</translation>
+    </message>
+    <message>
+        <source>Atualiada em</source>
+        <translation type="vanished">Atualiada em</translation>
+    </message>
+    <message>
         <source>Criada em</source>
-        <translation>Criada em</translation>
+        <translation type="vanished">Criada em</translation>
     </message>
     <message>
         <location filename="../../Stock_Parts_Selection.cpp" line="89"/>
@@ -1089,14 +1838,12 @@ p, li { white-space: pre-wrap; }
         <translation>Error!</translation>
     </message>
     <message>
-        <location filename="../../Stock_Parts_Selection.cpp" line="91"/>
         <source>Sucesso!</source>
-        <translation>Sucesso!</translation>
+        <translation type="vanished">Sucesso!</translation>
     </message>
     <message>
-        <location filename="../../Stock_Parts_Selection.cpp" line="91"/>
         <source>Peça adicionada ao serviço e estoque atualizado.</source>
-        <translation>Peça adicionada ao serviço e estoque atualizado.</translation>
+        <translation type="vanished">Peça adicionada ao serviço e estoque atualizado.</translation>
     </message>
 </context>
 </TS>

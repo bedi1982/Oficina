@@ -47,8 +47,8 @@ void Client_Update::load_Client_Info_To_TextBoxes()
             ui->line_CPF->setText(query.value(4).toString()); //CPF
             ui->line_RG->setText(query.value(5).toString()); //RG
             ui->line_Phone->setText(query.value(6).toString()); //Phone
-            ui->line_UpdatedAt->setText(query.value(7).toString()); //updated At
-            ui->line_CreatedAt->setText(query.value(8).toString()); //created At
+            ui->line_Updated_At->setText(query.value(7).toString()); //updated At
+            ui->line_Created_At->setText(query.value(8).toString()); //created At
         }
     }
 }
@@ -73,10 +73,10 @@ void Client_Update::on_btn_Update_clicked()
             query.bindValue(":Client_Phone", ui->line_Phone->text());
 
             if (query.exec()) {
-                QMessageBox::information(this, tr("Sucesso"), tr("Cliente Atualizado!"));
+                QMessageBox::information(this, tr("Success"), tr("Client Updated!"));
                 close();
             } else {
-                QMessageBox::critical(this, tr("Erro!"), query.lastError().text() + "class Client_Edit::on_btn_update_clicked() ");
+                QMessageBox::critical(this, tr("Error!"), query.lastError().text() + "class Client_Edit::on_btn_update_clicked() ");
                 close();
             }
 }

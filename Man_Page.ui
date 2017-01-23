@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Manual do Usuário</string>
+   <string>User Help</string>
   </property>
   <widget class="QPlainTextEdit" name="plainTextEdit">
    <property name="geometry">
@@ -23,14 +23,11 @@
     </rect>
    </property>
    <property name="plainText">
-    <string>Manual de instruções Inicial. (em progresso).
+    <string>* One of the first steps is to set your hour cost, in the settings menu. The hour cost will be binded to all new services that you do after changing the cost. Services that you provided before changing the hour cost will use the former hour cost, it will not change anything from the past, only new services. In case you have a wrong set hour cost and what to fix this you may recreate the entire service.
 
-* Uma das primeiras configurações é ajustar o custo por hora no menu configurações. 
-O custo da hora fica atrelado ao serviço e não é possível alterar. Caso queira o serviço com custo de hora diferente terá que ajustar o custo por hora nas configurações e então recriar o serviço.
+* Remove Client, Car and Service: Not possible. Solution is to recreate, the old one will always stay, as one of the main goals of this application is to keep as much as possible from services history.
 
-* Deletar Cliente, Carro e Serviço: Não possível, solução é criar um Cliente, Carro e Serviço novo O velho fica.
-
-* Remover peças de um Serviço: Duplo clique na peça.</string>
+* Remove a part from a service? Double click the part.</string>
    </property>
   </widget>
  </widget>

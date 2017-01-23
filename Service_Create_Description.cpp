@@ -22,14 +22,13 @@ bool Service_Create_Description::Verify_Empty_Fields_On_Form()
 {
     if (ui->txt_Full_Description->toPlainText() == "" || ui->line_Short_Description->text() == "" )
     {
-       // ui->lbl_Feedback->setText("Erro: Todos os campos devem estar preenchidos!");
-        //QPixmap crying(":/emoticons/face-crying.png");
-        //ui->lbl_Emoticon->setPixmap(crying);
-        QMessageBox::warning(this, tr("Erro!"), tr("Todos os campos devem estar preenchidos!"));
+        QPixmap crying(":/emoticons/face-crying.png");
+        ui->lbl_Emoticon->setPixmap(crying);
+        QMessageBox::warning(this, tr("Error!"), tr("All fields need to be filled!"));
         ui->line_Short_Description->setFocus();
         return false;
     }
-    //Only returns true when all the fields are filled.
+    //Only returns true if all the fields are filled.
     return true;
 }
 
@@ -84,14 +83,13 @@ void Service_Create_Description::on_btn_Save_clicked()
         query.bindValue(":Service_Description", ui->txt_Full_Description->toPlainText());
 
         if (query.exec() == false){
-            QMessageBox::critical(this, tr("Erro!"), query.lastError().text() + " class Service_Create_Description::on_btn_Salvar_clicked() ");
+            QMessageBox::critical(this, tr("Error!"), query.lastError().text() + " class Service_Create_Description::on_btn_Salvar_clicked() ");
         }else{
             ui->line_Short_Description->setFocus();
-            QMessageBox::information(this, tr("Sucesso!"), tr("Serviço registrado para este Carro do cliente.\n\n"
-                                                       "Agora voltaremos para a tela anterior onde esta nova ordem de serviço "
-                                                       "estará editável. Lá você pode adicionar as peças conforme usa no serviço "
-                                                       "e alterar a descrição conforme o serviço progride e mais alterações se mostrarem "
-                                                       "necessárias."));
+            QMessageBox::information(this, tr("Success!"), tr("Service registered on this Client's Car.\n\n"
+                                                       "Now we will return to the previous screen on which this new Service "
+                                                       "is available for use, there you can add used Parts, update it and do"
+                                                       "all changes that you need while doing the 'Hard Work' "));
             close();
         }
     }
@@ -115,6 +113,6 @@ void Service_Create_Description::on_txt_Full_Description_textChanged()
 
         // This is your "action" to alert the user. I'd suggest something more
         // subtle though, or just not doing anything at all.
-        QMessageBox::warning(this, tr("Erro!"), tr("Mantenha a descrição do serviço menor do que 500 letras."));
+        QMessageBox::warning(this, tr("Error!"), tr("Keep the Part description smaller then 500 chars.."));
     }
 }

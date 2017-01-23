@@ -29,12 +29,12 @@ Main_Window::Main_Window(QWidget *parent) :
     Database db;
     if(db.Connect()){
         QPixmap green(":/emoticons/emblem-default.png");
-        ui->lbl_emoticonStatusConexao->setPixmap(green);
+        ui->lbl_Emoticon_Connection_Status->setPixmap(green);
         ui->lbl_Database->setText(tr("Database: UP"));
     }else{
         //If the database is not available we make it mostly useless//
         QPixmap red(":/emoticons/emblem-important.png");
-        ui->lbl_emoticonStatusConexao->setPixmap(red);
+        ui->lbl_Emoticon_Connection_Status->setPixmap(red);
         ui->lbl_Database->setText("Database: OFF ");
         ui->line_ID_or_CPF_or_Name->setEnabled(false);
         ui->menuBar->hide();

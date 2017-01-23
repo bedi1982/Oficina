@@ -22,13 +22,13 @@ Client_Services_History::Client_Services_History(QWidget *parent) :
     ui->setupUi(this);
 
     QPixmap service(":/emoticons/service.png");
-    ui->lbl_ServiceIcon->setPixmap(service);
+    ui->lbl_Service_Icon->setPixmap(service);
 
     QPixmap carKey(":/emoticons/carkey.png");
-    ui->lbl_NewCarIcon->setPixmap(carKey);
+    ui->lbl_New_Car_Icon->setPixmap(carKey);
 
     QPixmap clienticon(":/emoticons/client_info.png");
-    ui->lbl_ClientInfo->setPixmap(clienticon);
+    ui->lbl_Client_Info->setPixmap(clienticon);
 
     //Add hour cost to label
     Set_Current_Hour_Cost_Label();
@@ -75,7 +75,7 @@ void Client_Services_History::Load_Client_Info_To_Text_Boxes()
             ui->line_Name->setText(query.value(1).toString());
             ui->line_Address->setText(query.value(2).toString());
             ui->line_Phone->setText(query.value(3).toString());
-            ui->line_ClientCity->setText(query.value(4).toString());
+            ui->line_Client_City->setText(query.value(4).toString());
         }
     }
 }
@@ -86,7 +86,7 @@ void Client_Services_History::Load_Services_Grid()
     model->setQuery("SELECT"
                     " Service_id,"
                     " ClientCar_Model,"
-                    " ClientCar_Placa,"
+                    " ClientCar_Plate,"
                     " Service_Short_Description,"
                     " Service_Parts_Cost,"
                     " Service_Hours_Duration,"
@@ -124,7 +124,7 @@ void Client_Services_History::load_Cars_Grid()
     model->setQuery("SELECT"
                     " ClientCar_id,"
                     " ClientCar_Model,"
-                    " ClientCar_Placa,"
+                    " ClientCar_Plate,"
                     " ClientCar_BuiltYear,"
                     " ClientCar_Color,"
                     " ClientCar_created_at,"
@@ -142,7 +142,6 @@ void Client_Services_History::load_Cars_Grid()
 
     if(model->query().isSelect()){
         ui->tbl_Client_Cars->setModel(model);
-        //ui->tbl_Client_Cars->sortByColumn(0, Qt::DescendingOrder);
         ui->tbl_Client_Cars->resizeColumnsToContents();
     }else{
         QMessageBox::critical(this, tr("Error!"), model->query().lastError().text() +
@@ -214,7 +213,8 @@ void Client_Services_History::Set_Current_Hour_Cost_Label(){
     }else{
         while(Set_Current_Hour_Cost.next())
         {
-            ui->lbl_Hour_Cost_Value->setText(Set_Current_Hour_Cost.value(0).toString());
+            //ui->lbl_Hour_Cost_Value->setText(Set_Current_Hour_Cost.value(0).toString());
+            ui->lcd_Hour_Cost->display(Set_Current_Hour_Cost.value(0).toDouble());
         }
     }
 }

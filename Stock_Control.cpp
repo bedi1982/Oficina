@@ -53,13 +53,13 @@ void Stock_Control::on_line_Part_Name_textChanged(const QString &arg1)
         //ui->tbl_parts->hideColumn(0);
         //ui->tbl_parts->hideColumn(2);
         model->setHeaderData(0, Qt::Horizontal, tr("ID"));
-        model->setHeaderData(1, Qt::Horizontal, tr("Nome"));
-        model->setHeaderData(2, Qt::Horizontal, tr("Descrição"));
-        model->setHeaderData(3, Qt::Horizontal, tr("Custo"));
-        model->setHeaderData(4, Qt::Horizontal, tr("Em Estoque"));
-        //model->setHeaderData(4, Qt::Horizontal, tr("Usada"));
-        model->setHeaderData(5, Qt::Horizontal, tr("Última Atualização"));
-        model->setHeaderData(6, Qt::Horizontal, tr("Adicionada em"));
+        model->setHeaderData(1, Qt::Horizontal, tr("Name"));
+        model->setHeaderData(2, Qt::Horizontal, tr("Description"));
+        model->setHeaderData(3, Qt::Horizontal, tr("Cost"));
+        model->setHeaderData(4, Qt::Horizontal, tr("In Stock"));
+        //model->setHeaderData(4, Qt::Horizontal, tr("Used"));
+        model->setHeaderData(5, Qt::Horizontal, tr("Last Updated"));
+        model->setHeaderData(6, Qt::Horizontal, tr("Added At"));
         ui->tbl_Parts->setModel(model);
         ui->tbl_Parts->hideColumn(2);
         ui->tbl_Parts->resizeColumnsToContents();
@@ -91,9 +91,9 @@ void Stock_Control::on_btn_Save_Description_clicked()
     UpdatePartDescription.bindValue(":partID", partID);
 
     if (!(UpdatePartDescription.exec())){
-        QMessageBox::critical(this, tr("Erro!"), UpdatePartDescription.lastError().text() + "class Stock_Control::on_btn_save_clicked()");
+        QMessageBox::critical(this, tr("Error!"), UpdatePartDescription.lastError().text() + "class Stock_Control::on_btn_save_clicked()");
     }else{
-        QMessageBox::information(this, tr("Sucesso!"), tr("Descrição da peça atualizada."));
+        QMessageBox::information(this, tr("Success!"), tr("Part Description Updated."));
         on_line_Part_Name_textChanged(ui->line_Part_Name->text());
     }
 }
@@ -121,6 +121,6 @@ void Stock_Control::on_txt_Part_Description_textChanged()
 
         // This is your "action" to alert the user. I'd suggest something more
         // subtle though, or just not doing anything at all.
-        QMessageBox::warning(this, tr("Erro!"), tr("Mantenha a descrição da peça menor do que 250 letras."));
+        QMessageBox::warning(this, tr("Warning!"), tr("Keep the Part description smaller then 250 chars."));
     }
 }

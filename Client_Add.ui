@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>562</width>
-    <height>300</height>
+    <height>287</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -22,329 +22,197 @@
   <property name="minimumSize">
    <size>
     <width>562</width>
-    <height>300</height>
+    <height>270</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>562</width>
-    <height>300</height>
+    <width>900</width>
+    <height>900</height>
    </size>
   </property>
   <property name="windowTitle">
-   <string>Cadastro de Cliente</string>
+   <string>Add Client</string>
   </property>
-  <widget class="QPushButton" name="btn_Add">
-   <property name="geometry">
-    <rect>
-     <x>380</x>
-     <y>250</y>
-     <width>84</width>
-     <height>34</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="text">
-    <string>Cadastrar!</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_Exit">
-   <property name="geometry">
-    <rect>
-     <x>470</x>
-     <y>250</y>
-     <width>84</width>
-     <height>34</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="text">
-    <string>Sair</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_Emoticon">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>240</y>
-     <width>48</width>
-     <height>48</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>48</width>
-     <height>48</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>48</width>
-     <height>48</height>
-    </size>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>20</y>
-     <width>59</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Nome</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>60</y>
-     <width>59</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Endereço</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>100</y>
-     <width>59</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Cidade</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>180</y>
-     <width>59</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Telefone</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>140</y>
-     <width>59</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>CPF</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_6">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>140</y>
-     <width>59</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>RG</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_Name">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
      <y>10</y>
-     <width>321</width>
-     <height>32</height>
+     <width>521</width>
+     <height>261</height>
     </rect>
    </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="maxLength">
-    <number>40</number>
-   </property>
-   <property name="placeholderText">
-    <string/>
-   </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_Name">
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="3">
+     <widget class="QLabel" name="label_CPF">
+      <property name="text">
+       <string>CPF</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1" colspan="5">
+     <widget class="QLineEdit" name="line_Name">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="maxLength">
+       <number>40</number>
+      </property>
+      <property name="placeholderText">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_RG">
+      <property name="text">
+       <string>ID</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="4" colspan="2">
+     <widget class="QLineEdit" name="line_CPF">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="maxLength">
+       <number>20</number>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="line_RG">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="maxLength">
+       <number>15</number>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_City">
+      <property name="text">
+       <string>City</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_Address">
+      <property name="text">
+       <string>Adress</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_Phone">
+      <property name="text">
+       <string>Phone</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1" colspan="3">
+     <widget class="QLineEdit" name="line_City">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="maxLength">
+       <number>30</number>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1" colspan="3">
+     <widget class="QLineEdit" name="line_Phone">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="maxLength">
+       <number>40</number>
+      </property>
+      <property name="placeholderText">
+       <string>+55 (47) 9999-9999, +55 (41) 9991-8799</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1" colspan="5">
+     <widget class="QLineEdit" name="line_Address">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="maxLength">
+       <number>50</number>
+      </property>
+      <property name="placeholderText">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="lbl_Emoticon">
+      <property name="minimumSize">
+       <size>
+        <width>48</width>
+        <height>48</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>48</width>
+        <height>48</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="4">
+     <widget class="QPushButton" name="btn_Add">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Add</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1" colspan="3">
+     <widget class="QLabel" name="lbl_feedback">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="5">
+     <widget class="QPushButton" name="btn_Exit">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Exit</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
-  <widget class="QLineEdit" name="line_Address">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>50</y>
-     <width>411</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="maxLength">
-    <number>50</number>
-   </property>
-   <property name="placeholderText">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_City">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>90</y>
-     <width>251</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="maxLength">
-    <number>30</number>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_CPF">
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>130</y>
-     <width>171</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="maxLength">
-    <number>20</number>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_RG">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>130</y>
-     <width>131</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="maxLength">
-    <number>15</number>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_Phone">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>170</y>
-     <width>271</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="maxLength">
-    <number>40</number>
-   </property>
-   <property name="placeholderText">
-    <string>+55 (47) 9999-9999, +55 (41) 9991-8799</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_feedback">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>220</y>
-     <width>501</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_Emoticon_2">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>48</width>
-     <height>48</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>48</width>
-     <height>48</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>48</width>
-     <height>48</height>
-    </size>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <zorder>btn_Add</zorder>
-  <zorder>btn_Exit</zorder>
-  <zorder>lbl_Emoticon</zorder>
-  <zorder>lbl_feedback</zorder>
-  <zorder>label</zorder>
-  <zorder>label_2</zorder>
-  <zorder>label_3</zorder>
-  <zorder>label_4</zorder>
-  <zorder>label_5</zorder>
-  <zorder>label_6</zorder>
-  <zorder>line_Name</zorder>
-  <zorder>line_Address</zorder>
-  <zorder>line_City</zorder>
-  <zorder>line_CPF</zorder>
-  <zorder>line_RG</zorder>
-  <zorder>line_Phone</zorder>
-  <zorder>lbl_Emoticon_2</zorder>
  </widget>
  <tabstops>
-  <tabstop>line_Name</tabstop>
-  <tabstop>line_Address</tabstop>
-  <tabstop>line_City</tabstop>
-  <tabstop>line_RG</tabstop>
   <tabstop>line_CPF</tabstop>
   <tabstop>line_Phone</tabstop>
-  <tabstop>btn_Add</tabstop>
-  <tabstop>btn_Exit</tabstop>
  </tabstops>
  <resources/>
  <connections/>

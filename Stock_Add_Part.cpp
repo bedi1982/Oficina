@@ -28,7 +28,7 @@ bool Stock_Add_Part::Check_Empty_Fields_On_Form()
            ||ui->spin_Quantity->text() == ""
            )
     {
-        ui->lbl_Feedback->setText(tr("Erro: Todos os campos devem estar preenchidos!"));
+        ui->lbl_Feedback->setText(tr("Error: All fields need to be filled!"));
         ui->line_Name->setFocus();
         QPixmap crying(":/emoticons/face-crying.png");
         ui->lbl_Emoticon->setPixmap(crying);
@@ -57,10 +57,10 @@ void Stock_Add_Part::on_btn_Add_clicked()
 
         if (query.exec() == false){
             qDebug() << query.lastError();
-            QMessageBox::critical(this, tr("Erro!"), tr("Esta peça não foi adicionado!! Classe: Stock_Add_Part::on_btn_Cadastrar_clicked()"));
+            QMessageBox::critical(this, tr("Error!"), tr("This Part was not added!! Classe: Stock_Add_Part::on_btn_Cadastrar_clicked()"));
         }else{
-            ui->lbl_Feedback->setText(ui->line_Name->text() + tr(" adicionado ao estoque!"));
-            QMessageBox::information(this, tr("Sucesso!"), tr("Peça adicionada no estoque."));
+            ui->lbl_Feedback->setText(ui->line_Name->text() + tr(" added to Stock!"));
+            QMessageBox::information(this, tr("Success!"), tr("Part added to Stock."));
             close();
         }
     }
@@ -84,7 +84,7 @@ void Stock_Add_Part::check_Car_Description_Size(){
 
         // This is your "action" to alert the user. I'd suggest something more
         // subtle though, or just not doing anything at all.
-        QMessageBox::warning(this, tr("Erro!"), tr("Mantenha a descrição da peça menor do que 250 letras."));
+        QMessageBox::warning(this, tr("Warning!"), tr("Keep the Part description smaller then 250 chars."));
     }
 }
 

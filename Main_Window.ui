@@ -97,7 +97,7 @@
      <string>Database =&gt; </string>
     </property>
    </widget>
-   <widget class="QLabel" name="lbl_emoticonStatusConexao">
+   <widget class="QLabel" name="lbl_Emoticon_Connection_Status">
     <property name="geometry">
      <rect>
       <x>140</x>
@@ -134,7 +134,7 @@
      <enum>Qt::PlainText</enum>
     </property>
    </widget>
-   <widget class="QLabel" name="lbl_Saerch">
+   <widget class="QLabel" name="lbl_Search">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -192,11 +192,11 @@
      <string/>
     </property>
    </widget>
-   <zorder>lbl_Saerch</zorder>
+   <zorder>lbl_Search</zorder>
    <zorder>line_ID_or_CPF_or_Name</zorder>
    <zorder>tbl_Services_History</zorder>
    <zorder>lbl_Database</zorder>
-   <zorder>lbl_emoticonStatusConexao</zorder>
+   <zorder>lbl_Emoticon_Connection_Status</zorder>
    <zorder>lbl_BigCarIcon</zorder>
    <zorder>lbl_Oficina</zorder>
    <zorder>lbl_Date</zorder>
@@ -251,22 +251,22 @@
   </widget>
   <action name="action_Add_Client">
    <property name="text">
-    <string>Cadastrar &amp;Cliente</string>
+    <string>Add New Client</string>
    </property>
   </action>
   <action name="action_Add_Part">
    <property name="text">
-    <string>Cadastrar Nova &amp;Peça</string>
+    <string>Register New Part</string>
    </property>
   </action>
   <action name="action_Stock">
    <property name="text">
-    <string>&amp;Controle do Estoque</string>
+    <string>Stock Control</string>
    </property>
   </action>
   <action name="action_Exit">
    <property name="text">
-    <string>Sa&amp;ir</string>
+    <string>Exit</string>
    </property>
   </action>
   <action name="action_About_Oficina">
@@ -276,12 +276,12 @@
   </action>
   <action name="action_Change_Hour_Cost">
    <property name="text">
-    <string>&amp;Alterar Custo da Hora</string>
+    <string>Change Hour Cost</string>
    </property>
   </action>
   <action name="action_Manpage">
    <property name="text">
-    <string>&amp;Manual do usuário</string>
+    <string>User Help</string>
    </property>
   </action>
  </widget>

@@ -83,13 +83,10 @@ DISTFILES += \
     resources/DB11-model2.png \
     TODO \
     Create_Database.sql \
-    resources/Translations/Oficina_en_US.ts \
-    Oficina_en_US.qm
 
 RESOURCES += \
     resources/images.qrc \
     resources/translations.qrc
 
 TRANSLATIONS += \
-    resources/translations/Oficina_en_US.ts \
     resources/translations/Oficina_pt_BR.ts

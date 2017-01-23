@@ -52,7 +52,7 @@ CREATE TABLE ClientCar(
         ClientCar_Model varchar(50),
         ClientCar_Description varchar(300),
         ClientCar_BuiltYear int,
-        ClientCar_Placa varchar(10),
+        ClientCar_Plate varchar(10),
         ClientCar_Color varchar(26),
         ClientCar_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         ClientCar_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP

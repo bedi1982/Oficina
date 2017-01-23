@@ -22,17 +22,17 @@ Client_Add_Car::~Client_Add_Car()
 
 bool Client_Add_Car::Verify_Empty_Fields_On_Form()
 {
-    if (   ui->txt_Model->text() == ""
-           ||ui->txt_Year->text() == ""
+    if (   ui->txt_Car_Model->text() == ""
+           ||ui->txt_Car_Year->text() == ""
            ||ui->txtPlain_Description->toPlainText() == ""
-           ||ui->txt_Placa->text() == ""
-           ||ui->txt_Color->text()== ""
+           ||ui->txt_Car_Plate->text() == ""
+           ||ui->txt_Car_Color->text()== ""
            )
     {
         ui->lbl_Feedback->setText(tr("All fields need to be filled!"));
         QPixmap crying(":/emoticons/face-crying.png");
         ui->lbl_Emoticon->setPixmap(crying);
-        ui->txt_Model->setFocus();
+        ui->txt_Car_Model->setFocus();
         return false;
     }
     //Only returns true when all the fields are filled.
@@ -45,11 +45,11 @@ void Client_Add_Car::Add_Client_Info_To_Form(QString client_id){
 
     if (query.exec() == false){
         qDebug() << query.lastError();
-        QMessageBox::critical(this, tr("Erro!"), query.lastError().text() + ". Class: Class: Client_Add_Car.addClientInfoToForm(QString client_id)");
+        QMessageBox::critical(this, tr("Error!"), query.lastError().text() + ". Class: Class: Client_Add_Car.addClientInfoToForm(QString client_id)");
     }
 
     while(query.next()){
-        ui->line_NomeCliente->setText(query.value(0).toString());
+        ui->line_Client_Name->setText(query.value(0).toString());
     }
 }
 
@@ -60,16 +60,16 @@ void Client_Add_Car::Add_Car(QString client_id){
                       "values (:ClientId, :Model, :Description, :BuiltYear, :Placa, :Color)");
 
         query.bindValue(":ClientId", client_id);
-        query.bindValue(":Model", ui->txt_Model->text());
+        query.bindValue(":Model", ui->txt_Car_Model->text());
         query.bindValue(":Description", ui->txtPlain_Description->toPlainText());
-        query.bindValue(":BuiltYear", ui->txt_Year->text());
-        query.bindValue(":Placa", ui->txt_Placa->text());
-        query.bindValue(":Color", ui->txt_Color->text());
+        query.bindValue(":BuiltYear", ui->txt_Car_Year->text());
+        query.bindValue(":Placa", ui->txt_Car_Plate->text());
+        query.bindValue(":Color", ui->txt_Car_Color->text());
 
         if (query.exec() == false){
             qDebug() << query.lastError();
-            ui->lbl_Feedback->setText(tr("Error. Client's Car added!"));
-            QMessageBox::critical(this, tr("Erro!"), query.lastError().text() + ". Class: Client_Add_Car.addCar(QString client_id)");
+            ui->lbl_Feedback->setText(tr("Error. Client's Car not added!"));
+            QMessageBox::critical(this, tr("Error!"), query.lastError().text() + ". Class: Client_Add_Car.addCar(QString client_id)");
         }else{
             ui->lbl_Feedback->setText(tr("Car added to the Client"));
             QPixmap cool(":/emoticons/face-cool.png");
@@ -78,7 +78,6 @@ void Client_Add_Car::Add_Car(QString client_id){
             close();
         }
     }
-    //Car added, so we close this window//
 }
 
 //Check car description size//
@@ -100,8 +99,8 @@ void Client_Add_Car::Check_Car_Description_Size(){
         // This is your "action" to alert the user. I'd suggest something more
         // subtle though, or just not doing anything at all.
         QMessageBox::warning(this,
-                              tr("Error!"),
-                              tr("Keep the text shortet then 300 chars."));
+                             tr("Warning!"),
+                             tr("Keep the text shorter then 300 chars."));
     }
 }
 
