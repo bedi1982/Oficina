@@ -1,0 +1,12 @@
+- Fix the ui, currently it is fixed sized, it is this way because I did not learn how to make the interfce 'adapt'
+- The delete part grid should have a 'X' icon, clickin this icon removes the part
+- Make a function that shows how much was bought/sold in a given time frame
+- Make a screen that summs the value os the parts in all the stock (table Stok)
+- Implement a configuration file which will contain eg. database access credentials
+
+- Add a daily resume wich will show:
+	Not Finished Services;
+	Not Paid Services;
+
+- Add a function on wich owner can set a date on which the client is going to pick his car.
+ 	List clients that will come today to get is Car.

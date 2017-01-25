@@ -84,7 +84,8 @@ DISTFILES += \
     Create_Database.sql \
     LICENSE \
     README.md \
-    resources/Oficina-0.1.1.png
+    resources/Oficina-0.1.1.png \
+    TODO
 
 RESOURCES += \
     resources/images.qrc \
