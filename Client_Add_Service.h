@@ -44,6 +44,8 @@ private slots:
 
     void on_check_Paid_clicked();
 
+    void on_check_Finished_clicked();
+
     void on_btn_Update_Service_Description_clicked();
 
     void on_tbl_Parts_Used_In_Service_doubleClicked(const QModelIndex &index);

@@ -100,6 +100,11 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>line_Part_Name</tabstop>
+  <tabstop>tbl_Parts_List</tabstop>
+  <tabstop>btn_Add_Part_to_Stock</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

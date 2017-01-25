@@ -211,8 +211,14 @@
   </widget>
  </widget>
  <tabstops>
+  <tabstop>line_Name</tabstop>
+  <tabstop>line_Address</tabstop>
+  <tabstop>line_City</tabstop>
+  <tabstop>line_RG</tabstop>
   <tabstop>line_CPF</tabstop>
   <tabstop>line_Phone</tabstop>
+  <tabstop>btn_Add</tabstop>
+  <tabstop>btn_Exit</tabstop>
  </tabstops>
  <resources/>
  <connections/>

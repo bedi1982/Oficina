@@ -92,6 +92,7 @@ void Client_Services_History::Load_Services_Grid()
                     " Service_Hours_Duration,"
                     " Service_Hour_Cost,"
                     " Service_Paid,"
+                    " Service_Finished,"
                     " Service_created_at,"
                     " Service_updated_at"
                     " FROM Service s JOIN ClientCar cc"
@@ -99,14 +100,15 @@ void Client_Services_History::Load_Services_Grid()
                     " order by 9 desc");
     model->setHeaderData(0, Qt::Horizontal, tr("Service ID"));
     model->setHeaderData(1, Qt::Horizontal, tr("On Car"));
-    model->setHeaderData(2, Qt::Horizontal, tr("Car Plate"));
-    model->setHeaderData(3, Qt::Horizontal, tr("Short description"));
+    model->setHeaderData(2, Qt::Horizontal, tr("Plate"));
+    model->setHeaderData(3, Qt::Horizontal, tr("Short Description"));
     model->setHeaderData(4, Qt::Horizontal, tr("Parts Cost"));
     model->setHeaderData(5, Qt::Horizontal, tr("Hours Worked"));
     model->setHeaderData(6, Qt::Horizontal, tr("Hour Cost"));
     model->setHeaderData(7, Qt::Horizontal, tr("Paid?"));
-    model->setHeaderData(8, Qt::Horizontal, tr("Created at"));
-    model->setHeaderData(9, Qt::Horizontal, tr("Updated at"));
+    model->setHeaderData(8, Qt::Horizontal, tr("Finished?"));
+    model->setHeaderData(9, Qt::Horizontal, tr("Created"));
+    model->setHeaderData(10, Qt::Horizontal, tr("Updated"));
 
     if(model->query().isSelect()){
         ui->tbl_Client_Services->setModel(model);

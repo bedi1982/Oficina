@@ -57,7 +57,7 @@
      </sizepolicy>
     </property>
     <property name="toolTip">
-     <string>Duplo clique no Cliente para ver todo o seu histórico de serviços.</string>
+     <string/>
     </property>
     <property name="lineWidth">
      <number>0</number>
@@ -251,22 +251,22 @@
   </widget>
   <action name="action_Add_Client">
    <property name="text">
-    <string>Add New Client</string>
+    <string>&amp;Add New Client</string>
    </property>
   </action>
   <action name="action_Add_Part">
    <property name="text">
-    <string>Register New Part</string>
+    <string>&amp;Register New Part</string>
    </property>
   </action>
   <action name="action_Stock">
    <property name="text">
-    <string>Stock Control</string>
+    <string>&amp;Stock Control</string>
    </property>
   </action>
   <action name="action_Exit">
    <property name="text">
-    <string>Exit</string>
+    <string>&amp;Exit</string>
    </property>
   </action>
   <action name="action_About_Oficina">
@@ -276,16 +276,20 @@
   </action>
   <action name="action_Change_Hour_Cost">
    <property name="text">
-    <string>Change Hour Cost</string>
+    <string>&amp;Change Hour Cost</string>
    </property>
   </action>
   <action name="action_Manpage">
    <property name="text">
-    <string>User Help</string>
+    <string>&amp;User Help</string>
    </property>
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>line_ID_or_CPF_or_Name</tabstop>
+  <tabstop>tbl_Services_History</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

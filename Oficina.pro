@@ -81,7 +81,6 @@ DISTFILES += \
     resources/face-wink.png \
     resources/face-worried.png \
     resources/DB11-model2.png \
-    TODO \
     Create_Database.sql \
 
 RESOURCES += \

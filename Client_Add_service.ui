@@ -41,7 +41,7 @@
   <widget class="QLabel" name="lbl_PartsCost">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>310</x>
      <y>560</y>
      <width>102</width>
      <height>18</height>
@@ -57,7 +57,7 @@
   <widget class="QLabel" name="lbl_totlaServiceCost">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>310</x>
      <y>600</y>
      <width>101</width>
      <height>20</height>
@@ -93,6 +93,9 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
+   <property name="acceptDrops">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Add Parts</string>
    </property>
@@ -100,8 +103,8 @@
   <widget class="QLabel" name="lbl_Emoticon">
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>590</y>
+     <x>580</x>
+     <y>520</y>
      <width>48</width>
      <height>48</height>
     </rect>
@@ -151,9 +154,9 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>410</x>
+     <x>120</x>
      <y>560</y>
-     <width>111</width>
+     <width>131</width>
      <height>20</height>
     </rect>
    </property>
@@ -186,6 +189,9 @@
      <height>251</height>
     </rect>
    </property>
+   <property name="acceptDrops">
+    <bool>false</bool>
+   </property>
    <property name="html">
     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -200,7 +206,7 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="geometry">
     <rect>
-     <x>500</x>
+     <x>200</x>
      <y>510</y>
      <width>88</width>
      <height>31</height>
@@ -216,7 +222,7 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="geometry">
     <rect>
-     <x>420</x>
+     <x>120</x>
      <y>510</y>
      <width>71</width>
      <height>31</height>
@@ -232,7 +238,7 @@ p, li { white-space: pre-wrap; }
   <widget class="QLabel" name="lbl_InsertWorkCost">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>20</x>
      <y>520</y>
      <width>91</width>
      <height>20</height>
@@ -254,11 +260,14 @@ p, li { white-space: pre-wrap; }
      <height>32</height>
     </rect>
    </property>
+   <property name="acceptDrops">
+    <bool>false</bool>
+   </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>310</x>
      <y>520</y>
      <width>111</width>
      <height>18</height>
@@ -271,7 +280,7 @@ p, li { white-space: pre-wrap; }
   <widget class="QLCDNumber" name="lcd_Hour_cost">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>430</x>
      <y>510</y>
      <width>71</width>
      <height>31</height>
@@ -281,7 +290,7 @@ p, li { white-space: pre-wrap; }
   <widget class="QLCDNumber" name="lcd_Parts_Cost">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>430</x>
      <y>550</y>
      <width>71</width>
      <height>31</height>
@@ -291,11 +300,27 @@ p, li { white-space: pre-wrap; }
   <widget class="QLCDNumber" name="lcd_Service_Total">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>430</x>
      <y>590</y>
-     <width>71</width>
+     <width>91</width>
      <height>31</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="check_Finished">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>590</y>
+     <width>131</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Service Finished?</string>
    </property>
   </widget>
   <zorder>tbl_Parts_Used_In_Service</zorder>
@@ -316,10 +341,19 @@ p, li { white-space: pre-wrap; }
   <zorder>lcd_Hour_cost</zorder>
   <zorder>lcd_Parts_Cost</zorder>
   <zorder>lcd_Service_Total</zorder>
+  <zorder>check_Finished</zorder>
  </widget>
  <tabstops>
+  <tabstop>btn_Update_Service_Description</tabstop>
+  <tabstop>tbl_Parts_Used_In_Service</tabstop>
   <tabstop>btn_Add_Parts_Used_In_The_Service</tabstop>
+  <tabstop>Spin_Hand_Work_Hours</tabstop>
+  <tabstop>btn_Save_Hours_Worked</tabstop>
+  <tabstop>check_Paid</tabstop>
+  <tabstop>check_Finished</tabstop>
   <tabstop>btn_Exit</tabstop>
+  <tabstop>line_ServiceShortDescription</tabstop>
+  <tabstop>txt_Servicedescription</tabstop>
  </tabstops>
  <resources/>
  <connections/>

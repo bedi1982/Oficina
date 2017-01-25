@@ -123,7 +123,7 @@ void Client_Add_Service::Load_Parts_And_Service_Costs_Grid(){
 void Client_Add_Service::Sum_Costs()
 {
     QSqlQueryModel* model = new QSqlQueryModel;
-    model->setQuery("select Service_Hours_Duration, Service_Parts_Cost, Service_Hour_Cost, Service_Paid from Service where Service_id = " + ServiceID);
+    model->setQuery("select Service_Hours_Duration, Service_Parts_Cost, Service_Hour_Cost, Service_Paid, Service_Finished from Service where Service_id = " + ServiceID);
 
     double Service_Hours_Duration = model->data(model->index(0, 0)).toDouble(); //query result line 0 column 0
     double Service_Parts_Cost = model->data(model->index(0, 1)).toDouble(); //query result line 0 column 1
@@ -138,13 +138,22 @@ void Client_Add_Service::Sum_Costs()
     ui->lcd_Service_Total->display((Service_Hours_Duration * Service_Hour_Cost) + Service_Parts_Cost);
 
 
-    //Service Paid CheckMark 0 for not Paid 1 for Paid
+    //Service_Paid CheckMark 0 for not Paid 1 for Paid
     bool Service_Paid = model->data(model->index(0, 3)).toBool(); //query result line 0 column 3
 
     if(Service_Paid){
         ui->check_Paid->setChecked(true);
     }else{
         ui->check_Paid->setChecked(false);
+    }
+
+    //Service_Finished CheckMark 0 for not Finished 1 for Finished
+    bool Service_Finished = model->data(model->index(0, 4)).toBool(); //query result line 0 column 4
+
+    if(Service_Finished){
+        ui->check_Finished->setChecked(true);
+    }else{
+        ui->check_Finished->setChecked(false);
     }
 }
 
@@ -208,6 +217,29 @@ void Client_Add_Service::on_check_Paid_clicked()
             QMessageBox::critical(this, tr("Error!"), query.lastError().text() + "class addservice.cpp on_check_Pago_clicked(not checked) ");
         }else{
             QMessageBox::information(this, tr("Paid?"), tr("Service switched to:\n Not Paid"));
+        }
+    }
+}
+
+void Client_Add_Service::on_check_Finished_clicked()
+{
+    if(ui->check_Finished->isChecked()){
+        QSqlQuery query;
+        query.prepare("UPDATE Service set Service_Finished = 1 where Service_Id = " + ServiceID);
+        if (query.exec() == false){
+            qDebug() << query.lastError();
+            QMessageBox::critical(this, tr("Error!"), query.lastError().text() + "class addservice.cpp  on_check_Finished_clicked ");
+        }else{
+            QMessageBox::information(this, tr("Finished?!"), tr("Service switched to:\nFinished"));
+        }
+    }else{
+        QSqlQuery query;
+        query.prepare("UPDATE Service set Service_Finished = 0 where Service_Id = " + ServiceID);
+        if (query.exec() == false){
+            qDebug() << query.lastError();
+            QMessageBox::critical(this, tr("Error!"), query.lastError().text() + "class addservice.cpp on_check_Finished_clicked() ");
+        }else{
+            QMessageBox::information(this, tr("Finished?"), tr("Service switched to:\nNot finished"));
         }
     }
 }

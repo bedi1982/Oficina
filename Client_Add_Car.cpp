@@ -56,14 +56,14 @@ void Client_Add_Car::Add_Client_Info_To_Form(QString client_id){
 void Client_Add_Car::Add_Car(QString client_id){
     if(Verify_Empty_Fields_On_Form()){
         QSqlQuery query;
-        query.prepare("insert into ClientCar (ClientCar_Client_id, ClientCar_Model, ClientCar_Description, ClientCar_BuiltYear, ClientCar_Placa, ClientCar_Color)"
-                      "values (:ClientId, :Model, :Description, :BuiltYear, :Placa, :Color)");
+        query.prepare("insert into ClientCar (ClientCar_Client_id, ClientCar_Model, ClientCar_Description, ClientCar_BuiltYear, ClientCar_Plate, ClientCar_Color)"
+                      "values (:ClientId, :Model, :Description, :BuiltYear, :Plate, :Color)");
 
         query.bindValue(":ClientId", client_id);
         query.bindValue(":Model", ui->txt_Car_Model->text());
         query.bindValue(":Description", ui->txtPlain_Description->toPlainText());
         query.bindValue(":BuiltYear", ui->txt_Car_Year->text());
-        query.bindValue(":Placa", ui->txt_Car_Plate->text());
+        query.bindValue(":Plate", ui->txt_Car_Plate->text());
         query.bindValue(":Color", ui->txt_Car_Color->text());
 
         if (query.exec() == false){

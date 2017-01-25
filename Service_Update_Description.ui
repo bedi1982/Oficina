@@ -93,6 +93,11 @@ p, li { white-space: pre-wrap; }
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>line_Short_Description</tabstop>
+  <tabstop>txt_Full_Description</tabstop>
+  <tabstop>btn_Save</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

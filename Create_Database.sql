@@ -65,3 +65,7 @@ CREATE TABLE HourCost(
 );
 
 insert into HourCost (HourCost) values (0);
+
+--sql tips:
+--Changing column name:
+--ALTER TABLE Service CHANGE `finished` Service_Finished boolean not null default 0;

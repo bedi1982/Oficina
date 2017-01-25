@@ -55,6 +55,10 @@
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>spin_Hour_Cost</tabstop>
+  <tabstop>btn_Save</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
