@@ -20,3 +20,5 @@ as one of the main goals of this application is to keep as much as possible from
 
 And you can see it in action here: 
 https://www.youtube.com/watch?v=8i3hIIxjHhk
+
+![Alt text](/resources/Oficina-0.1.1.png)
