@@ -83,7 +83,8 @@ DISTFILES += \
     resources/DB11-model2.png \
     Create_Database.sql \
     LICENSE \
-    README.md
+    README.md \
+    resources/Oficina-0.1.1.png
 
 RESOURCES += \
     resources/images.qrc \
