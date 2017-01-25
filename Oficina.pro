@@ -82,7 +82,8 @@ DISTFILES += \
     resources/face-worried.png \
     resources/DB11-model2.png \
     Create_Database.sql \
-    LICENSE
+    LICENSE \
+    README.md
 
 RESOURCES += \
     resources/images.qrc \
