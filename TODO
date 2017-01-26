@@ -10,3 +10,7 @@
 
 - Add a function on wich owner can set a date on which the client is going to pick his car.
  	List clients that will come today to get is Car.
+
+- Regiter Workshop workers(mitarbeiters).
+- Create a second client with a simple interface, maybe qwidget. This screen will appear in tvs
+allong the workshop, it will show open services and who is working on which one.

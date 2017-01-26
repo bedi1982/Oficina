@@ -99,9 +99,9 @@ void Main_Window::on_line_ID_or_CPF_or_Name_textChanged(const QString &userSearc
         model->setTable("Client");
         if(!(userSearchFilter == "*")){
             model->setFilter("Client_RG like '%"          + userSearchFilter + "%'"
-                                " OR Client_Name like '%" + userSearchFilter + "%'"
-                                " OR Client_CPF like '%"  + userSearchFilter + "%'"
-                                " OR Client_id like '%"   + userSearchFilter + "%'");
+                                                                               " OR Client_Name like '%" + userSearchFilter + "%'"
+                                                                                                                              " OR Client_CPF like '%"  + userSearchFilter + "%'"
+                                                                                                                                                                             " OR Client_id like '%"   + userSearchFilter + "%'");
         }
         model->select();
         model->setEditStrategy(QSqlTableModel::OnManualSubmit);

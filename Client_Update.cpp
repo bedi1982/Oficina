@@ -57,26 +57,26 @@ void Client_Update::on_btn_Update_clicked()
 {
     QSqlQuery query;
     query.prepare(" UPDATE Client SET "
-                              "  Client_Name = :Client_Name"
-                              " ,Client_Address = :Client_Address"
-                              " ,Client_City = :Client_City"
-                              " ,Client_CPF = :Client_CPF"
-                              " ,Client_RG = :Client_RG"
-                              " ,Client_Phone = :Client_Phone"
-                              " WHERE Client_id = " + client_id);
+                  "  Client_Name = :Client_Name"
+                  " ,Client_Address = :Client_Address"
+                  " ,Client_City = :Client_City"
+                  " ,Client_CPF = :Client_CPF"
+                  " ,Client_RG = :Client_RG"
+                  " ,Client_Phone = :Client_Phone"
+                  " WHERE Client_id = " + client_id);
 
-            query.bindValue(":Client_Name", ui->line_Name->text());
-            query.bindValue(":Client_Address", ui->line_Address->text());
-            query.bindValue(":Client_City", ui->line_City->text());
-            query.bindValue(":Client_CPF", ui->line_CPF->text());
-            query.bindValue(":Client_RG", ui->line_RG->text());
-            query.bindValue(":Client_Phone", ui->line_Phone->text());
+    query.bindValue(":Client_Name", ui->line_Name->text());
+    query.bindValue(":Client_Address", ui->line_Address->text());
+    query.bindValue(":Client_City", ui->line_City->text());
+    query.bindValue(":Client_CPF", ui->line_CPF->text());
+    query.bindValue(":Client_RG", ui->line_RG->text());
+    query.bindValue(":Client_Phone", ui->line_Phone->text());
 
-            if (query.exec()) {
-                QMessageBox::information(this, tr("Success"), tr("Client Updated!"));
-                close();
-            } else {
-                QMessageBox::critical(this, tr("Error!"), query.lastError().text() + "class Client_Edit::on_btn_update_clicked() ");
-                close();
-            }
+    if (query.exec()) {
+        QMessageBox::information(this, tr("Success"), tr("Client Updated!"));
+        close();
+    } else {
+        QMessageBox::critical(this, tr("Error!"), query.lastError().text() + "class Client_Edit::on_btn_update_clicked() ");
+        close();
+    }
 }

@@ -56,7 +56,7 @@ void Config_Set_Hour_Cost::on_btn_Save_clicked()
             QMessageBox::critical(this, tr("Erro!"), Update_Hour_Cost.lastError().text() + "Config_Set_Hour_Cost::on_pushButton_clicked()");
         }else{
             QMessageBox::information(this, tr("Success!"), tr("Hour Cost changed to: $ ") + ui->spin_Hour_Cost->text() + tr("\nAs as reminder, this new hour cost will be used only on new Services."                                                                                                              " Old Services will keep the original set Hour cost.\n"));
-                    close();
+            close();
         }
     }else{
         QMessageBox::information(this, tr("Information"), tr("Value not changed. Nothing was done."));

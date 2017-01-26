@@ -87,9 +87,9 @@ void Service_Create_Description::on_btn_Save_clicked()
         }else{
             ui->line_Short_Description->setFocus();
             QMessageBox::information(this, tr("Success!"), tr("Service registered on this Client's Car.\n\n"
-                                                       "Now we will return to the previous screen on which this new Service "
-                                                       "is available for use, there you can add used Parts, update it and do"
-                                                       "all changes that you need while doing the 'Hard Work' "));
+                                                              "Now we will return to the previous screen on which this new Service "
+                                                              "is available for use, there you can add used Parts, update it and do"
+                                                              "all changes that you need while doing the 'Hard Work' "));
             close();
         }
     }

@@ -25,7 +25,7 @@ void Service_Update_Description::Set_Description(){
     if(model->query().isSelect()){
         ui->txt_Full_Description->setText(model->data(model->index(0, 0)).toString());
         ui->line_Short_Description ->setText(model->data(model->index(0, 1)).toString());
-        }
+    }
 }
 
 void Service_Update_Description::Enable_Description_Update(){
@@ -55,7 +55,7 @@ void Service_Update_Description::setServiceID(const QString &value)
 
 void Service_Update_Description::on_btn_Save_clicked()
 {
- Enable_Description_Update();
+    Enable_Description_Update();
 }
 
 void Service_Update_Description::on_txt_Full_Description_textChanged()
