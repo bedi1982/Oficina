@@ -1,4 +1,6 @@
-- Fix the ui, currently it is fixed sized, it is this way because I did not learn how to make the interfce 'adapt'
+- Fix the ui, currently it is fixed sized, it is this way because I did not learn how to make the interfce 'adapt'.
+- Change QPushButton's to QDialogButtonBox as QDialogButtonBox seems to suit better, and has built-in icons.
+
 - The delete part grid should have a 'X' icon, clickin this icon removes the part
 - Make a function that shows how much was bought/sold in a given time frame
 - Make a screen that summs the value os the parts in all the stock (table Stok)
