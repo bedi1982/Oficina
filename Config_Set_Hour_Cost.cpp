@@ -1,9 +1,11 @@
 #include "Config_Set_Hour_Cost.h"
 #include "ui_Config_Set_Hour_Cost.h"
+
 #include "QSqlQuery"
 #include "QSqlError"
-#include "QMessageBox"
 #include "QDebug"
+
+#include "QMessageBox"
 
 Config_Set_Hour_Cost::Config_Set_Hour_Cost(QWidget *parent) :
     QDialog(parent),

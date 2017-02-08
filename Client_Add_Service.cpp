@@ -1,15 +1,11 @@
+#include "QMessageBox"
+#include "QtSql"
+
 #include "Client_Add_Service.h"
 #include "ui_Client_Add_service.h"
 #include "Stock_Parts_Selection.h"
 #include "Service_Update_Description.h"
 #include "Main_Window.h"
-#include "QMessageBox"
-
-#include <QSqlTableModel>
-#include <QSqlQueryModel>
-#include "QSqlQuery"
-#include "QDebug"
-#include "QSqlError"
 
 Client_Add_Service::Client_Add_Service(QWidget *parent) :
     QDialog(parent),

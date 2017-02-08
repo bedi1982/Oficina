@@ -1,11 +1,10 @@
-#include "Client_Add.h"
-#include "ui_Client_Add.h"
-#include "Main_Window.h"
-
-#include "QString"
 #include "Database.h"
 #include "QtSql"
 #include "QMessageBox"
+
+#include "Client_Add.h"
+#include "ui_Client_Add.h"
+#include "Main_Window.h"
 
 Client_Add::Client_Add(QWidget *parent) :
     QDialog(parent),

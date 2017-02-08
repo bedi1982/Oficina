@@ -113,6 +113,6 @@ void Service_Create_Description::on_txt_Full_Description_textChanged()
 
         // This is your "action" to alert the user. I'd suggest something more
         // subtle though, or just not doing anything at all.
-        QMessageBox::warning(this, tr("Error!"), tr("Keep the Part description smaller then 500 chars.."));
+        QMessageBox::warning(this, tr("Error!"), tr("Keep the Part description smaller then 500 chars."));
     }
 }

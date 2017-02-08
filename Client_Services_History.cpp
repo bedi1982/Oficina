@@ -8,12 +8,11 @@
 #include "Service_Create_Description.h"
 
 #include <QSqlTableModel>
-#include "QDebug"
-#include "QSqlRelationalTableModel"
 #include "QSqlQuery"
-#include "QMessageBox"
 #include "QSqlError"
+#include "QDebug"
 
+#include "QMessageBox"
 
 Client_Services_History::Client_Services_History(QWidget *parent) :
     QDialog(parent),

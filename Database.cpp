@@ -1,5 +1,8 @@
 #include "Database.h"
-#include "QtSql"
+
+#include "QSqlDatabase"
+#include "QSqlError"
+
 #include "QMessageBox"
 
 using namespace std;
