@@ -89,19 +89,19 @@
      <rect>
       <x>10</x>
       <y>680</y>
-      <width>171</width>
+      <width>81</width>
       <height>18</height>
      </rect>
     </property>
     <property name="text">
-     <string>Database =&gt; </string>
+     <string>Database:</string>
     </property>
    </widget>
    <widget class="QLabel" name="lbl_Emoticon_Connection_Status">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>660</y>
+      <x>90</x>
+      <y>670</y>
       <width>81</width>
       <height>51</height>
      </rect>
@@ -113,7 +113,7 @@
    <widget class="QLabel" name="lbl_Oficina">
     <property name="geometry">
      <rect>
-      <x>1130</x>
+      <x>940</x>
       <y>0</y>
       <width>121</width>
       <height>31</height>
@@ -169,7 +169,7 @@
    <widget class="QLabel" name="lbl_Date">
     <property name="geometry">
      <rect>
-      <x>1170</x>
+      <x>980</x>
       <y>30</y>
       <width>71</width>
       <height>18</height>
@@ -182,14 +182,33 @@
    <widget class="QLabel" name="lbl_BigCarIcon">
     <property name="geometry">
      <rect>
-      <x>890</x>
-      <y>-10</y>
-      <width>261</width>
-      <height>121</height>
+      <x>1070</x>
+      <y>0</y>
+      <width>161</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources/images.qrc">:/emoticons/sport-car.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QDialogButtonBox" name="buttonBox">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>10</y>
+      <width>91</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="standardButtons">
+     <set>QDialogButtonBox::Reset</set>
     </property>
    </widget>
    <zorder>lbl_Search</zorder>
@@ -200,6 +219,7 @@
    <zorder>lbl_BigCarIcon</zorder>
    <zorder>lbl_Oficina</zorder>
    <zorder>lbl_Date</zorder>
+   <zorder>buttonBox</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QMenuBar" name="menuBar">
@@ -239,7 +259,7 @@
    </widget>
    <widget class="QMenu" name="menuRoot">
     <property name="title">
-     <string>Settin&amp;gs</string>
+     <string>&amp;Settings</string>
     </property>
     <addaction name="action_Change_Hour_Cost"/>
    </widget>
@@ -290,6 +310,8 @@
   <tabstop>line_ID_or_CPF_or_Name</tabstop>
   <tabstop>tbl_Services_History</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="resources/images.qrc"/>
+ </resources>
  <connections/>
 </ui>

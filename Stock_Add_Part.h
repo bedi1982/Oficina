@@ -16,11 +16,16 @@ public:
     ~Stock_Add_Part();
 
 private slots:
-    void on_btn_Exit_clicked();
-    void on_btn_Add_clicked();
+
     bool Check_Empty_Fields_On_Form();
+
     void on_txt_Part_Description_textChanged();
+
     void check_Car_Description_Size();
+
+    void on_buttonBox_accepted();
+
+    void on_buttonBox_rejected();
 
 private:
     Ui::Stock_Add_Part *ui;

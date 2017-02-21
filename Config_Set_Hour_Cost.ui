@@ -6,59 +6,79 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>168</width>
-    <height>104</height>
+    <width>300</width>
+    <height>118</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>0</width>
+    <width>280</width>
     <height>0</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>401</width>
+    <width>300</width>
     <height>162</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>Set Work Hour Cost</string>
   </property>
-  <widget class="QWidget" name="gridLayoutWidget">
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>160</width>
-     <height>98</height>
+     <x>100</x>
+     <y>60</y>
+     <width>189</width>
+     <height>51</height>
     </rect>
    </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="1">
-     <widget class="QPushButton" name="btn_Save">
-      <property name="text">
-       <string>Save</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QDoubleSpinBox" name="spin_Hour_Cost"/>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="lbl_Emoticon">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-   </layout>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="spin_Hour_Cost">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>91</width>
+     <height>32</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_Emoticon">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>50</y>
+     <width>51</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resources/images.qrc">:/emoticons/tux.png</pixmap>
+   </property>
   </widget>
  </widget>
- <tabstops>
-  <tabstop>spin_Hour_Cost</tabstop>
-  <tabstop>btn_Save</tabstop>
- </tabstops>
- <resources/>
+ <resources>
+  <include location="resources/images.qrc"/>
+ </resources>
  <connections/>
 </ui>

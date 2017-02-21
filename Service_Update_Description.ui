@@ -25,19 +25,6 @@
   <property name="windowTitle">
    <string>Atualizando Descrição de Serviço</string>
   </property>
-  <widget class="QPushButton" name="btn_Save">
-   <property name="geometry">
-    <rect>
-     <x>550</x>
-     <y>350</y>
-     <width>88</width>
-     <height>34</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Save</string>
-   </property>
-  </widget>
   <widget class="QTextEdit" name="txt_Full_Description">
    <property name="enabled">
     <bool>true</bool>
@@ -92,11 +79,23 @@ p, li { white-space: pre-wrap; }
     <string>Short Service Description...</string>
    </property>
   </widget>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>350</y>
+     <width>174</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+   </property>
+  </widget>
  </widget>
  <tabstops>
   <tabstop>line_Short_Description</tabstop>
   <tabstop>txt_Full_Description</tabstop>
-  <tabstop>btn_Save</tabstop>
  </tabstops>
  <resources/>
  <connections/>

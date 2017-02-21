@@ -12,8 +12,6 @@ Config_Set_Hour_Cost::Config_Set_Hour_Cost(QWidget *parent) :
     ui(new Ui::Config_Set_Hour_Cost)
 {
     ui->setupUi(this);
-    QPixmap cool(":/emoticons/face-cool.png");
-    ui->lbl_Emoticon->setPixmap(cool);
 
     //just set current value in the spinbox//
     QSqlQuery Set_Current_Hour_Cost;
@@ -45,7 +43,7 @@ void Config_Set_Hour_Cost::setHour_Cost(double value)
     Hour_Cost = value;
 }
 
-void Config_Set_Hour_Cost::on_btn_Save_clicked()
+void Config_Set_Hour_Cost::on_buttonBox_accepted()
 {
     qDebug() << Hour_Cost;
 
@@ -63,4 +61,9 @@ void Config_Set_Hour_Cost::on_btn_Save_clicked()
     }else{
         QMessageBox::information(this, tr("Information"), tr("Value not changed. Nothing was done."));
     }
+}
+
+void Config_Set_Hour_Cost::on_buttonBox_rejected()
+{
+    close();
 }

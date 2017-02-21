@@ -38,34 +38,6 @@ bool Stock_Add_Part::Check_Empty_Fields_On_Form()
     return true;
 }
 
-void Stock_Add_Part::on_btn_Exit_clicked()
-{
-    close();
-}
-
-void Stock_Add_Part::on_btn_Add_clicked()
-{
-    if(Check_Empty_Fields_On_Form()){
-        QSqlQuery query;
-        query.prepare("insert into Part (Part_Name, Part_Description, Part_Cost, Part_Quantity)"
-                      "values (:Name, :Description, :Cost, :Quantity)");
-
-        query.bindValue(":Name", ui->line_Name->text());
-        query.bindValue(":Description", ui->txt_Part_Description->toPlainText());
-        query.bindValue(":Cost", ui->double_Spin_Cost->text().toDouble());
-        query.bindValue(":Quantity", ui->spin_Quantity->text().toInt());
-
-        if (query.exec() == false){
-            qDebug() << query.lastError();
-            QMessageBox::critical(this, tr("Error!"), tr("This Part was not added!! Classe: Stock_Add_Part::on_btn_Cadastrar_clicked()"));
-        }else{
-            ui->lbl_Feedback->setText(ui->line_Name->text() + tr(" added to Stock!"));
-            QMessageBox::information(this, tr("Success!"), tr("Part added to Stock."));
-            close();
-        }
-    }
-}
-
 //Check car description Filed size(This function only limits entered text to 250)//
 void Stock_Add_Part::check_Car_Description_Size(){
     if (ui->txt_Part_Description->toPlainText().length() > 250)
@@ -91,4 +63,32 @@ void Stock_Add_Part::check_Car_Description_Size(){
 void Stock_Add_Part::on_txt_Part_Description_textChanged()
 {
     check_Car_Description_Size();
+}
+
+void Stock_Add_Part::on_buttonBox_accepted()
+{
+    if(Check_Empty_Fields_On_Form()){
+        QSqlQuery query;
+        query.prepare("insert into Part (Part_Name, Part_Description, Part_Cost, Part_Quantity)"
+                      "values (:Name, :Description, :Cost, :Quantity)");
+
+        query.bindValue(":Name", ui->line_Name->text());
+        query.bindValue(":Description", ui->txt_Part_Description->toPlainText());
+        query.bindValue(":Cost", ui->double_Spin_Cost->text().toDouble());
+        query.bindValue(":Quantity", ui->spin_Quantity->text().toInt());
+
+        if (query.exec() == false){
+            qDebug() << query.lastError();
+            QMessageBox::critical(this, tr("Error!"), tr("This Part was not added!! Classe: Stock_Add_Part::on_btn_Cadastrar_clicked()"));
+        }else{
+            ui->lbl_Feedback->setText(ui->line_Name->text() + tr(" added to Stock!"));
+            QMessageBox::information(this, tr("Success!"), tr("Part added to Stock."));
+            close();
+        }
+    }
+}
+
+void Stock_Add_Part::on_buttonBox_rejected()
+{
+    close();
 }

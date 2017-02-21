@@ -12,3 +12,8 @@ Man_Page::~Man_Page()
 {
     delete ui;
 }
+
+void Man_Page::on_buttonBox_rejected()
+{
+    close();
+}

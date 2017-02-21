@@ -12,8 +12,6 @@ Stock_Control::Stock_Control(QWidget *parent) :
     ui(new Ui::Stock_Control)
 {
     ui->setupUi(this);
-    QPixmap cool(":/emoticons/face-cool.png");
-    ui->lbl_Emoticon->setPixmap(cool);
     ui->line_Part_Name->setFocus();
 }
 
@@ -98,11 +96,6 @@ void Stock_Control::on_btn_Save_Description_clicked()
     }
 }
 
-void Stock_Control::on_btn_Exit_clicked()
-{
-    close();
-}
-
 void Stock_Control::on_txt_Part_Description_textChanged()
 {
     if (ui->txt_Part_Description->toPlainText().length() > 250)
@@ -123,4 +116,9 @@ void Stock_Control::on_txt_Part_Description_textChanged()
         // subtle though, or just not doing anything at all.
         QMessageBox::warning(this, tr("Warning!"), tr("Keep the Part description smaller then 250 chars."));
     }
+}
+
+void Stock_Control::on_buttonBox_rejected()
+{
+    close();
 }

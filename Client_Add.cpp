@@ -11,13 +11,18 @@ Client_Add::Client_Add(QWidget *parent) :
     ui(new Ui::Client_Add)
 {
     ui->setupUi(this);
-    QPixmap glasses(":/emoticons/face-glasses.png");
-    ui->lbl_Emoticon->setPixmap(glasses);
+    Set_Emoticon();
 }
 
 Client_Add::~Client_Add()
 {
     delete ui;
+}
+
+void Client_Add::Set_Emoticon()
+{
+    QPixmap glasses(":/emoticons/face-glasses.png");
+    ui->lbl_Emoticon->setPixmap(glasses);
 }
 
 bool Client_Add::Verify_Empty_Fields_on_Form()
@@ -40,10 +45,20 @@ bool Client_Add::Verify_Empty_Fields_on_Form()
     return true;
 }
 
-void Client_Add::on_btn_Add_clicked()
+void Client_Add::Clear_Form(){
+        ui->line_Name->setText("");
+        ui->line_Address->setText("");
+        ui->line_City->setText("");
+        ui->line_RG->setText("");
+        ui->line_CPF->setText("");
+        ui->line_Phone->setText("");
+        ui->lbl_feedback->setText("");
+        Set_Emoticon();
+}
+
+void Client_Add::on_btn_Add_Client_accepted()
 {
     if(Verify_Empty_Fields_on_Form()){
-        //Start Database Operation//
         QSqlQuery query;
         query.prepare("INSERT INTO"
                       " Client (Client_Name, Client_Address, Client_City, Client_CPF, Client_RG, Client_Phone)"
@@ -63,12 +78,13 @@ void Client_Add::on_btn_Add_clicked()
             ui->lbl_feedback->setText(ui->line_Name->text() + tr(" added!"));
             QPixmap cool(":/emoticons/face-cool.png");
             ui->lbl_Emoticon->setPixmap(cool);
-            QMessageBox::information(this, tr("Success!"), tr("Client added"));
-            close();
+            QMessageBox::information(this, tr("Success!"), ui->line_Name->text() + tr(" added"));
+            Clear_Form();
         }
     }
 }
-void Client_Add::on_btn_Exit_clicked()
+
+void Client_Add::on_btn_Add_Client_rejected()
 {
     close();
 }

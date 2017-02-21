@@ -62,8 +62,29 @@ void Service_Create_Description::setServiceID(const QString &value)
     ServiceID = value;
 }
 
+void Service_Create_Description::on_txt_Full_Description_textChanged()
+{
+    if (ui->txt_Full_Description->toPlainText().length() > 1000)
+    {
+        QString fullserviceDescription = ui->txt_Full_Description->toPlainText();
+        fullserviceDescription.chop(fullserviceDescription.length() - 1000); // Cut off at 500 characters
+        ui->txt_Full_Description->setPlainText(fullserviceDescription); // Reset text
 
-void Service_Create_Description::on_btn_Save_clicked()
+        // This code just resets the cursor back to the end position
+        // If you don't use this, it moves back to the beginning.
+        // This is helpful for really long text edits where you might
+        // lose your place.
+        QTextCursor cursor = ui->txt_Full_Description->textCursor();
+        cursor.setPosition(ui->txt_Full_Description->document()->characterCount() - 1);
+        ui->txt_Full_Description->setTextCursor(cursor);
+
+        // This is your "action" to alert the user. I'd suggest something more
+        // subtle though, or just not doing anything at all.
+        QMessageBox::warning(this, tr("Error!"), tr("Keep the Part description smaller then 500 chars."));
+    }
+}
+
+void Service_Create_Description::on_buttonBox_accepted()
 {
     if(Verify_Empty_Fields_On_Form()){
         //We begin This block is to save current hour cost to this service//
@@ -95,24 +116,7 @@ void Service_Create_Description::on_btn_Save_clicked()
     }
 }
 
-void Service_Create_Description::on_txt_Full_Description_textChanged()
+void Service_Create_Description::on_buttonBox_rejected()
 {
-    if (ui->txt_Full_Description->toPlainText().length() > 1000)
-    {
-        QString fullserviceDescription = ui->txt_Full_Description->toPlainText();
-        fullserviceDescription.chop(fullserviceDescription.length() - 1000); // Cut off at 500 characters
-        ui->txt_Full_Description->setPlainText(fullserviceDescription); // Reset text
-
-        // This code just resets the cursor back to the end position
-        // If you don't use this, it moves back to the beginning.
-        // This is helpful for really long text edits where you might
-        // lose your place.
-        QTextCursor cursor = ui->txt_Full_Description->textCursor();
-        cursor.setPosition(ui->txt_Full_Description->document()->characterCount() - 1);
-        ui->txt_Full_Description->setTextCursor(cursor);
-
-        // This is your "action" to alert the user. I'd suggest something more
-        // subtle though, or just not doing anything at all.
-        QMessageBox::warning(this, tr("Error!"), tr("Keep the Part description smaller then 500 chars."));
-    }
+    close();
 }

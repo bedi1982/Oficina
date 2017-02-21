@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>Client_Add</class>
  <widget class="QDialog" name="Client_Add">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="enabled">
    <bool>true</bool>
   </property>
@@ -10,11 +13,11 @@
     <x>0</x>
     <y>0</y>
     <width>562</width>
-    <height>287</height>
+    <height>280</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -22,17 +25,23 @@
   <property name="minimumSize">
    <size>
     <width>562</width>
-    <height>270</height>
+    <height>280</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>900</width>
-    <height>900</height>
+    <width>562</width>
+    <height>280</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>Add Client</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
   </property>
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
@@ -43,9 +52,21 @@
      <height>261</height>
     </rect>
    </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="1" column="0">
      <widget class="QLabel" name="label_Name">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="text">
        <string>Name</string>
       </property>
@@ -53,6 +74,12 @@
     </item>
     <item row="3" column="3">
      <widget class="QLabel" name="label_CPF">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="text">
        <string>CPF</string>
       </property>
@@ -60,6 +87,12 @@
     </item>
     <item row="0" column="1" colspan="5">
      <widget class="QLineEdit" name="line_Name">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -73,6 +106,12 @@
     </item>
     <item row="3" column="0">
      <widget class="QLabel" name="label_RG">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="text">
        <string>ID</string>
       </property>
@@ -80,6 +119,12 @@
     </item>
     <item row="3" column="4" colspan="2">
      <widget class="QLineEdit" name="line_CPF">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -90,6 +135,12 @@
     </item>
     <item row="3" column="1">
      <widget class="QLineEdit" name="line_RG">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -100,6 +151,12 @@
     </item>
     <item row="2" column="0">
      <widget class="QLabel" name="label_City">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="text">
        <string>City</string>
       </property>
@@ -107,6 +164,12 @@
     </item>
     <item row="0" column="0">
      <widget class="QLabel" name="label_Address">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="text">
        <string>Adress</string>
       </property>
@@ -114,6 +177,12 @@
     </item>
     <item row="4" column="0">
      <widget class="QLabel" name="label_Phone">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="text">
        <string>Phone</string>
       </property>
@@ -121,6 +190,12 @@
     </item>
     <item row="2" column="1" colspan="3">
      <widget class="QLineEdit" name="line_City">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -131,6 +206,12 @@
     </item>
     <item row="4" column="1" colspan="3">
      <widget class="QLineEdit" name="line_Phone">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -144,6 +225,12 @@
     </item>
     <item row="1" column="1" colspan="5">
      <widget class="QLineEdit" name="line_Address">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -157,6 +244,12 @@
     </item>
     <item row="5" column="0">
      <widget class="QLabel" name="lbl_Emoticon">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="minimumSize">
        <size>
         <width>48</width>
@@ -174,36 +267,29 @@
       </property>
      </widget>
     </item>
-    <item row="5" column="4">
-     <widget class="QPushButton" name="btn_Add">
+    <item row="5" column="1" colspan="3">
+     <widget class="QLabel" name="lbl_feedback">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
-      <property name="text">
-       <string>Add</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="1" colspan="3">
-     <widget class="QLabel" name="lbl_feedback">
       <property name="text">
        <string/>
       </property>
      </widget>
     </item>
-    <item row="5" column="5">
-     <widget class="QPushButton" name="btn_Exit">
+    <item row="5" column="4">
+     <widget class="QDialogButtonBox" name="btn_Add_Client">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
-      <property name="text">
-       <string>Exit</string>
+      <property name="standardButtons">
+       <set>QDialogButtonBox::Close|QDialogButtonBox::Save</set>
       </property>
      </widget>
     </item>
@@ -217,8 +303,6 @@
   <tabstop>line_RG</tabstop>
   <tabstop>line_CPF</tabstop>
   <tabstop>line_Phone</tabstop>
-  <tabstop>btn_Add</tabstop>
-  <tabstop>btn_Exit</tabstop>
  </tabstops>
  <resources/>
  <connections/>

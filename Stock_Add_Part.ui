@@ -31,19 +31,6 @@
   <property name="windowTitle">
    <string>Registering Part</string>
   </property>
-  <widget class="QPushButton" name="btn_Add">
-   <property name="geometry">
-    <rect>
-     <x>280</x>
-     <y>250</y>
-     <width>88</width>
-     <height>34</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Save</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="lbl_Emoticon">
    <property name="geometry">
     <rect>
@@ -80,7 +67,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Insert part data and click Save</string>
+    <string/>
    </property>
    <property name="alignment">
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -144,19 +131,6 @@
     <string>Part Name. Eg. Chevete right mirror</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_Exit">
-   <property name="geometry">
-    <rect>
-     <x>380</x>
-     <y>250</y>
-     <width>88</width>
-     <height>34</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Exit</string>
-   </property>
-  </widget>
   <widget class="QSpinBox" name="spin_Quantity">
    <property name="geometry">
     <rect>
@@ -202,14 +176,25 @@
     <string>Full Description. Max 250 chars</string>
    </property>
   </widget>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>250</y>
+     <width>174</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+   </property>
+  </widget>
  </widget>
  <tabstops>
   <tabstop>line_Name</tabstop>
   <tabstop>txt_Part_Description</tabstop>
   <tabstop>double_Spin_Cost</tabstop>
   <tabstop>spin_Quantity</tabstop>
-  <tabstop>btn_Add</tabstop>
-  <tabstop>btn_Exit</tabstop>
  </tabstops>
  <resources/>
  <connections/>

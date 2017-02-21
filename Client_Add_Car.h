@@ -30,9 +30,12 @@ public:
     void setClient(const QString &value);
 
 private slots:
-    void on_btn_Add_clicked();
 
     void on_txtPlain_Description_textChanged();
+
+    void on_btn_Client_Add_Car_accepted();
+
+    void on_btn_Client_Add_Car_rejected();
 
 private:
     Ui::Client_Add_Car *ui;

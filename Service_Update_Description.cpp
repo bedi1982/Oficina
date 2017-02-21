@@ -53,11 +53,6 @@ void Service_Update_Description::setServiceID(const QString &value)
     serviceID = value;
 }
 
-void Service_Update_Description::on_btn_Save_clicked()
-{
-    Enable_Description_Update();
-}
-
 void Service_Update_Description::on_txt_Full_Description_textChanged()
 {
     if (ui->txt_Full_Description->toPlainText().length() > 1000)
@@ -78,4 +73,14 @@ void Service_Update_Description::on_txt_Full_Description_textChanged()
         // subtle though, or just not doing anything at all.
         QMessageBox::warning(this, tr("Warning!"), tr("Keep the Part description smaller then 250 chars."));
     }
+}
+
+void Service_Update_Description::on_buttonBox_accepted()
+{
+    Enable_Description_Update();
+}
+
+void Service_Update_Description::on_buttonBox_rejected()
+{
+    close();
 }

@@ -98,6 +98,10 @@
    <property name="text">
     <string>Add New</string>
    </property>
+   <property name="icon">
+    <iconset resource="resources/images.qrc">
+     <normaloff>:/emoticons/carkey.png</normaloff>:/emoticons/carkey.png</iconset>
+   </property>
   </widget>
  </widget>
  <tabstops>
@@ -105,6 +109,8 @@
   <tabstop>tbl_Parts_List</tabstop>
   <tabstop>btn_Add_Part_to_Stock</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="resources/images.qrc"/>
+ </resources>
  <connections/>
 </ui>

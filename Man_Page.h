@@ -15,6 +15,9 @@ public:
     explicit Man_Page(QWidget *parent = 0);
     ~Man_Page();
 
+private slots:
+    void on_buttonBox_rejected();
+
 private:
     Ui::Man_Page *ui;
 };

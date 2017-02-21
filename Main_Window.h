@@ -29,6 +29,8 @@ private slots:
 
     void on_action_Manpage_triggered();
 
+    void on_buttonBox_accepted();
+
 private:
     Ui::MainWindow *ui;
 };

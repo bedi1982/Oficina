@@ -16,9 +16,15 @@ public:
     ~Client_Add();
 
 private slots:
+    void Clear_Form();
+
+    void Set_Emoticon();
+
     bool Verify_Empty_Fields_on_Form();
-    void on_btn_Exit_clicked();
-    void on_btn_Add_clicked();
+
+    void on_btn_Add_Client_accepted();
+
+    void on_btn_Add_Client_rejected();
 
 private:
     Ui::Client_Add *ui;

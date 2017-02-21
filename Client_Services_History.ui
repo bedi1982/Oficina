@@ -31,19 +31,6 @@
   <property name="windowTitle">
    <string>Client History</string>
   </property>
-  <widget class="QLabel" name="lbl_Client_Info">
-   <property name="geometry">
-    <rect>
-     <x>1210</x>
-     <y>0</y>
-     <width>151</width>
-     <height>131</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QTableView" name="tbl_Client_Cars">
    <property name="geometry">
     <rect>
@@ -77,7 +64,7 @@
     <rect>
      <x>1170</x>
      <y>140</y>
-     <width>181</width>
+     <width>151</width>
      <height>34</height>
     </rect>
    </property>
@@ -89,6 +76,16 @@
    </property>
    <property name="text">
     <string>Add Car to Client</string>
+   </property>
+   <property name="icon">
+    <iconset resource="resources/images.qrc">
+     <normaloff>:/emoticons/carkey.png</normaloff>:/emoticons/carkey.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_New_Car_Icon">
@@ -131,7 +128,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Bellow are the Client's Cars. To start a new Service double click the desired Car. </string>
+    <string>Bellow are the Client Cars. To start a new Service double click the desired Car. </string>
    </property>
    <property name="alignment">
     <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -233,7 +230,7 @@
     <rect>
      <x>520</x>
      <y>10</y>
-     <width>98</width>
+     <width>121</width>
      <height>32</height>
     </rect>
    </property>
@@ -254,6 +251,16 @@
    </property>
    <property name="text">
     <string>Update Client</string>
+   </property>
+   <property name="icon">
+    <iconset resource="resources/images.qrc">
+     <normaloff>:/emoticons/client_info.png</normaloff>:/emoticons/client_info.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_Client_Services_History">
@@ -277,7 +284,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Bellow are the Client's Services.  Double click a Service to manage it.</string>
+    <string>Bellow are the Client Services.  Double click a Service to manage it.</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -455,24 +462,52 @@
   <widget class="QLCDNumber" name="lcd_Hour_Cost">
    <property name="geometry">
     <rect>
-     <x>1050</x>
-     <y>140</y>
+     <x>780</x>
+     <y>90</y>
      <width>111</width>
      <height>31</height>
     </rect>
    </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <property name="segmentStyle">
+    <enum>QLCDNumber::Flat</enum>
+   </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="lbl_Service_Hour_Cost">
    <property name="geometry">
     <rect>
-     <x>840</x>
-     <y>150</y>
-     <width>201</width>
+     <x>630</x>
+     <y>100</y>
+     <width>141</width>
      <height>20</height>
     </rect>
    </property>
    <property name="text">
-    <string>A New Service will cost per Hour:</string>
+    <string>New Service Hour Cost:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_Icon">
+   <property name="geometry">
+    <rect>
+     <x>1180</x>
+     <y>10</y>
+     <width>131</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resources/images.qrc">:/emoticons/client_info.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
    </property>
   </widget>
   <zorder>lbl_Client_Address</zorder>
@@ -486,7 +521,6 @@
   <zorder>line_Name</zorder>
   <zorder>btn_Update_Client</zorder>
   <zorder>tbl_Client_Cars</zorder>
-  <zorder>lbl_Client_Info</zorder>
   <zorder>lbl_Client_Services_History</zorder>
   <zorder>tbl_Client_Services</zorder>
   <zorder>lbl_Service_Icon</zorder>
@@ -494,7 +528,8 @@
   <zorder>lbl_Client_Phone</zorder>
   <zorder>llb_Client_ID</zorder>
   <zorder>lcd_Hour_Cost</zorder>
-  <zorder>label</zorder>
+  <zorder>lbl_Service_Hour_Cost</zorder>
+  <zorder>lbl_Icon</zorder>
  </widget>
  <tabstops>
   <tabstop>btn_Update_Client</tabstop>
@@ -507,6 +542,8 @@
   <tabstop>line_Phone</tabstop>
   <tabstop>line_Address</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="resources/images.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -27,9 +27,9 @@ private slots:
 
     void on_btn_Save_Description_clicked();
 
-    void on_btn_Exit_clicked();
-
     void on_txt_Part_Description_textChanged();
+
+    void on_buttonBox_rejected();
 
 private:
     Ui::Stock_Control *ui;

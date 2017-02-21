@@ -26,9 +26,6 @@ Client_Services_History::Client_Services_History(QWidget *parent) :
     QPixmap carKey(":/emoticons/carkey.png");
     ui->lbl_New_Car_Icon->setPixmap(carKey);
 
-    QPixmap clienticon(":/emoticons/client_info.png");
-    ui->lbl_Client_Info->setPixmap(clienticon);
-
     //Add hour cost to label
     Set_Current_Hour_Cost_Label();
 }

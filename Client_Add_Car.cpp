@@ -73,7 +73,7 @@ void Client_Add_Car::Add_Car(QString client_id){
             ui->lbl_Feedback->setText(tr("Error. Client's Car not added!"));
             QMessageBox::critical(this, tr("Error!"), query.lastError().text() + ". Class: Client_Add_Car.addCar(QString client_id)");
         }else{
-            ui->lbl_Feedback->setText(tr("Car added to the Client"));
+            ui->lbl_Feedback->setText(tr("Car added to the Client."));
             QPixmap cool(":/emoticons/face-cool.png");
             ui->lbl_Emoticon->setPixmap(cool);
             QMessageBox::information(this, tr("Success!"), tr("Client's Car added."));
@@ -115,14 +115,18 @@ void Client_Add_Car::setClient(const QString &value)
 {
     client = value;
 }
-//Check car description size//
-
-void Client_Add_Car::on_btn_Add_clicked()
-{
-    Add_Car(client);
-}
 
 void Client_Add_Car::on_txtPlain_Description_textChanged()
 {
     Check_Car_Description_Size();
+}
+
+void Client_Add_Car::on_btn_Client_Add_Car_accepted()
+{
+    Add_Car(client);
+}
+
+void Client_Add_Car::on_btn_Client_Add_Car_rejected()
+{
+    close();
 }

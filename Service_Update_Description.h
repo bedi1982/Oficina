@@ -22,9 +22,12 @@ public:
     void setServiceID(const QString &value);
 
 private slots:
-    void on_btn_Save_clicked();
 
     void on_txt_Full_Description_textChanged();
+
+    void on_buttonBox_accepted();
+
+    void on_buttonBox_rejected();
 
 private:
     Ui::Service_Update_Description *ui;

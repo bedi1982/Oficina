@@ -23,7 +23,6 @@ Client_Add_Service::~Client_Add_Service()
     delete ui;
 }
 
-
 QString Client_Add_Service::getServiceID() const
 {
     return ServiceID;
@@ -52,11 +51,6 @@ QString Client_Add_Service::getClientid() const
 void Client_Add_Service::setClientid(const QString &value)
 {
     clientid = value;
-}
-
-void Client_Add_Service::on_btn_Exit_clicked()
-{
-    close();
 }
 
 void Client_Add_Service::Add_Service_Description_Text(){
@@ -240,17 +234,7 @@ void Client_Add_Service::on_check_Finished_clicked()
     }
 }
 
-void Client_Add_Service::on_btn_Update_Service_Description_clicked()
-{
-    Service_Update_Description service_Update_Description;
-    service_Update_Description.setServiceID(ServiceID);
-    service_Update_Description.Set_Description();
-    service_Update_Description.setModal(true);
-    service_Update_Description.exec();
-    Add_Service_Description_Text();
-}
-
-void Client_Add_Service::on_btn_Save_Hours_Worked_clicked()
+void Client_Add_Service::on_btn_Save_Worked_Hours_accepted()
 {
     QSqlQuery Update_Hours_Worked;
     Update_Hours_Worked.prepare("update Service set Service_Hours_Duration = :Service_Hours_Duration where Service_id = " + ServiceID);
@@ -263,4 +247,19 @@ void Client_Add_Service::on_btn_Save_Hours_Worked_clicked()
         QMessageBox::information(this, tr("Success!"), tr("Worked Hours updated for this Service..."));
         Sum_Costs();
     }
+}
+
+void Client_Add_Service::on_btnBox_Close_rejected()
+{
+    close();
+}
+
+void Client_Add_Service::on_btn_Add_Parts_Used_In_The_Service_2_clicked()
+{
+    Service_Update_Description service_Update_Description;
+    service_Update_Description.setServiceID(ServiceID);
+    service_Update_Description.Set_Description();
+    service_Update_Description.setModal(true);
+    service_Update_Description.exec();
+    Add_Service_Description_Text();
 }

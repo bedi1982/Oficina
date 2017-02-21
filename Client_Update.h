@@ -23,7 +23,9 @@ public:
 
 private slots:
 
-    void on_btn_Update_clicked();
+    void on_btn_Client_Update_accepted();
+
+    void on_btn_Client_Update_rejected();
 
 private:
     Ui::Client_Update *ui;

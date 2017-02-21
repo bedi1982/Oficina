@@ -54,7 +54,7 @@ void Client_Update::load_Client_Info_To_TextBoxes()
     }
 }
 
-void Client_Update::on_btn_Update_clicked()
+void Client_Update::on_btn_Client_Update_accepted()
 {
     QSqlQuery query;
     query.prepare(" UPDATE Client SET "
@@ -80,4 +80,9 @@ void Client_Update::on_btn_Update_clicked()
         QMessageBox::critical(this, tr("Error!"), query.lastError().text() + "class Client_Edit::on_btn_update_clicked() ");
         close();
     }
+}
+
+void Client_Update::on_btn_Client_Update_rejected()
+{
+    close();
 }

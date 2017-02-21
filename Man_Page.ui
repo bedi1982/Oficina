@@ -19,7 +19,7 @@
      <x>10</x>
      <y>10</y>
      <width>711</width>
-     <height>431</height>
+     <height>391</height>
     </rect>
    </property>
    <property name="plainText">
@@ -28,6 +28,19 @@
 * Remove Client, Car and Service: Not possible. Solution is to recreate, the old one will always stay, as one of the main goals of this application is to keep as much as possible from services history.
 
 * Remove a part from a service? Double click the part.</string>
+   </property>
+  </widget>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>410</y>
+     <width>174</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Close</set>
    </property>
   </widget>
  </widget>

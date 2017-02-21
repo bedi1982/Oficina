@@ -73,25 +73,6 @@ p, li { white-space: pre-wrap; }
     <string>Full service description. Max. 1000 chars.</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_Save">
-   <property name="geometry">
-    <rect>
-     <x>550</x>
-     <y>360</y>
-     <width>101</width>
-     <height>34</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="text">
-    <string>Save</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="lbl_Emoticon">
    <property name="geometry">
     <rect>
@@ -103,6 +84,19 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>350</y>
+     <width>174</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
    </property>
   </widget>
  </widget>

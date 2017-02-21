@@ -22,20 +22,16 @@ Main_Window::Main_Window(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->line_ID_or_CPF_or_Name->setFocus();
-
-    QPixmap sportCar(":/emoticons/sport-car.png");
-    ui->lbl_BigCarIcon->setPixmap(sportCar);
+    ui->lbl_Database->setText("Database -> ");
 
     Database db;
     if(db.Connect()){
         QPixmap green(":/emoticons/emblem-default.png");
         ui->lbl_Emoticon_Connection_Status->setPixmap(green);
-        ui->lbl_Database->setText(tr("Database: UP"));
     }else{
         //If the database is not available we make it mostly useless//
         QPixmap red(":/emoticons/emblem-important.png");
         ui->lbl_Emoticon_Connection_Status->setPixmap(red);
-        ui->lbl_Database->setText("Database: OFF ");
         ui->line_ID_or_CPF_or_Name->setEnabled(false);
         ui->menuBar->hide();
     }
@@ -65,6 +61,7 @@ void Main_Window::on_tbl_Services_History_doubleClicked(const QModelIndex &selec
     //Bellow 2 list will retrieve the column 0 value, which is the clientid//
     const QAbstractItemModel * model = selectedClientinTheGrid.model();
     QVariant clientID = model->data(model->index(selectedClientinTheGrid.row(), 0, selectedClientinTheGrid.parent()), Qt::DisplayRole);
+    QVariant clientCPF = model->data(model->index(selectedClientinTheGrid.row(), 4, selectedClientinTheGrid.parent()), Qt::DisplayRole);
 
     Client_Services_History client_Services_History;
     client_Services_History.setClient_id(clientID.toString());
@@ -72,10 +69,10 @@ void Main_Window::on_tbl_Services_History_doubleClicked(const QModelIndex &selec
     client_Services_History.setModal(true);
     client_Services_History.exec();
 
-    //Going back to former form keepting current client 'searched' and updated
+    //Going back to former form keeping current client 'searched' and updated
     //The empty String is to reset the 'on_text_changed' function.
     ui->line_ID_or_CPF_or_Name->setText("");
-    ui->line_ID_or_CPF_or_Name->setText(clientID.toString());
+    ui->line_ID_or_CPF_or_Name->setText(clientCPF.toString());
 }
 
 void Main_Window::on_action_Exit_triggered()
@@ -144,4 +141,9 @@ void Main_Window::on_action_Manpage_triggered()
     Man_Page man_page;
     man_page.setModal(true);
     man_page.exec();
+}
+
+void Main_Window::on_buttonBox_accepted()
+{
+    ui->line_ID_or_CPF_or_Name->clear();
 }
