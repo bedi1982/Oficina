@@ -143,7 +143,7 @@ void Main_Window::on_action_Manpage_triggered()
     man_page.exec();
 }
 
-void Main_Window::on_buttonBox_accepted()
+void Main_Window::on_pushButton_clicked()
 {
-    ui->line_ID_or_CPF_or_Name->clear();
+        ui->line_ID_or_CPF_or_Name->setText("");
 }
