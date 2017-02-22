@@ -89,13 +89,13 @@ void Service_Create_Description::on_buttonBox_accepted()
     if(Verify_Empty_Fields_On_Form()){
         //We begin This block is to save current hour cost to this service//
         QSqlQueryModel* getHourCostFromDB = new QSqlQueryModel;
-        getHourCostFromDB->setQuery("select HourCost from HourCost");
+        getHourCostFromDB->setQuery("SELECT HourCost FROM HourCost");
         double CurrentHourCost = getHourCostFromDB->data(getHourCostFromDB->index(0,0)).toDouble();
         //END This block is to save current hour cost to service//
 
         QSqlQuery query;
-        query.prepare("insert into Service (Service_Client_id, Service_Client_Carid, Service_Short_Description, Service_Description, Service_Hour_Cost, Service_Hours_Duration)"
-                      "values (:Service_Client_id, :Service_Client_Carid, :Service_Short_Description, :Service_Description, :Service_Hour_Cost, :Service_Hours_Duration )");
+        query.prepare("INSERT INTO Service (Service_Client_id, Service_Client_Carid, Service_Short_Description, Service_Description, Service_Hour_Cost, Service_Hours_Duration)"
+                      "VALUES (:Service_Client_id, :Service_Client_Carid, :Service_Short_Description, :Service_Description, :Service_Hour_Cost, :Service_Hours_Duration )");
 
         query.bindValue(":Service_Client_id", clientid);
         query.bindValue(":Service_Client_Carid", CarID);

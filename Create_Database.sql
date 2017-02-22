@@ -22,6 +22,7 @@ CREATE TABLE Part (
         Part_Description varchar(250),
         Part_Cost Double(19,2),
         Part_Quantity int,
+        Part_Active boolean not null default 1,
         Part_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         Part_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -31,6 +32,7 @@ CREATE TABLE Service(
         Service_Client_id bigint,
         Service_Client_Carid bigint,
         Service_Short_Description varchar(70),
+        Service_Finished boolean not null default 0,
         Service_Description varchar(1000),
         Service_Parts_Cost Double(19,2),
         Service_Hours_Duration Double(19,2),
@@ -60,11 +62,12 @@ CREATE TABLE ClientCar(
 
 CREATE TABLE HourCost(
         HourCost_id bigint PRIMARY KEY AUTO_INCREMENT,
-        HourCost Double,
-        HourCost_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+        HourCost Double not null default 0,
+        Hour_Cost_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-insert into HourCost (HourCost) values (0);
+--Initialize
+INSERT INTO HourCost (HourCost) values (0);
 
 --sql tips:
 --Changing column name:

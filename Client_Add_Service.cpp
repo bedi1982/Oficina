@@ -55,7 +55,7 @@ void Client_Add_Service::setClientid(const QString &value)
 
 void Client_Add_Service::Add_Service_Description_Text(){
     QSqlQueryModel* model = new QSqlQueryModel;
-    model->setQuery("select Service_Description, Service_Short_Description from Service where Service_id = " + ServiceID);
+    model->setQuery("SELECT Service_Description, Service_Short_Description FROM Service WHERE Service_id = " + ServiceID);
 
     ui->line_ServiceShortDescription->setText(model->data(model->index(0, 1)).toString());
     ui->txt_Servicedescription->setText(model->data(model->index(0, 0)).toString());
@@ -99,7 +99,7 @@ void Client_Add_Service::Load_Parts_And_Service_Costs_Grid(){
         }
 
         QSqlQuery SetServicePartsCost;
-        SetServicePartsCost.prepare("update Service set Service_Parts_Cost = :PartsCost where Service_id = " + ServiceID);
+        SetServicePartsCost.prepare("update Service set Service_Parts_Cost = :PartsCost WHERE Service_id = " + ServiceID);
         SetServicePartsCost.bindValue(":PartsCost", PartsCost);
 
         if (SetServicePartsCost.exec() == false){
@@ -113,7 +113,7 @@ void Client_Add_Service::Load_Parts_And_Service_Costs_Grid(){
 void Client_Add_Service::Sum_Costs()
 {
     QSqlQueryModel* model = new QSqlQueryModel;
-    model->setQuery("select Service_Hours_Duration, Service_Parts_Cost, Service_Hour_Cost, Service_Paid, Service_Finished from Service where Service_id = " + ServiceID);
+    model->setQuery("SELECT Service_Hours_Duration, Service_Parts_Cost, Service_Hour_Cost, Service_Paid, Service_Finished FROM Service WHERE Service_id = " + ServiceID);
 
     double Service_Hours_Duration = model->data(model->index(0, 0)).toDouble(); //query result line 0 column 0
     double Service_Parts_Cost = model->data(model->index(0, 1)).toDouble(); //query result line 0 column 1
@@ -192,7 +192,7 @@ void Client_Add_Service::on_check_Paid_clicked()
 {
     if(ui->check_Paid->isChecked()){
         QSqlQuery query;
-        query.prepare("UPDATE Service set Service_Paid = 1 where Service_Id = " + ServiceID);
+        query.prepare("UPDATE Service SET Service_Paid = 1 WHERE Service_Id = " + ServiceID);
         if (query.exec() == false){
             qDebug() << query.lastError();
             QMessageBox::critical(this, tr("Error!"), query.lastError().text() + "class addservice.cpp  on_check_Pago_clicked ");
@@ -201,7 +201,7 @@ void Client_Add_Service::on_check_Paid_clicked()
         }
     }else{
         QSqlQuery query;
-        query.prepare("UPDATE Service set Service_Paid = 0 where Service_Id = " + ServiceID);
+        query.prepare("UPDATE Service SET Service_Paid = 0 WHERE Service_Id = " + ServiceID);
         if (query.exec() == false){
             qDebug() << query.lastError();
             QMessageBox::critical(this, tr("Error!"), query.lastError().text() + "class addservice.cpp on_check_Pago_clicked(not checked) ");
@@ -215,7 +215,7 @@ void Client_Add_Service::on_check_Finished_clicked()
 {
     if(ui->check_Finished->isChecked()){
         QSqlQuery query;
-        query.prepare("UPDATE Service set Service_Finished = 1 where Service_Id = " + ServiceID);
+        query.prepare("UPDATE Service SET Service_Finished = 1 WHERE Service_Id = " + ServiceID);
         if (query.exec() == false){
             qDebug() << query.lastError();
             QMessageBox::critical(this, tr("Error!"), query.lastError().text() + "class addservice.cpp  on_check_Finished_clicked ");
@@ -224,7 +224,7 @@ void Client_Add_Service::on_check_Finished_clicked()
         }
     }else{
         QSqlQuery query;
-        query.prepare("UPDATE Service set Service_Finished = 0 where Service_Id = " + ServiceID);
+        query.prepare("UPDATE Service SET Service_Finished = 0 WHERE Service_Id = " + ServiceID);
         if (query.exec() == false){
             qDebug() << query.lastError();
             QMessageBox::critical(this, tr("Error!"), query.lastError().text() + "class addservice.cpp on_check_Finished_clicked() ");
@@ -237,9 +237,9 @@ void Client_Add_Service::on_check_Finished_clicked()
 void Client_Add_Service::on_btn_Save_Worked_Hours_accepted()
 {
     QSqlQuery Update_Hours_Worked;
-    Update_Hours_Worked.prepare("update Service set Service_Hours_Duration = :Service_Hours_Duration where Service_id = " + ServiceID);
+    Update_Hours_Worked.prepare("UPDATE Service SET Service_Hours_Duration = :Service_Hours_Duration WHERE Service_id = " + ServiceID);
 
-    Update_Hours_Worked.bindValue(":Service_Hours_Duration", ui->Spin_Hand_Work_Hours->text().toDouble());
+    Update_Hours_Worked.bindValue(":Service_Hours_Duration", ui->Spin_Hand_Work_Hours->value());
 
     if (!(Update_Hours_Worked.exec())){
         QMessageBox::critical(this, tr("Error!"), Update_Hours_Worked.lastError().text() + "class Client_Add_Service::on_btn_save_hoursWorked_clicked()");

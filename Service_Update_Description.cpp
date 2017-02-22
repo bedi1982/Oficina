@@ -20,7 +20,7 @@ Service_Update_Description::~Service_Update_Description()
 
 void Service_Update_Description::Set_Description(){
     QSqlQueryModel* model = new QSqlQueryModel;
-    model->setQuery("SELECT Service_Description, Service_Short_Description from Service where Service_id  = " + serviceID);
+    model->setQuery("SELECT Service_Description, Service_Short_Description FROM Service WHERE Service_id  = " + serviceID);
 
     if(model->query().isSelect()){
         ui->txt_Full_Description->setText(model->data(model->index(0, 0)).toString());
@@ -30,7 +30,7 @@ void Service_Update_Description::Set_Description(){
 
 void Service_Update_Description::Enable_Description_Update(){
     QSqlQuery UpdateServiceDescription;
-    UpdateServiceDescription.prepare("Update Service set Service_Description = :Service_Description, Service_Short_Description = :Service_Short_Description where Service_id =" + serviceID);
+    UpdateServiceDescription.prepare("Update Service SET Service_Description = :Service_Description, Service_Short_Description = :Service_Short_Description WHERE Service_id =" + serviceID);
 
     UpdateServiceDescription.bindValue(":Service_Description", ui->txt_Full_Description->toPlainText());
     UpdateServiceDescription.bindValue(":Service_Short_Description", ui->line_Short_Description->text());

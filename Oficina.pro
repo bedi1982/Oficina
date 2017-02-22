@@ -29,7 +29,8 @@ SOURCES +=\
     Main.cpp \
     Main_Window.cpp \
     Client_Services_History.cpp \
-    Client_Update.cpp
+    Client_Update.cpp \
+    Stock_Update_Part.cpp
 
 HEADERS  += \
     About.h \
@@ -46,7 +47,8 @@ HEADERS  += \
     Database.h \
     Main_Window.h \
     Client_Services_History.h \
-    Client_Update.h
+    Client_Update.h \
+    Stock_Update_Part.h
 
 FORMS    += \
     About.ui \
@@ -62,7 +64,8 @@ FORMS    += \
     Stock_Control.ui \
     Main_Window.ui \
     Client_Services_History.ui \
-    Client_Update.ui
+    Client_Update.ui \
+    Stock_Update_Part.ui
 
 DISTFILES += \
     resources/emote-love.png \

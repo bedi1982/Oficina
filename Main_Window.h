@@ -29,7 +29,7 @@ private slots:
 
     void on_action_Manpage_triggered();
 
-    void on_pushButton_clicked();
+    void on_Clear_Button_clicked();
 
 private:
     Ui::MainWindow *ui;

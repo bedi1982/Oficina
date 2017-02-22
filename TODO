@@ -1,18 +1,26 @@
 - Fix the ui, currently it is fixed sized, it is this way because I did not learn how to make the interfce 'adapt'.
-- Change QPushButton's to QDialogButtonBox as QDialogButtonBox seems to suit better, and has built-in icons.
 
 - The delete part grid should have a 'X' icon, clickin this icon removes the part
+
 - Make a function that shows how much was bought/sold in a given time frame
-- Make a screen that summs the value os the parts in all the stock (table Stok)
-- Implement a configuration file which will contain eg. database access credentials
+
+- Make a screen that summs the value of the parts in all the stock (table Stok).
+
+- Implement a configuration file which will contain eg. database access credentials.
 
 - Add a daily resume wich will show:
 	Not Finished Services;
 	Not Paid Services;
 
 - Add a function on wich owner can set a date on which the client is going to pick his car.
- 	List clients that will come today to get is Car.
+        List clients that will come today to get his Car.
 
-- Regiter Workshop workers(mitarbeiters).
+- Register Workshop workers(mitarbeiters).
 - Create a second client with a simple interface, maybe qwidget. This screen will appear in tvs
 allong the workshop, it will show open services and who is working on which one.
+
+IN PROGRESS:
+- Make a screen that summs the value of the parts in all the stock (table Stok).
+
+DONE:
+- Change QPushButton's to QDialogButtonBox as QDialogButtonBox seems to suit better and has built-in icons.

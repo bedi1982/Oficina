@@ -47,7 +47,6 @@ void Stock_Parts_Selection::on_line_Part_Name_textChanged(const QString &userSea
         }
         model->select();
 
-        model->setEditStrategy(QSqlTableModel::OnFieldChange);
         model->setHeaderData(0, Qt::Horizontal, tr("ID"));
         model->setHeaderData(1, Qt::Horizontal, tr("Name"));
         model->setHeaderData(2, Qt::Horizontal, tr("Description"));

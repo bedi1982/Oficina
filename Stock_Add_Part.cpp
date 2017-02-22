@@ -69,12 +69,12 @@ void Stock_Add_Part::on_buttonBox_accepted()
 {
     if(Check_Empty_Fields_On_Form()){
         QSqlQuery query;
-        query.prepare("insert into Part (Part_Name, Part_Description, Part_Cost, Part_Quantity)"
-                      "values (:Name, :Description, :Cost, :Quantity)");
+        query.prepare("INSERT INTO Part (Part_Name, Part_Description, Part_Cost, Part_Quantity)"
+                      " VALUES (:Name, :Description, :Cost, :Quantity)");
 
         query.bindValue(":Name", ui->line_Name->text());
         query.bindValue(":Description", ui->txt_Part_Description->toPlainText());
-        query.bindValue(":Cost", ui->double_Spin_Cost->text().toDouble());
+        query.bindValue(":Cost", ui->double_Spin_Cost->value());
         query.bindValue(":Quantity", ui->spin_Quantity->text().toInt());
 
         if (query.exec() == false){

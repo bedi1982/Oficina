@@ -33,7 +33,7 @@ void Client_Update::setClient_id(const QString &value)
 void Client_Update::load_Client_Info_To_TextBoxes()
 {
     QSqlQuery query;
-    query.prepare("SELECT * from Client WHERE Client_id = " + client_id);
+    query.prepare("SELECT * FROM Client WHERE Client_id = " + client_id);
 
     if (query.exec() == false){
         qDebug() << query.lastError();

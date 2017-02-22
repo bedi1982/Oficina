@@ -58,7 +58,7 @@ void Client_Add_Car::Add_Client_Info_To_Form(QString client_id){
 void Client_Add_Car::Add_Car(QString client_id){
     if(Verify_Empty_Fields_On_Form()){
         QSqlQuery query;
-        query.prepare("insert into ClientCar (ClientCar_Client_id, ClientCar_Model, ClientCar_Description, ClientCar_BuiltYear, ClientCar_Plate, ClientCar_Color)"
+        query.prepare("INSERT INTO ClientCar (ClientCar_Client_id, ClientCar_Model, ClientCar_Description, ClientCar_BuiltYear, ClientCar_Plate, ClientCar_Color)"
                       "values (:ClientId, :Model, :Description, :BuiltYear, :Plate, :Color)");
 
         query.bindValue(":ClientId", client_id);
@@ -92,7 +92,7 @@ void Client_Add_Car::Check_Car_Description_Size(){
 
         // This code just resets the cursor back to the end position
         // If you don't use this, it moves back to the beginning.
-        // This is helpful for really long text edits where you might
+        // This is helpful for really long text edits WHERE you might
         // lose your place.
         QTextCursor cursor = ui->txtPlain_Description->textCursor();
         cursor.setPosition(ui->txtPlain_Description->document()->characterCount() - 1);

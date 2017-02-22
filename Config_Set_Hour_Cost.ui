@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>300</width>
-    <height>118</height>
+    <height>127</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -50,16 +50,6 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
    </property>
   </widget>
-  <widget class="QDoubleSpinBox" name="spin_Hour_Cost">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>91</width>
-     <height>32</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="lbl_Emoticon">
    <property name="geometry">
     <rect>
@@ -74,6 +64,22 @@
    </property>
    <property name="pixmap">
     <pixmap resource="resources/images.qrc">:/emoticons/tux.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="double_Spin_Hour_Cost">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>121</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <double>999.990000000000009</double>
+   </property>
+   <property name="singleStep">
+    <double>1.000000000000000</double>
    </property>
   </widget>
  </widget>

@@ -15,21 +15,23 @@ public:
     explicit Stock_Control(QWidget *parent = 0);
     ~Stock_Control();
     QString partID;
-
+    QString partName;
 
     QString getPartID() const;
+
     void setPartID(const QString &value);
+
+    QString getPartName() const;
+    void setPartName(const QString &value);
 
 private slots:
     void on_line_Part_Name_textChanged(const QString &arg1);
 
-    void on_tbl_Parts_clicked(const QModelIndex &index);
-
-    void on_btn_Save_Description_clicked();
-
-    void on_txt_Part_Description_textChanged();
-
     void on_buttonBox_rejected();
+
+    void on_tbl_Parts_doubleClicked(const QModelIndex &Selected_Part_in_The_Grid);
+
+    void on_tbl_Parts_clicked(const QModelIndex &index);
 
 private:
     Ui::Stock_Control *ui;

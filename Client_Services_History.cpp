@@ -127,7 +127,7 @@ void Client_Services_History::load_Cars_Grid()
                     " ClientCar_Color,"
                     " ClientCar_created_at,"
                     " ClientCar_updated_at"
-                    " FROM ClientCar where ClientCar_Client_id = " + client_id +
+                    " FROM ClientCar WHERE ClientCar_Client_id = " + client_id +
                     " ORDER BY ClientCar_id desc");
 
     model->setHeaderData(0, Qt::Horizontal, tr("Car ID"));
@@ -204,7 +204,7 @@ void Client_Services_History::on_btn_Add_Car_To_Client_clicked()
 void Client_Services_History::Set_Current_Hour_Cost_Label(){
     //just set current value in the spinbox//
     QSqlQuery Set_Current_Hour_Cost;
-    Set_Current_Hour_Cost.prepare("SELECT HourCost from HourCost WHERE HourCost_id = 1");
+    Set_Current_Hour_Cost.prepare("SELECT HourCost FROM HourCost WHERE HourCost_id = 1");
 
     if (Set_Current_Hour_Cost.exec() == false){
         QMessageBox::critical(this, tr("Error!"), Set_Current_Hour_Cost.lastError().text() + "class Config_Set_Hour_Cost::on_btn_Salvar_clicked() Set_Current_Hour_Cost.exec()");

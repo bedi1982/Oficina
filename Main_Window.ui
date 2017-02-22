@@ -197,7 +197,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="Clear_Button">
        <property name="text">
         <string>Clear</string>
        </property>
@@ -216,7 +216,6 @@
    <zorder>lbl_Oficina</zorder>
    <zorder>lbl_Date</zorder>
    <zorder>horizontalLayoutWidget</zorder>
-   <zorder>line_ID_or_CPF_or_Name</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QMenuBar" name="menuBar">
@@ -256,7 +255,7 @@
    </widget>
    <widget class="QMenu" name="menuRoot">
     <property name="title">
-     <string>&amp;Settings</string>
+     <string>Settin&amp;gs</string>
     </property>
     <addaction name="action_Change_Hour_Cost"/>
    </widget>

@@ -25,119 +25,6 @@
   <property name="windowTitle">
    <string>Stock Control</string>
   </property>
-  <widget class="QLabel" name="lbl_Search_Part">
-   <property name="geometry">
-    <rect>
-     <x>14</x>
-     <y>16</y>
-     <width>99</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Search Part</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_Part_Name">
-   <property name="geometry">
-    <rect>
-     <x>120</x>
-     <y>10</y>
-     <width>711</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="maxLength">
-    <number>30</number>
-   </property>
-   <property name="placeholderText">
-    <string>Search entering the Part Name. You list all with: *</string>
-   </property>
-  </widget>
-  <widget class="QTableView" name="tbl_Parts">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>82</y>
-     <width>821</width>
-     <height>301</height>
-    </rect>
-   </property>
-   <property name="toolTip">
-    <string>Duplo clique aqui para alterar o valor.</string>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="txt_Part_Description">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>412</y>
-     <width>821</width>
-     <height>191</height>
-    </rect>
-   </property>
-   <property name="placeholderText">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>390</y>
-     <width>541</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Full Part description. You can also change this field(max 250 chars).</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_Save_Description">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>680</x>
-     <y>550</y>
-     <width>141</width>
-     <height>34</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Save Description</string>
-   </property>
-   <property name="icon">
-    <iconset resource="resources/images.qrc">
-     <normaloff>:/emoticons/emblem-default.png</normaloff>:/emoticons/emblem-default.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>16</width>
-     <height>16</height>
-    </size>
-   </property>
-  </widget>
-  <widget class="QLabel" name="llb_info">
-   <property name="geometry">
-    <rect>
-     <x>110</x>
-     <y>60</y>
-     <width>611</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Double click the part you wanto to change. ESC to cancel.</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="lbl_Emoticon">
    <property name="geometry">
     <rect>
@@ -157,9 +44,9 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>650</x>
+     <x>703</x>
      <y>610</y>
-     <width>174</width>
+     <width>121</width>
      <height>34</height>
     </rect>
    </property>
@@ -167,12 +54,125 @@
     <set>QDialogButtonBox::Close</set>
    </property>
   </widget>
+  <widget class="QLabel" name="lbl_Stock_Total_Value">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>620</y>
+     <width>291</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>661</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="lbl_Search_Part">
+      <property name="text">
+       <string>Search Part</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="line_Part_Name">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="maxLength">
+       <number>30</number>
+      </property>
+      <property name="placeholderText">
+       <string>Search entering the Part Name. You list all with: *</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>60</y>
+     <width>811</width>
+     <height>321</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_5">
+    <item>
+     <widget class="QLabel" name="llb_Double_Click_Part">
+      <property name="text">
+       <string>Double click the part to change values</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTableView" name="tbl_Parts">
+      <property name="focusPolicy">
+       <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <attribute name="horizontalHeaderCascadingSectionResizes">
+       <bool>true</bool>
+      </attribute>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>390</y>
+     <width>811</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_6">
+    <item>
+     <widget class="QLabel" name="lbl_Full_Part_Description">
+      <property name="text">
+       <string>Part Full Description:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="txt_Part_Description">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="acceptDrops">
+       <bool>false</bool>
+      </property>
+      <property name="placeholderText">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
  </widget>
  <tabstops>
-  <tabstop>line_Part_Name</tabstop>
   <tabstop>tbl_Parts</tabstop>
   <tabstop>txt_Part_Description</tabstop>
-  <tabstop>btn_Save_Description</tabstop>
  </tabstops>
  <resources>
   <include location="resources/images.qrc"/>
