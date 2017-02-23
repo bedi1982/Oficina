@@ -1,5 +1,6 @@
 #include "Service_Create_Description.h"
 #include "ui_Service_Create_Description.h"
+#include "System_Services.h"
 
 #include "QMessageBox"
 #include "QSqlQueryModel"
@@ -11,6 +12,7 @@ Service_Create_Description::Service_Create_Description(QWidget *parent) :
     ui(new Ui::Service_Create_Description)
 {
     ui->setupUi(this);
+    ui->line_Short_Description->setFocus();
 }
 
 Service_Create_Description::~Service_Create_Description()
@@ -87,11 +89,6 @@ void Service_Create_Description::on_txt_Full_Description_textChanged()
 void Service_Create_Description::on_buttonBox_accepted()
 {
     if(Verify_Empty_Fields_On_Form()){
-        //We begin This block is to save current hour cost to this service//
-        QSqlQueryModel* getHourCostFromDB = new QSqlQueryModel;
-        getHourCostFromDB->setQuery("SELECT HourCost FROM HourCost");
-        double CurrentHourCost = getHourCostFromDB->data(getHourCostFromDB->index(0,0)).toDouble();
-        //END This block is to save current hour cost to service//
 
         QSqlQuery query;
         query.prepare("INSERT INTO Service (Service_Client_id, Service_Client_Carid, Service_Short_Description, Service_Description, Service_Hour_Cost, Service_Hours_Duration)"
@@ -99,7 +96,10 @@ void Service_Create_Description::on_buttonBox_accepted()
 
         query.bindValue(":Service_Client_id", clientid);
         query.bindValue(":Service_Client_Carid", CarID);
-        query.bindValue(":Service_Hour_Cost", CurrentHourCost);
+
+        System_Services System_Services;
+        query.bindValue(":Service_Hour_Cost", System_Services.Get_Current_Hour_Cost());
+
         query.bindValue(":Service_Short_Description", ui->line_Short_Description->text());
         query.bindValue(":Service_Description", ui->txt_Full_Description->toPlainText());
 

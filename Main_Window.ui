@@ -40,8 +40,12 @@
   <property name="windowTitle">
    <string>Oficina 0.1.1</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="resources/images.qrc">
+    <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
+  </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTableView" name="tbl_Services_History">
+   <widget class="QTableView" name="tbl_Client_List">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -101,7 +105,7 @@
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>670</y>
+      <y>660</y>
       <width>81</width>
       <height>51</height>
      </rect>
@@ -113,7 +117,7 @@
    <widget class="QLabel" name="lbl_Oficina">
     <property name="geometry">
      <rect>
-      <x>940</x>
+      <x>950</x>
       <y>0</y>
       <width>121</width>
       <height>31</height>
@@ -128,7 +132,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Oficina v0.1.1</string>
+     <string>Oficina v0.2</string>
     </property>
     <property name="textFormat">
      <enum>Qt::PlainText</enum>
@@ -144,7 +148,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Jan. 2017</string>
+     <string>Feb. 2017</string>
     </property>
    </widget>
    <widget class="QLabel" name="lbl_BigCarIcon">
@@ -184,7 +188,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="line_ID_or_CPF_or_Name">
+      <widget class="QLineEdit" name="line_ID_or_CPG_or_Name">
        <property name="text">
         <string/>
        </property>
@@ -192,7 +196,7 @@
         <number>30</number>
        </property>
        <property name="placeholderText">
-        <string>Search by name, ID, CPF. To show all clients enter: *</string>
+        <string>Search by name, ID, CPG. To show all clients enter: *</string>
        </property>
       </widget>
      </item>
@@ -209,7 +213,7 @@
      </item>
     </layout>
    </widget>
-   <zorder>tbl_Services_History</zorder>
+   <zorder>tbl_Client_List</zorder>
    <zorder>lbl_Database</zorder>
    <zorder>lbl_Emoticon_Connection_Status</zorder>
    <zorder>lbl_BigCarIcon</zorder>
@@ -239,6 +243,7 @@
     </property>
     <addaction name="action_Add_Part"/>
     <addaction name="action_Stock"/>
+    <addaction name="actionStock_Finances"/>
    </widget>
    <widget class="QMenu" name="menuSobre">
     <property name="title">
@@ -255,9 +260,10 @@
    </widget>
    <widget class="QMenu" name="menuRoot">
     <property name="title">
-     <string>Settin&amp;gs</string>
+     <string>Confi&amp;guration</string>
     </property>
     <addaction name="action_Change_Hour_Cost"/>
+    <addaction name="action_Employees"/>
    </widget>
    <addaction name="menuOficina"/>
    <addaction name="menuCadastrois"/>
@@ -300,10 +306,20 @@
     <string>&amp;User Help</string>
    </property>
   </action>
+  <action name="actionStock_Finances">
+   <property name="text">
+    <string>Stock &amp;Finances</string>
+   </property>
+  </action>
+  <action name="action_Employees">
+   <property name="text">
+    <string>&amp;Employees</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
-  <tabstop>tbl_Services_History</tabstop>
+  <tabstop>tbl_Client_List</tabstop>
  </tabstops>
  <resources>
   <include location="resources/images.qrc"/>

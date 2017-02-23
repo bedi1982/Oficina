@@ -31,6 +31,10 @@
   <property name="windowTitle">
    <string>Client History</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="resources/images.qrc">
+    <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
+  </property>
   <widget class="QTableView" name="tbl_Client_Cars">
    <property name="geometry">
     <rect>
@@ -221,8 +225,14 @@
      <height>32</height>
     </size>
    </property>
+   <property name="acceptDrops">
+    <bool>false</bool>
+   </property>
    <property name="maxLength">
     <number>40</number>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btn_Update_Client">

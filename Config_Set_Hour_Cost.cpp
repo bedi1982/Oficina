@@ -1,9 +1,10 @@
 #include "Config_Set_Hour_Cost.h"
 #include "ui_Config_Set_Hour_Cost.h"
 
-#include "QSqlQuery"
-#include "QSqlError"
-#include "QDebug"
+#include "qsqlquery.h"
+#include "qsqltablemodel.h"
+#include "qsqlerror.h"
+#include "qdebug.h"
 
 #include "QMessageBox"
 
@@ -13,7 +14,20 @@ Config_Set_Hour_Cost::Config_Set_Hour_Cost(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //just set current value in the spinbox//
+    //Set current hour cost value in the spinbox//
+    Load_Current_Hour_Cost();
+
+    //Load the history os values on the SQL table//
+    Load_History_HourCost();
+}
+
+Config_Set_Hour_Cost::~Config_Set_Hour_Cost()
+{
+    delete ui;
+}
+
+void Config_Set_Hour_Cost::Load_Current_Hour_Cost()
+{
     QSqlQuery Set_Current_Hour_Cost;
     Set_Current_Hour_Cost.prepare("SELECT HourCost FROM HourCost ORDER BY HourCost_id DESC LIMIT 1;");
 
@@ -28,9 +42,18 @@ Config_Set_Hour_Cost::Config_Set_Hour_Cost(QWidget *parent) :
     }
 }
 
-Config_Set_Hour_Cost::~Config_Set_Hour_Cost()
-{
-    delete ui;
+void Config_Set_Hour_Cost::Load_History_HourCost(){
+    QSqlTableModel* model = new QSqlTableModel;
+    model->setTable("HourCost");
+
+    model->select();
+    model->removeColumn(0);
+
+    model->setHeaderData(0, Qt::Horizontal, tr("Hour Cost"));
+    model->setHeaderData(1, Qt::Horizontal, tr("Created"));
+
+    ui->table_Hour_Cost_History->setModel(model);
+    ui->table_Hour_Cost_History->sortByColumn(1, Qt::DescendingOrder);
 }
 
 void Config_Set_Hour_Cost::on_buttonBox_accepted()
@@ -45,8 +68,8 @@ void Config_Set_Hour_Cost::on_buttonBox_accepted()
             QMessageBox::critical(this, tr("Erro!"), Update_Hour_Cost.lastError().text() + "Config_Set_Hour_Cost::on_buttonBox_accepted()");
         }else{
             QMessageBox::information(this, tr("Success!"), tr("Hour Cost changed to: $ ") + ui->double_Spin_Hour_Cost->text() +
-                                           tr("\nAs as reminder, this new hour cost will be used only on new Services."
-                                           " Old Services will keep the original set Hour cost.\n"));
+                                     tr("\nAs as reminder, this new hour cost will be used only on new Services."
+                                        " Old Services will keep the original set Hour cost.\n"));
             close();
         }
     }else{

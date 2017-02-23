@@ -30,7 +30,12 @@ SOURCES +=\
     Main_Window.cpp \
     Client_Services_History.cpp \
     Client_Update.cpp \
-    Stock_Update_Part.cpp
+    Stock_Update_Part.cpp \
+    Stock_Finances.cpp \
+    Employee_Add.cpp \
+    Employee_Update.cpp \
+    Employee_List.cpp \
+    System_Services.cpp
 
 HEADERS  += \
     About.h \
@@ -48,7 +53,12 @@ HEADERS  += \
     Main_Window.h \
     Client_Services_History.h \
     Client_Update.h \
-    Stock_Update_Part.h
+    Stock_Update_Part.h \
+    Stock_Finances.h \
+    Employee_Add.h \
+    Employee_Update.h \
+    Employee_List.h \
+    System_Services.h
 
 FORMS    += \
     About.ui \
@@ -65,7 +75,11 @@ FORMS    += \
     Main_Window.ui \
     Client_Services_History.ui \
     Client_Update.ui \
-    Stock_Update_Part.ui
+    Stock_Update_Part.ui \
+    Stock_Finances.ui \
+    Employee_Add.ui \
+    Employee_Update.ui \
+    Employee_List.ui
 
 DISTFILES += \
     resources/emote-love.png \

@@ -6,6 +6,7 @@
 
 #include "Client_Update.h"
 #include "Service_Create_Description.h"
+#include "System_Services.h"
 
 #include <QSqlTableModel>
 #include "QSqlQuery"
@@ -43,6 +44,7 @@ QString Client_Services_History::getClient_id() const
 void Client_Services_History::setClient_id(const QString &value)
 {
     client_id = value;
+    loadAll();
 }
 
 void Client_Services_History::loadAll(){
@@ -141,9 +143,16 @@ void Client_Services_History::load_Cars_Grid()
     if(model->query().isSelect()){
         ui->tbl_Client_Cars->setModel(model);
         ui->tbl_Client_Cars->resizeColumnsToContents();
+
+        if(!model->rowCount() > 0){
+            if (QMessageBox::Yes == QMessageBox(QMessageBox::Question, "Question", "This Client has no Car registered Currently. "
+                                                "Would you like to add one?", QMessageBox::Yes|QMessageBox::No).exec())
+            {
+                on_btn_Add_Car_To_Client_clicked();
+            }
+        }
     }else{
-        QMessageBox::critical(this, tr("Error!"), model->query().lastError().text() +
-                              "class Client_Services_History::loadCarsGrid() ");
+        QMessageBox::critical(this, tr("Error!"), model->query().lastError().text() + "class Client_Services_History::loadCarsGrid() ");
     }
 }
 
@@ -202,17 +211,6 @@ void Client_Services_History::on_btn_Add_Car_To_Client_clicked()
 }
 
 void Client_Services_History::Set_Current_Hour_Cost_Label(){
-    //just set current value in the spinbox//
-    QSqlQuery Set_Current_Hour_Cost;
-    Set_Current_Hour_Cost.prepare("SELECT HourCost FROM HourCost WHERE HourCost_id = 1");
-
-    if (Set_Current_Hour_Cost.exec() == false){
-        QMessageBox::critical(this, tr("Error!"), Set_Current_Hour_Cost.lastError().text() + "class Config_Set_Hour_Cost::on_btn_Salvar_clicked() Set_Current_Hour_Cost.exec()");
-    }else{
-        while(Set_Current_Hour_Cost.next())
-        {
-            //ui->lbl_Hour_Cost_Value->setText(Set_Current_Hour_Cost.value(0).toString());
-            ui->lcd_Hour_Cost->display(Set_Current_Hour_Cost.value(0).toDouble());
-        }
-    }
+    System_Services System_Services;
+    ui->lcd_Hour_Cost->display(System_Services.Get_Current_Hour_Cost());
 }

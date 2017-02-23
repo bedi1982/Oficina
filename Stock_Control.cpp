@@ -61,13 +61,17 @@ void Stock_Control::on_line_Part_Name_textChanged(const QString &arg1)
         model->setHeaderData(1, Qt::Horizontal, tr("Name"));
         model->setHeaderData(2, Qt::Horizontal, tr("Description"));
         model->setHeaderData(3, Qt::Horizontal, tr("Cost"));
-        model->setHeaderData(4, Qt::Horizontal, tr("In Stock"));
-        //model->setHeaderData(4, Qt::Horizontal, tr("Used"));
-        model->setHeaderData(5, Qt::Horizontal, tr("Last Updated"));
-        model->setHeaderData(6, Qt::Horizontal, tr("Created At"));
+        model->setHeaderData(4, Qt::Horizontal, tr("Sell Price"));
+        model->setHeaderData(5, Qt::Horizontal, tr("In Stock"));
+        model->setHeaderData(6, Qt::Horizontal, tr("Active"));
+        model->setHeaderData(7, Qt::Horizontal, tr("Last Updated"));
+        model->setHeaderData(8, Qt::Horizontal, tr("Created At"));
 
         ui->tbl_Parts->setModel(model);
-        ui->tbl_Parts->hideColumn(2);
+        ui->tbl_Parts->hideColumn(0); //sysID
+        ui->tbl_Parts->hideColumn(2); //Description - To big for a grid (it has it's own text box)
+
+
         model->sort(5, Qt::DescendingOrder); //Order by last update date
         ui->tbl_Parts->resizeColumnsToContents();
     }else{

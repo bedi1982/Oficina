@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>Stock Control</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="resources/images.qrc">
+    <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
+  </property>
   <widget class="QLabel" name="lbl_Emoticon">
    <property name="geometry">
     <rect>

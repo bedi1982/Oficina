@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>Adding Service to Car!</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="resources/images.qrc">
+    <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
+  </property>
   <widget class="QLabel" name="lbl_PartsCost">
    <property name="geometry">
     <rect>

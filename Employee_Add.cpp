@@ -1,31 +1,31 @@
-#include "Database.h"
-#include "QtSql"
-#include "QMessageBox"
+#include "Employee_Add.h"
+#include "ui_Employee_Add.h"
+#include "qsqlquery.h"
+#include "qmessagebox.h"
+#include "QDebug"
+#include "qsqlerror.h"
 
-#include "Client_Add.h"
-#include "ui_Client_Add.h"
-#include "Main_Window.h"
-
-Client_Add::Client_Add(QWidget *parent) :
+Employee_Add::Employee_Add(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::Client_Add)
+    ui(new Ui::Employee_Add)
 {
     ui->setupUi(this);
-    Set_Emoticon();
 }
 
-Client_Add::~Client_Add()
+Employee_Add::~Employee_Add()
 {
     delete ui;
 }
 
-void Client_Add::Set_Emoticon()
+void
+    Employee_Add::Set_Emoticon()
 {
     QPixmap glasses(":/emoticons/face-glasses.png");
     ui->lbl_Emoticon->setPixmap(glasses);
 }
 
-bool Client_Add::Verify_Empty_Fields_on_Form()
+bool
+    Employee_Add::Verify_Empty_Fields_on_Form()
 {
     if (   ui->line_Name->text() == ""
            ||ui->line_Address->text() == ""
@@ -45,7 +45,7 @@ bool Client_Add::Verify_Empty_Fields_on_Form()
     return true;
 }
 
-void Client_Add::Clear_Form(){
+void Employee_Add::Clear_Form(){
         ui->line_Name->setText("");
         ui->line_Address->setText("");
         ui->line_City->setText("");
@@ -56,36 +56,35 @@ void Client_Add::Clear_Form(){
         Set_Emoticon();
 }
 
-void Client_Add::on_btn_Add_Client_accepted()
+void Employee_Add::on_btn_Add_Client_accepted()
 {
     if(Verify_Empty_Fields_on_Form()){
         QSqlQuery query;
         query.prepare("INSERT INTO"
-                      " Client (Client_Name, Client_Address, Client_City, Client_CPG, Client_ID_Number, Client_Phone)"
-                      " VALUES (:Client_Name, :Client_Address, :Client_City, :Client_CPG, :Client_ID_Number, :Client_Phone)");
+                      " Employee (Employee_Name, Employee_Address, Employee_City, Employee_CPG, Employee_ID_Number, Employee_Phone)"
+                      " VALUES (:Employee_Name, :Employee_Address, :Employee_City, :Employee_CPG, :Employee_ID_Number, :Employee_Phone)");
 
-        query.bindValue(":Client_Name", ui->line_Name->text());
-        query.bindValue(":Client_Address", ui->line_Address->text());
-        query.bindValue(":Client_City", ui->line_City->text());
-        query.bindValue(":Client_CPG", ui->line_CPG->text());
-        query.bindValue(":Client_ID_Number", ui->line_Personal_ID->text());
-        query.bindValue(":Client_Phone", ui->line_Phone->text());
+        query.bindValue(":Employee_Name", ui->line_Name->text());
+        query.bindValue(":Employee_Address", ui->line_Address->text());
+        query.bindValue(":Employee_City", ui->line_City->text());
+        query.bindValue(":Employee_CPG", ui->line_CPG->text());
+        query.bindValue(":Employee_ID_Number", ui->line_Personal_ID->text());
+        query.bindValue(":Employee_Phone", ui->line_Phone->text());
 
         if (query.exec() == false){
             qDebug() << query.lastError();
-            QMessageBox::critical(this, tr("Error!"), query.lastError().text() + ". Class: addclient.cpp51");
+            QMessageBox::critical(this, tr("Error!"), query.lastError().text() + ". Class: addEmployee.cpp51");
         }else{
             ui->lbl_feedback->setText(ui->line_Name->text() + tr(" added!"));
             QPixmap cool(":/emoticons/face-cool.png");
             ui->lbl_Emoticon->setPixmap(cool);
             QMessageBox::information(this, tr("Success!"), ui->line_Name->text() + tr(" added"));
-            close();
-            //Clear_Form();
+            Clear_Form();
         }
     }
 }
 
-void Client_Add::on_btn_Add_Client_rejected()
+void Employee_Add::on_btn_Add_Client_rejected()
 {
     close();
 }

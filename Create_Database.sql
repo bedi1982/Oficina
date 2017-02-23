@@ -9,11 +9,23 @@ CREATE TABLE Client (
         Client_Name varchar(40),
         Client_Address varchar(50),
         Client_City varchar(30),
-        Client_CPF varchar(20),
-        Client_RG varchar(15),
+        Client_CPG varchar(20),
+        Client_ID_Number varchar(15),
         Client_Phone varchar(40),
         Client_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         Client_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE Employee (
+        Employee_id bigint PRIMARY KEY AUTO_INCREMENT,
+        Employee_Name varchar(40),
+        Employee_Address varchar(50),
+        Employee_City varchar(30),
+        Employee_CPG varchar(20),
+        Employee_ID_Number varchar(15),
+        Employee_Phone varchar(40),
+        Employee_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+        Employee_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE Part (
@@ -21,6 +33,7 @@ CREATE TABLE Part (
         Part_Name varchar(50),
         Part_Description varchar(250),
         Part_Cost Double(19,2),
+        Part_Sell_Price Double(19,2),
         Part_Quantity int,
         Part_Active boolean not null default 1,
         Part_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,

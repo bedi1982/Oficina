@@ -84,8 +84,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../../Client_Add.ui" line="57"/>
-        <source>CPF</source>
-        <translation>CPF</translation>
+        <source>CPG</source>
+        <translation>CPG</translation>
     </message>
     <message>
         <location filename="../../Client_Add.ui" line="77"/>
@@ -586,8 +586,8 @@ Custo do Serviço recalculadas no sistema....</translation>
         <translation type="vanished">Nome</translation>
     </message>
     <message>
-        <source>CPF</source>
-        <translation type="vanished">CPF</translation>
+        <source>CPG</source>
+        <translation type="vanished">CPG</translation>
     </message>
     <message>
         <source>City</source>
@@ -849,8 +849,8 @@ Custo do Serviço recalculadas no sistema....</translation>
     </message>
     <message>
         <location filename="../../Client_Update.ui" line="70"/>
-        <source>CPF</source>
-        <translation type="unfinished">CPF</translation>
+        <source>CPG</source>
+        <translation type="unfinished">CPG</translation>
     </message>
     <message>
         <location filename="../../Client_Update.ui" line="83"/>
@@ -1056,7 +1056,7 @@ Lembrando que este novo custo terá impacto apenas nos serviços prestados agora
     </message>
     <message>
         <location filename="../../Main_Window.ui" line="166"/>
-        <source>Search by name, ID, CPF. To show all clients enter: *</source>
+        <source>Search by name, ID, CPG. To show all clients enter: *</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1205,8 +1205,8 @@ Lembrando que este novo custo terá impacto apenas nos serviços prestados agora
     </message>
     <message>
         <location filename="../../Main_Window.cpp" line="112"/>
-        <source>CPF</source>
-        <translation>CPF</translation>
+        <source>CPG</source>
+        <translation>CPG</translation>
     </message>
     <message>
         <source>RG</source>

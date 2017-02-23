@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>488</width>
+    <width>478</width>
     <height>337</height>
    </rect>
   </property>
@@ -18,6 +18,10 @@
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources/images.qrc">
+    <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
   </property>
   <layout class="QFormLayout" name="formLayout">
    <item row="0" column="0" colspan="2">
@@ -66,21 +70,36 @@
    </item>
    <item row="1" column="0" colspan="2">
     <layout class="QGridLayout" name="gridLayout_2">
-     <item row="1" column="1">
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+     <item row="1" column="6" alignment="Qt::AlignRight">
+      <widget class="QLabel" name="lbl_Quantity">
+       <property name="text">
+        <string>In Stock</string>
        </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>10</width>
-         <height>10</height>
-        </size>
-       </property>
-      </spacer>
+      </widget>
      </item>
-     <item row="1" column="4">
-      <widget class="QDoubleSpinBox" name="double_Spin_Cost">
+     <item row="1" column="1">
+      <widget class="QDoubleSpinBox" name="double_Spin_Sell_Price">
+       <property name="maximum">
+        <double>999.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="7">
+      <widget class="QSpinBox" name="spin_Quantity">
+       <property name="maximum">
+        <number>9999</number>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="4" alignment="Qt::AlignRight">
+      <widget class="QLabel" name="lbl_Cost_Price">
+       <property name="text">
+        <string>Cost Price</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="5">
+      <widget class="QDoubleSpinBox" name="double_Spin_Cost_Price">
        <property name="maximum">
         <double>999.990000000000009</double>
        </property>
@@ -89,67 +108,23 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="3" alignment="Qt::AlignRight">
-      <widget class="QLabel" name="lbl_City">
-       <property name="text">
-        <string>Cost Price</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="5">
-      <spacer name="horizontalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item row="1" column="6" alignment="Qt::AlignRight">
-      <widget class="QLabel" name="lbl_Quantity">
-       <property name="text">
-        <string>In Stock</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="7">
-      <widget class="QSpinBox" name="spin_Quantity">
-       <property name="maximum">
-        <number>999</number>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="0">
-      <widget class="QRadioButton" name="radioButton">
+      <widget class="QLabel" name="lbl_Sell_Price">
        <property name="text">
-        <string>Part Acti&amp;ve</string>
+        <string>Sell Price</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QRadioButton" name="check_btn_Part_Enabled">
+       <property name="text">
+        <string>Part Acti&amp;ve?</string>
        </property>
       </widget>
      </item>
     </layout>
    </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="lbl_Emoticon">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1">
-    <widget class="QLabel" name="lbl_Feedback">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="1">
+   <item row="8" column="1">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="focusPolicy">
       <enum>Qt::StrongFocus</enum>
@@ -159,14 +134,23 @@
      </property>
     </widget>
    </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="lbl_Feedcack">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <tabstops>
   <tabstop>line_Name</tabstop>
   <tabstop>txt_Part_Description</tabstop>
-  <tabstop>double_Spin_Cost</tabstop>
+  <tabstop>double_Spin_Cost_Price</tabstop>
   <tabstop>spin_Quantity</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="resources/images.qrc"/>
+ </resources>
  <connections/>
 </ui>

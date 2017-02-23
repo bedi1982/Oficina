@@ -28,6 +28,8 @@ private slots:
 
     void on_buttonBox_rejected();
 
+    void on_check_btn_Part_Enabled_clicked();
+
 private:
     Ui::Stock_Update_Part *ui;
 

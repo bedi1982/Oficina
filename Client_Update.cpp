@@ -41,12 +41,12 @@ void Client_Update::load_Client_Info_To_TextBoxes()
     }else{
         while(query.next())
         {
-            ui->line_ID->setText(query.value(0).toString()); //ID
+            ui->line_SysID->setText(query.value(0).toString()); //SystemID
             ui->line_Name->setText(query.value(1).toString()); //Name
             ui->line_Address->setText(query.value(2).toString()); //Adress
             ui->line_City->setText(query.value(3).toString()); //City
-            ui->line_CPF->setText(query.value(4).toString()); //CPF
-            ui->line_RG->setText(query.value(5).toString()); //RG
+            ui->line_CPG->setText(query.value(4).toString()); //CPG
+            ui->line_Personal_ID->setText(query.value(5).toString()); // Personal ID
             ui->line_Phone->setText(query.value(6).toString()); //Phone
             ui->line_Updated_At->setText(query.value(7).toString()); //updated At
             ui->line_Created_At->setText(query.value(8).toString()); //created At
@@ -61,16 +61,16 @@ void Client_Update::on_btn_Client_Update_accepted()
                   "  Client_Name = :Client_Name"
                   " ,Client_Address = :Client_Address"
                   " ,Client_City = :Client_City"
-                  " ,Client_CPF = :Client_CPF"
-                  " ,Client_RG = :Client_RG"
+                  " ,Client_CPG = :Client_CPG"
+                  " ,Client_ID_Number = :Client_ID_Number"
                   " ,Client_Phone = :Client_Phone"
                   " WHERE Client_id = " + client_id);
 
     query.bindValue(":Client_Name", ui->line_Name->text());
     query.bindValue(":Client_Address", ui->line_Address->text());
     query.bindValue(":Client_City", ui->line_City->text());
-    query.bindValue(":Client_CPF", ui->line_CPF->text());
-    query.bindValue(":Client_RG", ui->line_RG->text());
+    query.bindValue(":Client_CPG", ui->line_CPG->text());
+    query.bindValue(":Client_ID_Number", ui->line_Personal_ID->text());
     query.bindValue(":Client_Phone", ui->line_Phone->text());
 
     if (query.exec()) {

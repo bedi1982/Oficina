@@ -14,10 +14,12 @@ class Config_Set_Hour_Cost : public QDialog
 public:
     explicit Config_Set_Hour_Cost(QWidget *parent = 0);
     ~Config_Set_Hour_Cost();
-    double Hour_Cost;
 
+    double Hour_Cost;
     double getHour_Cost() const;
     void setHour_Cost(double value);
+
+    void Load_Current_Hour_Cost();
 
 private slots:
 
@@ -27,6 +29,7 @@ private slots:
 
 private:
     Ui::Config_Set_Hour_Cost *ui;
+    void Load_History_HourCost();
 };
 
 #endif // SETWORKHOURCOST_H

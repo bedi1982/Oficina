@@ -10,14 +10,23 @@ Stock_Add_Part::Stock_Add_Part(QWidget *parent) :
     ui(new Ui::Stock_Add_Part)
 {
     ui->setupUi(this);
-    ui->double_Spin_Cost->setMaximum(9999);
     QPixmap glasses(":/emoticons/face-glasses.png");
     ui->lbl_Emoticon->setPixmap(glasses);
+    ui->line_Name->setFocus();
 }
 
 Stock_Add_Part::~Stock_Add_Part()
 {
     delete ui;
+}
+
+bool Stock_Add_Part::Clear_Form()
+{
+        ui->line_Name->setText("");
+        ui->txt_Part_Description->setPlainText("");
+        ui->double_Spin_Cost->setValue(0);
+        ui->spin_Quantity->setValue(0);
+        ui->double_Spin_Sell_Price->setValue(0);
 }
 
 bool Stock_Add_Part::Check_Empty_Fields_On_Form()
@@ -26,6 +35,7 @@ bool Stock_Add_Part::Check_Empty_Fields_On_Form()
            ||ui->txt_Part_Description->toPlainText() == ""
            ||ui->double_Spin_Cost->text() == ""
            ||ui->spin_Quantity->text() == ""
+           ||ui->double_Spin_Sell_Price->text() == ""
            )
     {
         ui->lbl_Feedback->setText(tr("Error: All fields need to be filled!"));
@@ -69,13 +79,15 @@ void Stock_Add_Part::on_buttonBox_accepted()
 {
     if(Check_Empty_Fields_On_Form()){
         QSqlQuery query;
-        query.prepare("INSERT INTO Part (Part_Name, Part_Description, Part_Cost, Part_Quantity)"
-                      " VALUES (:Name, :Description, :Cost, :Quantity)");
+        query.prepare("INSERT INTO Part (Part_Name, Part_Description, Part_Cost, Part_Sell_Price, Part_Quantity)"
+                      " VALUES (:Name, :Description, :Cost, :Part_Sell_Price, :Quantity)");
 
         query.bindValue(":Name", ui->line_Name->text());
         query.bindValue(":Description", ui->txt_Part_Description->toPlainText());
         query.bindValue(":Cost", ui->double_Spin_Cost->value());
+        query.bindValue(":Part_Sell_Price", ui->double_Spin_Sell_Price->value());
         query.bindValue(":Quantity", ui->spin_Quantity->text().toInt());
+
 
         if (query.exec() == false){
             qDebug() << query.lastError();
@@ -83,7 +95,8 @@ void Stock_Add_Part::on_buttonBox_accepted()
         }else{
             ui->lbl_Feedback->setText(ui->line_Name->text() + tr(" added to Stock!"));
             QMessageBox::information(this, tr("Success!"), tr("Part added to Stock."));
-            close();
+            Clear_Form();
+            ui->line_Name->setFocus();
         }
     }
 }

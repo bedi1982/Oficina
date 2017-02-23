@@ -40,7 +40,8 @@ void Stock_Parts_Selection::on_line_Part_Name_textChanged(const QString &userSea
     if(!(userSearchFfilter.isEmpty()))
     {
         model->setTable("Part");
-        model->setFilter("Part_Quantity > '0' ");
+        model->setFilter("Part_Quantity > '0' AND Part_Active = 1 ");
+
         if(!(userSearchFfilter == "*"))
         {
             model->setFilter(" Part_Name like '%" + userSearchFfilter + "%'");

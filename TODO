@@ -19,8 +19,27 @@
 - Create a second client with a simple interface, maybe qwidget. This screen will appear in tvs
 allong the workshop, it will show open services and who is working on which one.
 
+--NEW IDEAS 23-02-17--
+currently when the owner selects a service it will at the same time register the hour cost on that service, remove that.
+
+And improve:
+
+In the service have an open and closed flag;
+If open show who opened it (employee opened/working on it)
+
+Resume:
+Service is 'closed' or 'open'
+
+when owner selects 'open'  he can set a personal hour cost (system will show the cost reguistered currently)
+
+If user is system root he can 'assign' the task to some employee.
+
+Oficina clients show always display that info.
+
 IN PROGRESS:
 - Make a screen that summs the value of the parts in all the stock (table Stok).
+
+
 
 DONE:
 - Change QPushButton's to QDialogButtonBox as QDialogButtonBox seems to suit better and has built-in icons.

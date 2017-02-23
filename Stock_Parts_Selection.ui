@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>910</width>
-    <height>447</height>
+    <height>450</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -24,6 +24,10 @@
   </property>
   <property name="windowTitle">
    <string>Adding Parts to Service</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources/images.qrc">
+    <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
   </property>
   <widget class="QTableView" name="tbl_Parts_List">
    <property name="geometry">
