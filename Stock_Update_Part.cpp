@@ -34,7 +34,7 @@ void Stock_Update_Part::Load_Part_Info_to_Form(){
 
     if (query.exec() == false){
         //qDebug() << query.lastError();
-        //QMessageBox::critical(this, tr("Error!"), query.lastError().text() + ". void Stock_Update_Part::Load_Part_Info_to_Form()");
+        QMessageBox::critical(this, tr("Error!"), query.lastError().text() + ". void Stock_Update_Part::Load_Part_Info_to_Form()");
     }else{
         while(query.next())
         {
@@ -44,7 +44,7 @@ void Stock_Update_Part::Load_Part_Info_to_Form(){
             ui->double_Spin_Sell_Price->setValue(query.value(3).toDouble());//Sell Price
             ui->spin_Quantity->setValue(query.value(4).toInt());//Quantity
 
-            if(query.value(4) == 1){ //is Active?
+            if(query.value(5).toBool()){ //is Active?
                 ui->check_btn_Part_Enabled->setChecked(true);
             }else{
                 ui->check_btn_Part_Enabled->setChecked(false);
@@ -56,13 +56,23 @@ void Stock_Update_Part::Load_Part_Info_to_Form(){
 
 void Stock_Update_Part::on_buttonBox_accepted()
 {
+    //Get the current ui checkbox status//
+    bool Part_Active;
+    if(ui->check_btn_Part_Enabled->isChecked()){
+        Part_Active = true;
+    }else{
+        Part_Active = false;
+    }
+    //Get the current ui checkbox status//
+
     QSqlQuery Update_Part;
     Update_Part.prepare("UPDATE Part SET"
                         " Part_Name = :Part_Name,"
                         " Part_Description = :Part_Description,"
                         " Part_Cost = :Part_Cost,"
                         " Part_Sell_Price = :Part_Sell_Price,"
-                        " Part_Quantity = :Part_Quantity"
+                        " Part_Quantity = :Part_Quantity,"
+                        " Part_Active = :Part_Active "
                         " WHERE Part_id = :Part_ID");
 
     Update_Part.bindValue(":Part_Name", ui->line_Name->text());
@@ -70,6 +80,7 @@ void Stock_Update_Part::on_buttonBox_accepted()
     Update_Part.bindValue(":Part_Cost", ui->double_Spin_Cost_Price->value());
     Update_Part.bindValue(":Part_Quantity", ui->spin_Quantity->value());
     Update_Part.bindValue(":Part_Sell_Price", ui->double_Spin_Sell_Price->value());
+    Update_Part.bindValue(":Part_Active", Part_Active);
     Update_Part.bindValue(":Part_ID", partID);
 
     if (!(Update_Part.exec())){
@@ -77,6 +88,7 @@ void Stock_Update_Part::on_buttonBox_accepted()
     }else{
         QMessageBox::information(this, tr("Success!"), tr("Part Updated."));
     }
+    close();
 }
 
 void Stock_Update_Part::on_txt_Part_Description_textChanged()
@@ -104,28 +116,4 @@ void Stock_Update_Part::on_txt_Part_Description_textChanged()
 void Stock_Update_Part::on_buttonBox_rejected()
 {
     close();
-}
-
-void Stock_Update_Part::on_check_btn_Part_Enabled_clicked()
-{
-        if(!ui->check_btn_Part_Enabled->isChecked()){
-            QSqlQuery query;
-            query.prepare("UPDATE Part SET Part_Active = 0 WHERE Part_id = " + partID);
-            if (query.exec() == false){
-                qDebug() << query.lastError();
-                QMessageBox::critical(this, tr("Error!"), query.lastError().text() + "Stock_Update_Part::on_check_btn_Part_Enabled_clicked()");
-            }else{
-                QMessageBox::information(this, tr("Part Disabled!"), tr("Part Disabled in Stock:\nThis Part won't be available to add to a Service Anymore."));
-            }
-        }else{
-            QSqlQuery query;
-            query.prepare("UPDATE Part SET Part_Active = 1 WHERE Part_id = " + partID);
-            if (query.exec() == false){
-                qDebug() << query.lastError();
-                QMessageBox::critical(this, tr("Error!"), query.lastError().text() + "Stock_Update_Part::on_check_btn_Part_Enabled_clicked()");
-            }else{
-                QMessageBox::information(this, tr("Part Re-enabled?"), tr("Part Enabled in Stock:\nThis Part can now be used on Services."));
-            }
-
-        }
 }

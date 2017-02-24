@@ -77,7 +77,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Search Part</string>
+    <string>Filter Part</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_Help">

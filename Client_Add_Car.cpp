@@ -13,8 +13,6 @@ Client_Add_Car::Client_Add_Car(QWidget *parent) :
     ui(new Ui::Client_Add_Car)
 {
     ui->setupUi(this);
-    QPixmap glasses(":/emoticons/face-glasses.png");
-    ui->lbl_Emoticon->setPixmap(glasses);
 }
 
 Client_Add_Car::~Client_Add_Car()
@@ -32,8 +30,6 @@ bool Client_Add_Car::Verify_Empty_Fields_On_Form()
            )
     {
         ui->lbl_Feedback->setText(tr("All fields need to be filled!"));
-        QPixmap crying(":/emoticons/face-crying.png");
-        ui->lbl_Emoticon->setPixmap(crying);
         ui->txt_Car_Model->setFocus();
         return false;
     }
@@ -74,8 +70,6 @@ void Client_Add_Car::Add_Car(QString client_id){
             QMessageBox::critical(this, tr("Error!"), query.lastError().text() + ". Class: Client_Add_Car.addCar(QString client_id)");
         }else{
             ui->lbl_Feedback->setText(tr("Car added to the Client."));
-            QPixmap cool(":/emoticons/face-cool.png");
-            ui->lbl_Emoticon->setPixmap(cool);
             QMessageBox::information(this, tr("Success!"), tr("Client's Car added."));
             close();
         }

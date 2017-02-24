@@ -103,23 +103,48 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QLabel" name="llb_Double_Click_Part">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>80</y>
+     <width>809</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Double click the part to change it.</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_Hint">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>60</y>
+     <width>31</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resources/images.qrc">:/emoticons/hint.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>60</y>
+     <y>100</y>
      <width>811</width>
-     <height>321</height>
+     <height>501</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_5">
-    <item>
-     <widget class="QLabel" name="llb_Double_Click_Part">
-      <property name="text">
-       <string>Double click the part to change values</string>
-      </property>
-     </widget>
-    </item>
+   <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QTableView" name="tbl_Parts">
       <property name="focusPolicy">
@@ -136,38 +161,65 @@
       </attribute>
      </widget>
     </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_6">
+      <item>
+       <widget class="QLabel" name="lbl_Full_Part_Description">
+        <property name="text">
+         <string>  Part Full Description:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="txt_Part_Description">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="acceptDrops">
+         <bool>false</bool>
+        </property>
+        <property name="placeholderText">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>390</y>
-     <width>811</width>
-     <height>211</height>
+     <y>60</y>
+     <width>401</width>
+     <height>34</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_6">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
-     <widget class="QLabel" name="lbl_Full_Part_Description">
+     <widget class="QCheckBox" name="checkBox_Set_Quantity">
       <property name="text">
-       <string>Part Full Description:</string>
+       <string>Show Only Parts that have less or equal then:</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QTextEdit" name="txt_Part_Description">
-      <property name="enabled">
-       <bool>true</bool>
+     <widget class="QSpinBox" name="spinBox_Quantity_to_Show">
+      <property name="minimum">
+       <number>0</number>
       </property>
-      <property name="focusPolicy">
-       <enum>Qt::NoFocus</enum>
+      <property name="maximum">
+       <number>999</number>
       </property>
-      <property name="acceptDrops">
-       <bool>false</bool>
+      <property name="singleStep">
+       <number>10</number>
       </property>
-      <property name="placeholderText">
-       <string/>
+      <property name="value">
+       <number>10</number>
       </property>
      </widget>
     </item>

@@ -39,7 +39,5 @@ Oficina clients show always display that info.
 IN PROGRESS:
 - Make a screen that summs the value of the parts in all the stock (table Stok).
 
-
-
 DONE:
 - Change QPushButton's to QDialogButtonBox as QDialogButtonBox seems to suit better and has built-in icons.

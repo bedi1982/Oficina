@@ -6,7 +6,7 @@
 
 #include "Client_Update.h"
 #include "Service_Create_Description.h"
-#include "System_Services.h"
+#include "System_Services_and_Info.h"
 
 #include <QSqlTableModel>
 #include "QSqlQuery"
@@ -211,6 +211,6 @@ void Client_Services_History::on_btn_Add_Car_To_Client_clicked()
 }
 
 void Client_Services_History::Set_Current_Hour_Cost_Label(){
-    System_Services System_Services;
-    ui->lcd_Hour_Cost->display(System_Services.Get_Current_Hour_Cost());
+    System_Services_and_Info System_Services_and_Info;
+    ui->lcd_Hour_Cost->display(System_Services_and_Info.Get_Current_Hour_Cost());
 }

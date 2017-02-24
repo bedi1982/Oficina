@@ -35,7 +35,7 @@ SOURCES +=\
     Employee_Add.cpp \
     Employee_Update.cpp \
     Employee_List.cpp \
-    System_Services.cpp
+    System_Services_and_Info.cpp
 
 HEADERS  += \
     About.h \
@@ -58,7 +58,7 @@ HEADERS  += \
     Employee_Add.h \
     Employee_Update.h \
     Employee_List.h \
-    System_Services.h
+    System_Services_and_Info.h
 
 FORMS    += \
     About.ui \

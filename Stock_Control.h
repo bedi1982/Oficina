@@ -33,6 +33,10 @@ private slots:
 
     void on_tbl_Parts_clicked(const QModelIndex &index);
 
+    void on_spinBox_Quantity_to_Show_valueChanged();
+
+    void on_checkBox_Set_Quantity_toggled();
+
 private:
     Ui::Stock_Control *ui;
 };

@@ -16,8 +16,7 @@
         <file>carkey.png</file>
         <file>client_info.png</file>
         <file>sport-car.png</file>
+        <file>hint.png</file>
     </qresource>
-    <qresource prefix="/">
-        <file>To-Oficina.png</file>
-    </qresource>
+    <qresource prefix="/"/>
 </RCC>

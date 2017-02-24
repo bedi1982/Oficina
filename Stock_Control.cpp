@@ -16,6 +16,8 @@ Stock_Control::Stock_Control(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->line_Part_Name->setFocus();
+    ui->line_Part_Name->setText("*");
+    ui->spinBox_Quantity_to_Show->setEnabled(false);
 }
 
 Stock_Control::~Stock_Control()
@@ -45,14 +47,28 @@ void Stock_Control::setPartID(const QString &value)
 
 void Stock_Control::on_line_Part_Name_textChanged(const QString &arg1)
 {
+
     QSqlTableModel* model = new QSqlTableModel;
 
     if(!(arg1.isEmpty()))
     {
         model->setTable("Part");
 
-        if(!(arg1 == "*")){
-            model->setFilter("Part_Name like '%" + arg1 + "%'");
+        int Filtered_Quantity = ui->spinBox_Quantity_to_Show->value();
+
+        //Filter for *//
+        if((arg1 != "*") && (ui->checkBox_Set_Quantity->isChecked())){
+            model->setFilter(QString("Part_Name like '%" + arg1 + "%' AND Part_Quantity <= %1").arg(Filtered_Quantity));
+            qDebug() << "não estrela e check";
+        }else{
+            if((arg1 == "*") && (ui->checkBox_Set_Quantity->isChecked())){
+                model->setFilter(QString("Part_Quantity <= %1").arg(Filtered_Quantity));
+                qDebug() << "sim estrela e check";
+            }
+        }
+        if((arg1 != "*") && (!ui->checkBox_Set_Quantity->isChecked())){
+            model->setFilter("Part_Name like '%" + arg1 + "%' ");
+            qDebug() << "nao estrela e nao check";
         }
 
         model->select();
@@ -62,7 +78,7 @@ void Stock_Control::on_line_Part_Name_textChanged(const QString &arg1)
         model->setHeaderData(2, Qt::Horizontal, tr("Description"));
         model->setHeaderData(3, Qt::Horizontal, tr("Cost"));
         model->setHeaderData(4, Qt::Horizontal, tr("Sell Price"));
-        model->setHeaderData(5, Qt::Horizontal, tr("In Stock"));
+        model->setHeaderData(5, Qt::Horizontal, tr("In Stock")); //Quantity in stock
         model->setHeaderData(6, Qt::Horizontal, tr("Active"));
         model->setHeaderData(7, Qt::Horizontal, tr("Last Updated"));
         model->setHeaderData(8, Qt::Horizontal, tr("Created At"));
@@ -119,4 +135,22 @@ void Stock_Control::on_tbl_Parts_clicked(const QModelIndex &selectedClientinTheG
         QVariant partdescription = model->data(model->index(selectedClientinTheGrid.row(), 2, selectedClientinTheGrid.parent()), Qt::DisplayRole);
 
         ui->txt_Part_Description->setText(partdescription.toString());
+}
+
+void Stock_Control::on_spinBox_Quantity_to_Show_valueChanged()
+{
+    //keeps the original filter
+    on_line_Part_Name_textChanged(ui->line_Part_Name->text());
+}
+
+void Stock_Control::on_checkBox_Set_Quantity_toggled()
+{
+    if(ui->checkBox_Set_Quantity->isChecked()){
+        ui->spinBox_Quantity_to_Show->setEnabled(true);
+        ui->spinBox_Quantity_to_Show->setValue(9);
+        ui->spinBox_Quantity_to_Show->setValue(10);
+    }else{
+        ui->spinBox_Quantity_to_Show->setEnabled(false);
+        on_line_Part_Name_textChanged(ui->line_Part_Name->text());
+    }
 }

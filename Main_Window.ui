@@ -38,7 +38,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Oficina 0.1.1</string>
+   <string>Oficina 0.2</string>
   </property>
   <property name="windowIcon">
    <iconset resource="resources/images.qrc">
@@ -48,10 +48,10 @@
    <widget class="QTableView" name="tbl_Client_List">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>70</y>
-      <width>1271</width>
-      <height>601</height>
+      <x>10</x>
+      <y>50</y>
+      <width>1261</width>
+      <height>621</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -92,7 +92,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>680</y>
+      <y>690</y>
       <width>81</width>
       <height>18</height>
      </rect>
@@ -117,22 +117,23 @@
    <widget class="QLabel" name="lbl_Oficina">
     <property name="geometry">
      <rect>
-      <x>950</x>
+      <x>1050</x>
       <y>0</y>
-      <width>121</width>
-      <height>31</height>
+      <width>201</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Roboto Condensed</family>
-      <pointsize>14</pointsize>
+      <family>Cantarell</family>
+      <pointsize>12</pointsize>
       <weight>50</weight>
+      <italic>false</italic>
       <bold>false</bold>
      </font>
     </property>
     <property name="text">
-     <string>Oficina v0.2</string>
+     <string/>
     </property>
     <property name="textFormat">
      <enum>Qt::PlainText</enum>
@@ -141,23 +142,29 @@
    <widget class="QLabel" name="lbl_Date">
     <property name="geometry">
      <rect>
-      <x>980</x>
-      <y>30</y>
-      <width>71</width>
-      <height>18</height>
+      <x>1130</x>
+      <y>20</y>
+      <width>151</width>
+      <height>20</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Carlito</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="text">
-     <string>Feb. 2017</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="lbl_BigCarIcon">
     <property name="geometry">
      <rect>
-      <x>1070</x>
+      <x>930</x>
       <y>0</y>
-      <width>161</width>
-      <height>71</height>
+      <width>121</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
@@ -173,8 +180,8 @@
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>20</y>
+      <x>10</x>
+      <y>0</y>
       <width>791</width>
       <height>41</height>
      </rect>
@@ -213,13 +220,47 @@
      </item>
     </layout>
    </widget>
+   <widget class="QLabel" name="label_Hint_Icon">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>680</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources/images.qrc">:/emoticons/hint.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>820</x>
+      <y>690</y>
+      <width>441</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>This Icon Will show you hint all arround the Application. Keep an eye on it.</string>
+    </property>
+   </widget>
    <zorder>tbl_Client_List</zorder>
    <zorder>lbl_Database</zorder>
    <zorder>lbl_Emoticon_Connection_Status</zorder>
-   <zorder>lbl_BigCarIcon</zorder>
    <zorder>lbl_Oficina</zorder>
    <zorder>lbl_Date</zorder>
    <zorder>horizontalLayoutWidget</zorder>
+   <zorder>lbl_BigCarIcon</zorder>
+   <zorder>label_Hint_Icon</zorder>
+   <zorder>label</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QMenuBar" name="menuBar">

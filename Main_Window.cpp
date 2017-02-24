@@ -19,6 +19,7 @@
 #include "qmessagebox.h"
 #include "qsqlerror.h"
 #include "Client_Services_History.h"
+#include "System_Services_and_Info.h"
 
 using namespace std;
 
@@ -29,6 +30,12 @@ Main_Window::Main_Window(QWidget *parent) :
     ui->setupUi(this);
     ui->line_ID_or_CPG_or_Name->setFocus();
     ui->lbl_Database->setText("Database -> ");
+
+    System_Services_and_Info System_Services_and_Info;
+    ui->lbl_Oficina->setText(System_Services_and_Info.getSystem_Version());
+    ui->lbl_Date->setText(System_Services_and_Info.get_Current_Date());
+    this->setWindowTitle(System_Services_and_Info.getSystem_Version());
+
 
     Database db;
     if(db.Connect()){
@@ -112,18 +119,18 @@ void Main_Window::on_action_About_Oficina_triggered()
     About.exec();
 }
 
-void Main_Window::on_line_ID_or_CPG_or_Name_textChanged(const QString &Used_Serach_Filter)
+void Main_Window::on_line_ID_or_CPG_or_Name_textChanged(const QString &Used_Search_Filter)
 {
     QSqlTableModel* model = new QSqlTableModel;
 
-    if(!(Used_Serach_Filter.isEmpty()))
+    if(!(Used_Search_Filter.isEmpty()))
     {
         model->setTable("Client");
-        if(!(Used_Serach_Filter == "*")){
-            model->setFilter("Client_ID like '%" + Used_Serach_Filter + "%'"
-                            " OR Client_Name like '%" + Used_Serach_Filter + "%'"
-                            " OR Client_CPG like '%"  + Used_Serach_Filter + "%'"
-                            " OR Client_id like '%"   + Used_Serach_Filter + "%'");
+        if(!(Used_Search_Filter == "*")){
+            model->setFilter("Client_ID like '%" + Used_Search_Filter + "%'"
+                            " OR Client_Name like '%" + Used_Search_Filter + "%'"
+                            " OR Client_CPG like '%"  + Used_Search_Filter + "%'"
+                            " OR Client_id like '%"   + Used_Search_Filter + "%'");
         }
         model->select();
         model->setEditStrategy(QSqlTableModel::OnManualSubmit);
