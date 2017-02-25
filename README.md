@@ -3,7 +3,7 @@
 Software to manage mechanical workshop services.
 
 Author: Sergio Rafael Lemke <bedi.com@gmail.com>
-Version: 0.1 - Alpha é pouco!
+Version: 0.2 - HackWeek
 
 Some tips:
 
