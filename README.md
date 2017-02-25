@@ -21,4 +21,17 @@ as one of the main goals of this application is to keep as much as possible from
 And you can see it in action here: 
 https://www.youtube.com/watch?v=8i3hIIxjHhk
 
-![Alt text](/resources/Oficina-0.1.1.png)
+![Alt text](/resources/Screenshots/Oficina-0.1-Alpha_eh_Pouco.png)
+
+![Alt text](/resources/Screenshots/Oficina-0.2-HackWeek.png)
+
+![Alt text](/resources/Screenshots/Oficina_Add_Client.png)
+
+![Alt text](/resources/Screenshots/Oficina_ClientAddCar.png)
+
+![Alt text](/resources/Screenshots/Oficina_editing_A_Service.png)
+
+![Alt text](/resources/Screenshots/Oficina_Stock_Control.png)
+
+![Alt text](/resources/Screenshots/Oficina_HourCost.png)
+

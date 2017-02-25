@@ -102,7 +102,14 @@ DISTFILES += \
     LICENSE \
     README.md \
     resources/Oficina-0.1.1.png \
-    TODO
+    TODO \
+    resources/Screenshots/Oficina_Add_Client.png \
+    resources/Screenshots/Oficina_ClientAddCar.png \
+    resources/Screenshots/Oficina_editing_A_Service.png \
+    resources/Screenshots/Oficina_HourCost.png \
+    resources/Screenshots/Oficina_Stock_Control.png \
+    resources/Screenshots/Oficina-0.1-Alpha_eh_Pouco.png \
+    resources/Screenshots/Oficina-0.2-HackWeek.png
 
 RESOURCES += \
     resources/images.qrc \
