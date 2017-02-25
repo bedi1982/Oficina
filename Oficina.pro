@@ -109,7 +109,8 @@ DISTFILES += \
     resources/Screenshots/Oficina_HourCost.png \
     resources/Screenshots/Oficina_Stock_Control.png \
     resources/Screenshots/Oficina-0.1-Alpha_eh_Pouco.png \
-    resources/Screenshots/Oficina-0.2-HackWeek.png
+    resources/Screenshots/Oficina-0.2-HackWeek.png \
+    resources/Screenshots/Oficina_Stock_AddPart.png
 
 RESOURCES += \
     resources/images.qrc \

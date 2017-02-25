@@ -23,15 +23,23 @@ https://www.youtube.com/watch?v=8i3hIIxjHhk
 
 ![Alt text](/resources/Screenshots/Oficina-0.1-Alpha_eh_Pouco.png)
 
+The Main window, search for clients, add a Car to him and do the Service:
 ![Alt text](/resources/Screenshots/Oficina-0.2-HackWeek.png)
 
+Adding a Client:
 ![Alt text](/resources/Screenshots/Oficina_Add_Client.png)
 
+Adding a Car Part to the Stock. You set quantity, Cost Price and Sell price.
+![Alt text](/resources/Screenshots/Oficina_Stock_AddPart.png)
+
+The Client Cars list, he can have many Cars:
 ![Alt text](/resources/Screenshots/Oficina_ClientAddCar.png)
 
+The Service window, updated, add parts, set paid, set finished, set worked hours, update description or summary:
 ![Alt text](/resources/Screenshots/Oficina_editing_A_Service.png)
 
+Parts stock control, lists Parts, results can be filtered, double click to edit all the Part info and/or quantity;
 ![Alt text](/resources/Screenshots/Oficina_Stock_Control.png)
 
+Your work hour has a cost, set it here and it will be reflected in all new Services.
 ![Alt text](/resources/Screenshots/Oficina_HourCost.png)
-
