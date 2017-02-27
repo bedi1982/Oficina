@@ -50,7 +50,7 @@ private slots:
 
     void on_btn_Add_Parts_Used_In_The_Service_clicked();
 
-    void on_btn_Add_Parts_Used_In_The_Service_2_clicked();
+    void on_btn_Update_Service_description_clicked();
 
 private:
     Ui::Client_Add_Service *ui;

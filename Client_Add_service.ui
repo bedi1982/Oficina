@@ -318,7 +318,7 @@ p, li { white-space: pre-wrap; }
     <set>QDialogButtonBox::Save</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_Add_Parts_Used_In_The_Service_2">
+  <widget class="QPushButton" name="btn_Update_Service_description">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -422,7 +422,7 @@ p, li { white-space: pre-wrap; }
   <zorder>check_Finished</zorder>
   <zorder>btnBox_Close</zorder>
   <zorder>btn_Save_Worked_Hours</zorder>
-  <zorder>btn_Add_Parts_Used_In_The_Service_2</zorder>
+  <zorder>btn_Update_Service_description</zorder>
   <zorder>label_2</zorder>
   <zorder>label_Hint_Icon</zorder>
   <zorder>label_Hint_Icon_2</zorder>

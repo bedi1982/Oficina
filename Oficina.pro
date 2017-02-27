@@ -58,8 +58,7 @@ HEADERS  += \
     Employee_Add.h \
     Employee_Update.h \
     Employee_List.h \
-    System_Services_and_Info.h \
-    Emplyee_List.h
+    System_Services_and_Info.h
 
 FORMS    += \
     About.ui \
@@ -80,8 +79,7 @@ FORMS    += \
     Stock_Finances.ui \
     Employee_Add.ui \
     Employee_Update.ui \
-    Employee_List.ui \
-    Emplyee_List.ui
+    Employee_List.ui
 
 DISTFILES += \
     resources/emote-love.png \
@@ -119,8 +117,7 @@ DISTFILES += \
 
 RESOURCES += \
     resources/images.qrc \
-    po/translations.qrc \
-    resources/translations.qrc
+    po/translations.qrc
 
 TRANSLATIONS += \
     po/Oficina_pt_BR.ts

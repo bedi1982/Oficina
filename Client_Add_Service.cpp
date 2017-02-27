@@ -116,18 +116,17 @@ void Client_Add_Service::Sum_Costs()
     QSqlQueryModel* model = new QSqlQueryModel;
     model->setQuery("SELECT Service_Hours_Duration, Service_Parts_Cost, Service_Hour_Cost, Service_Paid, Service_Finished FROM Service WHERE Service_id = " + ServiceID);
 
-    double Service_Hours_Duration = model->data(model->index(0, 0)).toDouble(); //query result line 0 column 0
+    double Hand_Work_Hours = model->data(model->index(0, 0)).toDouble(); //query result line 0 column 0
     double Service_Parts_Cost = model->data(model->index(0, 1)).toDouble(); //query result line 0 column 1
     double Service_Hour_Cost = model->data(model->index(0, 2)).toDouble(); //query result line 0 column 2
 
-    ui->Spin_Hand_Work_Hours->setValue(Service_Hours_Duration);
+    ui->Spin_Hand_Work_Hours->setValue(Hand_Work_Hours);
     //ui->Spin_PartsCost->setValue(Service_Parts_Cost);
     //ui->Spin_TotalserviceCost->setValue((Service_Hours_Duration * Service_Hour_Cost) + Service_Parts_Cost);
     //ui->Spin_ServiceRegistereHandWorkHours->setValue(Service_Hour_Cost);
     ui->lcd_Parts_Cost->display(Service_Parts_Cost);
-    ui->lcd_Hour_cost->display(Service_Hour_Cost);
-    ui->lcd_Service_Total->display((Service_Hours_Duration * Service_Hour_Cost) + Service_Parts_Cost);
-
+    ui->lcd_Hour_cost->display(Hand_Work_Hours * Service_Hour_Cost);
+    ui->lcd_Service_Total->display((Hand_Work_Hours * Service_Hour_Cost) + Service_Parts_Cost);
 
     //Service_Paid CheckMark 0 for not Paid 1 for Paid
     bool Service_Paid = model->data(model->index(0, 3)).toBool(); //query result line 0 column 3
@@ -150,10 +149,10 @@ void Client_Add_Service::Sum_Costs()
 
 void Client_Add_Service::on_btn_Add_Parts_Used_In_The_Service_clicked()
 {
-    Stock_Parts_Selection stock_Parts_Selection;
-    stock_Parts_Selection.setServiceID(ServiceID);
-    stock_Parts_Selection.setModal(true);
-    stock_Parts_Selection.exec();
+    Stock_Parts_Selection Stock_Parts_Selection;
+    Stock_Parts_Selection.setServiceID(ServiceID);
+    Stock_Parts_Selection.setModal(true);
+    Stock_Parts_Selection.exec();
 
     Load_Parts_And_Service_Costs_Grid();
 }
@@ -250,12 +249,7 @@ void Client_Add_Service::on_btn_Save_Worked_Hours_accepted()
     }
 }
 
-void Client_Add_Service::on_btnBox_Close_rejected()
-{
-    close();
-}
-
-void Client_Add_Service::on_btn_Add_Parts_Used_In_The_Service_2_clicked()
+void Client_Add_Service::on_btn_Update_Service_description_clicked()
 {
     Service_Update_Description service_Update_Description;
     service_Update_Description.setServiceID(ServiceID);
@@ -263,4 +257,9 @@ void Client_Add_Service::on_btn_Add_Parts_Used_In_The_Service_2_clicked()
     service_Update_Description.setModal(true);
     service_Update_Description.exec();
     Add_Service_Description_Text();
+}
+
+void Client_Add_Service::on_btnBox_Close_rejected()
+{
+    close();
 }

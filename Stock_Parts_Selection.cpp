@@ -52,9 +52,10 @@ void Stock_Parts_Selection::on_line_Part_Name_textChanged(const QString &userSea
         model->setHeaderData(1, Qt::Horizontal, tr("Name"));
         model->setHeaderData(2, Qt::Horizontal, tr("Description"));
         model->setHeaderData(3, Qt::Horizontal, tr("Cost"));
-        model->setHeaderData(4, Qt::Horizontal, tr("Quantity in Stock"));
-        model->setHeaderData(5, Qt::Horizontal, tr("Updated At"));
-        model->setHeaderData(6, Qt::Horizontal, tr("Created at"));
+        model->setHeaderData(4, Qt::Horizontal, tr("Sell Price"));
+        model->setHeaderData(5, Qt::Horizontal, tr("Quantity Available"));
+        model->setHeaderData(6, Qt::Horizontal, tr("Updated At"));
+        model->setHeaderData(7, Qt::Horizontal, tr("Created at"));
 
         ui->tbl_Parts_List->hideColumn(2);
         ui->tbl_Parts_List->setModel(model);
@@ -89,7 +90,10 @@ void Stock_Parts_Selection::on_tbl_Parts_List_doubleClicked(const QModelIndex &D
             QMessageBox::critical(this, tr("Error!"), map_Part_to_usedBy_Service_ID.lastError().text() + " Stock_Parts_Selection::on_tbl_PartsList_doubleClicked(const QModelIndex &DoubleClickedCellValue)");
         }else{
             QMessageBox::information(this, tr("Success!"), tr("Part Added to the Service and Stock updated."));
-            close();
+
+            //Reload the parts table//
+            on_line_Part_Name_textChanged("*");
+            //close();
         }
     }
 }
