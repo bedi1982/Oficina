@@ -37,7 +37,7 @@
     <rect>
      <x>90</x>
      <y>490</y>
-     <width>189</width>
+     <width>201</width>
      <height>51</height>
     </rect>
    </property>
@@ -70,7 +70,7 @@
     <pixmap resource="resources/images.qrc">:/emoticons/tux.png</pixmap>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>20</x>

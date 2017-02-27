@@ -113,8 +113,7 @@ DISTFILES += \
     resources/Screenshots/Oficina_Stock_AddPart.png
 
 RESOURCES += \
-    resources/images.qrc \
-    resources/translations.qrc
+    resources/images.qrc
 
 TRANSLATIONS += \
-    resources/translations/Oficina_pt_BR.ts
+    po/Oficina_pt_BR.ts

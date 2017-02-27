@@ -63,35 +63,6 @@
     <set>QAbstractItemView::NoEditTriggers</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_Add_Car_To_Client">
-   <property name="geometry">
-    <rect>
-     <x>1170</x>
-     <y>140</y>
-     <width>151</width>
-     <height>34</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="text">
-    <string>Add Car to Client</string>
-   </property>
-   <property name="icon">
-    <iconset resource="resources/images.qrc">
-     <normaloff>:/emoticons/carkey.png</normaloff>:/emoticons/carkey.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>24</width>
-     <height>24</height>
-    </size>
-   </property>
-  </widget>
   <widget class="QLabel" name="lbl_New_Car_Icon">
    <property name="geometry">
     <rect>
@@ -146,7 +117,7 @@
     <rect>
      <x>110</x>
      <y>88</y>
-     <width>211</width>
+     <width>340</width>
      <height>32</height>
     </rect>
    </property>
@@ -235,50 +206,12 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_Update_Client">
-   <property name="geometry">
-    <rect>
-     <x>520</x>
-     <y>10</y>
-     <width>121</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>0</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="layoutDirection">
-    <enum>Qt::LeftToRight</enum>
-   </property>
-   <property name="text">
-    <string>Update Client</string>
-   </property>
-   <property name="icon">
-    <iconset resource="resources/images.qrc">
-     <normaloff>:/emoticons/client_info.png</normaloff>:/emoticons/client_info.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>24</width>
-     <height>24</height>
-    </size>
-   </property>
-  </widget>
   <widget class="QLabel" name="lbl_Client_Services_History">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>420</y>
-     <width>401</width>
+     <x>121</x>
+     <y>411</y>
+     <width>389</width>
      <height>18</height>
     </rect>
    </property>
@@ -353,158 +286,10 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLineEdit" name="line_ClientID">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>520</x>
-     <y>90</y>
-     <width>91</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>340</width>
-     <height>16777215</height>
-    </size>
-   </property>
-   <property name="maxLength">
-    <number>34</number>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_Client_Phone">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>80</y>
-     <width>60</width>
-     <height>48</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>60</width>
-     <height>48</height>
-    </size>
-   </property>
-   <property name="text">
-    <string>Phone</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="llb_Client_ID">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>100</y>
-     <width>81</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Client's ID</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_Client_Address">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>40</y>
-     <width>60</width>
-     <height>48</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>60</width>
-     <height>48</height>
-    </size>
-   </property>
-   <property name="text">
-    <string>Adress</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_Client_Name">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>20</y>
-     <width>60</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>32</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>60</width>
-     <height>48</height>
-    </size>
-   </property>
-   <property name="text">
-    <string>Name</string>
-   </property>
-  </widget>
-  <widget class="QLCDNumber" name="lcd_Hour_Cost">
-   <property name="geometry">
-    <rect>
-     <x>780</x>
-     <y>90</y>
-     <width>111</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <property name="segmentStyle">
-    <enum>QLCDNumber::Flat</enum>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_Service_Hour_Cost">
-   <property name="geometry">
-    <rect>
-     <x>630</x>
-     <y>100</y>
-     <width>141</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>New Service Hour Cost:</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="lbl_Icon">
    <property name="geometry">
     <rect>
-     <x>1180</x>
+     <x>1210</x>
      <y>10</y>
      <width>131</width>
      <height>121</height>
@@ -558,6 +343,235 @@
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>90</y>
+     <width>202</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <widget class="QLabel" name="llb_Client_ID">
+      <property name="text">
+       <string>Client's ID</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="line_ClientID">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>340</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="maxLength">
+       <number>34</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>10</y>
+     <width>51</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="lbl_Client_Name">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>32</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>48</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lbl_Client_Address">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>48</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Adress</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lbl_Client_Phone">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>48</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Phone</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>10</y>
+     <width>301</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_5">
+    <item>
+     <widget class="QPushButton" name="btn_Update_Client">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="text">
+       <string>Update Client</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resources/images.qrc">
+        <normaloff>:/emoticons/client_info.png</normaloff>:/emoticons/client_info.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>24</width>
+        <height>24</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btn_Add_Car_To_Client">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Add Car to Client</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resources/images.qrc">
+        <normaloff>:/emoticons/carkey.png</normaloff>:/emoticons/carkey.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>24</width>
+        <height>24</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>840</x>
+     <y>10</y>
+     <width>201</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QCheckBox" name="checkBox_2">
+      <property name="text">
+       <string>Show Only Active Cars</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="checkBox">
+      <property name="text">
+       <string>Show Only Not Finished jobs</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lbl_Service_Hour_Cost">
+      <property name="text">
+       <string>New Service Hour Cost:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLCDNumber" name="lcd_Hour_Cost">
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="segmentStyle">
+       <enum>QLCDNumber::Flat</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
   <zorder>lbl_Client_Address</zorder>
   <zorder>lbl_Client_Name</zorder>
   <zorder>btn_Add_Car_To_Client</zorder>
@@ -575,11 +589,17 @@
   <zorder>line_ClientID</zorder>
   <zorder>lbl_Client_Phone</zorder>
   <zorder>llb_Client_ID</zorder>
-  <zorder>lcd_Hour_Cost</zorder>
   <zorder>lbl_Service_Hour_Cost</zorder>
   <zorder>lbl_Icon</zorder>
   <zorder>label_Hint_Icon</zorder>
   <zorder>label_Hint_Icon_2</zorder>
+  <zorder>checkBox</zorder>
+  <zorder>btn_Update_Client</zorder>
+  <zorder>checkBox_2</zorder>
+  <zorder>lbl_Service_Hour_Cost</zorder>
+  <zorder>checkBox</zorder>
+  <zorder>checkBox_2</zorder>
+  <zorder>lbl_Service_Hour_Cost</zorder>
  </widget>
  <tabstops>
   <tabstop>btn_Update_Client</tabstop>

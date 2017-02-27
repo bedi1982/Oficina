@@ -32,9 +32,9 @@
   <widget class="QDialogButtonBox" name="btn_Client_Add_Car">
    <property name="geometry">
     <rect>
-     <x>273</x>
+     <x>263</x>
      <y>360</y>
-     <width>191</width>
+     <width>201</width>
      <height>34</height>
     </rect>
    </property>

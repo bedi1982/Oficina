@@ -9,8 +9,8 @@
 - Implement a configuration file which will contain eg. database access credentials.
 
 - Add a daily resume wich will show:
-	Not Finished Services;
-	Not Paid Services;
+        Not Finished Services;
+        Not Paid Services;
 
 - Add a function on wich owner can set a date on which the client is going to pick his car.
         List clients that will come today to get his Car.
@@ -38,6 +38,9 @@ Oficina clients show always display that info.
 
 IN PROGRESS:
 - Make a screen that summs the value of the parts in all the stock (table Stok).
+
+BUGS:
+Adding a part is not removing from stock.
 
 DONE:
 - Change QPushButton's to QDialogButtonBox as QDialogButtonBox seems to suit better and has built-in icons.

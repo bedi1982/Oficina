@@ -15,11 +15,13 @@
 
 #include "qsqlrelationaltablemodel.h"
 #include "qsqlquery.h"
-#include "qdebug.h"
+//#include "qdebug.h"
 #include "qmessagebox.h"
 #include "qsqlerror.h"
 #include "Client_Services_History.h"
 #include "System_Services_and_Info.h"
+
+#include <qsortfilterproxymodel.h>
 
 using namespace std;
 
@@ -30,12 +32,9 @@ Main_Window::Main_Window(QWidget *parent) :
     ui->setupUi(this);
     ui->line_ID_or_CPG_or_Name->setFocus();
     ui->lbl_Database->setText("Database -> ");
-
-    System_Services_and_Info System_Services_and_Info;
-    ui->lbl_Oficina->setText(System_Services_and_Info.getSystem_Version());
-    ui->lbl_Date->setText(System_Services_and_Info.get_Current_Date());
-    this->setWindowTitle(System_Services_and_Info.getSystem_Version());
-
+    ui->lbl_Oficina->setText(System_Services_and_Info::get_System_Version());
+    ui->lbl_Date->setText(System_Services_and_Info::get_Current_Date());
+    this->setWindowTitle(System_Services_and_Info::get_System_Version());
 
     Database db;
     if(db.Connect()){
@@ -48,6 +47,7 @@ Main_Window::Main_Window(QWidget *parent) :
         ui->line_ID_or_CPG_or_Name->setEnabled(false);
         ui->menuBar->hide();
     }
+        System_Services_and_Info::Check_Text_Size(10);
 }
 
 Main_Window::~Main_Window()
@@ -126,13 +126,18 @@ void Main_Window::on_line_ID_or_CPG_or_Name_textChanged(const QString &Used_Sear
     if(!(Used_Search_Filter.isEmpty()))
     {
         model->setTable("Client");
+/*
         if(!(Used_Search_Filter == "*")){
             model->setFilter("Client_ID like '%" + Used_Search_Filter + "%'"
                             " OR Client_Name like '%" + Used_Search_Filter + "%'"
                             " OR Client_CPG like '%"  + Used_Search_Filter + "%'"
                             " OR Client_id like '%"   + Used_Search_Filter + "%'");
-        }
+        }*/
         model->select();
+        QSortFilterProxyModel proxy;
+        proxy.setSourceModel(model);
+        proxy.setFilterWildcard(Used_Search_Filter);
+
         model->setEditStrategy(QSqlTableModel::OnManualSubmit);
         model->setHeaderData(0, Qt::Horizontal, tr("System ID"));
         model->setHeaderData(1, Qt::Horizontal, tr("Name"));

@@ -76,9 +76,9 @@
   <widget class="QDialogButtonBox" name="btn_Add_Client">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>323</x>
      <y>280</y>
-     <width>194</width>
+     <width>201</width>
      <height>34</height>
     </rect>
    </property>

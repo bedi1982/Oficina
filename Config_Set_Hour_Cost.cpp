@@ -17,7 +17,7 @@ Config_Set_Hour_Cost::Config_Set_Hour_Cost(QWidget *parent) :
     //Set current hour cost value in the spinbox//
     Load_Current_Hour_Cost();
 
-    //Load the history os values on the SQL table//
+    //Load the history of values on the SQL table//
     Load_History_HourCost();
 }
 

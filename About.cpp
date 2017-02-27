@@ -7,12 +7,11 @@ About::About(QWidget *parent) :
     ui(new Ui::About)
 {
     ui->setupUi(this);
-    System_Services_and_Info System_Services_and_Info;
     ui->textBrowser->setText("Software to manage mechanical workshop services.\n"
                              "\n"
                              "Author: Sergio Rafael Lemke <bedi.com@gmail.com>\n"
-                             + System_Services_and_Info.getSystem_Version());
-    this->setWindowTitle(System_Services_and_Info.getSystem_Version());
+                             + System_Services_and_Info::get_System_Version());
+    this->setWindowTitle(System_Services_and_Info::get_System_Version());
 }
 
 About::~About()

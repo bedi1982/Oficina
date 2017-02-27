@@ -97,8 +97,8 @@ void Service_Create_Description::on_buttonBox_accepted()
         query.bindValue(":Service_Client_id", clientid);
         query.bindValue(":Service_Client_Carid", CarID);
 
-        System_Services_and_Info System_Services_and_Info;
-        query.bindValue(":Service_Hour_Cost", System_Services_and_Info.Get_Current_Hour_Cost());
+        //System_Services_and_Info System_Services_and_Info;
+        query.bindValue(":Service_Hour_Cost", System_Services_and_Info::Get_Current_Hour_Cost());
 
         query.bindValue(":Service_Short_Description", ui->line_Short_Description->text());
         query.bindValue(":Service_Description", ui->txt_Full_Description->toPlainText());

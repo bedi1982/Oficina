@@ -79,7 +79,7 @@ void Client_Services_History::Load_Client_Info_To_Text_Boxes()
 }
 
 void Client_Services_History::Load_Services_Grid()
-{    
+{
     QSqlQueryModel* model = new QSqlQueryModel;
     model->setQuery("SELECT"
                     " Service_id,"
@@ -95,7 +95,7 @@ void Client_Services_History::Load_Services_Grid()
                     " Service_updated_at"
                     " FROM Service s JOIN ClientCar cc"
                     " ON s.Service_Client_Carid = cc.ClientCar_id AND Service_Client_id = " + client_id +
-                    " order by 9 desc");
+                    " order by 1 DESC");
     model->setHeaderData(0, Qt::Horizontal, tr("Service ID"));
     model->setHeaderData(1, Qt::Horizontal, tr("On Car"));
     model->setHeaderData(2, Qt::Horizontal, tr("Plate"));
@@ -110,7 +110,7 @@ void Client_Services_History::Load_Services_Grid()
 
     if(model->query().isSelect()){
         ui->tbl_Client_Services->setModel(model);
-        ui->tbl_Client_Services->sortByColumn(0, Qt::DescendingOrder);
+        //ui->tbl_Client_Services->sortByColumn(2, Qt::DescendingOrder);
         ui->tbl_Client_Services->resizeColumnsToContents();
     }else{
         QMessageBox::critical(this, tr("Error!"), model->query().lastError().text() +
@@ -211,6 +211,5 @@ void Client_Services_History::on_btn_Add_Car_To_Client_clicked()
 }
 
 void Client_Services_History::Set_Current_Hour_Cost_Label(){
-    System_Services_and_Info System_Services_and_Info;
-    ui->lcd_Hour_Cost->display(System_Services_and_Info.Get_Current_Hour_Cost());
+    ui->lcd_Hour_Cost->display(System_Services_and_Info::Get_Current_Hour_Cost());
 }
