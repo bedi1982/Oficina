@@ -58,7 +58,8 @@ HEADERS  += \
     Employee_Add.h \
     Employee_Update.h \
     Employee_List.h \
-    System_Services_and_Info.h
+    System_Services_and_Info.h \
+    Emplyee_List.h
 
 FORMS    += \
     About.ui \
@@ -79,7 +80,8 @@ FORMS    += \
     Stock_Finances.ui \
     Employee_Add.ui \
     Employee_Update.ui \
-    Employee_List.ui
+    Employee_List.ui \
+    Emplyee_List.ui
 
 DISTFILES += \
     resources/emote-love.png \
@@ -110,10 +112,15 @@ DISTFILES += \
     resources/Screenshots/Oficina_Stock_Control.png \
     resources/Screenshots/Oficina-0.1-Alpha_eh_Pouco.png \
     resources/Screenshots/Oficina-0.2-HackWeek.png \
-    resources/Screenshots/Oficina_Stock_AddPart.png
+    resources/Screenshots/Oficina_Stock_AddPart.png \
+    Oficina.Desktop \
+    po/Oficina_pt_BR.qm \
+    po/Oficina_pt_BR.ts
 
 RESOURCES += \
-    resources/images.qrc
+    resources/images.qrc \
+    po/translations.qrc \
+    resources/translations.qrc
 
 TRANSLATIONS += \
     po/Oficina_pt_BR.ts

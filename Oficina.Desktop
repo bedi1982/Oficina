@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Oficina
+GenericName=Oficina
+Comment=Mechanical Workshop Application
+Exec=oficina
+Icon=oficina
+Terminal=false
+Type=Application
