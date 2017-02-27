@@ -17,5 +17,5 @@ public:
     static double Get_Current_Hour_Cost();
     static QString get_System_Version();
     static QString get_Current_Date();
-    static bool Check_Text_Size(int size_limit);
+    static QString Check_Text_Size(int size_limit, QString Entered_Text);
 };

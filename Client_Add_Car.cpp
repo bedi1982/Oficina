@@ -1,6 +1,7 @@
 #include "Client_Add_Car.h"
 #include "ui_Client_Add_Car.h"
 #include "Client_Services_History.h"
+#include "System_Services_and_Info.h"
 
 #include "QSqlQuery"
 #include "QSqlError"
@@ -24,7 +25,7 @@ bool Client_Add_Car::Verify_Empty_Fields_On_Form()
 {
     if (   ui->txt_Car_Model->text() == ""
            ||ui->txt_Car_Year->text() == ""
-           ||ui->txtPlain_Description->toPlainText() == ""
+           ||ui->txt_Full_Car_Description->toPlainText() == ""
            ||ui->txt_Car_Plate->text() == ""
            ||ui->txt_Car_Color->text()== ""
            )
@@ -59,7 +60,7 @@ void Client_Add_Car::Add_Car(QString client_id){
 
         query.bindValue(":ClientId", client_id);
         query.bindValue(":Model", ui->txt_Car_Model->text());
-        query.bindValue(":Description", ui->txtPlain_Description->toPlainText());
+        query.bindValue(":Description", ui->txt_Full_Car_Description->toPlainText());
         query.bindValue(":BuiltYear", ui->txt_Car_Year->text());
         query.bindValue(":Plate", ui->txt_Car_Plate->text());
         query.bindValue(":Color", ui->txt_Car_Color->text());
@@ -76,27 +77,21 @@ void Client_Add_Car::Add_Car(QString client_id){
     }
 }
 
-//Check car description size//
+//Check car description size is smaller then 250//
 void Client_Add_Car::Check_Car_Description_Size(){
-    if (ui->txtPlain_Description->toPlainText().length() > 300)
-    {
-        QString carDescription = ui->txtPlain_Description->toPlainText();
-        carDescription.chop(carDescription.length() - 300); // Cut off at 300 characters
-        ui->txtPlain_Description->setPlainText(carDescription); // Reset text
 
-        // This code just resets the cursor back to the end position
-        // If you don't use this, it moves back to the beginning.
-        // This is helpful for really long text edits WHERE you might
-        // lose your place.
-        QTextCursor cursor = ui->txtPlain_Description->textCursor();
-        cursor.setPosition(ui->txtPlain_Description->document()->characterCount() - 1);
-        ui->txtPlain_Description->setTextCursor(cursor);
+    const int max_size = 250;
 
-        // This is your "action" to alert the user. I'd suggest something more
-        // subtle though, or just not doing anything at all.
-        QMessageBox::warning(this,
-                             tr("Warning!"),
-                             tr("Keep the text shorter then 300 chars."));
+    if(ui->txt_Full_Car_Description->toPlainText().length() > max_size){
+        ui->txt_Full_Car_Description->setPlainText(System_Services_and_Info::Check_Text_Size(max_size, ui->txt_Full_Car_Description->toPlainText()));
+
+        //Warn the user:
+        QMessageBox::warning(this, tr("Warning!"), tr("Keep the text shorter then %1 chars.").arg(max_size));
+
+        //Put cursor back to the end of the text//
+        QTextCursor cursor = ui->txt_Full_Car_Description->textCursor();
+        cursor.setPosition(ui->txt_Full_Car_Description->document()->characterCount() - 1);
+        ui->txt_Full_Car_Description->setTextCursor(cursor);
     }
 }
 

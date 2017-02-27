@@ -47,7 +47,6 @@ Main_Window::Main_Window(QWidget *parent) :
         ui->line_ID_or_CPG_or_Name->setEnabled(false);
         ui->menuBar->hide();
     }
-        System_Services_and_Info::Check_Text_Size(10);
 }
 
 Main_Window::~Main_Window()

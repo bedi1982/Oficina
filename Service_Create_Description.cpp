@@ -64,25 +64,20 @@ void Service_Create_Description::setServiceID(const QString &value)
     ServiceID = value;
 }
 
-void Service_Create_Description::on_txt_Full_Description_textChanged()
+void Service_Create_Description::on_txt_Full_Description_textChanged() //Check limit for 1000k chars//
 {
-    if (ui->txt_Full_Description->toPlainText().length() > 1000)
-    {
-        QString fullserviceDescription = ui->txt_Full_Description->toPlainText();
-        fullserviceDescription.chop(fullserviceDescription.length() - 1000); // Cut off at 500 characters
-        ui->txt_Full_Description->setPlainText(fullserviceDescription); // Reset text
+    const int max_size = 1000;
 
-        // This code just resets the cursor back to the end position
-        // If you don't use this, it moves back to the beginning.
-        // This is helpful for really long text edits where you might
-        // lose your place.
+    if(ui->txt_Full_Description->toPlainText().length() > max_size){
+        ui->txt_Full_Description->setPlainText(System_Services_and_Info::Check_Text_Size(max_size, ui->txt_Full_Description->toPlainText()));
+
+        //Warn the user:
+        QMessageBox::warning(this, tr("Warning!"), tr("Keep the text shorter then %1 chars.").arg(max_size));
+
+        //Put cursor back to the end of the text//
         QTextCursor cursor = ui->txt_Full_Description->textCursor();
         cursor.setPosition(ui->txt_Full_Description->document()->characterCount() - 1);
         ui->txt_Full_Description->setTextCursor(cursor);
-
-        // This is your "action" to alert the user. I'd suggest something more
-        // subtle though, or just not doing anything at all.
-        QMessageBox::warning(this, tr("Error!"), tr("Keep the Part description smaller then 500 chars."));
     }
 }
 

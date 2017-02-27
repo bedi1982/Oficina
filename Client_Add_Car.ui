@@ -55,7 +55,7 @@
     <string>All fields need to be filled.</string>
    </property>
   </widget>
-  <widget class="QPlainTextEdit" name="txtPlain_Description">
+  <widget class="QPlainTextEdit" name="txt_Full_Car_Description">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -251,7 +251,7 @@
  </widget>
  <tabstops>
   <tabstop>txt_Car_Model</tabstop>
-  <tabstop>txtPlain_Description</tabstop>
+  <tabstop>txt_Full_Car_Description</tabstop>
   <tabstop>txt_Car_Year</tabstop>
   <tabstop>txt_Car_Plate</tabstop>
   <tabstop>txt_Car_Color</tabstop>

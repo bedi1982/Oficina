@@ -1,5 +1,6 @@
 #include "Stock_Update_Part.h"
 #include "ui_Stock_Update_Part.h"
+#include "System_Services_and_Info.h"
 
 #include <qsqlquery.h>
 #include <qdebug.h>
@@ -91,25 +92,21 @@ void Stock_Update_Part::on_buttonBox_accepted()
     close();
 }
 
-void Stock_Update_Part::on_txt_Part_Description_textChanged()
+void Stock_Update_Part::on_txt_Part_Description_textChanged()//Check for bigger description then allowed 250//
 {
-    if (ui->txt_Part_Description->toPlainText().length() > 250)
-    {
-        QString txt_description = ui->txt_Part_Description->toPlainText();
-        txt_description.chop(txt_description.length() - 250); // Cut off at 100 characters
-        ui->txt_Part_Description->setPlainText(txt_description); // Reset text
 
-        // This code just resets the cursor back to the end position
-        // If you don't use this, it moves back to the beginning.
-        // This is helpful for really long text edits where you might
-        // lose your place.
+    const int max_size = 250;
+
+    if(ui->txt_Part_Description->toPlainText().length() > max_size){;
+        ui->txt_Part_Description->setPlainText(System_Services_and_Info::Check_Text_Size(max_size, ui->txt_Part_Description->toPlainText()));
+
+        //Warn the user:
+        QMessageBox::warning(this, tr("Warning!"), tr("Keep the text shorter then %1 chars.").arg(max_size));
+
+        //Put cursor back to the end of the text//
         QTextCursor cursor = ui->txt_Part_Description->textCursor();
         cursor.setPosition(ui->txt_Part_Description->document()->characterCount() - 1);
         ui->txt_Part_Description->setTextCursor(cursor);
-
-        // This is your "action" to alert the user. I'd suggest something more
-        // subtle though, or just not doing anything at all.
-        QMessageBox::warning(this, tr("Warning!"), tr("Keep the Part description smaller then 250 chars."));
     }
 }
 
