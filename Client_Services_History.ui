@@ -62,6 +62,9 @@
    <property name="editTriggers">
     <set>QAbstractItemView::NoEditTriggers</set>
    </property>
+   <property name="sortingEnabled">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QLabel" name="lbl_New_Car_Icon">
    <property name="geometry">
@@ -260,6 +263,9 @@
    <property name="editTriggers">
     <set>QAbstractItemView::NoEditTriggers</set>
    </property>
+   <property name="sortingEnabled">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QLabel" name="lbl_Service_Icon">
    <property name="geometry">
@@ -343,7 +349,7 @@
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>520</x>
@@ -378,7 +384,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>60</x>
@@ -453,13 +459,13 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>520</x>
      <y>10</y>
      <width>301</width>
-     <height>31</height>
+     <height>42</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -520,7 +526,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>840</x>
@@ -572,34 +578,23 @@
     </item>
    </layout>
   </widget>
-  <zorder>lbl_Client_Address</zorder>
-  <zorder>lbl_Client_Name</zorder>
-  <zorder>btn_Add_Car_To_Client</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
   <zorder>lbl_New_Car_Icon</zorder>
   <zorder>lbl_Client_Cars</zorder>
   <zorder>line_Phone</zorder>
   <zorder>line_Client_City</zorder>
   <zorder>line_Address</zorder>
   <zorder>line_Name</zorder>
-  <zorder>btn_Update_Client</zorder>
   <zorder>tbl_Client_Cars</zorder>
   <zorder>lbl_Client_Services_History</zorder>
   <zorder>tbl_Client_Services</zorder>
   <zorder>lbl_Service_Icon</zorder>
-  <zorder>line_ClientID</zorder>
-  <zorder>lbl_Client_Phone</zorder>
-  <zorder>llb_Client_ID</zorder>
-  <zorder>lbl_Service_Hour_Cost</zorder>
   <zorder>lbl_Icon</zorder>
   <zorder>label_Hint_Icon</zorder>
   <zorder>label_Hint_Icon_2</zorder>
-  <zorder>checkBox</zorder>
-  <zorder>btn_Update_Client</zorder>
-  <zorder>checkBox_2</zorder>
-  <zorder>lbl_Service_Hour_Cost</zorder>
-  <zorder>checkBox</zorder>
-  <zorder>checkBox_2</zorder>
-  <zorder>lbl_Service_Hour_Cost</zorder>
  </widget>
  <tabstops>
   <tabstop>btn_Update_Client</tabstop>

@@ -85,6 +85,7 @@ void Stock_Control::on_line_Part_Name_textChanged(const QString &Search_String)
         model->setHeaderData(8, Qt::Horizontal, tr("Created At"));
 
         ui->tbl_Parts->setModel(model);
+
         ui->tbl_Parts->hideColumn(0); //sysID
         ui->tbl_Parts->hideColumn(2); //Description - To big for a grid (it has it's own text box)
 
@@ -148,6 +149,7 @@ void Stock_Control::on_checkBox_Set_Quantity_toggled()
 {
     if(ui->checkBox_Set_Quantity->isChecked()){
         ui->spinBox_Quantity_to_Show->setEnabled(true);
+        //TODO fix bellow xnx//
         ui->spinBox_Quantity_to_Show->setValue(9);
         ui->spinBox_Quantity_to_Show->setValue(10);
     }else{
