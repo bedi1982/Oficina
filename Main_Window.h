@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "qsortfilterproxymodel.h"
+#include "QSqlTableModel"
 
 namespace Ui {
 class MainWindow;
@@ -13,7 +15,14 @@ class Main_Window : public QMainWindow
 
 public:
     explicit Main_Window(QWidget *parent = 0);
+
+    QSqlTableModel * model;
+
+    QSortFilterProxyModel * proxy;
+
     ~Main_Window();
+
+    void Create_Client_Model_and_proxy();
 
 private slots:
     void on_action_Add_Client_triggered();

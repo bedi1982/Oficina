@@ -33,6 +33,14 @@ QString System_Services_and_Info::get_System_Version()
     return "Oficina - 0.2 HackWeek";
 }
 
+QString System_Services_and_Info::get_System_About()
+{
+    return tr("Software to manage mechanical workshop services.\n"
+                                    "\n"
+                                    "Author: Sergio Rafael Lemke <bedi.com@gmail.com>\n");
+
+}
+
 QString System_Services_and_Info::Check_Text_Size(int size_limit, QString Entered_Text)
 {
     int Overflowed_Chars = Entered_Text.length() - size_limit;

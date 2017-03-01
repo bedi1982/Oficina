@@ -203,7 +203,7 @@
         <number>30</number>
        </property>
        <property name="placeholderText">
-        <string>Search by name, ID, CPG. To show all clients enter: *</string>
+        <string>Enter Client Name...</string>
        </property>
       </widget>
      </item>
@@ -301,7 +301,7 @@
    </widget>
    <widget class="QMenu" name="menuRoot">
     <property name="title">
-     <string>Confi&amp;guration</string>
+     <string>Configu&amp;ration</string>
     </property>
     <addaction name="action_Change_Hour_Cost"/>
     <addaction name="action_Employees"/>

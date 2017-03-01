@@ -12,14 +12,13 @@
 #include "Man_Page.h"
 #include "About.h"
 #include "Employee_List.h"
-
-#include "qsqlrelationaltablemodel.h"
-#include "qsqlquery.h"
-//#include "qdebug.h"
-#include "qmessagebox.h"
-#include "qsqlerror.h"
 #include "Client_Services_History.h"
 #include "System_Services_and_Info.h"
+
+#include "qsqlquery.h"
+#include "qdebug.h"
+#include "qmessagebox.h"
+#include "qsqlerror.h"
 
 #include <qsortfilterproxymodel.h>
 
@@ -30,6 +29,8 @@ Main_Window::Main_Window(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    //TODO TEST
     ui->line_ID_or_CPG_or_Name->setFocus();
     ui->lbl_Database->setText("Database -> ");
     ui->lbl_Oficina->setText(System_Services_and_Info::get_System_Version());
@@ -37,9 +38,13 @@ Main_Window::Main_Window(QWidget *parent) :
     this->setWindowTitle(System_Services_and_Info::get_System_Version());
 
     Database db;
+
     if(db.Connect()){
         QPixmap green(":/emoticons/emblem-default.png");
         ui->lbl_Emoticon_Connection_Status->setPixmap(green);
+
+        //TODO
+        Create_Client_Model_and_proxy();
     }else{
         //If the database is not available we make it mostly useless//
         QPixmap red(":/emoticons/emblem-important.png");
@@ -118,24 +123,11 @@ void Main_Window::on_action_About_Oficina_triggered()
     About.exec();
 }
 
-void Main_Window::on_line_ID_or_CPG_or_Name_textChanged(const QString &Used_Search_Filter)
-{
-    QSqlTableModel* model = new QSqlTableModel;
+void Main_Window::Create_Client_Model_and_proxy(){
 
-    if(!(Used_Search_Filter.isEmpty()))
-    {
+        model = new QSqlTableModel();
         model->setTable("Client");
-/*
-        if(!(Used_Search_Filter == "*")){
-            model->setFilter("Client_ID like '%" + Used_Search_Filter + "%'"
-                            " OR Client_Name like '%" + Used_Search_Filter + "%'"
-                            " OR Client_CPG like '%"  + Used_Search_Filter + "%'"
-                            " OR Client_id like '%"   + Used_Search_Filter + "%'");
-        }*/
         model->select();
-        QSortFilterProxyModel proxy;
-        proxy.setSourceModel(model);
-        proxy.setFilterWildcard(Used_Search_Filter);
 
         model->setEditStrategy(QSqlTableModel::OnManualSubmit);
         model->setHeaderData(0, Qt::Horizontal, tr("System ID"));
@@ -148,14 +140,16 @@ void Main_Window::on_line_ID_or_CPG_or_Name_textChanged(const QString &Used_Sear
         model->setHeaderData(7, Qt::Horizontal, tr("Updated at"));
         model->setHeaderData(8, Qt::Horizontal, tr("Created at"));
 
-        ui->tbl_Client_List->setModel(model);
-        ui->tbl_Client_List->hideColumn(2);
-        ui->tbl_Client_List->resizeColumnsToContents();
-    }else{
-        model->clear();
-        ui->tbl_Client_List->setModel(model);
-        ui->tbl_Client_List->resizeColumnsToContents();
-    }
+        proxy = new QSortFilterProxyModel();
+        proxy->setSourceModel(model);
+        proxy->setFilterKeyColumn(1);//Name
+        proxy->setFilterCaseSensitivity(Qt::CaseInsensitive);
+        ui->tbl_Client_List->setModel(proxy);
+}
+
+void Main_Window::on_line_ID_or_CPG_or_Name_textChanged(const QString &Used_Search_Filter)
+{
+    proxy->setFilterFixedString(Used_Search_Filter);
 }
 
 void Main_Window::on_action_Stock_triggered()
@@ -181,8 +175,8 @@ void Main_Window::on_action_Manpage_triggered()
 
 void Main_Window::on_Clear_Button_clicked()
 {
-        ui->line_ID_or_CPG_or_Name->setText("");
-        ui->line_ID_or_CPG_or_Name->setFocus();
+    ui->line_ID_or_CPG_or_Name->setText("");
+    ui->line_ID_or_CPG_or_Name->setFocus();
 }
 
 void Main_Window::on_actionStock_Finances_triggered()

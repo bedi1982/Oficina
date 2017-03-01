@@ -16,6 +16,7 @@ class System_Services_and_Info : public QDialog
 public:
     static double Get_Current_Hour_Cost();
     static QString get_System_Version();
+    static QString get_System_About();
     static QString get_Current_Date();
     static QString Check_Text_Size(int size_limit, QString Entered_Text);
 };
