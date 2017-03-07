@@ -22,25 +22,25 @@ And you can see it in action here:
 https://www.youtube.com/watch?v=8i3hIIxjHhk
 
 Former version 0.1 - Alpha é Pouco!
-![Alt text](/resources/Screenshots/Oficina-0.1-Alpha_eh_Pouco.png)
+![Alt text](/images/Screenshots/Oficina-0.1-Alpha_eh_Pouco.png)
 
 Adding a Client:
-![Alt text](/resources/Screenshots/Oficina_Add_Client.png)
+![Alt text](/images/Screenshots/Oficina_Add_Client.png)
 
 Search for registered clients, add cars to the clients, add Services to the Client's Cars:
-![Alt text](/resources/Screenshots/Oficina-0.2-HackWeek.png)
+![Alt text](/images/Screenshots/Oficina-0.2-HackWeek.png)
 
 The Client Cars list, he can have many Cars:
-![Alt text](/resources/Screenshots/Oficina_ClientAddCar.png)
+![Alt text](/images/Screenshots/Oficina_ClientAddCar.png)
 
 The Service window: add parts, set paid, set finished, set worked hours, update description or/and summary:
-![Alt text](/resources/Screenshots/Oficina_editing_A_Service.png)
+![Alt text](/images/Screenshots/Oficina_editing_A_Service.png)
 
 Adding a Car Part to the Stock. You set quantity, Cost Price and Sell price. Parts is imediatelly available to use in Services. Parts can be disabled:
-![Alt text](/resources/Screenshots/Oficina_Stock_AddPart.png)
+![Alt text](/images/Screenshots/Oficina_Stock_AddPart.png)
 
 Parts stock control, list Parts with filters, double click to edit:
-![Alt text](/resources/Screenshots/Oficina_Stock_Control.png)
+![Alt text](/images/Screenshots/Oficina_Stock_Control.png)
 
 Your work hour has a cost, set it here and it will be reflected in all new Services. Old Services HourCost won't be changed.
-![Alt text](/resources/Screenshots/Oficina_HourCost.png)
+![Alt text](/images/Screenshots/Oficina_HourCost.png)
