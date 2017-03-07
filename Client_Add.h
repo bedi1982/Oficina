@@ -15,6 +15,9 @@ public:
     explicit Client_Add(QWidget *parent = 0);
     ~Client_Add();
 
+signals:
+    void clicked();
+
 private slots:
     void Clear_Form();
 

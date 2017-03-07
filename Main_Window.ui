@@ -41,7 +41,7 @@
    <string>Oficina 0.2</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources/images.qrc">
+   <iconset resource="images/images.qrc">
     <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -171,7 +171,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resources/images.qrc">:/emoticons/sport-car.png</pixmap>
+     <pixmap resource="images/images.qrc">:/emoticons/sport-car.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -213,7 +213,7 @@
         <string>Clear</string>
        </property>
        <property name="icon">
-        <iconset resource="resources/images.qrc">
+        <iconset resource="images/images.qrc">
          <normaloff>:/emoticons/tux.png</normaloff>:/emoticons/tux.png</iconset>
        </property>
       </widget>
@@ -233,7 +233,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resources/images.qrc">:/emoticons/hint.png</pixmap>
+     <pixmap resource="images/images.qrc">:/emoticons/hint.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -363,7 +363,7 @@
   <tabstop>tbl_Client_List</tabstop>
  </tabstops>
  <resources>
-  <include location="resources/images.qrc"/>
+  <include location="images/images.qrc"/>
  </resources>
  <connections/>
 </ui>

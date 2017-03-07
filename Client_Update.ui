@@ -26,7 +26,7 @@
    <string>Editing Client Info</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources/images.qrc">
+   <iconset resource="images/images.qrc">
     <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
   </property>
   <widget class="QLineEdit" name="line_Phone">
@@ -242,7 +242,7 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="btn_Client_Cars">
    <property name="geometry">
     <rect>
      <x>430</x>
@@ -255,11 +255,11 @@
     <string>Client Cars</string>
    </property>
    <property name="icon">
-    <iconset resource="resources/images.qrc">
+    <iconset resource="images/images.qrc">
      <normaloff>:/emoticons/carkey.png</normaloff>:/emoticons/carkey.png</iconset>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -333,7 +333,24 @@
   <tabstop>line_Updated_At</tabstop>
  </tabstops>
  <resources>
-  <include location="resources/images.qrc"/>
+  <include location="images/images.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btn_Client_Update</sender>
+   <signal>accepted()</signal>
+   <receiver>Client_Update</receiver>
+   <slot>showMinimized()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>460</x>
+     <y>286</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>287</x>
+     <y>156</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

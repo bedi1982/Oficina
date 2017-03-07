@@ -32,7 +32,7 @@
    <string>Client History</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources/images.qrc">
+   <iconset resource="images/images.qrc">
     <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
   </property>
   <widget class="QTableView" name="tbl_Client_Cars">
@@ -305,7 +305,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="resources/images.qrc">:/emoticons/client_info.png</pixmap>
+    <pixmap resource="images/images.qrc">:/emoticons/client_info.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -324,7 +324,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="resources/images.qrc">:/emoticons/hint.png</pixmap>
+    <pixmap resource="images/images.qrc">:/emoticons/hint.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -343,7 +343,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="resources/images.qrc">:/emoticons/hint.png</pixmap>
+    <pixmap resource="images/images.qrc">:/emoticons/hint.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -490,7 +490,7 @@
        <string>Update Client</string>
       </property>
       <property name="icon">
-       <iconset resource="resources/images.qrc">
+       <iconset resource="images/images.qrc">
         <normaloff>:/emoticons/client_info.png</normaloff>:/emoticons/client_info.png</iconset>
       </property>
       <property name="iconSize">
@@ -513,7 +513,7 @@
        <string>Add Car to Client</string>
       </property>
       <property name="icon">
-       <iconset resource="resources/images.qrc">
+       <iconset resource="images/images.qrc">
         <normaloff>:/emoticons/carkey.png</normaloff>:/emoticons/carkey.png</iconset>
       </property>
       <property name="iconSize">
@@ -608,7 +608,7 @@
   <tabstop>line_Address</tabstop>
  </tabstops>
  <resources>
-  <include location="resources/images.qrc"/>
+  <include location="images/images.qrc"/>
  </resources>
  <connections/>
 </ui>

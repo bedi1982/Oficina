@@ -26,7 +26,7 @@
    <string>Adding Parts to Service</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources/images.qrc">
+   <iconset resource="images/images.qrc">
     <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
   </property>
   <widget class="QTableView" name="tbl_Parts_List">
@@ -109,7 +109,7 @@
     <string>Add New</string>
    </property>
    <property name="icon">
-    <iconset resource="resources/images.qrc">
+    <iconset resource="images/images.qrc">
      <normaloff>:/emoticons/carkey.png</normaloff>:/emoticons/carkey.png</iconset>
    </property>
   </widget>
@@ -120,7 +120,7 @@
   <tabstop>btn_Add_Part_to_Stock</tabstop>
  </tabstops>
  <resources>
-  <include location="resources/images.qrc"/>
+  <include location="images/images.qrc"/>
  </resources>
  <connections/>
 </ui>

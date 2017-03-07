@@ -26,7 +26,7 @@
    <string>Update Service Description</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources/images.qrc">
+   <iconset resource="images/images.qrc">
     <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
   </property>
   <widget class="QTextEdit" name="txt_Full_Description">
@@ -109,7 +109,7 @@ p, li { white-space: pre-wrap; }
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="resources/images.qrc">:/emoticons/service.png</pixmap>
+    <pixmap resource="images/images.qrc">:/emoticons/service.png</pixmap>
    </property>
   </widget>
  </widget>
@@ -118,7 +118,7 @@ p, li { white-space: pre-wrap; }
   <tabstop>txt_Full_Description</tabstop>
  </tabstops>
  <resources>
-  <include location="resources/images.qrc"/>
+  <include location="images/images.qrc"/>
  </resources>
  <connections/>
 </ui>
