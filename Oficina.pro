@@ -82,42 +82,60 @@ FORMS    += \
     Employee_List.ui
 
 DISTFILES += \
-    resources/emote-love.png \
-    resources/face-angel.png \
-    resources/face-angry.png \
-    resources/face-devilish.png \
-    resources/face-embarrassed.png \
-    resources/face-kiss.png \
-    resources/face-monkey.png \
-    resources/face-plain.png \
-    resources/face-raspberry.png \
-    resources/face-sad.png \
-    resources/face-smile-big.png \
-    resources/face-smile.png \
-    resources/face-surprise.png \
-    resources/face-wink.png \
-    resources/face-worried.png \
-    resources/DB11-model2.png \
+    images/emote-love.png \
+    images/face-angel.png \
+    images/face-angry.png \
+    images/face-cool.png \
+    images/face-crying.png \
+    images/face-devilish.png \
+    images/face-embarrassed.png \
+    images/face-glasses.png \
+    images/face-kiss.png \
+    images/face-laugh.png \
+    images/face-monkey.png \
+    images/face-plain.png \
+    images/face-raspberry.png \
+    images/face-sad.png \
+    images/face-sick.png \
+    images/face-smile-big.png \
+    images/face-smile.png \
+    images/face-smirk.png \
+    images/face-surprise.png \
+    images/face-tired.png \
+    images/face-uncertain.png \
+    images/face-wink.png \
+    images/face-worried.png \
+    images/DB11-model2.png \
+    images/carkey.png \
+    images/client_info.png \
+    images/emblem-default.png \
+    images/emblem-important.png \
+    images/hint.png \
+    images/service.png \
+    images/sport-car.png \
+    images/tux.png \
+    images/Oficina-0.1.1.png \
+    images/Screenshots/Oficina_Add_Client.png \
+    images/Screenshots/Oficina_ClientAddCar.png \
+    images/Screenshots/Oficina_editing_A_Service.png \
+    images/Screenshots/Oficina_HourCost.png \
+    images/Screenshots/Oficina_Stock_Control.png \
+    images/Screenshots/Oficina-0.1-Alpha_eh_Pouco.png \
+    images/Screenshots/Oficina-0.2-HackWeek.png \
+    images/Screenshots/Oficina_Stock_AddPart.png \
+    po/Oficina_pt_BR.qm \
+    po/Oficina_pt_BR.ts \
     Create_Database.sql \
     LICENSE \
     README.md \
-    resources/Oficina-0.1.1.png \
     TODO \
-    resources/Screenshots/Oficina_Add_Client.png \
-    resources/Screenshots/Oficina_ClientAddCar.png \
-    resources/Screenshots/Oficina_editing_A_Service.png \
-    resources/Screenshots/Oficina_HourCost.png \
-    resources/Screenshots/Oficina_Stock_Control.png \
-    resources/Screenshots/Oficina-0.1-Alpha_eh_Pouco.png \
-    resources/Screenshots/Oficina-0.2-HackWeek.png \
-    resources/Screenshots/Oficina_Stock_AddPart.png \
-    Oficina.Desktop \
-    po/Oficina_pt_BR.qm \
-    po/Oficina_pt_BR.ts
+    Oficina.Desktop
 
 RESOURCES += \
-    resources/images.qrc \
-    po/translations.qrc
+    images/images.qrc \
+    po/Oficina_pt_BR.ts \
+    po/Oficina_pt_BR.qm
 
 TRANSLATIONS += \
-    po/Oficina_pt_BR.ts
+    po/Oficina_pt_BR.ts \
+    po/Oficina_pt_BR.qm

@@ -22,7 +22,7 @@ Stock_Add_Part::~Stock_Add_Part()
     delete ui;
 }
 
-bool Stock_Add_Part::Clear_Form()
+void Stock_Add_Part::Clear_Form()
 {
         ui->line_Name->setText("");
         ui->txt_Part_Description->setPlainText("");

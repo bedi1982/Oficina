@@ -1,5 +1,6 @@
 #include "Main_Window.h"
 #include "QApplication"
+#include "System_Services_and_Info.h"
 
 #include "QDebug"
 
@@ -10,19 +11,19 @@
 int main(int argc, char *argv[])
 {
     QApplication::setApplicationName("Oficina");
-    QApplication::setApplicationVersion("0.1.1");
+    QApplication::setApplicationVersion(System_Services_and_Info::get_System_Version());
 
     QApplication a(argc, argv);
 
     QTranslator translation;
-    QFile file(":/translations/Oficina_pt_BR.qm-DISABLED");
+    QFile file(":po/Oficina_pt_BR.qm");
 
     if(file.exists()){
-        qDebug() << "Testing tranlations: exist";
-        translation.load(":/translations/Oficina_pt_BR.qm");
+        translation.load(":po/Oficina_pt_BR.qm");
         a.installTranslator(&translation);
+        qDebug() << "Test tranlations: Found!";
     }else{
-        qDebug() << "Testing tranlations: no exists";
+        qDebug() << "Test tranlations: Not Found";
     }
 
     Main_Window w;

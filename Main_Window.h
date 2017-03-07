@@ -24,6 +24,9 @@ public:
 
     void Create_Client_Model_and_proxy();
 
+public slots:
+    void Set_Client_Name_on_the_Grid(QString Client_Name);
+
 private slots:
     void on_action_Add_Client_triggered();
 
@@ -53,7 +56,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-
 };
 
 #endif // MAINWINDOW_H

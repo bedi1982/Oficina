@@ -15,7 +15,7 @@ public:
     explicit Stock_Add_Part(QWidget *parent = 0);
     ~Stock_Add_Part();
 
-    bool Clear_Form();
+    void Clear_Form();
 private slots:
 
     bool Check_Empty_Fields_On_Form();

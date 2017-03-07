@@ -64,20 +64,6 @@ void Main_Window::on_action_Add_Client_triggered()
     Client_Add Client_Add;
     Client_Add.setModal(true);
     Client_Add.exec();
-
-    //We add the new Client in the search Result:
-    QSqlQuery Get_last_Client;
-    Get_last_Client.prepare("SELECT Client_id FROM Client ORDER BY Client_id DESC LIMIT 1;");
-
-    if (Get_last_Client.exec() == false){
-        QMessageBox::critical(this, tr("Error!"), Get_last_Client.lastError().text() + "void Main_Window::on_action_Add_Client_triggered()");
-    }else{
-        while(Get_last_Client.next())
-        {
-            QString Last_client = Get_last_Client.value(0).toString();
-            ui->line_ID_or_CPG_or_Name->setText(Last_client);
-        }
-    }
 }
 
 void Main_Window::on_action_Add_Part_triggered()
@@ -111,6 +97,11 @@ void Main_Window::Client_Services_Open(QString clientID)
     Client_Services_History.exec();
 }
 
+void Main_Window::Set_Client_Name_on_the_Grid(QString Client_Name)
+{
+    ui->line_ID_or_CPG_or_Name->setText(Client_Name);
+}
+
 void Main_Window::on_action_Exit_triggered()
 {
     close();
@@ -125,26 +116,26 @@ void Main_Window::on_action_About_Oficina_triggered()
 
 void Main_Window::Create_Client_Model_and_proxy(){
 
-        model = new QSqlTableModel();
-        model->setTable("Client");
-        model->select();
+    model = new QSqlTableModel();
+    model->setTable("Client");
+    model->select();
 
-        model->setEditStrategy(QSqlTableModel::OnManualSubmit);
-        model->setHeaderData(0, Qt::Horizontal, tr("System ID"));
-        model->setHeaderData(1, Qt::Horizontal, tr("Name"));
-        model->setHeaderData(2, Qt::Horizontal, tr("Adress"));
-        model->setHeaderData(3, Qt::Horizontal, tr("City"));
-        model->setHeaderData(4, Qt::Horizontal, tr("CPG"));
-        model->setHeaderData(5, Qt::Horizontal, tr("ID"));
-        model->setHeaderData(6, Qt::Horizontal, tr("Phone"));
-        model->setHeaderData(7, Qt::Horizontal, tr("Updated at"));
-        model->setHeaderData(8, Qt::Horizontal, tr("Created at"));
+    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    model->setHeaderData(0, Qt::Horizontal, tr("System ID"));
+    model->setHeaderData(1, Qt::Horizontal, tr("Name"));
+    model->setHeaderData(2, Qt::Horizontal, tr("Adress"));
+    model->setHeaderData(3, Qt::Horizontal, tr("City"));
+    model->setHeaderData(4, Qt::Horizontal, tr("CPG"));
+    model->setHeaderData(5, Qt::Horizontal, tr("ID"));
+    model->setHeaderData(6, Qt::Horizontal, tr("Phone"));
+    model->setHeaderData(7, Qt::Horizontal, tr("Updated at"));
+    model->setHeaderData(8, Qt::Horizontal, tr("Created at"));
 
-        proxy = new QSortFilterProxyModel();
-        proxy->setSourceModel(model);
-        proxy->setFilterKeyColumn(1);//Name
-        proxy->setFilterCaseSensitivity(Qt::CaseInsensitive);
-        ui->tbl_Client_List->setModel(proxy);
+    proxy = new QSortFilterProxyModel();
+    proxy->setSourceModel(model);
+    proxy->setFilterKeyColumn(1);//Name
+    proxy->setFilterCaseSensitivity(Qt::CaseInsensitive);
+    ui->tbl_Client_List->setModel(proxy);
 }
 
 void Main_Window::on_line_ID_or_CPG_or_Name_textChanged(const QString &Used_Search_Filter)
