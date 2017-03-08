@@ -35,9 +35,6 @@ bool
            ||ui->line_Phone->text() == ""
            )
     {
-        ui->lbl_feedback->setText(tr("All fields need to be filled!"));
-        QPixmap crying(":/emoticons/face-crying.png");
-        ui->lbl_Emoticon->setPixmap(crying);
         ui->line_Name->setFocus();
         return false;
     }
@@ -52,7 +49,6 @@ void Employee_Add::Clear_Form(){
         ui->line_Personal_ID->setText("");
         ui->line_CPG->setText("");
         ui->line_Phone->setText("");
-        ui->lbl_feedback->setText("");
         Set_Emoticon();
 }
 
@@ -75,9 +71,6 @@ void Employee_Add::on_btn_Add_Client_accepted()
             qDebug() << query.lastError();
             QMessageBox::critical(this, tr("Error!"), query.lastError().text() + ". Class: addEmployee.cpp51");
         }else{
-            ui->lbl_feedback->setText(ui->line_Name->text() + tr(" added!"));
-            QPixmap cool(":/emoticons/face-cool.png");
-            ui->lbl_Emoticon->setPixmap(cool);
             QMessageBox::information(this, tr("Success!"), ui->line_Name->text() + tr(" added"));
             Clear_Form();
         }

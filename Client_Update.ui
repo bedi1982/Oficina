@@ -29,297 +29,209 @@
    <iconset resource="images/images.qrc">
     <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
   </property>
-  <widget class="QLineEdit" name="line_Phone">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>180</y>
-     <width>271</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="maxLength">
-    <number>40</number>
-   </property>
-   <property name="placeholderText">
-    <string>+55 (47) 9999-9999, +55 (41) 9991-8799</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_CPF">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>150</y>
-     <width>59</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>CPG</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_Personal_ID">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>140</y>
-     <width>131</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="maxLength">
-    <number>15</number>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_CPG">
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>140</y>
-     <width>171</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="maxLength">
-    <number>20</number>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_Emoticon">
-   <property name="geometry">
-    <rect>
-     <x>470</x>
-     <y>190</y>
-     <width>48</width>
-     <height>48</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>48</width>
-     <height>48</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>48</width>
-     <height>48</height>
-    </size>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_Address">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>60</y>
-     <width>321</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="maxLength">
-    <number>50</number>
-   </property>
-   <property name="placeholderText">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_Name">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>20</y>
-     <width>321</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="maxLength">
-    <number>40</number>
-   </property>
-   <property name="placeholderText">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_City">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>100</y>
-     <width>251</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="maxLength">
-    <number>30</number>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_SysID">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>20</y>
-     <width>113</width>
-     <height>32</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_Created_At">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>220</y>
-     <width>231</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="maxLength">
-    <number>40</number>
-   </property>
-   <property name="placeholderText">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_Updated_At">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>260</y>
-     <width>231</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="maxLength">
-    <number>40</number>
-   </property>
-   <property name="placeholderText">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QDialogButtonBox" name="btn_Client_Update">
-   <property name="geometry">
-    <rect>
-     <x>360</x>
-     <y>270</y>
-     <width>201</width>
-     <height>34</height>
-    </rect>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_Client_Cars">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>60</y>
-     <width>131</width>
-     <height>34</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Client Cars</string>
-   </property>
-   <property name="icon">
-    <iconset resource="images/images.qrc">
-     <normaloff>:/emoticons/carkey.png</normaloff>:/emoticons/carkey.png</iconset>
-   </property>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>20</y>
-     <width>71</width>
-     <height>271</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item alignment="Qt::AlignRight">
-     <widget class="QLabel" name="lbl_Name">
-      <property name="text">
-       <string>Name</string>
-      </property>
-     </widget>
-    </item>
-    <item alignment="Qt::AlignRight">
-     <widget class="QLabel" name="lbl_Adress">
-      <property name="text">
-       <string>Adress</string>
-      </property>
-     </widget>
-    </item>
-    <item alignment="Qt::AlignRight">
-     <widget class="QLabel" name="lbl_City">
-      <property name="text">
-       <string>City</string>
-      </property>
-     </widget>
-    </item>
-    <item alignment="Qt::AlignRight">
-     <widget class="QLabel" name="lbl_Personal_ID">
-      <property name="text">
-       <string>ID</string>
-      </property>
-     </widget>
-    </item>
-    <item alignment="Qt::AlignRight">
-     <widget class="QLabel" name="lbl_Phone">
-      <property name="text">
-       <string>Phone</string>
-      </property>
-     </widget>
-    </item>
-    <item alignment="Qt::AlignRight">
-     <widget class="QLabel" name="lbl_Created_At">
-      <property name="text">
-       <string>Created</string>
-      </property>
-     </widget>
-    </item>
-    <item alignment="Qt::AlignRight">
-     <widget class="QLabel" name="lbl_Updated_At">
-      <property name="text">
-       <string>Updated</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="lbl_Name">
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="4">
+    <widget class="QLineEdit" name="line_Name">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="maxLength">
+      <number>40</number>
+     </property>
+     <property name="placeholderText">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="5" colspan="2">
+    <widget class="QLineEdit" name="line_SysID">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lbl_Adress">
+     <property name="text">
+      <string>Adress</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="4">
+    <widget class="QLineEdit" name="line_Address">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="maxLength">
+      <number>50</number>
+     </property>
+     <property name="placeholderText">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="5" colspan="2">
+    <widget class="QPushButton" name="btn_Client_Cars">
+     <property name="text">
+      <string>Client Cars</string>
+     </property>
+     <property name="icon">
+      <iconset resource="images/images.qrc">
+       <normaloff>:/emoticons/carkey.png</normaloff>:/emoticons/carkey.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lbl_City">
+     <property name="text">
+      <string>City</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="3">
+    <widget class="QLineEdit" name="line_City">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="maxLength">
+      <number>30</number>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lbl_Personal_ID">
+     <property name="text">
+      <string>ID</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLineEdit" name="line_Personal_ID">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="maxLength">
+      <number>15</number>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QLabel" name="lbl_CPF">
+     <property name="text">
+      <string>CPG</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="3" colspan="3">
+    <widget class="QLineEdit" name="line_CPG">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="maxLength">
+      <number>20</number>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lbl_Phone">
+     <property name="text">
+      <string>Phone</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1" colspan="3">
+    <widget class="QLineEdit" name="line_Phone">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="maxLength">
+      <number>40</number>
+     </property>
+     <property name="placeholderText">
+      <string>+55 (47) 9999-9999, +55 (41) 9991-8799</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="6" rowspan="2">
+    <widget class="QLabel" name="lbl_Emoticon">
+     <property name="minimumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lbl_Created_At">
+     <property name="text">
+      <string>Created</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1" colspan="3">
+    <widget class="QLineEdit" name="line_Created_At">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="maxLength">
+      <number>40</number>
+     </property>
+     <property name="placeholderText">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="lbl_Updated_At">
+     <property name="text">
+      <string>Updated</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1" colspan="3">
+    <widget class="QLineEdit" name="line_Updated_At">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="maxLength">
+      <number>40</number>
+     </property>
+     <property name="placeholderText">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="4" colspan="3">
+    <widget class="QDialogButtonBox" name="btn_Client_Update">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <tabstops>
   <tabstop>line_Name</tabstop>

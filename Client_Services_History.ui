@@ -10,24 +10,6 @@
     <height>768</height>
    </rect>
   </property>
-  <property name="sizePolicy">
-   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-    <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
-   </sizepolicy>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>1400</width>
-    <height>768</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>1400</width>
-    <height>768</height>
-   </size>
-  </property>
   <property name="windowTitle">
    <string>Client History</string>
   </property>
@@ -35,578 +17,320 @@
    <iconset resource="images/images.qrc">
     <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
   </property>
-  <widget class="QTableView" name="tbl_Client_Cars">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>180</y>
-     <width>1381</width>
-     <height>200</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>0</width>
-     <height>200</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>3453453</width>
-     <height>45345</height>
-    </size>
-   </property>
-   <property name="toolTip">
-    <string>Double click here to generate a new Service Order.</string>
-   </property>
-   <property name="editTriggers">
-    <set>QAbstractItemView::NoEditTriggers</set>
-   </property>
-   <property name="sortingEnabled">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_New_Car_Icon">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>130</y>
-     <width>48</width>
-     <height>48</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>48</width>
-     <height>48</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>48</width>
-     <height>48</height>
-    </size>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_Client_Cars">
-   <property name="geometry">
-    <rect>
-     <x>120</x>
-     <y>160</y>
-     <width>471</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Bellow are the Client Cars. To start a new Service double click the desired Car. </string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_Phone">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>110</x>
-     <y>88</y>
-     <width>340</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>340</width>
-     <height>16777215</height>
-    </size>
-   </property>
-   <property name="maxLength">
-    <number>34</number>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_Client_City">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>520</x>
-     <y>50</y>
-     <width>240</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>240</width>
-     <height>16777215</height>
-    </size>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_Address">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>110</x>
-     <y>50</y>
-     <width>400</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>400</width>
-     <height>32</height>
-    </size>
-   </property>
-   <property name="maxLength">
-    <number>50</number>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="line_Name">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>110</x>
-     <y>12</y>
-     <width>400</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>400</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>400</width>
-     <height>32</height>
-    </size>
-   </property>
-   <property name="acceptDrops">
-    <bool>false</bool>
-   </property>
-   <property name="maxLength">
-    <number>40</number>
-   </property>
-   <property name="readOnly">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_Client_Services_History">
-   <property name="geometry">
-    <rect>
-     <x>121</x>
-     <y>411</y>
-     <width>389</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="sizeIncrement">
-    <size>
-     <width>1</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Bellow are the Client Services.  Double click a Service to manage it.</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
-   </property>
-  </widget>
-  <widget class="QTableView" name="tbl_Client_Services">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>440</y>
-     <width>1381</width>
-     <height>321</height>
-    </rect>
-   </property>
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>0</width>
-     <height>200</height>
-    </size>
-   </property>
-   <property name="toolTip">
-    <string>Double click to change the Service details...</string>
-   </property>
-   <property name="editTriggers">
-    <set>QAbstractItemView::NoEditTriggers</set>
-   </property>
-   <property name="sortingEnabled">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_Service_Icon">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>390</y>
-     <width>48</width>
-     <height>48</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>48</width>
-     <height>48</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>48</width>
-     <height>16777215</height>
-    </size>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_Icon">
-   <property name="geometry">
-    <rect>
-     <x>1210</x>
-     <y>10</y>
-     <width>131</width>
-     <height>121</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="images/images.qrc">:/emoticons/client_info.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_Hint_Icon">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>140</y>
-     <width>31</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="images/images.qrc">:/emoticons/hint.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_Hint_Icon_2">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>400</y>
-     <width>31</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="images/images.qrc">:/emoticons/hint.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>520</x>
-     <y>90</y>
-     <width>202</width>
-     <height>34</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_3">
-    <item>
-     <widget class="QLabel" name="llb_Client_ID">
-      <property name="text">
-       <string>Client's ID</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="line_ClientID">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>340</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="maxLength">
-       <number>34</number>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>10</y>
-     <width>51</width>
-     <height>111</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QLabel" name="lbl_Client_Name">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>32</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>60</width>
-        <height>48</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Name</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="lbl_Client_Address">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>60</width>
-        <height>48</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Adress</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="lbl_Client_Phone">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>60</width>
-        <height>48</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Phone</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>520</x>
-     <y>10</y>
-     <width>301</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_5">
-    <item>
-     <widget class="QPushButton" name="btn_Update_Client">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="layoutDirection">
-       <enum>Qt::LeftToRight</enum>
-      </property>
-      <property name="text">
-       <string>Update Client</string>
-      </property>
-      <property name="icon">
-       <iconset resource="images/images.qrc">
-        <normaloff>:/emoticons/client_info.png</normaloff>:/emoticons/client_info.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>24</width>
-        <height>24</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="btn_Add_Car_To_Client">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string>Add Car to Client</string>
-      </property>
-      <property name="icon">
-       <iconset resource="images/images.qrc">
-        <normaloff>:/emoticons/carkey.png</normaloff>:/emoticons/carkey.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>24</width>
-        <height>24</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>840</x>
-     <y>10</y>
-     <width>201</width>
-     <height>111</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <item>
-     <widget class="QCheckBox" name="checkBox_2">
-      <property name="text">
-       <string>Show Only Active Cars</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QCheckBox" name="checkBox">
-      <property name="text">
-       <string>Show Only Not Finished jobs</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="lbl_Service_Hour_Cost">
-      <property name="text">
-       <string>New Service Hour Cost:</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLCDNumber" name="lcd_Hour_Cost">
-      <property name="maximumSize">
-       <size>
-        <width>64</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <property name="segmentStyle">
-       <enum>QLCDNumber::Flat</enum>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <zorder>layoutWidget</zorder>
-  <zorder>layoutWidget</zorder>
-  <zorder>layoutWidget</zorder>
-  <zorder>layoutWidget</zorder>
-  <zorder>lbl_New_Car_Icon</zorder>
-  <zorder>lbl_Client_Cars</zorder>
-  <zorder>line_Phone</zorder>
-  <zorder>line_Client_City</zorder>
-  <zorder>line_Address</zorder>
-  <zorder>line_Name</zorder>
-  <zorder>tbl_Client_Cars</zorder>
-  <zorder>lbl_Client_Services_History</zorder>
-  <zorder>tbl_Client_Services</zorder>
-  <zorder>lbl_Service_Icon</zorder>
-  <zorder>lbl_Icon</zorder>
-  <zorder>label_Hint_Icon</zorder>
-  <zorder>label_Hint_Icon_2</zorder>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="0">
+    <widget class="QLabel" name="lbl_Client_Name">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>32</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>60</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="0">
+    <widget class="QLabel" name="label_Hint_Icon_2">
+     <property name="maximumSize">
+      <size>
+       <width>31</width>
+       <height>31</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="images/images.qrc">:/emoticons/hint.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QLabel" name="lbl_Service_Hour_Cost">
+     <property name="text">
+      <string>New Service Hour Cost:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLabel" name="label_Hint_Icon">
+     <property name="maximumSize">
+      <size>
+       <width>31</width>
+       <height>31</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="images/images.qrc">:/emoticons/hint.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lbl_Client_Phone">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>60</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Phone</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="line_Name">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="acceptDrops">
+      <bool>false</bool>
+     </property>
+     <property name="maxLength">
+      <number>40</number>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lbl_Client_Address">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>60</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Adress</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="2">
+    <widget class="QCheckBox" name="checkBox_2">
+     <property name="text">
+      <string>Show Only Active Cars</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLineEdit" name="line_Phone">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="maxLength">
+      <number>34</number>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QPushButton" name="btn_Update_Client">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>Update Client</string>
+     </property>
+     <property name="icon">
+      <iconset resource="images/images.qrc">
+       <normaloff>:/emoticons/client_info.png</normaloff>:/emoticons/client_info.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QLCDNumber" name="lcd_Hour_Cost">
+     <property name="maximumSize">
+      <size>
+       <width>64</width>
+       <height>28</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <property name="segmentStyle">
+      <enum>QLCDNumber::Flat</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="1" alignment="Qt::AlignVCenter">
+    <widget class="QLabel" name="lbl_Client_Services_History">
+     <property name="sizeIncrement">
+      <size>
+       <width>1</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Bellow are the Client Cars. Double click a Car to start a Service on it.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="1">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Bellow are the Client Services. Double click a Service to Manager it.</string>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="2">
+    <widget class="QCheckBox" name="checkBox">
+     <property name="text">
+      <string>Show Only Not Finished Services</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLineEdit" name="line_Address">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="maxLength">
+      <number>50</number>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="4">
+    <widget class="QPushButton" name="btn_Add_Car_To_Client">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Add Car to Client</string>
+     </property>
+     <property name="icon">
+      <iconset resource="images/images.qrc">
+       <normaloff>:/emoticons/carkey.png</normaloff>:/emoticons/carkey.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="3">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="10" column="0" colspan="9">
+    <widget class="QTableView" name="tbl_Client_Services">
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="15" column="0" colspan="10">
+    <widget class="QTableView" name="tbl_Client_Cars">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>300</height>
+      </size>
+     </property>
+     <property name="toolTip">
+      <string>Double click here to generate a new Service Order.</string>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
- <tabstops>
-  <tabstop>btn_Update_Client</tabstop>
-  <tabstop>btn_Add_Car_To_Client</tabstop>
-  <tabstop>tbl_Client_Cars</tabstop>
-  <tabstop>tbl_Client_Services</tabstop>
-  <tabstop>line_Name</tabstop>
-  <tabstop>line_Client_City</tabstop>
-  <tabstop>line_ClientID</tabstop>
-  <tabstop>line_Phone</tabstop>
-  <tabstop>line_Address</tabstop>
- </tabstops>
  <resources>
   <include location="images/images.qrc"/>
  </resources>

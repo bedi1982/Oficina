@@ -30,7 +30,6 @@ bool Client_Add_Car::Verify_Empty_Fields_On_Form()
            ||ui->txt_Car_Color->text()== ""
            )
     {
-        ui->lbl_Feedback->setText(tr("All fields need to be filled!"));
         ui->txt_Car_Model->setFocus();
         return false;
     }
@@ -67,10 +66,8 @@ void Client_Add_Car::Add_Car(QString client_id){
 
         if (query.exec() == false){
             qDebug() << query.lastError();
-            ui->lbl_Feedback->setText(tr("Error. Client's Car not added!"));
             QMessageBox::critical(this, tr("Error!"), query.lastError().text() + ". Class: Client_Add_Car.addCar(QString client_id)");
         }else{
-            ui->lbl_Feedback->setText(tr("Car added to the Client."));
             QMessageBox::information(this, tr("Success!"), tr("Client's Car added."));
             close();
         }

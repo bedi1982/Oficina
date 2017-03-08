@@ -21,12 +21,6 @@ Client_Services_History::Client_Services_History(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QPixmap service(":/emoticons/service.png");
-    ui->lbl_Service_Icon->setPixmap(service);
-
-    QPixmap carKey(":/emoticons/carkey.png");
-    ui->lbl_New_Car_Icon->setPixmap(carKey);
-
     //Add hour cost to label
     Set_Current_Hour_Cost_Label();
 }
@@ -69,11 +63,9 @@ void Client_Services_History::Load_Client_Info_To_Text_Boxes()
     }else{
         while(query.next())
         {
-            ui->line_ClientID->setText(query.value(0).toString());
             ui->line_Name->setText(query.value(1).toString());
             ui->line_Address->setText(query.value(2).toString());
             ui->line_Phone->setText(query.value(3).toString());
-            ui->line_Client_City->setText(query.value(4).toString());
         }
     }
 }

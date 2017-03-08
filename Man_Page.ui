@@ -17,36 +17,26 @@
    <iconset resource="images/images.qrc">
     <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
   </property>
-  <widget class="QPlainTextEdit" name="plainTextEdit">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>711</width>
-     <height>391</height>
-    </rect>
-   </property>
-   <property name="plainText">
-    <string>* One of the first steps is to set your hour cost, in the settings menu. The hour cost will be binded to all new services that you do after changing the cost. Services that you provided before changing the hour cost will use the former hour cost, it will not change anything from the past, only new services. In case you have a wrong set hour cost and what to fix this you may recreate the entire service.
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QPlainTextEdit" name="plainTextEdit">
+     <property name="plainText">
+      <string>* One of the first steps is to set your hour cost, in the settings menu. The hour cost will be binded to all new services that you do after changing the cost. Services that you provided before changing the hour cost will use the former hour cost, it will not change anything from the past, only new services. In case you have a wrong set hour cost and what to fix this you may recreate the entire service.
 
 * Remove Client, Car and Service: Not possible. Solution is to recreate, the old one will always stay, as one of the main goals of this application is to keep as much as possible from services history.
 
 * Remove a part from a service? Double click the part.</string>
-   </property>
-  </widget>
-  <widget class="QDialogButtonBox" name="buttonBox">
-   <property name="geometry">
-    <rect>
-     <x>540</x>
-     <y>410</y>
-     <width>174</width>
-     <height>34</height>
-    </rect>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Close</set>
-   </property>
-  </widget>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Close</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources>
   <include location="images/images.qrc"/>

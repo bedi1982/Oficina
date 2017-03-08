@@ -10,18 +10,6 @@
     <height>655</height>
    </rect>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>838</width>
-    <height>655</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>838</width>
-    <height>655</height>
-   </size>
-  </property>
   <property name="windowTitle">
    <string>Stock Control</string>
   </property>
@@ -29,205 +17,162 @@
    <iconset resource="images/images.qrc">
     <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
   </property>
-  <widget class="QLabel" name="lbl_Emoticon">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>600</y>
-     <width>61</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="images/images.qrc">:/emoticons/service.png</pixmap>
-   </property>
-  </widget>
-  <widget class="QDialogButtonBox" name="buttonBox">
-   <property name="geometry">
-    <rect>
-     <x>703</x>
-     <y>610</y>
-     <width>121</width>
-     <height>34</height>
-    </rect>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Close</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_Stock_Total_Value">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>620</y>
-     <width>291</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>661</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QLabel" name="lbl_Search_Part">
-      <property name="text">
-       <string>Search Part</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="line_Part_Name">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="maxLength">
-       <number>30</number>
-      </property>
-      <property name="placeholderText">
-       <string>Search entering the Part Name. You list all with: *</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QLabel" name="llb_Double_Click_Part">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>70</y>
-     <width>221</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Double click the part to change it.</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lbl_Hint">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>60</y>
-     <width>31</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="images/images.qrc">:/emoticons/hint.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>100</y>
-     <width>811</width>
-     <height>501</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QTableView" name="tbl_Parts">
-      <property name="focusPolicy">
-       <enum>Qt::StrongFocus</enum>
-      </property>
-      <property name="toolTip">
-       <string/>
-      </property>
-      <property name="editTriggers">
-       <set>QAbstractItemView::NoEditTriggers</set>
-      </property>
-      <property name="sortingEnabled">
-       <bool>true</bool>
-      </property>
-      <attribute name="horizontalHeaderCascadingSectionResizes">
-       <bool>true</bool>
-      </attribute>
-     </widget>
-    </item>
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_6">
-      <item>
-       <widget class="QLabel" name="lbl_Full_Part_Description">
-        <property name="text">
-         <string>  Part Full Description:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QTextEdit" name="txt_Part_Description">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
-        </property>
-        <property name="acceptDrops">
-         <bool>false</bool>
-        </property>
-        <property name="placeholderText">
-         <string/>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>360</x>
-     <y>60</y>
-     <width>363</width>
-     <height>34</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_2">
-    <item>
-     <widget class="QCheckBox" name="checkBox_Set_Quantity">
-      <property name="text">
-       <string>Show Only Parts that have less or equal then:</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QSpinBox" name="spinBox_Quantity_to_Show">
-      <property name="minimum">
-       <number>0</number>
-      </property>
-      <property name="maximum">
-       <number>999</number>
-      </property>
-      <property name="singleStep">
-       <number>10</number>
-      </property>
-      <property name="value">
-       <number>10</number>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="3" column="0" colspan="3">
+    <widget class="QLabel" name="lbl_Full_Part_Description">
+     <property name="text">
+      <string>  Part Full Description:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="lbl_Search_Part">
+     <property name="text">
+      <string>Search Part</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2" colspan="4">
+    <widget class="QLineEdit" name="line_Part_Name">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="maxLength">
+      <number>30</number>
+     </property>
+     <property name="placeholderText">
+      <string>Search entering the Part Name. You list all with: *</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="5">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Close</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4">
+    <widget class="QCheckBox" name="checkBox_Set_Quantity">
+     <property name="text">
+      <string>Show Only Parts that have less or equal then:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="6">
+    <widget class="QTextEdit" name="txt_Part_Description">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="acceptDrops">
+      <bool>false</bool>
+     </property>
+     <property name="placeholderText">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="2">
+    <widget class="QLabel" name="lbl_Emoticon">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="images/images.qrc">:/emoticons/service.png</pixmap>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="6">
+    <widget class="QTableView" name="tbl_Parts">
+     <property name="focusPolicy">
+      <enum>Qt::StrongFocus</enum>
+     </property>
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>true</bool>
+     </attribute>
+    </widget>
+   </item>
+   <item row="5" column="2" colspan="3">
+    <widget class="QLabel" name="lbl_Stock_Total_Value">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lbl_Hint">
+     <property name="maximumSize">
+      <size>
+       <width>31</width>
+       <height>31</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="images/images.qrc">:/emoticons/hint.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="2">
+    <widget class="QLabel" name="llb_Double_Click_Part">
+     <property name="text">
+      <string>Double click the part to change it.</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="5">
+    <widget class="QSpinBox" name="spinBox_Quantity_to_Show">
+     <property name="maximumSize">
+      <size>
+       <width>50</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="minimum">
+      <number>0</number>
+     </property>
+     <property name="maximum">
+      <number>999</number>
+     </property>
+     <property name="singleStep">
+      <number>10</number>
+     </property>
+     <property name="value">
+      <number>10</number>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
  </widget>
  <tabstops>
   <tabstop>tbl_Parts</tabstop>

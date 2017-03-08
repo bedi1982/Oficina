@@ -18,10 +18,10 @@
     <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0" colspan="4">
-    <widget class="QLabel" name="lbl_Car_Owner">
+   <item row="1" column="0" colspan="3">
+    <widget class="QLabel" name="lbl_Model">
      <property name="text">
-      <string>Car Owner (Client)</string>
+      <string>Car Model</string>
      </property>
     </widget>
    </item>
@@ -29,13 +29,6 @@
     <widget class="QLineEdit" name="line_Client_Name">
      <property name="enabled">
       <bool>false</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0" colspan="3">
-    <widget class="QLabel" name="lbl_Model">
-     <property name="text">
-      <string>Car Model</string>
      </property>
     </widget>
    </item>
@@ -55,6 +48,13 @@
      </property>
      <property name="placeholderText">
       <string>Eg. Chevette 1984</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="4">
+    <widget class="QLabel" name="lbl_Car_Owner">
+     <property name="text">
+      <string>Car Owner (Client)</string>
      </property>
     </widget>
    </item>
@@ -162,17 +162,10 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="7" colspan="3">
+   <item row="5" column="9">
     <widget class="QDialogButtonBox" name="btn_Client_Add_Car">
      <property name="standardButtons">
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="2" colspan="8">
-    <widget class="QLabel" name="lbl_Feedback">
-     <property name="text">
-      <string>All fields need to be filled.</string>
      </property>
     </widget>
    </item>
