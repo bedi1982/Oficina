@@ -44,13 +44,14 @@ private slots:
 
     void on_tbl_Parts_Used_In_Service_doubleClicked(const QModelIndex &index);
 
-    void on_btn_Save_Worked_Hours_accepted();
-
     void on_btnBox_Close_rejected();
 
     void on_btn_Add_Parts_Used_In_The_Service_clicked();
 
     void on_btn_Update_Service_description_clicked();
+
+
+    void on_btn_Calculate_worked_Hours_clicked();
 
 private:
     Ui::Client_Add_Service *ui;

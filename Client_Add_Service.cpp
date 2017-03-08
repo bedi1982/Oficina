@@ -234,20 +234,6 @@ void Client_Add_Service::on_check_Finished_clicked()
     }
 }
 
-void Client_Add_Service::on_btn_Save_Worked_Hours_accepted()
-{
-    QSqlQuery Update_Hours_Worked;
-    Update_Hours_Worked.prepare("UPDATE Service SET Service_Hours_Duration = :Service_Hours_Duration WHERE Service_id = " + ServiceID);
-
-    Update_Hours_Worked.bindValue(":Service_Hours_Duration", ui->Spin_Hand_Work_Hours->value());
-
-    if (!(Update_Hours_Worked.exec())){
-        QMessageBox::critical(this, tr("Error!"), Update_Hours_Worked.lastError().text() + "class Client_Add_Service::on_btn_save_hoursWorked_clicked()");
-    }else{
-        QMessageBox::information(this, tr("Success!"), tr("Worked Hours updated for this Service..."));
-        Sum_Costs();
-    }
-}
 
 void Client_Add_Service::on_btn_Update_Service_description_clicked()
 {
@@ -262,4 +248,19 @@ void Client_Add_Service::on_btn_Update_Service_description_clicked()
 void Client_Add_Service::on_btnBox_Close_rejected()
 {
     close();
+}
+
+void Client_Add_Service::on_btn_Calculate_worked_Hours_clicked()
+{
+    QSqlQuery Update_Hours_Worked;
+    Update_Hours_Worked.prepare("UPDATE Service SET Service_Hours_Duration = :Service_Hours_Duration WHERE Service_id = " + ServiceID);
+
+    Update_Hours_Worked.bindValue(":Service_Hours_Duration", ui->Spin_Hand_Work_Hours->value());
+
+    if (!(Update_Hours_Worked.exec())){
+        QMessageBox::critical(this, tr("Error!"), Update_Hours_Worked.lastError().text() + "class Client_Add_Service::on_btn_save_hoursWorked_clicked()");
+    }else{
+        QMessageBox::information(this, tr("Success!"), tr("Worked Hours updated for this Service..."));
+        Sum_Costs();
+    }
 }
