@@ -33,24 +33,22 @@ Main_Window::Main_Window(QWidget *parent) :
     //TODO TEST
     ui->line_ID_or_CPG_or_Name->setFocus();
     ui->lbl_Database->setText("Database -> ");
-    ui->lbl_Oficina->setText(System_Services_and_Info::get_System_Version());
-    ui->lbl_Date->setText(System_Services_and_Info::get_Current_Date());
+    ui->lbl_Oficina->setText(System_Services_and_Info::get_System_Version() + "\n" + System_Services_and_Info::get_Current_Date());
     this->setWindowTitle(System_Services_and_Info::get_System_Version());
 
     Database db;
 
     if(db.Connect()){
         QPixmap green(":/emoticons/emblem-default.png");
-        ui->lbl_Emoticon_Connection_Status->setPixmap(green);
-
+        ui->lbl_Database->setText(tr("Database:  Connected"));
         //TODO
         Create_Client_Model_and_proxy();
     }else{
         //If the database is not available we make it mostly useless//
         QPixmap red(":/emoticons/emblem-important.png");
-        ui->lbl_Emoticon_Connection_Status->setPixmap(red);
         ui->line_ID_or_CPG_or_Name->setEnabled(false);
         ui->menuBar->hide();
+        ui->lbl_Database->setText(tr("Database:  Disconnected"));
     }
 }
 

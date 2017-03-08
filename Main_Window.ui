@@ -5,38 +5,6 @@
   <property name="enabled">
    <bool>true</bool>
   </property>
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>1280</width>
-    <height>768</height>
-   </rect>
-  </property>
-  <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-    <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
-   </sizepolicy>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>1280</width>
-    <height>768</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>1280</width>
-    <height>768</height>
-   </size>
-  </property>
-  <property name="sizeIncrement">
-   <size>
-    <width>1369</width>
-    <height>900</height>
-   </size>
-  </property>
   <property name="windowTitle">
    <string>Oficina 0.2</string>
   </property>
@@ -45,222 +13,159 @@
     <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTableView" name="tbl_Client_List">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>50</y>
-      <width>1261</width>
-      <height>621</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="toolTip">
-     <string/>
-    </property>
-    <property name="lineWidth">
-     <number>0</number>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAsNeeded</enum>
-    </property>
-    <property name="sizeAdjustPolicy">
-     <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
-    </property>
-    <property name="editTriggers">
-     <set>QAbstractItemView::NoEditTriggers</set>
-    </property>
-    <property name="sortingEnabled">
-     <bool>true</bool>
-    </property>
-    <attribute name="horizontalHeaderCascadingSectionResizes">
-     <bool>true</bool>
-    </attribute>
-    <attribute name="verticalHeaderVisible">
-     <bool>false</bool>
-    </attribute>
-    <attribute name="verticalHeaderCascadingSectionResizes">
-     <bool>true</bool>
-    </attribute>
-   </widget>
-   <widget class="QLabel" name="lbl_Database">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>690</y>
-      <width>81</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Database:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lbl_Emoticon_Connection_Status">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>660</y>
-      <width>81</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lbl_Oficina">
-    <property name="geometry">
-     <rect>
-      <x>1050</x>
-      <y>0</y>
-      <width>201</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Cantarell</family>
-      <pointsize>12</pointsize>
-      <weight>50</weight>
-      <italic>false</italic>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="textFormat">
-     <enum>Qt::PlainText</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lbl_Date">
-    <property name="geometry">
-     <rect>
-      <x>1130</x>
-      <y>20</y>
-      <width>151</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Carlito</family>
-      <pointsize>9</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lbl_BigCarIcon">
-    <property name="geometry">
-     <rect>
-      <x>930</x>
-      <y>0</y>
-      <width>121</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="images/images.qrc">:/emoticons/sport-car.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>0</y>
-      <width>791</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QLabel" name="lbl_Search">
-       <property name="text">
-        <string>Search Client</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="line_ID_or_CPG_or_Name">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="maxLength">
-        <number>30</number>
-       </property>
-       <property name="placeholderText">
-        <string>Enter Client Name...</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="Clear_Button">
-       <property name="text">
-        <string>Clear</string>
-       </property>
-       <property name="icon">
-        <iconset resource="images/images.qrc">
-         <normaloff>:/emoticons/tux.png</normaloff>:/emoticons/tux.png</iconset>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QLabel" name="label_Hint_Icon">
-    <property name="geometry">
-     <rect>
-      <x>780</x>
-      <y>680</y>
-      <width>31</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="images/images.qrc">:/emoticons/hint.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>820</x>
-      <y>690</y>
-      <width>441</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>This Icon Will show you hint all arround the Application. Keep an eye on it.</string>
-    </property>
-   </widget>
-   <zorder>tbl_Client_List</zorder>
-   <zorder>lbl_Database</zorder>
-   <zorder>lbl_Emoticon_Connection_Status</zorder>
-   <zorder>lbl_Oficina</zorder>
-   <zorder>lbl_Date</zorder>
-   <zorder>horizontalLayoutWidget</zorder>
-   <zorder>lbl_BigCarIcon</zorder>
-   <zorder>label_Hint_Icon</zorder>
-   <zorder>label</zorder>
+   <layout class="QGridLayout" name="gridLayout_4">
+    <item row="4" column="8" colspan="3">
+     <widget class="QLabel" name="label_Hint">
+      <property name="text">
+       <string>This Icon Will show you hint all arround the Application. Keep an eye on it.</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="lbl_Database">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="10">
+     <widget class="QLabel" name="lbl_Oficina">
+      <property name="maximumSize">
+       <size>
+        <width>180</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Cantarell</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::PlainText</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="7">
+     <widget class="QLabel" name="label_Hint_Icon">
+      <property name="maximumSize">
+       <size>
+        <width>48</width>
+        <height>48</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="images/images.qrc">:/emoticons/hint.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" rowspan="3" colspan="11">
+     <widget class="QTableView" name="tbl_Client_List">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+      <attribute name="horizontalHeaderCascadingSectionResizes">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderCascadingSectionResizes">
+       <bool>true</bool>
+      </attribute>
+     </widget>
+    </item>
+    <item row="0" column="9">
+     <widget class="QLabel" name="lbl_BigCarIcon">
+      <property name="maximumSize">
+       <size>
+        <width>150</width>
+        <height>70</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="images/images.qrc">:/emoticons/sport-car.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="lbl_Search">
+      <property name="maximumSize">
+       <size>
+        <width>100</width>
+        <height>48</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Search Client</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="7">
+     <widget class="QPushButton" name="Clear_Button">
+      <property name="text">
+       <string>Clear</string>
+      </property>
+      <property name="icon">
+       <iconset resource="images/images.qrc">
+        <normaloff>:/emoticons/tux.png</normaloff>:/emoticons/tux.png</iconset>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1" colspan="6">
+     <widget class="QLineEdit" name="line_ID_or_CPG_or_Name">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="maxLength">
+       <number>30</number>
+      </property>
+      <property name="placeholderText">
+       <string>Enter Client Name...</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QMenuBar" name="menuBar">
