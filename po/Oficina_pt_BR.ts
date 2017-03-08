@@ -149,29 +149,29 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Cliente adicionado.</translation>
     </message>
     <message>
-        <location filename="../Client_Add.cpp" line="38"/>
+        <location filename="../Client_Add.cpp" line="40"/>
         <source>All fields need to be filled!</source>
         <translation>Todos os campos devem ser preenchidos!</translation>
     </message>
     <message>
-        <location filename="../Client_Add.cpp" line="76"/>
+        <location filename="../Client_Add.cpp" line="78"/>
         <source>Error!</source>
         <translation>Erro!</translation>
     </message>
     <message>
-        <location filename="../Client_Add.cpp" line="78"/>
+        <location filename="../Client_Add.cpp" line="80"/>
         <source> added!</source>
-        <translation>adicionado!</translation>
+        <translation> adicionado! </translation>
     </message>
     <message>
-        <location filename="../Client_Add.cpp" line="81"/>
+        <location filename="../Client_Add.cpp" line="83"/>
         <source>Success!</source>
         <translation>Sucesso!</translation>
     </message>
     <message>
-        <location filename="../Client_Add.cpp" line="81"/>
+        <location filename="../Client_Add.cpp" line="83"/>
         <source> added</source>
-        <translation>adicionado</translation>
+        <translation> adicionado</translation>
     </message>
 </context>
 <context>
@@ -1432,47 +1432,46 @@ Lembrando que este novo custo terá impacto apenas nos serviços prestados agora
 <context>
     <name>Main_Window</name>
     <message>
-        <location filename="../Main_Window.cpp" line="73"/>
         <source>Error!</source>
-        <translation type="unfinished">Error!</translation>
+        <translation type="obsolete">Error!</translation>
     </message>
     <message>
-        <location filename="../Main_Window.cpp" line="133"/>
+        <location filename="../Main_Window.cpp" line="119"/>
         <source>System ID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main_Window.cpp" line="134"/>
+        <location filename="../Main_Window.cpp" line="120"/>
         <source>Name</source>
         <translation type="unfinished">Nome</translation>
     </message>
     <message>
-        <location filename="../Main_Window.cpp" line="135"/>
+        <location filename="../Main_Window.cpp" line="121"/>
         <source>Adress</source>
         <translation type="unfinished">Endereço</translation>
     </message>
     <message>
-        <location filename="../Main_Window.cpp" line="136"/>
+        <location filename="../Main_Window.cpp" line="122"/>
         <source>City</source>
         <translation type="unfinished">Cidade</translation>
     </message>
     <message>
-        <location filename="../Main_Window.cpp" line="138"/>
+        <location filename="../Main_Window.cpp" line="124"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="../Main_Window.cpp" line="139"/>
+        <location filename="../Main_Window.cpp" line="125"/>
         <source>Phone</source>
         <translation type="unfinished">Telefone</translation>
     </message>
     <message>
-        <location filename="../Main_Window.cpp" line="140"/>
+        <location filename="../Main_Window.cpp" line="126"/>
         <source>Updated at</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main_Window.cpp" line="141"/>
+        <location filename="../Main_Window.cpp" line="127"/>
         <source>Created at</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1489,7 +1488,7 @@ Lembrando que este novo custo terá impacto apenas nos serviços prestados agora
         <translation type="vanished">Cidade</translation>
     </message>
     <message>
-        <location filename="../Main_Window.cpp" line="137"/>
+        <location filename="../Main_Window.cpp" line="123"/>
         <source>CPG</source>
         <translation>CPG</translation>
     </message>

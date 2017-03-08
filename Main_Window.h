@@ -24,10 +24,12 @@ public:
 
     void Create_Client_Model_and_proxy();
 
-public slots:
-    void Set_Client_Name_on_the_Grid(QString Client_Name);
+    void Set_Last_Client_in_the_Grid();
 
 private slots:
+
+    void on_line_ID_or_CPG_or_Name_textChanged(const QString &arg1);
+
     void on_action_Add_Client_triggered();
 
     void on_action_Add_Part_triggered();
@@ -37,8 +39,6 @@ private slots:
     void on_action_Exit_triggered();
 
     void on_action_About_Oficina_triggered();
-
-    void on_line_ID_or_CPG_or_Name_textChanged(const QString &arg1);
 
     void on_action_Stock_triggered();
 

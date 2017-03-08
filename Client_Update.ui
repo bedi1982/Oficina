@@ -335,22 +335,5 @@
  <resources>
   <include location="images/images.qrc"/>
  </resources>
- <connections>
-  <connection>
-   <sender>btn_Client_Update</sender>
-   <signal>accepted()</signal>
-   <receiver>Client_Update</receiver>
-   <slot>showMinimized()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>460</x>
-     <y>286</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>287</x>
-     <y>156</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

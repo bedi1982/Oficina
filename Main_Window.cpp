@@ -59,11 +59,32 @@ Main_Window::~Main_Window()
     delete ui;
 }
 
+void Main_Window::Set_Last_Client_in_the_Grid()
+{
+    QSqlQuery Get_last_Client;
+    Get_last_Client.prepare("SELECT Client_id, Client_Name FROM Client ORDER BY Client_id DESC LIMIT 1;");
+
+    if (Get_last_Client.exec() == false){
+        QMessageBox::critical(this, tr("Error!"), Get_last_Client.lastError().text() + "void Main_Window::on_action_Add_Client_triggered()");
+    }else{
+        while(Get_last_Client.next()) //returns only 1 row as result(0 = id, 1=name)//
+        {
+            ui->line_ID_or_CPG_or_Name->setText(Get_last_Client.value(1).toString()); //put the retrieved name in the search bar so it get automatically 'searched'
+        }
+    }
+}
+
 void Main_Window::on_action_Add_Client_triggered()
 {
     Client_Add Client_Add;
     Client_Add.setModal(true);
     Client_Add.exec();
+
+    if(System_Services_and_Info::get_is_New_Client()){
+        Create_Client_Model_and_proxy();
+        Set_Last_Client_in_the_Grid();
+    }
+    System_Services_and_Info::set_is_New_Client(false);
 }
 
 void Main_Window::on_action_Add_Part_triggered()
@@ -79,14 +100,14 @@ void Main_Window::on_tbl_Client_List_doubleClicked(const QModelIndex &selectedCl
     //Bellow 2 list will retrieve the column 0 value, which is the clientid//
     const QAbstractItemModel * model = selectedClientinTheGrid.model();
     QVariant clientID = model->data(model->index(selectedClientinTheGrid.row(), 0, selectedClientinTheGrid.parent()), Qt::DisplayRole);
-    QVariant clientCPG = model->data(model->index(selectedClientinTheGrid.row(), 4, selectedClientinTheGrid.parent()), Qt::DisplayRole);
+    QVariant clientName = model->data(model->index(selectedClientinTheGrid.row(), 1, selectedClientinTheGrid.parent()), Qt::DisplayRole);
 
     Client_Services_Open(clientID.toString());
 
     //Going back to former form keeping current client 'searched' and updated
     //The empty String is to reset the 'on_text_changed' function.
     ui->line_ID_or_CPG_or_Name->setText("");
-    ui->line_ID_or_CPG_or_Name->setText(clientCPG.toString());
+    ui->line_ID_or_CPG_or_Name->setText(clientName.toString());
 }
 
 void Main_Window::Client_Services_Open(QString clientID)
@@ -95,11 +116,6 @@ void Main_Window::Client_Services_Open(QString clientID)
     Client_Services_History.setClient_id(clientID);
     Client_Services_History.setModal(true);
     Client_Services_History.exec();
-}
-
-void Main_Window::Set_Client_Name_on_the_Grid(QString Client_Name)
-{
-    ui->line_ID_or_CPG_or_Name->setText(Client_Name);
 }
 
 void Main_Window::on_action_Exit_triggered()
@@ -136,6 +152,7 @@ void Main_Window::Create_Client_Model_and_proxy(){
     proxy->setFilterKeyColumn(1);//Name
     proxy->setFilterCaseSensitivity(Qt::CaseInsensitive);
     ui->tbl_Client_List->setModel(proxy);
+    ui->tbl_Client_List->resizeColumnsToContents();
 }
 
 void Main_Window::on_line_ID_or_CPG_or_Name_textChanged(const QString &Used_Search_Filter)

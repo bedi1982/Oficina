@@ -19,4 +19,9 @@ public:
     static QString get_System_About();
     static QString get_Current_Date();
     static QString Check_Text_Size(int size_limit, QString Entered_Text);
+
+    //transport//
+    //static QString New_Client;
+    static bool get_is_New_Client();
+    static void set_is_New_Client(bool value);
 };

@@ -5,6 +5,9 @@
 
 #include "Client_Add.h"
 #include "ui_Client_Add.h"
+#include "System_Services_and_Info.h"
+#include "QMainWindow"
+#include "Main_Window.h"
 
 
 Client_Add::Client_Add(QWidget *parent) :
@@ -82,23 +85,9 @@ void Client_Add::on_btn_Add_Client_accepted()
             ui->lbl_Emoticon->setPixmap(cool);
             QMessageBox::information(this, tr("Success!"), ui->line_Name->text() + tr(" added"));
             close();
-
-            QObject::connect(ui->btn_Add_Client, SIGNAL(clicked()), parent(), SLOT(Set_Client_Name_on_the_Grid("Ultimo";)));
-/*
-            //If a new one was added we add the new Client in the search Result:
-            QSqlQuery Get_last_Client;
-            Get_last_Client.prepare("SELECT Client_id, Client_Name FROM Client ORDER BY Client_id DESC LIMIT 1;");
-
-            if (Get_last_Client.exec() == false){
-                QMessageBox::critical(this, tr("Error!"), Get_last_Client.lastError().text() + "void Main_Window::on_action_Add_Client_triggered()");
-            }else{
-                while(Get_last_Client.next()) //returns only 1 row as result//
-                {
-                    QString Last_client = Get_last_Client.value(1).toString(); //retrieve new client's name
-                    //TODO implemnt a SIGNAL/SLOT to put this client name in the main windows text line//
-                    //ui->line_ID_or_CPG_or_Name->setText(Last_client); //put the retrieved name in the search bar so it get automatically 'searched'
-                }
-            }*/
+            //this one is because if the user presses ESC he actually isn't adding a new client, the main window needs to know that//
+            //otherwise it will display the last client from the database//
+            System_Services_and_Info::set_is_New_Client(true);
         }
     }
 }
