@@ -22,6 +22,6 @@ public:
 
     //transport//
     //static QString New_Client;
-    static bool get_is_New_Client();
-    static void set_is_New_Client(bool value);
+    static bool get_is_New_or_Updated_Client();
+    static void set_is_New_or_Updated_Client(bool value);
 };

@@ -1,5 +1,6 @@
 #include "Client_Update.h"
 #include "ui_Client_Update.h"
+#include "System_Services_and_Info.h"
 
 #include "QMessageBox"
 #include "QSqlQuery"
@@ -75,6 +76,7 @@ void Client_Update::on_btn_Client_Update_accepted()
 
     if (query.exec()) {
         QMessageBox::information(this, tr("Success"), tr("Client Updated!"));
+        System_Services_and_Info::set_is_New_or_Updated_Client(true);
         close();
     } else {
         QMessageBox::critical(this, tr("Error!"), query.lastError().text() + "class Client_Edit::on_btn_update_clicked() ");

@@ -78,11 +78,11 @@ void Main_Window::on_action_Add_Client_triggered()
     Client_Add.setModal(true);
     Client_Add.exec();
 
-    if(System_Services_and_Info::get_is_New_Client()){
+    if(System_Services_and_Info::get_is_New_or_Updated_Client()){
         Create_Client_Model_and_proxy();
         Set_Last_Client_in_the_Grid();
     }
-    System_Services_and_Info::set_is_New_Client(false);
+    System_Services_and_Info::set_is_New_or_Updated_Client(false);
 }
 
 void Main_Window::on_action_Add_Part_triggered()
@@ -102,10 +102,30 @@ void Main_Window::on_tbl_Client_List_doubleClicked(const QModelIndex &selectedCl
 
     Client_Services_Open(clientID.toString());
 
-    //Going back to former form keeping current client 'searched' and updated
-    //The empty String is to reset the 'on_text_changed' function.
-    ui->line_ID_or_CPG_or_Name->setText("");
-    ui->line_ID_or_CPG_or_Name->setText(clientName.toString());
+    //Only if the user get's updated from inside the Client_Services_History//
+    if(System_Services_and_Info::get_is_New_or_Updated_Client()){
+        qDebug() << "client was updated";
+
+        Create_Client_Model_and_proxy();
+
+        QSqlQuery Get_Updated_Client_Info;
+        Get_Updated_Client_Info.prepare("SELECT Client_Name FROM Client where Client_id = " + clientID.toString());
+
+        if (Get_Updated_Client_Info.exec() == false){
+            QMessageBox::critical(this, tr("Error!"), Get_Updated_Client_Info.lastError().text() + "void Main_Window::on_tbl_Client_List_doubleClicked()");
+        }else{
+            while(Get_Updated_Client_Info.next()) //returns only 1 row as result(0 = id, 1=name)//
+            {
+                ui->line_ID_or_CPG_or_Name->setText("");
+                //put the retrieved name in the search bar so it get automatically 'searched'//
+                ui->line_ID_or_CPG_or_Name->setText(Get_Updated_Client_Info.value(0).toString());
+            }
+        }
+        System_Services_and_Info::set_is_New_or_Updated_Client(false);
+    }else{
+        ui->line_ID_or_CPG_or_Name->setText("");
+        ui->line_ID_or_CPG_or_Name->setText(clientName.toString());
+    }
 }
 
 void Main_Window::Client_Services_Open(QString clientID)

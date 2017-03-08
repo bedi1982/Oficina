@@ -50,12 +50,12 @@ QString System_Services_and_Info::Check_Text_Size(int size_limit, QString Entere
     return Entered_Text;
 }
 
-bool System_Services_and_Info::get_is_New_Client()
+bool System_Services_and_Info::get_is_New_or_Updated_Client()
 {
     return Is_New_Client;
 }
 
-void System_Services_and_Info::set_is_New_Client(bool value)
+void System_Services_and_Info::set_is_New_or_Updated_Client(bool value)
 {
     Is_New_Client = value;
 }
