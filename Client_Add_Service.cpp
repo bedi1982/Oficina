@@ -12,9 +12,6 @@ Client_Add_Service::Client_Add_Service(QWidget *parent) :
     ui(new Ui::Client_Add_Service)
 {
     ui->setupUi(this);
-
-    QPixmap glasses(":/emoticons/face-glasses.png");
-    ui->lbl_Emoticon->setPixmap(glasses);
     ui->txt_Servicedescription->setReadOnly(true);
     ui->line_ServiceShortDescription->setReadOnly(true);
 }

@@ -26,6 +26,12 @@ public:
 
     void Set_Last_Client_in_the_Grid();
 
+    bool getClient_Clicked_Exit_On_Login() const;
+
+    void setClient_Clicked_Exit_On_Login(bool value);
+
+    bool Client_Clicked_Exit_On_Login = false;
+
 private slots:
 
     void on_line_ID_or_CPG_or_Name_textChanged(const QString &arg1);
@@ -53,6 +59,9 @@ private slots:
     void on_action_Employees_triggered();
 
     void Client_Services_Open(QString clientID);
+
+    void Check_Login();
+
 
 private:
     Ui::MainWindow *ui;

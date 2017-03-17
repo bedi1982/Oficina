@@ -71,7 +71,11 @@ void Employee_Add::on_btn_Add_Client_accepted()
             qDebug() << query.lastError();
             QMessageBox::critical(this, tr("Error!"), query.lastError().text() + ". Class: addEmployee.cpp51");
         }else{
-            QMessageBox::information(this, tr("Success!"), ui->line_Name->text() + tr(" added"));
+            QMessageBox::information(this, tr("IMPORTANT!"), ui->line_Name->text() + tr(" added. "
+                                                                                      "It is very important that you take note "
+                                                                                      "of your Employee ID, this one you need to "
+                                                                                      "log into the system. "
+                                                                                      "Your employee ID is %1").arg(query.lastInsertId().toInt()));
             Clear_Form();
         }
     }

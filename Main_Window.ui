@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>763</width>
-    <height>743</height>
+    <width>1024</width>
+    <height>768</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,63 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_4">
-    <item row="1" column="0" rowspan="3" colspan="12">
+    <item row="0" column="9">
+     <widget class="QLabel" name="lbl_BigCarIcon">
+      <property name="maximumSize">
+       <size>
+        <width>100</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="images/images.qrc">:/emoticons/sport-car.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="8">
+     <widget class="QPushButton" name="Clear_Button">
+      <property name="text">
+       <string>Clear</string>
+      </property>
+      <property name="icon">
+       <iconset resource="images/images.qrc">
+        <normaloff>:/emoticons/tux.png</normaloff>:/emoticons/tux.png</iconset>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="lbl_Search">
+      <property name="maximumSize">
+       <size>
+        <width>100</width>
+        <height>48</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Search Client</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1" colspan="7">
+     <widget class="QLineEdit" name="line_ID_or_CPG_or_Name">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="maxLength">
+       <number>30</number>
+      </property>
+      <property name="placeholderText">
+       <string>Enter Client Name...</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" rowspan="3" colspan="11">
      <widget class="QTableView" name="tbl_Client_List">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -59,21 +115,7 @@
       </attribute>
      </widget>
     </item>
-    <item row="4" column="8" colspan="4">
-     <widget class="QLabel" name="label_Hint">
-      <property name="text">
-       <string>This Icon Will show you hint all arround the Application. Keep an eye on it.</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="lbl_Database">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="11">
+    <item row="0" column="10">
      <widget class="QLabel" name="lbl_Oficina">
       <property name="maximumSize">
        <size>
@@ -98,78 +140,16 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="7">
-     <widget class="QLabel" name="label_Hint_Icon">
-      <property name="maximumSize">
-       <size>
-        <width>48</width>
-        <height>48</height>
-       </size>
+    <item row="4" column="0" colspan="3">
+     <widget class="QLabel" name="lbl_Database">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
       </property>
       <property name="text">
        <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="images/images.qrc">:/emoticons/hint.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="lbl_Search">
-      <property name="maximumSize">
-       <size>
-        <width>100</width>
-        <height>48</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Search Client</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="10">
-     <widget class="QLabel" name="lbl_BigCarIcon">
-      <property name="maximumSize">
-       <size>
-        <width>100</width>
-        <height>50</height>
-       </size>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="images/images.qrc">:/emoticons/sport-car.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="9">
-     <widget class="QPushButton" name="Clear_Button">
-      <property name="text">
-       <string>Clear</string>
-      </property>
-      <property name="icon">
-       <iconset resource="images/images.qrc">
-        <normaloff>:/emoticons/tux.png</normaloff>:/emoticons/tux.png</iconset>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1" colspan="8">
-     <widget class="QLineEdit" name="line_ID_or_CPG_or_Name">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="maxLength">
-       <number>30</number>
-      </property>
-      <property name="placeholderText">
-       <string>Enter Client Name...</string>
       </property>
      </widget>
     </item>
@@ -181,7 +161,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>763</width>
+     <width>1024</width>
      <height>30</height>
     </rect>
    </property>
@@ -189,6 +169,8 @@
     <property name="title">
      <string>Oficina</string>
     </property>
+    <addaction name="actionList_Open_Services"/>
+    <addaction name="actionList_Not_Started_Services"/>
     <addaction name="action_Exit"/>
    </widget>
    <widget class="QMenu" name="menuCadastrois">
@@ -268,6 +250,16 @@
   <action name="action_Employees">
    <property name="text">
     <string>&amp;Employees</string>
+   </property>
+  </action>
+  <action name="actionList_Open_Services">
+   <property name="text">
+    <string>List Open Services</string>
+   </property>
+  </action>
+  <action name="actionList_Not_Started_Services">
+   <property name="text">
+    <string>List Not Started Services</string>
    </property>
   </action>
  </widget>

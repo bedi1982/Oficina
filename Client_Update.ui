@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>575</width>
-    <height>314</height>
+    <width>472</width>
+    <height>312</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -30,10 +30,13 @@
     <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QLabel" name="lbl_Name">
+   <item row="3" column="3" colspan="4">
+    <widget class="QLineEdit" name="line_CPG">
      <property name="text">
-      <string>Name</string>
+      <string/>
+     </property>
+     <property name="maxLength">
+      <number>20</number>
      </property>
     </widget>
    </item>
@@ -50,6 +53,34 @@
      </property>
     </widget>
    </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lbl_Created_At">
+     <property name="text">
+      <string>Created</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="lbl_Updated_At">
+     <property name="text">
+      <string>Updated</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lbl_Name">
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lbl_Phone">
+     <property name="text">
+      <string>Phone</string>
+     </property>
+    </widget>
+   </item>
    <item row="0" column="5" colspan="2">
     <widget class="QLineEdit" name="line_SysID">
      <property name="enabled">
@@ -61,54 +92,6 @@
     <widget class="QLabel" name="lbl_Adress">
      <property name="text">
       <string>Adress</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1" colspan="4">
-    <widget class="QLineEdit" name="line_Address">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="maxLength">
-      <number>50</number>
-     </property>
-     <property name="placeholderText">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="5" colspan="2">
-    <widget class="QPushButton" name="btn_Client_Cars">
-     <property name="text">
-      <string>Client Cars</string>
-     </property>
-     <property name="icon">
-      <iconset resource="images/images.qrc">
-       <normaloff>:/emoticons/carkey.png</normaloff>:/emoticons/carkey.png</iconset>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="lbl_City">
-     <property name="text">
-      <string>City</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1" colspan="3">
-    <widget class="QLineEdit" name="line_City">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="maxLength">
-      <number>30</number>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="lbl_Personal_ID">
-     <property name="text">
-      <string>ID</string>
      </property>
     </widget>
    </item>
@@ -129,24 +112,48 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="3" colspan="3">
-    <widget class="QLineEdit" name="line_CPG">
+   <item row="2" column="0">
+    <widget class="QLabel" name="lbl_City">
+     <property name="text">
+      <string>City</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lbl_Personal_ID">
+     <property name="text">
+      <string>ID</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="6">
+    <widget class="QLineEdit" name="line_Address">
      <property name="text">
       <string/>
      </property>
      <property name="maxLength">
-      <number>20</number>
+      <number>50</number>
+     </property>
+     <property name="placeholderText">
+      <string/>
      </property>
     </widget>
    </item>
-   <item row="4" column="0">
-    <widget class="QLabel" name="lbl_Phone">
+   <item row="8" column="6">
+    <widget class="QPushButton" name="btn_Close">
      <property name="text">
-      <string>Phone</string>
+      <string>Close</string>
      </property>
     </widget>
    </item>
-   <item row="4" column="1" colspan="3">
+   <item row="8" column="5">
+    <widget class="QPushButton" name="btn_Save">
+     <property name="text">
+      <string>Save</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1" colspan="6">
     <widget class="QLineEdit" name="line_Phone">
      <property name="text">
       <string/>
@@ -159,33 +166,17 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="6" rowspan="2">
-    <widget class="QLabel" name="lbl_Emoticon">
-     <property name="minimumSize">
-      <size>
-       <width>48</width>
-       <height>48</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>48</width>
-       <height>48</height>
-      </size>
-     </property>
+   <item row="2" column="1" colspan="5">
+    <widget class="QLineEdit" name="line_City">
      <property name="text">
       <string/>
      </property>
-    </widget>
-   </item>
-   <item row="5" column="0">
-    <widget class="QLabel" name="lbl_Created_At">
-     <property name="text">
-      <string>Created</string>
+     <property name="maxLength">
+      <number>30</number>
      </property>
     </widget>
    </item>
-   <item row="5" column="1" colspan="3">
+   <item row="5" column="1" colspan="5">
     <widget class="QLineEdit" name="line_Created_At">
      <property name="enabled">
       <bool>false</bool>
@@ -201,14 +192,7 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="0">
-    <widget class="QLabel" name="lbl_Updated_At">
-     <property name="text">
-      <string>Updated</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="1" colspan="3">
+   <item row="6" column="1" colspan="5">
     <widget class="QLineEdit" name="line_Updated_At">
      <property name="enabled">
       <bool>false</bool>
@@ -224,13 +208,6 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="4" colspan="3">
-    <widget class="QDialogButtonBox" name="btn_Client_Update">
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
-     </property>
-    </widget>
-   </item>
   </layout>
  </widget>
  <tabstops>
@@ -240,9 +217,11 @@
   <tabstop>line_Personal_ID</tabstop>
   <tabstop>line_CPG</tabstop>
   <tabstop>line_Phone</tabstop>
-  <tabstop>line_SysID</tabstop>
-  <tabstop>line_Created_At</tabstop>
+  <tabstop>btn_Save</tabstop>
+  <tabstop>btn_Close</tabstop>
   <tabstop>line_Updated_At</tabstop>
+  <tabstop>line_Created_At</tabstop>
+  <tabstop>line_SysID</tabstop>
  </tabstops>
  <resources>
   <include location="images/images.qrc"/>

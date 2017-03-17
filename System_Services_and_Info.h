@@ -23,5 +23,8 @@ public:
     //transport//
     //static QString New_Client;
     static bool get_is_New_or_Updated_Client();
-    static void set_is_New_or_Updated_Client(bool value);
+    static void set_is_New_or_Updated_Client(bool Is_New);
+
+    static int get_Logged_Func();
+    static void set_Logged_func(int Func_Logged);
 };

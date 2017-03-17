@@ -47,13 +47,14 @@ void Config_Set_Hour_Cost::Load_History_HourCost(){
     model->setTable("HourCost");
 
     model->select();
-    model->removeColumn(0);
+    model->removeColumn(0); //id
 
     model->setHeaderData(0, Qt::Horizontal, tr("Hour Cost"));
     model->setHeaderData(1, Qt::Horizontal, tr("Created"));
 
     ui->table_Hour_Cost_History->setModel(model);
     ui->table_Hour_Cost_History->sortByColumn(1, Qt::DescendingOrder);
+    ui->table_Hour_Cost_History->resizeColumnsToContents();
 }
 
 void Config_Set_Hour_Cost::on_buttonBox_accepted()

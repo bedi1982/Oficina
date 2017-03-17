@@ -18,63 +18,6 @@
     <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="3" column="0" colspan="3">
-    <widget class="QLabel" name="lbl_Full_Part_Description">
-     <property name="text">
-      <string>  Part Full Description:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0" colspan="2">
-    <widget class="QLabel" name="lbl_Search_Part">
-     <property name="text">
-      <string>Search Part</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="2" colspan="4">
-    <widget class="QLineEdit" name="line_Part_Name">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="maxLength">
-      <number>30</number>
-     </property>
-     <property name="placeholderText">
-      <string>Search entering the Part Name. You list all with: *</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="5">
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Close</set>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="4">
-    <widget class="QCheckBox" name="checkBox_Set_Quantity">
-     <property name="text">
-      <string>Show Only Parts that have less or equal then:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="0" colspan="6">
-    <widget class="QTextEdit" name="txt_Part_Description">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="focusPolicy">
-      <enum>Qt::NoFocus</enum>
-     </property>
-     <property name="acceptDrops">
-      <bool>false</bool>
-     </property>
-     <property name="placeholderText">
-      <string/>
-     </property>
-    </widget>
-   </item>
    <item row="5" column="0" colspan="2">
     <widget class="QLabel" name="lbl_Emoticon">
      <property name="text">
@@ -171,6 +114,75 @@
       </size>
      </property>
     </spacer>
+   </item>
+   <item row="3" column="0" colspan="3">
+    <widget class="QLabel" name="lbl_Full_Part_Description">
+     <property name="text">
+      <string>  Part Full Description:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="2" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="lbl_Search_Part">
+     <property name="text">
+      <string>Search Part</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="5">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Close</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4">
+    <widget class="QCheckBox" name="checkBox_Set_Quantity">
+     <property name="text">
+      <string>Show Only Parts that have less or equal then:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="6">
+    <widget class="QTextEdit" name="txt_Part_Description">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>120</height>
+      </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="acceptDrops">
+      <bool>false</bool>
+     </property>
+     <property name="placeholderText">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2" colspan="4">
+    <widget class="QLineEdit" name="line_Part_Name">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="maxLength">
+      <number>30</number>
+     </property>
+     <property name="placeholderText">
+      <string>Search entering the Part Name. You list all with: *</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

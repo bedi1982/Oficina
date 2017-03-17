@@ -35,6 +35,7 @@ SOURCES +=\
     Employee_Add.cpp \
     Employee_Update.cpp \
     Employee_List.cpp \
+    Login.cpp\
     System_Services_and_Info.cpp
 
 HEADERS  += \
@@ -58,6 +59,7 @@ HEADERS  += \
     Employee_Add.h \
     Employee_Update.h \
     Employee_List.h \
+    Login.h\
     System_Services_and_Info.h
 
 FORMS    += \
@@ -79,6 +81,7 @@ FORMS    += \
     Stock_Finances.ui \
     Employee_Add.ui \
     Employee_Update.ui \
+    Login.ui\
     Employee_List.ui
 
 DISTFILES += \

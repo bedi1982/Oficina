@@ -2,6 +2,14 @@
 <ui version="4.0">
  <class>About</class>
  <widget class="QDialog" name="About">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>258</width>
+    <height>236</height>
+   </rect>
+  </property>
   <property name="windowTitle">
    <string>Sobre Oficina v0.1</string>
   </property>
