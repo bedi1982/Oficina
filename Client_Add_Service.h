@@ -50,7 +50,7 @@ private slots:
 
     void on_btn_Update_Service_description_clicked();
 
-    void on_btn_Calculate_worked_Hours_clicked();
+    void on_Spin_Hand_Work_Hours_valueChanged();
 
 private:
     Ui::Client_Add_Service *ui;

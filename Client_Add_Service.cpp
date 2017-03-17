@@ -14,6 +14,7 @@ Client_Add_Service::Client_Add_Service(QWidget *parent) :
     ui->setupUi(this);
     ui->txt_Servicedescription->setReadOnly(true);
     ui->line_ServiceShortDescription->setReadOnly(true);
+    ui->tabWidget->setCurrentIndex(0);//Focus on the first tab//
 }
 
 Client_Add_Service::~Client_Add_Service()
@@ -247,7 +248,7 @@ void Client_Add_Service::on_btnBox_Close_rejected()
     close();
 }
 
-void Client_Add_Service::on_btn_Calculate_worked_Hours_clicked()
+void Client_Add_Service::on_Spin_Hand_Work_Hours_valueChanged()
 {
     QSqlQuery Update_Hours_Worked;
     Update_Hours_Worked.prepare("UPDATE Service SET Service_Hours_Duration = :Service_Hours_Duration WHERE Service_id = " + ServiceID);
@@ -257,7 +258,6 @@ void Client_Add_Service::on_btn_Calculate_worked_Hours_clicked()
     if (!(Update_Hours_Worked.exec())){
         QMessageBox::critical(this, tr("Error!"), Update_Hours_Worked.lastError().text() + "class Client_Add_Service::on_btn_save_hoursWorked_clicked()");
     }else{
-        QMessageBox::information(this, tr("Success!"), tr("Worked Hours updated for this Service..."));
         Sum_Costs();
     }
 }

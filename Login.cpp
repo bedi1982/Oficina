@@ -15,6 +15,12 @@ Login::Login(QWidget *parent) :
     ui->setupUi(this);
     ui->line_ID->setPlaceholderText("Only Numbers Allowed");
     ui->line_ID->setValidator(new QIntValidator);
+
+
+    //TODO HARDCODED LOGIN//
+    ui->line_ID->setText("1");
+    ui->line_Password->setText("root");
+    //END TODO//
 }
 
 Login::~Login()

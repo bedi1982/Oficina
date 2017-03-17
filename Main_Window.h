@@ -62,7 +62,6 @@ private slots:
 
     void Check_Login();
 
-
 private:
     Ui::MainWindow *ui;
 };

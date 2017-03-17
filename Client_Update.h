@@ -24,10 +24,6 @@ public:
 
 private slots:
 
-    void on_btn_Client_Update_accepted();
-
-    void on_btn_Client_Update_rejected();
-
     void on_btn_Save_clicked();
 
     void on_btn_Close_clicked();

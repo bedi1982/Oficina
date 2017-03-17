@@ -68,6 +68,9 @@ void Client_Services_History::Load_Client_Info_To_Text_Boxes()
             ui->line_Name->setText(query.value(1).toString());
             ui->line_Address->setText(query.value(2).toString());
             ui->line_Phone->setText(query.value(3).toString());
+            ui->lineEdit_City->setText(query.value(4).toString());
+            ui->lineEdit_CPG->setText(query.value(5).toString());
+            ui->lineEdit_ID->setText(query.value(6).toString());
         }
     }
 }
@@ -164,6 +167,7 @@ void Client_Services_History::on_tbl_Client_Cars_doubleClicked(const QModelIndex
     Service_Create_Description.setModal(true);
     Service_Create_Description.exec();
     Load_Services_Grid();
+    ui->tabWidget->setCurrentIndex(1); //Move to services tab
 }
 
 void Client_Services_History::on_tbl_Client_Services_doubleClicked(const QModelIndex &index)
@@ -206,4 +210,9 @@ void Client_Services_History::on_btn_Add_Car_To_Client_clicked()
 
 void Client_Services_History::Set_Current_Hour_Cost_Label(){
     ui->lcd_Hour_Cost->display(System_Services_and_Info::Get_Current_Hour_Cost());
+}
+
+void Client_Services_History::on_pushButton_clicked()
+{
+    close();
 }

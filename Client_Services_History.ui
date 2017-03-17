@@ -95,7 +95,7 @@
    <item row="4" column="0" colspan="6">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_Cars">
       <attribute name="title">
@@ -369,13 +369,25 @@
     </widget>
    </item>
    <item row="1" column="3">
-    <widget class="QLineEdit" name="lineEdit_City"/>
+    <widget class="QLineEdit" name="lineEdit_City">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
    </item>
    <item row="0" column="3">
-    <widget class="QLineEdit" name="lineEdit_CPG"/>
+    <widget class="QLineEdit" name="lineEdit_CPG">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
    </item>
    <item row="2" column="3">
-    <widget class="QLineEdit" name="lineEdit_ID"/>
+    <widget class="QLineEdit" name="lineEdit_ID">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

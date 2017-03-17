@@ -33,6 +33,8 @@ private slots:
 
     void on_btn_Add_Car_To_Client_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::Client_Services_History *ui;
 

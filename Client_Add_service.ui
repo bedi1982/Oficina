@@ -21,131 +21,14 @@
    <item row="1" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="ServiceDescription">
       <attribute name="title">
        <string>Service Description</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="11" column="5">
-        <widget class="QLCDNumber" name="lcd_Service_Total">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="smallDecimalPoint">
-          <bool>false</bool>
-         </property>
-         <property name="segmentStyle">
-          <enum>QLCDNumber::Flat</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="4" alignment="Qt::AlignRight">
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>Parts Cost:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QCheckBox" name="check_Paid">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="text">
-          <string>Service Paid?</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="4">
-        <widget class="QLabel" name="lbl_totlaServiceCost">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>TOTAL:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QDateEdit" name="dateEdit">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="dateTime">
-          <datetime>
-           <hour>0</hour>
-           <minute>0</minute>
-           <second>0</second>
-           <year>2000</year>
-           <month>1</month>
-           <day>1</day>
-          </datetime>
-         </property>
-         <property name="time">
-          <time>
-           <hour>0</hour>
-           <minute>0</minute>
-           <second>0</second>
-          </time>
-         </property>
-         <property name="displayFormat">
-          <string>d/MMM/yyyy</string>
-         </property>
-         <property name="calendarPopup">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0" colspan="6">
-        <widget class="QTextEdit" name="txt_Servicedescription">
-         <property name="focusPolicy">
-          <enum>Qt::NoFocus</enum>
-         </property>
-         <property name="acceptDrops">
-          <bool>false</bool>
-         </property>
-         <property name="html">
-          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_Client_Return_Date">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Client will pick his Car at:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0" colspan="6">
+       <item row="1" column="0" colspan="5">
         <widget class="QLineEdit" name="line_ServiceShortDescription">
          <property name="focusPolicy">
           <enum>Qt::NoFocus</enum>
@@ -155,7 +38,7 @@ p, li { white-space: pre-wrap; }
          </property>
         </widget>
        </item>
-       <item row="9" column="5">
+       <item row="9" column="4">
         <widget class="QLCDNumber" name="lcd_Parts_Cost_2">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -183,7 +66,7 @@ p, li { white-space: pre-wrap; }
          </property>
         </widget>
        </item>
-       <item row="8" column="5">
+       <item row="8" column="4">
         <widget class="QLCDNumber" name="lcd_Hour_cost">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -221,7 +104,7 @@ p, li { white-space: pre-wrap; }
          </property>
         </widget>
        </item>
-       <item row="8" column="4">
+       <item row="8" column="3">
         <widget class="QLabel" name="label_Hour_Cosr">
          <property name="text">
           <string>Service Hour Cost:</string>
@@ -235,48 +118,6 @@ p, li { white-space: pre-wrap; }
         <widget class="QCheckBox" name="checkBox">
          <property name="text">
           <string>Service Open?</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="2">
-        <widget class="QDoubleSpinBox" name="Spin_Hand_Work_Hours">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximum">
-          <double>999.000000000000000</double>
-         </property>
-         <property name="singleStep">
-          <double>1.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="2">
-        <widget class="QLabel" name="lbl_InsertWorkCost">
-         <property name="text">
-          <string>Hours Worked:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="3">
-        <widget class="QPushButton" name="btn_Calculate_worked_Hours">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Set</string>
          </property>
         </widget>
        </item>
@@ -313,6 +154,152 @@ p, li { white-space: pre-wrap; }
          <property name="icon">
           <iconset resource="images/images.qrc">
            <normaloff>:/emoticons/client_info.png</normaloff>:/emoticons/client_info.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="4">
+        <widget class="QLCDNumber" name="lcd_Service_Total">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="smallDecimalPoint">
+          <bool>false</bool>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="3" alignment="Qt::AlignRight">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Parts Cost:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QCheckBox" name="check_Paid">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="text">
+          <string>Service Paid?</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="3">
+        <widget class="QLabel" name="lbl_totlaServiceCost">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>TOTAL:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="5">
+        <widget class="QTextEdit" name="txt_Servicedescription">
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="acceptDrops">
+          <bool>false</bool>
+         </property>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="4">
+        <widget class="QDoubleSpinBox" name="Spin_Hand_Work_Hours">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximum">
+          <double>999.000000000000000</double>
+         </property>
+         <property name="singleStep">
+          <double>1.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="3">
+        <widget class="QLabel" name="lbl_InsertWorkCost">
+         <property name="text">
+          <string>Hours Worked:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_Client_Return_Date">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Client will pick his Car at:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QDateEdit" name="dateEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="dateTime">
+          <datetime>
+           <hour>0</hour>
+           <minute>0</minute>
+           <second>0</second>
+           <year>2000</year>
+           <month>1</month>
+           <day>1</day>
+          </datetime>
+         </property>
+         <property name="time">
+          <time>
+           <hour>0</hour>
+           <minute>0</minute>
+           <second>0</second>
+          </time>
+         </property>
+         <property name="displayFormat">
+          <string>d/MMM/yyyy</string>
+         </property>
+         <property name="calendarPopup">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -416,12 +403,9 @@ p, li { white-space: pre-wrap; }
  </widget>
  <tabstops>
   <tabstop>btn_Update_Service_description</tabstop>
-  <tabstop>dateEdit</tabstop>
   <tabstop>check_Paid</tabstop>
   <tabstop>checkBox</tabstop>
   <tabstop>check_Finished</tabstop>
-  <tabstop>Spin_Hand_Work_Hours</tabstop>
-  <tabstop>btn_Calculate_worked_Hours</tabstop>
   <tabstop>btn_Add_Parts_Used_In_The_Service</tabstop>
   <tabstop>tbl_Parts_Used_In_Service</tabstop>
   <tabstop>tabWidget</tabstop>
