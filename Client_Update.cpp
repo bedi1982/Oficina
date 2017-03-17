@@ -12,8 +12,6 @@ Client_Update::Client_Update(QWidget *parent) :
     ui(new Ui::Client_Update)
 {
     ui->setupUi(this);
-    QPixmap cool(":/emoticons/face-cool.png");
-    ui->lbl_Emoticon->setPixmap(cool);
 }
 
 Client_Update::~Client_Update()
@@ -55,7 +53,7 @@ void Client_Update::load_Client_Info_To_TextBoxes()
     }
 }
 
-void Client_Update::on_btn_Client_Update_accepted()
+void Client_Update::on_btn_Save_clicked()
 {
     QSqlQuery query;
     query.prepare(" UPDATE Client SET "
@@ -84,7 +82,7 @@ void Client_Update::on_btn_Client_Update_accepted()
     }
 }
 
-void Client_Update::on_btn_Client_Update_rejected()
+void Client_Update::on_btn_Close_clicked()
 {
     close();
 }

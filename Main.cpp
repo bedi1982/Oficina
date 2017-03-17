@@ -15,16 +15,17 @@ int main(int argc, char *argv[])
 
     QApplication a(argc, argv);
 
-    QTranslator translation;
-    QFile file(":po/Oficina_pt_BR.qm");
+    //Translations are working, just need to implement//
+//    QTranslator translation;
+//    QFile file(":po/Oficina_pt_BR.qm");
 
-    if(file.exists()){
-        translation.load(":po/Oficina_pt_BR.qm");
-        a.installTranslator(&translation);
-        qDebug() << "Test tranlations: Found!";
-    }else{
-        qDebug() << "Test tranlations: Not Found";
-    }
+//    if(file.exists()){
+//        translation.load(":po/Oficina_pt_BR.qm");
+//        a.installTranslator(&translation);
+//        qDebug() << "Test tranlations: Found!";
+//    }else{
+//        qDebug() << "Test tranlations: Not Found";
+//    }
 
     Main_Window w;
     w.show();

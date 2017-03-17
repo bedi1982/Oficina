@@ -53,8 +53,10 @@ void Client_Services_History::Load_Client_Info_To_Text_Boxes()
     query.prepare("SELECT Client_id, "
                   " Client_Name,"
                   " Client_Address,"
-                  " Client_Phone,"
-                  " Client_City"
+                  " Client_Phone, "
+                  " Client_City, "
+                  " Client_CPG, "
+                  " Client_ID_Number "
                   " FROM Client WHERE Client_id = " + client_id);
 
     if (query.exec() == false){
@@ -136,7 +138,7 @@ void Client_Services_History::load_Cars_Grid()
         ui->tbl_Client_Cars->setModel(model);
         ui->tbl_Client_Cars->resizeColumnsToContents();
 
-        if(!model->rowCount() > 0){
+        if(model->rowCount() <= 0){
             if (QMessageBox::Yes == QMessageBox(QMessageBox::Question, "Question", "This Client has no Car registered Currently. "
                                                 "Would you like to add one?", QMessageBox::Yes|QMessageBox::No).exec())
             {

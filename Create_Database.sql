@@ -25,7 +25,8 @@ CREATE TABLE Employee (
         Employee_ID_Number varchar(15),
         Employee_Phone varchar(40),
         Employee_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-        Employee_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        Employee_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        Employee_Password varchar(40)
 );
 
 CREATE TABLE Part (
@@ -81,6 +82,7 @@ CREATE TABLE HourCost(
 
 --Initialize
 INSERT INTO HourCost (HourCost) values (0);
+INSERT INTO Employee (Employee_Name, Employee_Password) values ("root", "root");
 
 --sql tips:
 --Changing column name:

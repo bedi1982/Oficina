@@ -50,7 +50,6 @@ private slots:
 
     void on_btn_Update_Service_description_clicked();
 
-
     void on_btn_Calculate_worked_Hours_clicked();
 
 private:
