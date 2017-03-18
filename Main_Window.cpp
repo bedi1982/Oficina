@@ -111,7 +111,6 @@ void Main_Window::on_action_Add_Part_triggered()
     Stock_Add_Part.exec();
 }
 
-
 void Main_Window::on_tbl_Client_List_doubleClicked(const QModelIndex &selectedClientinTheGrid)
 {
     //Bellow 2 list will retrieve the column 0 value, which is the clientid//

@@ -37,6 +37,8 @@ private slots:
 
     void on_checkBox_Set_Quantity_toggled();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::Stock_Control *ui;
 };

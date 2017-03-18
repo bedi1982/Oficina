@@ -52,6 +52,8 @@ private slots:
 
     void on_Spin_Hand_Work_Hours_valueChanged();
 
+    void on_dateTimeEdit_dateTimeChanged(const QDateTime &dateTime);
+
 private:
     Ui::Client_Add_Service *ui;
 };

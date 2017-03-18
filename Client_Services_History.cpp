@@ -23,6 +23,7 @@ Client_Services_History::Client_Services_History(QWidget *parent) :
 
     //Add hour cost to label
     Set_Current_Hour_Cost_Label();
+    ui->tabWidget->setCurrentIndex(0);//Focus on the cars
 }
 
 Client_Services_History::~Client_Services_History()

@@ -5,7 +5,7 @@ create Database Oficina;
 use Oficina;
 
 CREATE TABLE Client (
-        Client_id bigint PRIMARY KEY AUTO_INCREMENT,
+        Client_id int PRIMARY KEY AUTO_INCREMENT,
         Client_Name varchar(40),
         Client_Address varchar(50),
         Client_City varchar(30),
@@ -17,7 +17,7 @@ CREATE TABLE Client (
 );
 
 CREATE TABLE Employee (
-        Employee_id bigint PRIMARY KEY AUTO_INCREMENT,
+        Employee_id int PRIMARY KEY AUTO_INCREMENT,
         Employee_Name varchar(40),
         Employee_Address varchar(50),
         Employee_City varchar(30),
@@ -30,21 +30,21 @@ CREATE TABLE Employee (
 );
 
 CREATE TABLE Part (
-        Part_id bigint PRIMARY KEY AUTO_INCREMENT,
+        Part_id int PRIMARY KEY AUTO_INCREMENT,
         Part_Name varchar(50),
         Part_Description varchar(250),
         Part_Cost Double(19,2),
-        Part_Sell_Price Double(19,2),
+        Part_Sell_Value_With_Interest_Rate Double(19,2),
         Part_Quantity int,
-        Part_Active boolean not null default 1,
+        Part_Interrest_Rate Double(19,2),
         Part_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
         Part_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE Service(
-        Service_id bigint PRIMARY KEY AUTO_INCREMENT,
-        Service_Client_id bigint,
-        Service_Client_Carid bigint,
+        Service_id int PRIMARY KEY AUTO_INCREMENT,
+        Service_Client_id int,
+        Service_Client_Carid int,
         Service_Short_Description varchar(70),
         Service_Finished boolean not null default 0,
         Service_Description varchar(1000),
@@ -53,18 +53,20 @@ CREATE TABLE Service(
         Service_Hour_Cost Double(19,2),
         Service_Paid boolean not null default 0,
         Service_updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-        Service_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        Service_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        Service_Opened_By_Employee_ID int,
+        Service_Client_Will_Retrieve_At TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 );
 
 CREATE TABLE ServicePartsUsed(
-        ServicePartsUsed_id bigint PRIMARY KEY AUTO_INCREMENT,
-        Used_On_What_Service_id bigint,
-        Used_Part_ID bigint
+        ServicePartsUsed_id int PRIMARY KEY AUTO_INCREMENT,
+        Used_On_What_Service_id int,
+        Used_Part_ID int
 );
 
 CREATE TABLE ClientCar(
-        ClientCar_id bigint PRIMARY KEY AUTO_INCREMENT,
-        ClientCar_Client_id bigint,
+        ClientCar_id int PRIMARY KEY AUTO_INCREMENT,
+        ClientCar_Client_id int,
         ClientCar_Model varchar(50),
         ClientCar_Description varchar(300),
         ClientCar_BuiltYear int,
@@ -75,7 +77,7 @@ CREATE TABLE ClientCar(
 );
 
 CREATE TABLE HourCost(
-        HourCost_id bigint PRIMARY KEY AUTO_INCREMENT,
+        HourCost_id int PRIMARY KEY AUTO_INCREMENT,
         HourCost Double not null default 0,
         Hour_Cost_created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -87,3 +89,4 @@ INSERT INTO Employee (Employee_Name, Employee_Password) values ("root", "root");
 --sql tips:
 --Changing column name:
 --ALTER TABLE Service CHANGE `finished` Service_Finished boolean not null default 0;
+--SET GLOBAL general_log = 'ON';

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>480</width>
-    <height>290</height>
+    <width>513</width>
+    <height>332</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,72 +18,14 @@
     <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QLabel" name="lbl_Part_Name">
-     <property name="text">
-      <string>Name</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="1" colspan="5">
-    <widget class="QLineEdit" name="line_Name">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="maxLength">
-      <number>50</number>
-     </property>
-     <property name="placeholderText">
-      <string>Part Name. Eg. Chevete right mirror</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="QLabel" name="lbl_Description">
-     <property name="text">
-      <string>Description</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1" colspan="5">
-    <widget class="QPlainTextEdit" name="txt_Part_Description">
-     <property name="tabChangesFocus">
-      <bool>true</bool>
-     </property>
-     <property name="plainText">
-      <string/>
-     </property>
-     <property name="placeholderText">
-      <string>Full Description. Max 250 chars</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="lbl_Cost">
-     <property name="text">
-      <string>Cost Price</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1">
-    <widget class="QDoubleSpinBox" name="double_Spin_Cost">
-     <property name="maximum">
-      <double>999.990000000000009</double>
-     </property>
-     <property name="singleStep">
-      <double>1.000000000000000</double>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="2">
-    <widget class="QLabel" name="lbl_Sel_Price">
-     <property name="text">
-      <string>Sell Price</string>
-     </property>
-    </widget>
-   </item>
    <item row="2" column="3">
-    <widget class="QDoubleSpinBox" name="double_Spin_Sell_Price">
+    <widget class="QDoubleSpinBox" name="double_Spin_Interest_Rate">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="maximum">
       <double>999.990000000000009</double>
      </property>
@@ -92,7 +34,7 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="4">
+   <item row="2" column="4" alignment="Qt::AlignRight">
     <widget class="QLabel" name="lbl_Quantity">
      <property name="text">
       <string>Quantity</string>
@@ -133,13 +75,77 @@
      </property>
     </widget>
    </item>
+   <item row="0" column="0" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="lbl_Part_Name">
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="5">
+    <widget class="QLineEdit" name="line_Name">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="maxLength">
+      <number>50</number>
+     </property>
+     <property name="placeholderText">
+      <string>Part Name. Eg. Chevete right mirror</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="lbl_Description">
+     <property name="text">
+      <string>Description</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="5">
+    <widget class="QPlainTextEdit" name="txt_Part_Description">
+     <property name="tabChangesFocus">
+      <bool>true</bool>
+     </property>
+     <property name="plainText">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Full Description. Max 250 chars</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="lbl_Cost">
+     <property name="text">
+      <string>Cost Price</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QDoubleSpinBox" name="double_Spin_Cost">
+     <property name="maximum">
+      <double>999.990000000000009</double>
+     </property>
+     <property name="singleStep">
+      <double>1.000000000000000</double>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="lbl_Sel_Price">
+     <property name="text">
+      <string>Interrest Rate %</string>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <tabstops>
   <tabstop>line_Name</tabstop>
   <tabstop>txt_Part_Description</tabstop>
   <tabstop>double_Spin_Cost</tabstop>
-  <tabstop>double_Spin_Sell_Price</tabstop>
+  <tabstop>double_Spin_Interest_Rate</tabstop>
   <tabstop>spin_Quantity</tabstop>
  </tabstops>
  <resources>

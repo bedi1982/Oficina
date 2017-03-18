@@ -123,6 +123,7 @@ void Client_Add_Service::Sum_Costs()
     //ui->Spin_TotalserviceCost->setValue((Service_Hours_Duration * Service_Hour_Cost) + Service_Parts_Cost);
     //ui->Spin_ServiceRegistereHandWorkHours->setValue(Service_Hour_Cost);
     ui->lcd_Parts_Cost->display(Service_Parts_Cost);
+    ui->lcd_Parts_Cost_2->display(Service_Parts_Cost);
     ui->lcd_Hour_cost->display(Hand_Work_Hours * Service_Hour_Cost);
     ui->lcd_Service_Total->display((Hand_Work_Hours * Service_Hour_Cost) + Service_Parts_Cost);
 
@@ -259,5 +260,18 @@ void Client_Add_Service::on_Spin_Hand_Work_Hours_valueChanged()
         QMessageBox::critical(this, tr("Error!"), Update_Hours_Worked.lastError().text() + "class Client_Add_Service::on_btn_save_hoursWorked_clicked()");
     }else{
         Sum_Costs();
+    }
+}
+
+void Client_Add_Service::on_dateTimeEdit_dateTimeChanged(const QDateTime &dateTime)
+{
+    QSqlQuery query;
+    //query.prepare("UPDATE Service SET Service_Client_Will_Retrieve_At " + dateTime.toString("yyyy-MM-dd hh:mm:ss"));
+
+    if (query.exec() == false){
+        qDebug() << query.lastError();
+        QMessageBox::critical(this, tr("Error!"), query.lastError().text() + "class addservice.cpp  on_check_Finished_clicked ");
+    }else{
+        QMessageBox::information(this, tr("Ok!"), tr("Vehicle Retrieval Date Set..."));
     }
 }

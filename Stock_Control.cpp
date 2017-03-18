@@ -8,6 +8,7 @@
 #include "Stock_Control.h"
 #include "ui_Stock_Control.h"
 #include "Stock_Update_Part.h"
+#include "Stock_Add_Part.h"
 
 
 Stock_Control::Stock_Control(QWidget *parent) :
@@ -78,16 +79,16 @@ void Stock_Control::on_line_Part_Name_textChanged(const QString &Search_String)
         model->setHeaderData(1, Qt::Horizontal, tr("Name"));
         model->setHeaderData(2, Qt::Horizontal, tr("Description"));
         model->setHeaderData(3, Qt::Horizontal, tr("Cost"));
-        model->setHeaderData(4, Qt::Horizontal, tr("Sell Price"));
+        model->setHeaderData(4, Qt::Horizontal, tr("Price With Interrest"));
         model->setHeaderData(5, Qt::Horizontal, tr("In Stock")); //Quantity in stock
-        model->setHeaderData(6, Qt::Horizontal, tr("Active"));
+        model->setHeaderData(6, Qt::Horizontal, tr("Part Interrest Rate"));
         model->setHeaderData(7, Qt::Horizontal, tr("Last Updated"));
         model->setHeaderData(8, Qt::Horizontal, tr("Created At"));
 
         ui->tbl_Parts->setModel(model);
 
-        ui->tbl_Parts->hideColumn(0); //sysID
-        ui->tbl_Parts->hideColumn(2); //Description - To big for a grid (it has it's own text box)
+        //ui->tbl_Parts->hideColumn(0); //sysID
+        //ui->tbl_Parts->hideColumn(2); //Description - To big for a grid (it has it's own text box)
 
         model->sort(5, Qt::AscendingOrder); //Quantity in stock
         ui->tbl_Parts->resizeColumnsToContents();
@@ -96,7 +97,7 @@ void Stock_Control::on_line_Part_Name_textChanged(const QString &Search_String)
         //To clear the grid(but keep the header intact) if the user deletes a former *//
         model->clear();
         ui->tbl_Parts->setModel(model);
-        ui->tbl_Parts->hideColumn(2);
+        //ui->tbl_Parts->hideColumn(2);
     }
 }
 
@@ -156,4 +157,11 @@ void Stock_Control::on_checkBox_Set_Quantity_toggled()
         ui->spinBox_Quantity_to_Show->setEnabled(false);
         on_line_Part_Name_textChanged(ui->line_Part_Name->text());
     }
+}
+
+void Stock_Control::on_pushButton_clicked()
+{
+    Stock_Add_Part Stock_Add_Part;
+    Stock_Add_Part.setModal(true);
+    Stock_Add_Part.exec();
 }

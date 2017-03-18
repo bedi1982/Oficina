@@ -31,7 +31,7 @@ Stock_Update_Part::~Stock_Update_Part()
 
 void Stock_Update_Part::Load_Part_Info_to_Form(){
     QSqlQuery query;
-    query.prepare("SELECT Part_Name, Part_Description, Part_Cost, Part_Sell_Price, Part_Quantity, Part_Active FROM Part WHERE Part_id = " + partID);
+    query.prepare("SELECT Part_Name, Part_Description, Part_Cost, Part_Sell_Value_With_Interest_Rate, Part_Quantity, Part_Interrest_Rate, Part_Active FROM Part WHERE Part_id = " + partID);
 
     if (query.exec() == false){
         //qDebug() << query.lastError();
@@ -42,46 +42,34 @@ void Stock_Update_Part::Load_Part_Info_to_Form(){
             ui->line_Name->setText(query.value(0).toString()); //Name
             ui->txt_Part_Description->setPlainText(query.value(1).toString()); //Description
             ui->double_Spin_Cost_Price->setValue(query.value(2).toDouble()); //Cost Price
-            ui->double_Spin_Sell_Price->setValue(query.value(3).toDouble());//Sell Price
             ui->spin_Quantity->setValue(query.value(4).toInt());//Quantity
-
-            if(query.value(5).toBool()){ //is Active?
-                ui->check_btn_Part_Enabled->setChecked(true);
-            }else{
-                ui->check_btn_Part_Enabled->setChecked(false);
-            }
-
+            ui->double_Spin_Interrest_Rate->setValue(query.value(5).toDouble());
         }
     }
 }
 
 void Stock_Update_Part::on_buttonBox_accepted()
 {
-    //Get the current ui checkbox status//
-    bool Part_Active;
-    if(ui->check_btn_Part_Enabled->isChecked()){
-        Part_Active = true;
-    }else{
-        Part_Active = false;
-    }
-    //Get the current ui checkbox status//
-
     QSqlQuery Update_Part;
     Update_Part.prepare("UPDATE Part SET"
                         " Part_Name = :Part_Name,"
                         " Part_Description = :Part_Description,"
                         " Part_Cost = :Part_Cost,"
-                        " Part_Sell_Price = :Part_Sell_Price,"
+                        " Part_Sell_Value_With_Interest_Rate = :Part_Sell_Value_With_Interest_Rate,"
                         " Part_Quantity = :Part_Quantity,"
-                        " Part_Active = :Part_Active "
+                        " Part_Interrest_Rate = :Part_Interrest_Rate,"
                         " WHERE Part_id = :Part_ID");
 
     Update_Part.bindValue(":Part_Name", ui->line_Name->text());
     Update_Part.bindValue(":Part_Description", ui->txt_Part_Description->toPlainText());
     Update_Part.bindValue(":Part_Cost", ui->double_Spin_Cost_Price->value());
     Update_Part.bindValue(":Part_Quantity", ui->spin_Quantity->value());
-    Update_Part.bindValue(":Part_Sell_Price", ui->double_Spin_Sell_Price->value());
-    Update_Part.bindValue(":Part_Active", Part_Active);
+    Update_Part.bindValue(":Part_Interrest_Rate", ui->double_Spin_Interrest_Rate->value());
+
+    double Price_With_Interrest = ui->double_Spin_Cost_Price->value() * ui->double_Spin_Interrest_Rate->value() / 100 + ui->double_Spin_Cost_Price->value();
+    Update_Part.bindValue(":Part_Sell_Value_With_Interest_Rate", Price_With_Interrest);
+
+    //Update_Part.bindValue(":Part_Sell_Price", ui->double_Spin_Interrest_Rate->value());
     Update_Part.bindValue(":Part_ID", partID);
 
     if (!(Update_Part.exec())){

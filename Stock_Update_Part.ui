@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>588</width>
-    <height>491</height>
+    <width>551</width>
+    <height>347</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,35 +18,14 @@
     <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QLabel" name="lbl_Part_Name">
-     <property name="text">
-      <string>Name</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="QLabel" name="lbl_Description">
-     <property name="text">
-      <string>Description</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1" colspan="4">
-    <widget class="QPlainTextEdit" name="txt_Part_Description">
-     <property name="tabChangesFocus">
-      <bool>true</bool>
-     </property>
-     <property name="plainText">
-      <string/>
-     </property>
-     <property name="placeholderText">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1">
+   <item row="2" column="1" alignment="Qt::AlignRight">
     <widget class="QLabel" name="lbl_Cost_Price">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="text">
       <string>Cost Price</string>
      </property>
@@ -62,43 +41,27 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="3">
-    <widget class="QLabel" name="lbl_Quantity">
+   <item row="1" column="0">
+    <widget class="QLabel" name="lbl_Description">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="text">
-      <string>In Stock</string>
+      <string>Description</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="4">
-    <widget class="QSpinBox" name="spin_Quantity">
-     <property name="maximum">
-      <number>9999</number>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1">
-    <widget class="QLabel" name="lbl_Sell_Price">
-     <property name="text">
-      <string>Sell Price</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="2" rowspan="2">
-    <widget class="QDoubleSpinBox" name="double_Spin_Sell_Price">
-     <property name="maximum">
-      <double>999.000000000000000</double>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="3" colspan="2">
-    <widget class="QRadioButton" name="check_btn_Part_Enabled">
-     <property name="text">
-      <string>Part Acti&amp;ve?</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="3" rowspan="2" colspan="2">
+   <item row="4" column="4" colspan="3">
     <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="focusPolicy">
       <enum>Qt::StrongFocus</enum>
      </property>
@@ -107,14 +70,20 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="0">
-    <widget class="QLabel" name="lbl_Feedcack">
-     <property name="text">
+   <item row="1" column="1" colspan="6">
+    <widget class="QPlainTextEdit" name="txt_Part_Description">
+     <property name="tabChangesFocus">
+      <bool>true</bool>
+     </property>
+     <property name="plainText">
+      <string/>
+     </property>
+     <property name="placeholderText">
       <string/>
      </property>
     </widget>
    </item>
-   <item row="0" column="1" colspan="4">
+   <item row="0" column="1" colspan="6">
     <widget class="QLineEdit" name="line_Name">
      <property name="text">
       <string/>
@@ -124,6 +93,68 @@
      </property>
      <property name="placeholderText">
       <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="lbl_Quantity">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>In Stock</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lbl_Part_Name">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="4">
+    <widget class="QSpinBox" name="spin_Quantity">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximum">
+      <number>9999</number>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="6">
+    <widget class="QDoubleSpinBox" name="double_Spin_Interrest_Rate">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximum">
+      <double>999.000000000000000</double>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="5" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="lbl_Sell_Price">
+     <property name="text">
+      <string>Set Interest Rate %</string>
      </property>
     </widget>
    </item>
