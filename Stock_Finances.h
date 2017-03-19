@@ -16,6 +16,10 @@ public:
     ~Stock_Finances();
     void Load_All();
 
+private slots:
+
+    void on_buttonBox_rejected();
+
 private:
     Ui::Stock_Finances *ui;
 };

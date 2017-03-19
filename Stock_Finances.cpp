@@ -21,7 +21,7 @@ Stock_Finances::~Stock_Finances()
 
 void Stock_Finances::Load_All(){
     QSqlQuery query;
-    query.prepare("SELECT SUM(Part_Cost) FROM Part");
+    query.prepare("SELECT SUM(Part_Cost), SUM(Part_Sell_Value_With_Interest_Rate) FROM Part");
 
     if (query.exec() == false){
         //qDebug() << query.lastError();
@@ -29,6 +29,57 @@ void Stock_Finances::Load_All(){
     }else{
         while(query.next()){
             ui->lcd_Stock_Total_Value_in_Cost->display(query.value(0).toString()); //Name
+            ui->lcd_Stock_Total_Value_in_Sell->display(query.value(1).toString());
         }
     }
+
+    query.prepare("SELECT sum(Part_Cost), SUM(Part_Sell_Value_With_Interest_Rate) FROM Part WHERE Part_created_at BETWEEN NOW() - INTERVAL 30 DAY AND NOW();");
+
+    if (query.exec() == false){
+        //qDebug() << query.lastError();
+        QMessageBox::critical(this, tr("Error!"), query.lastError().text() + ". void Stock_Finances::~Load_All()");
+    }else{
+        while(query.next()){
+            ui->lcd_Stock_Total_Sold_Last_30->display(query.value(0).toString());
+            double Part_Cost = query.value(0).toDouble();
+            double Sell_Cost = query.value(1).toDouble();
+            double diff = Part_Cost - Sell_Cost;
+            ui->lcd_Profit_Last_30_Days->display(diff);
+        }
+    }
+
+    query.prepare("SELECT sum(Part_Cost), SUM(Part_Sell_Value_With_Interest_Rate) FROM Part WHERE Part_created_at BETWEEN NOW() - INTERVAL 240 DAY AND NOW();");
+
+    if (query.exec() == false){
+        //qDebug() << query.lastError();
+        QMessageBox::critical(this, tr("Error!"), query.lastError().text() + ". void Stock_Finances::~Load_All()");
+    }else{
+        while(query.next()){
+            ui->lcd_Stock_Total_Sold_Last_6_months->display(query.value(0).toString());
+            double Part_Cost = query.value(0).toDouble();
+            double Sell_Cost = query.value(1).toDouble();
+            double diff = Part_Cost - Sell_Cost;
+            ui->lcd_Profit_Last_240_Days->display(diff);
+        }
+    }
+
+    query.prepare("SELECT sum(Part_Cost), SUM(Part_Sell_Value_With_Interest_Rate) FROM Part WHERE Part_created_at BETWEEN NOW() - INTERVAL 365 DAY AND NOW();");
+
+    if (query.exec() == false){
+        //qDebug() << query.lastError();
+        QMessageBox::critical(this, tr("Error!"), query.lastError().text() + ". void Stock_Finances::~Load_All()");
+    }else{
+        while(query.next()){
+            ui->lcd_Stock_Total_Sold_Last_365->display(query.value(0).toString());
+            double Part_Cost = query.value(0).toDouble();
+            double Sell_Cost = query.value(1).toDouble();
+            double diff = Part_Cost - Sell_Cost;
+            ui->lcd_Profit_Last_365_Days->display(diff);
+        }
+    }
+}
+
+void Stock_Finances::on_buttonBox_rejected()
+{
+    close();
 }
