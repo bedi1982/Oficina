@@ -14,6 +14,7 @@ class Stock_Finances : public QDialog
 public:
     explicit Stock_Finances(QWidget *parent = 0);
     ~Stock_Finances();
+    void Load_All();
 
 private:
     Ui::Stock_Finances *ui;
