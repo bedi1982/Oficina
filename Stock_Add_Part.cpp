@@ -26,6 +26,7 @@ void Stock_Add_Part::Clear_Form()
 {
         ui->line_Name->setText("");
         ui->txt_Part_Description->setPlainText("");
+        ui->line_Brand->setText("");
         ui->double_Spin_Cost->setValue(0);
         ui->spin_Quantity->setValue(0);
         ui->double_Spin_Interest_Rate->setValue(0);
@@ -77,10 +78,11 @@ void Stock_Add_Part::on_buttonBox_accepted()
 {
     if(Check_Empty_Fields_On_Form()){
         QSqlQuery query;
-        query.prepare("INSERT INTO Part (Part_Name, Part_Description, Part_Cost, Part_Sell_Value_With_Interest_Rate, Part_Quantity, Part_Interrest_Rate)"
-                      " VALUES (:Name, :Description, :Cost, :Part_Sell_Value_With_Interest_Rate, :Quantity, :Interrest_Rate)");
+        query.prepare("INSERT INTO Part (Part_Name, Part_Brand, Part_Description, Part_Cost, Part_Sell_Value_With_Interest_Rate, Part_Quantity, Part_Interrest_Rate)"
+                      " VALUES (:Name, :Brand, :Description, :Cost, :Part_Sell_Value_With_Interest_Rate, :Quantity, :Interrest_Rate)");
 
         query.bindValue(":Name", ui->line_Name->text());
+        query.bindValue(":Brand", ui->line_Brand->text());
         query.bindValue(":Description", ui->txt_Part_Description->toPlainText());
         query.bindValue(":Cost", ui->double_Spin_Cost->value());
         query.bindValue(":Interrest_Rate", ui->double_Spin_Interest_Rate->value());

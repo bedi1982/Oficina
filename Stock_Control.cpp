@@ -77,20 +77,21 @@ void Stock_Control::on_line_Part_Name_textChanged(const QString &Search_String)
 
         model->setHeaderData(0, Qt::Horizontal, tr("ID"));
         model->setHeaderData(1, Qt::Horizontal, tr("Name"));
-        model->setHeaderData(2, Qt::Horizontal, tr("Description"));
-        model->setHeaderData(3, Qt::Horizontal, tr("Cost"));
-        model->setHeaderData(4, Qt::Horizontal, tr("Price With Interrest"));
-        model->setHeaderData(5, Qt::Horizontal, tr("In Stock")); //Quantity in stock
-        model->setHeaderData(6, Qt::Horizontal, tr("Part Interrest Rate"));
-        model->setHeaderData(7, Qt::Horizontal, tr("Last Updated"));
-        model->setHeaderData(8, Qt::Horizontal, tr("Created At"));
+        model->setHeaderData(2, Qt::Horizontal, tr("Brand"));
+        model->setHeaderData(3, Qt::Horizontal, tr("Description"));
+        model->setHeaderData(4, Qt::Horizontal, tr("Cost"));
+        model->setHeaderData(5, Qt::Horizontal, tr("Price With Interrest"));
+        model->setHeaderData(6, Qt::Horizontal, tr("In Stock")); //Quantity in stock
+        model->setHeaderData(7, Qt::Horizontal, tr("Part Interrest Rate"));
+        model->setHeaderData(8, Qt::Horizontal, tr("Last Updated"));
+        model->setHeaderData(9, Qt::Horizontal, tr("Created At"));
 
         ui->tbl_Parts->setModel(model);
 
         //ui->tbl_Parts->hideColumn(0); //sysID
         //ui->tbl_Parts->hideColumn(2); //Description - To big for a grid (it has it's own text box)
 
-        model->sort(5, Qt::AscendingOrder); //Quantity in stock
+        model->sort(6, Qt::AscendingOrder); //Quantity in stock
         ui->tbl_Parts->resizeColumnsToContents();
 
     }else{
@@ -116,7 +117,6 @@ void Stock_Control::on_tbl_Parts_doubleClicked(const QModelIndex &Selected_Part)
     partName = part_name.toString();
 
     Stock_Update_Part Stock_Update_Part;
-    Stock_Update_Part.setModal(true);
     Stock_Update_Part.setPartID(partID);
 
     qDebug() << "TEST: !" + partID + " <- Part ID clicked";
@@ -162,6 +162,5 @@ void Stock_Control::on_checkBox_Set_Quantity_toggled()
 void Stock_Control::on_pushButton_clicked()
 {
     Stock_Add_Part Stock_Add_Part;
-    Stock_Add_Part.setModal(true);
     Stock_Add_Part.exec();
 }

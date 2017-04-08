@@ -79,10 +79,10 @@ FORMS    += \
     Client_Update.ui \
     Stock_Update_Part.ui \
     Stock_Finances.ui \
-    Employee_Add.ui \
-    Employee_Update.ui \
     Login.ui\
-    Employee_List.ui
+    Employee_Add.ui \
+    Employee_List.ui \
+    Employee_Update.ui
 
 DISTFILES += \
     images/emote-love.png \
@@ -128,11 +128,11 @@ DISTFILES += \
     images/Screenshots/Oficina_Stock_AddPart.png \
     po/Oficina_pt_BR.qm \
     po/Oficina_pt_BR.ts \
-    Create_Database.sql \
     LICENSE \
     README.md \
     TODO \
-    Oficina.Desktop
+    Oficina.Desktop \
+    Oficina.sql
 
 RESOURCES += \
     images/images.qrc \

@@ -165,7 +165,6 @@ void Client_Services_History::on_tbl_Client_Cars_doubleClicked(const QModelIndex
     Service_Create_Description.setCarID(carID.toString());
     Service_Create_Description.setClientid(client_id);
 
-    Service_Create_Description.setModal(true);
     Service_Create_Description.exec();
     Load_Services_Grid();
     ui->tabWidget->setCurrentIndex(1); //Move to services tab
@@ -184,7 +183,6 @@ void Client_Services_History::on_tbl_Client_Services_doubleClicked(const QModelI
     Client_Add_Service.setClientid(client_id);
     Client_Add_Service.Load_Parts_And_Service_Costs_Grid();
 
-    Client_Add_Service.setModal(true);
     Client_Add_Service.exec();
     Load_Services_Grid();
 }
@@ -192,7 +190,6 @@ void Client_Services_History::on_tbl_Client_Services_doubleClicked(const QModelI
 void Client_Services_History::on_btn_Update_Client_clicked()
 {
     Client_Update Client_Update;
-    Client_Update.setModal(true);
     Client_Update.setClient_id(client_id);
     Client_Update.load_Client_Info_To_TextBoxes();
     Client_Update.exec();
@@ -204,7 +201,6 @@ void Client_Services_History::on_btn_Add_Car_To_Client_clicked()
     Client_Add_Car Client_Add_Car;
     Client_Add_Car.setClient(client_id);
     Client_Add_Car.Add_Client_Info_To_Form(client_id);
-    Client_Add_Car.setModal(true);
     Client_Add_Car.exec();
     load_Cars_Grid();
 }

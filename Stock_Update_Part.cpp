@@ -31,7 +31,7 @@ Stock_Update_Part::~Stock_Update_Part()
 
 void Stock_Update_Part::Load_Part_Info_to_Form(){
     QSqlQuery query;
-    query.prepare("SELECT Part_Name, Part_Description, Part_Cost, Part_Sell_Value_With_Interest_Rate, Part_Quantity, Part_Interrest_Rate, Part_Active FROM Part WHERE Part_id = " + partID);
+    query.prepare("SELECT Part_Name, Part_Description, Part_Cost, Part_Sell_Value_With_Interest_Rate, Part_Quantity, Part_Interrest_Rate FROM Part WHERE Part_id = " + partID);
 
     if (query.exec() == false){
         //qDebug() << query.lastError();

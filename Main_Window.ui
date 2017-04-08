@@ -101,6 +101,12 @@
       <property name="editTriggers">
        <set>QAbstractItemView::NoEditTriggers</set>
       </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SingleSelection</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
       <property name="sortingEnabled">
        <bool>true</bool>
       </property>
@@ -254,12 +260,12 @@
   </action>
   <action name="actionList_Open_Services">
    <property name="text">
-    <string>List Open Services</string>
+    <string>&amp;List Open Services</string>
    </property>
   </action>
   <action name="actionList_Not_Started_Services">
    <property name="text">
-    <string>List Not Started Services</string>
+    <string>List &amp;Not Started Services</string>
    </property>
   </action>
  </widget>

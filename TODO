@@ -1,26 +1,19 @@
-- Fix the ui, currently it is fixed sized, it is this way because I did not learn how to make the interfce 'adapt'.
 - The delete part grid should have a 'X' icon, clickin this icon removes the part
-- Make a function that shows how much was bought/sold in a given time frame
-- Make a screen that summs the value of the parts in all the stock (table Stok).
 - Implement a configuration file which will contain eg. database access credentials.
 - Add a daily resume wich will show:
         Not Finished Services;
         Not Paid Services;
 - Add a function on wich owner can set a date on which the client is going to pick his car.
         List clients that will come today to get his Car.
-- Register Workshop workers(mitarbeiters).
+
 - Create a second client with a simple interface, maybe qwidget. This screen will appear in tvs
 allong the workshop, it will show open services and who is working on which one.
 
 --NEW IDEAS 23-02-17--
-currently when the owner selects a service it will at the same time register the hour cost on that service, remove that.
+currently when the owner selects a service it will at the same time register the hour cost on that service, make that hour cost editable.
 
 Code improvements:
-
 In the service have an open and closed flag;
-If open show who opened it (employee opened/working on it);
-When searching use a qsqltable proxy and make the search dropdown work nativelly (dropping data from
-the proxy and not making a select in the database);
 
 Resume:
 Service is 'closed' or 'open'
@@ -31,11 +24,21 @@ If user is system root he can 'assign' the task to some employee.
 
 Oficina clients show always display that info.
 
+REJECTED:
+- Register Workshop workers(mitarbeiters).
+- If open show who opened it (employee opened/working on it);
+
+
 IN PROGRESS:
 - Make a screen that summs the value of the parts in all the stock (table Stok).
+- Make a function that shows how much was bought/sold in a given time frame
+- Make a screen that summs the value of the parts in all the stock (table Stok).
+- When searching use a qsqltable proxy and make the search dropdown work nativelly (dropping data from the proxy and not making a select in the database).
 
 BUGS:
 Adding a part is not removing from stock.
 
 DONE:
 - Change QPushButton's to QDialogButtonBox as QDialogButtonBox seems to suit better and has built-in icons.
+- Fix the ui, currently it is fixed sized, it is this way because I did not learn how to make the interfce 'adapt'.
+

@@ -21,14 +21,28 @@
    <item row="1" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="ServiceDescription">
       <attribute name="title">
        <string>Service Detailed</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="1" column="0" colspan="5">
+       <item row="13" column="3">
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="2" colspan="2">
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="4">
         <widget class="QLineEdit" name="line_ServiceShortDescription">
          <property name="focusPolicy">
           <enum>Qt::NoFocus</enum>
@@ -38,7 +52,7 @@
          </property>
         </widget>
        </item>
-       <item row="9" column="4">
+       <item row="12" column="3">
         <widget class="QLCDNumber" name="lcd_Parts_Cost_2">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -66,7 +80,7 @@
          </property>
         </widget>
        </item>
-       <item row="8" column="4">
+       <item row="11" column="3">
         <widget class="QLCDNumber" name="lcd_Hour_cost">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -94,17 +108,7 @@
          </property>
         </widget>
        </item>
-       <item row="9" column="0">
-        <widget class="QCheckBox" name="check_Finished">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="text">
-          <string>Service Finished?</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="3">
+       <item row="11" column="2">
         <widget class="QLabel" name="label_Hour_Cosr">
          <property name="text">
           <string>Service Hour Cost:</string>
@@ -114,14 +118,7 @@
          </property>
         </widget>
        </item>
-       <item row="8" column="0">
-        <widget class="QCheckBox" name="checkBox">
-         <property name="text">
-          <string>Service Open?</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="0" colspan="2">
+       <item row="14" column="0" colspan="2">
         <widget class="QLabel" name="label_feedback">
          <property name="text">
           <string/>
@@ -157,7 +154,7 @@
          </property>
         </widget>
        </item>
-       <item row="11" column="4">
+       <item row="14" column="3">
         <widget class="QLCDNumber" name="lcd_Service_Total">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -176,24 +173,14 @@
          </property>
         </widget>
        </item>
-       <item row="9" column="3" alignment="Qt::AlignRight">
+       <item row="12" column="2" alignment="Qt::AlignRight">
         <widget class="QLabel" name="label">
          <property name="text">
           <string>Parts Cost:</string>
          </property>
         </widget>
        </item>
-       <item row="5" column="0">
-        <widget class="QCheckBox" name="check_Paid">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="text">
-          <string>Service Paid?</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="3">
+       <item row="14" column="2">
         <widget class="QLabel" name="lbl_totlaServiceCost">
          <property name="font">
           <font>
@@ -208,7 +195,7 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="0" colspan="5">
+       <item row="5" column="0" colspan="4">
         <widget class="QTextEdit" name="txt_Servicedescription">
          <property name="focusPolicy">
           <enum>Qt::NoFocus</enum>
@@ -225,7 +212,7 @@ p, li { white-space: pre-wrap; }
          </property>
         </widget>
        </item>
-       <item row="4" column="4">
+       <item row="7" column="3">
         <widget class="QDoubleSpinBox" name="Spin_Hand_Work_Hours">
          <property name="enabled">
           <bool>true</bool>
@@ -244,7 +231,7 @@ p, li { white-space: pre-wrap; }
          </property>
         </widget>
        </item>
-       <item row="4" column="3">
+       <item row="7" column="2">
         <widget class="QLabel" name="lbl_InsertWorkCost">
          <property name="text">
           <string>Hours Worked:</string>
@@ -254,7 +241,7 @@ p, li { white-space: pre-wrap; }
          </property>
         </widget>
        </item>
-       <item row="4" column="0">
+       <item row="7" column="0">
         <widget class="QLabel" name="label_Client_Return_Date">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
@@ -270,7 +257,7 @@ p, li { white-space: pre-wrap; }
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
+       <item row="7" column="1">
         <widget class="QDateTimeEdit" name="dateTimeEdit">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -300,6 +287,43 @@ p, li { white-space: pre-wrap; }
          </property>
          <property name="calendarPopup">
           <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" alignment="Qt::AlignRight">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Service Category</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QComboBox" name="comboBox"/>
+       </item>
+       <item row="13" column="0">
+        <widget class="QCheckBox" name="check_Finished">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="text">
+          <string>Service Finished?</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="0">
+        <widget class="QCheckBox" name="checkBox">
+         <property name="text">
+          <string>Service Open?</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0">
+        <widget class="QCheckBox" name="check_Paid">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="text">
+          <string>Service Paid?</string>
          </property>
         </widget>
        </item>
@@ -403,9 +427,6 @@ p, li { white-space: pre-wrap; }
  </widget>
  <tabstops>
   <tabstop>btn_Update_Service_description</tabstop>
-  <tabstop>check_Paid</tabstop>
-  <tabstop>checkBox</tabstop>
-  <tabstop>check_Finished</tabstop>
   <tabstop>btn_Add_Parts_Used_In_The_Service</tabstop>
   <tabstop>tbl_Parts_Used_In_Service</tabstop>
   <tabstop>tabWidget</tabstop>

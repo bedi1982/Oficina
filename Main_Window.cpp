@@ -72,7 +72,6 @@ void Main_Window::setClient_Clicked_Exit_On_Login(bool value)
 void Main_Window::Check_Login()
 {
     Login Login;
-    Login.setModal(true);
     Login.exec();
 }
 
@@ -94,7 +93,6 @@ void Main_Window::Set_Last_Client_in_the_Grid()
 void Main_Window::on_action_Add_Client_triggered()
 {
     Client_Add Client_Add;
-    Client_Add.setModal(true);
     Client_Add.exec();
 
     if(System_Services_and_Info::get_is_New_or_Updated_Client()){
@@ -107,7 +105,6 @@ void Main_Window::on_action_Add_Client_triggered()
 void Main_Window::on_action_Add_Part_triggered()
 {
     Stock_Add_Part Stock_Add_Part;
-    Stock_Add_Part.setModal(true);
     Stock_Add_Part.exec();
 }
 
@@ -130,7 +127,6 @@ void Main_Window::Client_Services_Open(QString clientID)
 {
     Client_Services_History Client_Services_History;
     Client_Services_History.setClient_id(clientID);
-    Client_Services_History.setModal(true);
     Client_Services_History.exec();
 }
 
@@ -142,7 +138,6 @@ void Main_Window::on_action_Exit_triggered()
 void Main_Window::on_action_About_Oficina_triggered()
 {
     About About;
-    About.setModal(true);
     About.exec();
 }
 
@@ -180,21 +175,18 @@ void Main_Window::on_line_ID_or_CPG_or_Name_textChanged(const QString &Used_Sear
 void Main_Window::on_action_Stock_triggered()
 {
     Stock_Control stock_Control;
-    stock_Control.setModal(true);
     stock_Control.exec();
 }
 
 void Main_Window::on_action_Change_Hour_Cost_triggered()
 {
     Config_Set_Hour_Cost set_Hour_Cost;
-    set_Hour_Cost.setModal(true);
     set_Hour_Cost.exec();
 }
 
 void Main_Window::on_action_Manpage_triggered()
 {
     Man_Page man_page;
-    man_page.setModal(true);
     man_page.exec();
 }
 
@@ -207,7 +199,6 @@ void Main_Window::on_Clear_Button_clicked()
 void Main_Window::on_actionStock_Finances_triggered()
 {
     Stock_Finances Stock_Finances;
-    Stock_Finances.setModal(true);
     Stock_Finances.exec();
 }
 
@@ -217,7 +208,6 @@ void Main_Window::on_action_Employees_triggered()
         QMessageBox::critical(this, tr("Note!"), "This option is only available for your boss...");
     }else{
         Employee_List Employee_List;
-        Employee_List.setModal(true);
         Employee_List.exec();
     }
 }

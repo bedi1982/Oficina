@@ -150,7 +150,6 @@ void Client_Add_Service::on_btn_Add_Parts_Used_In_The_Service_clicked()
 {
     Stock_Parts_Selection Stock_Parts_Selection;
     Stock_Parts_Selection.setServiceID(ServiceID);
-    Stock_Parts_Selection.setModal(true);
     Stock_Parts_Selection.exec();
 
     Load_Parts_And_Service_Costs_Grid();
@@ -239,7 +238,6 @@ void Client_Add_Service::on_btn_Update_Service_description_clicked()
     Service_Update_Description service_Update_Description;
     service_Update_Description.setServiceID(ServiceID);
     service_Update_Description.Set_Description();
-    service_Update_Description.setModal(true);
     service_Update_Description.exec();
     Add_Service_Description_Text();
 }
@@ -263,6 +261,7 @@ void Client_Add_Service::on_Spin_Hand_Work_Hours_valueChanged()
     }
 }
 
+//Work In progress//
 void Client_Add_Service::on_dateTimeEdit_dateTimeChanged(const QDateTime &dateTime)
 {
     QSqlQuery query;

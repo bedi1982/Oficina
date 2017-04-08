@@ -84,10 +84,13 @@ void Client_Add::on_btn_Add_Client_accepted()
             QPixmap cool(":/emoticons/face-cool.png");
             ui->lbl_Emoticon->setPixmap(cool);
             QMessageBox::information(this, tr("Success!"), ui->line_Name->text() + tr(" added"));
-            close();
+
             //this one is because if the user presses ESC he actually isn't adding a new client, the main window needs to know that//
             //otherwise it will display the last client from the database//
             System_Services_and_Info::set_is_New_or_Updated_Client(true);
+
+            close();
+
         }
     }
 }

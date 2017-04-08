@@ -59,7 +59,6 @@ void Employee_List::on_line_ID_or_CPG_or_Name_textChanged(const QString &Used_Se
 void Employee_List::on_btn_Add_clicked()
 {
     Employee_Add Employee_Add;
-    Employee_Add.setModal(true);
     Employee_Add.exec();
     on_Clear_Button_clicked();
     ui->line_ID_or_CPG_or_Name->setText("*");

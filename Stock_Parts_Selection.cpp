@@ -40,7 +40,7 @@ void Stock_Parts_Selection::on_line_Part_Name_textChanged(const QString &userSea
     if(!(userSearchFfilter.isEmpty()))
     {
         model->setTable("Part");
-        model->setFilter("Part_Quantity > '0' AND Part_Active = 1 ");
+        model->setFilter("Part_Quantity > '0'");
 
         if(!(userSearchFfilter == "*"))
         {
@@ -50,14 +50,15 @@ void Stock_Parts_Selection::on_line_Part_Name_textChanged(const QString &userSea
 
         model->setHeaderData(0, Qt::Horizontal, tr("ID"));
         model->setHeaderData(1, Qt::Horizontal, tr("Name"));
-        model->setHeaderData(2, Qt::Horizontal, tr("Description"));
-        model->setHeaderData(3, Qt::Horizontal, tr("Cost"));
-        model->setHeaderData(4, Qt::Horizontal, tr("Sell Price"));
-        model->setHeaderData(5, Qt::Horizontal, tr("Quantity Available"));
-        model->setHeaderData(6, Qt::Horizontal, tr("Updated At"));
-        model->setHeaderData(7, Qt::Horizontal, tr("Created at"));
+        model->setHeaderData(2, Qt::Horizontal, tr("Brand"));
+        model->setHeaderData(3, Qt::Horizontal, tr("Description"));
+        model->setHeaderData(4, Qt::Horizontal, tr("Cost"));
+        model->setHeaderData(5, Qt::Horizontal, tr("Sell Price"));
+        model->setHeaderData(6, Qt::Horizontal, tr("Quantity Available"));
+        model->setHeaderData(7, Qt::Horizontal, tr("Updated At"));
+        model->setHeaderData(8, Qt::Horizontal, tr("Created at"));
 
-        ui->tbl_Parts_List->hideColumn(2);
+        ui->tbl_Parts_List->hideColumn(3);
         ui->tbl_Parts_List->setModel(model);
         ui->tbl_Parts_List->resizeColumnsToContents();
     }else{
@@ -101,7 +102,6 @@ void Stock_Parts_Selection::on_tbl_Parts_List_doubleClicked(const QModelIndex &D
 void Stock_Parts_Selection::on_btn_Add_Part_to_Stock_clicked()
 {
     Stock_Add_Part Stock_Add_Part;
-    Stock_Add_Part.setModal(true);
     Stock_Add_Part.exec();
 
     //Bellow 2 just to 'retrigguer' the parts list grid after a new part is included//
