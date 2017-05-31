@@ -234,7 +234,8 @@ CREATE TABLE `ServiceCategory` (
 
 --set mysql logging:
 
---SET global log_output = 'file';
---SET global general_log_file='/tmp/mysql.log'; 
---SET global general_log = on;
+--
+SET global log_output = 'file';
+SET global general_log_file='/tmp/mysql.log'; 
+SET global general_log = on;
 
