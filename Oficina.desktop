@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Oficina
+GenericName=Oficina
+Comment=Mechanical Workshop Application
+Exec=oficina
+Icon=Oficina
+Terminal=false
+Type=Application
+Categories=System;FileTools;FileManager;
+
+
+
+
