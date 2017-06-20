@@ -3,7 +3,7 @@ This covers for OpenSuse, other distros shall be similar.
 ## OFICINA SOURCE CODE ##
 To checkout the code you need the git package, install it with: 
 
-´zypper in git-core´
+zypper in git-core
 
 Now, clone the source code repository:
 
