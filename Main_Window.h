@@ -32,6 +32,8 @@ public:
 
     bool Client_Clicked_Exit_On_Login = false;
 
+    bool get_Last_Hour_Cost();
+
 private slots:
 
     void on_line_ID_or_CPG_or_Name_textChanged(const QString &arg1);

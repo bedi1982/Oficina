@@ -38,25 +38,44 @@ Main_Window::Main_Window(QWidget *parent) :
 
     //TODO TEST
     ui->line_ID_or_CPG_or_Name->setFocus();
-    ui->lbl_Database->setText("Database -> ");
     ui->lbl_Oficina->setText(System_Services_and_Info::get_System_Version() + "\n" + System_Services_and_Info::get_Current_Date());
     this->setWindowTitle(System_Services_and_Info::get_System_Version());
 
     Database db;
 
     if(db.Connect()){
-
         Check_Login();
-
         ui->lbl_Database->setText(tr("Database:  Connected"));
         Create_Client_Model_and_proxy();
+        if(!get_Last_Hour_Cost()){
+            QMessageBox::critical(this, tr("WARNING!!"), "HourCost Not Set. Please set an HourCost in: Configuration -> Set HourCost. "
+                                                      "Not setting this value will make you work for FREE!");
+        }
     }else{
         //If the database is not available we make it mostly useless//
         ui->line_ID_or_CPG_or_Name->setEnabled(false);
         ui->menuBar->hide();
         ui->lbl_Database->setText(tr("Database:  Disconnected"));
     }
+}
 
+bool Main_Window::get_Last_Hour_Cost()
+{
+    QSqlQuery Get_Hour_Cost;
+    Get_Hour_Cost.prepare("SELECT * from HourCost order by HourCost_id DESC LIMIT 1;");
+
+    if (Get_Hour_Cost.exec() == false){
+        QMessageBox::critical(this, tr("Error!"), Get_Hour_Cost.lastError().text() + "bool Main_Window::get_Last_Hour_Cost()");
+    }else{
+        while(Get_Hour_Cost.next()) //returns only 1 row as result(0 = id, 1=name)//
+        {
+            if (Get_Hour_Cost.value(1).toInt() > 0){
+                qDebug() << Get_Hour_Cost.value(1).toInt();
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
 bool Main_Window::getClient_Clicked_Exit_On_Login() const
