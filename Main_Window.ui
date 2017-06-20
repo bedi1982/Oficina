@@ -176,7 +176,6 @@
      <string>Oficina</string>
     </property>
     <addaction name="actionList_Open_Services"/>
-    <addaction name="actionList_Not_Started_Services"/>
     <addaction name="action_Exit"/>
    </widget>
    <widget class="QMenu" name="menuCadastrois">
@@ -260,7 +259,7 @@
   </action>
   <action name="actionList_Open_Services">
    <property name="text">
-    <string>&amp;List Open Services</string>
+    <string>&amp;List New Services</string>
    </property>
   </action>
   <action name="actionList_Not_Started_Services">

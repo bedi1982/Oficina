@@ -1,21 +1,3 @@
--- MySQL dump 10.15  Distrib 10.0.29-MariaDB, for Linux (x86_64)
---
--- Host: localhost    Database: localhost
--- ------------------------------------------------------
--- Server version	10.0.29-MariaDB
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
-/* First we create if not exists and use the new Database/*/ 
 CREATE DATABASE Oficina;
 USE Oficina;
 
@@ -77,38 +59,6 @@ CREATE TABLE `ClientCar` (
 LOCK TABLES `ClientCar` WRITE;
 /*!40000 ALTER TABLE `ClientCar` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ClientCar` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `Employee`
---
-
-DROP TABLE IF EXISTS `Employee`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Employee` (
-  `Employee_id` int(11) NOT NULL AUTO_INCREMENT,
-  `Employee_Name` varchar(40) DEFAULT NULL,
-  `Employee_Address` varchar(50) DEFAULT NULL,
-  `Employee_City` varchar(30) DEFAULT NULL,
-  `Employee_CPG` varchar(20) DEFAULT NULL,
-  `Employee_ID_Number` varchar(15) DEFAULT NULL,
-  `Employee_Phone` varchar(40) DEFAULT NULL,
-  `Employee_updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
-  `Employee_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `Employee_Password` varchar(40) DEFAULT NULL,
-  PRIMARY KEY (`Employee_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `Employee`
---
-
-LOCK TABLES `Employee` WRITE;
-/*!40000 ALTER TABLE `Employee` DISABLE KEYS */;
-INSERT INTO `Employee` VALUES (1,'root',NULL,NULL,NULL,NULL,NULL,'0000-00-00 00:00:00','2017-03-20 12:15:47','root');
-/*!40000 ALTER TABLE `Employee` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -176,8 +126,6 @@ CREATE TABLE `Service` (
   `Service_Hours_Duration` double(19,2) DEFAULT NULL,
   `Service_Hour_Cost` double(19,2) DEFAULT NULL,
   `Service_Paid` tinyint(1) NOT NULL DEFAULT '0',
-  `Service_Is_Open` tinyint(1) NOT NULL DEFAULT '0',
-  `Service_Opened_By_EployeeID` bigint(20) DEFAULT NULL,
   `Service_updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   `Service_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`Service_id`)
@@ -232,7 +180,7 @@ CREATE TABLE `ServiceCategory` (
   `Used_Part_ID` int(11) DEFAULT NULL,
   `Service_Category_Name` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`ServicePartsUsed_id`)
-)
+);
 
 -- Dump completed on 2017-03-20  9:18:48
 

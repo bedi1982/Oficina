@@ -47,8 +47,10 @@ Main_Window::Main_Window(QWidget *parent) :
         Check_Login();
         ui->lbl_Database->setText(tr("Database:  Connected"));
         Create_Client_Model_and_proxy();
+
+        //We also check if the hourcost is set, otherwise is to dangerous the user may start a service with hour cost at 0;
         if(!get_Last_Hour_Cost()){
-            QMessageBox::critical(this, tr("WARNING!!"), "HourCost Not Set. Please set an HourCost in: Configuration -> Set HourCost. "
+            QMessageBox::critical(this, tr("WARNING!!"), "HourCost Not Set. Please set an HourCost in: Configuration -> Change HourCost. "
                                                       "Not setting this value will make you work for FREE!");
         }
     }else{
@@ -70,7 +72,6 @@ bool Main_Window::get_Last_Hour_Cost()
         while(Get_Hour_Cost.next()) //returns only 1 row as result(0 = id, 1=name)//
         {
             if (Get_Hour_Cost.value(1).toInt() > 0){
-                qDebug() << Get_Hour_Cost.value(1).toInt();
                 return true;
             }
         }

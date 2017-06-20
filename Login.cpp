@@ -15,12 +15,6 @@ Login::Login(QWidget *parent) :
     ui->setupUi(this);
     ui->line_ID->setPlaceholderText("Only Numbers Allowed");
     ui->line_ID->setValidator(new QIntValidator);
-
-
-    //TODO HARDCODED LOGIN//
-    ui->line_ID->setText("1");
-    ui->line_Password->setText("root");
-    //END TODO//
 }
 
 Login::~Login()
@@ -39,8 +33,9 @@ bool Login::Verify_Empty_Fields_on_Form()
     return true;
 }
 
+//Employee part totally disabled
 void Login::on_buttonBox_accepted()
-{
+{/*
     if(Verify_Empty_Fields_on_Form()){
         QString Employee_Id = ui->line_ID->text();
         QString Employee_Password = ui->line_Password->text();
@@ -63,7 +58,8 @@ void Login::on_buttonBox_accepted()
                 }
             }
         }
-    }
+    }*/
+    hide();
 }
 
 void Login::on_buttonBox_rejected()

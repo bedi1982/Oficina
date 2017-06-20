@@ -118,8 +118,8 @@ void Stock_Control::on_tbl_Parts_doubleClicked(const QModelIndex &Selected_Part)
 
     Stock_Update_Part Stock_Update_Part;
     Stock_Update_Part.setPartID(partID);
-
-    qDebug() << "TEST: !" + partID + " <- Part ID clicked";
+    //TODO HERE IS A BUG WHEN EDTING VIA GUI
+    qDebug() << "TEST: " + partID + " <- Part ID clicked";
     //ui->line_Part_Name->setText("");
     Stock_Update_Part.Load_Part_Info_to_Form();
     Stock_Update_Part.exec();

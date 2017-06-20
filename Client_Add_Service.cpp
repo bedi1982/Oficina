@@ -261,7 +261,7 @@ void Client_Add_Service::on_Spin_Hand_Work_Hours_valueChanged()
     }
 }
 
-//Work In progress//
+//TODO :: Work In progress TODO//
 void Client_Add_Service::on_dateTimeEdit_dateTimeChanged(const QDateTime &dateTime)
 {
     QSqlQuery query;
@@ -273,4 +273,9 @@ void Client_Add_Service::on_dateTimeEdit_dateTimeChanged(const QDateTime &dateTi
     }else{
         QMessageBox::information(this, tr("Ok!"), tr("Vehicle Retrieval Date Set..."));
     }
+}
+
+void Client_Add_Service::on_buttonBox_rejected()
+{
+    close();
 }
