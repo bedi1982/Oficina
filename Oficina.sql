@@ -15,6 +15,10 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+/* First we create if not exists and use the new Database/*/ 
+CREATE DATABASE Oficina;
+USE Oficina;
+
 --
 -- Table structure for table `Client`
 --
@@ -234,8 +238,7 @@ CREATE TABLE `ServiceCategory` (
 
 --set mysql logging:
 
---
-SET global log_output = 'file';
-SET global general_log_file='/tmp/mysql.log'; 
-SET global general_log = on;
+--SET global log_output = 'file';
+--SET global general_log_file='/tmp/mysql.log'; 
+--SET global general_log = on;
 
