@@ -182,7 +182,6 @@
     <property name="title">
      <string>Stoc&amp;k</string>
     </property>
-    <addaction name="action_Add_Part"/>
     <addaction name="action_Stock"/>
     <addaction name="actionStock_Finances"/>
    </widget>
@@ -219,7 +218,7 @@
   </action>
   <action name="action_Add_Part">
    <property name="text">
-    <string>&amp;Register New Part</string>
+    <string>&amp;Register New Car Part</string>
    </property>
   </action>
   <action name="action_Stock">
@@ -249,7 +248,7 @@
   </action>
   <action name="actionStock_Finances">
    <property name="text">
-    <string>Stock &amp;Finances</string>
+    <string>Stock &amp;Finances/Value</string>
    </property>
   </action>
   <action name="action_Employees">
@@ -259,12 +258,7 @@
   </action>
   <action name="actionList_Open_Services">
    <property name="text">
-    <string>&amp;List New Services</string>
-   </property>
-  </action>
-  <action name="actionList_Not_Started_Services">
-   <property name="text">
-    <string>List &amp;Not Started Services</string>
+    <string>&amp;List Open Services</string>
    </property>
   </action>
  </widget>

@@ -150,17 +150,6 @@ void Main_Window::Client_Services_Open(QString clientID)
     Client_Services_History.exec();
 }
 
-void Main_Window::on_action_Exit_triggered()
-{
-    close();
-}
-
-void Main_Window::on_action_About_Oficina_triggered()
-{
-    About About;
-    About.exec();
-}
-
 void Main_Window::Create_Client_Model_and_proxy(){
 
     model = new QSqlTableModel();
@@ -168,7 +157,7 @@ void Main_Window::Create_Client_Model_and_proxy(){
     model->select();
 
     model->setEditStrategy(QSqlTableModel::OnManualSubmit);
-    model->setHeaderData(0, Qt::Horizontal, tr("System ID"));
+    model->setHeaderData(0, Qt::Horizontal, tr("ID"));
     model->setHeaderData(1, Qt::Horizontal, tr("Name"));
     model->setHeaderData(2, Qt::Horizontal, tr("Adress"));
     model->setHeaderData(3, Qt::Horizontal, tr("City"));
@@ -230,4 +219,15 @@ void Main_Window::on_action_Employees_triggered()
         Employee_List Employee_List;
         Employee_List.exec();
     }
+}
+
+void Main_Window::on_action_Exit_triggered()
+{
+    close();
+}
+
+void Main_Window::on_action_About_Oficina_triggered()
+{
+    About About;
+    About.exec();
 }

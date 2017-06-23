@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>671</width>
-    <height>422</height>
+    <width>707</width>
+    <height>577</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -64,35 +64,6 @@
          </property>
          <property name="acceptDrops">
           <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QPushButton" name="btn_Update_Service_description">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>94</width>
-           <height>34</height>
-          </size>
-         </property>
-         <property name="acceptDrops">
-          <bool>false</bool>
-         </property>
-         <property name="text">
-          <string>Update</string>
-         </property>
-         <property name="icon">
-          <iconset resource="images/images.qrc">
-           <normaloff>:/emoticons/client_info.png</normaloff>:/emoticons/client_info.png</iconset>
          </property>
         </widget>
        </item>
@@ -273,6 +244,9 @@ border-top-color: rgb(0, 170, 0);</string>
          </property>
         </widget>
        </item>
+       <item row="0" column="2" colspan="2">
+        <widget class="QComboBox" name="comboBox"/>
+       </item>
        <item row="7" column="4">
         <widget class="QLCDNumber" name="lcd_Hour_cost">
          <property name="sizePolicy">
@@ -311,8 +285,34 @@ border-top-color: rgb(0, 170, 0);</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="2" colspan="2">
-        <widget class="QComboBox" name="comboBox"/>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="btn_Update_Service_description">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>94</width>
+           <height>34</height>
+          </size>
+         </property>
+         <property name="acceptDrops">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Update</string>
+         </property>
+         <property name="icon">
+          <iconset resource="images/images.qrc">
+           <normaloff>:/emoticons/client_info.png</normaloff>:/emoticons/client_info.png</iconset>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
