@@ -7,6 +7,7 @@
 #include "QSqlQuery"
 #include "QDebug"
 #include "QSqlError"
+#include "QSqlDatabase"
 
 
 Stock_Parts_Selection::Stock_Parts_Selection(QWidget *parent) :
@@ -35,6 +36,7 @@ void Stock_Parts_Selection::setServiceID(QString serviceid)
 
 void Stock_Parts_Selection::on_line_Part_Name_textChanged(const QString &userSearchFfilter)
 {
+
     QSqlTableModel* model = new QSqlTableModel;
 
     if(!(userSearchFfilter.isEmpty()))

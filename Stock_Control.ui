@@ -24,21 +24,80 @@
     <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="5" column="6">
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Close</set>
+   <item row="1" column="8">
+    <widget class="QSpinBox" name="spinBox_Quantity_to_Show">
+     <property name="maximumSize">
+      <size>
+       <width>50</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="minimum">
+      <number>0</number>
+     </property>
+     <property name="maximum">
+      <number>999</number>
+     </property>
+     <property name="singleStep">
+      <number>1</number>
+     </property>
+     <property name="value">
+      <number>10</number>
      </property>
     </widget>
    </item>
-   <item row="1" column="5">
-    <widget class="QCheckBox" name="checkBox_Set_Quantity">
+   <item row="1" column="6">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="0" colspan="6">
+    <widget class="QLabel" name="lbl_Full_Part_Description">
      <property name="text">
-      <string>Show Only Parts that have less or equal then:</string>
+      <string>  Part Full Description:</string>
      </property>
     </widget>
    </item>
-   <item row="4" column="0" colspan="7">
+   <item row="0" column="0" colspan="2" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="lbl_Search_Part">
+     <property name="text">
+      <string>Search Part</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2">
+    <widget class="QPushButton" name="pushButton">
+     <property name="text">
+      <string>Register New Part To Stock</string>
+     </property>
+     <property name="icon">
+      <iconset resource="images/images.qrc">
+       <normaloff>:/emoticons/hint.png</normaloff>:/emoticons/hint.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2" colspan="7">
+    <widget class="QLineEdit" name="line_Part_Name">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="maxLength">
+      <number>30</number>
+     </property>
+     <property name="placeholderText">
+      <string>Search entering the Part Name. You list all with: *</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="9">
     <widget class="QTextEdit" name="txt_Part_Description">
      <property name="enabled">
       <bool>true</bool>
@@ -76,7 +135,14 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="0" colspan="7">
+   <item row="5" column="3">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>         Stock Value:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="9">
     <widget class="QTableView" name="tbl_Parts">
      <property name="focusPolicy">
       <enum>Qt::StrongFocus</enum>
@@ -93,13 +159,6 @@
      <attribute name="horizontalHeaderCascadingSectionResizes">
       <bool>true</bool>
      </attribute>
-    </widget>
-   </item>
-   <item row="5" column="3" colspan="3">
-    <widget class="QLabel" name="lbl_Stock_Total_Value">
-     <property name="text">
-      <string/>
-     </property>
     </widget>
    </item>
    <item row="1" column="0">
@@ -121,85 +180,29 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="1" colspan="3">
+   <item row="1" column="1" colspan="5">
     <widget class="QLabel" name="llb_Double_Click_Part">
      <property name="text">
       <string>Double click the part to change it.</string>
      </property>
     </widget>
    </item>
-   <item row="1" column="6">
-    <widget class="QSpinBox" name="spinBox_Quantity_to_Show">
-     <property name="maximumSize">
-      <size>
-       <width>50</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="minimum">
-      <number>0</number>
-     </property>
-     <property name="maximum">
-      <number>999</number>
-     </property>
-     <property name="singleStep">
-      <number>1</number>
-     </property>
-     <property name="value">
-      <number>10</number>
+   <item row="5" column="8">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Close</set>
      </property>
     </widget>
    </item>
-   <item row="1" column="4">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="3" column="0" colspan="4">
-    <widget class="QLabel" name="lbl_Full_Part_Description">
+   <item row="1" column="7">
+    <widget class="QCheckBox" name="checkBox_Set_Quantity">
      <property name="text">
-      <string>  Part Full Description:</string>
+      <string>     Show Only Parts that have less or equal then:</string>
      </property>
     </widget>
    </item>
-   <item row="0" column="0" colspan="2" alignment="Qt::AlignRight">
-    <widget class="QLabel" name="lbl_Search_Part">
-     <property name="text">
-      <string>Search Part</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="2">
-    <widget class="QPushButton" name="pushButton">
-     <property name="text">
-      <string>Register New Part To Stock</string>
-     </property>
-     <property name="icon">
-      <iconset resource="images/images.qrc">
-       <normaloff>:/emoticons/hint.png</normaloff>:/emoticons/hint.png</iconset>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="2" colspan="5">
-    <widget class="QLineEdit" name="line_Part_Name">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="maxLength">
-      <number>30</number>
-     </property>
-     <property name="placeholderText">
-      <string>Search entering the Part Name. You list all with: *</string>
-     </property>
-    </widget>
+   <item row="5" column="4" colspan="3">
+    <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
    </item>
   </layout>
  </widget>

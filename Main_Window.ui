@@ -176,6 +176,7 @@
      <string>Oficina</string>
     </property>
     <addaction name="actionList_Open_Services"/>
+    <addaction name="actionList_not_Paid_Services"/>
     <addaction name="action_Exit"/>
    </widget>
    <widget class="QMenu" name="menuCadastrois">
@@ -258,6 +259,11 @@
   <action name="actionList_Open_Services">
    <property name="text">
     <string>&amp;List Open Services</string>
+   </property>
+  </action>
+  <action name="actionList_not_Paid_Services">
+   <property name="text">
+    <string>List not Paid Services</string>
    </property>
   </action>
  </widget>

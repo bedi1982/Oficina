@@ -25,13 +25,6 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="4" colspan="3">
-    <widget class="QLineEdit" name="line_Client_Name">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-    </widget>
-   </item>
    <item row="1" column="3" colspan="7">
     <widget class="QLineEdit" name="txt_Car_Model">
      <property name="inputMethodHints">
@@ -48,13 +41,6 @@
      </property>
      <property name="placeholderText">
       <string>Eg. Chevette 1984</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0" colspan="4">
-    <widget class="QLabel" name="lbl_Car_Owner">
-     <property name="text">
-      <string>Car Owner (Client)</string>
      </property>
     </widget>
    </item>
@@ -141,6 +127,20 @@
     <widget class="QDialogButtonBox" name="btn_Client_Add_Car">
      <property name="standardButtons">
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="3">
+    <widget class="QLabel" name="lbl_Car_Owner">
+     <property name="text">
+      <string>Car Owner</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3" colspan="7">
+    <widget class="QLineEdit" name="line_Client_Name">
+     <property name="enabled">
+      <bool>false</bool>
      </property>
     </widget>
    </item>

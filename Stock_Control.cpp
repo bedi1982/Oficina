@@ -163,4 +163,5 @@ void Stock_Control::on_pushButton_clicked()
 {
     Stock_Add_Part Stock_Add_Part;
     Stock_Add_Part.exec();
+    on_line_Part_Name_textChanged(ui->line_Part_Name->text());
 }
