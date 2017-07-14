@@ -89,8 +89,11 @@ void Stock_Add_Part::on_buttonBox_accepted()
 
         //double_Spin_Sell_Price is percentage
         double Price_With_Interrest = ui->double_Spin_Cost->value() * ui->double_Spin_Interest_Rate->value() / 100 + ui->double_Spin_Cost->value();
-        qDebug() << ui->double_Spin_Interest_Rate->value();
-        qDebug() << Price_With_Interrest;
+
+        //TEST//
+        qDebug() << "Cost Price: " << ui->double_Spin_Cost->value();
+        qDebug() << "Inputed Interest: " << ui->double_Spin_Interest_Rate->value();
+        qDebug() << "Cost Price with Interest: " << Price_With_Interrest;
 
         query.bindValue(":Part_Sell_Value_With_Interest_Rate", Price_With_Interrest);
         query.bindValue(":Quantity", ui->spin_Quantity->text().toInt());

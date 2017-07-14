@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>551</width>
-    <height>383</height>
+    <width>564</width>
+    <height>358</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,17 @@
     <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="5" column="4" colspan="3">
+   <item row="5" column="2" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+    <widget class="QDoubleSpinBox" name="double_Spin_Cost_Price">
+     <property name="maximum">
+      <double>999.990000000000009</double>
+     </property>
+     <property name="singleStep">
+      <double>1.000000000000000</double>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="4" colspan="3">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -34,43 +44,7 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="1" alignment="Qt::AlignRight">
-    <widget class="QLabel" name="lbl_Cost_Price">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>Cost Price</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="2">
-    <widget class="QDoubleSpinBox" name="double_Spin_Cost_Price">
-     <property name="maximum">
-      <double>999.990000000000009</double>
-     </property>
-     <property name="singleStep">
-      <double>1.000000000000000</double>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="lbl_Description">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>Description</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1" colspan="6">
+   <item row="4" column="1" colspan="6">
     <widget class="QPlainTextEdit" name="txt_Part_Description">
      <property name="tabChangesFocus">
       <bool>true</bool>
@@ -83,33 +57,21 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="1" colspan="6">
-    <widget class="QLineEdit" name="line_Name">
+   <item row="5" column="3" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="lbl_Sell_Price">
      <property name="text">
-      <string/>
-     </property>
-     <property name="maxLength">
-      <number>50</number>
-     </property>
-     <property name="placeholderText">
-      <string/>
+      <string>     Set Interest Rate %</string>
      </property>
     </widget>
    </item>
-   <item row="3" column="4">
-    <widget class="QSpinBox" name="spin_Quantity">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="maximum">
-      <number>9999</number>
+   <item row="3" column="0" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="lbl_Brand">
+     <property name="text">
+      <string>Brand</string>
      </property>
     </widget>
    </item>
-   <item row="3" column="3" alignment="Qt::AlignRight">
+   <item row="5" column="5">
     <widget class="QLabel" name="lbl_Quantity">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -118,11 +80,11 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>In Stock</string>
+      <string>     In Stock</string>
      </property>
     </widget>
    </item>
-   <item row="3" column="6">
+   <item row="5" column="4" alignment="Qt::AlignLeft">
     <widget class="QDoubleSpinBox" name="double_Spin_Interrest_Rate">
      <property name="enabled">
       <bool>true</bool>
@@ -138,7 +100,67 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="0">
+   <item row="5" column="6">
+    <widget class="QSpinBox" name="spin_Quantity">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximum">
+      <number>9999</number>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1" alignment="Qt::AlignLeft">
+    <widget class="QLabel" name="lbl_Cost_Price">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Cost Price</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" alignment="Qt::AlignRight|Qt::AlignTop">
+    <widget class="QLabel" name="lbl_Description">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Description</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="lbl_Part_id">
+     <property name="text">
+      <string>Part ID</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="2">
+    <widget class="QLineEdit" name="line_Final_Sell_Price">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="QLabel" name="lbl_Final_Price">
+     <property name="text">
+      <string>Final Price</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" alignment="Qt::AlignRight">
     <widget class="QLabel" name="lbl_Part_Name">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -151,27 +173,32 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="5" alignment="Qt::AlignRight">
-    <widget class="QLabel" name="lbl_Sell_Price">
+   <item row="2" column="1" colspan="5">
+    <widget class="QLineEdit" name="line_Name">
      <property name="text">
-      <string>Set Interest Rate %</string>
+      <string/>
+     </property>
+     <property name="maxLength">
+      <number>50</number>
+     </property>
+     <property name="placeholderText">
+      <string/>
      </property>
     </widget>
    </item>
-   <item row="1" column="1" colspan="6">
+   <item row="3" column="1" colspan="4">
     <widget class="QLineEdit" name="line_Brand"/>
    </item>
-   <item row="1" column="0">
-    <widget class="QLabel" name="lbl_Brand">
-     <property name="text">
-      <string>Brand</string>
+   <item row="1" column="1" colspan="2">
+    <widget class="QLineEdit" name="line_Part_id">
+     <property name="enabled">
+      <bool>false</bool>
      </property>
     </widget>
    </item>
   </layout>
  </widget>
  <tabstops>
-  <tabstop>line_Name</tabstop>
   <tabstop>txt_Part_Description</tabstop>
  </tabstops>
  <resources>

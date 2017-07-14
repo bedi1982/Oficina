@@ -1,4 +1,4 @@
-#-------------------------------------------------
+----------------------------------------------
 #
 # Project created by QtCreator 2014-11-22T20:43:35
 #
@@ -32,9 +32,6 @@ SOURCES +=\
     Client_Update.cpp \
     Stock_Update_Part.cpp \
     Stock_Finances.cpp \
-    Employee_Add.cpp \
-    Employee_Update.cpp \
-    Employee_List.cpp \
     Login.cpp\
     System_Services_and_Info.cpp
 
@@ -56,9 +53,6 @@ HEADERS  += \
     Client_Update.h \
     Stock_Update_Part.h \
     Stock_Finances.h \
-    Employee_Add.h \
-    Employee_Update.h \
-    Employee_List.h \
     Login.h\
     System_Services_and_Info.h
 
@@ -79,10 +73,7 @@ FORMS    += \
     Client_Update.ui \
     Stock_Update_Part.ui \
     Stock_Finances.ui \
-    Login.ui\
-    Employee_Add.ui \
-    Employee_List.ui \
-    Employee_Update.ui
+    Login.ui
 
 DISTFILES += \
     images/emote-love.png \

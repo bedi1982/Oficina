@@ -11,7 +11,6 @@
 #include "Config_Set_Hour_Cost.h"
 #include "Man_Page.h"
 #include "About.h"
-#include "Employee_List.h"
 #include "Client_Services_History.h"
 #include "System_Services_and_Info.h"
 
@@ -50,8 +49,9 @@ Main_Window::Main_Window(QWidget *parent) :
 
         //We also check if the hourcost is set, otherwise is to dangerous the user may start a service with hour cost at 0;
         if(!get_Last_Hour_Cost()){
-            QMessageBox::critical(this, tr("WARNING!!"), "HourCost Not Set. Please set an HourCost in: Configuration -> Change HourCost. "
-                                                      "Not setting this value will make you work for FREE!");
+            QMessageBox::critical(this, tr("First Run WARNING!!"), "Working Hour Cost is not set!!\n"
+                                                         "Please set an HourCost in: Configuration -> Change HourCost.\n"
+                                                         "\nNot setting this value will make you work for FREE!");
         }
     }else{
         //If the database is not available we make it mostly useless//
@@ -209,16 +209,6 @@ void Main_Window::on_actionStock_Finances_triggered()
 {
     Stock_Finances Stock_Finances;
     Stock_Finances.exec();
-}
-
-void Main_Window::on_action_Employees_triggered()
-{
-    if(System_Services_and_Info::get_Logged_Func() != 1){ //1 is root//
-        QMessageBox::critical(this, tr("Note!"), "This option is only available for your boss...");
-    }else{
-        Employee_List Employee_List;
-        Employee_List.exec();
-    }
 }
 
 void Main_Window::on_action_Exit_triggered()

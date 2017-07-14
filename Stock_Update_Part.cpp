@@ -31,7 +31,7 @@ Stock_Update_Part::~Stock_Update_Part()
 
 void Stock_Update_Part::Load_Part_Info_to_Form(){
     QSqlQuery query;
-    query.prepare("SELECT Part_Name, Part_Description, Part_Cost, Part_Sell_Value_With_Interest_Rate, Part_Quantity, Part_Interrest_Rate FROM Part WHERE Part_id = " + partID);
+    query.prepare("SELECT Part_id, Part_Name, Part_Brand, Part_Description, Part_Cost, Part_Sell_Value_With_Interest_Rate, Part_Quantity, Part_Interrest_Rate FROM Part WHERE Part_id = " + partID);
 
     if (query.exec() == false){
         //qDebug() << query.lastError();
@@ -39,11 +39,14 @@ void Stock_Update_Part::Load_Part_Info_to_Form(){
     }else{
         while(query.next())
         {
-            ui->line_Name->setText(query.value(0).toString()); //Name
-            ui->txt_Part_Description->setPlainText(query.value(1).toString()); //Description
-            ui->double_Spin_Cost_Price->setValue(query.value(2).toDouble()); //Cost Price
-            ui->spin_Quantity->setValue(query.value(4).toInt());//Quantity
-            ui->double_Spin_Interrest_Rate->setValue(query.value(5).toDouble());
+            ui->line_Part_id->setText(query.value(0).toString());
+            ui->line_Name->setText(query.value(1).toString());
+            ui->line_Brand->setText(query.value(2).toString());
+            ui->txt_Part_Description->setPlainText(query.value(3).toString());
+            ui->double_Spin_Cost_Price->setValue(query.value(4).toDouble());
+            ui->line_Final_Sell_Price->setText(query.value(5).toString());
+            ui->spin_Quantity->setValue(query.value(6).toInt());
+            ui->double_Spin_Interrest_Rate->setValue(query.value(7).toDouble());
         }
     }
 }
@@ -53,14 +56,16 @@ void Stock_Update_Part::on_buttonBox_accepted()
     QSqlQuery Update_Part;
     Update_Part.prepare("UPDATE Part SET"
                         " Part_Name = :Part_Name,"
+                        " Part_Brand = :Part_Brand,"
                         " Part_Description = :Part_Description,"
                         " Part_Cost = :Part_Cost,"
                         " Part_Sell_Value_With_Interest_Rate = :Part_Sell_Value_With_Interest_Rate,"
                         " Part_Quantity = :Part_Quantity,"
-                        " Part_Interrest_Rate = :Part_Interrest_Rate,"
-                        " WHERE Part_id = :Part_ID");
+                        " Part_Interrest_Rate = :Part_Interrest_Rate"
+                        " WHERE Part_id = :Part_id");
 
     Update_Part.bindValue(":Part_Name", ui->line_Name->text());
+    Update_Part.bindValue(":Part_Brand", ui->line_Brand->text());
     Update_Part.bindValue(":Part_Description", ui->txt_Part_Description->toPlainText());
     Update_Part.bindValue(":Part_Cost", ui->double_Spin_Cost_Price->value());
     Update_Part.bindValue(":Part_Quantity", ui->spin_Quantity->value());
@@ -69,8 +74,7 @@ void Stock_Update_Part::on_buttonBox_accepted()
     double Price_With_Interrest = ui->double_Spin_Cost_Price->value() * ui->double_Spin_Interrest_Rate->value() / 100 + ui->double_Spin_Cost_Price->value();
     Update_Part.bindValue(":Part_Sell_Value_With_Interest_Rate", Price_With_Interrest);
 
-    //Update_Part.bindValue(":Part_Sell_Price", ui->double_Spin_Interrest_Rate->value());
-    Update_Part.bindValue(":Part_ID", partID);
+    Update_Part.bindValue(":Part_id", ui->line_Part_id->text().toInt());
 
     if (!(Update_Part.exec())){
         QMessageBox::critical(this, tr("Error!"), Update_Part.lastError().text() + "class Stock_Control::on_btn_save_clicked()");

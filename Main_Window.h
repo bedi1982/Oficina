@@ -58,8 +58,6 @@ private slots:
 
     void on_actionStock_Finances_triggered();
 
-    void on_action_Employees_triggered();
-
     void Client_Services_Open(QString clientID);
 
     void Check_Login();

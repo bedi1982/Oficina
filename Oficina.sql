@@ -128,7 +128,6 @@ CREATE TABLE `Service` (
   `Service_Paid` tinyint(1) NOT NULL DEFAULT '0',
   `Service_updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   `Service_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `Service_Category_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`Service_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -174,12 +173,6 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
-CREATE TABLE `ServiceCategory` (
-  `ServiceCategory_id` int(11) NOT NULL AUTO_INCREMENT,
-  `Service_Category_Name` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`ServicePartsUsed_id`)
-);
 
 -- Dump completed on 2017-03-20  9:18:48
 

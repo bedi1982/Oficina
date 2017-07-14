@@ -370,7 +370,7 @@
       <enum>Qt::LeftToRight</enum>
      </property>
      <property name="text">
-      <string>Update Client</string>
+      <string>Update Client Info</string>
      </property>
      <property name="icon">
       <iconset resource="images/images.qrc">
