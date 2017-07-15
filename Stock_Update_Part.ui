@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>564</width>
+    <width>565</width>
     <height>358</height>
    </rect>
   </property>
@@ -199,7 +199,15 @@
   </layout>
  </widget>
  <tabstops>
+  <tabstop>line_Name</tabstop>
+  <tabstop>line_Brand</tabstop>
   <tabstop>txt_Part_Description</tabstop>
+  <tabstop>double_Spin_Cost_Price</tabstop>
+  <tabstop>double_Spin_Interrest_Rate</tabstop>
+  <tabstop>spin_Quantity</tabstop>
+  <tabstop>buttonBox</tabstop>
+  <tabstop>line_Final_Sell_Price</tabstop>
+  <tabstop>line_Part_id</tabstop>
  </tabstops>
  <resources>
   <include location="images/images.qrc"/>

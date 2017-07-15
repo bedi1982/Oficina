@@ -118,6 +118,9 @@ void Client_Add_Service::Sum_Costs()
     double Service_Parts_Cost = model->data(model->index(0, 1)).toDouble(); //query result line 0 column 1
     double Service_Hour_Cost = model->data(model->index(0, 2)).toDouble(); //query result line 0 column 2
 
+    ui->double_Service_Hour_Cost->setValue(Service_Hour_Cost);
+    ui->lcd_Service_Hour_Cost->display(Service_Hour_Cost);
+
     ui->Spin_Hand_Work_Hours->setValue(Hand_Work_Hours);
     //ui->Spin_PartsCost->setValue(Service_Parts_Cost);
     //ui->Spin_TotalserviceCost->setValue((Service_Hours_Duration * Service_Hour_Cost) + Service_Parts_Cost);
@@ -275,7 +278,23 @@ void Client_Add_Service::on_dateTimeEdit_dateTimeChanged(const QDateTime &dateTi
     }
 }
 
-void Client_Add_Service::on_buttonBox_rejected()
+void Client_Add_Service::on_Button_Apply_new_Hour_Cost_clicked()
+{
+    QSqlQuery Update_Service_Cost;
+    Update_Service_Cost.prepare("UPDATE Service SET Service_Hour_Cost = :Service_Hour_Cost WHERE Service_id = " + ServiceID);
+
+    Update_Service_Cost.bindValue(":Service_Hour_Cost", ui->double_Service_Hour_Cost->value());
+
+    if (!(Update_Service_Cost.exec())){
+        QMessageBox::critical(this, tr("Error!"), Update_Service_Cost.lastError().text() + "class Client_Add_Service::on_Button_Apply_new_Hour_Cost_clicked()");
+    }else{
+        QMessageBox::information(this, tr("Ok!"), tr("Service Hour Cost for this service updated..."));
+        Load_Parts_And_Service_Costs_Grid();
+        Sum_Costs();
+    }
+}
+
+void Client_Add_Service::on_buttonBox_Close_rejected()
 {
     close();
 }

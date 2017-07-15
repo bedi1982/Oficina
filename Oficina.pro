@@ -123,7 +123,8 @@ DISTFILES += \
     README.md \
     TODO \
     Oficina.Desktop \
-    Oficina.sql
+    Oficina.sql \
+    images/icons8-Car Rental-50.png
 
 RESOURCES += \
     images/images.qrc \

@@ -54,7 +54,9 @@ private slots:
 
     void on_dateTimeEdit_dateTimeChanged(const QDateTime &dateTime);
 
-    void on_buttonBox_rejected();
+    void on_buttonBox_Close_rejected();
+
+    void on_Button_Apply_new_Hour_Cost_clicked();
 
 private:
     Ui::Client_Add_Service *ui;

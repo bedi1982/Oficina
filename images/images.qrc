@@ -17,6 +17,12 @@
         <file>client_info.png</file>
         <file>sport-car.png</file>
         <file>hint.png</file>
+        <file>icons8-Plus Math-48.png</file>
+        <file>icons8-Multiply Filled-50.png</file>
+        <file>icons8-Equal Sign Filled-50.png</file>
+        <file>icons8-Car Rental-50.png</file>
+        <file>icons8-Maintenance-100.png</file>
+        <file>icons8-Clock-50.png</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>

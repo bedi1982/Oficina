@@ -33,6 +33,8 @@ void Stock_Update_Part::Load_Part_Info_to_Form(){
     QSqlQuery query;
     query.prepare("SELECT Part_id, Part_Name, Part_Brand, Part_Description, Part_Cost, Part_Sell_Value_With_Interest_Rate, Part_Quantity, Part_Interrest_Rate FROM Part WHERE Part_id = " + partID);
 
+    ui->line_Name->setFocus();
+
     if (query.exec() == false){
         //qDebug() << query.lastError();
         QMessageBox::critical(this, tr("Error!"), query.lastError().text() + ". void Stock_Update_Part::Load_Part_Info_to_Form()");

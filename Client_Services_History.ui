@@ -323,25 +323,6 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="4">
-    <widget class="QLabel" name="label_2">
-     <property name="maximumSize">
-      <size>
-       <width>32</width>
-       <height>32</height>
-      </size>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="images/images.qrc">:/emoticons/face-sick.png</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
    <item row="3" column="2" colspan="3">
     <widget class="QLineEdit" name="line_Phone">
      <property name="enabled">
@@ -438,7 +419,33 @@
    <item row="6" column="2">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>The service hour cost is -&gt;</string>
+      <string>System Service Hour cost is -&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="4">
+    <widget class="QLabel" name="label_2">
+     <property name="maximumSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="images/images.qrc">:/emoticons/hint.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="5" colspan="4">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>This is the defaul Hour Cost on every new Service. You can change a service hour cost later.</string>
      </property>
     </widget>
    </item>
