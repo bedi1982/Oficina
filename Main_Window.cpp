@@ -13,6 +13,7 @@
 #include "About.h"
 #include "Client_Services_History.h"
 #include "System_Services_and_Info.h"
+#include "QSettings"
 
 #include "qsqlquery.h"
 #include "qdebug.h"
@@ -34,6 +35,9 @@ Main_Window::Main_Window(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    //window size
+    LoadSettings();
+    //end window size
 
     //TODO TEST
     ui->line_ID_or_CPG_or_Name->setFocus();
@@ -213,6 +217,7 @@ void Main_Window::on_actionStock_Finances_triggered()
 
 void Main_Window::on_action_Exit_triggered()
 {
+    SaveSettings();
     close();
 }
 
@@ -221,3 +226,22 @@ void Main_Window::on_action_About_Oficina_triggered()
     About About;
     About.exec();
 }
+
+//Settings: Block to keep windows position and size//
+void Main_Window::SaveSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Main_Window");
+    setting.setValue("position",this->geometry());
+    setting.endGroup();
+}
+
+void Main_Window::LoadSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Main_Window");
+    QRect myrect = setting.value("position").toRect();
+    setGeometry(myrect);
+    setting.endGroup();
+}
+//End block to keep windows position and size//

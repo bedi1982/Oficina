@@ -8,12 +8,14 @@
 #include "QDebug"
 
 #include "QMessageBox"
+#include "QSettings"
 
 Client_Add_Car::Client_Add_Car(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Client_Add_Car)
 {
     ui->setupUi(this);
+    LoadSettings();
 }
 
 Client_Add_Car::~Client_Add_Car()
@@ -116,3 +118,28 @@ void Client_Add_Car::on_btn_Client_Add_Car_rejected()
 {
     close();
 }
+
+//Settings: Block to keep windows position and size//
+
+void Client_Add_Car::on_Client_Add_Car_finished(int result)
+{
+    SaveSettings();
+}
+
+void Client_Add_Car::SaveSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Client_Add_Car");
+    setting.setValue("position",this->geometry());
+    setting.endGroup();
+}
+
+void Client_Add_Car::LoadSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Client_Add_Car");
+    QRect myrect = setting.value("position").toRect();
+    setGeometry(myrect);
+    setting.endGroup();
+}
+//End block to keep windows position and size//

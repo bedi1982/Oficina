@@ -64,6 +64,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+     void SaveSettings();
+     void LoadSettings();
 };
 
 #endif // MAINWINDOW_H

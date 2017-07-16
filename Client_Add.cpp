@@ -9,6 +9,7 @@
 #include "QMainWindow"
 #include "Main_Window.h"
 
+#include "QSettings"
 
 Client_Add::Client_Add(QWidget *parent) :
     QDialog(parent),
@@ -17,6 +18,7 @@ Client_Add::Client_Add(QWidget *parent) :
     ui->setupUi(this);
     Set_Emoticon();
     ui->line_Name->setFocus();
+    LoadSettings();
 }
 
 Client_Add::~Client_Add()
@@ -88,9 +90,7 @@ void Client_Add::on_btn_Add_Client_accepted()
             //this one is because if the user presses ESC he actually isn't adding a new client, the main window needs to know that//
             //otherwise it will display the last client from the database//
             System_Services_and_Info::set_is_New_or_Updated_Client(true);
-
             close();
-
         }
     }
 }
@@ -98,4 +98,29 @@ void Client_Add::on_btn_Add_Client_accepted()
 void Client_Add::on_btn_Add_Client_rejected()
 {
     close();
+}
+
+//Block to keep windows position and size//
+
+void Client_Add::SaveSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Client_Add");
+    setting.setValue("position",this->geometry());
+    setting.endGroup();
+}
+
+void Client_Add::LoadSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Client_Add");
+    QRect myrect = setting.value("position").toRect();
+    setGeometry(myrect);
+    setting.endGroup();
+}
+//End block to keep windows position and size//
+
+void Client_Add::on_Client_Add_finished(int result)
+{
+    SaveSettings();
 }
