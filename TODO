@@ -1,13 +1,11 @@
-Prio:
-Store user preferences (eg. maximized, last window size...)
-
 - The delete part grid could have a 'X' icon, clickin this icon removes the part
 - Implement a configuration file which will contain eg. database access credentials.
 - Stock control cell shall be red when parts quantity is lower then 5
 
-- Add a daily resume wich will show:
+- Add a resume wich will show:
         Not Finished Services;
         Not Paid Services;
+
 - Add a function on wich owner can set a date on which the client is going to pick his car.
         List clients that will come today to get his Car.
 
@@ -45,3 +43,6 @@ DONE:
 
 - When searching use a qsqltable proxy and make the search dropdown work nativelly (dropping data from the proxy and not making a select in the database).
     done for clients
+
+Prio:
+Store user preferences (eg. maximized, last window size...)
