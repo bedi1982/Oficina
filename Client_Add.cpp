@@ -23,6 +23,7 @@ Client_Add::Client_Add(QWidget *parent) :
 
 Client_Add::~Client_Add()
 {
+    SaveSettings();
     delete ui;
 }
 
@@ -119,8 +120,3 @@ void Client_Add::LoadSettings()
     setting.endGroup();
 }
 //End block to keep windows position and size//
-
-void Client_Add::on_Client_Add_finished()
-{
-    SaveSettings();
-}

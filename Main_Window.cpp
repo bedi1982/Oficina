@@ -27,6 +27,7 @@ using namespace std;
 
 Main_Window::~Main_Window()
 {
+    SaveSettings();
     delete ui;
 }
 
@@ -217,7 +218,6 @@ void Main_Window::on_actionStock_Finances_triggered()
 
 void Main_Window::on_action_Exit_triggered()
 {
-    SaveSettings();
     close();
 }
 

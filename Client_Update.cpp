@@ -6,16 +6,20 @@
 #include "QSqlQuery"
 #include "QSqlError"
 #include "QDebug"
+#include "QSettings"
+
 
 Client_Update::Client_Update(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Client_Update)
 {
     ui->setupUi(this);
+    LoadSettings();
 }
 
 Client_Update::~Client_Update()
 {
+    SaveSettings();
     delete ui;
 }
 
@@ -85,4 +89,21 @@ void Client_Update::on_btn_Save_clicked()
 void Client_Update::on_btn_Close_clicked()
 {
     close();
+}
+
+void Client_Update::LoadSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Client_Update");
+    QRect myrect = setting.value("position").toRect();
+    setGeometry(myrect);
+    setting.endGroup();
+}
+
+void Client_Update::SaveSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Client_Update");
+    setting.setValue("position",this->geometry());
+    setting.endGroup();
 }

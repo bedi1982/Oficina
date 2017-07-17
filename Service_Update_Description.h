@@ -31,6 +31,8 @@ private slots:
 
 private:
     Ui::Service_Update_Description *ui;
+    void LoadSettings();
+    void SaveSettings();
 };
 
 #endif // UPDATEDSERVICEDESCRIPTION_H

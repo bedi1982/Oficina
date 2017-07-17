@@ -30,6 +30,8 @@ private slots:
 
 private:
     Ui::Stock_Update_Part *ui;
+    void LoadSettings();
+    void SaveSettings();
 
 };
 

@@ -37,8 +37,6 @@ private slots:
 
     void on_btn_Client_Add_Car_rejected();
 
-    void on_Client_Add_Car_finished(int result);
-
 private:
     Ui::Client_Add_Car *ui;
     void SaveSettings();

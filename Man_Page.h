@@ -20,6 +20,8 @@ private slots:
 
 private:
     Ui::Man_Page *ui;
+    void LoadSettings();
+    void SaveSettings();
 };
 
 #endif // MANUL_H

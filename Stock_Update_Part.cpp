@@ -6,12 +6,15 @@
 #include <qdebug.h>
 #include "qmessagebox.h"
 #include "qsqlerror.h"
+#include "QSettings"
+
 
 Stock_Update_Part::Stock_Update_Part(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Stock_Update_Part)
 {
     ui->setupUi(this);
+    LoadSettings();
 }
 
 QString Stock_Update_Part::getPartID() const
@@ -26,6 +29,7 @@ void Stock_Update_Part::setPartID(const QString &value)
 
 Stock_Update_Part::~Stock_Update_Part()
 {
+    SaveSettings();
     delete ui;
 }
 
@@ -107,4 +111,21 @@ void Stock_Update_Part::on_txt_Part_Description_textChanged()//Check for bigger 
 void Stock_Update_Part::on_buttonBox_rejected()
 {
     close();
+}
+
+void Stock_Update_Part::LoadSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Stock_Update_Part");
+    QRect myrect = setting.value("position").toRect();
+    setGeometry(myrect);
+    setting.endGroup();
+}
+
+void Stock_Update_Part::SaveSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Stock_Update_Part");
+    setting.setValue("position",this->geometry());
+    setting.endGroup();
 }

@@ -5,7 +5,7 @@
 #include "qsqltablemodel.h"
 #include "qsqlerror.h"
 #include "qdebug.h"
-
+#include "QSettings"
 #include "QMessageBox"
 
 Config_Set_Hour_Cost::Config_Set_Hour_Cost(QWidget *parent) :
@@ -13,6 +13,7 @@ Config_Set_Hour_Cost::Config_Set_Hour_Cost(QWidget *parent) :
     ui(new Ui::Config_Set_Hour_Cost)
 {
     ui->setupUi(this);
+    LoadSettings();
 
     //Set current hour cost value in the spinbox//
     Load_Current_Hour_Cost();
@@ -23,6 +24,7 @@ Config_Set_Hour_Cost::Config_Set_Hour_Cost(QWidget *parent) :
 
 Config_Set_Hour_Cost::~Config_Set_Hour_Cost()
 {
+    SaveSettings();
     delete ui;
 }
 
@@ -56,6 +58,8 @@ void Config_Set_Hour_Cost::Load_History_HourCost(){
     ui->table_Hour_Cost_History->sortByColumn(1, Qt::DescendingOrder);
     ui->table_Hour_Cost_History->resizeColumnsToContents();
 }
+
+
 
 void Config_Set_Hour_Cost::on_buttonBox_accepted()
 {
@@ -91,4 +95,21 @@ double Config_Set_Hour_Cost::getHour_Cost() const
 void Config_Set_Hour_Cost::setHour_Cost(double value)
 {
     Hour_Cost = value;
+}
+
+void Config_Set_Hour_Cost::LoadSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Config_Set_Hour_Cost");
+    QRect myrect = setting.value("position").toRect();
+    setGeometry(myrect);
+    setting.endGroup();
+}
+
+void Config_Set_Hour_Cost::SaveSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Config_Set_Hour_Cost");
+    setting.setValue("position",this->geometry());
+    setting.endGroup();
 }

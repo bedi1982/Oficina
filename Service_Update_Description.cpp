@@ -6,16 +6,20 @@
 #include "QMessageBox"
 #include "QSqlQuery"
 #include "QSqlError"
+#include "QSettings"
+
 
 Service_Update_Description::Service_Update_Description(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Service_Update_Description)
 {
     ui->setupUi(this);
+    LoadSettings();
 }
 
 Service_Update_Description::~Service_Update_Description()
 {
+    SaveSettings();
     delete ui;
 }
 
@@ -79,4 +83,21 @@ void Service_Update_Description::on_buttonBox_accepted()
 void Service_Update_Description::on_buttonBox_rejected()
 {
     close();
+}
+
+void Service_Update_Description::LoadSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Service_Update_Description");
+    QRect myrect = setting.value("position").toRect();
+    setGeometry(myrect);
+    setting.endGroup();
+}
+
+void Service_Update_Description::SaveSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Service_Update_Description");
+    setting.setValue("position",this->geometry());
+    setting.endGroup();
 }

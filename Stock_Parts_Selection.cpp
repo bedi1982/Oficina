@@ -8,6 +8,7 @@
 #include "QDebug"
 #include "QSqlError"
 #include "QSqlDatabase"
+#include "QSettings"
 
 
 Stock_Parts_Selection::Stock_Parts_Selection(QWidget *parent) :
@@ -15,12 +16,14 @@ Stock_Parts_Selection::Stock_Parts_Selection(QWidget *parent) :
     ui(new Ui::Stock_Parts_Selection)
 {
     ui->setupUi(this);
+    LoadSettings();
     ui->line_Part_Name->setFocus();
     ui->line_Part_Name->setText("*"); //Just so all parts are showed by default//
 }
 
 Stock_Parts_Selection::~Stock_Parts_Selection()
 {
+    SaveSettings();
     delete ui;
 }
 
@@ -109,4 +112,21 @@ void Stock_Parts_Selection::on_btn_Add_Part_to_Stock_clicked()
     //Bellow 2 just to 'retrigguer' the parts list grid after a new part is included//
     ui->line_Part_Name->setText(" ");
     ui->line_Part_Name->setText("*");
+}
+
+void Stock_Parts_Selection::LoadSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Stock_Parts_Selection");
+    QRect myrect = setting.value("position").toRect();
+    setGeometry(myrect);
+    setting.endGroup();
+}
+
+void Stock_Parts_Selection::SaveSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Stock_Parts_Selection");
+    setting.setValue("position",this->geometry());
+    setting.endGroup();
 }

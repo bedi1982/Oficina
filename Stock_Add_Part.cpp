@@ -6,12 +6,14 @@
 #include "QDebug"
 #include "QSqlError"
 #include "QMessageBox"
+#include "QSettings"
 
 Stock_Add_Part::Stock_Add_Part(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Stock_Add_Part)
 {
     ui->setupUi(this);
+    LoadSettings();
     QPixmap glasses(":/emoticons/face-glasses.png");
     ui->lbl_Emoticon->setPixmap(glasses);
     ui->line_Name->setFocus();
@@ -19,6 +21,7 @@ Stock_Add_Part::Stock_Add_Part(QWidget *parent) :
 
 Stock_Add_Part::~Stock_Add_Part()
 {
+    SaveSettings();
     delete ui;
 }
 
@@ -113,4 +116,21 @@ void Stock_Add_Part::on_buttonBox_accepted()
 void Stock_Add_Part::on_buttonBox_rejected()
 {
     close();
+}
+
+void Stock_Add_Part::LoadSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Stock_Add_Part");
+    QRect myrect = setting.value("position").toRect();
+    setGeometry(myrect);
+    setting.endGroup();
+}
+
+void Stock_Add_Part::SaveSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Stock_Add_Part");
+    setting.setValue("position",this->geometry());
+    setting.endGroup();
 }

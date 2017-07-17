@@ -30,6 +30,8 @@ private slots:
 
 private:
     Ui::Stock_Add_Part *ui;
+    void LoadSettings();
+    void SaveSettings();
 };
 
 #endif // ADDPART_H

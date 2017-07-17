@@ -39,6 +39,8 @@ private slots:
 
 private:
     Ui::Service_Create_Description *ui;
+    void LoadSettings();
+    void SaveSettings();
 };
 
 #endif // CREATESERVICEDESCRIPTION_H

@@ -21,6 +21,8 @@ private slots:
 
 private:
     Ui::About *ui;
+    void LoadSettings();
+    void SaveSettings();
 };
 
 #endif // ABOUT_H

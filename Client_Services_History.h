@@ -41,6 +41,9 @@ private:
     void Load_Services_Grid();
 
     void Load_Client_Info_To_Text_Boxes();
+
+    void LoadSettings();
+    void SaveSettings();
 };
 
 #endif // CLIENTINFO_H

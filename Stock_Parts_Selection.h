@@ -30,6 +30,8 @@ private slots:
 
 private:
     Ui::Stock_Parts_Selection *ui;
+    void LoadSettings();
+    void SaveSettings();
 };
 
 #endif // PARTSSELECTIONFROMLIST_H

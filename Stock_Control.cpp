@@ -9,6 +9,7 @@
 #include "ui_Stock_Control.h"
 #include "Stock_Update_Part.h"
 #include "Stock_Add_Part.h"
+#include "QSettings"
 
 
 Stock_Control::Stock_Control(QWidget *parent) :
@@ -16,6 +17,7 @@ Stock_Control::Stock_Control(QWidget *parent) :
     ui(new Ui::Stock_Control)
 {
     ui->setupUi(this);
+    LoadSettings();
     ui->line_Part_Name->setFocus();
     ui->line_Part_Name->setText("*");
     ui->spinBox_Quantity_to_Show->setEnabled(false);
@@ -23,6 +25,7 @@ Stock_Control::Stock_Control(QWidget *parent) :
 
 Stock_Control::~Stock_Control()
 {
+    SaveSettings();
     delete ui;
 }
 
@@ -164,4 +167,21 @@ void Stock_Control::on_pushButton_clicked()
     Stock_Add_Part Stock_Add_Part;
     Stock_Add_Part.exec();
     on_line_Part_Name_textChanged(ui->line_Part_Name->text());
+}
+
+void Stock_Control::LoadSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Stock_Control");
+    QRect myrect = setting.value("position").toRect();
+    setGeometry(myrect);
+    setting.endGroup();
+}
+
+void Stock_Control::SaveSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Stock_Control");
+    setting.setValue("position",this->geometry());
+    setting.endGroup();
 }

@@ -20,6 +20,7 @@ Client_Add_Car::Client_Add_Car(QWidget *parent) :
 
 Client_Add_Car::~Client_Add_Car()
 {
+    SaveSettings();
     delete ui;
 }
 
@@ -120,11 +121,6 @@ void Client_Add_Car::on_btn_Client_Add_Car_rejected()
 }
 
 //Settings: Block to keep windows position and size//
-
-void Client_Add_Car::on_Client_Add_Car_finished(int result)
-{
-    SaveSettings();
-}
 
 void Client_Add_Car::SaveSettings()
 {

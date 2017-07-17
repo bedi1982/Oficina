@@ -6,17 +6,20 @@
 #include "QSqlQueryModel"
 #include "QSqlQuery"
 #include "QSqlError"
+#include "QSettings"
 
 Service_Create_Description::Service_Create_Description(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Service_Create_Description)
 {
     ui->setupUi(this);
+    LoadSettings();
     ui->line_Short_Description->setFocus();
 }
 
 Service_Create_Description::~Service_Create_Description()
 {
+    SaveSettings();
     delete ui;
 }
 
@@ -114,4 +117,21 @@ void Service_Create_Description::on_buttonBox_accepted()
 void Service_Create_Description::on_buttonBox_rejected()
 {
     close();
+}
+
+void Service_Create_Description::LoadSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Service_Create_Description");
+    QRect myrect = setting.value("position").toRect();
+    setGeometry(myrect);
+    setting.endGroup();
+}
+
+void Service_Create_Description::SaveSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Service_Create_Description");
+    setting.setValue("position",this->geometry());
+    setting.endGroup();
 }

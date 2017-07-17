@@ -30,6 +30,8 @@ private slots:
 
 private:
     Ui::Client_Update *ui;
+    void LoadSettings();
+    void SaveSettings();
 };
 
 #endif // EDITCLIENT_H

@@ -30,6 +30,8 @@ private slots:
 private:
     Ui::Config_Set_Hour_Cost *ui;
     void Load_History_HourCost();
+    void LoadSettings();
+    void SaveSettings();
 };
 
 #endif // SETWORKHOURCOST_H

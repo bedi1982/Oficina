@@ -12,7 +12,7 @@
 #include "QSqlQuery"
 #include "QSqlError"
 #include "QDebug"
-
+#include "QSettings"
 #include "QMessageBox"
 
 Client_Services_History::Client_Services_History(QWidget *parent) :
@@ -20,7 +20,7 @@ Client_Services_History::Client_Services_History(QWidget *parent) :
     ui(new Ui::Client_Services_History)
 {
     ui->setupUi(this);
-
+    LoadSettings();
     //Add hour cost to label
     Set_Current_Hour_Cost_Label();
     ui->tabWidget->setCurrentIndex(0);//Focus on the cars
@@ -28,6 +28,7 @@ Client_Services_History::Client_Services_History(QWidget *parent) :
 
 Client_Services_History::~Client_Services_History()
 {
+    SaveSettings();
     delete ui;
 }
 
@@ -212,4 +213,22 @@ void Client_Services_History::Set_Current_Hour_Cost_Label(){
 void Client_Services_History::on_pushButton_clicked()
 {
     close();
+}
+
+
+void Client_Services_History::LoadSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Client_Services_History");
+    QRect myrect = setting.value("position").toRect();
+    setGeometry(myrect);
+    setting.endGroup();
+}
+
+void Client_Services_History::SaveSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Client_Services_History");
+    setting.setValue("position",this->geometry());
+    setting.endGroup();
 }

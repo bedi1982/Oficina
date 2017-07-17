@@ -60,6 +60,8 @@ private slots:
 
 private:
     Ui::Client_Add_Service *ui;
+    void LoadSettings();
+    void SaveSettings();
 };
 
 #endif // ADDSERVICE_H

@@ -41,6 +41,8 @@ private slots:
 
 private:
     Ui::Stock_Control *ui;
+    void LoadSettings();
+    void SaveSettings();
 };
 
 #endif // STOCKCONTROL_H

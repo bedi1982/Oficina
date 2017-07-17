@@ -22,6 +22,8 @@ private slots:
 
 private:
     Ui::Stock_Finances *ui;
+    void LoadSettings();
+    void SaveSettings();
 };
 
 #endif // STOCK_FINANCES_H

@@ -5,17 +5,20 @@
 #include "qsqlerror.h"
 #include "qmessagebox.h"
 #include "qdebug.h"
+#include "QSettings"
 
 Stock_Finances::Stock_Finances(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Stock_Finances)
 {
     ui->setupUi(this);
+    LoadSettings();
     Load_All();
 }
 
 Stock_Finances::~Stock_Finances()
 {
+    SaveSettings();
     delete ui;
 }
 
@@ -82,4 +85,21 @@ void Stock_Finances::Load_All(){
 void Stock_Finances::on_buttonBox_rejected()
 {
     close();
+}
+
+void Stock_Finances::LoadSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Stock_Finances");
+    QRect myrect = setting.value("position").toRect();
+    setGeometry(myrect);
+    setting.endGroup();
+}
+
+void Stock_Finances::SaveSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Stock_Finances");
+    setting.setValue("position",this->geometry());
+    setting.endGroup();
 }

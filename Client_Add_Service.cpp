@@ -12,6 +12,7 @@ Client_Add_Service::Client_Add_Service(QWidget *parent) :
     ui(new Ui::Client_Add_Service)
 {
     ui->setupUi(this);
+    LoadSettings();
     ui->txt_Servicedescription->setReadOnly(true);
     ui->line_ServiceShortDescription->setReadOnly(true);
     ui->tabWidget->setCurrentIndex(0);//Focus on the first tab//
@@ -19,6 +20,7 @@ Client_Add_Service::Client_Add_Service(QWidget *parent) :
 
 Client_Add_Service::~Client_Add_Service()
 {
+    SaveSettings();
     delete ui;
 }
 
@@ -292,6 +294,23 @@ void Client_Add_Service::on_Button_Apply_new_Hour_Cost_clicked()
         Load_Parts_And_Service_Costs_Grid();
         Sum_Costs();
     }
+}
+
+void Client_Add_Service::LoadSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Client_Add_Service");
+    QRect myrect = setting.value("position").toRect();
+    setGeometry(myrect);
+    setting.endGroup();
+}
+
+void Client_Add_Service::SaveSettings()
+{
+    QSettings setting("bedi1982","Oficina");
+    setting.beginGroup("Client_Add_Service");
+    setting.setValue("position",this->geometry());
+    setting.endGroup();
 }
 
 void Client_Add_Service::on_buttonBox_Close_rejected()
