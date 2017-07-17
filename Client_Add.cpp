@@ -120,7 +120,7 @@ void Client_Add::LoadSettings()
 }
 //End block to keep windows position and size//
 
-void Client_Add::on_Client_Add_finished(int result)
+void Client_Add::on_Client_Add_finished()
 {
     SaveSettings();
 }

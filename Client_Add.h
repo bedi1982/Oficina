@@ -29,8 +29,8 @@ private slots:
 
     void on_btn_Add_Client_rejected();
 
-    //Window Level//
-    void on_Client_Add_finished(int result);
+    //Window Level(esc pressed or 'x' clicked)//
+    void on_Client_Add_finished();
 
 private:
     Ui::Client_Add *ui;
