@@ -63,6 +63,7 @@ Main_Window::Main_Window(QWidget *parent) :
         ui->line_ID_or_CPG_or_Name->setEnabled(false);
         ui->menuBar->hide();
         ui->lbl_Database->setText(tr("Database:  Disconnected"));
+        QMessageBox::critical(0, tr("Database Down"), tr("Database currently not running! \nPlease double check if the Database is correctly started."));
     }
 }
 

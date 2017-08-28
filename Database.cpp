@@ -1,9 +1,5 @@
 #include "Database.h"
-
 #include "QSqlDatabase"
-#include "QSqlError"
-
-#include "QMessageBox"
 
 using namespace std;
 
@@ -21,7 +17,6 @@ bool Database::Connect(){
     if(db.open()){
         return true;
     }else{
-        QMessageBox::critical(0, "Database Down", db.lastError().text());
         return false;
     }
 }
