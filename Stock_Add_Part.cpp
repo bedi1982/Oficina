@@ -1,6 +1,7 @@
 ﻿#include "Stock_Add_Part.h"
 #include "ui_Stock_Add_Part.h"
 #include "System_Services_and_Info.h"
+#include "Partgroup_Add.h"
 
 #include "QSqlQuery"
 #include "QDebug"
@@ -133,4 +134,10 @@ void Stock_Add_Part::SaveSettings()
     setting.beginGroup("Stock_Add_Part");
     setting.setValue("position",this->geometry());
     setting.endGroup();
+}
+
+void Stock_Add_Part::on_btn_New_Group_clicked()
+{
+    PartGroup_Add PartGroup_Add;
+    PartGroup_Add.exec();
 }

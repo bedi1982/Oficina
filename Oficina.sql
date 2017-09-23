@@ -62,6 +62,29 @@ LOCK TABLES `ClientCar` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `PartGroup`
+--
+
+DROP TABLE IF EXISTS `PartGroup`;
+CREATE TABLE `PartGroup` (
+  `PartGroup_id` int(11) NOT NULL AUTO_INCREMENT,
+  `PartGroup_Name` varchar(50) DEFAULT NULL,
+  `PartGroup_Description` varchar(300) DEFAULT NULL,
+  `PartGroup_updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `PartGroup_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`PartGroup_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `PartGroup`
+--
+
+LOCK TABLES `ClientCar` WRITE;
+/*!40000 ALTER TABLE `ClientCar` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ClientCar` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `HourCost`
 --
 
@@ -96,6 +119,7 @@ DROP TABLE IF EXISTS `Part`;
 CREATE TABLE `Part` (
   `Part_id` int(11) NOT NULL AUTO_INCREMENT,
   `Part_Name` varchar(50) DEFAULT NULL,
+  `Part_Group` varchar(50) DEFAULT NULL,
   `Part_Brand` varchar(50) DEFAULT NULL,
   `Part_Description` varchar(250) DEFAULT NULL,
   `Part_Cost` double(19,2) DEFAULT NULL,

@@ -33,7 +33,8 @@ SOURCES +=\
     Stock_Update_Part.cpp \
     Stock_Finances.cpp \
     Login.cpp\
-    System_Services_and_Info.cpp
+    System_Services_and_Info.cpp \
+    Partgroup_Add.cpp
 
 HEADERS  += \
     About.h \
@@ -54,7 +55,8 @@ HEADERS  += \
     Stock_Update_Part.h \
     Stock_Finances.h \
     Login.h\
-    System_Services_and_Info.h
+    System_Services_and_Info.h \
+    Partgroup_Add.h
 
 FORMS    += \
     About.ui \
@@ -73,7 +75,8 @@ FORMS    += \
     Client_Update.ui \
     Stock_Update_Part.ui \
     Stock_Finances.ui \
-    Login.ui
+    Login.ui \
+    Partgroup_Add.ui
 
 DISTFILES += \
     images/emote-love.png \

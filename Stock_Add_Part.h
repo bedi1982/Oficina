@@ -28,6 +28,8 @@ private slots:
 
     void on_buttonBox_rejected();
 
+    void on_btn_New_Group_clicked();
+
 private:
     Ui::Stock_Add_Part *ui;
     void LoadSettings();
