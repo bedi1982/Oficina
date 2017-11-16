@@ -127,7 +127,8 @@ void Client_Services_History::load_Cars_Grid()
                     " ClientCar_BuiltYear,"
                     " ClientCar_Color,"
                     " ClientCar_created_at,"
-                    " ClientCar_updated_at"
+                    " ClientCar_updated_at,"
+                    " ClientCar_Create_Service_TextPlaceHolder"
                     " FROM ClientCar WHERE ClientCar_Client_id = " + client_id +
                     " ORDER BY ClientCar_id desc");
 
@@ -138,8 +139,10 @@ void Client_Services_History::load_Cars_Grid()
     model->setHeaderData(4, Qt::Horizontal, tr("Color"));
     model->setHeaderData(5, Qt::Horizontal, tr("Created At"));
     model->setHeaderData(6, Qt::Horizontal, tr("Updated At"));
+    model->setHeaderData(7, Qt::Horizontal, tr("Service Order"));
 
     if(model->query().isSelect()){
+        //ui->tbl_Client_Cars->setStyleSheet("QHeaderView::section { background-color:red }"); // Colors test :: a playground//
         ui->tbl_Client_Cars->setModel(model);
         ui->tbl_Client_Cars->resizeColumnsToContents();
 

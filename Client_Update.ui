@@ -10,6 +10,12 @@
     <height>312</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="minimumSize">
    <size>
     <width>0</width>
@@ -28,6 +34,9 @@
   <property name="windowIcon">
    <iconset resource="images/images.qrc">
     <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="3" column="3" colspan="4">
@@ -224,6 +233,8 @@
   <tabstop>line_SysID</tabstop>
  </tabstops>
  <resources>
+  <include location="images/images.qrc"/>
+  <include location="images/images.qrc"/>
   <include location="images/images.qrc"/>
  </resources>
  <connections/>
