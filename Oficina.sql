@@ -47,7 +47,7 @@ CREATE TABLE `ClientCar` (
   `ClientCar_Plate` varchar(10) DEFAULT NULL,
   `ClientCar_Color` varchar(26) DEFAULT NULL,
   `ClientCar_updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
-  `ClientCar_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `ClientCar_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`ClientCar_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
