@@ -27,8 +27,6 @@ bool Service_Create_Description::Verify_Empty_Fields_On_Form()
 {
     if (ui->txt_Full_Description->toPlainText() == "" || ui->line_Short_Description->text() == "" )
     {
-        QPixmap crying(":/emoticons/face-crying.png");
-        ui->lbl_Emoticon->setPixmap(crying);
         QMessageBox::warning(this, tr("Error!"), tr("All fields need to be filled!"));
         ui->line_Short_Description->setFocus();
         return false;

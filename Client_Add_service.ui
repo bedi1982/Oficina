@@ -112,7 +112,7 @@
    <item row="0" column="0" colspan="6">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="ServiceDescription">
       <attribute name="title">
@@ -264,7 +264,7 @@ border-top-color: rgb(0, 170, 0);</string>
        <item row="3" column="5">
         <widget class="QLabel" name="label_3">
          <property name="text">
-          <string>Hours Sum:</string>
+          <string>Hours Total:</string>
          </property>
         </widget>
        </item>
@@ -409,7 +409,7 @@ p, li { white-space: pre-wrap; }
      </widget>
      <widget class="QWidget" name="ServiceParts">
       <attribute name="title">
-       <string>Used Car Parts</string>
+       <string>Service Car Parts Used</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_4">
        <item row="2" column="2">

@@ -36,6 +36,13 @@ IN PROGRESS:
 BUGS:
 Adding a part is not removing from stock.
 
+TODOS:
+In the Add part do stock form there is a combo which enables to add the part to a part group;
+In the add service where we create the initial order there is a dropdown which sould list some `default` services description
+, this is only in the form;
+
+
+
 DONE:
 - Change QPushButton's to QDialogButtonBox as QDialogButtonBox seems to suit better and has built-in icons.
 
@@ -46,3 +53,4 @@ DONE:
 
 Prio:
 Store user preferences (eg. maximized, last window size...)
+
