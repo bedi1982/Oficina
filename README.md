@@ -2,7 +2,9 @@
 
 Software to manage mechanical workshop services.
 
-Author: Sergio Rafael Lemke <bedi.com@gmail.com>
+This project goes on a slow pace as I'm the only developer with limited time.
+
+Author: Sergio Rafael Lemke <srlemke@protonmail.com>
 Version: 0.2 - HackWeek
 
 Some tips:
