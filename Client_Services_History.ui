@@ -102,14 +102,14 @@
    <item row="5" column="1" colspan="9">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_Cars">
       <attribute name="title">
        <string>This Client Cars</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
-       <item row="1" column="0" colspan="5">
+       <item row="1" column="1" colspan="5">
         <widget class="QTableView" name="tbl_Client_Cars">
          <property name="toolTip">
           <string>Double click here to generate a new Service Order.</string>
@@ -122,7 +122,26 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="4">
+       <item row="0" column="1">
+        <widget class="QLabel" name="label_3">
+         <property name="maximumSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="images/images.qrc">:/emoticons/hint.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
         <widget class="QLabel" name="lbl_Client_Services_History">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
@@ -142,58 +161,10 @@
           </font>
          </property>
          <property name="text">
-          <string>Tip: double click a Car to start a Service on it...</string>
+          <string>Double click a Car to start a NEW service on it...</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="3">
-        <widget class="QLabel" name="label_3">
-         <property name="maximumSize">
-          <size>
-           <width>24</width>
-           <height>24</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="images/images.qrc">:/emoticons/hint.png</pixmap>
-         </property>
-         <property name="scaledContents">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QPushButton" name="btn_Add_Car_To_Client">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>32</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Add Car to Client</string>
-         </property>
-         <property name="icon">
-          <iconset resource="images/images.qrc">
-           <normaloff>:/emoticons/carkey.png</normaloff>:/emoticons/carkey.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>24</width>
-           <height>24</height>
-          </size>
          </property>
         </widget>
        </item>
@@ -201,7 +172,7 @@
      </widget>
      <widget class="QWidget" name="tab_Services">
       <attribute name="title">
-       <string>This Client Services</string>
+       <string>Client Services History</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0">
@@ -226,7 +197,7 @@
           </sizepolicy>
          </property>
          <property name="text">
-          <string>Tip: double click a service to manage it...</string>
+          <string>Double click a service to manage it...</string>
          </property>
         </widget>
        </item>
@@ -461,6 +432,35 @@
     <widget class="QLabel" name="label_6">
      <property name="text">
       <string>This is the defaul Hour Cost on every new Service. You can change a service hour cost later.</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="7">
+    <widget class="QPushButton" name="btn_Add_Car_To_Client">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Add Car to Client</string>
+     </property>
+     <property name="icon">
+      <iconset resource="images/images.qrc">
+       <normaloff>:/emoticons/carkey.png</normaloff>:/emoticons/carkey.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
      </property>
     </widget>
    </item>
