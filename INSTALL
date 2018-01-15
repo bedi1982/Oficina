@@ -1,0 +1,8 @@
+First you have to create the database:
+download and execute:  Create_Database.sql
+
+In the oficina software currently the database is hardcoded:
+user: root
+password: (leave empty)
+
+On the login screen leave user and pwd empty.

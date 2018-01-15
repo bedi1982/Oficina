@@ -1,7 +1,7 @@
 #
 # spec file for package Oficina
 #
-# Copyright (c) 2017 - Sergio Rafael Lemke <bedi.com@gmail.com>
+# Copyright (c) 2018 - Sergio Rafael Lemke <srlemke@protonmail.com>
 #
 # All modifications and additions to the file contributed by third parties
 # remain the property of their copyright owners, unless otherwise agreed
@@ -27,13 +27,14 @@ Buildrequires:	libqt5-qtbase-common-devel
 Buildrequires:	libQt5Widgets-devel
 Buildrequires:	libQt5Sql-devel
 
+Requires: mysql
+
 %description
 Oficina - A mechanical workshop application.
 
 Authors:
 --------
-Sergio Rafael Lemke <bedi.com@gmail.com>
-
+Sergio Rafael Lemke <srlemke@protonmail.com>
 
 %prep
 %setup -q -n %name-%version
