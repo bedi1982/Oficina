@@ -35,6 +35,7 @@ private slots:
 
     void on_pushButton_clicked();
 
+
 private:
     Ui::Client_Services_History *ui;
 

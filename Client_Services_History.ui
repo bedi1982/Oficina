@@ -161,7 +161,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Double click a Car to start a NEW service on it...</string>
+          <string>Double click a Car to start a NEW service on it.</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -176,56 +176,6 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0">
-        <widget class="QCheckBox" name="checkBox">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Show Only Open Services</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="4">
-        <widget class="QLabel" name="lbl_Double_click_To_Manage">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Double click a service to manage it...</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0" colspan="5">
-        <widget class="QTableView" name="tbl_Client_Services">
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="editTriggers">
-          <set>QAbstractItemView::NoEditTriggers</set>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QCheckBox" name="checkBox_2">
-         <property name="text">
-          <string>Show Only Finished Services</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2" alignment="Qt::AlignRight">
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="3" alignment="Qt::AlignRight">
         <widget class="QLabel" name="label_5">
          <property name="maximumSize">
           <size>
@@ -241,6 +191,36 @@
          </property>
          <property name="scaledContents">
           <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="5">
+        <widget class="QTableView" name="tbl_Client_Services">
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2" alignment="Qt::AlignRight">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="lbl_Double_click_To_Manage">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Double click a service to manage it.</string>
          </property>
         </widget>
        </item>
@@ -386,55 +366,6 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="3">
-    <widget class="QLCDNumber" name="lcd_Hour_Cost">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Sunken</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="2">
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>System Service Hour cost is -&gt;</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="4">
-    <widget class="QLabel" name="label_2">
-     <property name="maximumSize">
-      <size>
-       <width>24</width>
-       <height>24</height>
-      </size>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="images/images.qrc">:/emoticons/hint.png</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="5" colspan="4">
-    <widget class="QLabel" name="label_6">
-     <property name="text">
-      <string>This is the defaul Hour Cost on every new Service. You can change a service hour cost later.</string>
-     </property>
-    </widget>
-   </item>
    <item row="3" column="7">
     <widget class="QPushButton" name="btn_Add_Car_To_Client">
      <property name="sizePolicy">
@@ -461,6 +392,29 @@
        <width>24</width>
        <height>24</height>
       </size>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Default Hour cost:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="2">
+    <widget class="QLCDNumber" name="lcd_Hour_Cost">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
      </property>
     </widget>
    </item>
