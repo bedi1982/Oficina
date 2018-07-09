@@ -145,8 +145,9 @@ void Main_Window::on_tbl_Client_List_doubleClicked(const QModelIndex &selectedCl
 
     //Going back to former form keeping current client 'searched' and updated
     //The empty String is to reset the 'on_text_changed' function.
-    ui->line_ID_or_CPG_or_Name->setText("");
-    ui->line_ID_or_CPG_or_Name->setText(clientName.toString());
+    //ui->line_ID_or_CPG_or_Name->setText("");
+    //ui->line_ID_or_CPG_or_Name->setText(clientName.toString());
+    Set_Last_Client_in_the_Grid();
 }
 
 void Main_Window::Client_Services_Open(QString clientID)

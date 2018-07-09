@@ -80,14 +80,15 @@ void Stock_Control::on_line_Part_Name_textChanged(const QString &Search_String)
 
         model->setHeaderData(0, Qt::Horizontal, tr("ID"));
         model->setHeaderData(1, Qt::Horizontal, tr("Name"));
-        model->setHeaderData(2, Qt::Horizontal, tr("Brand"));
-        model->setHeaderData(3, Qt::Horizontal, tr("Description"));
-        model->setHeaderData(4, Qt::Horizontal, tr("Cost"));
-        model->setHeaderData(5, Qt::Horizontal, tr("Price With Interrest"));
-        model->setHeaderData(6, Qt::Horizontal, tr("In Stock")); //Quantity in stock
-        model->setHeaderData(7, Qt::Horizontal, tr("Part Interrest Rate"));
-        model->setHeaderData(8, Qt::Horizontal, tr("Last Updated"));
-        model->setHeaderData(9, Qt::Horizontal, tr("Created At"));
+        model->setHeaderData(2, Qt::Horizontal, tr("Group"));
+        model->setHeaderData(3, Qt::Horizontal, tr("Brand"));
+        model->setHeaderData(4, Qt::Horizontal, tr("Description"));
+        model->setHeaderData(5, Qt::Horizontal, tr("Paying"));
+        model->setHeaderData(6, Qt::Horizontal, tr("Selling"));
+        model->setHeaderData(7, Qt::Horizontal, tr("In Stock")); //Quantity in stock
+        model->setHeaderData(8, Qt::Horizontal, tr("Interrest Rate %"));
+        model->setHeaderData(9, Qt::Horizontal, tr("Updated"));
+        model->setHeaderData(10, Qt::Horizontal, tr("Created"));
 
         ui->tbl_Parts->setModel(model);
 

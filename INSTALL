@@ -1,8 +1,14 @@
+This is a temporary method, in the future it will all be done via de app.
+
 First you have to create the database:
-download and execute:  Create_Database.sql
+install mysql: 
+on opensuse: 
+
+zypper in mysql
+systemctl start mysql.service 
+wget https://raw.githubusercontent.com/bedi1982/Oficina/master/Oficina.sql
+mysql -u root < Oficina.sql;
 
 In the oficina software currently the database is hardcoded:
 user: root
 password: (leave empty)
-
-On the login screen leave user and pwd empty.

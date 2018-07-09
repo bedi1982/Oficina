@@ -15,8 +15,6 @@ Stock_Add_Part::Stock_Add_Part(QWidget *parent) :
 {
     ui->setupUi(this);
     LoadSettings();
-    QPixmap glasses(":/emoticons/face-glasses.png");
-    ui->lbl_Emoticon->setPixmap(glasses);
     ui->line_Name->setFocus();
 }
 
@@ -47,8 +45,6 @@ bool Stock_Add_Part::Check_Empty_Fields_On_Form()
     {
         ui->lbl_Feedback->setText(tr("Error: All fields need to be filled!"));
         ui->line_Name->setFocus();
-        QPixmap crying(":/emoticons/face-crying.png");
-        ui->lbl_Emoticon->setPixmap(crying);
         return false;
     }
     //Only returns true when all the fields are filled.
