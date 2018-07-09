@@ -31,6 +31,14 @@ one parts and another parts + handwork).
 - When searching use a qsqltable proxy and make the search dropdown work nativelly (dropping data from the proxy and not making a select in the database).
 - Stock total value on stock control UI
 
+Notes:
+Initial tests:
+	test if a system user exists;
+	if a systemuser exists check if the database connection info exists(connection user and pwd);
+		if db user connection exists, try to connect
+		if it connects and database Oficina exists then open the app
+		if it can connect but database 'Oficina' doesn't exists show a popup with database creation option steps;
+
 BUGS:
 Adding a part is not removing from stock.
 
