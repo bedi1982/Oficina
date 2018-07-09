@@ -33,14 +33,14 @@ QString System_Services_and_Info::get_Current_Date()
 
 QString System_Services_and_Info::get_System_Version()
 {
-    return "Oficina - 0.2 HackWeek";
+    return "Oficina - HackWeek.2018";
 }
 
 QString System_Services_and_Info::get_System_About()
 {
     return tr("Software to manage mechanical workshop services.\n"
                                     "\n"
-                                    "Author: Sergio Rafael Lemke <bedi.com@gmail.com>\n");
+                                    "Author: Sergio Rafael Lemke <srlemke@protonmail.com>\n");
 
 }
 
