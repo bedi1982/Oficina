@@ -1,36 +1,34 @@
+functions:
+
 - The delete part grid could have a 'X' icon, clickin this icon removes the part
 - Implement a configuration file which will contain eg. database access credentials.
 - Stock control cell shall be red when parts quantity is lower then 5
 
-- Add a resume wich will show:
+- Add on the reports menu a resume wich will show:
         Not Finished Services;
         Not Paid Services;
 
 - Add a function on wich owner can set a date on which the client is going to pick his car.
-        List clients that will come today to get his Car.
+        List clients that will come this week to get his Car.
+	Show a daily pickups list.
 
-- Select trough all Services and filter the not paid ones
-- Select trough all Services and filter the not finished ones
+----
 
-
---MAYBES--
-Make hours cost editable by service (not all services have the same level of dificulty so prices change)
-
-Code improvements:
-In the service have an open and closed flag;
+src code improvements:
+In the service have an open and closed flag; (what? this is already applied, double check).
 
 
 REJECTED:
 - Register Workshop workers(mitarbeiters).
 - If open show who opened it (employee opened/working on it);
+-----
 
 
 IN PROGRESS:
 - Make a screen that summs the value of the parts in all the stock (table Stok).
-- Make a function that shows how much was bought/sold in a given time frame
-- Make a screen that summs the value of the parts in all the stock (table Stok).
+- Make a function that shows how much was bought/sold in a given time frame(ome only
+one parts and another parts + handwork).
 - When searching use a qsqltable proxy and make the search dropdown work nativelly (dropping data from the proxy and not making a select in the database).
-    needed for stock control
 - Stock total value on stock control UI
 
 BUGS:
@@ -38,10 +36,9 @@ Adding a part is not removing from stock.
 
 TODOS:
 In the Add part do stock form there is a combo which enables to add the part to a part group;
-In the add service where we create the initial order there is a dropdown which sould list some `default` services description
-, this is only in the form;
+In the add service where we create the initial order there is a dropdown which sould list some `default` services description, this is only in the form;
 
-
+---------
 
 DONE:
 - Change QPushButton's to QDialogButtonBox as QDialogButtonBox seems to suit better and has built-in icons.
@@ -50,6 +47,8 @@ DONE:
 
 - When searching use a qsqltable proxy and make the search dropdown work nativelly (dropping data from the proxy and not making a select in the database).
     done for clients
+
+- Make hours cost editable by service (not all services have the same level of dificulty so prices change)
 
 Prio:
 Store user preferences (eg. maximized, last window size...)
