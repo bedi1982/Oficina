@@ -40,8 +40,6 @@ private slots:
 
     void on_action_Add_Client_triggered();
 
-    void on_action_Add_Part_triggered();
-
     void on_tbl_Client_List_doubleClicked(const QModelIndex &index);
 
     void on_action_Exit_triggered();

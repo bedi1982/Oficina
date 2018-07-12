@@ -74,7 +74,7 @@ void Config_Set_Hour_Cost::on_buttonBox_accepted()
         }else{
             QMessageBox::information(this, tr("Success!"), tr("Hour Cost changed to: $ ") + ui->double_Spin_Hour_Cost->text() +
                                      tr("\nAs as reminder, this new hour cost will be used only on new Services."
-                                        " Old Services will keep the original set Hour cost.\n"));
+                                        " Existing Services will keep the original set Hour cost.\n"));
             close();
         }
     }else{

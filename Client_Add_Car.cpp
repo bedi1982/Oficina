@@ -34,6 +34,7 @@ bool Client_Add_Car::Verify_Empty_Fields_On_Form()
            )
     {
         ui->txt_Car_Model->setFocus();
+        QMessageBox::information(this, tr("Not Added!"), tr("Please fill all info."));
         return false;
     }
     //Only returns true when all the fields are filled.

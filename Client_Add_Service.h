@@ -52,7 +52,7 @@ private slots:
 
     void on_Spin_Hand_Work_Hours_valueChanged();
 
-    void on_dateTimeEdit_dateTimeChanged(const QDateTime &dateTime);
+    void on_dateTimeEdit_dateTimeChanged();
 
     void on_buttonBox_Close_rejected();
 

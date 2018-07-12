@@ -128,12 +128,6 @@ void Main_Window::on_action_Add_Client_triggered()
     System_Services_and_Info::set_is_New_or_Updated_Client(false);
 }
 
-void Main_Window::on_action_Add_Part_triggered()
-{
-    Stock_Add_Part Stock_Add_Part;
-    Stock_Add_Part.exec();
-}
-
 void Main_Window::on_tbl_Client_List_doubleClicked(const QModelIndex &selectedClientinTheGrid)
 {
     //Bellow 2 list will retrieve the column 0 value, which is the clientid//
@@ -145,9 +139,8 @@ void Main_Window::on_tbl_Client_List_doubleClicked(const QModelIndex &selectedCl
 
     //Going back to former form keeping current client 'searched' and updated
     //The empty String is to reset the 'on_text_changed' function.
-    //ui->line_ID_or_CPG_or_Name->setText("");
-    //ui->line_ID_or_CPG_or_Name->setText(clientName.toString());
-    Set_Last_Client_in_the_Grid();
+    ui->line_ID_or_CPG_or_Name->setText("");
+    ui->line_ID_or_CPG_or_Name->setText(clientName.toString());
 }
 
 void Main_Window::Client_Services_Open(QString clientID)

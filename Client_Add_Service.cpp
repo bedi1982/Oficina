@@ -267,7 +267,7 @@ void Client_Add_Service::on_Spin_Hand_Work_Hours_valueChanged()
 }
 
 //TODO :: Work In progress TODO//
-void Client_Add_Service::on_dateTimeEdit_dateTimeChanged(const QDateTime &dateTime)
+void Client_Add_Service::on_dateTimeEdit_dateTimeChanged()
 {
     QSqlQuery query;
     //query.prepare("UPDATE Service SET Service_Client_Will_Retrieve_At " + dateTime.toString("yyyy-MM-dd hh:mm:ss"));
