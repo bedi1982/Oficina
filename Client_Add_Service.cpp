@@ -11,8 +11,11 @@ Client_Add_Service::Client_Add_Service(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Client_Add_Service)
 {
+
     ui->setupUi(this);
+
     LoadSettings();
+
     ui->txt_Servicedescription->setReadOnly(true);
     ui->line_ServiceShortDescription->setReadOnly(true);
     ui->tabWidget->setCurrentIndex(0);//Focus on the first tab//
@@ -92,20 +95,20 @@ void Client_Add_Service::Load_Parts_And_Service_Costs_Grid(){
 
         ui->tbl_Parts_Used_In_Service->resizeColumnsToContents();
 
-        //Sum the Parts Used Value and add to doublespin//
-        double PartsCost = 0;
-        const int column = 4; //"Part_Cost column"//
-        for (int row = 0; row < model->rowCount(); ++row) {
-            PartsCost += model->data(model->index(row, column)).toDouble();
-        }
+        //Sum the Parts Used Value and add//
+//        double PartsCost = 0;
+//        const int column = 4; //"Part_Cost column"//
+//        for (int row = 0; row < model->rowCount(); ++row) {
+//            PartsCost += model->data(model->index(row, column)).toDouble();
+//        }
 
-        QSqlQuery SetServicePartsCost;
-        SetServicePartsCost.prepare("update Service set Service_Parts_Cost = :PartsCost WHERE Service_id = " + ServiceID);
-        SetServicePartsCost.bindValue(":PartsCost", PartsCost);
+//        QSqlQuery SetServicePartsCost;
+//        SetServicePartsCost.prepare("update Service set Service_Parts_Cost = :PartsCost WHERE Service_id = " + ServiceID);
+//        SetServicePartsCost.bindValue(":PartsCost", PartsCost);
 
-        if (SetServicePartsCost.exec() == false){
-            QMessageBox::critical(this, tr("Error!"), SetServicePartsCost.lastError().text() + " class Client_Add_Service::LoadPartsAndServiceCostsGrid() ");
-        }
+//        if (SetServicePartsCost.exec() == false){
+//            QMessageBox::critical(this, tr("Error!"), SetServicePartsCost.lastError().text() + " class Client_Add_Service::LoadPartsAndServiceCostsGrid() ");
+//        }
     }
     Add_Service_Description_Text();
     Sum_Costs();
@@ -252,20 +255,6 @@ void Client_Add_Service::on_btnBox_Close_rejected()
     close();
 }
 
-void Client_Add_Service::on_Spin_Hand_Work_Hours_valueChanged()
-{
-    QSqlQuery Update_Hours_Worked;
-    Update_Hours_Worked.prepare("UPDATE Service SET Service_Hours_Duration = :Service_Hours_Duration WHERE Service_id = " + ServiceID);
-
-    Update_Hours_Worked.bindValue(":Service_Hours_Duration", ui->Spin_Hand_Work_Hours->value());
-
-    if (!(Update_Hours_Worked.exec())){
-        QMessageBox::critical(this, tr("Error!"), Update_Hours_Worked.lastError().text() + "class Client_Add_Service::on_btn_save_hoursWorked_clicked()");
-    }else{
-        Sum_Costs();
-    }
-}
-
 //TODO :: Work In progress TODO//
 void Client_Add_Service::on_dateTimeEdit_dateTimeChanged()
 {
@@ -276,7 +265,7 @@ void Client_Add_Service::on_dateTimeEdit_dateTimeChanged()
         qDebug() << query.lastError();
         QMessageBox::critical(this, tr("Error!"), query.lastError().text() + "class addservice.cpp  on_check_Finished_clicked ");
     }else{
-        QMessageBox::information(this, tr("Ok!"), tr("Vehicle Retrieval Date Set..."));
+        QMessageBox::information(this, tr("TODO TODO TODO Ok!"), tr("Vehicle Retrieval Date Set..."));
     }
 }
 
@@ -317,3 +306,18 @@ void Client_Add_Service::on_buttonBox_Close_rejected()
 {
     close();
 }
+
+void Client_Add_Service::on_Spin_Hand_Work_Hours_editingFinished()
+{
+    //if(ui->Spin_Hand_Work_Hours->valueChanged();
+        QSqlQuery Update_Hours_Worked;
+        Update_Hours_Worked.prepare("UPDATE Service SET Service_Hours_Duration = :Service_Hours_Duration WHERE Service_id = " + ServiceID);
+        Update_Hours_Worked.bindValue(":Service_Hours_Duration", ui->Spin_Hand_Work_Hours->value());
+
+        if (Update_Hours_Worked.exec()){
+            QMessageBox::information(this, tr("Done!!"), tr("Quantity of worked hoursgot an update!!"));
+            Sum_Costs();
+        }else{
+            QMessageBox::critical(this, tr("Error!"), Update_Hours_Worked.lastError().text() + "class Client_Add_Service::on_btn_save_hoursWorked_clicked()");
+        }
+    }

@@ -50,13 +50,13 @@ private slots:
 
     void on_btn_Update_Service_description_clicked();
 
-    void on_Spin_Hand_Work_Hours_valueChanged();
-
     void on_dateTimeEdit_dateTimeChanged();
 
     void on_buttonBox_Close_rejected();
 
     void on_Button_Apply_new_Hour_Cost_clicked();
+
+    void on_Spin_Hand_Work_Hours_editingFinished();
 
 private:
     Ui::Client_Add_Service *ui;
