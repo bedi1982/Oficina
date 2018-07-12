@@ -21,8 +21,6 @@ Client_Services_History::Client_Services_History(QWidget *parent) :
 {
     ui->setupUi(this);
     LoadSettings();
-    //Add hour cost to label
-    Set_Current_Hour_Cost_Label();
     ui->tabWidget->setCurrentIndex(0);//Focus on the cars
 }
 
@@ -52,14 +50,7 @@ void Client_Services_History::loadAll(){
 void Client_Services_History::Load_Client_Info_To_Text_Boxes()
 {
     QSqlQuery query;
-    query.prepare("SELECT Client_id, "
-                  " Client_Name,"
-                  " Client_Address,"
-                  " Client_Phone, "
-                  " Client_City, "
-                  " Client_CPG, "
-                  " Client_ID_Number "
-                  " FROM Client WHERE Client_id = " + client_id);
+    query.prepare("SELECT Client_Name FROM Client WHERE Client_id = " + client_id);
 
     if (query.exec() == false){
         QMessageBox::critical(this, tr("Erro!"), query.lastError().text() +
@@ -67,12 +58,7 @@ void Client_Services_History::Load_Client_Info_To_Text_Boxes()
     }else{
         while(query.next())
         {
-            ui->line_Name->setText(query.value(1).toString());
-            ui->line_Address->setText(query.value(2).toString());
-            ui->line_Phone->setText(query.value(3).toString());
-            ui->lineEdit_City->setText(query.value(4).toString());
-            ui->lineEdit_CPG->setText(query.value(5).toString());
-            ui->lineEdit_ID->setText(query.value(6).toString());
+            this->setWindowTitle("Client: " + query.value(0).toString());
         }
     }
 }
@@ -207,11 +193,7 @@ void Client_Services_History::on_btn_Add_Car_To_Client_clicked()
     load_Cars_Grid();
 }
 
-void Client_Services_History::Set_Current_Hour_Cost_Label(){
-    ui->lcd_Hour_Cost->display(System_Services_and_Info::Get_Current_Hour_Cost());
-}
-
-void Client_Services_History::on_pushButton_clicked()
+void Client_Services_History::on_Close_clicked()
 {
     close();
 }

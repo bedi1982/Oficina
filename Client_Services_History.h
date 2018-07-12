@@ -17,8 +17,6 @@ public:
     void loadAll();
     void load_Cars_Grid();
 
-    void Set_Current_Hour_Cost_Label();
-
     QString client_id;
 
     QString getClient_id() const;
@@ -33,7 +31,7 @@ private slots:
 
     void on_btn_Add_Car_To_Client_clicked();
 
-    void on_pushButton_clicked();
+    void on_Close_clicked();
 
 
 private:
@@ -44,6 +42,7 @@ private:
     void Load_Client_Info_To_Text_Boxes();
 
     void LoadSettings();
+
     void SaveSettings();
 };
 

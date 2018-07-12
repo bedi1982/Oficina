@@ -28,6 +28,8 @@ private slots:
 
     void on_btn_Add_Part_to_Stock_clicked();
 
+    void on_btn_Close_clicked();
+
 private:
     Ui::Stock_Parts_Selection *ui;
     void LoadSettings();

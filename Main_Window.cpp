@@ -42,14 +42,12 @@ Main_Window::Main_Window(QWidget *parent) :
 
     //TODO TEST
     ui->line_ID_or_CPG_or_Name->setFocus();
-    ui->lbl_Oficina->setText(System_Services_and_Info::get_System_Version() + "\n" + System_Services_and_Info::get_Current_Date());
     this->setWindowTitle(System_Services_and_Info::get_System_Version());
 
     Database db;
 
     if(db.Connect()){
         Check_Login();
-        ui->lbl_Database->setText(tr("Database:  Connected"));
         Create_Client_Model_and_proxy();
 
         //We also check if the hourcost is set, otherwise is to dangerous the user may start a service with hour cost at 0;
@@ -62,7 +60,6 @@ Main_Window::Main_Window(QWidget *parent) :
         //If the database is not available we make it mostly useless//
         ui->line_ID_or_CPG_or_Name->setEnabled(false);
         ui->menuBar->hide();
-        ui->lbl_Database->setText(tr("Database:  Disconnected"));
         QMessageBox::critical(0, tr("Database Down"), tr("Database currently not running! \nPlease double check if the Database is correctly started."));
     }
 }
@@ -197,12 +194,6 @@ void Main_Window::on_action_Manpage_triggered()
 {
     Man_Page man_page;
     man_page.exec();
-}
-
-void Main_Window::on_Clear_Button_clicked()
-{
-    ui->line_ID_or_CPG_or_Name->setText("");
-    ui->line_ID_or_CPG_or_Name->setFocus();
 }
 
 void Main_Window::on_actionStock_Finances_triggered()

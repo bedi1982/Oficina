@@ -52,8 +52,6 @@ private slots:
 
     void on_action_Manpage_triggered();
 
-    void on_Clear_Button_clicked();
-
     void on_actionStock_Finances_triggered();
 
     void Client_Services_Open(QString clientID);

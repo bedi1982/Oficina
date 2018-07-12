@@ -49,14 +49,14 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="0" colspan="2">
+   <item row="2" column="0" colspan="2">
     <widget class="QLabel" name="label_Help">
      <property name="text">
       <string>Double click in the Part will add it to the Service:</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="0" colspan="3">
+   <item row="3" column="0" colspan="3">
     <widget class="QTableView" name="tbl_Parts_List">
      <property name="toolTip">
       <string>Duplo clique aqui para adicionar a peça.</string>
@@ -72,6 +72,13 @@
      </property>
     </widget>
    </item>
+   <item row="4" column="2">
+    <widget class="QPushButton" name="btn_Close">
+     <property name="text">
+      <string>Close</string>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <tabstops>
@@ -80,6 +87,8 @@
   <tabstop>btn_Add_Part_to_Stock</tabstop>
  </tabstops>
  <resources>
+  <include location="images/images.qrc"/>
+  <include location="images/images.qrc"/>
   <include location="images/images.qrc"/>
  </resources>
  <connections/>

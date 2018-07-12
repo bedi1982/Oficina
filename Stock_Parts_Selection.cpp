@@ -130,3 +130,8 @@ void Stock_Parts_Selection::SaveSettings()
     setting.setValue("position",this->geometry());
     setting.endGroup();
 }
+
+void Stock_Parts_Selection::on_btn_Close_clicked()
+{
+    close();
+}
