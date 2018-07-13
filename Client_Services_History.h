@@ -31,15 +31,16 @@ private slots:
 
     void on_btn_Add_Car_To_Client_clicked();
 
-    void on_Close_clicked();
-
+    void on_btn_CLose_clicked();
 
 private:
     Ui::Client_Services_History *ui;
 
     void Load_Services_Grid();
 
-    void Load_Client_Info_To_Text_Boxes();
+    void Load_Client_Name_To_Window_Title();
+
+    void load_Client_Info_Tab();
 
     void LoadSettings();
 

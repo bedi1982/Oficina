@@ -36,11 +36,8 @@ Main_Window::Main_Window(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    //window size
     LoadSettings();
-    //end window size
 
-    //TODO TEST
     ui->line_ID_or_CPG_or_Name->setFocus();
     this->setWindowTitle(System_Services_and_Info::get_System_Version());
 
@@ -49,37 +46,12 @@ Main_Window::Main_Window(QWidget *parent) :
     if(db.Connect()){
         Check_Login();
         Create_Client_Model_and_proxy();
-
-        //We also check if the hourcost is set, otherwise is to dangerous the user may start a service with hour cost at 0;
-        if(!get_Last_Hour_Cost()){
-            QMessageBox::critical(this, tr("First Run WARNING!!"), "Working Hour Cost is not set!!\n"
-                                                         "Please set an HourCost in: Configuration -> Change HourCost.\n"
-                                                         "\nNot setting this value will make you work for FREE!");
-        }
     }else{
-        //If the database is not available we make it mostly useless//
+        //If the database is not available we make the app mostly useless//
         ui->line_ID_or_CPG_or_Name->setEnabled(false);
         ui->menuBar->hide();
         QMessageBox::critical(0, tr("Database Down"), tr("Database currently not running! \nPlease double check if the Database is correctly started."));
     }
-}
-
-bool Main_Window::get_Last_Hour_Cost()
-{
-    QSqlQuery Get_Hour_Cost;
-    Get_Hour_Cost.prepare("SELECT * from HourCost order by HourCost_id DESC LIMIT 1;");
-
-    if (Get_Hour_Cost.exec() == false){
-        QMessageBox::critical(this, tr("Error!"), Get_Hour_Cost.lastError().text() + "bool Main_Window::get_Last_Hour_Cost()");
-    }else{
-        while(Get_Hour_Cost.next()) //returns only 1 row as result(0 = id, 1=name)//
-        {
-            if (Get_Hour_Cost.value(1).toInt() > 0){
-                return true;
-            }
-        }
-    }
-    return false;
 }
 
 bool Main_Window::getClient_Clicked_Exit_On_Login() const
@@ -117,13 +89,10 @@ void Main_Window::on_action_Add_Client_triggered()
 {
     Client_Add Client_Add;
     Client_Add.exec();
-
-    if(System_Services_and_Info::get_is_New_or_Updated_Client()){
-        Create_Client_Model_and_proxy();
-        Set_Last_Client_in_the_Grid();
+    //Since a new client is added we reload the proxy.
+    Create_Client_Model_and_proxy();
+    Set_Last_Client_in_the_Grid();
     }
-    System_Services_and_Info::set_is_New_or_Updated_Client(false);
-}
 
 void Main_Window::on_tbl_Client_List_doubleClicked(const QModelIndex &selectedClientinTheGrid)
 {
@@ -138,6 +107,10 @@ void Main_Window::on_tbl_Client_List_doubleClicked(const QModelIndex &selectedCl
     //The empty String is to reset the 'on_text_changed' function.
     ui->line_ID_or_CPG_or_Name->setText("");
     ui->line_ID_or_CPG_or_Name->setText(clientName.toString());
+
+    //When he comes back we reload the proxy//
+    Create_Client_Model_and_proxy();
+
 }
 
 void Main_Window::Client_Services_Open(QString clientID)

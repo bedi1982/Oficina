@@ -22,32 +22,7 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_4">
-    <item row="0" column="9">
-     <widget class="QLabel" name="lbl_BigCarIcon">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>50</width>
-        <height>25</height>
-       </size>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="images/images.qrc">:/emoticons/sport-car.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1" colspan="7">
+    <item row="0" column="0">
      <widget class="QLineEdit" name="line_ID_or_CPG_or_Name">
       <property name="sizePolicy">
        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Maximum">
@@ -62,11 +37,11 @@
        <number>30</number>
       </property>
       <property name="placeholderText">
-       <string>Enter Client Name...</string>
+       <string>Search Client ...</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="0" rowspan="3" colspan="10">
+    <item row="1" column="0" rowspan="4" colspan="11">
      <widget class="QTableView" name="tbl_Client_List">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -109,25 +84,6 @@
       </attribute>
      </widget>
     </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="lbl_Search">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>100</width>
-        <height>48</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Search Client</string>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
@@ -140,7 +96,19 @@
      <height>30</height>
     </rect>
    </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <widget class="QMenu" name="menuOficina">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
     <property name="title">
      <string>Oficina</string>
     </property>
@@ -149,6 +117,12 @@
     <addaction name="action_Exit"/>
    </widget>
    <widget class="QMenu" name="menuCadastrois">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
     <property name="title">
      <string>Stoc&amp;k</string>
     </property>
@@ -156,6 +130,12 @@
     <addaction name="actionStock_Finances"/>
    </widget>
    <widget class="QMenu" name="menuSobre">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
     <property name="title">
      <string>Abo&amp;ut</string>
     </property>
@@ -163,21 +143,20 @@
     <addaction name="action_Manpage"/>
    </widget>
    <widget class="QMenu" name="menuCliente">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
     <property name="title">
      <string>&amp;Client</string>
     </property>
     <addaction name="action_Add_Client"/>
    </widget>
-   <widget class="QMenu" name="menuRoot">
-    <property name="title">
-     <string>Configu&amp;ration</string>
-    </property>
-    <addaction name="action_Change_Hour_Cost"/>
-   </widget>
    <addaction name="menuOficina"/>
    <addaction name="menuCadastrois"/>
    <addaction name="menuCliente"/>
-   <addaction name="menuRoot"/>
    <addaction name="menuSobre"/>
   </widget>
   <action name="action_Add_Client">

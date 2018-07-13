@@ -1,12 +1,14 @@
 #include "Client_Services_History.h"
-#include "ui_Client_Services_History.h"
-
 #include "Client_Add_Car.h"
 #include "Client_Add_Service.h"
-
 #include "Client_Update.h"
-#include "Service_Create_Description.h"
+
 #include "System_Services_and_Info.h"
+
+#include "Service_Create_Description.h"
+
+#include <ui_Client_Services_History.h>
+#include "ui_Client_Services_History.h"
 
 #include <QSqlTableModel>
 #include "QSqlQuery"
@@ -21,7 +23,7 @@ Client_Services_History::Client_Services_History(QWidget *parent) :
 {
     ui->setupUi(this);
     LoadSettings();
-    ui->tabWidget->setCurrentIndex(0);//Focus on the cars
+    ui->tab_Client_History->setCurrentIndex(1);
 }
 
 Client_Services_History::~Client_Services_History()
@@ -44,23 +46,7 @@ void Client_Services_History::setClient_id(const QString &value)
 void Client_Services_History::loadAll(){
     load_Cars_Grid();
     Load_Services_Grid();
-    Load_Client_Info_To_Text_Boxes();
-}
-
-void Client_Services_History::Load_Client_Info_To_Text_Boxes()
-{
-    QSqlQuery query;
-    query.prepare("SELECT Client_Name FROM Client WHERE Client_id = " + client_id);
-
-    if (query.exec() == false){
-        QMessageBox::critical(this, tr("Erro!"), query.lastError().text() +
-                              "class Client_Services_History::loadClientInfo_to_TextBoxes() ");
-    }else{
-        while(query.next())
-        {
-            this->setWindowTitle("Client: " + query.value(0).toString());
-        }
-    }
+    load_Client_Info_Tab();
 }
 
 void Client_Services_History::Load_Services_Grid()
@@ -142,6 +128,33 @@ void Client_Services_History::load_Cars_Grid()
     }
 }
 
+void Client_Services_History::load_Client_Info_Tab()
+{
+    QSqlQuery query;
+    query.prepare("SELECT * FROM Client WHERE Client_id = " + client_id);
+
+    if (query.exec() == false){
+        qDebug() << query.lastError();
+        QMessageBox::critical(this, tr("Erro!"), query.lastError().text() + "class Client_Edit::loadClientInfo_to_TextBoxes() ");
+    }else{
+        while(query.next())
+        {
+            ui->line_SysID->setText(query.value(0).toString()); //SystemID
+            ui->line_Name->setText(query.value(1).toString()); //Name
+            ui->line_Address->setText(query.value(2).toString()); //Adress
+            ui->line_City->setText(query.value(3).toString()); //City
+            ui->line_CPG->setText(query.value(4).toString()); //CPG
+            ui->line_Personal_ID->setText(query.value(5).toString()); // Personal ID
+            ui->line_Phone->setText(query.value(6).toString()); //Phone
+            ui->line_Updated_At->setText(query.value(7).toString()); //updated At
+            ui->line_Created_At->setText(query.value(8).toString()); //created At
+        }
+    }
+    //This is a bonus, its sets the client name on the App. Windows.
+    this->setWindowTitle("Client: " + query.value(1).toString());
+    //
+}
+
 //Adding Service to this client and this car//
 void Client_Services_History::on_tbl_Client_Cars_doubleClicked(const QModelIndex &index)
 {
@@ -155,7 +168,7 @@ void Client_Services_History::on_tbl_Client_Cars_doubleClicked(const QModelIndex
 
     Service_Create_Description.exec();
     Load_Services_Grid();
-    ui->tabWidget->setCurrentIndex(1); //Move to services tab
+    ui->tab_Client_History->setCurrentIndex(1); //Move to services tab
 }
 
 void Client_Services_History::on_tbl_Client_Services_doubleClicked(const QModelIndex &index)
@@ -177,11 +190,31 @@ void Client_Services_History::on_tbl_Client_Services_doubleClicked(const QModelI
 
 void Client_Services_History::on_btn_Update_Client_clicked()
 {
-    Client_Update Client_Update;
-    Client_Update.setClient_id(client_id);
-    Client_Update.load_Client_Info_To_TextBoxes();
-    Client_Update.exec();
-    Load_Client_Info_To_Text_Boxes();
+    QSqlQuery query;
+    query.prepare(" UPDATE Client SET "
+                  "  Client_Name = :Client_Name"
+                  " ,Client_Address = :Client_Address"
+                  " ,Client_City = :Client_City"
+                  " ,Client_CPG = :Client_CPG"
+                  " ,Client_ID_Number = :Client_ID_Number"
+                  " ,Client_Phone = :Client_Phone"
+                  " WHERE Client_id = " + client_id);
+
+    query.bindValue(":Client_Name", ui->line_Name->text());
+    query.bindValue(":Client_Address", ui->line_Address->text());
+    query.bindValue(":Client_City", ui->line_City->text());
+    query.bindValue(":Client_CPG", ui->line_CPG->text());
+    query.bindValue(":Client_ID_Number", ui->line_Personal_ID->text());
+    query.bindValue(":Client_Phone", ui->line_Phone->text());
+
+    if (query.exec()) {
+        QMessageBox::information(this, tr("Success"), tr("Client Updated!"));
+        load_Client_Info_Tab();
+        close();
+    } else {
+        QMessageBox::critical(this, tr("Error!"), query.lastError().text() + "class Client_Edit::on_btn_update_clicked() ");
+        close();
+    }
 }
 
 void Client_Services_History::on_btn_Add_Car_To_Client_clicked()
@@ -192,12 +225,6 @@ void Client_Services_History::on_btn_Add_Car_To_Client_clicked()
     Client_Add_Car.exec();
     load_Cars_Grid();
 }
-
-void Client_Services_History::on_Close_clicked()
-{
-    close();
-}
-
 
 void Client_Services_History::LoadSettings()
 {
@@ -214,4 +241,9 @@ void Client_Services_History::SaveSettings()
     setting.beginGroup("Client_Services_History");
     setting.setValue("position",this->geometry());
     setting.endGroup();
+}
+
+void Client_Services_History::on_btn_CLose_clicked()
+{
+    close();
 }

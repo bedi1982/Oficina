@@ -78,7 +78,6 @@ void Client_Update::on_btn_Save_clicked()
 
     if (query.exec()) {
         QMessageBox::information(this, tr("Success"), tr("Client Updated!"));
-        System_Services_and_Info::set_is_New_or_Updated_Client(true);
         close();
     } else {
         QMessageBox::critical(this, tr("Error!"), query.lastError().text() + "class Client_Edit::on_btn_update_clicked() ");

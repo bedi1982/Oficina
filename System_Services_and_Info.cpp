@@ -7,9 +7,6 @@
 #include "QDebug"
 #include "QDate"
 
-static bool Is_New_Client = false;
-static int Logged_Func = -1;
-
 double System_Services_and_Info::Get_Current_Hour_Cost(){
     //just set current value in the spinbox//
     QSqlQuery Get_Current_Hour_Cost;
@@ -49,22 +46,4 @@ QString System_Services_and_Info::Check_Text_Size(int size_limit, QString Entere
     int Overflowed_Chars = Entered_Text.length() - size_limit;
     Entered_Text.chop(Overflowed_Chars);
     return Entered_Text;
-}
-
-void System_Services_and_Info::set_is_New_or_Updated_Client(bool Is_New)
-{
-    Is_New_Client = Is_New;
-}
-
-bool System_Services_and_Info::get_is_New_or_Updated_Client()
-{
-    return Is_New_Client;
-}
-
-int System_Services_and_Info::get_Logged_Func(){
-    return Logged_Func;
-}
-
-void System_Services_and_Info::set_Logged_func(int func_id){
-    Logged_Func = func_id;
 }
