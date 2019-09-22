@@ -16,7 +16,7 @@ CREATE TABLE `Client` (
   `Client_CPG` varchar(20) DEFAULT NULL,
   `Client_ID_Number` varchar(15) DEFAULT NULL,
   `Client_Phone` varchar(40) DEFAULT NULL,
-  `Client_updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `Client_updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `Client_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`Client_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -46,7 +46,7 @@ CREATE TABLE `ClientCar` (
   `ClientCar_BuiltYear` int(11) DEFAULT NULL,
   `ClientCar_Plate` varchar(10) DEFAULT NULL,
   `ClientCar_Color` varchar(26) DEFAULT NULL,
-  `ClientCar_updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `ClientCar_updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `ClientCar_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`ClientCar_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -70,7 +70,7 @@ CREATE TABLE `PartGroup` (
   `PartGroup_id` int(11) NOT NULL AUTO_INCREMENT,
   `PartGroup_Name` varchar(50) DEFAULT NULL,
   `PartGroup_Description` varchar(300) DEFAULT NULL,
-  `PartGroup_updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `PartGroup_updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `PartGroup_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`PartGroup_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -126,7 +126,7 @@ CREATE TABLE `Part` (
   `Part_Sell_Value_With_Interest_Rate` double(19,2) DEFAULT NULL,
   `Part_Quantity` int(11) DEFAULT NULL,
   `Part_Interrest_Rate` double(19,2) DEFAULT NULL,
-  `Part_updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `Part_updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `Part_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`Part_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -150,7 +150,7 @@ CREATE TABLE `Service` (
   `Service_Hours_Duration` double(19,2) DEFAULT NULL,
   `Service_Hour_Cost` double(19,2) DEFAULT NULL,
   `Service_Paid` tinyint(1) NOT NULL DEFAULT '0',
-  `Service_updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `Service_updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `Service_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`Service_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -188,21 +188,5 @@ LOCK TABLES `ServicePartsUsed` WRITE;
 /*!40000 ALTER TABLE `ServicePartsUsed` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ServicePartsUsed` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2017-03-20  9:18:48
-
---set mysql logging:
-
---SET global log_output = 'file';
---SET global general_log_file='/tmp/mysql.log'; 
---SET global general_log = on;
-
