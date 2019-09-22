@@ -56,7 +56,9 @@ private slots:
 
     void on_Button_Apply_new_Hour_Cost_clicked();
 
-    void on_Spin_Hand_Work_Hours_editingFinished();
+    void on_pushButton_clicked();
+
+    void on_Button_Set_Worked_hours_clicked();
 
 private:
     Ui::Client_Add_Service *ui;

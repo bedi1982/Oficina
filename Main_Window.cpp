@@ -50,7 +50,7 @@ Main_Window::Main_Window(QWidget *parent) :
         //If the database is not available we make the app mostly useless//
         ui->line_ID_or_CPG_or_Name->setEnabled(false);
         ui->menuBar->hide();
-        QMessageBox::critical(0, tr("Database Down"), tr("Database currently not running! \nPlease double check if the Database is correctly started."));
+        QMessageBox::critical(nullptr, tr("Database Down"), tr("Database not running or wrong user/password! \nPlease double check if the Database is correctly started. Database.cpp handles login data"));
     }
 }
 

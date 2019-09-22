@@ -307,7 +307,7 @@ void Client_Add_Service::on_buttonBox_Close_rejected()
     close();
 }
 
-void Client_Add_Service::on_Spin_Hand_Work_Hours_editingFinished()
+void Client_Add_Service::on_Button_Set_Worked_hours_clicked()
 {
     //if(ui->Spin_Hand_Work_Hours->valueChanged();
         QSqlQuery Update_Hours_Worked;
@@ -320,4 +320,4 @@ void Client_Add_Service::on_Spin_Hand_Work_Hours_editingFinished()
         }else{
             QMessageBox::critical(this, tr("Error!"), Update_Hours_Worked.lastError().text() + "class Client_Add_Service::on_btn_save_hoursWorked_clicked()");
         }
-    }
+}

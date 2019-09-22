@@ -117,7 +117,7 @@ void Client_Services_History::load_Cars_Grid()
         ui->tbl_Client_Cars->resizeColumnsToContents();
 
         if(model->rowCount() <= 0){
-            if (QMessageBox::Yes == QMessageBox(QMessageBox::Question, "Question", "This Client has no Car registered Currently. "
+            if (QMessageBox::Yes == QMessageBox(QMessageBox::Question, "Question", "This client has no car registered in the system. "
                                                 "Would you like to add one?", QMessageBox::Yes|QMessageBox::No).exec())
             {
                 on_btn_Add_Car_To_Client_clicked();
