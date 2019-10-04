@@ -133,10 +133,10 @@ void Main_Window::Create_Client_Model_and_proxy(){
     model->setHeaderData(1, Qt::Horizontal, tr("Name"));
     model->setHeaderData(2, Qt::Horizontal, tr("Adress"));
     model->setHeaderData(3, Qt::Horizontal, tr("City"));
-    model->setHeaderData(5, Qt::Horizontal, tr("ID"));
-    model->setHeaderData(6, Qt::Horizontal, tr("Phone"));
-    model->setHeaderData(7, Qt::Horizontal, tr("Updated at"));
-    model->setHeaderData(8, Qt::Horizontal, tr("Created at"));
+    model->setHeaderData(4, Qt::Horizontal, tr("ID"));
+    model->setHeaderData(5, Qt::Horizontal, tr("Phone"));
+    model->setHeaderData(6, Qt::Horizontal, tr("Updated at"));
+    model->setHeaderData(7, Qt::Horizontal, tr("Created at"));
 
     proxy = new QSortFilterProxyModel();
     proxy->setSourceModel(model);

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>538</width>
-    <height>467</height>
+    <width>796</width>
+    <height>415</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -24,49 +24,10 @@
     <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="1" column="9">
-    <widget class="QPushButton" name="btn_CLose">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>Close</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="8">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="1" column="7">
-    <widget class="QLabel" name="lbl_Client_Name">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
    <item row="0" column="6" colspan="4">
     <widget class="QTabWidget" name="tab_Client_History">
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_Cars">
       <attribute name="title">
@@ -108,7 +69,7 @@
           </sizepolicy>
          </property>
          <property name="text">
-          <string>Add Car</string>
+          <string>Add New Car</string>
          </property>
          <property name="icon">
           <iconset resource="images/images.qrc">
@@ -472,13 +433,29 @@
         <string>ID</string>
        </property>
       </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>490</x>
+         <y>10</y>
+         <width>261</width>
+         <height>151</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="images/images.qrc">:/emoticons/sport-car.png</pixmap>
+       </property>
+      </widget>
       <widget class="QPushButton" name="btn_Update_Client">
        <property name="geometry">
         <rect>
-         <x>410</x>
-         <y>340</y>
-         <width>93</width>
-         <height>34</height>
+         <x>620</x>
+         <y>270</y>
+         <width>80</width>
+         <height>24</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -504,23 +481,46 @@
         </size>
        </property>
       </widget>
-      <widget class="QLabel" name="label">
-       <property name="geometry">
-        <rect>
-         <x>110</x>
-         <y>260</y>
-         <width>261</width>
-         <height>151</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="images/images.qrc">:/emoticons/sport-car.png</pixmap>
-       </property>
-      </widget>
      </widget>
+    </widget>
+   </item>
+   <item row="1" column="9">
+    <widget class="QPushButton" name="btn_CLose">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Close</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="8">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="7">
+    <widget class="QLabel" name="lbl_Client_Name">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
     </widget>
    </item>
   </layout>

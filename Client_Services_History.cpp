@@ -117,7 +117,7 @@ void Client_Services_History::load_Cars_Grid()
         ui->tbl_Client_Cars->resizeColumnsToContents();
 
         if(model->rowCount() <= 0){
-            if (QMessageBox::Yes == QMessageBox(QMessageBox::Question, "Question", "This client has no car registered in the system. "
+            if (QMessageBox::Yes == QMessageBox(QMessageBox::Question, "Question", "This client has no car. "
                                                 "Would you like to add one?", QMessageBox::Yes|QMessageBox::No).exec())
             {
                 on_btn_Add_Car_To_Client_clicked();
@@ -141,6 +141,7 @@ void Client_Services_History::load_Client_Info_Tab()
         {
             ui->line_SysID->setText(query.value(0).toString()); //SystemID
             ui->line_Name->setText(query.value(1).toString()); //Name
+            this->setWindowTitle("Client: " + query.value(1).toString()); //Add client name to window title
             ui->line_Address->setText(query.value(2).toString()); //Adress
             ui->line_City->setText(query.value(3).toString()); //City
             ui->line_Personal_ID->setText(query.value(5).toString()); // Personal ID
@@ -149,9 +150,6 @@ void Client_Services_History::load_Client_Info_Tab()
             ui->line_Created_At->setText(query.value(8).toString()); //created At
         }
     }
-    //This is a bonus, its sets the client name on the App. Windows.
-    this->setWindowTitle("Client: " + query.value(1).toString());
-    //
 }
 
 //Adding Service to this client and this car//
@@ -207,10 +205,8 @@ void Client_Services_History::on_btn_Update_Client_clicked()
     if (query.exec()) {
         QMessageBox::information(this, tr("Success"), tr("Client Updated!"));
         load_Client_Info_Tab();
-        close();
     } else {
         QMessageBox::critical(this, tr("Error!"), query.lastError().text() + "class Client_Edit::on_btn_update_clicked() ");
-        close();
     }
 }
 
