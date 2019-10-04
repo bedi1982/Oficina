@@ -39,6 +39,7 @@ Main_Window::Main_Window(QWidget *parent) :
     LoadSettings();
 
     ui->line_ID_or_CPG_or_Name->setFocus();
+    ui->lbl_sys_version->setText(System_Services_and_Info::get_System_Version());
     this->setWindowTitle(System_Services_and_Info::get_System_Version());
 
     Database db;
@@ -46,11 +47,12 @@ Main_Window::Main_Window(QWidget *parent) :
     if(db.Connect()){
         Check_Login();
         Create_Client_Model_and_proxy();
+        ui->lbl_database_status->setText("Database connected!");
     }else{
         //If the database is not available we make the app mostly useless//
         ui->line_ID_or_CPG_or_Name->setEnabled(false);
         ui->menuBar->hide();
-        QMessageBox::critical(nullptr, tr("Database Down"), tr("Database not running or wrong user/password! \nPlease double check if the Database is correctly started. Database.cpp handles login data"));
+        QMessageBox::critical(nullptr, tr("Database Down"), tr("Database not running or wrong user/password! \nPlease double check if the Database is correctly started. Database.cpp handles login data."));
     }
 }
 
