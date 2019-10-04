@@ -60,7 +60,7 @@
      </widget>
     </item>
     <item row="1" column="0" colspan="9">
-     <widget class="QLineEdit" name="line_ID_or_CPG_or_Name">
+     <widget class="QLineEdit" name="line_ID_or_Name">
       <property name="text">
        <string/>
       </property>
