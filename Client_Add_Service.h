@@ -12,7 +12,7 @@ class Client_Add_Service : public QDialog
     Q_OBJECT
 
 public:
-    explicit Client_Add_Service(QWidget *parent = 0);
+    explicit Client_Add_Service(QWidget *parent = nullptr);
     ~Client_Add_Service();
 
     void Load_Parts_And_Service_Costs_Grid();
@@ -55,8 +55,6 @@ private slots:
     void on_buttonBox_Close_rejected();
 
     void on_Button_Apply_new_Hour_Cost_clicked();
-
-    void on_pushButton_clicked();
 
     void on_Button_Set_Worked_hours_clicked();
 
