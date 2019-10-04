@@ -22,33 +22,8 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_4">
-    <item row="1" column="0">
-     <widget class="QLineEdit" name="line_ID_or_CPG_or_Name">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Maximum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="maxLength">
-       <number>30</number>
-      </property>
-      <property name="placeholderText">
-       <string>Search Client ...</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0" rowspan="4" colspan="11">
+    <item row="2" column="0" rowspan="5" colspan="9">
      <widget class="QTableView" name="tbl_Client_List">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
       <property name="toolTip">
        <string/>
       </property>
@@ -84,28 +59,36 @@
       </attribute>
      </widget>
     </item>
-    <item row="1" column="1">
-     <widget class="QLabel" name="label">
-      <property name="font">
-       <font>
-        <family>Liberation Sans</family>
-        <pointsize>12</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>    Oficina - v.kw39.19</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QLabel" name="label_2">
+    <item row="1" column="0" colspan="9">
+     <widget class="QLineEdit" name="line_ID_or_CPG_or_Name">
       <property name="text">
        <string/>
       </property>
-      <property name="pixmap">
-       <pixmap resource="images/images.qrc">:/emoticons/tux.png</pixmap>
+      <property name="maxLength">
+       <number>30</number>
+      </property>
+      <property name="placeholderText">
+       <string>Search Client ...</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QLabel" name="lbl_database_status">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>12</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="8">
+     <widget class="QLabel" name="lbl_sys_version">
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </item>
@@ -135,13 +118,13 @@
      </sizepolicy>
     </property>
     <property name="title">
-     <string>Oficina</string>
+     <string>&amp;Oficina</string>
     </property>
     <addaction name="actionList_Open_Services"/>
     <addaction name="actionList_not_Paid_Services"/>
     <addaction name="action_Exit"/>
    </widget>
-   <widget class="QMenu" name="menuCadastrois">
+   <widget class="QMenu" name="menuStock">
     <property name="sizePolicy">
      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
       <horstretch>0</horstretch>
@@ -175,13 +158,13 @@
      </sizepolicy>
     </property>
     <property name="title">
-     <string>&amp;Client</string>
+     <string>&amp;Clients</string>
     </property>
     <addaction name="action_Add_Client"/>
    </widget>
    <addaction name="menuOficina"/>
-   <addaction name="menuCadastrois"/>
    <addaction name="menuCliente"/>
+   <addaction name="menuStock"/>
    <addaction name="menuSobre"/>
   </widget>
   <action name="action_Add_Client">
