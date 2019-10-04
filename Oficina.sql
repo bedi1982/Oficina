@@ -13,6 +13,7 @@ CREATE TABLE `Client` (
   `Client_Name` varchar(40) DEFAULT NULL,
   `Client_Address` varchar(50) DEFAULT NULL,
   `Client_City` varchar(30) DEFAULT NULL,
+  `Client_CPG` varchar(20) DEFAULT NULL,
   `Client_ID_Number` varchar(15) DEFAULT NULL,
   `Client_Phone` varchar(40) DEFAULT NULL,
   `Client_updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,

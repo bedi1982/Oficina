@@ -36,7 +36,7 @@ public:
 
 private slots:
 
-    void on_line_ID_or_Name_textChanged(const QString &arg1);
+    void on_line_ID_or_CPG_or_Name_textChanged(const QString &arg1);
 
     void on_action_Add_Client_triggered();
 
