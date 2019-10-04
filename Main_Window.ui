@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>780</width>
-    <height>427</height>
+    <width>1017</width>
+    <height>589</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,14 +22,7 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_4">
-    <item row="1" column="0" rowspan="4" colspan="11">
      <widget class="QTableView" name="tbl_Client_List">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
       <property name="toolTip">
        <string/>
       </property>
@@ -112,7 +105,6 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>780</width>
      <height>19</height>
     </rect>
    </property>
@@ -130,13 +122,13 @@
      </sizepolicy>
     </property>
     <property name="title">
-     <string>Oficina</string>
+     <string>&amp;Oficina</string>
     </property>
     <addaction name="actionList_Open_Services"/>
     <addaction name="actionList_not_Paid_Services"/>
     <addaction name="action_Exit"/>
    </widget>
-   <widget class="QMenu" name="menuCadastrois">
+   <widget class="QMenu" name="menuStock">
     <property name="sizePolicy">
      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
       <horstretch>0</horstretch>
@@ -170,13 +162,13 @@
      </sizepolicy>
     </property>
     <property name="title">
-     <string>&amp;Client</string>
+     <string>&amp;Clients</string>
     </property>
     <addaction name="action_Add_Client"/>
    </widget>
    <addaction name="menuOficina"/>
-   <addaction name="menuCadastrois"/>
    <addaction name="menuCliente"/>
+   <addaction name="menuStock"/>
    <addaction name="menuSobre"/>
   </widget>
   <action name="action_Add_Client">
