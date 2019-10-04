@@ -96,7 +96,7 @@ void Stock_Parts_Selection::on_tbl_Parts_List_doubleClicked(const QModelIndex &D
         if ((map_Part_to_usedBy_Service_ID.exec() == false) || (removeOnefromStock.exec() == false)){
             QMessageBox::critical(this, tr("Error!"), map_Part_to_usedBy_Service_ID.lastError().text() + " Stock_Parts_Selection::on_tbl_PartsList_doubleClicked(const QModelIndex &DoubleClickedCellValue)");
         }else{
-            QMessageBox::information(this, tr("Success!"), tr("Part Added to the Service and Stock updated."));
+            QMessageBox::information(this, tr("Success!"), tr("Part Added to the Service. Removing part from stock."));
 
             //Reload the parts table//
             on_line_Part_Name_textChanged("*");

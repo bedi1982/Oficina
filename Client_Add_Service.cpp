@@ -96,19 +96,19 @@ void Client_Add_Service::Load_Parts_And_Service_Costs_Grid(){
         ui->tbl_Parts_Used_In_Service->resizeColumnsToContents();
 
         //Sum the Parts Used Value and add//
-//        double PartsCost = 0;
-//        const int column = 4; //"Part_Cost column"//
-//        for (int row = 0; row < model->rowCount(); ++row) {
-//            PartsCost += model->data(model->index(row, column)).toDouble();
-//        }
+        double PartsCost = 0;
+        const int column = 4; //"Part_Cost column"//
+        for (int row = 0; row < model->rowCount(); ++row) {
+            PartsCost += model->data(model->index(row, column)).toDouble();
+        }
 
-//        QSqlQuery SetServicePartsCost;
-//        SetServicePartsCost.prepare("update Service set Service_Parts_Cost = :PartsCost WHERE Service_id = " + ServiceID);
-//        SetServicePartsCost.bindValue(":PartsCost", PartsCost);
+        QSqlQuery SetServicePartsCost;
+        SetServicePartsCost.prepare("update Service set Service_Parts_Cost = :PartsCost WHERE Service_id = " + ServiceID);
+        SetServicePartsCost.bindValue(":PartsCost", PartsCost);
 
-//        if (SetServicePartsCost.exec() == false){
-//            QMessageBox::critical(this, tr("Error!"), SetServicePartsCost.lastError().text() + " class Client_Add_Service::LoadPartsAndServiceCostsGrid() ");
-//        }
+        if (SetServicePartsCost.exec() == false){
+            QMessageBox::critical(this, tr("Error!"), SetServicePartsCost.lastError().text() + " class Client_Add_Service::LoadPartsAndServiceCostsGrid() ");
+        }
     }
     Add_Service_Description_Text();
     Sum_Costs();
@@ -119,21 +119,17 @@ void Client_Add_Service::Sum_Costs()
     QSqlQueryModel* model = new QSqlQueryModel;
     model->setQuery("SELECT Service_Hours_Duration, Service_Parts_Cost, Service_Hour_Cost, Service_Paid, Service_Finished FROM Service WHERE Service_id = " + ServiceID);
 
-    double Hand_Work_Hours = model->data(model->index(0, 0)).toDouble(); //query result line 0 column 0
+    double Amount_of_Hand_Work_Hours = model->data(model->index(0, 0)).toDouble(); //query result line 0 column 0 //worked hours
     double Service_Parts_Cost = model->data(model->index(0, 1)).toDouble(); //query result line 0 column 1
-    double Service_Hour_Cost = model->data(model->index(0, 2)).toDouble(); //query result line 0 column 2
+    double Service_Hour_Cost = model->data(model->index(0, 2)).toDouble(); //query result line 0 column 2 //hour cost in this service
 
-    ui->double_Service_Hour_Cost->setValue(Service_Hour_Cost);
-    ui->lcd_Service_Hour_Cost->display(Service_Hour_Cost);
+    ui->spin_double_Service_cost_per_hour->setValue(Service_Hour_Cost); //this Service cost per hour
+    ui->Spin_amount_of_Hand_Worked_Hours->setValue(Amount_of_Hand_Work_Hours); //amount of worked hours
 
-    ui->Spin_Hand_Work_Hours->setValue(Hand_Work_Hours);
-    //ui->Spin_PartsCost->setValue(Service_Parts_Cost);
-    //ui->Spin_TotalserviceCost->setValue((Service_Hours_Duration * Service_Hour_Cost) + Service_Parts_Cost);
-    //ui->Spin_ServiceRegistereHandWorkHours->setValue(Service_Hour_Cost);
+    ui->lcd_Service_HoursCost_total->display(Service_Hour_Cost * Amount_of_Hand_Work_Hours); //preice per hour in this service
+    ui->lcd_Service_Total->display((Amount_of_Hand_Work_Hours * Service_Hour_Cost) + Service_Parts_Cost);
+
     ui->lcd_Parts_Cost->display(Service_Parts_Cost);
-    ui->lcd_Parts_Cost_2->display(Service_Parts_Cost);
-    ui->lcd_Hour_cost->display(Hand_Work_Hours * Service_Hour_Cost);
-    ui->lcd_Service_Total->display((Hand_Work_Hours * Service_Hour_Cost) + Service_Parts_Cost);
 
     //Service_Paid CheckMark 0 for not Paid 1 for Paid
     bool Service_Paid = model->data(model->index(0, 3)).toBool(); //query result line 0 column 3
@@ -274,7 +270,7 @@ void Client_Add_Service::on_Button_Apply_new_Hour_Cost_clicked()
     QSqlQuery Update_Service_Cost;
     Update_Service_Cost.prepare("UPDATE Service SET Service_Hour_Cost = :Service_Hour_Cost WHERE Service_id = " + ServiceID);
 
-    Update_Service_Cost.bindValue(":Service_Hour_Cost", ui->double_Service_Hour_Cost->value());
+    Update_Service_Cost.bindValue(":Service_Hour_Cost", ui->spin_double_Service_cost_per_hour->value());
 
     if (!(Update_Service_Cost.exec())){
         QMessageBox::critical(this, tr("Error!"), Update_Service_Cost.lastError().text() + "class Client_Add_Service::on_Button_Apply_new_Hour_Cost_clicked()");
@@ -312,7 +308,7 @@ void Client_Add_Service::on_Button_Set_Worked_hours_clicked()
     //if(ui->Spin_Hand_Work_Hours->valueChanged();
         QSqlQuery Update_Hours_Worked;
         Update_Hours_Worked.prepare("UPDATE Service SET Service_Hours_Duration = :Service_Hours_Duration WHERE Service_id = " + ServiceID);
-        Update_Hours_Worked.bindValue(":Service_Hours_Duration", ui->Spin_Hand_Work_Hours->value());
+        Update_Hours_Worked.bindValue(":Service_Hours_Duration", ui->Spin_amount_of_Hand_Worked_Hours->value());
 
         if (Update_Hours_Worked.exec()){
             QMessageBox::information(this, tr("Done!!"), tr("Quantity of worked hoursgot an update!!"));

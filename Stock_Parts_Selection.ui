@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>910</width>
-    <height>450</height>
+    <width>583</width>
+    <height>442</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -41,7 +41,7 @@
    <item row="0" column="2">
     <widget class="QPushButton" name="btn_Add_Part_to_Stock">
      <property name="text">
-      <string>Add New</string>
+      <string>Add New Parts to the Stock</string>
      </property>
      <property name="icon">
       <iconset resource="images/images.qrc">
@@ -52,7 +52,7 @@
    <item row="2" column="0" colspan="2">
     <widget class="QLabel" name="label_Help">
      <property name="text">
-      <string>Double click in the Part will add it to the Service:</string>
+      <string>Double click the Part to add it to the Service:</string>
      </property>
     </widget>
    </item>
