@@ -6,21 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>526</width>
-    <height>196</height>
+    <width>346</width>
+    <height>210</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>login</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="1">
-    <widget class="QLabel" name="lbl_UserId">
-     <property name="text">
-      <string>Employee ID:</string>
-     </property>
-    </widget>
-   </item>
    <item row="1" column="2" alignment="Qt::AlignTop">
     <widget class="QLineEdit" name="line_Password">
      <property name="echoMode">
@@ -45,27 +38,21 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="1">
-    <widget class="QLabel" name="label_Feedback">
+   <item row="0" column="1">
+    <widget class="QLabel" name="lbl_UserId">
      <property name="text">
-      <string/>
+      <string>Employee ID:</string>
      </property>
     </widget>
    </item>
-   <item row="1" column="0">
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="images/images.qrc">:/emoticons/sport-car.png</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
+   <item row="4" column="2" alignment="Qt::AlignTop">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
     </widget>
    </item>
-   <item row="2" column="2">
+   <item row="3" column="2">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -78,10 +65,23 @@
      </property>
     </spacer>
    </item>
-   <item row="3" column="2" alignment="Qt::AlignTop">
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   <item row="4" column="1">
+    <widget class="QLabel" name="label_Feedback">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="images/images.qrc">:/emoticons/sport-car.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
      </property>
     </widget>
    </item>
@@ -92,6 +92,8 @@
   <tabstop>line_Password</tabstop>
  </tabstops>
  <resources>
+  <include location="images/images.qrc"/>
+  <include location="images/images.qrc"/>
   <include location="images/images.qrc"/>
  </resources>
  <connections/>

@@ -22,25 +22,6 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_4">
-    <item row="0" column="0">
-     <widget class="QLineEdit" name="line_ID_or_CPG_or_Name">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Maximum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="maxLength">
-       <number>30</number>
-      </property>
-      <property name="placeholderText">
-       <string>Search Client ...</string>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="0" rowspan="4" colspan="11">
      <widget class="QTableView" name="tbl_Client_List">
       <property name="sizePolicy">
@@ -84,6 +65,45 @@
       </attribute>
      </widget>
     </item>
+    <item row="0" column="0">
+     <widget class="QLineEdit" name="line_ID_or_Name">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="maxLength">
+       <number>30</number>
+      </property>
+      <property name="placeholderText">
+       <string>Search Client ...</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="lbl_sys_info">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>12</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QLabel" name="lbl_database">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
@@ -93,7 +113,7 @@
      <x>0</x>
      <y>0</y>
      <width>780</width>
-     <height>30</height>
+     <height>19</height>
     </rect>
    </property>
    <property name="sizePolicy">

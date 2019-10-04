@@ -39,7 +39,6 @@ bool Client_Add::Verify_Empty_Fields_on_Form()
            ||ui->line_Address->text() == ""
            ||ui->line_City->text() == ""
            ||ui->line_Personal_ID->text() == ""
-           ||ui->line_CPG->text() == ""
            ||ui->line_Phone->text() == ""
            )
     {
@@ -58,7 +57,6 @@ void Client_Add::Clear_Form(){
         ui->line_Address->setText("");
         ui->line_City->setText("");
         ui->line_Personal_ID->setText("");
-        ui->line_CPG->setText("");
         ui->line_Phone->setText("");
         ui->lbl_feedback->setText("");
         Set_Emoticon();
@@ -69,13 +67,12 @@ void Client_Add::on_btn_Add_Client_accepted()
     if(Verify_Empty_Fields_on_Form()){
         QSqlQuery query;
         query.prepare("INSERT INTO"
-                      " Client (Client_Name, Client_Address, Client_City, Client_CPG, Client_ID_Number, Client_Phone)"
-                      " VALUES (:Client_Name, :Client_Address, :Client_City, :Client_CPG, :Client_ID_Number, :Client_Phone)");
+                      " Client (Client_Name, Client_Address, Client_City, Client_ID_Number, Client_Phone)"
+                      " VALUES (:Client_Name, :Client_Address, :Client_City, :Client_ID_Number, :Client_Phone)");
 
         query.bindValue(":Client_Name", ui->line_Name->text());
         query.bindValue(":Client_Address", ui->line_Address->text());
         query.bindValue(":Client_City", ui->line_City->text());
-        query.bindValue(":Client_CPG", ui->line_CPG->text());
         query.bindValue(":Client_ID_Number", ui->line_Personal_ID->text());
         query.bindValue(":Client_Phone", ui->line_Phone->text());
 
