@@ -6,29 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>281</width>
-    <height>256</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>login</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="7" column="1">
-    <widget class="QLabel" name="label_Feedback">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="3">
-    <widget class="QLabel" name="lbl_UserId">
-     <property name="text">
-      <string>Employee ID:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="3" alignment="Qt::AlignTop">
     <widget class="QLineEdit" name="line_Password">
      <property name="echoMode">
       <enum>QLineEdit::Password</enum>
@@ -45,34 +28,9 @@
      </property>
     </widget>
    </item>
-   <item row="7" column="3" alignment="Qt::AlignTop">
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="3">
-    <widget class="QLabel" name="lbl_ID">
-     <property name="text">
-      <string>Password:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="3">
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
      </property>
     </spacer>
    </item>
-   <item row="6" column="3">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -85,7 +43,6 @@
      </property>
     </spacer>
    </item>
-   <item row="5" column="3">
     <widget class="QLabel" name="label">
      <property name="text">
       <string/>

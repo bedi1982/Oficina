@@ -143,7 +143,6 @@ void Client_Services_History::load_Client_Info_Tab()
             ui->line_Name->setText(query.value(1).toString()); //Name
             ui->line_Address->setText(query.value(2).toString()); //Adress
             ui->line_City->setText(query.value(3).toString()); //City
-            ui->line_CPG->setText(query.value(4).toString()); //CPG
             ui->line_Personal_ID->setText(query.value(5).toString()); // Personal ID
             ui->line_Phone->setText(query.value(6).toString()); //Phone
             ui->line_Updated_At->setText(query.value(7).toString()); //updated At
@@ -195,7 +194,6 @@ void Client_Services_History::on_btn_Update_Client_clicked()
                   "  Client_Name = :Client_Name"
                   " ,Client_Address = :Client_Address"
                   " ,Client_City = :Client_City"
-                  " ,Client_CPG = :Client_CPG"
                   " ,Client_ID_Number = :Client_ID_Number"
                   " ,Client_Phone = :Client_Phone"
                   " WHERE Client_id = " + client_id);
@@ -203,7 +201,6 @@ void Client_Services_History::on_btn_Update_Client_clicked()
     query.bindValue(":Client_Name", ui->line_Name->text());
     query.bindValue(":Client_Address", ui->line_Address->text());
     query.bindValue(":Client_City", ui->line_City->text());
-    query.bindValue(":Client_CPG", ui->line_CPG->text());
     query.bindValue(":Client_ID_Number", ui->line_Personal_ID->text());
     query.bindValue(":Client_Phone", ui->line_Phone->text());
 
