@@ -30,7 +30,7 @@ QString System_Services_and_Info::get_Current_Date()
 
 QString System_Services_and_Info::get_System_Version()
 {
-    return "Oficina - kw.39.19";
+    return "Oficina - kw.12.21";
 }
 
 QString System_Services_and_Info::get_System_About()

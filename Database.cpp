@@ -13,10 +13,9 @@ bool Database::Connect(){
     db.setDatabaseName("Oficina");
     db.setUserName("root");
     //BEWARE CHANGING THIS CLASS NEEDS THE CLIENT TO FIX THE PASSWORD//
-    db.setPassword("n0ts3cr3t");
+    db.setPassword("root");
     if(db.open()){
         return true;
-    }else{
-        return false;
     }
+    return false;
 }

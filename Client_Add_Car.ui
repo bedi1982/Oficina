@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>481</width>
-    <height>413</height>
+    <width>451</width>
+    <height>423</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,15 +18,14 @@
     <normaloff>:/emoticons/service.png</normaloff>:/emoticons/service.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="1" column="0" colspan="3">
-    <widget class="QLabel" name="lbl_Model">
-     <property name="text">
-      <string>Car Model</string>
-     </property>
-    </widget>
-   </item>
    <item row="1" column="3" colspan="7">
     <widget class="QLineEdit" name="txt_Car_Model">
+     <property name="maximumSize">
+      <size>
+       <width>400</width>
+       <height>16777215</height>
+      </size>
+     </property>
      <property name="inputMethodHints">
       <set>Qt::ImhNone</set>
      </property>
@@ -41,6 +40,99 @@
      </property>
      <property name="placeholderText">
       <string>Eg. Chevette 1984</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="9">
+    <widget class="QLineEdit" name="txt_Car_Color">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>250</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="maxLength">
+      <number>26</number>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3" colspan="7">
+    <widget class="QLineEdit" name="line_Client_Name">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>400</width>
+       <height>16777215</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="5">
+    <widget class="QLabel" name="lbl_Car_Plate">
+     <property name="text">
+      <string>Plate</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="6" colspan="2">
+    <widget class="QLineEdit" name="txt_Car_Plate">
+     <property name="maximumSize">
+      <size>
+       <width>120</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::StrongFocus</enum>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="maxLength">
+      <number>10</number>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="3">
+    <widget class="QLabel" name="lbl_Car_Owner">
+     <property name="text">
+      <string>Car Owner</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1" colspan="4">
+    <widget class="QLineEdit" name="txt_Car_Year">
+     <property name="maximumSize">
+      <size>
+       <width>80</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::StrongFocus</enum>
+     </property>
+     <property name="inputMethodHints">
+      <set>Qt::ImhDigitsOnly</set>
+     </property>
+     <property name="inputMask">
+      <string/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="maxLength">
+      <number>4</number>
      </property>
     </widget>
    </item>
@@ -64,65 +156,6 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="1" colspan="4">
-    <widget class="QLineEdit" name="txt_Car_Year">
-     <property name="focusPolicy">
-      <enum>Qt::TabFocus</enum>
-     </property>
-     <property name="inputMethodHints">
-      <set>Qt::ImhNone</set>
-     </property>
-     <property name="inputMask">
-      <string>9999</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="maxLength">
-      <number>4</number>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="5">
-    <widget class="QLabel" name="lbl_Car_Plate">
-     <property name="text">
-      <string>Plate</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="6" colspan="2">
-    <widget class="QLineEdit" name="txt_Car_Plate">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="maxLength">
-      <number>10</number>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="8">
-    <widget class="QLabel" name="lbl_Car_Color">
-     <property name="text">
-      <string>Color</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="9">
-    <widget class="QLineEdit" name="txt_Car_Color">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="maxLength">
-      <number>26</number>
-     </property>
-    </widget>
-   </item>
    <item row="4" column="9">
     <widget class="QDialogButtonBox" name="btn_Client_Add_Car">
      <property name="standardButtons">
@@ -130,17 +163,17 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="0" colspan="3">
-    <widget class="QLabel" name="lbl_Car_Owner">
+   <item row="1" column="0" colspan="3">
+    <widget class="QLabel" name="lbl_Model">
      <property name="text">
-      <string>Car Owner</string>
+      <string>Car Model</string>
      </property>
     </widget>
    </item>
-   <item row="0" column="3" colspan="7">
-    <widget class="QLineEdit" name="line_Client_Name">
-     <property name="enabled">
-      <bool>false</bool>
+   <item row="3" column="8">
+    <widget class="QLabel" name="lbl_Car_Color">
+     <property name="text">
+      <string>Color</string>
      </property>
     </widget>
    </item>

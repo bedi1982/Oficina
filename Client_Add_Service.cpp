@@ -72,7 +72,7 @@ void Client_Add_Service::Load_Parts_And_Service_Costs_Grid(){
                     " Part_id,"
                     " Part_Quantity,"
                     " Part_Name, "
-                    " Part_Cost"
+                    " Part_Sell_Value_With_Interest_Rate"
                     " FROM Part p JOIN ServicePartsUsed pu "
                     " ON pu.Used_Part_ID = p.Part_id "
                     " AND pu.Used_On_What_Service_id = " + ServiceID);

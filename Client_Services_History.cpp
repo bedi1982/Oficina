@@ -142,12 +142,12 @@ void Client_Services_History::load_Client_Info_Tab()
             ui->line_SysID->setText(query.value(0).toString()); //SystemID
             ui->line_Name->setText(query.value(1).toString()); //Name
             this->setWindowTitle("Client: " + query.value(1).toString()); //Add client name to window title
-            ui->line_Address->setText(query.value(2).toString()); //Adress
+            ui->line_Address->setText(query.value(2).toString()); //Address
             ui->line_City->setText(query.value(3).toString()); //City
-            ui->line_Personal_ID->setText(query.value(5).toString()); // Personal ID
-            ui->line_Phone->setText(query.value(6).toString()); //Phone
-            ui->line_Updated_At->setText(query.value(7).toString()); //updated At
-            ui->line_Created_At->setText(query.value(8).toString()); //created At
+            ui->line_Personal_ID->setText(query.value(4).toString()); // Personal ID
+            ui->line_Phone->setText(query.value(5).toString()); //Phone
+            ui->line_Updated_At->setText(query.value(6).toString()); //updated At
+            ui->line_Created_At->setText(query.value(7).toString()); //created At
         }
     }
 }

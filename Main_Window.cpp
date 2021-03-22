@@ -45,7 +45,7 @@ Main_Window::Main_Window(QWidget *parent) :
     Database db;
 
     if(db.Connect()){
-        Check_Login();
+        //Check_Login();
         Create_Client_Model_and_proxy();
         ui->lbl_database_status->setText("Database connected!");
     }else{

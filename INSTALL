@@ -1,4 +1,5 @@
 install mysql, start mysql;
+install qtsql -> make sure this one is built(or has been build) with mysql conectivity.
 
 Confirm it's working:
 mysql -u root -p
@@ -11,11 +12,11 @@ mysql -u root -p
 #download database model:
 wget https://raw.githubusercontent.com/bedi1982/Oficina/master/Oficina.sql
 
-#Load it:
+#mport it into mysql:q:
 bagabari /home/slemke # mysql -u root -p < Oficina.sql 
 Enter password: 
 
-#login-in in mysql to check it was loaded fine:
+#login in mysql to check it was loaded fine:
 bagabari /home/slemke # mysql -u root -p
 Enter password: 
 Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -46,3 +47,4 @@ mysql> show tables;
 mysql> 
 
 You may have to add user/password in the class: Database.cpp
+The default one set there is root / root
