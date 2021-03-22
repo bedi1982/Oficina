@@ -2,7 +2,7 @@
 Name=Oficina
 GenericName=Oficina
 Comment=Mechanical Workshop Application
-Exec=oficina
+Exec=Oficina
 Icon=Oficina
 Terminal=false
 Type=Application
