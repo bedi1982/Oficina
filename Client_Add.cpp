@@ -2,6 +2,7 @@
 #include "QtSql"
 #include "QMessageBox"
 #include "QStackedWidget"
+#include "QSqlQuery"
 
 #include "Client_Add.h"
 #include "ui_Client_Add.h"
@@ -65,6 +66,7 @@ void Client_Add::Clear_Form(){
 void Client_Add::on_btn_Add_Client_accepted()
 {
     if(Verify_Empty_Fields_on_Form()){
+
         QSqlQuery query;
         query.prepare("INSERT INTO"
                       " Client (Client_Name, Client_Address, Client_City, Client_ID_Number, Client_Phone)"
@@ -78,7 +80,7 @@ void Client_Add::on_btn_Add_Client_accepted()
 
         if (query.exec() == false){
             qDebug() << query.lastError();
-            QMessageBox::critical(this, tr("Error!"), query.lastError().text() + ". Class: addclient.cpp51");
+            QMessageBox::critical(this, tr("Error!"), query.lastError().text() + ". Class: addclient.cpp");
         }else{
             ui->lbl_feedback->setText(ui->line_Name->text() + tr(" added!"));
             QPixmap cool(":/emoticons/face-cool.png");

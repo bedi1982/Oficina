@@ -1,5 +1,9 @@
 #include "Database.h"
 #include "QSqlDatabase"
+#include "QSqlQuery"
+#include "QStandardPaths"
+#include "QDebug"
+#include "QDir"
 
 using namespace std;
 
@@ -8,14 +12,26 @@ Database::Database(){
 }
 
 bool Database::Connect(){
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("localhost");
-    db.setDatabaseName("Oficina");
-    db.setUserName("root");
-    //BEWARE CHANGING THIS CLASS NEEDS THE CLIENT TO FIX THE PASSWORD//
-    db.setPassword("root");
-    if(db.open()){
-        return true;
+
+    QString db_path = QDir::homePath() + "/.Oficina/Oficina.db";
+
+    if (!QFile::exists(db_path)) {
+            QString home_Path = QDir::homePath() + "/.Oficina/Oficina.db";
+            QFile::copy("/etc/Oficina/Oficina.db", home_Path);
     }
-    return false;
+
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+
+    //qDebug() <<db_path;    //current path
+
+    db.setDatabaseName(db_path);
+    db.open();
+
+    if(db.isOpen()){
+        printf("Database OK\n");
+        return true;
+    }else {
+        printf("Database BAD\n");
+        return false;
+    }
 }

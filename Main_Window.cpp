@@ -15,10 +15,10 @@
 #include "System_Services_and_Info.h"
 #include "QSettings"
 
-#include "qsqlquery.h"
-#include "qdebug.h"
-#include "qmessagebox.h"
-#include "qsqlerror.h"
+#include "QSqlQuery"
+#include "QDebug"
+#include "QMessageBox"
+#include "QSqlError"
 #include "Login.h"
 
 #include <qsortfilterproxymodel.h>
@@ -53,6 +53,7 @@ Main_Window::Main_Window(QWidget *parent) :
         ui->line_ID_or_Name->setEnabled(false);
         ui->menuBar->hide();
         QMessageBox::critical(nullptr, tr("Database Down"), tr("Database not running or wrong user/password! \nPlease double check if the Database is correctly started. Database.cpp handles login data."));
+        exit(0);
     }
 }
 

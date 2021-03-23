@@ -4,8 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
-QT       += sql
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -126,8 +125,8 @@ DISTFILES += \
     README.md \
     TODO \
     Oficina.Desktop \
-    Oficina.sql \
-    images/icons8-Car Rental-50.png
+    images/icons8-Car Rental-50.png \
+    Oficina.db
 
 RESOURCES += \
     images/images.qrc \
