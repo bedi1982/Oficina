@@ -13,6 +13,7 @@ Database::Database(){
 
 bool Database::Connect(){
 
+    QDir().mkpath(QDir::homePath() + "/.Oficina");
     QString db_path = QDir::homePath() + "/.Oficina/Oficina.db";
 
     if (!QFile::exists(db_path)) {
