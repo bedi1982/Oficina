@@ -27,8 +27,8 @@
    <string notr="true"/>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="1" column="0">
-    <widget class="QLabel" name="lbl_Hour_Cost_text">
+   <item row="3" column="8">
+    <widget class="QLabel" name="label_InsertWorkCost">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
        <horstretch>0</horstretch>
@@ -42,27 +42,80 @@
       <string notr="true">color: rgb(0, 170, 0);</string>
      </property>
      <property name="text">
-      <string>Hour Price:</string>
+      <string>Worked Hours:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
     </widget>
    </item>
-   <item row="1" column="8">
-    <widget class="QCheckBox" name="check_Paid">
-     <property name="enabled">
+   <item row="5" column="1">
+    <widget class="QLCDNumber" name="lcd_Service_Total">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+       <horstretch>10</horstretch>
+       <verstretch>10</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>80</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Sans Serif</family>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 85, 0);
+font: 14pt &quot;Sans Serif&quot;;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="smallDecimalPoint">
       <bool>true</bool>
      </property>
+     <property name="segmentStyle">
+      <enum>QLCDNumber::Flat</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="10">
+    <widget class="QDialogButtonBox" name="buttonBox_Close">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="text">
-      <string> Service Paid?</string>
+     <property name="maximumSize">
+      <size>
+       <width>70</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Close</set>
      </property>
     </widget>
    </item>
-   <item row="2" column="7">
+   <item row="5" column="0">
     <widget class="QLabel" name="label_totalServiceCost">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
@@ -89,52 +142,7 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="9">
-    <widget class="QDialogButtonBox" name="buttonBox_Close">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>70</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Close</set>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="4">
-    <widget class="QLabel" name="label_Parts_Cost">
-     <property name="text">
-      <string>Parts Cost:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="7">
-    <widget class="QCheckBox" name="check_Finished">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string> Service Done?</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="5">
+   <item row="4" column="6">
     <widget class="QLCDNumber" name="lcd_Parts_Cost">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
@@ -163,7 +171,7 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="1">
+   <item row="3" column="9">
     <widget class="QDoubleSpinBox" name="Spin_amount_of_Hand_Worked_Hours">
      <property name="enabled">
       <bool>true</bool>
@@ -194,49 +202,14 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="label_InsertWorkCost">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="layoutDirection">
-      <enum>Qt::RightToLeft</enum>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(0, 170, 0);</string>
-     </property>
-     <property name="text">
-      <string>Worked Hours:</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="4">
-    <widget class="QLabel" name="lbl_hour_cost">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>Hours Price Total:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0" colspan="10">
+   <item row="0" column="0" colspan="11">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
       <number>1</number>
      </property>
      <widget class="QWidget" name="ServiceDescription">
       <attribute name="title">
-       <string>Service Details</string>
+       <string>Description</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="2" column="0" colspan="13">
@@ -251,7 +224,7 @@
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu Light'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Noto Sans'; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
@@ -281,7 +254,7 @@ p, li { white-space: pre-wrap; }
           <bool>false</bool>
          </property>
          <property name="text">
-          <string>Update Service Description</string>
+          <string>Update Description</string>
          </property>
          <property name="icon">
           <iconset resource="images/images.qrc">
@@ -342,7 +315,7 @@ p, li { white-space: pre-wrap; }
      </widget>
      <widget class="QWidget" name="ServiceParts">
       <attribute name="title">
-       <string>Service Car Parts Used</string>
+       <string>Parts Used</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_4">
        <item row="1" column="0" colspan="3">
@@ -370,7 +343,7 @@ p, li { white-space: pre-wrap; }
           <bool>false</bool>
          </property>
          <property name="text">
-          <string>Add Parts to service</string>
+          <string>Add Parts</string>
          </property>
          <property name="icon">
           <iconset resource="images/images.qrc">
@@ -388,101 +361,20 @@ p, li { white-space: pre-wrap; }
      </widget>
     </widget>
    </item>
-   <item row="1" column="1">
-    <widget class="QDoubleSpinBox" name="spin_double_Service_cost_per_hour">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="2">
-    <widget class="QPushButton" name="Button_Apply_new_Hour_Cost">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>64</width>
-       <height>24</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>Set</string>
-     </property>
-     <property name="icon">
-      <iconset resource="images/images.qrc">
-       <normaloff>:/emoticons/emblem-default.png</normaloff>:/emoticons/emblem-default.png</iconset>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="2">
-    <widget class="QPushButton" name="Button_Set_Worked_hours">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>64</width>
-       <height>24</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>Set</string>
-     </property>
-     <property name="icon">
-      <iconset resource="images/images.qrc">
-       <normaloff>:/emoticons/emblem-default.png</normaloff>:/emoticons/emblem-default.png</iconset>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="8">
-    <widget class="QLCDNumber" name="lcd_Service_Total">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-       <horstretch>10</horstretch>
-       <verstretch>10</verstretch>
-      </sizepolicy>
-     </property>
+   <item row="3" column="0" colspan="4">
+    <widget class="QLabel" name="label">
      <property name="font">
       <font>
-       <family>Sans Serif</family>
-       <pointsize>14</pointsize>
-       <weight>50</weight>
+       <pointsize>22</pointsize>
        <italic>false</italic>
-       <bold>false</bold>
       </font>
      </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(0, 85, 0);
-font: 14pt &quot;Sans Serif&quot;;</string>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Plain</enum>
-     </property>
-     <property name="smallDecimalPoint">
-      <bool>true</bool>
-     </property>
-     <property name="segmentStyle">
-      <enum>QLCDNumber::Flat</enum>
+     <property name="text">
+      <string>Service Status and Cost</string>
      </property>
     </widget>
    </item>
-   <item row="1" column="5">
+   <item row="3" column="6">
     <widget class="QLCDNumber" name="lcd_Service_HoursCost_total">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
@@ -515,6 +407,133 @@ font: 14pt &quot;Sans Serif&quot;;</string>
      </property>
      <property name="segmentStyle">
       <enum>QLCDNumber::Flat</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="5">
+    <widget class="QLabel" name="label_Parts_Cost">
+     <property name="text">
+      <string>Parts Cost:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="2">
+    <widget class="QPushButton" name="Button_Apply_new_Hour_Cost">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>64</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Set</string>
+     </property>
+     <property name="icon">
+      <iconset resource="images/images.qrc">
+       <normaloff>:/emoticons/emblem-default.png</normaloff>:/emoticons/emblem-default.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="5" colspan="2">
+    <widget class="QCheckBox" name="check_Paid">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Service is Paid.</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="5">
+    <widget class="QLabel" name="lbl_hour_cost">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Hours Price Total:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QDoubleSpinBox" name="spin_double_Service_cost_per_hour">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lbl_Hour_Cost_text">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 170, 0);</string>
+     </property>
+     <property name="text">
+      <string>Hour Price:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="10">
+    <widget class="QPushButton" name="Button_Set_Worked_hours">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>64</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Set</string>
+     </property>
+     <property name="icon">
+      <iconset resource="images/images.qrc">
+       <normaloff>:/emoticons/emblem-default.png</normaloff>:/emoticons/emblem-default.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="5" colspan="2">
+    <widget class="QCheckBox" name="check_Finished">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Service is Done.</string>
      </property>
     </widget>
    </item>

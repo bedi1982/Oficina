@@ -24,6 +24,8 @@ public:
 
     void Create_Client_Model_and_proxy();
 
+    void Create_Services_Model_and_proxy();
+
     void Set_Last_Client_in_the_Grid();
 
     bool getClient_Clicked_Exit_On_Login() const;

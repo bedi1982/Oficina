@@ -38,8 +38,8 @@ Main_Window::Main_Window(QWidget *parent) :
     ui->setupUi(this);
     LoadSettings();
 
-    ui->line_ID_or_Name->setFocus();
-    ui->lbl_sys_version->setText(System_Services_and_Info::get_System_Version());
+    ui->line_Search_Client->setFocus();
+    //ui->lbl_sys_version->setText(System_Services_and_Info::get_System_Version());
     this->setWindowTitle(System_Services_and_Info::get_System_Version());
 
     Database db;
@@ -47,10 +47,11 @@ Main_Window::Main_Window(QWidget *parent) :
     if(db.Connect()){
         //Check_Login();
         Create_Client_Model_and_proxy();
+        Create_Services_Model_and_proxy();
         ui->lbl_database_status->setText("Database connected!");
     }else{
         //If the database is not available we make the app mostly useless//
-        ui->line_ID_or_Name->setEnabled(false);
+        ui->line_Search_Client->setEnabled(false);
         ui->menuBar->hide();
         QMessageBox::critical(nullptr, tr("Database Down"), tr("Database not running or wrong user/password! \nPlease double check if the Database is correctly started. Database.cpp handles login data."));
         exit(0);
@@ -83,7 +84,7 @@ void Main_Window::Set_Last_Client_in_the_Grid()
     }else{
         while(Get_last_Client.next()) //returns only 1 row as result(0 = id, 1=name)//
         {
-            ui->line_ID_or_Name->setText(Get_last_Client.value(1).toString()); //put the retrieved name in the search bar so it get automatically 'searched'
+            ui->line_Search_Client->setText(Get_last_Client.value(1).toString()); //put the retrieved name in the search bar so it get automatically 'searched'
         }
     }
 }
@@ -108,12 +109,11 @@ void Main_Window::on_tbl_Client_List_doubleClicked(const QModelIndex &selectedCl
 
     //Going back to former form keeping current client 'searched' and updated
     //The empty String is to reset the 'on_text_changed' function.
-    ui->line_ID_or_Name->setText("");
-    ui->line_ID_or_Name->setText(clientName.toString());
+    ui->line_Search_Client->setText("");
+    ui->line_Search_Client->setText(clientName.toString());
 
     //When he comes back we reload the proxy//
     Create_Client_Model_and_proxy();
-
 }
 
 void Main_Window::Client_Services_Open(QString clientID)
@@ -139,13 +139,56 @@ void Main_Window::Create_Client_Model_and_proxy(){
     model->setHeaderData(6, Qt::Horizontal, tr("Updated at"));
     model->setHeaderData(7, Qt::Horizontal, tr("Created at"));
 
+
+
+
     proxy = new QSortFilterProxyModel();
     proxy->setSourceModel(model);
     proxy->setFilterKeyColumn(1);//Name
     proxy->setFilterCaseSensitivity(Qt::CaseInsensitive);
     ui->tbl_Client_List->setModel(proxy);
+
+    //hide db columns
+    ui->tbl_Client_List->setColumnHidden(0, true);
     ui->tbl_Client_List->setColumnHidden(2, true);
+
     ui->tbl_Client_List->resizeColumnsToContents();
+}
+
+void Main_Window::Create_Services_Model_and_proxy(){
+    model = new QSqlTableModel();
+    model->setTable("Service");
+    model->select();
+
+    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    model->setHeaderData(0, Qt::Horizontal, tr("Service_ID"));
+    model->setHeaderData(1, Qt::Horizontal, tr("Service_Client_ID"));
+    model->setHeaderData(2, Qt::Horizontal, tr("Short_Client_Car_ID"));
+    model->setHeaderData(3, Qt::Horizontal, tr("Service Short Description"));
+    model->setHeaderData(4, Qt::Horizontal, tr("Is Finished?"));
+    model->setHeaderData(5, Qt::Horizontal, tr("Service_Description"));
+    model->setHeaderData(6, Qt::Horizontal, tr("Service Parts Cost"));
+    model->setHeaderData(7, Qt::Horizontal, tr("Service Hours duration"));
+    model->setHeaderData(8, Qt::Horizontal, tr("Service Hour Cost"));
+    model->setHeaderData(9, Qt::Horizontal, tr("Is Paid?"));
+    model->setHeaderData(10, Qt::Horizontal, tr("Updated at"));
+    model->setHeaderData(11, Qt::Horizontal, tr("Created at"));
+
+
+    proxy = new QSortFilterProxyModel();
+    proxy->setSourceModel(model);
+    proxy->setFilterKeyColumn(1);//Name
+    proxy->setFilterCaseSensitivity(Qt::CaseInsensitive);
+    ui->tbl_Services_list->setModel(proxy);
+
+//Hide some irrelevant Columns from the model
+    ui->tbl_Services_list->setColumnHidden(0, true);
+    ui->tbl_Services_list->setColumnHidden(1, true);
+    ui->tbl_Services_list->setColumnHidden(2, true);
+    ui->tbl_Services_list->setColumnHidden(5, true);
+
+    ui->tbl_Services_list->resizeColumnsToContents();
+
 }
 
 void Main_Window::on_line_ID_or_Name_textChanged(const QString &Used_Search_Filter)
